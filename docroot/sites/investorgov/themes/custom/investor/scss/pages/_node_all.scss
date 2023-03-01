@@ -1,0 +1,135 @@
+// Basic content styles (styles for body text)
+.node--type-article .main-content .block.body,
+.node--type-page .main-content .block.body,
+// .node--type-glossary-term .main,
+.node--type-news .main-content .block.body {
+
+  h2, h3, h4, h5, h6 {
+    font-family: $font_secondary;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 30px;
+    margin: 20px 0 0 0;
+    text-transform: capitalize;
+    font-family: $font_primary;
+    font-weight: 400;
+  }
+
+  h3 {
+    line-height: 30px;
+    color: $gray_1b;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 15px 0 0 0;
+  }
+
+  h4{
+    font-weight: 600;
+    color: $gray_1b;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  h5{
+    font-weight: 800;
+    color: $gray_1b;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  h6{
+
+  }
+
+  ul{
+    list-style: none;
+    margin-left: 5px;
+    li {
+      position: relative;
+      padding-left: 10px;
+
+      &:before{
+        font-family: "FontAwesome";
+        font-size: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        speak: none;
+        text-transform: none;
+        content: "\f0da";
+        position: absolute;
+        left: -2px;
+
+      }
+    }
+  }
+
+  blockquote {
+    background: $gray_1e;
+    border-left: 10px solid $gray_1c;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+  blockquote:before {
+    color: $gray_1c;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  blockquote p {
+    display: inline;
+  }
+
+  dl dt {
+    font-weight: bold;
+  }
+
+  dl dd {
+    padding: 0 0 10px 20px;
+    margin-bottom: 0px;
+  }
+
+  kbd{
+    font-weight: 700;
+    padding: .2rem .4rem;
+    font-size: 87.5%;
+    color: $white;
+    background-color: $gray_black;
+    border-radius: .2rem;
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  }
+
+  q {
+    font-style: italic;
+  }
+
+  table{
+    caption{
+      font-style: italic;
+    }
+    th, td{
+      padding: 10px
+    }
+
+    th{
+      font-weight: bold;
+    }
+  }
+
+}
+
+.page-node-1086 .main .layout .feature-item-block{
+  width: 100%;
+  max-width: 100%;
+}

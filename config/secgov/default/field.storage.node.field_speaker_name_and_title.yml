@@ -1,0 +1,21 @@
+uuid: f632fa40-328e-4db9-b738-e1386e6be61c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: NGwySW6h3CVXvm5AFj-DDhdRM5ff11mSlrT3jRZI_fI
+id: node.field_speaker_name_and_title
+field_name: field_speaker_name_and_title
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

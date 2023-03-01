@@ -1,0 +1,6 @@
+name: SEC Webform
+type: module
+description: 'Webform Processing for SEC.gov'
+version: '8.x-1.0'
+core: 8.x
+core_version_requirement: ^8 || ^9

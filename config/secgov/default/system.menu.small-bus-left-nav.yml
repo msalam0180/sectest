@@ -1,0 +1,8 @@
+uuid: 9f145d64-ac3e-49c0-a5b4-34bfbd24ce9d
+langcode: en
+status: true
+dependencies: {  }
+id: small-bus-left-nav
+label: small-bus-left-nav
+description: 'Small business left nav'
+locked: false

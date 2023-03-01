@@ -1,0 +1,21 @@
+uuid: 62c28924-3413-4ae6-9b16-728b2666d561
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: '-OY2MfIBPYBOODJjGW0EPJR4Ywm-_sQvmiNiodwS0SM'
+id: complaint
+label: Complaint
+category: SEC
+likert: false
+options: |
+  complaintNoNotice: 'I did not receive a privacy notice.'
+  complaintLongNotice: 'The privacy notice was too long, too complex, or too difficult to read.'
+  complaintIllegibleNotice: 'The privacy notice contained typeface that was too small for me to read.'
+  complaintDiscouragingOptOut: 'I was discouraged from opting out by a representative of the company, or by the language of the privacy or opt out notice.'
+  complaintComplexOptOut: 'The opt out procedure was very complex or difficult to understand.'
+  complaintOptOutDisabled: 'When I tried to opt out, I was unable to do so.'
+  complaintOptedOutAbuse: 'Even though I opted out, I believe the company has improperly shared my personal financial information.'
+  complaintUnauthorizedAccess: 'I believe the company has allowed someone to gain unauthorized access to my personal financial information.'
+  complaintNoSafeguards: 'I believe the company has failed to establish adequate safeguards to protect my personal financial information from unauthorized electronic access.'
+  complaintOther: Other.

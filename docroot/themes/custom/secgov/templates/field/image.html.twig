@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+{% if style_name not in ['data_highlight_data_set'] %}
+  <img{{ attributes }} />
+{% else %}
+  <span class="data-highlights-featured-graphic" style="background-image: url('{{ attributes.src }}')"></span>
+{% endif %}

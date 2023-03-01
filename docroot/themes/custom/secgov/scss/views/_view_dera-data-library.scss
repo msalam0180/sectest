@@ -1,0 +1,54 @@
+.dera-data-library {
+
+  margin: 2em 0;
+
+  .item-list {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 1rem;
+
+      .library-row {
+        text-align: center;
+        display: grid;
+        grid-template-rows: 1fr;
+
+        .views-field-field-display-title {
+          display: grid;
+
+          .field-content {
+            display: grid;
+          }
+
+          a {
+            align-items: center;
+            background-color: $navy;
+            color: $white;
+            cursor: pointer;
+            display: grid;
+            font-size: 0.975em;
+            font-weight: bold;
+            padding: 1rem;
+
+            &:hover {
+              background-color: $azure;
+              text-decoration: none;
+            }
+
+          }
+        }
+
+        .last-updated {
+          font-size: 12px;
+          background-color: $mist;
+          color: #101F36;
+          padding: 4px 0;
+
+          @include breakpoint('small') {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+}

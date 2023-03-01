@@ -1,0 +1,109 @@
+id: apcomments
+label: Import of Administrative Proceeding Comment Forms from AWS content
+migration_group: aws
+migration_tags:
+  - aws
+  - ap
+source:
+  plugin: csv
+  path: public://migration/administrative_proceedings.csv
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: id
+    1:
+      name: releaseurl
+      label: 'Release URL'
+    2:
+      name: date
+      label: 'Date'
+    3:
+      name: respondents
+      label: 'Respondents'
+  constants:
+    delimiter: '/'
+    import_destination: 'public://litigation/admin/'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+
+  type:
+    plugin: default_value
+    default_value: customized_comment_form
+
+
+  title: id
+
+  field_display_title: id
+
+  field_primary_division_office:
+    plugin: default_value
+    default_value: 39
+
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: 'America/New_York'
+    to_format: 'U'
+
+  changed: '@created'
+
+  publish_year:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: 'America/New_York'
+    to_format: 'Y'
+
+  filename:
+    plugin: end
+    source: releaseurl
+    delimiter: "/"
+
+  internal_path:
+    -
+      plugin: concat
+      source:
+        - constants/import_destination
+        - '@publish_year'
+        - constants/delimiter
+        - '@filename'
+    -
+      plugin: real_path
+
+  file_number:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - '.htm'
+      source: releaseurl
+    -
+      plugin: get_file_number
+      source: releaseurl
+
+  field_file_number/target_id:
+    -
+      plugin: skip_on_missing
+      source: respondents
+      missing: 'Submit Comments on '
+      method: row
+    -
+      plugin: submit_comments
+      source: '@file_number'
+    -
+      plugin: entity_lookup
+      access_check: false
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: rulemaking_index
+
+
+destination:
+  plugin: 'entity:node'

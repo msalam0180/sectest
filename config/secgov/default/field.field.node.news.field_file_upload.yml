@@ -1,0 +1,29 @@
+uuid: 5cf58bca-96ab-4049-8d10-0c66c1c3e0fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_upload
+    - node.type.news
+  module:
+    - file
+_core:
+  default_config_hash: yhUou5DS-GBfnPggmb-l4P3WpjDm7ZYqqqWUM5J_fPE
+id: node.news.field_file_upload
+field_name: field_file_upload
+entity_type: node
+bundle: news
+label: 'File Upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'asx avi css csv doc docx gif h htm html idx iff jpg js json map midi mov mp3 mp4 mpg pdf png ppt rss rtf sdp shtml smi txt wav wma wmv xfd xls xlsx xml xsd xsl xslt zip'
+  max_filesize: ''
+  description_field: true
+field_type: file

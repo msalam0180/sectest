@@ -1,0 +1,71 @@
+// Uncomment in "/themes/custom/uswdssec/source/00-config/_index.scss" to visualize breakpoints
+
+body::after {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+
+  @include breakpoint-max(gesso-breakpoint(mobile), true) {
+    background-color: gesso-uswds(success, light);
+    content: 'mobile and down';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(mobile),
+    gesso-breakpoint(mobile-lg),
+    true
+  ) {
+    background-color: gesso-uswds(primary, light);
+    content: 'mobile - mobile-lg';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(mobile-lg),
+    gesso-breakpoint(tablet),
+    true
+  ) {
+    background-color: gesso-uswds(secondary, light);
+    content: 'mobile-lg - tablet';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(tablet),
+    gesso-breakpoint(tablet-lg),
+    true
+  ) {
+    background-color: gesso-uswds(accent-warm, light);
+    content: 'tablet - tablet-lg';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(tablet-lg),
+    gesso-breakpoint(desktop),
+    true
+  ) {
+    background-color: gesso-uswds(accent-cool, light);
+    content: 'tablet-lg - desktop';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(desktop),
+    gesso-breakpoint(desktop-lg),
+    true
+  ) {
+    background-color: gesso-uswds(error, light);
+    content: 'desktop - desktop-lg';
+  }
+
+  @include breakpoint-min-max(
+    gesso-breakpoint(desktop-lg),
+    gesso-breakpoint(widescreen),
+    true
+  ) {
+    background-color: gesso-uswds(warning, light);
+    content: 'desktop-lg - widescreen';
+  }
+
+  @include breakpoint-min(gesso-breakpoint(widescreen)) {
+    background-color: gesso-uswds(warning, light);
+    content: 'widescreen and up';
+  }
+}

@@ -1,0 +1,32 @@
+uuid: 20aac72f-4c9d-4e5a-8542-39efc98705ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.filings-menu
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: IngTzdI4_0gFJPYbY8NU-1bxNqpswntCQYTf84NncWk
+id: filingsmenu
+theme: secgov
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'system_menu_block:filings-menu'
+settings:
+  id: 'system_menu_block:filings-menu'
+  label: 'Filings Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/edgar\r\n/edgar/*\r\n/forms"

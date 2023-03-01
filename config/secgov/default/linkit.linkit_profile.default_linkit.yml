@@ -1,0 +1,54 @@
+uuid: 6fefc968-47e1-47f6-8996-1d7080144251
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gxnM4prFO_9RjSVxl0iNJ0KyXt2mY6bJF0xurLU4svY
+label: 'Default Linkit'
+id: default_linkit
+description: 'Default profile for linkit '
+matchers:
+  1bad9f67-ef41-42ae-ad32-0eb0d13da758:
+    id: 'entity:node'
+    uuid: 1bad9f67-ef41-42ae-ad32-0eb0d13da758
+    settings:
+      metadata: '[node:url:relative]'
+      bundles:
+        article_type: article_type
+        ba: ba
+        data_distribution: data_distribution
+        data_visualization: data_visualization
+        event: event
+        govdelivery_form: govdelivery_form
+        landing_page: landing_page
+        link: link
+        news: news
+        news_type: news_type
+        page: page
+        secarticle: secarticle
+        secperson: secperson
+        sec_alert: sec_alert
+        sec_hero: sec_hero
+        spotlight: spotlight
+        webcast: webcast
+      group_by_bundle: true
+      substitution_type: canonical
+      limit: 100
+      include_unpublished: true
+      result_description: '[node:url:relative]'
+    weight: 0
+  627496c5-490e-47d5-a78d-0d88e90b4d70:
+    id: 'entity:media'
+    uuid: 627496c5-490e-47d5-a78d-0d88e90b4d70
+    settings:
+      metadata: 'Media Link'
+      bundles:
+        image_media: image_media
+        static_file: static_file
+        video_media: video_media
+      group_by_bundle: true
+      substitution_type: media
+      limit: 100
+    weight: 0

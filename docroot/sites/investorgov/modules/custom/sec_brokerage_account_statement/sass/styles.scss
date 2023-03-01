@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+
+
+@import "breakpoint";
+
+/* Import Sass mixins, variables, Compass modules, etc. */
+//@import "base/init";
+// @import "base/font-awesome/font-awesome";
+
+
+// @import "base/mixins"; [Added through init]
+@import "base/variables/colors";
+@import "base/typography";
+@import "base/mixins";
+@import "base/accesibility";
+@import "base/variables/breakpoints";
+
+/* Layout rules */
+
+/* Component (SMACSS module) rules */
+@import "components/main";
+@import "components/section";
+@import "components/interactive";
+@import "components/nav";
+
+
+// Optionally, add your own components here.
+@import "print";
+
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */

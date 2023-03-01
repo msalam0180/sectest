@@ -1,0 +1,32 @@
+uuid: 344667a9-dc71-4612-acf6-adea10f36cf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embed
+    - core.entity_view_mode.media.full
+    - core.entity_view_mode.media.teaser
+    - core.entity_view_mode.media.thumbnail_title_teaser
+    - core.entity_view_mode.media.title_and_date
+    - core.entity_view_mode.media.title_only
+  module:
+    - entity_embed
+    - media
+label: 'Media Embed'
+id: media_embed
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles: {  }
+  display_plugins:
+    - 'entity_reference:media_thumbnail'
+    - 'view_mode:media.embed'
+    - 'view_mode:media.full'
+    - 'view_mode:media.teaser'
+    - 'view_mode:media.thumbnail_title_teaser'
+    - 'view_mode:media.title_and_date'
+    - 'view_mode:media.title_only'
+  entity_browser: ''
+  entity_browser_settings: {  }
+icon: {  }
+icon_uuid: null

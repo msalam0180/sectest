@@ -1,0 +1,10 @@
+uuid: 517cf5a1-8cac-47a0-917c-96db3af25204
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AsIfIsAhXLdJh34Ou5Hjs8zSYyxjZi0dXuH0l05P1Vs
+id: omwi
+label: OMWI
+description: 'Office of Minority and Women Inclusion'
+locked: false

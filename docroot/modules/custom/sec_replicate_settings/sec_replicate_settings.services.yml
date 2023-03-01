@@ -1,0 +1,5 @@
+services:
+  sec_replicate_settings.replicate_node:
+    class: Drupal\sec_replicate_settings\EventSubscriber\SecReplicateSettingsNode
+    tags:
+      - { name: event_subscriber }

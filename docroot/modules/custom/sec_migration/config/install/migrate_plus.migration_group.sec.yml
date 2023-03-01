@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: sec
+label: SEC
+description: 'Import of WCM Content from SEC'
+source_type: json
+module: null
+shared_configuration: null

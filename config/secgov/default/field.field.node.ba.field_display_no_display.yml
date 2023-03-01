@@ -1,0 +1,23 @@
+uuid: 9df617da-f88a-408b-8931-bce11ad94235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_no_display
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: e3VuOjc0Vbf6jkzEztlJkZrpbDCtZF9ON3Npyv2MiZc
+id: node.ba.field_display_no_display
+field_name: field_display_no_display
+entity_type: node
+bundle: ba
+label: 'Reason Unpublished'
+description: 'If you are not going to publish this defendant, please give a reason.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

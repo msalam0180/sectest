@@ -1,0 +1,36 @@
+uuid: a73cd453-a5dd-42d5-87c5-141f8842959e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.glossary_term.body
+    - field.field.node.glossary_term.field_additional_information
+    - field.field.node.glossary_term.field_glossary_category
+    - node.type.glossary_term
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+    sections: {  }
+id: node.glossary_term.search_result
+targetEntityType: node
+bundle: glossary_term
+mode: search_result
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_additional_information: true
+  field_glossary_category: true
+  links: true

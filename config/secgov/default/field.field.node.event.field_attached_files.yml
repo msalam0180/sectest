@@ -1,0 +1,29 @@
+uuid: 47a1eacb-71ef-4379-a3c5-adff97294606
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attached_files
+    - node.type.event
+  module:
+    - file
+_core:
+  default_config_hash: QAGlUdGRLUEpCGoQSnQH0Rmrsx1Qpgq4RI1opC3xNjo
+id: node.event.field_attached_files
+field_name: field_attached_files
+entity_type: node
+bundle: event
+label: 'Attached Files'
+description: 'The first file attached here will display in the teaser view of the event.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'txt doc pdf xls docx xlsx'
+  max_filesize: ''
+  description_field: true
+field_type: file

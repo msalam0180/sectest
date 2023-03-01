@@ -1,0 +1,30 @@
+uuid: 0f154f61-2e41-4e01-b809-bb0aace83109
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_position_category
+field_name: field_position_category
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Chair
+      label: Chair
+    -
+      value: Commissioner
+      label: Commissioner
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

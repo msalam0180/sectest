@@ -1,0 +1,14 @@
+uuid: 4597a18c-e92d-4924-8f76-93583800a3d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qctc_tester
+  module:
+    - user
+id: user_add_role_action.qctc_tester
+label: 'Add the QCTC Tester role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: qctc_tester

@@ -1,0 +1,19 @@
+uuid: dbc19a5d-9aa3-4819-b4fa-c7884f5da3b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternate_name
+    - node.type.publication
+id: node.publication.field_alternate_name
+field_name: field_alternate_name
+entity_type: node
+bundle: publication
+label: 'Alternate Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,40 @@
+//
+// FOIA: LEFT COLUMN BLOCK
+// 
+// NOTES: Used on the "The Office of FOIA Services" Landing Page
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+// TODO: Page uses image buttons... should change to CSS buttons
+// TODO: Make responsive
+
+.foia-buttons {
+  display: table;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.5em;
+}
+
+.request-link {
+  margin-right: -1em;
+}
+
+.appeal-link {
+  margin-left: -1em;
+}
+
+.pal-link {
+  margin-left: -20em;
+}
+
+.foia-pal-btn {
+  margin-top: 20px;
+}
+
+.pal-txt {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: -27em;
+  font-size: 75%;
+  line-height: 1.3;
+}

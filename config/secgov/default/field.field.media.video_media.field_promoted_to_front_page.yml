@@ -1,0 +1,23 @@
+uuid: 3e13426a-3576-4c48-8156-ed37e2cd9639
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_promoted_to_front_page
+    - media.type.video_media
+id: media.video_media.field_promoted_to_front_page
+field_name: field_promoted_to_front_page
+entity_type: media
+bundle: video_media
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

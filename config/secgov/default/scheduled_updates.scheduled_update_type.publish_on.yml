@@ -1,0 +1,19 @@
+uuid: 786ab185-5e70-42ac-bdc8-2b0f21b739cb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PRLD8XrYhAHxzuahp83uq5mcTcvD7pvabZTJ5uYiU3c
+id: publish_on
+label: 'Publish On'
+update_entity_type: node
+update_types_supported:
+  - embedded
+field_map:
+  field_moderation_state: moderation_state
+update_runner:
+  id: latest_revision
+  invalid_update_behavior: ARCHIVE
+  after_run: DELETE
+  create_revisions: 'YES'
+  update_user: USER_UPDATE_OWNER

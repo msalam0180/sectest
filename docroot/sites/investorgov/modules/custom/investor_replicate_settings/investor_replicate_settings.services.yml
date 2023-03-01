@@ -1,0 +1,5 @@
+services:
+  investor_replicate_settings.replicate_node:
+    class: Drupal\investor_replicate_settings\EventSubscriber\InvestorReplicateSettingsNode
+    tags:
+      - { name: event_subscriber }

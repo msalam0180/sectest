@@ -1,0 +1,17 @@
+uuid: 788bde37-323d-4364-bd9e-0b7f959acf45
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: c3xSC_-qZAJl2gzpJGLKh4hGIVfogt2ouYQ7BDjb1Bs
+name: featured_video_image
+label: 'Featured Video Image (320x207)'
+effects:
+  31294536-864d-474c-a35a-9d3904ef1814:
+    uuid: 31294536-864d-474c-a35a-9d3904ef1814
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 207
+      anchor: center-center

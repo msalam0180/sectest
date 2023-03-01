@@ -1,0 +1,93 @@
+uuid: 98cccd28-f23d-4231-88f7-5464ff2a3aaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.landing.default
+    - core.entity_view_display.node.news.full
+    - filter.format.full_html
+    - media.type.file
+    - node.type.glossary_term
+    - node.type.landing
+    - taxonomy.vocabulary.glossary_term_categories
+    - taxonomy.vocabulary.icons
+    - taxonomy.vocabulary.news_types
+    - taxonomy.vocabulary.publication_options
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.types_of_fraud
+    - workflows.workflow.editorial
+  module:
+    - block
+    - book
+    - content_moderation
+    - contextual
+    - entity_browser
+    - environment_indicator
+    - filter
+    - layout_builder
+    - media
+    - node
+    - redirect
+    - replicate_ui
+    - system
+    - taxonomy
+    - toolbar
+id: site_builder
+label: 'Site Builder'
+weight: -5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access environment indicator'
+  - 'access gallery_browser entity browser pages'
+  - 'access site reports'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'add content to books'
+  - 'administer blocks'
+  - 'administer book outlines'
+  - 'administer entity browsers'
+  - 'administer menu'
+  - 'administer redirects'
+  - 'administer users'
+  - 'configure any layout'
+  - 'configure editable landing node layout overrides'
+  - 'configure editable news node layout overrides'
+  - 'create and edit custom blocks'
+  - 'create glossary_term content'
+  - 'create new books'
+  - 'create terms in glossary_term_categories'
+  - 'create terms in icons'
+  - 'create terms in news_types'
+  - 'create terms in publication_options'
+  - 'create terms in tags'
+  - 'create terms in types_of_fraud'
+  - 'delete any glossary_term content'
+  - 'delete any landing content'
+  - 'delete own glossary_term content'
+  - 'delete terms in glossary_term_categories'
+  - 'delete terms in icons'
+  - 'delete terms in news_types'
+  - 'delete terms in publication_options'
+  - 'delete terms in tags'
+  - 'delete terms in types_of_fraud'
+  - 'edit any glossary_term content'
+  - 'edit own file media'
+  - 'edit own glossary_term content'
+  - 'edit terms in glossary_term_categories'
+  - 'edit terms in icons'
+  - 'edit terms in news_types'
+  - 'edit terms in publication_options'
+  - 'edit terms in tags'
+  - 'edit terms in types_of_fraud'
+  - 'replicate entities'
+  - 'revert glossary_term revisions'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_for_review'
+  - 'use text format full_html'
+  - 'view glossary_term revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'

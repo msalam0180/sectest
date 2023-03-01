@@ -1,0 +1,25 @@
+uuid: a197483f-707b-4db2-bc0c-b2977d92745b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_age_in_document
+    - node.type.ba
+_core:
+  default_config_hash: HqF58ThZS7weKZ9kB3hemGJ53__Wh5AhUzhd4_9KgKg
+id: node.ba.field_age_in_document
+field_name: field_age_in_document
+entity_type: node
+bundle: ba
+label: 'Age in Document'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

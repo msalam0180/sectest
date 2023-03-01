@@ -1,0 +1,61 @@
+<?php
+/**
+ * @file
+* contains sec_news module.
+*/
+/**
+ * Implements hook_token_info().
+*/
+function sec_news_token_info(){
+  $types['sec'] = [
+      'name' => t("SEC"),
+      'description' => t("Custom token types defined for SEC."),
+  ];
+  // Site-wide global token.
+  $sectokens['ruling_comment'] = [
+      'name' => t("Ruling Comment Snippet"),
+      'description' => t("Handles Press Release ruling comment snippet."),
+  ];
+  return [
+      'types' => $types,
+      'tokens' => [
+          'sec' => $sectokens,
+      ],
+  ];
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function sec_news_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+  $token_service = \Drupal::token();
+
+  $url_options = ['absolute' => TRUE];
+  if (isset($options['langcode'])) {
+    $url_options['language'] = \Drupal::languageManager()->getLanguage($options['langcode']);
+    $langcode = $options['langcode'];
+  }
+  else {
+    $langcode = NULL;
+  }
+  $replacements = [];
+
+  if ($type == 'sec') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'ruling_comment':
+          $rcTitle = $data['node']->field_ruling_comment_title->value;
+          $rcNumber = $data['node']->field_ruling_comment_file_number->value;
+          if (!empty($rcNumber) && !empty($rcTitle)) {
+            $config = \Drupal::config('system.site');
+            $bubbleable_metadata->addCacheableDependency($config);
+            $ruling_comment = \Drupal\Core\Render\Markup::create("<form id='ruling-comment-form' method='POST' action='https://www.sec.gov/cgi-bin/ruling-comments'><input type='hidden' name='ruling' value='".$rcNumber."'><input type='hidden' name='action' value='Show_Form'><input type='hidden' name='rule_path' value='/comments/".$rcNumber."'><input type='hidden' name='file_num' value='".$rcNumber."'><input type='hidden' name='title' value='".$rcTitle."'><p><em>Electronic submissions</em>:</p><p>Use the SEC&rsquo;s Internet&nbsp;<a href='#' onclick='document.getElementById(\"ruling-comment-form\").submit();'>submission form</a>&nbsp;or send an e-mail to&nbsp;<a href='mailto:rule-comments@sec.gov'>rule-comments@sec.gov</a>.</p><p><em>Paper submissions</em>:</p><p>Send paper submissions in triplicate to Brent Fields, Secretary, Securities and Exchange Commission, 100 F Street, NE, Washington, DC 20549-1090.</p><p>All submissions should refer to File Number ".$rcNumber.", and the file number should be included on the subject line if e-mail is used.</p></form>");
+            $replacements[$original] = $ruling_comment; // for testing purpose set value as site name
+            break;
+          }
+
+      }
+    }
+  }
+  return $replacements;
+}

@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Enable geofield and leaflet modules. Import new configuration. Update events so that geofield data can be populated for existing events
+ */
+function sec_event_update_8001(&$sandbox) {
+	// Enable modules
+	\Drupal::service('module_installer')->install(['leaflet']);
+	\Drupal::service('module_installer')->install(['geocoder']);
+	\Drupal::service('module_installer')->install(['geocoder_field']);
+	\Drupal::service('module_installer')->install(['geocoder_address']);
+	\Drupal::service('module_installer')->install(['geocoder_geofield']);
+	\Drupal::service('module_installer')->install(['geofield']);
+	
+	// Import new config
+	$config_path = drupal_get_path('module', 'sec_event') . '/config/install';
+	$source = new FileStorage($config_path);
+	$config_storage = \Drupal::service('config.storage');
+	$config_storage->write('field.storage.node.field_geofield', $source->read('field.storage.node.field_geofield'));
+	$config_storage->write('field.field.node.event.field_geofield', $source->read('field.field.node.event.field_geofield'));
+	$config_storage->write('core.entity_form_display.node.event.default', $source->read('core.entity_form_display.node.event.default'));
+	$config_storage->write('core.entity_view_display.node.event.default', $source->read('core.entity_view_display.node.event.default'));
+}
+
+/**
+ * Update events so that geofield data can be populated for existing events.
+ * This was originally inside sec_event_update_8001() however drush entup needs to execute
+ * before node save will actually update the geofield. Putting into separate function to call post drush entup.
+ */
+function sec_event_events_update() {
+	// Save existing events so that new geofield data is stored
+	$nids = \Drupal::entityQuery('node')->condition('type', 'event')->execute();
+	$nodes = Node::loadMultiple($nids);
+	foreach ($nodes as $node) {
+		$node->save();
+	}
+}

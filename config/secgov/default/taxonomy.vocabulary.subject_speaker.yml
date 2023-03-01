@@ -1,0 +1,10 @@
+uuid: d165a1c3-583c-48db-be19-9f2afeffdf49
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ZONi-TK6XIjKF4oubCv77oH_6cknrYOuHVuxwXBWxQk
+name: Subject/Speaker
+vid: subject_speaker
+description: ''
+weight: 0

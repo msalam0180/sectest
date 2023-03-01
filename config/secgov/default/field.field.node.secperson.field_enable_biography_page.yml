@@ -1,0 +1,25 @@
+uuid: 1b89325c-7af5-4d79-8723-d843e3926b37
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_enable_biography_page
+    - node.type.secperson
+_core:
+  default_config_hash: vJnzBfpaJga8vJQmIsjtMZSU3eyCDkFVOxEyce2vRQQ
+id: node.secperson.field_enable_biography_page
+field_name: field_enable_biography_page
+entity_type: node
+bundle: secperson
+label: 'Enable Biography Page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Enable Biography Page'
+  off_label: 'Enable Biography Page'
+field_type: boolean

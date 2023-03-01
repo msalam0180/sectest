@@ -1,0 +1,118 @@
+//
+// ERROR PAGES
+// Styles for the error pages
+// 
+// NOTES: These classes do not seem to appear in WWW. It is something related to akamai
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+#page.basic-page {
+
+  /** Error Pages */
+  #error-page-content {
+    @include span(8);
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:after {
+      clear: both;
+      content: ' ';
+      display: block;
+    }
+
+    @include breakpoint('small','portrait'){
+      margin: 0;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    #page-title {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      position: relative;
+
+      h1 {
+        border-bottom: none;
+        color: $navy;
+        margin-bottom: 5px;
+        padding-bottom: 0;
+        text-align: center;
+      }
+    }
+    h3 {
+      color: $deep-sea;
+    }
+    h3, p {
+      clear: both;
+      margin-bottom: 20px;
+    }
+
+    .main {
+      @include span(12);
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      min-height: 380px;
+      text-align:left;
+    }
+  }
+
+  .error-page {
+
+    // #page-title {
+    //   @include span(8);
+    //   display: block;
+    //   float: none;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    //   padding: 0;
+
+    //   h1 {
+    //     @include raleway;
+    //     border-bottom: 1px solid $border-color;
+    //     width: 100% !important;
+    //     margin-bottom: 18px;
+    //     font-size: 26px;
+    //     font-weight: 600;
+    //     color: $dark-navy;
+    //     padding-bottom: 18px;
+    //     text-align: center;
+    //   }
+    // }
+    .main-content {
+      clear: both;
+      display:block;
+      padding: 0 0 75px;
+    }
+
+    .main {
+      @include span(8);
+      clear: both;
+      display: block;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      padding-bottom: 75px;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: none;
+        padding-bottom: 10px;
+    }
+    ul { list-style: none;}
+    li {
+      margin: 4px 0;
+    }
+
+    .article-date {
+      float: right;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+id: sectags
+label: JSON import of Taxonomy Tags
+migration_group: sec
+migration_tags:
+  - news
+  - sectags
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/sectags.json 
+#  urls: http://secgov.dev.dd:8083/sites/default/files/migration/converted/sectags.json
+
+  fields: 
+    -
+      name: id
+      label: 'Identifier'
+      selector: id
+    -
+      name: tag
+      label: 'Tag'
+      selector: tag
+  ids:
+    id:
+      type: string
+process:
+  vid:
+    plugin: default_value
+    default_value: tags
+  name: tag
+destination:
+  plugin: entity:taxonomy_term

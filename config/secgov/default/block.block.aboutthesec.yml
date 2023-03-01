@@ -1,0 +1,25 @@
+uuid: 44ddeb3c-6f2b-4be1-8ff1-324837cf7b63
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about-the-sec
+  module:
+    - system
+  theme:
+    - secgov
+id: aboutthesec
+theme: secgov
+region: footer
+weight: -36
+provider: null
+plugin: 'system_menu_block:about-the-sec'
+settings:
+  id: 'system_menu_block:about-the-sec'
+  label: 'About The SEC'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,88 @@
+//
+// Card Button
+// Site-wide styles and classes for Large buttons that contain an heading, an img, and a description
+// Markup
+  // <div class='card_btn-group'>
+  //   <a href='/' class='card_btn'>
+  //     <h2 class='card_btn-title'>The Title of The button</h2>
+  //     <div class='card_btn-img'><img src='/themes/custom/secgov/images/dt_images/image.png' alt=''></div>
+  //     <div class='card_btn-description'>What is the text of a buttons that I need to be that text</div>
+  //   </a>
+  //   (repeat above)
+  // </div>
+// --------------------------------------------------
+
+$card_btn-breakpoint: medium;
+$card_btn-color: $deep-sea;
+$card_btn-color-bd: #e6e6e6;
+$card_btn-color-bg: #e7f1ff;
+$card_btn-color-bg: #e8ecf2;
+$card_btn-internal-spacing: .5rem;
+
+// Layout
+.card_btn-group {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .8rem;
+  grid-auto-rows: 1fr;
+
+  @include breakpoint($card_btn-breakpoint) {
+    grid-template-columns: repeat(3 ,1fr);
+    &.card_btn-group--2 {
+      grid-template-columns: repeat(2 ,1fr);
+    }
+    &.card_btn-group--4 {
+      grid-template-columns: repeat(4 ,1fr);
+    }
+    &.card_btn-group--5 {
+      grid-template-columns: repeat(5 ,1fr);
+    }
+    &.card_btn-group--6 {
+      grid-template-columns: repeat(6 ,1fr);
+    }
+  }
+}
+
+.card_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+
+  border: 2px solid $card_btn-color-bd;
+  // border-radius: .25rem;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  
+  &:hover, &:focus {
+    background-color: $card_btn-color-bg;
+    text-decoration: none !important;
+  }
+
+  .card_btn-title {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .card_btn-img {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .card_btn-description {
+    // TODO: Need Color
+    line-height: 1rem;
+    color: #373737;
+  }
+
+}

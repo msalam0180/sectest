@@ -1,0 +1,22 @@
+uuid: aa23911a-d24f-4b53-a3ba-af86afc1ad7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: trading_suspensions
+label: 'Release Nodes'
+type: 'canonical_entities:node'
+pattern: '/[node:field_release_type:entity:field_release_path]/[node:title]'
+selection_criteria:
+  5cabd05c-59a7-4582-9149-8f28f2b89f05:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5cabd05c-59a7-4582-9149-8f28f2b89f05
+    context_mapping:
+      node: node
+    bundles:
+      release: release
+selection_logic: and
+weight: 5
+relationships: {  }

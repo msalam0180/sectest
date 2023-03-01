@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Creates the required block for About the IDD.
+ */
+function sec_ba_update_8001() {
+  $default_content = [
+    // Keyed by entity type.
+    'block_content' => [
+        // Then by UUID.
+        'b990e653-c29a-48d8-b90b-70e2676f6c6e' => [
+          'info' => 'About the IDD',
+          'type' => 'basic'
+        ],
+      ],
+    ];
+  my_install_profile_create_content($default_content);
+}
+
+/**
+ * Creates install content.
+ *
+ * @param array $content
+ *   Content keyed by entity-type and UUID.
+ */
+function my_install_profile_create_content(array $content) {
+  foreach ($content as $entity_type_id => $items) {
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type_id);
+    foreach ($items as $uuid => $item) {
+      $entity = $storage->create($item + ['uuid' => $uuid]);
+      $entity->save();
+    }
+  }
+}

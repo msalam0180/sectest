@@ -1,0 +1,100 @@
+uuid: 320091c5-1480-49a5-b6a9-501cbf79d57b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.icons.field_icon
+    - taxonomy.vocabulary.icons
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          98100844-733d-4c54-8131-d66ac4646e0f:
+            uuid: 98100844-733d-4c54-8131-d66ac4646e0f
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:icons:description'
+              label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          e2072585-fbf3-43ef-b0dd-3ad8782a1fda:
+            uuid: e2072585-fbf3-43ef-b0dd-3ad8782a1fda
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:icons:field_icon'
+              label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          025aa093-65fc-41f7-b2b4-033fc1c2028e:
+            uuid: 025aa093-65fc-41f7-b2b4-033fc1c2028e
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:icons:field_icon'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: taxonomy_term.icons.default
+targetEntityType: taxonomy_term
+bundle: icons
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

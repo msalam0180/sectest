@@ -1,0 +1,6 @@
+views.filter.sec_newsType_filter:
+    type: views_filter
+    label: 'Customised news type'
+views.filter_value.sec_newsType_filter:
+    type: views.filter_value.in_operator
+    label: 'Customised news type selector'

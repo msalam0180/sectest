@@ -1,0 +1,23 @@
+//
+// CONTENT TYPE: SPOTLIGHT - DETAILS PAGE
+// Styles ONLY apply to spotlight nodes
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+article.node--type-spotlight {
+  .block-views-blockfeatured-spotlights-block-1 {
+    float: left;
+  }
+
+  .body {
+    display: table;
+  }
+
+  h2:after{content:'' !important}
+
+  .featured_spotlights-block_1 {
+    float:left;
+  }
+}

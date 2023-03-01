@@ -1,0 +1,5 @@
+customizations:
+  version: 1.1
+  css:
+    theme:
+      css/releases.css: {}

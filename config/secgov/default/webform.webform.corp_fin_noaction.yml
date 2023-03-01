@@ -1,0 +1,440 @@
+uuid: a058a4dc-d669-497c-b3f6-c571373b9ee4
+langcode: en
+status: open
+dependencies:
+  module:
+    - sec_webform
+_core:
+  default_config_hash: PJswSAW8V07Px8mnru6Xm5plGsj_KZCNEndP0WGSorE
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: corp_fin_noaction
+title: 'Requests for No-Action, Interpretive, Exemptive, and Waiver Letters'
+description: ''
+category: ''
+elements: |-
+  header:
+    '#type': processed_text
+    '#text': |
+      <p>We welcome written requests for no-action, interpretive, exemptive and waiver letters relating to the areas of the federal securities laws that the Division administers and interprets. Please submit such requests through this webpage as instructed below.</p>
+
+      <ul>
+      	<li><strong>If you wish to submit a request for telephonic interpretive advice and other assistance, please do not submit the request through this form. &nbsp;Please complete an <a href="/forms/corp_fin_interpretive">online request</a> for telephonic assistance.</strong></li>
+      	<li><strong>If you wish to file an investor complaint, please do not submit the complaint through this form. Please use our online <a href="/tcr">Investor Complaint Form.</a></strong></li>
+      	<li><strong>Requests relating to shareholder proposals submitted under Exchange Act Rule 14a-8 should be sent to <a href="mailto:shareholderproposals@sec.gov">shareholderproposals@sec.gov</a>.</strong></li>
+      	<li><strong>For information relating to waivers of the disqualification or ineligible issuer provisions under the Securities Act or Exchange Act, please contact the Office of Enforcement Liaison at (202) 551-3420.</strong></li>
+      </ul>
+
+      <div class="stylized-box-1">
+      <ul>
+      	<li>Please provide your contact information and indicate whether you are submitting an initial or revised request.</li>
+      	<li>For assistance in preparing a request for a no-action, interpretive, exemptive and waiver letters, please refer to <a href="#general-information">General Information</a> below.</li>
+      	<li>For information about how to request confidential treatment under Rule 83, please refer to our <a href="/privacy.htm">Privacy Act Notice</a>.</li>
+      	<li>Please read our <a href="/privacy.htm">Privacy Act Notice</a> to learn about how we may use the information you send to us.</li>
+      </ul>
+      </div>
+
+      <p>For more information about submitting a request, please contact the relevant Division Office directly at the telephone number or email address listed in our <a href="/corpfin/contact/cf-contact-us.html">Contact Information</a> page.</p>
+    '#format': full_html
+  required_message:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  your_contact_information:
+    '#type': fieldset
+    '#title': 'Your Contact Information'
+    your_name:
+      '#type': textfield
+      '#title': 'Your name'
+      '#required': true
+    your_email_address:
+      '#type': email
+      '#title': 'Your Email Address'
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    your_phone_number:
+      '#type': tel
+      '#title': 'Your phone number'
+      '#required': true
+    best_time_of_day_eastern_us_time_to_reach_you_by_phone:
+      '#type': select
+      '#title': 'Best time of day (Eastern US time) to reach you by phone'
+      '#options':
+        Morning: Morning
+        Afternoon: Afternoon
+        Evening: Evening
+  type_of_request:
+    '#type': fieldset
+    '#title': 'Type of Request'
+    request_type:
+      '#type': checkboxes
+      '#title': 'To assist the staff, please select the type of request you are making'
+      '#options':
+        noactionrequest: 'No Action Request'
+        waiverrequest: 'Waiver Request'
+        exemptiverequest: 'Exemptive Request'
+        interpretiverequest: 'Interpretive Request'
+        unsure: 'Not Sure'
+      '#required': true
+  division_office_to_receive_your_request:
+    '#type': fieldset
+    '#title': 'Division Office to Receive Your Request'
+    to_assis_the_staff_please_direct_your_request_to_the_appropriate:
+      '#type': radios
+      '#title': 'To assist the staff, please direct your request to the appropriate Division Office in the list below.'
+      '#options':
+        occ: 'Office of Chief Counsel'
+        oca: 'Office of Chief Accountant'
+        oma: 'Office of Mergers and Acquisitions'
+        oicf: 'Office of International Corporate Finance'
+        osbp: 'Office of Small Business Policy'
+        osf: 'Office of Structured Finance'
+        unsure: 'Not Sure'
+  please_also_indicate_whether_this_is_an_initial_or_a_revised_sub:
+    '#type': radios
+    '#title': 'Please also indicate whether this is  an initial or a revised submission'
+    '#options':
+      Initial: Initial
+      Revised: 'Revised or Additional Material'
+    '#required': true
+  upload_your_request:
+    '#type': webform_document_file
+    '#title': 'Upload Your Request'
+    '#multiple': 5
+    '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Please wait for files to upload before submitting.</span>'
+    '#required': true
+    '#required_error': 'Please attach one or more files to your request.'
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  footer:
+    '#type': processed_text
+    '#text': |
+      <p id="general-information">General Information about no-action, interpretive, exemptive and waiver requests:</p>
+
+      <ul>
+      	<li>The staff&rsquo;s responses to no-action, interpretive, exemptive, or waiver requests are not rules, regulations, or statements of the Commission, and the Commission has neither approved nor disapproved the staff&#39;s responses or interpretations. Due to their informal nature, these responses are not necessarily binding on the staff, the Division of Corporation Finance or the Commission. Our responses do not constitute legal advice, for which you should consult with your own attorney. While the Division encourages written requests, the staff&#39;s responses to these requests may be given telephonically.</li>
+      	<li>Procedures for submitting requests. The Commission has specified certain procedures to be followed by persons submitting requests for no-action or interpretive letters. These procedures include:
+      	<ul>
+      		<li>The names of the company or companies and all other persons involved should be stated. Letters relating to unnamed companies or persons, or to hypothetical situations, will not be answered.</li>
+      		<li>Letters should clearly indicate whether there are specific timing concerns related to the request. While the staff will attempt to aid parties in meeting reasonable deadlines, note that, due to resource constraints, the staff may be unable to accommodate all requests for accelerated processing of the request.</li>
+      		<li>The requesting person should indicate why he or she thinks a problem or issues exists, his or her own opinion or views on the matter and the basis for such opinion or views.</li>
+      		<li>If a request for confidential treatment is made, this request and the basis therefore should be included in a separate letter and submitted with the request letter.</li>
+      	</ul>
+      	</li>
+      </ul>
+
+      <p>See <a href="https://www.sec.gov/rules/final/33-5127.pdf">Release No. 33-5127 (January 25, 1971)</a> and <a href="http://www.sec.gov/rules/other/33-6269.pdf">Release No. 33-6269</a> (Procedures Applicable to Requests for No-Action and Interpretive Letters) (December 5, 1980).</p>
+
+      <p>As a matter of policy, the Division does not provide informal advice on certain topics. For example, the Division does not answer hypothetical questions or questions relating to &quot;affiliate&quot; or &quot;control&quot; status. Some of these topics are discussed in <a href="http://www.sec.gov/rules/interp/33-6253.pdf">Release No. 33-6253</a> (Procedures Utilized by the Division of Corporation Finance for Rendering Informal Advice) (October 28, 1980).</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/corp_fin_noaction
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: completed
+  purge_days: 1
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users:
+      - 1
+    permissions: {  }
+  view_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -49
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: false
+    conditions: {  }
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: 'buenaventurac@SEC.GOV,fergusonm@SEC.GOV,balmakhtars@SEC.GOV,alshaero@SEC.GOV'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: |
+        A new request has been received. Please see the information regarding this request below:<br />
+        <br />
+        Contact Information:<br />
+        [webform_submission:values:your_name]<br />
+        [webform_submission:values:your_email_address]<br />
+        [webform_submission:values:your_phone_number]<br />
+        [webform_submission:values:best_time_of_day]<br />
+        <br />
+        Type of Request:<br />
+        [webform_submission:values:type_of_request_field]<br />
+        <br />
+        Division Office to Receive Your Request:<br />
+        [webform_submission:values:division_office_field]<br />
+        This is an initial or a revised submission:<br />
+        [webform_submission:values:please_also_indicate_whether_this_is_an_initial_or_a_revised_sub]<br />
+        <br />
+        Information About Your Request:<br />
+        <br />
+        General Subject Matter of Your Request:<br />
+        [webform_submission:values:general_subject_matter_of_your_request]<br />
+        <br />
+        Your Request:<br />
+        [webform_submission:values:your_request]<br />
+        <br />
+        Additional Information<br />
+        [webform_submission:values:additional_information]<br />
+        <br />
+        Uploaded Request: [webform_submission:values:upload_your_request]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  submit_to_wts:
+    id: 'Submit to WTS'
+    handler_id: submit_to_wts
+    label: 'Submit to WTS'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings: {  }
+variants: {  }

@@ -1,0 +1,211 @@
+uuid: 1bdc0687-04b6-4be7-8a8f-73dba6a91ff2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webcast.body
+    - field.field.node.webcast.field_date
+    - field.field.node.webcast.field_display_title
+    - field.field.node.webcast.field_division_office
+    - field.field.node.webcast.field_end_date
+    - field.field.node.webcast.field_media_id
+    - field.field.node.webcast.field_primary_division_office
+    - field.field.node.webcast.field_publish_date
+    - field.field.node.webcast.field_start_date
+    - field.field.node.webcast.field_upload_name
+    - field.field.node.webcast.field_webcast_config
+    - field.field.node.webcast.field_webcast_running_time
+    - field.field.node.webcast.field_webcast_source
+    - field.field.node.webcast.field_webcast_src
+    - field.field.node.webcast.field_webcast_state
+    - node.type.webcast
+  module:
+    - datetime
+    - path
+    - scheduler
+    - text
+    - workbench_moderation
+id: node.webcast.default
+targetEntityType: node
+bundle: webcast
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 11
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_display_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_division_office:
+    type: options_select
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_end_date:
+    type: datetime_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_media_id:
+    type: string_textfield
+    weight: 18
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_primary_division_office:
+    type: options_select
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_publish_date:
+    type: datetime_default
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_default
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_upload_name:
+    type: string_textfield
+    weight: 23
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webcast_config:
+    type: string_textarea
+    weight: 21
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_webcast_running_time:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_webcast_src:
+    type: options_select
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_webcast_state:
+    type: options_select
+    weight: 22
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  flag:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_webcast_source: true
+  status: true

@@ -1,0 +1,31 @@
+main {
+	background-color: #ffffff;
+	padding-top: 5rem;
+	max-width: 96rem;
+	margin: 0 auto;
+	position: relative;
+	overflow-x: hidden;
+	@include clearfix;
+}
+
+.content-container {
+	@include clearfix;
+	overflow: hidden;
+	position: relative;
+	height: 500px;
+	width: 100%;
+}
+
+.col{
+	display:inline-block;
+	width:50%;
+	float:left;
+	@include breakpoint($mobile) {
+      width: 100%;
+  }
+}
+
+
+.cf {
+	clear: both;
+}

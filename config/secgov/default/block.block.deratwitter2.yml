@@ -1,0 +1,32 @@
+uuid: 8af737ee-8ad0-4c4b-affe-2f8536d9f49f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:177bbf3a-1507-46d7-8288-b17f11b922b1'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - secgov
+id: deratwitter2
+theme: secgov
+region: sidebar_second
+weight: -29
+provider: null
+plugin: 'block_content:177bbf3a-1507-46d7-8288-b17f11b922b1'
+settings:
+  id: 'block_content:177bbf3a-1507-46d7-8288-b17f11b922b1'
+  label: 'DERA: Twitter2'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:block_content':
+    id: 'entity_bundle:block_content'
+    negate: false
+    context_mapping: {  }
+    bundles:
+      basic: basic

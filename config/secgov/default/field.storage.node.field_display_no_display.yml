@@ -1,0 +1,32 @@
+uuid: 6a27b5c3-e69d-464d-99f7-89d087a9ce99
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: T0IHiyZNp8bF155KKLG0Gdu6zKeOHf9WZ9bjtvDE16g
+id: node.field_display_no_display
+field_name: field_display_no_display
+entity_type: node
+type: list_float
+settings:
+  allowed_values:
+    -
+      value: !!float 0
+      label: Pending
+    -
+      value: !!float 1
+      label: Loss
+    -
+      value: !!float 2
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

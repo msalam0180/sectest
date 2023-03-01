@@ -1,0 +1,32 @@
+uuid: c2e1620b-1e81-441c-8a58-cdae9617e3a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ogc
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: LeVvPjOWD449iOjB9KyA8Y9shro2qfprtwgLmORAFOk
+id: ogc
+theme: secgov
+region: sidebar_first
+weight: -23
+provider: null
+plugin: 'system_menu_block:ogc'
+settings:
+  id: 'system_menu_block:ogc'
+  label: OGC
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/ogc\r\n/ogc/*"

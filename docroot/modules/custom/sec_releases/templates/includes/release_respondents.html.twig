@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Status template (can be used by any type of content as long as the vars are passed)
+ *
+ * Available Vars
+ * respondent - respondent link (required)
+ * release_number - release number field
+ * see_also - see also field (within the view, use Formatter: rendered entity, View Mode: Respondents See Also Files)
+ * comments_due_date - date field for when comments are due
+ * comments_due_text - text field for when comments are due (only displays if there is no comments_due_date)
+ * comments - field_submit_comments
+
+Example Template Call:
+{{
+  include('@sec_releases/includes/release_respondents.html.twig', {
+  'respondent': nothing,
+  'release_number': field_release_number,
+  'see_also': field_see_also,
+  'comments_due_date': field_comments_due_date,
+  'comments_due_text': field_comments_notice,
+  'comments_received': field_comments_received,
+  'submit_comments': field_submit_comments
+  })
+}}
+#}
+{% set comments_due = comments_due_date ? comments_due_date : comments_due_text %}
+
+{% if respondent %}
+  <div class="view-table_subfield view-table_subfield_respondent">
+    <span class="view-table_subfield_value">{{ respondent }}</span>
+  </div>
+{% endif %}
+{% if release_number %}
+  <div class="view-table_subfield view-table_subfield_release_number">
+    <span class="view-table_subfield_label">Release No.</span>
+    <span class="view-table_subfield_value">{{ release_number }}</span>
+  </div>
+{% endif %}
+{% if see_also %}
+  <div class="view-table_subfield view-table_subfield_see_also">
+    <span class="view-table_subfield_label">See Also: </span>
+    <span class="view-table_subfield_value">{{ see_also }}</span>
+  </div>
+{% endif %}
+{% if comments_due %}
+  <div class="view-table_subfield view-table_subfield_comments_due">
+    <span class="view-table_subfield_label">Comments Due: </span>
+    <span class="view-table_subfield_value">{{ comments_due }}</span>
+  </div>
+{% endif %}
+{% if comments_received %}
+	<div class="view-table_subfield view-table_subfield_comments_received">
+    <span class="view-table_subfield_label">Comments Received: </span>
+		<span class="view-table_subfield_value">{{ comments_received }}</span>
+	</div>
+{% endif %}
+{% if submit_comments %}
+  <div class="view-table_subfield view-table_subfield_submit_comments">
+    <span class="view-table_subfield_label">Submit Comments on:</span>
+    <span class="view-table_subfield_value">{{ submit_comments }}</span>
+  </div>
+{% endif %}

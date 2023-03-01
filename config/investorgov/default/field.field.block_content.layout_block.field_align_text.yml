@@ -1,0 +1,23 @@
+uuid: ebaba3c9-8e6c-4dc9-9eea-f00d41169cc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.layout_block
+    - field.storage.block_content.field_align_text
+  module:
+    - options
+id: block_content.layout_block.field_align_text
+field_name: field_align_text
+entity_type: block_content
+bundle: layout_block
+label: 'Align Text'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: center
+default_value_callback: ''
+settings: {  }
+field_type: list_string

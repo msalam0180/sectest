@@ -1,0 +1,23 @@
+// @file
+// Component: c-digitalgovglobalsearch
+
+.usa-nav.is-visible .smart-search-entity-hints {
+  position: relative !important;
+  right: initial !important;
+  top: 0 !important;
+}
+
+.usa-nav.is-visible .usa-search[role='search'],
+.usa-nav.is-visible .usa-search[role='search'] > div,
+.usa-nav.is-visible .usa-search [role='search'] {
+  flex-wrap: wrap;
+}
+
+.c-digitalgovglobalsearch .smart-search-entity-hints {
+  font-size: 0.9rem !important;
+  top: 0 !important;
+}
+
+.c-digitalgovglobalsearch [role='search'] {
+  display: block;
+}

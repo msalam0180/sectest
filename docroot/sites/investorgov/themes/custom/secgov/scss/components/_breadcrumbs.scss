@@ -1,0 +1,107 @@
+// //
+// // BREADCRUMBS
+// // Site-wides styles for breadcrumbs
+// // 
+// // --------------------------------------------------
+
+// // TODO: Review all code and clean as needed
+
+// .region-breadcrumb {
+//   @include breakpoint('medium','portrait'){
+//     #block-secgov-breadcrumbs {
+//       margin-left: 0;
+//     }
+//   }
+//   @include breakpoint('small'){
+//     margin-left: 15px;
+//   }
+// }
+
+// .region-breadcrumb {
+//   @include span(12);
+//   clear: both;
+//   display: block;
+//   margin-top: 10px;
+//   &:after {
+//     clear: both;
+//     content: ' ';
+//   }
+
+//   @include breakpoint('small') {
+//     margin-top: 0;
+//   }
+
+//   #block-secgov-breadcrumbs {
+//     margin: 0 auto;
+//     width: 960px;
+//     nav ol {
+//       margin: 0;
+//       padding: 0;
+
+//       li {
+//         a {
+//           @include raleway;
+//         }
+//       }
+//     }
+
+//     @include breakpoint('medium','portrait') {
+//       margin-left: 0;
+//       margin-top: 20px;
+//       width: 100%;
+//     }
+//     @include breakpoint('small') {
+//       margin-left: 0px;
+//       padding: 0 40px;
+
+//       nav ol {
+//         li {
+//           display: block;
+//           float: left;
+//           margin-left: 3px;
+//           &:first-child {
+//             margin-left: 0;
+//           }
+//         }
+
+//         span {
+//           display: inline-block;
+//           float: left;
+//           margin: 3px 0 0 2px;
+//           text-transform: uppercase;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .region-breadcrumb #block-secgov-breadcrumbs {
+//   @include breakpoint('small'){
+//     margin-left: 15px;
+//     span {
+//       clear: none;
+//       display: inline-block;
+//       line-height: 1.2;
+//       margin-top: -1px;
+//       margin-left: 2px;
+//     }
+//   }
+// }
+
+// #block-secgov-breadcrumbs {
+//   text-transform: uppercase;
+//   li {
+//     list-style: none;
+//     display: inline;
+//     text-transform: uppercase;
+//   }
+
+//   li:after {
+//     content: "/";
+//   }
+
+//   li:last-child:after
+//   {
+//     content: '';
+//   }
+// }

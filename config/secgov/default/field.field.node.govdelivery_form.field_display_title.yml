@@ -1,0 +1,21 @@
+uuid: 5b2858cb-f840-416e-a1f7-b90f5477d207
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.govdelivery_form
+_core:
+  default_config_hash: xSM0paKPm1WXAeSxgRF-5GMavbHZ8O7BvxUz-ivMs0o
+id: node.govdelivery_form.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: govdelivery_form
+label: 'Display Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+//
+// OIG RECENT REPORTS
+// VIEW NAME: UNPUBLISHED SEC Views
+// Views that were migrated from the old site, but were never turned-on
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+@include breakpoint('small'){
+
+.oig-recent-reports {
+     #datatable {
+      thead {
+        tr { top: -33px; }
+        th { padding: 10px 8px; }
+      }
+    }
+  }
+}

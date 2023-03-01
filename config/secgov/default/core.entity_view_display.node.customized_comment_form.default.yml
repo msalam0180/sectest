@@ -1,0 +1,43 @@
+uuid: a31bc140-e083-4870-a85f-67b74e185250
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.customized_comment_form.field_custom_webform_attachment
+    - field.field.node.customized_comment_form.field_display_title
+    - field.field.node.customized_comment_form.field_file_number
+    - field.field.node.customized_comment_form.field_rule_path
+    - field.field.node.customized_comment_form.field_ruling
+    - node.type.customized_comment_form
+  module:
+    - panelizer
+    - user
+    - webform
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.customized_comment_form.default
+targetEntityType: node
+bundle: customized_comment_form
+mode: default
+content:
+  field_custom_webform_attachment:
+    type: webform_entity_reference_entity_view
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_display_title: true
+  field_file_number: true
+  field_rule_path: true
+  field_ruling: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

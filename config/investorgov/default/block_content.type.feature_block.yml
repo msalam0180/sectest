@@ -1,0 +1,8 @@
+uuid: b6f23ac0-4697-4d82-ad44-20a3c3e3edd7
+langcode: en
+status: true
+dependencies: {  }
+id: feature_block
+label: 'Feature Block'
+revision: 1
+description: 'Reusable feature blocks to be placed on pages.'

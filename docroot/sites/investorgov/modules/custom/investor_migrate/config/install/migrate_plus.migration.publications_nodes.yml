@@ -1,0 +1,20 @@
+# Migration for Page Nodes.
+id: publications_nodes
+label: Publications Nodes
+migration_group: investor_nodes_group
+dependencies:
+  enforced:
+    module:
+      - investor_migrate
+
+source:
+  #plugin: d7_node
+  node_type: publications
+  plugin: investor_node
+destination:
+  plugin: entity:node
+  bundle: publication
+  default_bundle: publication
+
+process:
+  type: publication

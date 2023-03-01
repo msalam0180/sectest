@@ -1,0 +1,6 @@
+name: SEC Custom Blocks
+type: module
+description: Module for managing custom blocks
+core: 8.x
+package: SEC
+core_version_requirement: ^8 || ^9

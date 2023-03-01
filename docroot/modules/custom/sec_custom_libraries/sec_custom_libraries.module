@@ -1,0 +1,158 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_custom_libraries.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use \Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_help().
+ */
+function sec_custom_libraries_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sec_custom_libraries module.
+    case 'help.page.sec_custom_libraries':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SEC Custom Libraries') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function sec_custom_libraries_page_attachments_alter(array &$page) {
+  /** @var TYPE_NAME $node */
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ( is_object($node) && $node->getEntityTypeId() === 'node' ) {
+    $settings = ['path'=> '/modules/custom/sec_custom_libraries'];
+    $bundles = ['secarticle'];
+    if ($node->bundle() == (string) 'data_visualization') {
+      $page['#attached']['drupalSettings']['sec_custom_libraries'] = $settings;
+      $page['#attached']['library'][] = 'sec_custom_libraries/chartJs';
+    }else if (in_array($node->bundle(),$bundles) && $node->hasField('field_article_type_secarticle')) {
+      //Get the node nid;
+      $nid = $node->get('field_article_type_secarticle')->getValue()[0]['target_id'];
+      $entity = \Drupal\node\Entity\Node::load($nid);
+      /** @var TYPE_NAME $page */
+      if ($entity && $entity->getTitle() === "Data Highlight" ) {
+        $page['#attached']['drupalSettings']['sec_custom_libraries'] = $settings;
+        $page['#attached']['library'][] = 'sec_custom_libraries/chartJs';
+      }
+    }
+  }
+
+  // Get the current path
+  $current_path = \Drupal::service('path.current')->getPath();
+  // Get alias from current path
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  // Include library based on path alias
+  switch ($path_alias) {
+    case '/webcast-archive-player.html':
+      $page['#attached']['library'][] = 'sec_custom_libraries/webcast_archive_player';
+      break;
+
+    case '/oig/reportspubs/aboutoigaudit233finhtm.html':
+      $page['#attached']['library'][] = 'sec_custom_libraries/legacy_detail';
+      break;
+
+    case '/spotlight/fireside-chats':
+      $page['#attached']['library'][] = 'sec_custom_libraries/media_boxes';
+      $page['#attached']['library'][] = 'sec_custom_libraries/media_gallery';
+      break;
+
+    case '/news/media-gallery':
+      $page['#attached']['library'][] = 'sec_custom_libraries/media_boxes';
+      $page['#attached']['library'][] = 'sec_custom_libraries/media_gallery';
+      break;
+
+    case '/page/directors-biographies':
+      $page['#attached']['library'][] = 'sec_custom_libraries/isotope';
+      $page['#attached']['library'][] = 'sec_custom_libraries/img_gallery_resizer';
+      break;
+
+    case '/advocate/about-iad-staff.html':
+      $page['#attached']['library'][] = 'sec_custom_libraries/isotope';
+      $page['#attached']['library'][] = 'sec_custom_libraries/img_gallery_resizer';
+      break;
+
+    case '/spotlight/cybersecurity':
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-quiz';
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-modal';
+      $page['#attached']['library'][] = 'sec_custom_libraries/cybersecurity_quiz';
+      break;
+
+    case '/teachers':
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-quiz';
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-modal';
+      $page['#attached']['library'][] = 'sec_custom_libraries/teacher_quiz';
+      break;
+
+    case '/spotlight/military.shtml':
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-quiz';
+      $page['#attached']['library'][] = 'sec_custom_libraries/jquery-modal';
+      $page['#attached']['library'][] = 'sec_custom_libraries/military_quiz';
+      break;
+
+    case '/education/capitalraising/navigator':
+      $page['#attached']['library'][] = 'sec_custom_libraries/oasb-wizard-tool';
+      break;
+
+    case '/corpfin/cf-manual/topic-1': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-2': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-3': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-4': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-5': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-6': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-7': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-8': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-9': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-10': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-11': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-12': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-13': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-14': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-15': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+    case '/corpfin/cf-manual/topic-16': $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw'; break;
+
+    case '/page/overview-of-exemptions.html':
+      $page['#attached']['library'][] = 'sec_custom_libraries/tablesaw';
+      break;
+
+  }
+
+  if (strpos($path_alias, '/regional-office') === 0 ||
+      $path_alias == '/page/sec-regional-offices') {
+    $config = \Drupal::config('secgov.javascript.settings');
+    $page['#attached']['library'][] = 'sec_custom_libraries/mapbox-gl-js';
+    $page['#attached']['drupalSettings']['styleUrl'] = $config->get('regional_offices_style_url');
+    $page['#attached']['drupalSettings']['mapboxToken'] = $config->get('mapbox_gl_access_token');
+    if ($path_alias == '/page/sec-regional-offices') {
+      $page['#attached']['drupalSettings']['isRegionalOfficesLandingPage'] = true;
+      $page['#attached']['drupalSettings']['map'] = $config->get('regional_offices_map');
+    }
+    else {
+      $config_name = sprintf('regional_offices.%s.map', explode('/', $path_alias)[2]);
+      $page['#attached']['drupalSettings']['map'] = $config->get($config_name);
+    }
+  }
+}
+
+function sec_custom_libraries_preprocess_page(&$variables) {
+  // Get the current path
+  $current_path = \Drupal::service('path.current')->getPath();
+  // Get alias from current path
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  // Include library based on path alias
+  switch ($path_alias) {
+    case '/webcast-archive-player.html':
+      //unset($variables['page']['page_title']); // Removes Page Title Region
+      break;
+  }
+}

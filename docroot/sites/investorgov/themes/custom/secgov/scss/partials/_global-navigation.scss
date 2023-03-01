@@ -1,0 +1,267 @@
+// //
+// // Global Navigation
+// // Main site navigation
+// // --------------------------------------------------
+
+// // TODO: Review all code in this file, clean it and, and move it into the correct places
+
+// #global-navigation {
+//   background-color: $gray-blue; 
+//   display: block;
+//   // @include raleway;
+//   height: 45px;
+//   margin-bottom: 20px;
+//   padding: 0;
+//   position: relative;
+//   text-transform: uppercase;
+
+//   @include breakpoint('small'){
+//       display: none;
+//   }
+//   @include breakpoint('x-small'){
+//       display: none;
+//   }
+
+//   .navigation-wrapper {
+//     @include span(10);
+//     display: block;
+//     float: none;
+//     height: inherit;
+//     margin-left: auto;
+//     margin-right: auto;
+//     max-width: 960px;
+//     padding: 0;
+
+//     @include breakpoint('medium','landscape'){
+//       @include span(11.5);
+//       display: block;
+//       float: none;
+//       margin-left: auto;
+//       margin-right: auto;
+//       padding: 0 10px;
+//       max-width: 960px;
+//     }
+
+//     @include breakpoint('medium','portrait'){
+//       @include span(12);
+//       min-width: 768px;
+//       padding: 0 20px;
+//     }
+
+//     @include breakpoint('medium','portrait','ipad'){
+//       @include span(12);
+//       min-width: 768px;
+//       padding: 0 20px;
+//     }
+
+//     @include breakpoint('small'){
+//         display: none;
+//     }
+
+//     @include breakpoint('x-small'){
+//         display: none;
+//     }
+
+//     #block-secgov-main-menu {
+//       @include span(10);
+//       margin-right: 0;
+//       padding: 15px 0;
+//       position:relative;
+//       text-align: left;
+//       z-index: 200;
+
+//       @include breakpoint('medium'){
+//         padding: 15px 0;
+//         width: 100%;
+//       }
+
+//       .menu-toggle {
+//           display: none;
+//       }
+//     }
+
+//     #block-secgov-account-menu {
+//       @include span(2 last);
+//       padding: 15px 0;
+//       position: relative;
+//       text-align:right;
+
+//       @include breakpoint('medium'){
+//         display: none;
+//       }
+//     }
+        
+//     /*** SUPERFISH STYLES ***/
+//     #main-menu, #user-menu {
+//       font-size: 15px;
+//       margin: 0;
+//       padding: 0;
+//       list-style: none;
+//       width: auto;
+
+//       li.sfHover {
+//         a { color: $yellow-orange; }
+//   		  ul li {
+//       		a { color: $white; }
+//     		}	
+//       }
+
+
+//       li:last-child li { border-right: 1px solid $border-color; }
+
+//       li {
+//         border-right: 1px solid $border-color;
+//         color: $white;
+//         display: inline;
+//         float: left;
+//         font-weight: 500;
+//         line-height: 1.2;
+//         margin: 0;
+//         padding: 0 7px;
+//         position: relative;
+//         -webkit-transition: none;
+//         transition: none;
+		  
+//         @include breakpoint('medium'){
+//           padding: 0 7px;
+//         }
+//         /*
+//         &:first-child {
+//           padding-left: 0;
+//           a { padding-left: 0; }
+//         } */
+
+//         a {
+//           color: $white;
+//           display: block;
+//           font-size: 13px;
+//           padding: 0 10px 0 11px;
+//           position: relative;
+//           text-decoration: none;
+          
+//           @include breakpoint('medium'){
+//             padding: 0 10px;
+//           }
+//         }
+
+//         ul {
+//           position: absolute;
+//           display: none;
+//           top: 100%;
+//           left: 0;
+//           width: 199px;
+//           text-transform: none;
+//           z-index: 99;
+
+//           li {
+//             border: 1px solid $border-color;
+//             border-top: none;
+//             background-color: $dark-navy;
+//             border-width: 0px 1px 1px 1px;
+//             border-style: solid;
+//             border-color: $border-color;
+//             color: $white;
+//             margin:0;
+//             padding:0;
+//             text-transform: normal;
+//             width: 198px;
+
+//             a {
+//               display: block;
+//               padding: 9px 10px 8px 10px;
+//               color: $white;
+//               padding: 10px 15px;
+//               text-align: left;
+//               width: auto;
+//               &:focus {
+//                 background-color: $yellow-orange;
+//                 color: $dark-navy;
+//               }
+//               &:hover {
+//                 background-color: $yellow-orange;
+//                 color: $dark-navy;
+//               }
+//             }
+//           }
+//         }
+
+//         ul ul {
+//           top: 14px;
+//           left: 0px;
+//           left: 100%;
+//           text-transform: none;
+//         }
+		
+//         ul, ul ul {
+//           border: none;
+//           margin-left: 0;
+//           padding-top: 15px;
+//           width: 200px;
+//         }
+//       }
+//       & > li {
+//         padding: 0 7px;
+
+//         &:first-child {
+//           padding-left: 0 !important;
+//         }
+//         &:last-child {
+//           border-right: none;
+          
+//           li:last-child {
+//             border-right: 1px solid $border-color;
+//           }
+//         }
+//         @include breakpoint('medium','landscape') {
+//           padding: 0 10px;
+//         }
+//         @include breakpoint('medium','portrait') {
+//           padding: 0;
+//         }
+//         @include breakpoint('medium','portrait','ipad') {
+//           padding: 0;
+//         }
+//       }
+//     }
+    
+//     #main-menu {
+//       margin-left: 3px;
+//     }
+//     #user-menu {
+//       float: right;
+//       margin-right: 0;
+//     }
+//   }
+  
+//   .mobile-menu {
+//     display: none;
+
+//     @include breakpoint('medium','landscape'){
+//         display: none;
+//     }
+
+//     @include breakpoint('medium','portrait'){
+//         display: none;
+//     }
+    
+//     @include breakpoint('small','landscape'){
+//         display: block;
+//     }
+
+//     @include breakpoint('small','portrait'){
+//         display: block;
+//     }
+
+//     .fa {
+//       background: none;
+//       color: $cloudy-gray;
+//       font-size: 2em;
+//       margin-left: 15px;
+//       margin-top: 10px;
+//     }
+//   }
+// }
+
+// .user-logged-in #global-navigation .navigation-wrapper #main-menu > li.login {
+//     display:none;
+// }

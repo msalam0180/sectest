@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_file_replace.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_help().
+ */
+function sec_file_replace_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sec_file_replace module.
+    case 'help.page.sec_file_replace':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Utility for overwriting static files.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function sec_file_replace_page_attachments_alter(array &$page) {
+  // Get the current path
+  $current_path = \Drupal::service('path.current')->getPath();
+  // Get alias from current path
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  // Include library based on path alias
+  if ($path_alias == '/admin/config/media/file-system/replace/upload') {
+    $page['#attached']['library'][] = 'sec_file_replace/sec_file_replace';
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function sec_file_replace_mail($key, &$message, $params) {
+
+  if ($key == 'submitFileReplacement') {
+    $message['from'] = \Drupal::config('system.site')->get('mail');
+    $message['subject'] = $params['subject'];
+    $message['body'][] = Html::escape($params['body']);
+  }
+
+}

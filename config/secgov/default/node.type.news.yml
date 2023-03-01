@@ -1,0 +1,49 @@
+uuid: cba36982-3159-4462-b739-96851586d597
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '2'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: vFDr-qw_n4suYyoLiWdVzNFzDURdA0Efln9O8bZffR0
+name: News
+type: news
+description: 'This content type is used to create Press Release, Speech, Statement, and Testimony pages.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

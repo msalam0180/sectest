@@ -1,0 +1,22 @@
+uuid: 9547a5f3-b7f8-4eff-8355-0cb063e036ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.customized_comment_form
+id: node.customized_comment_form.promote
+field_name: promote
+entity_type: node
+bundle: customized_comment_form
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

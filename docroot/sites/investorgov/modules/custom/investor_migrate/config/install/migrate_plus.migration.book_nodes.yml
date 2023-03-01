@@ -1,0 +1,20 @@
+# Migration for Page Nodes.
+id: book_nodes
+label: Book Nodes
+migration_group: investor_nodes_group
+dependencies:
+  enforced:
+    module:
+      - investor_migrate
+
+source:
+  #plugin: d7_node
+  node_type: book
+  plugin: investor_node
+destination:
+  plugin: entity:node
+  bundle: article
+  default_bundle: article
+
+process:
+  type: article

@@ -1,0 +1,32 @@
+uuid: 9059ec69-adab-434a-be91-8b0e7183bfb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.structured-data-left-nav
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: re1uDI6rABR8FgJZeoDLLfiKYhH8Pyh5BOTMHMIJNro
+id: structureddata
+theme: secgov
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'system_menu_block:structured-data-left-nav'
+settings:
+  id: 'system_menu_block:structured-data-left-nav'
+  label: 'Structured Data'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/structureddata/*\r\n/structureddata\r\n/structured-disclosure/*"

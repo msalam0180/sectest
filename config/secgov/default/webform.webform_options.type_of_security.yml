@@ -1,0 +1,11 @@
+uuid: c0057220-56ca-4f3f-a688-02b02434b112
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: bQhj4-NnJNMGdbdAu3H3JetqP2AjE9ISrsKXA61lQrE
+id: type_of_security
+label: 'Type of security'
+category: SEC
+likert: false
+options: "34: 'Prime Bank securities'\r\n51: 'ADRs'\r\n30: 'Bank issues (general)'\r\n81: 'Blank check offerings'\r\n82: 'Blind pool offerings'\r\n31: 'Certificates of deposit'\r\n25: 'Closed-end funds'\r\n73: 'Coins and precious metals (gold, silver, etc.)'\r\n14: 'Collateralized mortgage obligations (CMOs)'\r\n64: 'Commodities futures (except stock index)'\r\n66: 'Commodity Stock Index Options'\r\n16: 'Convertible securities'\r\n75: 'Currency transactions'\r\n10: 'Debt securities (general)' \r\n67: 'Derivatives (General)'\r\n74: 'Diamonds and other precious stones'\r\n01: 'Equity security (general)'\r\n52: 'Foreign Securities (not ADRs)'\r\n77: 'Franchises and other business ventures'\r\n19: 'Hedge Funds'\r\n22: 'High yield and unk bond mutual funds'\r\n04: 'Initial public offerings (IPOs)'\r\n32: 'Insurance ContactProducts (general)'\r\n41: 'Limited partnerships'\r\n11: 'Lower-rated and unk bonds'\r\n21: 'Money-Market funds'\r\n13: 'Mortgage-backed securities'\r\n78: 'Multi-level marketing organizations (ponzi/pyramid)'\r\n15: 'Municipal bonds'\r\n20: 'Mutual Funds (general)'\r\n83: 'No ContactProduct/ContactProduct not mentioned'\r\n84: 'Non-SEC ContactProduct'\r\n44: 'Non-SEC registered offerings'\r\n71: 'Oil, gas, coal, ores'\r\n61: 'Options (except stock index)'\r\n76: 'Other ContactProducts/commodities (cattle, whiskey, soybeans, etc.)'\r\n02: 'Penny stocks'\r\n79: 'Promissory notes, loans, IOUs'\r\n72: 'Real estate (not securities)'\r\n24: 'Real estate investment trusts (REITs)'\r\n42: 'Reg A or Reg D offerings'\r\n65: 'Rights and warrants'\r\n45: 'Roll-ups'\r\n29: 'Section 529 plans'\r\n03: 'Small/Micro cap issues'\r\n63: 'Stock index futures'\r\n62: 'Stock index options'\r\n68: 'Telecommunication and technology ventures (wireless cable, SMRs, etc.)'\r\n12: 'U.S. government securities/agency issues'\r\n23: 'Unit investment trusts (UITs)'\r\n33: 'Variable annuities'"

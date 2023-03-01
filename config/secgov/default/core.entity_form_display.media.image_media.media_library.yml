@@ -1,0 +1,76 @@
+uuid: 059c274f-93ee-4855-87bd-28abaec4a4eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.image_media.field_act
+    - field.field.media.image_media.field_audience
+    - field.field.media.image_media.field_media_caption
+    - field.field.media.image_media.field_media_image
+    - field.field.media.image_media.field_media_person
+    - field.field.media.image_media.field_primary_division_office
+    - field.field.media.image_media.field_publish_date
+    - field.field.media.image_media.field_regulation
+    - field.field.media.image_media.field_supporting_division_office
+    - field.field.media.image_media.field_tags
+    - image.style.thumbnail
+    - media.type.image_media
+  module:
+    - datetime
+    - image
+    - workbench_moderation
+id: media.image_media.media_library
+targetEntityType: media
+bundle: image_media
+mode: media_library
+content:
+  field_media_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_publish_date:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_media_caption: true
+  field_media_person: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_supporting_division_office: true
+  field_tags: true
+  path: true
+  replace_file: true
+  uid: true

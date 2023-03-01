@@ -1,0 +1,28 @@
+uuid: a89608c7-b207-4d2f-9e91-aaf1d875b8b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.sec_hero
+    - taxonomy.vocabulary.tags
+id: node.sec_hero.field_tags
+field_name: field_tags
+entity_type: node
+bundle: sec_hero
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

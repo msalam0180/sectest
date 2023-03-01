@@ -1,0 +1,61 @@
+uuid: d965baef-8525-4041-b935-b746d17ff024
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: AqlPmO16LvJI4D0Ih6u4GFQIzqr5OnLgAUSjcUGWk2g
+format: basic_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - RemoveFormat
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - embed_entity
+            - DrupalImage
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+            - Styles
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: media_linkit
+    stylescombo:
+      styles: "h2.text--alt--lg|H2 Smaller Alt\r\nh2.text--alt--md.fw700|H2 Smallest Alt\r\nh3.text--md|H3 Smaller Alt\r\nh3.text--sm.fw700|H3 Smallest Alt\r\ndiv.footnote|Footnote\r\ndiv.by-line|By Line\r\np.text--cke-lg| P Large font\r\np.text--cke-sm| P Small font\r\np.text--cke-xs| P Smallest font"
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

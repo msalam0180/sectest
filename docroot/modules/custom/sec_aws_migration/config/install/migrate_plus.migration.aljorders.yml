@@ -1,0 +1,215 @@
+id: aljorders
+label: Import of ALJ Orders AWS content
+migration_group: aws
+migration_tags:
+  - aws
+  - aljorders
+source:
+  plugin: csv
+  path: public://migration/alj_orders.csv
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: id
+    1:
+      name: releaseurl
+      label: 'Release URL'
+    2:
+      name: date
+      label: 'Date'
+    3:
+      name: respondents
+      label: 'Respondents'
+  constants:
+    release_type: 'ALJ Orders'
+    site: 'https://www.sec.gov/'
+    delimiter: '/'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+
+  type:
+    plugin: default_value
+    default_value: release
+
+  title: id
+
+
+  # skip pdf and txt files, we only want to import htm files as body content
+  body:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - '.pdf'
+        - '.txt'
+      source: releaseurl
+    -
+      plugin: str_replace
+      search: ')'
+      replace: ''
+    -
+      plugin: html_to_string
+    -
+      plugin: body_html_import
+
+
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: 'America/New_York'
+    to_format: 'U'
+
+  changed: '@created'
+
+  filename:
+    plugin: end
+    source: releaseurl
+    delimiter: "/"
+
+  internal_path:
+    -
+      plugin: str_replace
+      source: releaseurl
+      search: 'https://www.sec.gov/'
+      replace: 'public://'
+    -
+      plugin: real_path
+
+
+  file_number:
+    plugin: get_file_number
+    source: releaseurl
+
+  field_publish_date:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: 'America/New_York'
+    to_format: 'Y-m-d\TH:i:s'
+
+
+  field_display_title: id
+
+  field_primary_division_office:
+    plugin: default_value
+    default_value: 39
+    #Enforcement
+
+  field_release_type:
+    plugin: entity_lookup
+    source: constants/release_type
+    value_key: name
+    bundle_key: vid
+    bundle: release_type
+    entity_type: taxonomy_term
+    ignore_case: true
+
+  field_release_number:
+    plugin: get_other_release_nos
+    source: respondents
+
+  field_respondents:
+    plugin: get_respondent
+    source: respondents
+
+  migrated_aljorderapreleases:
+      plugin: migration_lookup
+      source: releaseurl
+      no_stub: true
+      migration: aljorderapreleases
+
+  migrated_aljorderreleases:
+      plugin: migration_lookup
+      source: releaseurl
+      no_stub: true
+      migration: aljorderreleases
+
+  migrated_apreleases:
+      plugin: migration_lookup
+      source: releaseurl
+      no_stub: true
+      migration: apreleases
+
+  field_release_file:
+    plugin: null_coalesce
+    source:
+      - '@migrated_apreleases'
+      - '@migrated_aljorderreleases'
+      - '@migrated_aljorderapreleases'
+
+  seealsourls:
+    plugin: see_also_urls
+    source: respondents
+
+  see_also_files:
+    plugin: migration_lookup
+    no_stub: true
+    source: '@seealsourls'
+    migration:
+     - aljorderseealsofiles
+     - apseealsofiles
+     - apreleases
+
+  see_also_links:
+    -
+      plugin: migration_lookup
+      no_stub: true
+      source: id
+      migration: aljorderseealsolinks
+
+  see_also_combined:
+    plugin: array_unshift
+    source:
+      - '@see_also_links'
+      - '@see_also_files'
+
+
+  field_see_also:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@see_also_combined'
+    -
+      plugin: sub_process
+      source: '@see_also_combined'
+      process:
+        target_id: '0'
+
+
+
+
+  field_release_file_number:
+    plugin: entity_lookup
+    access_check: false
+    entity_type: taxonomy_term
+    value_key: name
+    bundle_key: vid
+    source: '@file_number'
+    bundle: rulemaking_index
+
+  field_submit_comments:
+    plugin: migration_lookup
+    migration: aljordercomments
+    no_stub: true
+    source: id
+
+  field_delinquent_filings:
+    plugin: is_delinquent
+    source: id
+
+destination:
+  plugin: entity:node
+
+migration_dependencies:
+  required:
+    - aljordercomments
+    - aljorderseealsofiles
+    - aljorderseealsolinks
+    - aljorderapreleases
+    - apreleases

@@ -1,0 +1,8 @@
+name: 'Gallery Slideshow'
+description: 'Provides Gallery content type and slideshow settings '
+type: module
+core: 8.x
+dependencies:
+  - path
+package: Insider
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,284 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element\PasswordConfirm;
+use Drupal\user\Entity\User;
+use Drupal\redirect\Entity\Redirect;
+
+/**
+ * Disable inactive user account after x number days.
+ *
+ * @param int $numDays
+ */
+function disable_inactive_user($numDays, $update = TRUE) {
+  $database = \Drupal::database();
+  // Get epoch time from today's date https://www.php.net/manual/en/function.strtotime
+  $epochDate = strtotime(date("Y-m-d", time()) . '-' . $numDays . ' days');
+
+  // Get uids that will be affected.
+  $select_query = 'SELECT uid FROM {users_field_data} WHERE status = 1 AND uid > 1 AND ((access >= changed AND access < :epochDate) OR (changed > access AND changed < :epochDate))';
+  $result = $database->query($select_query, [':epochDate' => $epochDate]);
+  $raw_result_col = $result->fetchCol();
+  $result_array = implode(", ", $raw_result_col);
+
+  if ($update) {
+    // Update query to block users.
+    $update_query = 'UPDATE {users_field_data} SET status = 0 WHERE status = 1 AND uid > 1 AND ((access >= changed AND access < :epochDate) OR (changed > access AND changed < :epochDate))';
+    $database->query($update_query, [':epochDate' => $epochDate]);
+    // Log the results of blocked users.
+    if (!empty($result_array)) {
+      \Drupal::logger('disable_inactive_user')->notice("Following inactive user accounts has been blocked: " . $result_array);
+    } else {
+      \Drupal::logger('disable_inactive_user')->notice("No inactive user account blocked.");
+    }
+  }
+  return $raw_result_col;
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function sec_investor_general_user_login($account) {
+  $uid = $account->get('uid')->value;
+  \Drupal::service('user.data')->set('sec_investor_general', $uid, 'expire_date', NULL);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function sec_investor_general_user_update(Drupal\Core\Entity\EntityInterface $entity) {
+  $uid = $entity->get('uid')->value;
+  \Drupal::service('user.data')->set('sec_investor_general', $uid, 'expire_date', NULL);
+}
+
+/**
+ * Notify inactive user account after x number days.
+ *
+ * @param int $numDays
+ * @param int $numDaysBeforeAccountExpire
+ */
+function notify_inactive_user($numDays, $numDaysBeforeAccountExpire) {
+  // Getting user ID.
+  $uids = disable_inactive_user($numDays, FALSE);
+
+  // Setting account expire date.
+  $setDateToExpire = strtotime(date("Y-m-d", time()) . '+' . $numDaysBeforeAccountExpire . ' days');
+
+  if (!empty($uids)) {
+    foreach ($uids as $uid) {
+      // Get user information.
+      $userInfo = User::load($uid);
+
+      // Get user account expiration date from user metadata.
+      $getDateToExpire = \Drupal::service('user.data')->get('sec_investor_general', $uid, 'expire_date');
+
+      // If account expire date is NULL, set a expire date to user metadata.
+      if (empty($getDateToExpire)) {
+        $getDateToExpire = $setDateToExpire;
+        \Drupal::service('user.data')->set('sec_investor_general', $uid, 'expire_date', $setDateToExpire);
+      }
+
+      // Setup the mail manager service.
+      $mailManager = \Drupal::service('plugin.manager.mail');
+
+      // Get the user email.
+      $user_email = $userInfo->getEmail();
+
+      // Get the lang code.
+      $langcode = \Drupal::currentUser()->getPreferredLangcode();
+
+      // Get the host name.
+      $hostName = \Drupal::request()->getHost();
+
+      // Get the site name for email body.
+      $params['site_name'] = '';
+      if ($hostName == 'sec.gov') {
+        $params['site_name'] = 'SEC.gov';
+      } elseif ($hostName == 'investor.gov') {
+        $params['site_name'] = 'Investor.gov';
+      }
+
+      // Generate a login URL.
+      $params['site_url'] = 'https://dcm.' . $hostName . '/user/login';
+
+      // Format expire date (e.g. April 1 2020) for email body.
+      $date_obj = new DateTime("@$getDateToExpire");
+      $params['exp_date'] = $date_obj->format('F j, Y');
+
+      // Send the mail, get result.
+      $result = $mailManager->mail('sec_investor_general', 'sec_inv_notify_user', $user_email, $langcode, $params, NULL, TRUE);
+
+      // Logging mail result.
+      if ($result['result'] != TRUE) {
+        \Drupal::logger('notify_inactive_user')->notice("Sending an email was unsuccessful to email: " . $user_email);
+      } else {
+        \Drupal::logger('notify_inactive_user')->notice("Sending an email was successful to email: " . $user_email);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_mail().
+ */
+function sec_investor_general_mail($key, &$message, $params) {
+  /*
+   * Subject: Drupal account expiring due to inactivity.
+   * Body: Your Drupal account for [site_name] will expire on [exp_date] due to
+   * inactivity. To avoid account expiration visit [site_url] and click
+   * Federated Login. To avoid deactivation of the account, go to [site_url] and
+   * click the "Federated login" link. If your account is deactivated, you
+   * should create a System Access Request in askIT to reactivate the account.
+   * If you have any questions, please contact drupalsupport@sec.gov.
+   */
+  switch ($key) {
+    case 'sec_inv_notify_user':
+      // Setup the 'from'.
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+
+      // Setup the subject line.
+      $message['subject'] = t('Drupal account expiring due to inactivity.');
+
+      // Setup the message body.
+      $message['body'][] = 'Your Drupal account for ' . $params['site_name'] . ' will expire on ' . $params['exp_date'] . ' due to inactivity. To avoid deactivation of the account, go to ' . $params['site_url'] . ' and click the "Federated login" link. If your account is deactivated, you should create a System Access Request in askIT to reactivate the account.
+
+If you have any questions, please contact drupalsupport@sec.gov.';
+      break;
+  }
+}
+
+/**
+ * hook page attachments
+ *
+ * @param array $page
+ * @return void
+ */
+function sec_investor_general_page_attachments(array &$page) {
+  // run env indicator customizations for authenticated users
+  if (\Drupal::currentUser()->hasPermission('access toolbar')) {
+    $page['#attached']['library'][] = 'sec_investor_general/env_indicator';
+  }
+}
+
+/**
+ * hook page top
+ *
+ * @param array $page_top
+ * @return void
+ */
+function sec_investor_general_page_top(array &$page_top) {
+  // remove prod switcher link
+  if (!empty($_ENV['AH_PRODUCTION']) && $_ENV['AH_PRODUCTION'] == 1) {
+    unset($page_top["indicator"]["switcher"]["#links"]["prod"]);
+  } else {
+    //overwrite environment name
+    $page_top["indicator"]["#title"] = _sec_investor_general_env_name();
+    $page_top["indicator"]["#attached"]["drupalSettings"]["environmentIndicator"]['name'] = _sec_investor_general_env_name();
+
+    // remove train switcher link
+    if (!empty($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] == 'dcmtrain') {
+      unset($page_top["indicator"]["switcher"]["#links"]["train"]);
+    }
+  }
+}
+
+/**
+ * helper function to provide env names
+ *
+ * @return void
+ */
+function _sec_investor_general_env_name() {
+  // find acquia environment name
+  if (!empty($_ENV['AH_SITE_ENVIRONMENT']) && $_ENV['AH_SITE_ENVIRONMENT'] != 'local') {
+    $start = strpos($_SERVER['HTTP_HOST'], '.');
+    $env = substr($_SERVER['HTTP_HOST'], 0, $start);
+  }
+  // find local environment name
+  else {
+    $start = strpos($_SERVER['HTTP_HOST'], '.') + 1;
+    $end = strrpos($_SERVER['HTTP_HOST'], '.');
+    $env = 'Local ' . substr($_SERVER['HTTP_HOST'], $start, $end - $start);
+  }
+  return $env;
+}
+
+/**
+ * Import redirect links from csv file. Refer to 'redirect' table.
+ *
+ * CSV File structure:
+ * From,To,Status
+ *
+ * e.g.
+ * From,To,Status
+ * node/123,https://www.google.com,301
+ * node/456,node/hello-world,301
+ *
+ * @param $filepath: csv file path location.
+ * @param boolean $hasHeader: if file does have header pass TRUE otherwise FALSE
+ */
+function sec_investor_general_update_redirect($filepath, $hasHeader) {
+  $file = fopen($filepath, "r");
+  // If true then skip first line as its a header.
+  if ($hasHeader) {
+    fgets($file);
+  }
+  // Loop through each row of csv file.
+  while (($rTable = fgetcsv($file)) !== FALSE) {
+    // Check to see that all fields exists within each row of the csv file.
+    if (!empty($rTable[0]) && !empty($rTable[1]) && !empty($rTable[2])) {
+      try {
+        Redirect::create([
+          'redirect_source' => $rTable[0],
+          'redirect_redirect' => $rTable[1],
+          'status_code' => $rTable[2]
+        ])->save();
+        \Drupal::logger('sec_investor_general')->info("Redirect was added successfully from: " . $rTable[0] . " to " . $rTable[1]);
+      } catch (Exception $e) {
+        \Drupal::logger('sec_investor_general')->error("Redirect was not added successfully from: " . $rTable[0] . " to " . $rTable[1]);
+      }
+    }
+  }
+  fclose($file);
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ * Alter the node add/edit form of Comments form content type to blacklist non-categorically assigned as "Comments Form".
+ */
+function sec_investor_general_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  /** @var \Drupal\Core\Field\FieldItemListInterface $items */
+  $items = $context['items'];
+  $field_definition = $items->getFieldDefinition();
+
+  if (
+    $items->getEntity()->getEntityTypeId() == 'node' &&
+    $field_definition->getType() == 'webform' &&
+    $field_definition->getTargetBundle() == "customized_comment_form"
+  ) {
+    // Hide Webform field settings.
+    $element['settings']['default_data']['#access'] = FALSE;
+
+    // Blacklist uncategorized forms and show categorized as Comment Form only.
+    $element['target_id']['#options'] = $element['target_id']['#options']['Comment Form'];
+  }
+}
+
+/**
+ * Implements HOOK_form_alter().
+ */
+function sec_investor_general_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // OSSS-17576: Disable autocomplete on Password confirm fields
+  if ($form_id == 'user_form') {
+    $form['account']['pass']['#process'][] = '_sec_investor_process_password_confirm';
+  }
+}
+
+/**
+ * Alters password confirm fields to not use autocomplete
+ */
+function _sec_investor_process_password_confirm($element, FormStateInterface $form_state, &$complete_form) {
+  $element = PasswordConfirm::processPasswordConfirm($element, $form_state, $complete_form);
+  $element['pass1']['#attributes']['autocomplete'] = 'off';
+  $element['pass2']['#attributes']['autocomplete'] = 'off';
+  return $element;
+}

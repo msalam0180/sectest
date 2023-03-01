@@ -1,0 +1,22 @@
+uuid: 6219211a-7838-4aa7-8fd4-e9a139172ddc
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - investor
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: investor_help
+theme: investor
+region: header
+weight: -4
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

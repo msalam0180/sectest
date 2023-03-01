@@ -1,0 +1,20 @@
+@import 'components/header';
+@import 'components/nav-container';
+
+.usa-header .c-block {
+  margin: 0;
+}
+
+.usa-header--extended .usa-logo,
+.usa-header--basic .usa-logo {
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    margin: 1rem 0;
+    max-width: 70%;
+  }
+}
+
+.usa-header--basic .usa-navbar {
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    width: 100%;
+  }
+}

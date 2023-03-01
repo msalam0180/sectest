@@ -1,0 +1,161 @@
+uuid: 3328d5b7-68a7-4f7c-86e1-42f57a7bfe96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.audio.field_caption
+    - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_thumbnail
+    - field.field.media.audio.field_transcript
+    - media.type.audio
+  module:
+    - file
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          16517116-d061-4522-b5cd-527f305fea16:
+            uuid: 16517116-d061-4522-b5cd-527f305fea16
+            region: content
+            configuration:
+              id: 'field_block:media:audio:field_media_audio_file'
+              label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: file_audio
+                label: visually_hidden
+                settings:
+                  controls: true
+                  autoplay: false
+                  loop: false
+                  multiple_file_display_type: tags
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          ab22af8e-5f70-4b88-9cdd-d3e3a6f496d2:
+            uuid: ab22af8e-5f70-4b88-9cdd-d3e3a6f496d2
+            region: content
+            configuration:
+              id: 'field_block:media:audio:field_caption'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: basic_string
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          c092a3b2-a3d3-4605-8e3c-22d4d1222cec:
+            uuid: c092a3b2-a3d3-4605-8e3c-22d4d1222cec
+            region: content
+            configuration:
+              id: 'field_block:media:audio:field_transcript'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          ed328317-0d8f-4269-b078-0275e769b06f:
+            uuid: ed328317-0d8f-4269-b078-0275e769b06f
+            region: content
+            configuration:
+              id: 'field_block:media:audio:field_thumbnail'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          34de8c8d-0662-4f96-93f0-a5c9c06cc07c:
+            uuid: 34de8c8d-0662-4f96-93f0-a5c9c06cc07c
+            region: content
+            configuration:
+              id: 'field_block:media:audio:field_thumbnail'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
+id: media.audio.default
+targetEntityType: media
+bundle: audio
+mode: default
+content:
+  field_caption:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_audio_file:
+    type: file_audio
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_thumbnail:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_transcript:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  created: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

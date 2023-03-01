@@ -1,0 +1,35 @@
+uuid: e8e41de5-9c88-405d-81b7-04ed61453f98
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.auxiliary-header
+  module:
+    - menu_block
+    - menu_block_title
+  theme:
+    - investor
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+id: auxiliaryheader
+theme: investor
+region: header2
+weight: -11
+provider: null
+plugin: 'menu_block:auxiliary-header'
+settings:
+  id: 'menu_block:auxiliary-header'
+  label: 'Auxiliary Header'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 1
+  expand_all_items: false
+  parent: 'auxiliary-header:'
+  suggestion: auxiliary_header
+visibility: {  }

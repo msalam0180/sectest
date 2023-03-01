@@ -1,0 +1,109 @@
+.edgar-search-container {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .edgar-search-container {
+    display: block;
+  }
+}
+
+.edgar-search-container .left-content,
+.edgar-search-container .right-content {
+  flex: 50%;
+  padding: 10px;
+}
+
+.edgar-search-container .right-content {
+  height: fit-content;
+}
+
+#sec-edgar-company-person-form div.tooltip {
+  cursor: pointer;
+}
+
+#sec-edgar-company-person-form div.tooltip .fa {
+  color: #273a56;
+  background-color: unset;
+  font-size: 1.2em;
+  padding: 0;
+  height: auto;
+  width: auto;
+}
+
+#sec-edgar-company-person-form button .fa {
+  background-color: inherit;
+  height: auto;
+  width: auto;
+  padding: 0px 5px;
+}
+
+#sec-edgar-company-person-form div[class^="tip-"] {
+  width: 90%;
+  padding: 5px;
+  background-color: #e9e9e9;
+  border: 1px solid #BFBFBF;
+  display: none;
+}
+
+#sec-edgar-company-person-form div[class^="tip-"].show-tip {
+  display: block;
+}
+
+#sec-edgar-company-person-form div[class^="tip-"] ul li {
+  line-height: 1;
+}
+
+#sec-edgar-company-person-form .hasTooltip,
+#sec-edgar-company-person-form div.tooltip {
+  display: inline-block;
+}
+
+#sec-edgar-company-person-form .options-display-side-by-side {
+  margin: 5px 0;
+}
+
+#sec-edgar-company-person-form .options-display-side-by-side div {
+  display: inline-flex;
+  margin-right: 1em;
+}
+
+#sec-edgar-company-person-form .description {
+  font-size: 0.95em;
+  line-height: 1.2em;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #656565;
+  margin-top: 5px;
+}
+
+#sec-edgar-company-person-form label {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+#sec-edgar-company-person-form .form-item {
+  margin-bottom: 15px;
+}
+
+#sec-edgar-company-person-form .form-type-radio {
+  margin-left: 3px;
+}
+
+#sec-edgar-company-person-form .form-item input[type="text"] {
+  height: 30px;
+}
+
+#sec-edgar-company-person-form .form-item select {
+  margin: 0;
+  height: 30px !important;
+  padding: 5px 8px;
+  margin: 5px 0;
+  border: 1px solid #8a8a8a;
+  max-width: 450px;
+  width: 100%;
+  appearance: none;
+  background: url(/themes/custom/secgov/images/Filter-arrows-blue.png) no-repeat right #FFF;
+  background-size: auto;
+}

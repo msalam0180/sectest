@@ -1,0 +1,152 @@
+default:
+  suites:
+    default:
+      contexts:
+        - EntityContext
+        - FeatureContext
+        - HomepageContext
+        - WysiwygContext
+        - ListPageContext
+        - PanelsContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\RawDrupalContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+# investorgov test suite
+    investorgov:
+      paths:  [ '%paths.base%/features_investor' ]
+      contexts:
+        - EntityContext
+        - FeatureContext
+        - HomepageContext
+        - WysiwygContext
+        - ListPageContext
+        - PanelsContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\RawDrupalContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+  extensions:
+    Drupal\MinkExtension:
+      ajax_timeout: 10
+      goutte: ~
+      selenium2:
+        browser: chrome
+        wd_host: http://chrome-sec.lndo.site:4444/wd/hub
+        capabilities:
+          marionette: null
+          extra_capabilities:
+            chromeOptions:
+              args:
+                - "--disable-gpu"
+                - "--window-size=1820,1024"
+              w3c: false
+      files_path: '%paths.base%/files'
+      show_cmd: chrome.exe
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: '%paths.base%/behat-screenshots'
+          clear_screenshot_directory: true
+    Drupal\DrupalExtension:
+      selectors:
+        message_selector: '#messages'
+        error_message_selector: '#messages.messages-error'
+        success_message_selector: '#messages.messages-status'
+      blackbox: ~
+      api_driver: 'drupal'
+      region_map:
+        header: "#block-secgov-branding"
+        header_uswdssec: ".usa-navbar"
+        footer: "#block-secgov-footer"
+        breadcrumbs: "#breadcrumbs"
+        menu: "#block-secgov-main-menu"
+        contenttitle: "#block-secgov-page-title"
+        contentbanner: "#page-title"
+        title: "#main-wrapper h1"
+        articletitle: ".article-title"
+        prlistpage : ".pr-list-page"
+        speecheslistpage : ".speech-list-page"
+        banner: ".banner-org-name"
+        navigation: ".local-nav"
+        latest: ".newsroom-latest-pr"
+        formfooter: ".layout-region-node-footer"
+        alerttitle: "#alert .alert-title"
+        alertbody: "#alert .alert-body"
+        storyleft: ".block-region-section-1-left"
+        informprotectright: ".block-region-section-2-right"
+        facilitatecapitalformationleft: ".block-region-section-3-left"
+        providedataright: ".block-region-section-6-right"
+        regulatesecuritiesmarketsleft: ".block-region-section-5-left"
+        enforcefederalsecuritieslawsleft: ".block-region-section-4-left"
+        externalresource: "#edit-field-external-resource-0"
+        articlecontent: "div.content.aside"
+        sidebar: "#sidebar-second"
+        panelfirst: "#panels-ipe-content > div > div.layout__region.layout__region--first"
+        panelsecond: "#panels-ipe-content > div > div.layout__region.layout__region--second"
+        addlink: ".ajax-new-content"
+        footer1: ".site-footer"
+        footer2: ".site-footer2"
+        navigation_tab: ".tabs"
+        sixpack_homepage: "#homepage-links-wrapper"
+        modal: "#drupal-modal"
+        investor_menu: "#block-investor-main-menu"
+        contentarea: "#block-secgov-content"
+        left_nav_menu: "#investor-main-menu"
+        recent_edits: ".view-workbench-edited"
+        bread_crumbs: "#block-investor-breadcrumbs"
+        breadcrumb: ".c-breadcrumb"
+        maincontent: "#content"
+        new_link: ".ajax-new-content"
+        search_pagination: ".view-display-id-page_1 > nav:nth-child(5)"
+        landingpage_blocks: "#drupal-off-canvas"
+        landingpage_img: "div.field:nth-child(2)"
+        landingpage_video: "#grid"
+        accordion_img: "div.field__item:nth-child(2)"
+        status_message: "div.messages.messages--status"
+        addthis_region: "div.addthis-wrapper"
+        env_indicator: "#environment-indicator"
+        addthis_investor: "#at4-share"
+        bulletedListFirst: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ul > li:nth-child(1)"
+        bulletedListSecond: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ul > li:nth-child(2)"
+        bulletedListThird: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ul > li:nth-child(3)"
+        bulletedListForth: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ul > li:nth-child(4)"
+        numberedListFirst: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(1)"
+        numberedListFirstSub: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(1) > ol > li"
+        numberedListSecond: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(2)"
+        numberedListSecondSub: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(2) > ol > li"
+        numberedListThird: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(3)"
+        numberedListThirdSub: "div.field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item > ol > li:nth-child(3) > ol > li"
+        investor_content: "#block-investor-content"
+        medialist: "#views-form-media-media-page-list"
+        image: "body > img"
+        edit_meta: "#edit-meta-published"
+        site_alert: "#alert"
+        edit_author: "#edit-meta-author"
+        speakers: "#edit-field-person-wrapper"
+        container: ".page-container"
+        relevant_results: "div.relevant-results-row"
+        other_results: "div.other-results-row"
+        wizard_allchoices: "#decision-tree > div.question-area.clearfix > div.all-choices"
+        webform_fileupload: ".js-form-type-webform-document-file"
+        ruling_comment_webform_fileupload: ".js-form-item.form-item.js-form-type-managed-file"
+        article_content: "#block-investor-content > article > div.node__content.main > div.layout.layout--threecol-25-50-25 > div.layout__region.layout__region--second > div.block.block-layout-builder.block-field-blocknodearticlebody.block-title- > div > p"
+        user_report: "#block-adminimal-theme-content > div > div > div.view-content > table"
+        in_video_caption: "div.mfp-bottom-bar > div.mfp-title > span"
+        trading_sus_leftNav: "#block-enforcement"
+        trading_sus_emailRegion: "#content > div"
+        trading_sus_view: "#DataTables_Table_0_wrapper"
+        admin_pro_emailRegion: "#subscribe-form"
+        see_also: "#edit-field-see-also"
+        media_content_table: "#views-form-media-media-page-list > table"
+        OCR_press_release: "#DataTables_Table_0_wrapper"
+        person_related_speeches: "#block-secgov-content > article > div > div > div.panel-panel.panel-col-last > div > div > div.views-element-container.block.region__inner.person_related_speeches-block_1 > div > div > div > div"
+        person_related_statement: "#block-secgov-content > article > div > div > div.panel-panel.panel-col-last > div > div > div.views-element-container.block.region__inner.person_related_public_statements-block_1"
+        person_related_press-releases: "#block-secgov-content > article > div > div > div.panel-panel.panel-col-last > div > div > div.views-element-container.block.region__inner.person_related_press_releases-block_1"
+        person_related_testimony: "#block-secgov-content > article > div > div > div.panel-panel.panel-col-last > div > div > div.views-element-container.block.region__inner.person_related_testimonials-block_1"
+        release_view_about: "#block-secgov-content > div > header > div"
+        node_page_modified_date: "#block-secgov-content > article > div.article-date.modified"
+        delinquint_view_topper: "#block-delinquentfilingstopper"
+        media_image_thumbnail: "div.image-preview"

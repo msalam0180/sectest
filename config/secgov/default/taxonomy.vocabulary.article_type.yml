@@ -1,0 +1,10 @@
+uuid: 6348a307-f96a-43c9-86fe-1e845af929a9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rx9B0liIL1m4TmMHknACEyM3rXCW316aHgLzFozEJH8
+name: 'Article Type'
+vid: article_type
+description: ''
+weight: -10

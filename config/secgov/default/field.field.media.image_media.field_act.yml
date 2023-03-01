@@ -1,0 +1,29 @@
+uuid: e76183df-1640-4a6f-9265-48b9648a9d1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_act
+    - media.type.image_media
+    - taxonomy.vocabulary.act
+id: media.image_media.field_act
+field_name: field_act
+entity_type: media
+bundle: image_media
+label: Act
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      act: act
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

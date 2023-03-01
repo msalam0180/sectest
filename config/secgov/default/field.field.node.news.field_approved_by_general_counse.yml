@@ -1,0 +1,25 @@
+uuid: 0d46d1dd-cd6d-4ccd-9b2e-33e690978570
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_approved_by_general_counse
+    - node.type.news
+_core:
+  default_config_hash: MSeDL2AGuY3bL6fI8RSPZiONXTHSTpcNGmtQALGFmBY
+id: node.news.field_approved_by_general_counse
+field_name: field_approved_by_general_counse
+entity_type: node
+bundle: news
+label: 'Approved by General Counsel'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Approved by General Counsel'
+  off_label: 'Off'
+field_type: boolean

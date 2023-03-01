@@ -1,0 +1,9 @@
+uuid: cf22ccba-f409-4c5c-aaf4-7b4bb8bc38f0
+langcode: en
+status: true
+dependencies: {  }
+id: list
+label: List
+icon_uuid: null
+description: 'A list of paragraphs (normally "Text", but can be others.)'
+behavior_plugins: {  }

@@ -1,0 +1,102 @@
+{
+    "aaer": null,
+    "aljo": null,
+    "ap": null,
+    "ap_case": null,
+    "ic": null,
+    "id": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-15006"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat ALJ Initial Decisions"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "ID-495",
+                    "uri": "\/alj\/aljdec\/2013\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": null,
+            "field_rel_date": [
+                "2013-07-08"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+                "Cameron Elliot, Administrative Law Judge"
+            ],
+            "field_secondary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "Order Instituting Proceedings",
+                    "uri": "http:\/\/www.sec.gov\/\/litigation\/admin\/2012\/1234-9876-o.pdf"
+                }
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Initial Decision"
+            ],
+            "fnid": [
+                "3-15006"
+            ],
+            "rnid": [
+                "ID-495"
+            ],
+            "upload_files": [
+                {
+                    "file": "1234-9876.pdf",
+                    "title": "ID-495",
+                    "year": "2013"
+                }
+            ]
+        }
+    ],
+    "lr": null,
+    "op": null,
+    "sro": null,
+    "ts": null
+}

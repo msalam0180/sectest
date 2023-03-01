@@ -1,0 +1,58 @@
+
+{% if (media.field_media_video_file.value) %}
+  {% set dataType = "inline" %}
+  {% set thumbnail = file_url(media.field_thumbnail.entity.uri.value) %}
+  {% set src = "#video" ~ media.id %}
+  <div id="video{{media.id}}" class="video-embed-field-responsive-video mfp-hide">
+    <div id="videoplayer">
+      {{ content }}
+    </div>
+    <div class="mfp-bottom-bar">
+        <div class="mfp-title">{{ media.field_caption.value }}</div>          
+        <div class="mfp-counter"></div>
+    </div>
+  </div>
+{% elseif (media.field_video.value) %}
+  {% set dataType = "iframe" %}
+  {% if ('vimeo' in media.field_video.value) %}
+    {% set videoId = media.field_video.value|split(".com/")[1]|trim %}
+    {# See investor_gallery_slideshow.module preprocess hook which stores vimeo thumbnail in thumbnail field #}
+    {% set thumbnail = file_url(media.field_thumbnail.value) %}
+  {% else %}
+    {% set videoId = media.field_video.value|split("=")[1]|trim %}
+    {% set thumbnail = "https://i.ytimg.com/vi/"~videoId~"/hqdefault.jpg"  %} 
+  {% endif %}
+
+  
+  {% set src = media.field_video.value %}
+  
+{% endif %}
+
+<!-- -------------------------- BOX MARKUP -------------------------- -->
+<div class="media-box video">
+  <div class="media-box-content">
+    <div class="media-box-title">{{ media.name.value }}</div>
+  </div>
+
+  <button
+    class="media-box-image mb-open-popup"
+    data-src="{{ src }}"
+    data-title="<span class='titleText'>{{ media.field_caption.value }}</span> {{ media.field_transcript.value ? "<a class='transcript-link button' href='/media/" ~ media.id ~ "/'>Link to Transcript</a>" : "" }} "
+    data-alt="{{ media.name.value }}"
+    data-type="{{dataType}}"
+  >
+    <div  
+      data-height="270"
+      data-thumbnail="{{thumbnail}}"
+      data-title="{{ media.field_caption.value }}"
+      data-width="480"
+      data-alt="{{ media.name.value }}"
+    >
+    </div>
+
+    <div class="thumbnail-overlay"></div>
+  </button>
+  {% if (media.field_caption.value) %}
+  <div class="media-box-footer">{{media.field_caption.value}}</div>
+  {% endif %}
+</div>

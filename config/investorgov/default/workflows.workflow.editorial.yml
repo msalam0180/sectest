@@ -1,0 +1,109 @@
+uuid: ff77c803-d893-4f63-b07c-c4c15f5eacb3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.featured
+    - node.type.gallery
+    - node.type.glossary_term
+    - node.type.landing
+    - node.type.news
+    - node.type.page
+    - node.type.publication
+  module:
+    - content_moderation
+_core:
+  default_config_hash: T_JxNjYlfoRBi7Bj1zs5Xv9xv1btuBkKp5C1tNrjMhI
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      weight: -2
+      published: false
+      default_revision: false
+    needs_review:
+      label: 'Needs Review'
+      weight: -1
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 0
+      published: true
+      default_revision: true
+    unpublished:
+      label: Unpublished
+      weight: 2
+      published: false
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: -2
+    publish:
+      label: Publish
+      from:
+        - needs_review
+      to: published
+      weight: 1
+    publish_admin:
+      label: 'Publish Directly'
+      from:
+        - draft
+        - published
+      to: published
+      weight: 2
+    publish_to_draft:
+      label: 'Publish to Draft'
+      from:
+        - published
+      to: unpublished
+      weight: 3
+    reject:
+      label: Reject
+      from:
+        - needs_review
+      to: draft
+      weight: 0
+    submit_for_review:
+      label: 'Submit for Review'
+      from:
+        - draft
+      to: needs_review
+      weight: -1
+    unpublished_to_draft:
+      label: 'Unpublished to Draft'
+      from:
+        - unpublished
+      to: draft
+      weight: 4
+    unpublished_to_published:
+      label: 'Unpublished to Published'
+      from:
+        - unpublished
+      to: published
+      weight: 5
+  entity_types:
+    node:
+      - article
+      - featured
+      - gallery
+      - glossary_term
+      - landing
+      - news
+      - page
+      - publication
+  default_moderation_state: draft

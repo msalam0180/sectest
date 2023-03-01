@@ -1,0 +1,19 @@
+uuid: e1aea5fd-2a39-47e9-a7e1-0e8c843baa89
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternate_name
+    - node.type.landing
+id: node.landing.field_alternate_name
+field_name: field_alternate_name
+entity_type: node
+bundle: landing
+label: 'Alternate Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

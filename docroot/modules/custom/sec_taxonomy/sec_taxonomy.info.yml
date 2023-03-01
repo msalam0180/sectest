@@ -1,0 +1,6 @@
+name: SEC Taxonomy Vocabularies
+description: 'Provides site taxonomy vocabularies.'
+type: module
+core: 8.x
+package: SEC
+core_version_requirement: ^8 || ^9

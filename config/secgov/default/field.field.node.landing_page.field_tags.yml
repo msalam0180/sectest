@@ -1,0 +1,30 @@
+uuid: d570fb48-7813-4563-96f9-77d3a69e487d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.landing_page
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.whats_new
+id: node.landing_page.field_tags
+field_name: field_tags
+entity_type: node
+bundle: landing_page
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+      whats_new: whats_new
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: tags
+field_type: entity_reference

@@ -1,0 +1,573 @@
+uuid: e916958e-3de7-45cc-8265-d05703bd4e52
+langcode: en
+status: closed
+dependencies: {  }
+_core:
+  default_config_hash: PJswSAW8V07Px8mnru6Xm5plGsj_KZCNEndP0WGSorE
+weight: 0
+open: null
+close: null
+uid: 116
+template: false
+archive: false
+id: variable_annuity_summary_prospec
+title: 'Variable Annuity Summary Prospectus'
+description: ''
+category: ''
+elements: |-
+  '#id': variable_annuity
+  intro_text:
+    '#type': processed_text
+    '#text': |
+      <h3 class="text-align-right">File No. S7-23-18</h3>
+
+      <div class="clearfix margin-bottom-20"><img alt="" src="/files/IM-VA-Banner-Site-Header_0.jpg" /></div>
+
+      <p>We require insurance companies to give you—in one long document called a prospectus—a lot of information when you purchase a variable annuity. We are now proposing a different approach. Under the proposed approach, insurance companies may instead choose to give you a short summary document. The longer document would still be available online (and you could receive a paper copy of it at no charge if you ask for it). We call the short summary document a summary prospectus.</p>
+
+      <p>We would like to know what you think about the summary prospectus. Please take a few minutes to review this&nbsp;<a href="https://www.sec.gov/rules/proposed/2018/33-10569-appendix-a.pdf">sample summary prospectus</a>&nbsp;and answer any or all of these questions. Thank you for your feedback!</p>
+
+      <p><strong>All required fields are marked with an asterisk <span style="color:red">*</span></strong></p>
+    '#format': full_html
+  contact_info:
+    '#type': fieldset
+    '#title': 'Contact Information'
+    fname:
+      '#type': textfield
+      '#title': 'First Name'
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your first name.'
+      '#format_items': comma
+    lname:
+      '#type': textfield
+      '#title': 'Last Name'
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your last name.'
+      '#format_items': comma
+    email:
+      '#type': email
+      '#title': 'Email Address'
+      '#description': '<em>(Your email address will not be published on the web site)</em>'
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your email address.'
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+      '#format_items': comma
+  hidden_inputs:
+    '#type': fieldset
+    '#title': 'Hidden Inputs'
+    '#title_display': invisible
+    '#attributes':
+      style: 'display:none;'
+    ruling:
+      '#type': hidden
+      '#title': ruling
+      '#default_value': S7-23-18
+    rule_path:
+      '#type': hidden
+      '#title': rule_path
+      '#default_value': /comments/S7-23-18
+    file_num:
+      '#type': hidden
+      '#title': file_num
+      '#default_value': S7-23-18
+    comments:
+      '#type': hidden
+      '#title': comments
+    title:
+      '#type': hidden
+      '#title': title
+      '#default_value': 'Variable Annuity Summary Prospectus Feedback Form'
+  questions:
+    '#type': fieldset
+    '#title': Questions
+    question1:
+      '#type': radios
+      '#title': '1. Have you ever considered purchasing a variable annuity?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        'Don''t Know': 'Don''t Know'
+    question2:
+      '#type': webform_likert
+      '#title': '2. The sample summary prospectus is divided into eight sections. Please indicate which two sections you found to be the most useful, and which two sections you found to be the least useful, in describing the variable annuity.'
+      '#wrapper_attributes':
+        id: tableQuestion2
+      '#questions':
+        'Overview of the Variable Annuity Contract': 'a. Overview of the Variable Annuity Contract'
+        'Important Information You Should Consider About the Contract': 'b. Important Information You Should Consider About the Contract'
+        'Standard Death Benefit': 'c. Standard Death Benefit'
+        'Other Benefits Available Under the Contract': 'd. Other Benefits Available Under the Contract'
+        'Buying Your Contract': 'e. Buying Your Contract'
+        'Surrendering Your Contract or Making Withdrawals: Accessing the Money in Your Contract': 'f. Surrendering Your Contract or Making Withdrawals: Accessing the Money in Your Contract'
+        'Additional Information About Fees': 'g. Additional Information About Fees'
+        'Portfolio Companies Available Under Your Contract': 'h. Portfolio Companies Available Under Your Contract'
+      '#answers':
+        'Most Useful': 'Most Useful'
+        'Least Useful': 'Least Useful'
+      '#answers_description_display': help
+      '#na_answer_text': 'Why?'
+    question3:
+      '#type': radios
+      '#title': '3. The sample summary prospectus includes a section named “Overview of the Variable Annuity Contract.” Does that section provide clear information?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q3:
+      '#type': textarea
+      '#title': 'If no, what other information would make this clearer?'
+      '#states':
+        visible:
+          ':input[name="question3"]':
+            value: 'No'
+      '#format_items': comma
+    question4:
+      '#type': radios
+      '#title': '4. The section named “Important Information You Should Consider About the Contract” includes a table. Do you think the table is clear?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q4:
+      '#type': textarea
+      '#title': 'If no, what other information would make this clearer? Would you prefer to see the information in a different format (other than a table)?'
+      '#states':
+        visible:
+          ':input[name="question4"]':
+            value: 'No'
+      '#format_items': comma
+    question5:
+      '#type': radios
+      '#title': '5. The sample summary prospectus describes what you would pay for the variable annuity, including upfront fees and future fees. Was this description clear?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q5:
+      '#type': textarea
+      '#title': 'If no, what other information would make this clearer?'
+      '#states':
+        visible:
+          ':input[name="question5"]':
+            value: 'No'
+      '#format_items': comma
+    question6:
+      '#type': label
+      '#title': '6. Variable annuities may offer optional insurance benefits that you can purchase for extra fees. The sample summary prospectus describes these optional benefits.'
+    question6a:
+      '#type': radios
+      '#title': 'A. Does the sample summary prospectus describe these optional benefits clearly?  '
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q6a:
+      '#type': textarea
+      '#title': 'If no, what other information would make this clearer?'
+      '#states':
+        visible:
+          ':input[name="question6a"]':
+            value: 'No'
+      '#format_items': comma
+    question6b:
+      '#type': radios
+      '#title': 'B. Does the sample summary prospectus describe the extra fees associated with these optional benefits clearly?  '
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q6b:
+      '#type': textarea
+      '#title': 'If no, how could we make this clearer?'
+      '#states':
+        visible:
+          ':input[name="question6b"]':
+            value: 'No'
+      '#format_items': comma
+    question7:
+      '#type': radios
+      '#title': '7. When you purchase a variable annuity, you decide how to invest your money by selecting one or more available mutual funds. The sample summary prospectus includes a table of mutual funds that are available as investment options. Does this table provide the information that you would want to consider when choosing mutual funds?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    feedback_q7:
+      '#type': textarea
+      '#title': 'If no, what other information would make this clearer? Would you prefer to see the information in a different format (other than a table)?'
+      '#states':
+        visible:
+          ':input[name="question7"]':
+            value: 'No'
+      '#format_items': comma
+    question8:
+      '#type': webform_likert
+      '#title': '8. After reading the sample summary prospectus, how likely would you be to request the full prospectus for more information on the following topics?'
+      '#questions':
+        'Investment options (mutual funds) offered under the variable annuity': 'Investment options (mutual funds) offered under the variable annuity'
+        'Standard death benefit': 'Standard death benefit'
+        'Optional insurance features (also called optional benefits or riders)': 'Optional insurance features (also called optional benefits or riders)'
+        'Fees (how much the variable annuity costs)': 'Fees (how much the variable annuity costs)'
+        'Mechanics of how a variable annuity works (how to purchase, accessing money, annuitization, etc.)': 'Mechanics of how a variable annuity works (how to purchase, accessing money, annuitization, etc.)'
+      '#answers':
+        'Very Likely': 'Very Likely'
+        Likely: Likely
+        'Neither Likely Nor Unlikely': 'Neither Likely Nor Unlikely'
+        Unlikely: Unlikely
+        'Very Unlikely': 'Very Unlikely'
+    question9:
+      '#type': radios
+      '#title': '9. Is the length of the document'
+      '#options':
+        'Too short': 'Too short'
+        'Too long': 'Too long'
+        'About right': 'About right'
+    feedback_q9:
+      '#type': textarea
+      '#title': 'If the length is not appropriate, why not?'
+      '#states':
+        visible:
+          - ':input[name="question9"]':
+              value: 'Too long'
+          - or
+          - ':input[name="question9"]':
+              value: 'Too short'
+      '#format_items': comma
+    question10:
+      '#type': webform_radios_other
+      '#title': '10. How would you prefer to receive/read a document like the sample summary prospectus?'
+      '#options':
+        'On paper': 'On paper'
+        'In an email': 'In an email'
+        'On a website': 'On a website'
+        'A combination of paper and digital': 'A combination of paper and digital'
+      '#other__option_label': 'Other (explain)'
+      '#other__placeholder': ''
+    question11:
+      '#type': textarea
+      '#title': '11. Do you have any additional suggestions for improving the summary prospectus? Is there anything else you would like to tell us about your experience with variable annuities?'
+      '#format_items': comma
+  submit_details:
+    '#type': processed_text
+    '#text': |
+      <p><strong>We will post your feedback on our website. Your submission will be posted without change; we do not redact or edit personal identifying information from submissions. You should only make submissions that you wish to make available publicly.</strong></p>
+
+      <h2>How to Provide Feedback</h2>
+
+      <hr />
+      <ul class="no-bullet">
+      	<li><a class="printMe">Print Your Responses</a> and Mail</li>
+      	<li>Secretary</li>
+      	<li>U.S. Securities and Exchange Commission</li>
+      	<li>100 F Street, NE</li>
+      	<li>Washington, DC 20549-1090</li>
+      </ul>
+
+      <hr />
+      <ul class="no-bullet">
+      	<li><a class="printMe">Print a PDF of Your Responses</a> and Email</li>
+      	<li>Use the printer friendly page and select a PDF printer to create a file you can email to: <a href="mailto:rule-comments@sec.gov?subject=S7-23-18">rule-comments@sec.gov</a></li>
+      </ul>
+
+      <hr />
+      <ul class="no-bullet">
+      	<li>Print a Blank Copy of <a href="https://www.sec.gov/rules/proposed/2018/34-83063-appendix-f.pdf">this Flier</a>, Fill it Out, and Mail</li>
+      	<li>Secretary</li>
+      	<li>Securities and Exchange Commission</li>
+      	<li>100 F Street, NE</li>
+      	<li>Washington, DC 20549-1090</li>
+      </ul>
+
+      <p>If you are interested in background information on the proposed variable annuity summary prospectus, or want to provide feedback on additional questions, click <a href="https://www.sec.gov/rules/proposed/2018/34-83063.pdf">here</a>.</p>
+
+      <h3 class="text-align-right">File No. S7-23-18</h3>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ".webform-submission-form input[type='text'], .webform-submission-form input[type='email'], .webform-submission-form input[type='tel'] {\r\n  width: 66.10169% !important;\r\n}\r\n\r\n.webform-submission-form fieldset:not(.fieldgroup) {\r\n  border: 1px solid #000;\r\n  margin: 20px 0;\r\n  padding: 20px;\r\n}\r\n\r\n.webform-submission-form fieldset.fieldgroup {\r\n  border: none;\r\n  margin-bottom: 0;\r\n  /*padding: 0;*/\r\n}\r\n\r\n.webform-submission-form fieldset.fieldgroup + div {\r\n  margin-bottom: 1em; \r\n}\r\n\r\n.webform-submission-form legend {\r\n  font-family: 'Raleway', sans-serif !important;\r\n  font-size: .875rem !important;\r\n  font-weight: 600 !important;\r\n}\r\n\r\n.webform-submission-form legend + div.fieldset-wrapper {\r\n  padding: 0 5px 10px;\r\n}\r\n\r\n.webform-submission-form label {\r\n  color: #101f36;\r\n  font-family: 'Raleway', sans-serif !important;\r\n  font-size: .875rem !important;\r\n  font-weight: 600 !important;\r\n  margin: 5px 0 !important;\r\n}\r\n\r\n.webform-submission-form .webform-element--title-inline label + input {\r\n  display: inline-block !important;\r\n  height: 25px;\r\n}\r\n\r\n.webform-submission-form .webform-likert-table-wrapper {\r\n  margin: 1rem 0;\r\n}\r\n\r\n/*.webform-submission-form select {\r\n  width: 100% !important;\r\n}\r\n\r\n.webform-select-other--wrapper {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.path-webform select[multiple=\"multiple\"] {\r\n  background: #ffffff !important;\r\n}*/"
+javascript: "      jQuery(function($){\r\n      \r\n        $(\".form-wrapper\").addClass(\"colspan-12\");\r\n        $(\".webform-element--title-inline label\").addClass(\"colspan-4\");\r\n        $(\".webform-element--title-inline input, .webform-element--title-inline .select-container, .webform-element--title-inline .description\").addClass(\"colspan-8 last\");\r\n        $(\".webform-element--title-inline .select-container\").addClass(\"margin-bottom-0\");\r\n        $(\"<div class='clearfix'/>\").insertAfter(\".webform-element--title-inline, .webform-element--title-inline .select-container\");\r\n        $(\".webform-submission-form table thead tr th:first-child span\").removeClass(\"visually-hidden\").text(\"Name of the Section\");\r\n              \r\n        $(\"a.printMe\").on(\"click\", function() {\r\n          Clickheretoprint();\r\n        });\r\n        \r\n        //Switch Likert Table radio inputs to checkbox inputs\r\n        //$(\"#tableQuestion2 input[type='radio']\").attr(\"type\", \"checkbox\");\r\n        //$(\"#tableQuestion2 input.form-radio\").removeClass(\"form-radio\").addClass(\"form-checkbox\");\r\n        //$(\"#tableQuestion2 div.js-form-type-radio\").removeClass(\"js-form-type-radio\").addClass(\"js-form-type-checkbox\"); \r\n\r\n\r\n        $(\"input[type='radio']\").on(\"focus\", function(){\r\n          $(this).parent().attr(\"aria-checked\", \"true\");\r\n          $(this).attr(\"checked\", \"true\");\r\n        });\r\n \r\n        $(\"input[type='radio']\").on(\"click\", function(){\r\n          $(\"input[type='radio']\").each(function(i) {\r\n            if( $(this).is(\":checked\") ){\r\n              // console.log(\"I'm checked\");\r\n              $(this).parent().attr(\"aria-checked\", \"true\");\r\n            } else {\r\n              // console.log(\"I'm unchecked\");\r\n              $(this).parent().attr(\"aria-checked\", \"false\");\r\n            }\r\n          });\r\n        });\r\n        \r\n        $('#tableQuestion2').on('change', 'input[type=radio]', function () {\r\n          var index = $(this).closest('td').index() + 1;\r\n          var $checked = $(\"#tableQuestion2 td:nth-child(\" + (index) + \") input:checked\");\r\n          if ($checked.length > 2) {\r\n            this.checked = false;\r\n            alert(\"You cannot select more than two items in the 'Most Useful' and 'Least Useful' categories\");\r\n          }\r\n        });\r\n\r\n\r\n\r\n        //////////////////////////////////////////////////////////////////////////\r\n        function prepareComments() {\r\n          var validated = validateForm();\r\n          if (validated == true) {\r\n            try {\r\n              document.getElementsByName(\"comments\")[0].value = commentsData();\r\n              //alert(commentsData());\r\n            }\r\n            catch (err) {\r\n              alert(\"Problem occurred in setting comments\" + err.message);\r\n              return false;\r\n            }\r\n            return true;\r\n          }\r\n          else {\r\n            return false;\r\n          }\r\n        }\r\n\r\n        ///////////////////////////////////////////////////////////////////\r\n        function getCheckedRadioItem(thisElement) {\r\n          for (var i = 0, length = thisElement.length; i < length; i++) {\r\n            if (thisElement[i].checked) {\r\n              return thisElement[i];\r\n            }\r\n          }\r\n          return null;\r\n        }\r\n\r\n        \r\n        \r\n        /*$(\"#tableQuestion2 tbody tr input\").on(\"click\", function () {\r\n          \r\n          var respectiveMost = $(this).val(\"Most Useful\");\r\n          \r\n          if ( $(respectiveMost).is(\":checked\") ) {\r\n            $(respectiveMost).prop(\"checked\", false);\r\n          }\r\n        \r\n          var respectiveLeast = $(this).val(\"Least Useful\");\r\n          if ( $(respectiveLeast).is(\":checked\") ) {\r\n            $(respectiveLeast).prop(\"checked\", false);\r\n          }\r\n          \r\n        });*/\r\n        \r\n        \r\n        function getRadioValue(thisElement, event){\r\n          //alert(\"checking radio buttons\");\r\n          for (var i = 0, length = thisElement.length; i < length; i++){\r\n            if (thisElement[i].checked){\r\n              return thisElement[i].value;\r\n            }\r\n          }\r\n          return \"\";\r\n        }\r\n        \r\n        function checkedRow(thisGroup) {\r\n          var radios = document.getElementsByName(thisGroup);\r\n          for( var i = 0; i < radios.length; i++)\r\n          {\r\n            if (radios[i].checked)\r\n              return i;\r\n\r\n          }\r\n          return -1;\r\n        }\r\n        \r\n        \r\n        ///////////////////////////////////////////////////////////////////\r\n        function commentsData()\r\n        {\r\n          //alert(\"constructing comments\");\r\n            var comments = \"\";\r\n\r\n            try\r\n            {\r\n                comments += \"VARIABLE ANNUITY SUMMARY PROSPECTUS\\n\\n\";\r\n              \r\n                comments += \" 1. Have you ever considered purchasing a variable annuity? \\n\";\r\n                comments += getRadioValue(document.getElementsByName(\"question1\"));\r\n                comments += \"\\n\\n\";\r\n              \r\n              \r\n                comments += \" 2. The sample summary prospectus is divided into eight sections. Please indicate which two sections you found to be the most useful, and which two sections you found to be the least useful, in describing the variable annuity \\n\";\r\n\r\n                    //Traverse the table to read values\r\n                    var table = document.querySelector(\"div#tableQuestion2 table.webform-likert-table\");\r\n                    var val = \"\", item = \"\";\r\n\r\n                    for (var i = 1; i < table.rows.length; i++)\r\n                    {\r\n                        item = table.rows[i].cells[0].querySelector(\"label\").innerText;\r\n                        var questionName = item.substr(3);  //get the row content letter\r\n                        val = \"\";\r\n                       \r\n                        var elementName = \"question2[\" + questionName + \"]\";\r\n                      \r\n                        val = getRadioValue(document.getElementsByName(elementName));\r\n\r\n                        if (val != \"\")\r\n                        {\r\n                            comments += item + \" : \" + val + \"  \";\r\n                            //comments += \" : \" + document.getElementsByName(\"question2Row\" + questionName)[0].value.replace(/^\\s+|\\s+$/g, '');\r\n                            comments += \"\\n\";\r\n                        }\r\n                    }\r\n                    comments += \"\\n\";\r\n              \r\n              \r\n                comments += \" 3. The sample summary prospectus includes a section named “Overview of the Variable Annuity Contract.” Does that section provide clear information? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question3\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, what other information would make this clearer? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q3\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    }\r\n                    comments += \"\\n\\n\";\r\n\r\n                 comments += \" 4. The section named “Important Information You Should Consider About the Contract” includes a table. Do you think the table is clear? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question4\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, what other information would make this clearer? Would you prefer to see the information in a different format (other than a table)? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q4\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    }\r\n                    comments += \"\\n\\n\";\r\n\r\n                 comments += \" 5. The sample summary prospectus describes what you would pay for the variable annuity, including upfront fees and future fees. Was this description clear? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question5\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, what other information would make this clearer? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q5\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } \r\n                    comments += \"\\n\\n\";\r\n              \r\n                comments += \" 6. Variable annuities may offer optional insurance benefits that you can purchase for extra fees. The sample summary prospectus describes these optional benefits. \\n\";\r\n                    comments += \" A. Does the sample summary prospectus describe these optional benefits clearly? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question6a\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, what other information would make this clearer? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q6a\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } \r\n                    comments += \"\\n\\n\";\r\n              \r\n                    comments += \" B. Does the sample summary prospectus describe the extra fees associated with these optional benefits clearly? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question6b\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, how could we make this clearer? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q6b\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } \r\n                    comments += \"\\n\\n\";\r\n              \r\n                comments += \" 7. How can the SEC better use technology and communication tools to help investors focus on important fund information? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question7\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'No'){\r\n                        comments += \"If no, what other information would be helpful to include? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q7\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } \r\n                    comments += \"\\n\\n\";\r\n              \r\n                     \r\n                comments += \" 8. After reading the sample summary prospectus, how likely would you be to request the full prospectus for more information on the following topics? \";         \r\n                comments += \"\\n\";\r\n                \r\n                comments += \" Investment options (mutual funds) offered under the variable annuity: \" + getRadioValue(document.getElementsByName(\"question8[Investment options (mutual funds) offered under the variable annuity]\"));\r\n                comments += \"\\n\";\r\n\r\n                comments += \" Standard death benefit: \" + getRadioValue(document.getElementsByName(\"question8[Standard death benefit]\"));\r\n                comments += \"\\n\";\r\n\r\n                comments += \" Optional insurance features (also called optional benefits or riders): \" + getRadioValue(document.getElementsByName(\"question8[Optional insurance features (also called optional benefits or riders)]\"));\r\n                comments += \"\\n\";\r\n\r\n                comments += \" Fees (how much the variable annuity costs): \" + getRadioValue(document.getElementsByName(\"question8[Fees (how much the variable annuity costs)]\"));\r\n                comments += \"\\n\";\r\n\r\n                comments += \" Mechanics of how a variable annuity works (how to purchase, accessing money, annuitization, etc.): \" + getRadioValue(document.getElementsByName(\"question8[Mechanics of how a variable annuity works (how to purchase, accessing money, annuitization, etc.)]\"));\r\n                comments += \"\\n\\n\";        \r\n              \r\n              \r\n                comments += \" 9. Is the length of the document: \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question9\"));\r\n                    comments += reply + \"\\n\";\r\n                    if (reply == 'Too short' || reply == 'Too long'){\r\n                        comments += \"If the length is not appropriate, why not? \\n\";\r\n                        comments += document.getElementsByName(\"feedback_q9\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } \r\n                    comments += \"\\n\\n\";\r\n              \r\n                comments += \" 10. How would you prefer to receive/read a document like the sample summary prospectus? \\n\";\r\n                    reply = getRadioValue(document.getElementsByName(\"question10[radios]\"));\r\n\r\n                    if (reply == '_other_') {\r\n                        comments += document.getElementsByName(\"question10[other]\")[0].value.replace(/^\\s+|\\s+$/g, '');;\r\n                    } else {\r\n                        comments += reply;\r\n                    }\r\n                    comments += \"\\n\\n\";\r\n              \r\n                comments += \" 11. Do you have any additional suggestions for improving the summary prospectus? Is there anything else you would like to tell us about your experience with variable annuities? \\n\";\r\n                comments += document.getElementById(\"edit-question11\").value.replace(/^\\s+|\\s+$/g, '');\r\n                comments += \"\\n\\n\";\r\n                \r\n                //alert (\"Finished constructing comments\");\r\n            }\r\n            catch(err)\r\n            {\r\n                alert(\"Error Message: \" + err.message);\r\n            }\r\n            return comments;\r\n        }\r\n\r\n       \r\n       //////////////////////////////// Render printer friendly page ///////////////////////////////////\r\n       \r\n      function Clickheretoprint() {\r\n        var disp_setting = \"toolbar=yes,location=no,directories=yes,menubar=yes,\";\r\n        disp_setting += \"scrollbars=yes,width=650, height=600, left=10, top=25\";\r\n\r\n        var combinedComments = commentsData();\r\n\r\n        var docprint = window.open(\"\", \"\", disp_setting);\r\n        docprint.document.open();\r\n        docprint.document.write('<html><head><title>S7-23-18</title>');\r\n        docprint.document.write('</head><body onLoad=\"self.print()\">');\r\n\r\n        docprint.document.write('<table style=\"width:100%\">');\r\n        docprint.document.write('<tr><td><h3></h3></td><td align=right><h3>File No. S7-23-18</h3></td></tr>');\r\n        docprint.document.write('</table>');\r\n\r\n        docprint.document.write('<table width=100%><tr><td><img width=\"35%\" src=\"/files/IM-VA-Banner-Site-Header_0.jpg\" alt=\"Does the information you get from mutual funds or other funds really work for you?\"></td></tr></table>');\r\n        docprint.document.write('<br>');\r\n        docprint.document.write(\"Name: \" + document.getElementsByName(\"fname\")[0].value + \" \" + document.getElementsByName(\"lname\")[0].value + \"<br><br>\");\r\n        docprint.document.write('<br>');\r\n        docprint.document.write('<br>');\r\n\r\n        docprint.document.write(combinedComments.replace(/\\n/g, '<br>'));\r\n\r\n        docprint.document.write('<h3><u>Other Ways to Submit Your Feedback</u></h3>');\r\n        docprint.document.write('You also can send us feedback in the following ways (include the file number S7-23-18 in your response):');\r\n        docprint.document.write('<br>');\r\n        docprint.document.write('<table border=1 summary=\"Other ways to submit feedback\">');\r\n        docprint.document.write('<tr>');\r\n        docprint.document.write('<td><a href=\"javascript:Clickheretoprint()\">Print Your Responses</a> and Mail</td>');\r\n        docprint.document.write('<td>Secretary<br>Securities and Exchange Commission<br>100 F Street, NE<br>Washington, DC 20549-1090</td>');\r\n        docprint.document.write('</tr>');\r\n        docprint.document.write('<tr>');\r\n        docprint.document.write('<td><a href=\"javascript:Clickheretoprint()\">Print a PDF of Your Responses</a> and Email</td>');\r\n        docprint.document.write('<td>Use the printer friendly page and select a PDF<br>printer to create a file you can email to: <a href=\"mailto:rule-comments@sec.gov?subject=S7-23-18\">rule-comments@sec.gov</a></a></td>');\r\n        docprint.document.write('</tr>');\r\n        docprint.document.write('<tr>');\r\n        docprint.document.write('<td>Print a Blank Copy of <a href=\"\">this Flier</a>, Fill it Out, and Mail</td>');\r\n        docprint.document.write('<td>Secretary<br>Securities and Exchange Commission<br>100 F Street, NE<br>Washington, DC 20549-1090</td>');\r\n        docprint.document.write('</tr>');\r\n        docprint.document.write('</table>')\r\n\r\n        docprint.document.write('<table style=\"width:100%\">');\r\n        docprint.document.write('<tr><td></td><td align=right><h3>File No. S7-23-18</h3></td></tr>');\r\n        docprint.document.write('</table>');\r\n\r\n        docprint.document.write('</body></html>');\r\n        docprint.document.close();\r\n        docprint.focus();\r\n      }\r\n        \r\n      });  "
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes:
+    name: feedback
+    onsubmit: 'return prepareComments()'
+  form_method: post
+  form_action: 'https://www.sec.gov/cgi-bin/ruling-comments'
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles: {  }
+    users:
+      - 1
+    permissions: {  }
+  view_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  administer:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: doylene@SEC.GOV
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: |-
+        A new request has been received. Please see the information regarding this request below:<br />
+        <br />
+        Contact Information:<br />
+        [webform_submission:values:fname]<br />
+        [webform_submission:values:lname]<br />
+        [webform_submission:values:email]<br />
+        <br />
+        Division or Office to Receive Your Request:<br />
+        [webform_submission:values:division_office]<br />
+        <br />
+        Information About Your Meeting Request:<br />
+        <em>General Subject Matter of Your Request:</em><br />
+        [webform_submission:values:general_subject_matter_of_your_request]<br />
+        <br />
+        <em>Purpose of the Requested Meeting:</em><br />
+        [webform_submission:values:purpose_of_the_requested_meeting]<br />
+        <br />
+        Your Request:<br />
+        [webform_submission:values:your_request]<br />
+        <br />
+        Additional Information:<br />
+        [webform_submission:values:additional_information]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

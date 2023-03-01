@@ -1,0 +1,5 @@
+sec_releases.release_content:
+  title: 'Release Content'
+  route_name: view.release_content.page_1
+  parent_id: system.admin_content
+  weight: 10

@@ -1,0 +1,11 @@
+uuid: 22bec742-9ab5-4a39-b73f-0e9913144c78
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: u6lIjiAEuLGQstvnM79p3SXdKJizRa9RWJyMQ5j0btI
+id: related_document_s_
+label: 'Related Document(s)'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

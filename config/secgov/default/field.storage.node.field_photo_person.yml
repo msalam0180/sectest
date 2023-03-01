@@ -1,0 +1,32 @@
+uuid: 3f56cbe1-e7c3-4ea2-bd68-4e39c2f18072
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+_core:
+  default_config_hash: 8JiC0iYpG9NeW8AoF4oyQ_vjaM8GZNKuz_yZYoN4IWU
+id: node.field_photo_person
+field_name: field_photo_person
+entity_type: node
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: 2df8664f-9030-4117-ad52-6bcf5bd1f4af
+    alt: ''
+    title: ''
+    width: 200
+    height: 200
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

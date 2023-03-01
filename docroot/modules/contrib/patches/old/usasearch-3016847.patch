@@ -1,0 +1,22 @@
+Index: docroot/modules/contrib/usasearch/src/UsaSearchDocument.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- docroot/modules/contrib/usasearch/src/UsaSearchDocument.php	(date 1560291380000)
++++ docroot/modules/contrib/usasearch/src/UsaSearchDocument.php	(date 1560291380000)
+@@ -142,8 +142,12 @@
+    * Return an array of public properties.
+    */
+   public function getRawData() {
+-    $public_properties = create_function('$obj', 'return get_object_vars($obj);');
+-    return $public_properties($this);
++
++    function ($obj) {
++      $public_properties = "return get_object_vars($obj);";
++      return $public_properties($this);
++    };
++    
+   }
+ 
+   /**

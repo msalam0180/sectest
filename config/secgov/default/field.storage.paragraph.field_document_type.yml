@@ -1,0 +1,62 @@
+uuid: d1029300-a4b7-40bc-b2d2-bf98a633e4fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+_core:
+  default_config_hash: iBXfgJKH0wtcUVgj0f-W9p-h08AodNBdkSvxpmopPlo
+id: paragraph.field_document_type
+field_name: field_document_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Initial Dec (AP)'
+      label: 'Initial Dec (AP)'
+    -
+      value: 'AP Docket Link'
+      label: 'AP Docket Link'
+    -
+      value: 'Commission Opinion (AP)'
+      label: 'Commission Opinion (AP)'
+    -
+      value: 'Finality Order (AP)'
+      label: 'Finality Order (AP)'
+    -
+      value: 'Adjudicatory Order (AP)'
+      label: 'Adjudicatory Order (AP)'
+    -
+      value: Reinstatement
+      label: Reinstatement
+    -
+      value: 'Lit Release (CIV INJ)'
+      label: 'Lit Release (CIV INJ)'
+    -
+      value: 'Press Release (if no Lit Rel)'
+      label: 'Press Release (if no Lit Rel)'
+    -
+      value: 'Final Judgment (Civ Inj)'
+      label: 'Final Judgment (Civ Inj)'
+    -
+      value: 'Amended Final Judgment (Civ Inj)'
+      label: 'Amended Final Judgment (Civ Inj)'
+    -
+      value: 'Initial Charging Document (Complaint/OIP)'
+      label: 'Initial Charging Document (Complaint/OIP)'
+    -
+      value: 'Complaint (other than initial)'
+      label: 'Complaint (other than initial)'
+    -
+      value: Other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

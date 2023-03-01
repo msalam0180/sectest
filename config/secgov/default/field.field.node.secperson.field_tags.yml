@@ -1,0 +1,30 @@
+uuid: 572557d1-b6fa-40d2-ba64-c50eee0a34da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.secperson
+    - taxonomy.vocabulary.tags
+_core:
+  default_config_hash: N_fZNJ_XTaAj4x9gkci1YBWSBaUMoB5ciLd39dDwrEw
+id: node.secperson.field_tags
+field_name: field_tags
+entity_type: node
+bundle: secperson
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

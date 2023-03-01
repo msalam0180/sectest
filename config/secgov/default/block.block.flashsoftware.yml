@@ -1,0 +1,18 @@
+uuid: 9621bcb3-5e82-47ff-95b4-b535b3f51224
+langcode: en
+status: false
+dependencies:
+  theme:
+    - secgov
+id: flashsoftware
+theme: secgov
+region: header
+weight: -30
+provider: null
+plugin: 'simple_block:live_player_help_block'
+settings:
+  id: 'simple_block:live_player_help_block'
+  label: 'Flash Software'
+  label_display: visible
+  provider: simple_block
+visibility: {  }

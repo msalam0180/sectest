@@ -1,0 +1,50 @@
+{#
+  /**
+   * @file
+   * Custom Block for OASB Rising Capital Map.
+   */
+  #}
+  
+<div id="map_viz">
+  <div class="actionButtons">
+    <a id="methodology" class="button" style="margin-right: 10px" href="#methodology-section">Methodology</a>
+    <a href="" class="button" id="download">Download</a>
+  </div>
+  <div id="container" aria-hidden="true"></div>
+  <div class="countiesHolder">
+    <div id="countyContainer"></div>
+    <div id="guam-countyContainer"></div>
+    <div id="vi-countyContainer"></div>
+  </div>
+  <div class="colorQuantity-container" aria-hidden="true"></div>
+  <div class="categories form-container">
+    <h3 class="sr-only">Filter the Investment Data</h3>
+    <section type="where">
+      <label for="locationSelection">Where</label>
+      <select id="locationSelection" aria-controls="aria-controlled-content">
+        <option value="states">States</option>
+        <option value="counties">Counties</option>
+      </select>
+    </section>
+    <section type="how">
+      <label for="mapSelection">How</label>
+      <select id="mapSelection" aria-controls="aria-controlled-content"></select>
+    </section>
+    <section type="when">
+      <label for="selectedFilter">When</label>
+      <form id="stateFilter">
+        <div class="filterContainer"></div>
+      </form>
+    </section>
+  </div>
+  <div id="aria-controlled-content"  aria-live="polite" class="sr-only">
+    <h3>Investment in America</h3>
+    <div id="a11y-data-tables"></div>
+  </div>
+  <section id="methodology-section" class="stylized-box-1">
+    <article>
+      <h3>Methodology</h3>
+      <p id="methodology-description"></p>
+    </article>
+  </section>
+</div>

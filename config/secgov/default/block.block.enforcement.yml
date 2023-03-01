@@ -1,0 +1,32 @@
+uuid: 414155e2-d6a4-48a4-8c7a-4e5cc6d92354
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.enforcement
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: zOmd7qTCVmkbbNCHRv_IMKb3Z-6ZkuV5Yeu7LD0mPdA
+id: enforcement
+theme: secgov
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'system_menu_block:enforcement'
+settings:
+  id: 'system_menu_block:enforcement'
+  label: Enforcement
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/enforce\r\n/enforce/*\r\n/divisions/enforce/*\r\n/enforcement/*\r\n/litigation/suspensions\r\n/litigation/suspensions/*\r\n/litigation/admin\r\n/litigation/admin/*\r\n/alj/aljorders\r\n/alj/aljorders/*\r\n/alj/aljdec\r\n/alj/aljdec/*\r\n/litigation/opinions\r\n/litigation/opinions/*\r\n/litigation/stoporders\r\n/litigation/stoporders/*\r\n/litigation/litreleases\r\n/litigation/litreleases/*\r\n/litigation/amicusbriefs\r\n/litigation/appellatebriefs\r\n/divisions/enforce/friactions\r\n/divisions/enforce/delinquent/delinqindex"

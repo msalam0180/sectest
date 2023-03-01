@@ -1,0 +1,14 @@
+uuid: 9d4ed711-9147-4fef-ba28-b62b98fb197b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.division_office_admin
+  module:
+    - user
+id: user_remove_role_action.division_office_admin
+label: 'Remove the Division/Office Admin role from the selected users'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: division_office_admin

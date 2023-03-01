@@ -1,0 +1,21 @@
+uuid: 0639c786-a288-411e-a2ed-0f429443a18f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+_core:
+  default_config_hash: pBY7oP2moDRLoNO-UeJmS5bclomrrceqLEgA5pMPL5g
+id: node.field_list_page_det_secarticle
+field_name: field_list_page_det_secarticle
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

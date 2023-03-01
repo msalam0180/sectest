@@ -1,0 +1,23 @@
+uuid: 79c48882-9e98-453d-a051-5fd500e136b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cancelled_postponed
+    - node.type.event
+  module:
+    - options
+_core:
+  default_config_hash: iSwbnMsgwB0f3IncIyh4Kg-FnI3WmFkxPEeOKgfA4XM
+id: node.event.field_cancelled_postponed
+field_name: field_cancelled_postponed
+entity_type: node
+bundle: event
+label: Cancelled/Postponed
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

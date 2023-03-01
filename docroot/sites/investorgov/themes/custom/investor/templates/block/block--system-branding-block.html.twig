@@ -1,0 +1,37 @@
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * SEC.gov's theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ */
+#}
+{% set attributes = attributes.addClass('site-branding') %}
+
+{% block content %}  
+  <div class="branding">
+    {% if site_logo %}
+      <div class="banner-seal">
+        <a href="https://www.sec.gov" rel="home" title="SEC Emblem">
+          <img src="{{ site_logo }}" alt="SEC Emblem" />
+        </a>
+      </div>
+    {% endif %}
+
+    {% if site_name %}
+      <div class="banner-org-name">
+          <a href="{{ path('<front>') }}" rel="home">
+            <div class="site-name">{{ site_name|render|striptags }}</div>
+            <div class="site-name-extra">U.S. Securities and Exchange Commission</div>
+          </a>
+      </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

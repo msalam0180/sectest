@@ -1,0 +1,30 @@
+uuid: b724fcb4-9e37-4a4b-b093-c45a2dfa057f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_act
+    - node.type.file
+    - taxonomy.vocabulary.act
+_core:
+  default_config_hash: MfoZPgjCSM4gEiSM-OMZl5_rrBX00b1hsW6VnDrKC6Y
+id: node.file.field_act
+field_name: field_act
+entity_type: node
+bundle: file
+label: Act
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      act: act
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

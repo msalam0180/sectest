@@ -1,0 +1,29 @@
+uuid: 48ae52df-7686-4690-9503-acba53625833
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_regulation
+    - media.type.video_media
+    - taxonomy.vocabulary.regulation
+id: media.video_media.field_regulation
+field_name: field_regulation
+entity_type: media
+bundle: video_media
+label: Regulation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      regulation: regulation
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

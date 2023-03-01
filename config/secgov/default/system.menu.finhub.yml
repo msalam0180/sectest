@@ -1,0 +1,8 @@
+uuid: 1aa73286-aca2-416e-9c92-6414f62fb6db
+langcode: en
+status: true
+dependencies: {  }
+id: finhub
+label: FinHub
+description: ''
+locked: false

@@ -1,0 +1,32 @@
+uuid: d224e7ef-ce0f-4029-992f-63ec6fd6c1db
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d0142948-e54b-466a-9b70-09df76e800f0'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - secgov
+id: requestforpubliccommenttemp
+theme: secgov
+region: content
+weight: -34
+provider: null
+plugin: 'block_content:d0142948-e54b-466a-9b70-09df76e800f0'
+settings:
+  id: 'block_content:d0142948-e54b-466a-9b70-09df76e800f0'
+  label: 'Requests for Public Comment - temp'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:block_content':
+    id: 'entity_bundle:block_content'
+    negate: false
+    context_mapping: {  }
+    bundles:
+      basic: basic

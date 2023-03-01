@@ -1,0 +1,13 @@
+uuid: 4b78a361-9492-4ebd-855b-b7437d4b7810
+langcode: en
+status: true
+dependencies: {  }
+id: titles_modern
+label: 'Titles - Modern'
+category: Demographic
+likert: false
+options: |
+  Ms: Ms
+  Mr: Mr
+  Mrs: Mrs
+  Dr: Dr

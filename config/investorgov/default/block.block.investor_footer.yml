@@ -1,0 +1,31 @@
+uuid: 24889a05-e0ce-498b-ab8e-861b598530ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - menu_block_title
+    - system
+  theme:
+    - investor
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+_core:
+  default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
+id: investor_footer
+theme: investor
+region: footer2
+weight: -11
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Site Information'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

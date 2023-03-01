@@ -1,0 +1,22 @@
+uuid: 0d5af9f9-8c8f-49ea-b4bb-56fe9978f688
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: 1-TRihOcJ9rPeYulS_hqoqCA-LNajOWaKqjs6PowzSI
+id: uswdssec_help
+theme: uswdssec
+region: help
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

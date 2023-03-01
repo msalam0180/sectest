@@ -1,0 +1,14 @@
+uuid: 132abc8f-8bbd-4643-af3f-ad7dfabd58fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.static_file
+id: media_type_static_file
+entity_type_id: media_type
+entity_id: static_file
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

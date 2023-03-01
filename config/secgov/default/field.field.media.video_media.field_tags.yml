@@ -1,0 +1,29 @@
+uuid: e533cece-495e-46a9-9974-62823a6ac0e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_tags
+    - media.type.video_media
+    - taxonomy.vocabulary.tags
+id: media.video_media.field_tags
+field_name: field_tags
+entity_type: media
+bundle: video_media
+label: Tags
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

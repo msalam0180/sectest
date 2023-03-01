@@ -1,0 +1,21 @@
+global-styling:
+  css:
+    theme:
+      css/layout.css: {}
+global-js:
+  js:
+    libraries/enquire/enquire.min.js: {}
+    libraries/uswds/js/uswds.min.js: {}
+    js/investor.js: {}
+    js/layouts.js: {}
+    js/third-party/qualtrics-trigger.js: {}
+    js/third-party/url.js: {}    
+  dependencies:
+    - core/jquery
+    - jquery_ui_accordion/accordion
+flowinggrid:
+  js:
+    libraries/masonry/masonry.pkgd.min.js: {}
+    js/masonry.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,39 @@
+.block-wrapper-simple-box{
+  border: 1px solid #dedede;
+  padding: 40px;
+  background: whitesmoke;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  > .field__items > .field__item:first-child .paragraph .field__item:first-child :first-child{
+    margin-top: 0;
+  }
+}
+
+
+//Spacing
+.block-spacing-above{
+  margin-top: 20px;
+}
+
+.block-spacing-below{
+  margin-bottom: 20px;
+}
+
+.block-spacing-above-below{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.block-inline-blocksimple-content-block{
+
+  p{
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+

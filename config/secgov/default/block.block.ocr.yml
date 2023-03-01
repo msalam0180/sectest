@@ -1,0 +1,32 @@
+uuid: 3a87df50-aa24-4979-81ba-f4d22409827a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ocr
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: Qlb8i3NL3rEEAEOpC_rNB88hhP2Jf2h9YAE9OHPBUDw
+id: ocr
+theme: secgov
+region: sidebar_first
+weight: -24
+provider: null
+plugin: 'system_menu_block:ocr'
+settings:
+  id: 'system_menu_block:ocr'
+  label: OCR
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/ocr\r\n/ocr/*"

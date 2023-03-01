@@ -1,0 +1,14 @@
+uuid: 54750c81-fa23-4cec-a934-ac3801812287
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: default_media_pattern
+label: 'Default Media Pattern'
+type: 'canonical_entities:media'
+pattern: 'files/[media:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

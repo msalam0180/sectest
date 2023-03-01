@@ -1,0 +1,23 @@
+uuid: 85419bc5-caae-4d5c-86ff-17fe300b9484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.secarticle
+  module:
+    - datetime
+_core:
+  default_config_hash: 7YB_0lk9gD6APwE66WRzfzhf0wqq6YmOdLWk6WoWpAM
+id: node.secarticle.field_date
+field_name: field_date
+entity_type: node
+bundle: secarticle
+label: 'Modified Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

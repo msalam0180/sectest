@@ -1,0 +1,23 @@
+sec_view_filter_plugin:
+  version: VERSION
+  css:
+    theme:
+      css/plugins/jquery-ui.css: {}
+      css/sec_view_filter_plugin.css: {}
+  js:
+    js/sec_view_filter_plugin.js: {}
+  dependencies:
+    - jquery_ui_autocomplete/autocomplete
+    - core/jquery.once
+sec_view_filter_plugin-datatables:
+  css:
+    theme:
+      css/sec_datatable.css: {}
+  js:
+    js/plugins/jquery.dataTables.min.js: {}
+    js/plugins/natural.js: {}
+    js/plugins/datetime-moment.js: {}
+    js/sec_datatable.js: {}
+  dependencies:
+    - sec_custom_libraries/moment
+    - core/jquery.once

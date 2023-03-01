@@ -1,0 +1,10 @@
+uuid: c1a69ee8-4c1d-4310-88cb-0a7f16e3ef49
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: GXfM5_k9gsdo2Oj4vOMVn1_w9AVYtg1MEVsGGGI3MXQ
+id: careers-nav
+label: 'Careers '
+description: 'Careers Left Menu'
+locked: false

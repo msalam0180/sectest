@@ -1,0 +1,36 @@
+diff --git a/src/Plugin/WebformHandler/EmailWebformHandler.php b/src/Plugin/WebformHandler/EmailWebformHandler.php
+index 59fec6dbe4..df3bb15772 100644
+--- a/src/Plugin/WebformHandler/EmailWebformHandler.php
++++ b/src/Plugin/WebformHandler/EmailWebformHandler.php
+@@ -253,9 +253,9 @@ public function defaultConfiguration() {
+       'ignore_access' => FALSE,
+       'exclude_empty' => TRUE,
+       'exclude_empty_checkbox' => FALSE,
+-      'exclude_attachments' => FALSE,
++      'exclude_attachments' => TRUE,
+       'html' => TRUE,
+-      'attachments' => FALSE,
++      'attachments' => TRUE,
+       'twig' => FALSE,
+       'debug' => FALSE,
+       'reply_to' => '',
+diff --git a/src/WebformSubmissionExporter.php b/src/WebformSubmissionExporter.php
+index 8abade0ecb..6fb2e073b4 100644
+--- a/src/WebformSubmissionExporter.php
++++ b/src/WebformSubmissionExporter.php
+@@ -300,6 +300,7 @@ public function getDefaultExportOptions() {
+    * {@inheritdoc}
+    */
+   public function buildExportOptionsForm(array &$form, FormStateInterface $form_state, array $export_options = []) {
++    $user = \Drupal::service('entity_type.manager')->getStorage('user')->load(\Drupal::currentUser()->id());
+     $export_options += $this->getDefaultExportOptions();
+     $this->setExporter($export_options);
+
+@@ -508,7 +509,7 @@ public function buildExportOptionsForm(array &$form, FormStateInterface $form_st
+         '#description' => $this->t('If checked, the exported file and any submission file uploads will be download in the archive file.'),
+         '#return_value' => TRUE,
+         '#default_value' => ($webform->hasManagedFile()) ? $export_options['files'] : 0,
+-        '#access' => $webform->hasManagedFile(),
++        '#access' => $webform->hasManagedFile() && $user->hasRole('administrator'),
+         '#states' => $states_files,
+       ];

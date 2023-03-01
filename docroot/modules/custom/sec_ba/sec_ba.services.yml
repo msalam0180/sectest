@@ -1,0 +1,6 @@
+services:
+  sec_ba.idd_subscriber:
+    class: Drupal\sec_ba\EventSubscriber\SecBaEventSubscriber
+    arguments: ['@current_route_match']
+    tags:
+      - { name: event_subscriber }

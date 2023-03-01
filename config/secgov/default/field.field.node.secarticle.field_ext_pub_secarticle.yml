@@ -1,0 +1,23 @@
+uuid: a0f53660-9776-41f3-a42e-0b32f3fd24ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ext_pub_secarticle
+    - node.type.secarticle
+  module:
+    - options
+_core:
+  default_config_hash: _xGxhioRbUbqfe4eGH8tG8A37mCqV1Fa_8abmsOkhTY
+id: node.secarticle.field_ext_pub_secarticle
+field_name: field_ext_pub_secarticle
+entity_type: node
+bundle: secarticle
+label: 'External Publication Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

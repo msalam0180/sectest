@@ -1,0 +1,23 @@
+uuid: cee30f3d-3734-452d-bcd1-a7295b4c7bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webcast_state
+    - node.type.webcast
+  module:
+    - options
+id: node.webcast.field_webcast_state
+field_name: field_webcast_state
+entity_type: node
+bundle: webcast
+label: 'Webcast State'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: upcoming
+default_value_callback: ''
+settings: {  }
+field_type: list_string

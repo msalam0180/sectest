@@ -1,0 +1,161 @@
+label.form-required::after {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  padding-top: 0;
+  padding-left: 2.5rem;
+  color: #bf280d;
+  content: "*";
+}
+
+/* Form error styles. */
+.form-item input.error {
+  border: 2px solid red;
+}
+
+/* Form error message styles. */
+.form-item--error-message {
+  color: #e32700;
+}
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+.messages {
+  background: no-repeat 10px 17px;  /* LTR */
+  border: 1px solid;
+  border-width: 1px 1px 1px 0;  /* LTR */
+  border-radius: 2px;
+  padding: 15px 20px 15px 35px; /* LTR */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+[dir="rtl"] .messages {
+  border-width: 1px 0 1px 1px;
+  background-position: right 10px top 17px;
+  padding-left: 20px;
+  padding-right: 35px;
+  text-align: right;
+}
+.messages + .messages {
+  margin-top: 1.538em;
+}
+.messages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+/* See .color-success in Seven's colors.css */
+.messages--status {
+  color: #325e1c;
+  background-color: #f3faef;
+  border-color: #c9e1bd #c9e1bd #c9e1bd transparent;  /* LTR */
+  background-image: url(../../../../misc/icons/73b355/check.svg);
+  box-shadow: -8px 0 0 #77b259; /* LTR */
+}
+[dir="rtl"] .messages--status {
+  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+  box-shadow: 8px 0 0 #77b259;
+  margin-left: 0;
+}
+/* See .color-warning in Seven's colors.css */
+.messages--warning {
+  background-color: #fdf8ed;
+  background-image: url(../../../../misc/icons/e29700/warning.svg);
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
+  color: #734c00;
+  box-shadow: -8px 0 0 #e09600; /* LTR */
+}
+[dir="rtl"] .messages--warning {
+  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+  box-shadow: 8px 0 0 #e09600;
+}
+/* See .color-error in Seven's colors.css */
+.messages--error {
+  background-color: #fcf4f2;
+  color: #a51b00;
+  background-image: url(../../../../misc/icons/e32700/error.svg);
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
+  box-shadow: -8px 0 0 #e62600; /* LTR */
+}
+[dir="rtl"] .messages--error {
+  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+  box-shadow: 8px 0 0 #e62600;
+}
+.messages--error p.error {
+  color: #a51b00;
+}
+
+
+.highcharts-data-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: white;
+  min-width: 100%;
+  margin-top: 10px;
+}
+.highcharts-data-table td, .highcharts-data-table th {
+  font-family: sans-serif;
+  font-size: 10pt;
+  border: 1px solid silver;
+  padding: 0.5em;
+  font-weight: 400;
+}
+.highcharts-data-table tr:nth-child(even), .highcharts-data-table thead tr {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #eff;
+}
+
+
+.highcharts-container  {
+  max-height: 400px;
+}
+
+.highcharts-table-caption {
+  font-weight: 700;
+  color: #fff;
+  font-size: 2.8rem;
+  padding: 2rem;
+}
+
+.highcharts-data-table thead th,
+.highcharts-data-table .highlighted-value {
+  font-weight: 700;
+}
+
+.highcharts-data-table {
+  position: absolute;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.highcharts-data-table.show-table {
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+#calculator_results_table {
+
+}
+
+
+#toggle_table {
+  display: block;
+  font: normal 16px "Open Sans", sans-serif;
+  color: #fff;
+  border: solid 2px #fff;
+  padding: 1rem;
+  background: #269092;
+  border-radius: 0;
+  text-shadow: none;
+  margin: 2rem auto 0;
+}

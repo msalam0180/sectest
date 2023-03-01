@@ -1,0 +1,49 @@
+uuid: 25a881a2-68c5-4630-8684-022d9d97ab2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.file
+  module:
+    - file
+    - filefield_paths
+  enforced:
+    module:
+      - media
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: media
+      options:
+        slashes: false
+        pathauto: true
+        transliterate: false
+    file_name:
+      value: '[media:name].[file:ffp-extension-original]'
+      options:
+        slashes: true
+        pathauto: true
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: true
+id: media.file.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: file
+label: 'File Upload'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'csv doc docx ics pdf ppt pptx txt vcs xls xlsx xml zip'
+  max_filesize: ''
+  description_field: false
+field_type: file

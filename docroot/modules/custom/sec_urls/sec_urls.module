@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * Implements hook_pathauto_alias_alter().
+ *
+ * @param string $alias
+ *   The automatic alias after token replacement and strings cleaned.
+ * @param array $context
+ *   An associative array of additional options, with the following elements:
+ *   - 'module': The module or entity type being aliased.
+ *   - 'op': A string with the operation being performed on the object being
+ *     aliased. Can be either 'insert', 'update', 'return', or 'bulkupdate'.
+ *   - 'source': A string of the source path for the alias (e.g. 'node/1').
+ *     This can be altered by reference.
+ *   - 'data': An array of keyed objects to pass to token_replace().
+ *   - 'type': The sub-type or bundle of the object being aliased.
+ *   - 'language': A string of the language code for the alias (e.g. 'en').
+ *     This can be altered by reference.
+ *   - 'pattern': A string of the pattern used for aliasing the object.
+ */
+function sec_urls_pathauto_alias_alter(&$alias, array &$context) {
+
+  $alias = str_replace('/news/upcoming-events/event_type_hidden/', '/nb/news/upcoming-events/', $alias);
+  $alias = str_replace('/news/upcoming-events/event_type_sec-meetings-and-other-events/', '/news/upcoming-events/', $alias);
+  $alias = str_replace('/news/upcoming-events/event_type_public-appearances-officials/', '/news/upcoming-events/', $alias);
+  $alias = str_replace('/news/upcoming-events/event_type_public-hearings-administrative-proceedings/', '/news/upcoming-events/', $alias);
+
+  $alias = preg_replace('{^/(.*?)/fast-answers/}', '/answers/', $alias);
+  $alias = preg_replace('{^/(.*?)/forms/}', '/about/forms/', $alias);
+  $alias = preg_replace('{^/(.*?)/agendas/}', '/agendas/', $alias);
+
+  // wipe out other from URL
+  $alias = str_replace('/other/', '/', $alias);
+
+  // Aliasing for Market Statistics content
+  $alias = str_replace('/dera/data/market-statistics/', '/dera/market-statistics/', $alias);
+  if (strpos($alias, '/dera/data-highlight') === 0) {
+    if (preg_match('/node\/(\d+)/', $context['source'], $matches)) {
+      $node = \Drupal::entityTypeManager()
+        ->getStorage('node')
+        ->load(intval($matches[1]));
+      if ($node->get('field_associated_dataset')->getValue()) {
+        $ds_nid = $node->get('field_associated_dataset')->getValue()[0]['target_id'];
+        $ds_node = \Drupal::entityTypeManager()
+          ->getStorage('node')
+          ->load(intval($ds_nid));
+        if ($ds_node->field_article_sub_type_secart->value === 'Data-MarketStatistics') {
+          $ds_url_alias = explode('/', \Drupal::service('path_alias.manager')->getAliasByPath('/node/' . $ds_node->nid->value));
+          $alias_exp = explode('/', $alias);
+          $alias = '/dera/market-statistics/' . $ds_url_alias[count($ds_url_alias) - 1] . '/' . $alias_exp[count($alias_exp) - 1];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments() to remove cache busting url parameter of google_tag.script.js OSSS-11819
+ */
+function sec_urls_page_attachments(&$attachments) {
+  foreach ($attachments['#attached']['html_head'] as &$attachment) {
+    // Skip if this isn't the google tag script
+    if ($attachment[1] !== 'google_tag_script_tag') {
+      continue;
+    }
+
+    // Only interested if it is using parameters
+    $parts = explode('?', $attachment[0]['#attributes']['src']);
+    if (count($parts) > 1) {
+      $attachment[0]['#attributes']['src'] = $parts[0];
+      // Done here, bail
+      break;
+    }
+  }
+}

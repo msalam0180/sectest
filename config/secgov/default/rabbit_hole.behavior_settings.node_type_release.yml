@@ -1,0 +1,14 @@
+uuid: 44816ad0-e53c-4f47-8513-2c4b8937e36f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.release
+id: node_type_release
+entity_type_id: node_type
+entity_id: release
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

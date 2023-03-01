@@ -1,0 +1,23 @@
+//
+// OCR NEW LIST
+// VIEW NAME: OCR Press Release List
+// A list of "News" Content items with tax of "OCRNews" and "Credit Ratings"
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+@include breakpoint('small'){
+  .ocr-news-list {
+    .form-item {
+      margin-top: 30px;
+    }
+    #datatable {
+      thead {
+        tr { top: -32px; }
+        th { padding: 10px 8px; }
+      }
+    }
+  }
+}
+

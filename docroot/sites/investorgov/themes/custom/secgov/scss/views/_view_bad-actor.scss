@@ -1,0 +1,161 @@
+// //
+// // SALI/IDD/BAD ACTOR List Page
+// // View name: Individual Defendants
+// //
+// // --------------------------------------------------
+
+// #content-wrapper .view-bad-actor header{
+// 	margin-bottom: 18px;
+// }
+
+// .view-id-bad-actors #block-secgov-content{
+// 	float: none;
+// }
+
+// // .view-id-bad-actors.view-display-id-page-1 #page-title h1{
+// // 	color: $navy;
+// // }
+
+// .view-bad-actor{
+// 	clear: both;
+// 	margin-bottom: 20px;
+
+// 	.bad-actor-subtitle{ 
+// 		color: $navy; 
+// 		color: $gray-heading; 
+// 		font-size: 20px; 
+// 		font-weight: 600; 
+// 		padding-bottom: 0; 
+// 		padding-top: 10px; 
+// 		font-family: 'Raleway', sans-serif; 
+// 		-webkit-font-variant-ligatures: no-common-ligatures; 
+// 		font-variant-ligatures: no-common-ligatures; 
+// 	} 
+
+// 	.views-field-field-related-documents{
+// 		li, div.paragraph, ul{
+// 			margin-bottom: 0;
+// 		}
+// 		ul{
+// 			list-style: none;
+// 			margin: 0;
+// 			padding: 0;
+// 		}
+// 		li{
+// 			border-left: 5px solid darken($porcelain, 10%);
+// 		    margin-bottom: 5px !important;
+// 		    padding-left: 5px;
+// 		    margin-top: 5px !important;
+// 		}
+
+// 	}
+
+// 	a.file_embed_link p{
+// 		color: #2F64B2;
+// 	    margin: 0;
+// 	    padding: 0;
+// 	}
+
+// 	a.file_embed_link:visited p{
+// 		color: #6F7479;
+// 	}
+
+// 	.subscribe-rss{
+// 		display: none;
+// 	}
+
+// 	#table_paging{
+// 		border-top: 1px solid #BFBFBF;
+// 	    padding-top: 40px;
+// 	}
+// }
+
+// #block-abouttheidd{
+// 	margin-top: 50px;
+// 	margin-bottom: 60px;
+// 	@extend .card;
+// 	@extend .card-light;
+// 	clear: both;
+// 	padding: 25px 35px;
+// 	border-color: #dadada;
+// 	h2{
+// 		color: $gray-heading;
+// 	    margin-bottom: 10px;
+//     	margin-top: 4px;
+// 	}
+// 	p{
+// 		color: #6E7881;
+// 	    font-size: 12px;
+// 	}
+// }
+
+// // .view-bad-actor footer 
+
+// .no-results {
+//     padding: 20px;
+//     text-align: center;
+//     font-size: 1.4em;
+//     max-width: 590px;
+//     margin: 0 auto;
+// }
+
+// //Exposed Forms
+// .view-bad-actor{
+
+// 	.views-exposed-form{
+// 		background-color: #F3F3F3 !important;
+// 		padding: 15px 25px;
+// 	}
+
+// 	.form-container .form-item input{
+// 		width: 100%;
+// 	    padding: 0 5px;
+// 	}
+
+// 	input#edit-submit-bad-actors {
+// 	   display: inline-block;
+// 	   line-height: 12px;
+// 		margin-bottom: 0;
+// 		margin-right: 0;
+// 		width: 100%;
+// 	}
+
+// 	.views-exposed-form #edit-actions{
+// 		display: block;
+// 		margin-right: 0;
+// 	}
+
+
+// 	@media only screen and (min-width:600px){
+		
+// 		.form-container{
+// 			display: flex;
+// 			width: 100%;
+
+// 			.form-item {
+// 				flex: 1 0 8em;
+// 				margin-right: 20px;
+// 				margin-bottom: 0;
+// 				padding-bottom: 0;
+// 				align-self: flex-end;
+// 			}
+
+// 			.form-actions{
+// 				flex: 0 0 auto;
+// 				align-self: flex-end;
+// 			}
+// 		}
+// 	}
+
+// 	@media only screen and (max-width:600px){
+// 		.views-exposed-form #edit-actions{
+// 			width: 100%;
+// 			input{
+// 			    font-size: 1.5em;
+// 			    height: auto;
+// 			    padding: 10px;
+// 			    line-height: 1.5em;
+// 			}
+// 		}
+// 	}
+// }

@@ -1,0 +1,23 @@
+uuid: e0498404-895b-439a-8f86-c0cb2263c287
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_date
+    - paragraphs.paragraphs_type.related_document_s_
+  module:
+    - datetime
+_core:
+  default_config_hash: _VDmyOlhqae4Pcn3uQGIzkm9HKtbRQ9gqnouqqZnvBU
+id: paragraph.related_document_s_.field_document_date
+field_name: field_document_date
+entity_type: paragraph
+bundle: related_document_s_
+label: 'Document Date'
+description: 'Please enter the date in the format MM/DD/YYYY.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

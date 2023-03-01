@@ -1,0 +1,35 @@
+uuid: 006a658e-4518-4bf8-9db6-c121ccc5fa0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: PF8V9hNtv96cMZOtUQB-Jhf-fisqC2IawCpmXm1e11M
+id: node.field_event_type
+field_name: field_event_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: hidden
+      label: Hidden
+    -
+      value: meeting
+      label: 'SEC Meetings and Other Events'
+    -
+      value: appearance
+      label: 'Public Appearances by Officials'
+    -
+      value: hearing
+      label: 'Public Hearings in Administrative Proceedings'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

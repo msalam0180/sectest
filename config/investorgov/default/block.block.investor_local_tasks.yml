@@ -1,0 +1,22 @@
+uuid: 9682910f-8164-4c18-84f4-7c917cc86338
+langcode: en
+status: true
+dependencies:
+  theme:
+    - investor
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: investor_local_tasks
+theme: investor
+region: admin_details
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

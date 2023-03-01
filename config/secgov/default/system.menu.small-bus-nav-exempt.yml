@@ -1,0 +1,8 @@
+uuid: 3841ade6-01e8-4804-87e0-b886184e09e8
+langcode: en
+status: true
+dependencies: {  }
+id: small-bus-nav-exempt
+label: small-bus-nav-exempt
+description: 'Small business left nav exempt'
+locked: false

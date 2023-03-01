@@ -1,0 +1,21 @@
+uuid: 65130d3e-af27-4d54-b795-b8c695c11b82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_start_date
+    - node.type.webcast
+  module:
+    - datetime
+id: node.webcast.field_start_date
+field_name: field_start_date
+entity_type: node
+bundle: webcast
+label: 'Start Date'
+description: 'The start date and time of the webcast'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

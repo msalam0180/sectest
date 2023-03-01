@@ -1,0 +1,205 @@
+uuid: b3afc959-b5c6-4daa-8a14-88db14412258
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+    - filter.format.plain_html
+    - media.type.image_media
+    - media.type.static_file
+    - media.type.video_media
+    - node.type.data_distribution
+    - node.type.data_visualization
+    - node.type.event
+    - node.type.landing_page
+    - node.type.link
+    - node.type.news
+    - node.type.release
+    - node.type.sec_alert
+    - node.type.secarticle
+    - node.type.secperson
+    - node.type.webcast
+  module:
+    - access_unpublished
+    - block
+    - contextual
+    - environment_indicator
+    - file
+    - filter
+    - flag
+    - media
+    - node
+    - panelizer
+    - panels
+    - panels_ipe
+    - path
+    - quickedit
+    - redirect
+    - replicate_ui
+    - scheduled_updates
+    - scheduler
+    - shortcut
+    - system
+    - toolbar
+    - video_embed_field
+    - workbench
+    - workbench_moderation
+_core:
+  default_config_hash: HrGURdWr3QuwhKhzSqYWrULxgBE601tRqFrGojo7IVQ
+id: content_creator
+label: 'Content Creator'
+weight: 4
+is_admin: null
+permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access environment indicator'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access panels in-place editing'
+  - 'access shortcuts'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access workbench'
+  - 'access_unpublished node article_type'
+  - 'access_unpublished node data_visualization'
+  - 'access_unpublished node event'
+  - 'access_unpublished node file'
+  - 'access_unpublished node image'
+  - 'access_unpublished node landing_page'
+  - 'access_unpublished node link'
+  - 'access_unpublished node news'
+  - 'access_unpublished node news_type'
+  - 'access_unpublished node page'
+  - 'access_unpublished node sec_hero'
+  - 'access_unpublished node secarticle'
+  - 'access_unpublished node secperson'
+  - 'access_unpublished node video'
+  - 'access_unpublished node webcast'
+  - 'administer blocks'
+  - 'administer media'
+  - 'administer nodes'
+  - 'administer panelizer node landing_page content'
+  - 'administer panelizer node secperson content'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer shortcuts'
+  - 'create data_distribution content'
+  - 'create data_visualization content'
+  - 'create event content'
+  - 'create image_media media'
+  - 'create landing_page content'
+  - 'create link content'
+  - 'create news content'
+  - 'create release content'
+  - 'create sec_alert content'
+  - 'create secarticle content'
+  - 'create static_file media'
+  - 'create url aliases'
+  - 'create video_media media'
+  - 'create webcast content'
+  - 'customize shortcut links'
+  - 'delete any data_distribution content'
+  - 'delete any data_visualization content'
+  - 'delete any event content'
+  - 'delete any image_media media'
+  - 'delete any landing_page content'
+  - 'delete any link content'
+  - 'delete any news content'
+  - 'delete any release content'
+  - 'delete any sec_alert content'
+  - 'delete any secarticle content'
+  - 'delete any static_file media'
+  - 'delete any video_media media'
+  - 'delete any webcast content'
+  - 'delete own data_distribution content'
+  - 'delete own data_visualization content'
+  - 'delete own event content'
+  - 'delete own image_media media'
+  - 'delete own landing_page content'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own release content'
+  - 'delete own sec_alert content'
+  - 'delete own secarticle content'
+  - 'delete own static_file media'
+  - 'delete own video_media media'
+  - 'delete own webcast content'
+  - 'edit any data_distribution content'
+  - 'edit any data_visualization content'
+  - 'edit any event content'
+  - 'edit any image_media media'
+  - 'edit any landing_page content'
+  - 'edit any link content'
+  - 'edit any news content'
+  - 'edit any release content'
+  - 'edit any sec_alert content'
+  - 'edit any secarticle content'
+  - 'edit any static_file media'
+  - 'edit any video_media media'
+  - 'edit any webcast content'
+  - 'edit own data_distribution content'
+  - 'edit own data_visualization content'
+  - 'edit own event content'
+  - 'edit own image_media media'
+  - 'edit own landing_page content'
+  - 'edit own link content'
+  - 'edit own news content'
+  - 'edit own release content'
+  - 'edit own sec_alert content'
+  - 'edit own secarticle content'
+  - 'edit own static_file media'
+  - 'edit own video_media media'
+  - 'edit own webcast content'
+  - 'flag bookmark'
+  - 'never autoplay videos'
+  - 'replicate entities'
+  - 'revert all revisions'
+  - 'revert data_distribution revisions'
+  - 'revert data_visualization revisions'
+  - 'revert event revisions'
+  - 'revert landing_page revisions'
+  - 'revert link revisions'
+  - 'revert news revisions'
+  - 'revert release revisions'
+  - 'revert sec_alert revisions'
+  - 'revert secarticle revisions'
+  - 'revert secperson revisions'
+  - 'revert webcast revisions'
+  - 'schedule publishing of nodes'
+  - 'switch shortcut sets'
+  - 'unflag bookmark'
+  - 'update any media'
+  - 'update media'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use ipe with page manager'
+  - 'use keep_unpublished transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_needs_review transition'
+  - 'use published_draft transition'
+  - 'use text format full_html'
+  - 'use text format plain_html'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view data_distribution revisions'
+  - 'view data_visualization revisions'
+  - 'view event revisions'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view moderation states'
+  - 'view news revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view release revisions'
+  - 'view scheduled content'
+  - 'view scheduled update entities'
+  - 'view sec_alert revisions'
+  - 'view secarticle revisions'
+  - 'view secperson revisions'
+  - 'view the administration theme'
+  - 'view webcast revisions'

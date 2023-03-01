@@ -1,0 +1,457 @@
+uuid: 0efeffd6-75d1-4d3e-b002-f2cf0ba0be6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.plain_html
+    - media.type.image_media
+    - media.type.static_file
+    - media.type.video_media
+    - node.type.article_type
+    - node.type.data_distribution
+    - node.type.data_visualization
+    - node.type.event
+    - node.type.landing_page
+    - node.type.link
+    - node.type.news
+    - node.type.news_type
+    - node.type.page
+    - node.type.release
+    - node.type.sec_alert
+    - node.type.sec_hero
+    - node.type.secarticle
+    - node.type.secperson
+    - node.type.webcast
+    - taxonomy.vocabulary.a
+    - taxonomy.vocabulary.act
+    - taxonomy.vocabulary.article_sub_type
+    - taxonomy.vocabulary.article_type
+    - taxonomy.vocabulary.audience
+    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.division_office
+    - taxonomy.vocabulary.external_publication_status
+    - taxonomy.vocabulary.language
+    - taxonomy.vocabulary.link_type
+    - taxonomy.vocabulary.page_type
+    - taxonomy.vocabulary.position_category
+    - taxonomy.vocabulary.regulation
+    - taxonomy.vocabulary.render_as
+    - taxonomy.vocabulary.sec_mission
+    - taxonomy.vocabulary.subject_speaker
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.target
+    - taxonomy.vocabulary.topics
+  module:
+    - access_unpublished
+    - aggregator
+    - block
+    - block_content
+    - comment
+    - config
+    - config_update_ui
+    - contact
+    - contextual
+    - embed
+    - environment_indicator
+    - feeds
+    - field_ui
+    - file
+    - filter
+    - flag
+    - flexslider
+    - image
+    - media
+    - metatag
+    - node
+    - page_manager
+    - panelizer
+    - panels
+    - panels_ipe
+    - path
+    - pathauto
+    - protected_pages
+    - quickedit
+    - redirect
+    - replicate_ui
+    - scheduled_updates
+    - scheduler
+    - shortcut
+    - simple_sitemap
+    - system
+    - taxonomy
+    - toolbar
+    - tour
+    - update
+    - video_embed_field
+    - views_ui
+    - webform
+    - workbench
+    - workbench_access
+    - workbench_moderation
+_core:
+  default_config_hash: sd8fEkywDUB4lADfwX-3GW4Mu1buDRr0O7-2iFqq_CI
+id: sitebuilder
+label: Sitebuilder
+weight: 6
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access devel information'
+  - 'access environment indicator'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access news feeds'
+  - 'access panels in-place editing'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access tour'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'access workbench'
+  - 'access_unpublished node article_type'
+  - 'access_unpublished node data_visualization'
+  - 'access_unpublished node event'
+  - 'access_unpublished node file'
+  - 'access_unpublished node image'
+  - 'access_unpublished node landing_page'
+  - 'access_unpublished node link'
+  - 'access_unpublished node news'
+  - 'access_unpublished node news_type'
+  - 'access_unpublished node page'
+  - 'access_unpublished node sec_hero'
+  - 'access_unpublished node secarticle'
+  - 'access_unpublished node secperson'
+  - 'access_unpublished node video'
+  - 'access_unpublished node webcast'
+  - 'administer advanced pane settings'
+  - 'administer block_content display'
+  - 'administer block_content fields'
+  - 'administer block_content form display'
+  - 'administer blocks'
+  - 'administer comment display'
+  - 'administer comment fields'
+  - 'administer comment form display'
+  - 'administer contact_message display'
+  - 'administer contact_message fields'
+  - 'administer contact_message form display'
+  - 'administer content types'
+  - 'administer devel_generate'
+  - 'administer display modes'
+  - 'administer embed buttons'
+  - 'administer feeds_feed display'
+  - 'administer feeds_feed fields'
+  - 'administer feeds_feed form display'
+  - 'administer filters'
+  - 'administer flagging display'
+  - 'administer flagging fields'
+  - 'administer flagging form display'
+  - 'administer flags'
+  - 'administer flexslider'
+  - 'administer image styles'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer modules'
+  - 'administer news feeds'
+  - 'administer node display'
+  - 'administer node fields'
+  - 'administer node form display'
+  - 'administer nodes'
+  - 'administer pages'
+  - 'administer pane access'
+  - 'administer panelizer'
+  - 'administer panelizer node article_type content'
+  - 'administer panelizer node article_type defaults'
+  - 'administer panelizer node article_type layout'
+  - 'administer panelizer node event content'
+  - 'administer panelizer node event defaults'
+  - 'administer panelizer node event layout'
+  - 'administer panelizer node file content'
+  - 'administer panelizer node file defaults'
+  - 'administer panelizer node file layout'
+  - 'administer panelizer node image content'
+  - 'administer panelizer node image defaults'
+  - 'administer panelizer node image layout'
+  - 'administer panelizer node landing_page content'
+  - 'administer panelizer node landing_page defaults'
+  - 'administer panelizer node landing_page layout'
+  - 'administer panelizer node link content'
+  - 'administer panelizer node link defaults'
+  - 'administer panelizer node link layout'
+  - 'administer panelizer node news content'
+  - 'administer panelizer node news defaults'
+  - 'administer panelizer node news layout'
+  - 'administer panelizer node news_type content'
+  - 'administer panelizer node news_type defaults'
+  - 'administer panelizer node news_type layout'
+  - 'administer panelizer node page content'
+  - 'administer panelizer node page defaults'
+  - 'administer panelizer node page layout'
+  - 'administer panelizer node sec_hero content'
+  - 'administer panelizer node sec_hero defaults'
+  - 'administer panelizer node sec_hero layout'
+  - 'administer panelizer node secarticle content'
+  - 'administer panelizer node secarticle defaults'
+  - 'administer panelizer node secarticle layout'
+  - 'administer panelizer node secperson content'
+  - 'administer panelizer node secperson defaults'
+  - 'administer panelizer node secperson layout'
+  - 'administer panelizer node video content'
+  - 'administer panelizer node video defaults'
+  - 'administer panelizer node video layout'
+  - 'administer panels layouts'
+  - 'administer panels styles'
+  - 'administer pathauto'
+  - 'administer protected pages configuration'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer scheduled update types'
+  - 'administer scheduled_update display'
+  - 'administer scheduled_update fields'
+  - 'administer scheduled_update form display'
+  - 'administer shortcuts'
+  - 'administer site configuration'
+  - 'administer sitemap settings'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer taxonomy_term display'
+  - 'administer taxonomy_term fields'
+  - 'administer taxonomy_term form display'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer user display'
+  - 'administer user fields'
+  - 'administer user form display'
+  - 'administer views'
+  - 'administer webform submission'
+  - 'administer workbench access'
+  - 'assign workbench access'
+  - 'batch update workbench access'
+  - 'bypass node access'
+  - 'bypass pages password protection'
+  - 'bypass workbench access'
+  - 'create article_type content'
+  - 'create data_distribution content'
+  - 'create data_visualization content'
+  - 'create event content'
+  - 'create image_media media'
+  - 'create landing_page content'
+  - 'create link content'
+  - 'create news content'
+  - 'create news_type content'
+  - 'create page content'
+  - 'create publish_on scheduled updates'
+  - 'create release content'
+  - 'create sec_alert content'
+  - 'create sec_hero content'
+  - 'create secarticle content'
+  - 'create secperson content'
+  - 'create static_file media'
+  - 'create unpublish_on scheduled updates'
+  - 'create url aliases'
+  - 'create video_media media'
+  - 'create webcast content'
+  - 'customize shortcut links'
+  - 'delete any data_distribution content'
+  - 'delete any data_visualization content'
+  - 'delete any event content'
+  - 'delete any image_media media'
+  - 'delete any landing_page content'
+  - 'delete any link content'
+  - 'delete any news content'
+  - 'delete any page content'
+  - 'delete any publish_on scheduled updates'
+  - 'delete any release content'
+  - 'delete any sec_alert content'
+  - 'delete any sec_hero content'
+  - 'delete any secarticle content'
+  - 'delete any secperson content'
+  - 'delete any static_file media'
+  - 'delete any unpublish_on scheduled updates'
+  - 'delete any video_media media'
+  - 'delete any webcast content'
+  - 'delete configuration'
+  - 'delete own article_type content'
+  - 'delete own data_distribution content'
+  - 'delete own data_visualization content'
+  - 'delete own event content'
+  - 'delete own image_media media'
+  - 'delete own landing_page content'
+  - 'delete own link content'
+  - 'delete own news content'
+  - 'delete own news_type content'
+  - 'delete own page content'
+  - 'delete own publish_on scheduled updates'
+  - 'delete own release content'
+  - 'delete own sec_alert content'
+  - 'delete own sec_hero content'
+  - 'delete own secarticle content'
+  - 'delete own secperson content'
+  - 'delete own static_file media'
+  - 'delete own unpublish_on scheduled updates'
+  - 'delete own video_media media'
+  - 'delete own webcast content'
+  - 'delete terms in a'
+  - 'delete terms in act'
+  - 'delete terms in article_sub_type'
+  - 'delete terms in article_type'
+  - 'delete terms in audience'
+  - 'delete terms in category'
+  - 'delete terms in division_office'
+  - 'delete terms in external_publication_status'
+  - 'delete terms in language'
+  - 'delete terms in link_type'
+  - 'delete terms in page_type'
+  - 'delete terms in position_category'
+  - 'delete terms in regulation'
+  - 'delete terms in render_as'
+  - 'delete terms in sec_mission'
+  - 'delete terms in subject_speaker'
+  - 'delete terms in tags'
+  - 'delete terms in target'
+  - 'delete terms in topics'
+  - 'edit any data_distribution content'
+  - 'edit any data_visualization content'
+  - 'edit any event content'
+  - 'edit any image_media media'
+  - 'edit any landing_page content'
+  - 'edit any link content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any publish_on scheduled updates'
+  - 'edit any release content'
+  - 'edit any sec_alert content'
+  - 'edit any sec_hero content'
+  - 'edit any secarticle content'
+  - 'edit any secperson content'
+  - 'edit any static_file media'
+  - 'edit any unpublish_on scheduled updates'
+  - 'edit any video_media media'
+  - 'edit any webcast content'
+  - 'edit own article_type content'
+  - 'edit own data_distribution content'
+  - 'edit own data_visualization content'
+  - 'edit own event content'
+  - 'edit own image_media media'
+  - 'edit own landing_page content'
+  - 'edit own link content'
+  - 'edit own news content'
+  - 'edit own news_type content'
+  - 'edit own page content'
+  - 'edit own publish_on scheduled updates'
+  - 'edit own release content'
+  - 'edit own sec_alert content'
+  - 'edit own sec_hero content'
+  - 'edit own secarticle content'
+  - 'edit own secperson content'
+  - 'edit own static_file media'
+  - 'edit own unpublish_on scheduled updates'
+  - 'edit own video_media media'
+  - 'edit own webcast content'
+  - 'edit terms in a'
+  - 'edit terms in act'
+  - 'edit terms in article_sub_type'
+  - 'edit terms in article_type'
+  - 'edit terms in audience'
+  - 'edit terms in category'
+  - 'edit terms in division_office'
+  - 'edit terms in external_publication_status'
+  - 'edit terms in language'
+  - 'edit terms in link_type'
+  - 'edit terms in page_type'
+  - 'edit terms in position_category'
+  - 'edit terms in regulation'
+  - 'edit terms in render_as'
+  - 'edit terms in sec_mission'
+  - 'edit terms in subject_speaker'
+  - 'edit terms in tags'
+  - 'edit terms in target'
+  - 'edit terms in topics'
+  - 'edit webform source'
+  - 'export configuration'
+  - 'flag bookmark'
+  - 'import configuration'
+  - 'link to any page'
+  - 'never autoplay videos'
+  - 'notify of path changes'
+  - 'replicate entities'
+  - 'revert all revisions'
+  - 'revert article_type revisions'
+  - 'revert configuration'
+  - 'revert data_distribution revisions'
+  - 'revert data_visualization revisions'
+  - 'revert event revisions'
+  - 'revert landing_page revisions'
+  - 'revert link revisions'
+  - 'revert news revisions'
+  - 'revert news_type revisions'
+  - 'revert page revisions'
+  - 'revert release revisions'
+  - 'revert sec_alert revisions'
+  - 'revert sec_hero revisions'
+  - 'revert secarticle revisions'
+  - 'revert secperson revisions'
+  - 'revert webcast revisions'
+  - 'schedule publishing of nodes'
+  - 'switch shortcut sets'
+  - 'switch users'
+  - 'synchronize configuration'
+  - 'unflag bookmark'
+  - 'update any media'
+  - 'update media'
+  - 'use archived_published transition'
+  - 'use draft_draft transition'
+  - 'use draft_needs_review transition'
+  - 'use draft_published transition'
+  - 'use ipe with page manager'
+  - 'use keep_unpublished transition'
+  - 'use needs_review_draft transition'
+  - 'use needs_review_needs_review transition'
+  - 'use needs_review_published transition'
+  - 'use panels caching features'
+  - 'use panels dashboard'
+  - 'use panels locks'
+  - 'use published_archived transition'
+  - 'use published_draft transition'
+  - 'use published_published transition'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format plain_html'
+  - 'use workbench access'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view article_type revisions'
+  - 'view config updates report'
+  - 'view data_distribution revisions'
+  - 'view data_visualization revisions'
+  - 'view event revisions'
+  - 'view landing_page revisions'
+  - 'view latest version'
+  - 'view link revisions'
+  - 'view moderation states'
+  - 'view news revisions'
+  - 'view news_type revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view pane admin links'
+  - 'view release revisions'
+  - 'view scheduled content'
+  - 'view scheduled update entities'
+  - 'view sec_alert revisions'
+  - 'view sec_hero revisions'
+  - 'view secarticle revisions'
+  - 'view secperson revisions'
+  - 'view the administration theme'
+  - 'view update notifications'
+  - 'view webcast revisions'
+  - 'view workbench access information'

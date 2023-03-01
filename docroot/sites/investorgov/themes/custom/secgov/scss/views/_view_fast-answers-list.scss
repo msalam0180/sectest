@@ -1,0 +1,30 @@
+//
+// FAST ANSWERS LIST
+// VIEW NAME: Fast Answers View
+// List articles that have the type if "Fast Answers"
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+@include breakpoint('small'){
+
+  .fast-answers-list {
+    table.list {
+      tbody {
+        tr {
+          @include breakpoint('small') {
+            padding: 1.66667em;
+          }
+          td {
+            @include breakpoint('small') {
+              .abstract {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

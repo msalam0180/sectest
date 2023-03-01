@@ -1,0 +1,13 @@
+diff --git a/usasearch.module b/usasearch.module
+index 8fa4281..dc0dc4f 100755
+--- a/usasearch.module
++++ b/usasearch.module
+@@ -103,7 +103,7 @@ function usasearch_node_predelete(NodeInterface $node, $index_node = 0) {
+   //todo do not assume post exists
+   $api = \Drupal::service('usasearch.api');
+   $api->request('delete', 'api/v1/documents/' . $node->id());
+-  if ($_POST['op'] === 'Delete') {
++  if (isset($_POST['op']) && $_POST['op'] === 'Delete') {
+     usasearch_remove_node_settings($node->id());
+   }
+   else {

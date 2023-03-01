@@ -1,0 +1,22 @@
+uuid: 07d12941-1471-4f15-a6c1-1cb6c7f42990
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: glossary_terms
+label: 'Glossary Terms'
+type: 'canonical_entities:node'
+pattern: 'introduction-investing/investing-basics/glossary/[node:title]'
+selection_criteria:
+  9e802522-7008-4b25-aaac-21bdb98e6393:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9e802522-7008-4b25-aaac-21bdb98e6393
+    context_mapping:
+      node: node
+    bundles:
+      glossary_term: glossary_term
+selection_logic: and
+weight: -9
+relationships: {  }

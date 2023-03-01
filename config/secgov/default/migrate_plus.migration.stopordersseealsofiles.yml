@@ -1,0 +1,111 @@
+uuid: 1c75baaa-ebf1-4976-8bf0-2b5ba70346f8
+langcode: en
+status: true
+dependencies: {  }
+id: stopordersseealsofiles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - aws
+  - stoporders
+migration_group: aws
+label: 'Import of Stop Orders See Also Files AWS content'
+source:
+  plugin: see_also
+  path: 'public://migration/stop_orders.csv'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    -
+      name: id
+      label: id
+    -
+      name: releaseurl
+      label: 'Release URL'
+    -
+      name: date
+      label: Date
+    -
+      name: respondents
+      label: Respondents
+  constants:
+    delimiter: ','
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  title: title
+  field_display_title: title
+  field_primary_division_office:
+    plugin: default_value
+    default_value: 39
+  static_file_type:
+    plugin: str_replace
+    source: title
+    search: 'the Order in this matter'
+    replace: 'Administrative Proceeding Order'
+  field_static_file_type:
+    plugin: entity_lookup
+    source: '@static_file_type'
+    value_key: name
+    bundle_key: vid
+    bundle: static_file_type
+    entity_type: taxonomy_term
+    ignore_case: true
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: America/New_York
+    to_format: U
+  changed: '@created'
+  field_file_path:
+    plugin: get_file_path
+    source: url
+    vocabulary: file_path
+  field_media_file:
+    -
+      plugin: skip_on_empty
+      source: url
+      method: row
+    -
+      plugin: skip_on_missing
+      source: url
+      method: row
+      missing:
+        - .htm
+        - .pdf
+        - .txt
+    -
+      plugin: file_import
+      source: url
+      file_exists: 'use existing'
+  field_link_text_override: title
+  internal_path:
+    -
+      plugin: str_replace
+      source: url
+      search: 'https://www.sec.gov/'
+      replace: 'public://'
+    -
+      plugin: real_path
+  field_description_abstract:
+    plugin: get_release_title
+    source: url
+  file_number:
+    plugin: get_file_number
+    source: url
+  field_release_file_number:
+    plugin: entity_lookup
+    access_check: false
+    entity_type: taxonomy_term
+    value_key: name
+    bundle_key: vid
+    source: '@file_number'
+    bundle: rulemaking_index
+destination:
+  plugin: 'entity:media'
+  default_bundle: static_file
+migration_dependencies: null

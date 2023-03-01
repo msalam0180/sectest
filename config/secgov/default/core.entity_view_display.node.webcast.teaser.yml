@@ -1,0 +1,75 @@
+uuid: f6233e37-8d8f-47c6-8063-0d6891846200
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.webcast.body
+    - field.field.node.webcast.field_date
+    - field.field.node.webcast.field_display_title
+    - field.field.node.webcast.field_division_office
+    - field.field.node.webcast.field_end_date
+    - field.field.node.webcast.field_media_id
+    - field.field.node.webcast.field_primary_division_office
+    - field.field.node.webcast.field_publish_date
+    - field.field.node.webcast.field_start_date
+    - field.field.node.webcast.field_upload_name
+    - field.field.node.webcast.field_webcast_config
+    - field.field.node.webcast.field_webcast_running_time
+    - field.field.node.webcast.field_webcast_source
+    - field.field.node.webcast.field_webcast_src
+    - field.field.node.webcast.field_webcast_state
+    - node.type.webcast
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.webcast.teaser
+targetEntityType: node
+bundle: webcast
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_date: true
+  field_division_office: true
+  field_end_date: true
+  field_media_id: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_start_date: true
+  field_upload_name: true
+  field_webcast_config: true
+  field_webcast_running_time: true
+  field_webcast_source: true
+  field_webcast_src: true
+  field_webcast_state: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

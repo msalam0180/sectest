@@ -1,0 +1,73 @@
+//
+// Styles
+// These are all the includes for the pages on screens
+// --------------------------------------------------
+
+// Requirements
+// ============
+
+// General
+@import 'general/vars';       // All the basic varialbes, such as colors/etc.
+@import 'general/mixins';     // SASSS mixinx
+@import 'general/normalize';    // Alterations to the layout of the pages
+@import 'general/general';        // standard header tags, link colors, etc.
+@import 'general/layouts';    // Alterations to the layout of the pages
+
+
+// Layouts
+
+// Components
+@import 'components/buttons';       // styles for site wide buttons
+@import 'components/menus';         // coloring and styles for menus
+@import 'components/sidebar_menu';  // coloring and styles for sidebar menus
+@import 'components/header';        // components pertaining to the header
+@import 'components/breadcrumbs';   // breadcrumbs
+@import 'components/forms';         // standard form elements, inline errors, etc.
+@import 'components/autocomplete';  // Autocomplete fields
+@import 'components/messages';      // Drupal Messages
+@import 'components/calculators';   // global calculator
+@import 'components/sprites';       // image sprites
+@import 'components/footer';        // styling for the global footer
+@import 'components/footer2';       // styling for the global footer2
+@import 'components/tabs';          // the local task/admin menu tabs
+@import 'components/backtotop';     // the back-to-top link that appears when scrolling
+@import 'components/pager';         // the views pager
+@import 'components/book_pager';    // the book pager
+@import 'components/files';    		  // How files display
+@import 'components/entity-list';   // Display for list pages
+@import 'components/flex-video-responsive';   // Responsive Videos
+@import 'components/banner';        // USWDS Banner
+@import 'components/glossary_search'; // Glossary Search
+@import 'components/hero';          // Hero component
+@import 'components/_card';         // Card component
+@import 'components/_ck_editor';    // ckeditor overrides
+@import 'components/modal';        // jQuery UI override Modal
+@import 'components/accordion';    // jQuery UI override accordion
+
+// Blocks
+@import 'blocks/content_block';      // A custom block type for layout items
+@import 'blocks/feature-item';      // A custom block type for feature item blocks
+@import 'blocks/iapd-widget';
+@import 'blocks/edgar-widget';
+@import 'blocks/homepage-links';
+@import 'blocks/title';
+@import 'blocks/layout-block';      // A custom block type for layout items
+
+// Partials
+//@import 'partials/header';
+
+// Views
+@import 'views/news_alerts';
+
+// Pages
+@import 'pages/node_all';
+@import 'pages/node_news';
+@import 'pages/homepage';
+@import 'pages/search';
+@import 'pages/financial-planning-tools';
+@import 'pages/howeycoins';
+@import 'pages/node_landing';
+@import 'pages/user_login';
+
+
+@import 'temp';

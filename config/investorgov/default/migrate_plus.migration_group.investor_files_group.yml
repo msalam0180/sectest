@@ -1,0 +1,22 @@
+uuid: 22bbb1e7-82e3-4a8c-b3d7-febdd461d898
+langcode: en
+status: true
+dependencies: {  }
+id: investor_files_group
+label: 'Investor Files Group'
+description: 'Common config for Investor file migrations'
+source_type: null
+module: null
+shared_configuration:
+  source:
+    key: investor_d7_migrate
+  destination:
+    plugin: 'entity:file'
+  process:
+    langcode:
+      plugin: default_value
+      default_value: en
+    uid:
+      plugin: default_value
+      default_value: 1
+  dependencies: {  }

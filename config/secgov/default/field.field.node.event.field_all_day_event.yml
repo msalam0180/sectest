@@ -1,0 +1,23 @@
+uuid: bd2864e6-5c0c-4b06-b4a0-7cb3723b30d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_all_day_event
+    - node.type.event
+id: node.event.field_all_day_event
+field_name: field_all_day_event
+entity_type: node
+bundle: event
+label: 'All Day'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'All Day'
+  off_label: 'Show End Date'
+field_type: boolean

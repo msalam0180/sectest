@@ -1,0 +1,54 @@
+global-css:
+  css:
+    theme:
+      css/screen.css: {}
+      css/print.css: {}
+      css/layout.css: {}
+      css/contextual.css: {}
+
+panel-layouts-toptwocolnestedcols:
+  css:
+    layout:
+      css/toptwocolnestedcols.css: {}
+
+panel-layouts-toptwocol:
+  css:
+    layout:
+      css/toptwocol.css: {}
+
+panel-layouts-twocolonecolbottom:
+  css:
+    layout:
+      css/twocolonecolbottom.css: {}
+
+panel-layouts-toptwocolalt:
+  css:
+    layout:
+      css/toptwocolalt.css: {}
+
+panel-layouts-twocol:
+  css:
+    layout:
+      css/twocol.css: {}
+
+
+
+# global-js-header:
+#   header: true
+#   js:
+#     js/third-party/jquery-ui.min.js: {}
+#   dependencies:
+#     - core/jquery
+#     - core/jquery.ui.accordion
+#     - core/jquery.ui.tabs
+# global-js:
+#   js:
+    # js/third-party/jquery.tablesorter.js: {}
+    # js/third-party/superfish.js: {}
+    # js/third-party/hoverIntent.js: {}
+    # js/third-party/jquery.canvas.min.js: {}
+    # js/shared.js: {}
+  # dependencies:
+    # - core/jquery
+    # - core/jquery.ui.accordion
+    # - core/jquery.ui.tabs

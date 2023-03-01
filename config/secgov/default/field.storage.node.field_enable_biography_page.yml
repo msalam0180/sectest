@@ -1,0 +1,20 @@
+uuid: 46c30a3f-54fb-4d2f-8fb4-18d4193b434e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 1_0xRZdzcZ4sqvv0DHZLFXbCK7KN64jjTRnYPWWmtHY
+id: node.field_enable_biography_page
+field_name: field_enable_biography_page
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

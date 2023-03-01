@@ -1,0 +1,400 @@
+input[disabled] {
+  opacity: 0.5;
+  background: #e2e2e2 !important;
+}
+
+form.node-form .field--name-field-from,
+form.node-form .field--name-field-position-category {
+  float: left;
+  padding-right: 20px;
+  clear: left;
+}
+form.node-form .field--name-field-current-position {
+  clear: both;
+}
+
+/* Required help text at the top of forms */
+.form-item.form-item-required-help {
+  margin-top: 0;
+  color: #a51b00;
+}
+
+/* admin-url specific css */
+
+.datatable-admin-url .dataTables_wrapper .dataTables_filter {
+  float: left !important;
+  margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paging {
+  display: block;
+  position: relative;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.dataTables_wrapper .dataTables_paging .dataTables_length,
+.dataTables_wrapper .dataTables_paging .dataTables_info {
+  padding-top: 0;
+  position: absolute;
+}
+
+.dataTables_wrapper .dataTables_paging .dataTables_length {
+  left: 0;
+}
+.dataTables_wrapper .dataTables_paging .dataTables_length label {
+  font-weight: normal;
+}
+
+.dataTables_wrapper .dataTables_paging .dataTables_paginate {
+  float: none !important;
+  padding-top: 0;
+  text-align: center;
+}
+
+.dataTables_wrapper .dataTables_paging .dataTables_paginate .paginate_button {
+  border: none;
+  background: none;
+  color: #2f64b1;
+  font-weight: 500;
+}
+
+.dataTables_wrapper
+  .dataTables_paging
+  .dataTables_paginate
+  .paginate_button.current {
+  border: none;
+  background: none;
+  font-weight: bold;
+}
+.dataTables_wrapper
+  .dataTables_paging
+  .dataTables_paginate
+  .paginate_button:hover,
+.dataTables_wrapper
+  .dataTables_paging
+  .dataTables_paginate
+  .paginate_button.current:hover {
+  border: none;
+  background: none;
+  color: #2f64b1 !important;
+  text-decoration: underline !important;
+}
+
+.dataTables_wrapper
+  .dataTables_paging
+  .dataTables_paginate
+  .paginate_button.disabled {
+  border: none;
+  background: none;
+  color: #393d40;
+  text-decoration: none !important;
+}
+
+.dataTables_wrapper
+  .dataTables_paging
+  .dataTables_paginate
+  .paginate_button.current {
+  color: #393d40;
+}
+
+.dataTables_wrapper .dataTables_paging .dataTables_info {
+  right: 0 !important;
+  top: 1.3em;
+}
+
+/* .layout-region #edit-field-person {
+  height: 278px;
+  width: 400px;
+} */
+
+/*SEC Defendant Admin View*/
+.js .view-individual-defendant-admin td .dropbutton-multiple {
+  padding-right: 0;
+}
+.view-individual-defendant-admin .views-field {
+  white-space: nowrap;
+}
+
+.view-individual-defendant-admin .views-field-field-action-name-in-document {
+  white-space: normal;
+}
+
+.adminimal .view-individual-defendant-admin td,
+.adminimal .view-individual-defendant-admin thead th {
+  font-size: 0.9em;
+  padding: 10px 7px;
+}
+
+.js .view-individual-defendant-admin .dropbutton-widget .dropbutton-action a,
+.js
+  .view-individual-defendant-admin
+  .dropbutton-widget
+  .dropbutton-action
+  input,
+.js
+  .view-individual-defendant-admin
+  .dropbutton-widget
+  .dropbutton-action
+  button {
+  padding: 5px 9px;
+  font-size: 0.9em;
+}
+
+@media (min-width: 830px) {
+  .button.export_csv {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 829px) {
+  .button.export_csv {
+    display: none;
+  }
+}
+
+/*Admin Theme Accessibility Fixes*/
+body a,
+body .link {
+  text-decoration: underline;
+}
+
+body a:hover,
+body .link a:hover {
+  color: #4b0689;
+}
+
+body a:focus,
+body .link a:focus {
+  outline: revert;
+}
+
+.adminimal table thead th {
+  font-weight: bold;
+}
+
+th a {
+  text-decoration: none;
+}
+
+.adminimal th > a:hover,
+.adminimal th > a:focus,
+.adminimal th.is-active > a:hover,
+.adminimal th.is-active > a:focus {
+  color: #002c52;
+  text-decoration: none;
+  display: block;
+}
+
+th > a:focus,
+th.is-active > a:focus {
+  text-decoration: none;
+  outline: 1px dotted #71716e;
+  display: block;
+}
+
+.pager__item--next a:focus,
+.pager__item--last a:focus,
+.pager__item--first a:focus,
+.pager__item--previous a:focus {
+  outline: 1px dotted #71716e;
+}
+
+.adminimal-admin-toolbar .toolbar-tray-horizontal a:focus,
+.toolbar-lining button:focus,
+.adminimal .toolbar .toolbar-bar .toolbar-tab > .toolbar-item:focus {
+  box-shadow: inset 0 0 0 1px white;
+}
+
+/* Up the contrast ratio on links */
+body a,
+body .link {
+  color: #005cad;
+}
+
+/* Up the contrast ratio on Buttons */
+body.adminimal .action-links .button--primary {
+  color: #005cad;
+  border-color: #005cad;
+}
+
+/* Dropdown focus for promenent */
+.js
+  body.adminimal
+  .dropbutton-wrapper
+  .dropbutton-widget
+  .dropbutton-action
+  a:focus,
+.js
+  body.adminimal
+  .dropbutton-wrapper
+  .dropbutton-widget
+  .dropbutton-action
+  button:focus,
+.js
+  body.adminimal
+  .dropbutton-wrapper
+  .dropbutton-widget
+  .dropbutton-action
+  input:focus,
+.js
+  body.adminimal
+  .dropbutton-wrapper
+  .dropbutton-widget
+  .dropbutton-toggle
+  button:focus {
+  box-shadow: inset 0 0 0 1px #68a3cf;
+}
+
+.adminimal table thead th {
+  color: #403f3f;
+}
+
+.adminimal input.button--primary:focus {
+  text-decoration: underline;
+}
+
+/* add focus to admin content view -image filter- */
+.adminimal .views-field.views-field-field-image-upload a:focus img {
+  box-shadow: 0 0 0 1px #68a3cf;
+}
+
+/* add focus to create/edit media forms 'replace file', 'add to calendar' and 'publish button' resolves IE 11 */
+#edit-status-value:focus,
+#edit-keep-original-filename:focus,
+#edit-field-add-to-calendar-0-value:focus {
+  box-shadow: 0 0 0 1px #68a3cf;
+}
+
+/* add focus for ie 11 to all checkboxes */
+input.form-checkbox:focus {
+  box-shadow: 0 0 0 1px #68a3cf;
+}
+
+.media-status-help-text {
+  margin-top: 1.5em;
+}
+
+/* add + icon to 'link it' button in ckeditor */
+span.cke_button_icon.cke_button__drupallink_icon::after {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  content: "";
+  background-image: linear-gradient(white, white), linear-gradient(white, white);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20% 70%, 70% 20%;
+  background-color: #494949;
+  opacity: 0.75;
+  top: 5px;
+  left: 1px;
+}
+
+.cke_button_icon.cke_button__media_embed_icon {
+  background-image: url("../../../../themes/custom/secgov/images/m-icon.png") !important;
+  background-position: 2px 2px !important;
+  background-size: 12px !important;
+}
+
+/* Paragraphs */
+
+@media screen and (min-width: 800px) {
+  .field--widget-entity-reference-paragraphs {
+    position: relative;
+  }
+
+  .field--widget-entity-reference-paragraphs .tabledrag-toggle-weight-wrapper {
+    position: absolute;
+    right: 0px;
+    top: -20px;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .field--widget-entity-reference-paragraphs .form-item {
+    margin: 0px 0 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .field--widget-entity-reference-paragraphs .select-wrapper {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .field--widget-entity-reference-paragraphs .select-wrapper select {
+    width: 100%;
+  }
+}
+
+.field--widget-entity-reference-paragraphs {
+  margin: 30px 0 20px;
+  border: 1px solid #e3e3e3;
+  padding: 15px 15px;
+}
+
+.field--widget-entity-reference-paragraphs tr {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.adminimal .field-multiple-table .form-item {
+  display: inline-block;
+}
+
+.adminimal .field-multiple-table .field--type-link .form-item {
+  display: block;
+}
+
+/* Fix calendar color after Drupal 9 upgrade */
+.adminimal .ui-datepicker {
+  background: #fff;
+  border: 1px solid #b8b8b8;
+}
+
+/*Add visual indication of focus to details accordions */
+.adminimal details [role="button"]:focus {
+  outline: 2px solid #c1e0ff;
+  outline-offset: 0px;
+  background: #f1eeee;
+}
+
+/* Adjust table column widths on the Release Content Admin view */
+.view-release-content .views-field-field-publish-date{
+  white-space: nowrap;
+}
+
+.view-release-content .field--name-field-media-file .file {
+  white-space: nowrap;
+}
+
+.view-release-content .views-field-field-respondents {
+  max-width: 500px;
+}
+
+/* Hide option to delete a referenced entity from the system */
+.node-release-form .ief-row-form [class$="form-delete"],
+.node-release-edit-form .ief-row-form [class$="form-delete"] {
+  display: none;
+}
+
+.node-release-form .ief-row-form [class$="form-delete"] + [data-drupal-selector$="form-actions"],
+.node-release-edit-form .ief-row-form [class$="form-delete"] + [data-drupal-selector$="form-actions"] {
+  margin-top: 10px;
+}

@@ -1,0 +1,47 @@
+uuid: 5b465ce4-0bd0-44a4-9f93-d402d724444e
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_hero
+label: 'Homepage Hero'
+options:
+  animation: fade
+  animationSpeed: 600
+  direction: horizontal
+  slideshow: true
+  easing: swing
+  smoothHeight: false
+  reverse: false
+  slideshowSpeed: 30000
+  animationLoop: true
+  randomize: true
+  startAt: 0
+  itemWidth: 0
+  itemMargin: 0
+  minItems: 0
+  maxItems: 0
+  move: 0
+  directionNav: false
+  controlNav: '0'
+  thumbCaptions: false
+  thumbCaptionsBoth: false
+  keyboard: false
+  multipleKeyboard: false
+  mousewheel: false
+  touch: true
+  prevText: Previous
+  nextText: Next
+  namespace: flex-
+  selector: '.slides > li'
+  sync: ''
+  asNavFor: ''
+  initDelay: 0
+  useCSS: true
+  video: false
+  pausePlay: false
+  pauseText: Pause
+  playText: Play
+  pauseOnAction: true
+  pauseOnHover: false
+  controlsContainer: ''
+  manualControls: ''

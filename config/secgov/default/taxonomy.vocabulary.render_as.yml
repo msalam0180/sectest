@@ -1,0 +1,10 @@
+uuid: 5d7329b7-5bb3-4301-a193-a9fc07aa5fdb
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: DoRue3Z3gzusslcPFsgAqtV64XCDXKIwO32LH6ECRw0
+name: 'Render As'
+vid: render_as
+description: ''
+weight: 0

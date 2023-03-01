@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: aws
+label: AWS
+description: 'Import of legacy AWS Content for SEC'
+source_type: csv
+module: null
+shared_configuration: null

@@ -1,0 +1,35 @@
+uuid: 95fa8176-212d-41d8-b503-da2c522631a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: qJsoODc8fpUvn9B7Q5myK4xF1wMMmzptQ6vlFJPwwYg
+id: node.field_basis_for_state
+field_name: field_basis_for_state
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: state_residence
+      label: State/Residence
+    -
+      value: state_license
+      label: State/License
+    -
+      value: state_registrant_locale
+      label: 'State/Registrant Locale'
+    -
+      value: state_other_basis
+      label: 'State/Other Basis'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

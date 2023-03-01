@@ -1,0 +1,27 @@
+uuid: 7446604d-0630-41b3-83d2-25f1d2a51fee
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: q_QpWC-EzywcuNk-jCYxTxQJ4mL-65Ixrebbedy2o2A
+id: secgov_breadcrumbs
+theme: secgov
+region: breadcrumb
+weight: -27
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/about/upcoming-events.htm\r\n/news/upcoming-events\r\n/news/upcoming-events/*\r\n/news/spotlights\r\n/news/spotlights/*\r\n/spotlight-topic/*\r\n/dera/market-statistics/*"

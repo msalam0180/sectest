@@ -1,0 +1,39 @@
+uuid: 9e948846-b432-48be-ab11-661b793fa129
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.edgar---filer-info
+  module:
+    - ctools
+    - system
+  theme:
+    - secgov
+id: edgar_filerinfo
+theme: secgov
+region: sidebar_first
+weight: -32
+provider: null
+plugin: 'system_menu_block:edgar---filer-info'
+settings:
+  id: 'system_menu_block:edgar---filer-info'
+  label: 'EDGAR - Filer Info'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/forms\r\n/forms/*\r\n/edgar/filer-information/*"
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+    bundles:
+      ada4applicants: ada4applicants
+      ada4programs: ada4programs

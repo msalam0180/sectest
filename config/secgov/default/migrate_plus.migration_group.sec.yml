@@ -1,0 +1,12 @@
+uuid: 6345769e-52a6-481c-9019-d471ccc1038d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: JOWXFx3DgSshsRLSNVJHjI2UZTrDOE-jOf8Q13j-DKQ
+id: sec
+label: SEC
+description: 'Import of WCM Content from SEC'
+source_type: json
+module: null
+shared_configuration: null

@@ -1,0 +1,95 @@
+//
+// CARDS
+// A way to show content in a card format
+//
+// MARKUP: .card > .card-title
+//
+// NOTE: This would make a good expandable mix-in if written modularly
+// --------------------------------------------------
+
+// An element that groups content into a card, or box
+.card{
+  padding: 20px 30px;
+  background-color: $porcelain;
+  margin-top: 20px;
+  line-height: 1.5em;
+  border: 1px solid $shadow;
+}
+
+// Add to a title inside a card ( Example - h2.card-title )
+.card-title{
+  // font-size: 18px;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+// Add ".card-dark" to a card to get a dark color scheme
+.card.card-dark{
+  background-color: #273a56;
+  color: #e4e4e4;
+
+    .card-title{
+      color: #ffffff;
+    }
+    p, div.paragraph{
+      color: #e4e4e4;
+  }
+}
+
+// Add ".card-light" to a card to get a light color scheme
+.card.card-light{
+  background-color: #ffffff;
+}
+
+.view-cards{
+
+  .views-label{
+    font-weight: bold;
+  }
+
+  @media only screen and (min-width:699px){
+
+    .views-field{
+      display: table;
+      width: 100%;
+    }
+
+    .views-label{
+      display: table-cell;
+      width: 180px;
+    }
+
+    .views-field .field-contentl {
+      display: table-cell;
+    }
+  }
+
+  @media only screen and (max-width:700px){
+    
+    .views-field{
+      margin-bottom: 10px;
+    }
+
+    .views-label{
+      display: block;
+    }
+
+  }
+}
+
+// Additional Card Types
+
+// Add ".card-light" to a card to remove the card look, and get items separated by a line
+.card.border-divide{
+
+  background: transparent;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 20px 0;
+  margin: 0;
+
+  &.view-row-first{
+    border-top: 0;
+  }    
+}

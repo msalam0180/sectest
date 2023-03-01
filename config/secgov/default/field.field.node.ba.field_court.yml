@@ -1,0 +1,23 @@
+uuid: b52a2504-60a7-4382-b450-485bc3fbbbe0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_court
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: 4PL4G_5kuw61AW8CrRnBXqrbC5JjVmFHm78MASnkj0k
+id: node.ba.field_court
+field_name: field_court
+entity_type: node
+bundle: ba
+label: Court
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

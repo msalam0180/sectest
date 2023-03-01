@@ -1,0 +1,5 @@
+sec_admin.content:
+  title: 'Content'
+  route_name: view.content.page_2
+  parent_id: system.admin_content
+  weight: 1

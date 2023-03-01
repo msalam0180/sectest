@@ -1,0 +1,326 @@
+//
+// OASB Wizard Tool (Decision Tree)
+// Wizard tool that was developed for OASB - /capitalraising/navigator
+//
+// --------------------------------------------------
+
+.has-dt #content-wrapper .content.aside {
+  width: 100%;
+}
+.has-dt  [role="article"] .article-content #sidebar-second, .has-dt [role="article"] .article-more-topics{
+  display: none;
+}
+
+#decision-tree {
+  $dt-bd-color: #e3e3e3;
+  $dt-hover-bg-color: #e7f1ff;
+  $dt-breakpoint: medium;
+  $dt-vertical-space: 1rem;
+  $img_path: "/themes/custom/secgov/images/dt_images/";
+
+  //General spacing
+  .pre_text, #progress-container, .all-choices, .post_text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  // general Typography
+  .content-textarea {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  //////////////////////////////
+  // Elements
+  //////////////////////////////
+
+  //----------- dt-img-btn
+  .dt-img-btn{
+    border: 1px solid $dt-bd-color;
+    color: $deep-sea;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .7rem;
+    flex: 1;
+    gap: 1rem;
+
+    @include breakpoint($dt-breakpoint) {
+      align-items: stretch;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: .5rem;
+    }
+
+    &:hover, &:focus, &.selected {
+      background-color: $dt-hover-bg-color;
+      text-decoration: none;
+      border-color: $deep-sea;
+    }
+
+    .text{
+      text-align: left;
+      font-weight: 600;
+      font-size: 1.1rem;
+      
+      @include breakpoint($dt-breakpoint) {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      @media only screen and (max-device-width: 400px){
+        max-width: 130px;
+      }
+    }
+
+    .title {
+      font-size: 1rem;
+      text-align: left;
+      font-weight: 600;
+
+      @include breakpoint($dt-breakpoint) {
+        font-size: .9rem;
+        text-align: center;
+        max-width: none;
+      }
+
+      @media only screen and (max-device-width: 480px){
+        max-width: 150px;
+      }
+
+    }
+
+    .img {
+      align-self: center;
+
+      @include breakpoint($dt-breakpoint) {
+        font-size: 20px;
+      }
+    }
+
+    .img > img {
+      width: 40px;
+      height: auto;
+      @include breakpoint($dt-breakpoint) {
+        width: 80px;
+      }
+    }
+  }
+
+  //----------- Callout
+  .callout {
+    background-color: #e9e9e9;
+    text-align: center;
+    margin-top:1rem;
+    margin-bottom: 0px;
+
+    @media only screen and (min-device-width: 800px){
+      float:right;
+      width:30%;
+      width: 180px;
+      margin: 24px 0 10px;
+    }
+
+    h3 {
+      background: no-repeat url($img_path + 'icon-q2-did_you_know_lightbulb.png');
+      background-position: center left;
+      background-size: 21px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 141px;
+      font-size: 1rem;
+      padding: 2px 0 0 16px;
+    }
+
+    .callout-text {
+      line-height: 1.3em;
+      margin-top: 0.5rem;
+      color: $navy;
+    }
+
+    .callout-text-source {
+      font-size: 0.7rem;
+      margin-top: 0.5rem;
+      line-height: 0.9rem;
+      font-style: italic;
+      margin-bottom: 0;
+      color: #5F5F5F;
+    }
+  }
+
+  //----------- Table
+  table{
+    margin: 1.5rem 0;
+  }
+
+  caption {
+    text-align: center;
+    font-style: italic;
+  }
+
+  th {
+    padding: 8px 5px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  // Top table headers
+  tr:first-child th{
+    width: 12%;
+  }
+
+  // left table headers
+  tr:not(:first-child) th:first-child{
+    padding: 5px 9px;
+    height: 50px;
+    @include breakpoint($dt-breakpoint) {
+      min-width: 150px;
+      white-space: nowrap;
+      height: 35px;
+    }
+  }
+
+  tr:hover {
+    background: none;
+  }
+
+  .relevant{
+    background-color: $deep-sea;
+    color: $deep-sea;
+  }
+
+  .not-relevant {
+    background-color: $dt-bd-color;
+    color: $dt-bd-color;
+  }
+
+  // Override responsive tables
+  tbody td, td{
+    width: revert !important;
+    display: revert !important;
+    line-height: 1em;
+  }
+
+  tr {
+    display: revert;
+  }
+
+  //////////////////////////////
+  // Page Sections
+  //////////////////////////////
+
+  //----------- question-area
+  //-----------+++ pre_text
+  //-----------+++  progress-container
+  .progress-container {
+    background-color: #f1f1f1;
+
+    .progress-bar {
+      background-color: $deep-sea;
+      color: white;
+      text-align: right;
+      padding: 2px 8px;
+      min-width: 50px; // cheat the width a bit on mobile screens
+    }
+  }
+
+  //-----------+++  question
+  .question {
+    margin-bottom: .5rem;
+    h2 {
+      padding: 0;
+    }
+  }
+
+  //-----------+++  moreInfo
+  &.dt-question .moreInfo{
+    p, ul {
+      color: 	#333333;
+      font-style: italic;
+    }
+  }
+
+  //-----------+++  moreInfo2
+
+  //-----------+++  all-choices
+  .all-choices {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0;
+    grid-gap: .5rem;
+    grid-auto-rows: 1fr;
+
+    @include breakpoint($dt-breakpoint) {
+      grid-template-columns: repeat(3, max(150px));
+      grid-gap: .75rem;
+    }
+  }
+
+  //-----------+++  other-results-row & relevant-results-row
+  .other-results-row, .relevant-results-row  {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1.5rem 0;
+    grid-gap: .75rem;
+    margin-top: 0;
+
+    @include breakpoint($dt-breakpoint) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  //-----------+++  post_text
+
+  //----------- utility-buttons
+  .utility-buttons {
+    border-top: 1px solid $dt-bd-color;
+    padding-top: 1rem;
+
+    & button {
+      background-size: 20px;
+      color: $deep-sea;
+      border: 1px solid $dt-bd-color;
+      padding: 10px 10px 10px 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-right: 10px;
+      
+      &:hover, &:focus{
+        background-color: $dt-hover-bg-color;
+      }
+    }
+
+    .back-btn {
+      background: no-repeat url($img_path + 'icon-arrow_back.png');
+      padding-left: 37px;
+      background-position: center left 8px;
+    }
+
+    .continue-btn {
+      background: no-repeat url($img_path + 'icon-arrow_forward.png');
+      padding-right: 37px;
+      background-position: center right 8px;
+    }
+  }
+
+  //////////////////////////////
+  // Specific Screen # Styles
+  //////////////////////////////
+
+  /* Exclusive for question How much money do you plan to raise? */
+  [data-all-choices-id="6"] {
+    grid-template-columns: 1fr;
+
+    @include breakpoint($dt-breakpoint) {
+      grid-template-columns: 300px;
+      justify-content: space-around;
+    }
+
+  }
+
+}

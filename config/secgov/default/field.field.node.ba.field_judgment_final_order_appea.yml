@@ -1,0 +1,23 @@
+uuid: 52ea57ec-cced-478b-a9f7-803aeb79f3eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_judgment_final_order_appea
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: '-eZ225t_a_7VIYyufuTpvGLZhQ3T_y17KSJLEyDrdUw'
+id: node.ba.field_judgment_final_order_appea
+field_name: field_judgment_final_order_appea
+entity_type: node
+bundle: ba
+label: 'Judgment/Final Order Appealed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

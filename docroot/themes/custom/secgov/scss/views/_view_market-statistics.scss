@@ -1,0 +1,24 @@
+//
+// MARKET STATISTICS
+// VIEW NAME: Market Statistics
+// List Articles with the type of "Market Statistics"
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+
+div[class^='market-statistics--'] {
+  table.list {
+    thead th:hover {
+      background-color: $mist;
+    }
+  }
+}
+
+.market-statistics--right-sidebar {
+  .views-row {
+    margin-left: 1em;
+  }
+}
+

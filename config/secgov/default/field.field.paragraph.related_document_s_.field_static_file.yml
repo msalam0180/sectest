@@ -1,0 +1,30 @@
+uuid: 3ac6cbf3-2134-486b-9c08-fe4ad4a1121d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_static_file
+    - node.type.file
+    - paragraphs.paragraphs_type.related_document_s_
+_core:
+  default_config_hash: H4cL9DYF1XavHal4q9xcgDe9Fcw1DyRfLExhRqoFiDo
+id: paragraph.related_document_s_.field_static_file
+field_name: field_static_file
+entity_type: paragraph
+bundle: related_document_s_
+label: 'Drupal Static File Reference (Content)'
+description: 'If the document is stored as a Drupal "Static File", use this field to reference the document.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      file: file
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

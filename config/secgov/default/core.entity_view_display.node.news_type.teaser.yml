@@ -1,0 +1,26 @@
+uuid: 7964bed1-2be3-4dd6-b301-647e204c3bf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news_type.scheduling_options
+    - node.type.news_type
+  module:
+    - user
+_core:
+  default_config_hash: RQGGW5jGi25CVQjrXBliOPEec1b9CVeq9iIpt3bV_Rg
+id: node.news_type.teaser
+targetEntityType: node
+bundle: news_type
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

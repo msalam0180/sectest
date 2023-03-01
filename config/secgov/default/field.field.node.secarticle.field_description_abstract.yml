@@ -1,0 +1,21 @@
+uuid: 44cd0f68-b539-4edd-8461-3078f07435b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_abstract
+    - node.type.secarticle
+_core:
+  default_config_hash: M2mao6KTimZU_bAdM5hW41WrTZfjSFk-hhUXGXA6vzM
+id: node.secarticle.field_description_abstract
+field_name: field_description_abstract
+entity_type: node
+bundle: secarticle
+label: Description/Abstract
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

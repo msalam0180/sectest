@@ -1,0 +1,18 @@
+<?php
+
+use Symfony\Cmf\Component\Routing\RouteObjectInterface;
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+
+function sec_admin_content_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity)
+{
+  $route = \Drupal::request()->attributes->get(RouteObjectInterface::ROUTE_NAME);
+    if ($route === 'views.ajax' || $route === 'view.content.page_2') {
+      $entityTypeName = method_exists($entity, 'getType') ? $entity->getType() : '';
+      if (isset($entityTypeName) && !\Drupal::currentUser()->hasPermission("create {$entityTypeName} content")) {
+        $operations = [];
+      }
+    }
+}

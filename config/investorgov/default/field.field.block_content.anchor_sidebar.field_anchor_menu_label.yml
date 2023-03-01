@@ -1,0 +1,21 @@
+uuid: 398e854f-3972-443b-9caa-de12a97768ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.anchor_sidebar
+    - field.storage.block_content.field_anchor_menu_label
+  module:
+    - text
+id: block_content.anchor_sidebar.field_anchor_menu_label
+field_name: field_anchor_menu_label
+entity_type: block_content
+bundle: anchor_sidebar
+label: 'Anchor Menu Label'
+description: 'Optional Title/Label to display with the menu'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

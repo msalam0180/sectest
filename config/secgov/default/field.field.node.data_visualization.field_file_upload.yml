@@ -1,0 +1,48 @@
+uuid: 676179a6-9645-45af-bcb5-1e5aa0c7bef8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_upload
+    - node.type.data_visualization
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+_core:
+  default_config_hash: 1CoWqeeNvzAS3_O0wEydrDjLcqW4VoW9mcRdNIXSq5E
+id: node.data_visualization.field_file_upload
+field_name: field_file_upload
+entity_type: node
+bundle: data_visualization
+label: 'File Upload'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'asx avi css csv doc docx gif h htm html idx iff jpg js json map midi mov mp3 mp4 mpg pdf png ppt rss rtf sdp shtml smi txt wav wma wmv xfd xls xlsx xml xsd xsl xslt zip'
+  max_filesize: ''
+  description_field: false
+field_type: file

@@ -1,0 +1,7 @@
+name: 'Individual Defendant'
+description: 'Provides Individual Defendant content type and related configuration. Individuals in SEC Enforcement Actions (not entities).'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: SEC
+core_version_requirement: ^8 || ^9

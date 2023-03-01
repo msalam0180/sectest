@@ -1,0 +1,40 @@
+uuid: 09664b14-79c1-4b77-bb79-1e5715cce572
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_person
+    - node.type.secperson
+  module:
+    - image
+_core:
+  default_config_hash: K3cKzO0rGxI_NgKHncKp4uQcE0k4Sjma1PKw0s9fhsA
+id: node.secperson.field_photo_person
+field_name: field_photo_person
+entity_type: node
+bundle: secperson
+label: Photo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '128 MB'
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

@@ -1,0 +1,23 @@
+uuid: e6b552a1-e934-43b6-98a9-8c50c70f6d99
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.data_visualization
+  module:
+    - datetime
+_core:
+  default_config_hash: Arjk2m2OOt8K9bAzi3JQl6adAhJbd5Nu7IyP4kpxZ6k
+id: node.data_visualization.field_date
+field_name: field_date
+entity_type: node
+bundle: data_visualization
+label: 'Override Modified'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

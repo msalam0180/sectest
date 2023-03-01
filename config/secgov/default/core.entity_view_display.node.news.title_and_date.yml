@@ -1,0 +1,314 @@
+uuid: cfe5891e-c216-44cc-bacd-5d3300d0c906
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_and_date
+    - field.field.node.news.body
+    - field.field.node.news.field_act
+    - field.field.node.news.field_alternate_title_secarticle
+    - field.field.node.news.field_approved_by_general_counse
+    - field.field.node.news.field_audience
+    - field.field.node.news.field_creator
+    - field.field.node.news.field_date
+    - field.field.node.news.field_description_abstract
+    - field.field.node.news.field_display_title
+    - field.field.node.news.field_division_office
+    - field.field.node.news.field_external_resource
+    - field.field.node.news.field_file_upload
+    - field.field.node.news.field_location_news
+    - field.field.node.news.field_media_file_upload
+    - field.field.node.news.field_more_about_this_topic
+    - field.field.node.news.field_news_type_news
+    - field.field.node.news.field_person
+    - field.field.node.news.field_primary_division_office
+    - field.field.node.news.field_publish_date
+    - field.field.node.news.field_regulation
+    - field.field.node.news.field_related_materials
+    - field.field.node.news.field_release_number
+    - field.field.node.news.field_ruling_comment_file_number
+    - field.field.node.news.field_ruling_comment_title
+    - field.field.node.news.field_sec_content_approver
+    - field.field.node.news.field_speaker_name_and_title
+    - field.field.node.news.field_sub_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_top_right_column
+    - field.field.node.news.scheduling_options
+    - node.type.news
+  module:
+    - datetime
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    displays:
+      default:
+        id: panels_variant
+        label: ''
+        weight: 0
+        uuid: 1c7d4c8c-4b5d-4f6e-95c5-52b32f288acf
+        blocks:
+          b9591a37-c34c-4923-a629-13e6765743cf:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: author
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 0
+            uuid: b9591a37-c34c-4923-a629-13e6765743cf
+          fbff0918-084d-419b-a9bb-0fe8a35d70d2:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: timestamp
+              weight: 0
+              label: hidden
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+            region: middle
+            weight: 0
+            uuid: fbff0918-084d-419b-a9bb-0fe8a35d70d2
+          62158c37-ce18-46fa-a3ea-d5d54da42c5e:
+            id: 'entity_field:node:field_body_news'
+            label: Body
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 9
+            uuid: 62158c37-ce18-46fa-a3ea-d5d54da42c5e
+          84e34c86-8903-4e6b-b799-ac9e9549247e:
+            id: 'entity_field:node:field_date_news'
+            label: Date
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: datetime_default
+              weight: 0
+              label: hidden
+              settings:
+                timezone_override: ''
+                format_type: ap_date
+              third_party_settings: {  }
+            region: middle
+            weight: 5
+            uuid: 84e34c86-8903-4e6b-b799-ac9e9549247e
+          628ac937-e803-4828-9b39-25bc1f6e23a8:
+            id: 'entity_field:node:field_display_title_news'
+            label: 'Display Title'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 2
+            uuid: 628ac937-e803-4828-9b39-25bc1f6e23a8
+          ba4ac1e9-4824-4599-815b-c123ce0e0600:
+            id: 'entity_field:node:field_file_upload_news'
+            label: 'File Upload'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: file_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 10
+            uuid: ba4ac1e9-4824-4599-815b-c123ce0e0600
+          4c001a3e-2c4b-406c-93f3-46333da7bece:
+            id: 'entity_field:node:field_location_news'
+            label: Location
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 7
+            uuid: 4c001a3e-2c4b-406c-93f3-46333da7bece
+          d2c4ebd3-3db2-4360-8344-40f73ef2a998:
+            id: 'entity_field:node:field_more_about_this_topic_news'
+            label: 'More About This Topic'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: field_collection_items
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 13
+            uuid: d2c4ebd3-3db2-4360-8344-40f73ef2a998
+          673284b5-1cf5-46d4-9020-54e059ea9c7a:
+            id: 'entity_field:node:field_related_materials_news'
+            label: 'Related Materials'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: field_collection_items
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 12
+            uuid: 673284b5-1cf5-46d4-9020-54e059ea9c7a
+          435f56a0-b6d1-4055-bcc2-9ea6e6c87051:
+            id: 'entity_field:node:field_release_number_news'
+            label: 'Release Number'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 6
+            uuid: 435f56a0-b6d1-4055-bcc2-9ea6e6c87051
+          716e4f19-156c-4ee1-a417-9dcfb3e3032b:
+            id: 'entity_field:node:field_sub_title'
+            label: 'Sub Title'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 3
+            uuid: 716e4f19-156c-4ee1-a417-9dcfb3e3032b
+          db0fc1ad-3119-4e69-8f52-8c17e36d9cac:
+            id: 'entity_field:node:field_top_right_column_news'
+            label: 'Top Right Column'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 11
+            uuid: db0fc1ad-3119-4e69-8f52-8c17e36d9cac
+        page_title: '[node:title]'
+        layout: layout_onecol
+        layout_settings: {  }
+        builder: ipe
+        storage_type: ''
+        storage_id: ''
+id: node.news.title_and_date
+targetEntityType: node
+bundle: news
+mode: title_and_date
+content:
+  field_display_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden:
+  body: true
+  field_act: true
+  field_alternate_title_secarticle: true
+  field_approved_by_general_counse: true
+  field_audience: true
+  field_creator: true
+  field_date: true
+  field_description_abstract: true
+  field_division_office: true
+  field_external_resource: true
+  field_file_upload: true
+  field_location_news: true
+  field_media_file_upload: true
+  field_more_about_this_topic: true
+  field_news_type_news: true
+  field_person: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_related_materials: true
+  field_release_number: true
+  field_ruling_comment_file_number: true
+  field_ruling_comment_title: true
+  field_sec_content_approver: true
+  field_speaker_name_and_title: true
+  field_sub_title: true
+  field_tags: true
+  field_top_right_column: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

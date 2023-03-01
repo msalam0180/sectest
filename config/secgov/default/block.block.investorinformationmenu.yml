@@ -1,0 +1,32 @@
+uuid: a6b665a2-7fb6-4bb4-8e90-0db71c30682f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.investor-information-menu
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: TdcsfWyQKy_E9lKyZJjvUAF8kTfK02-1zIXpDij9am8
+id: investorinformationmenu
+theme: secgov
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:investor-information-menu'
+settings:
+  id: 'system_menu_block:investor-information-menu'
+  label: 'Investor Information Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/investor\r\n/investor/*\r\n/fast-answers\r\n/fast-answers/*\r\n*/fast-answers/*\r\n*/answers/*"

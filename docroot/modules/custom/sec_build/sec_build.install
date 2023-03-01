@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Create custom db stable to store IM Webform submissions
+ */
+function sec_build_update_8001() {
+  $record_keep_table = 'sec_im_no_action_submissions';
+  $schema = [
+    'fields' => [
+      'id' => ['type' => 'serial', 'not null' => TRUE],
+      'sid' => ['type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE],
+      'created' => ['type' => 'int', 'not null' => TRUE],
+    ],
+    'primary key' => ['id'],
+  ];
+  \Drupal::database()->schema()->createTable( $record_keep_table, $schema);
+}

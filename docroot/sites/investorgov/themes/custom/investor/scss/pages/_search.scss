@@ -1,0 +1,20 @@
+.view-id-search-content.view-display-id-page-1 .main-content{
+  @media only screen and (min-width: $form-small) {
+     .views-exposed-form{
+      display: flex;
+
+      & > .form-item{
+        flex: 1;
+      }
+    
+      .button{
+        position: relative;
+        top: 29px;
+      }
+    }
+  }
+  .block-title-iapd-widget-block{
+    margin-bottom: 20px;
+  }
+}
+

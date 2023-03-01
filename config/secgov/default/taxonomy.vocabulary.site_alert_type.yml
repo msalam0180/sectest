@@ -1,0 +1,8 @@
+uuid: 80f8126b-cbb5-49c4-be6d-1a1e295d4bbd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site Alert Type'
+vid: site_alert_type
+description: ''
+weight: 0

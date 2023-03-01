@@ -1,0 +1,27 @@
+/* line 3, ../sass/webcast-archive-player.scss */
+.main h1 {
+  padding-bottom: 0 !important;
+}
+/* line 7, ../sass/webcast-archive-player.scss */
+.main h2, .main #videoplayer {
+  margin-bottom: 1rem !important;
+}
+/* line 11, ../sass/webcast-archive-player.scss */
+.main h2, .main #videoplayer {
+  margin-bottom: 1rem !important;
+}
+/* line 15, ../sass/webcast-archive-player.scss */
+.main ul {
+  padding-left: 20px !important;
+  margin-left: 0 !important;
+  margin-bottom: 2rem !important;
+}
+/* line 21, ../sass/webcast-archive-player.scss */
+.main p {
+  line-height: 1.6 !important;
+}
+/* line 25, ../sass/webcast-archive-player.scss */
+.main #limelight_player_694100 {
+  width: 480px !important;
+  height: 320px !important;
+}

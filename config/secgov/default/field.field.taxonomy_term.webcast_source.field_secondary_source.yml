@@ -1,0 +1,19 @@
+uuid: 9aeeace4-82cf-426b-956b-8db90c70a1d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_secondary_source
+    - taxonomy.vocabulary.webcast_source
+id: taxonomy_term.webcast_source.field_secondary_source
+field_name: field_secondary_source
+entity_type: taxonomy_term
+bundle: webcast_source
+label: 'Secondary Source (DASH)'
+description: 'Secondary source type will be used as video/f4m.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,47 @@
+uuid: a46a2642-1b06-4ec2-ac27-e88ebe2f7602
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+    default_moderation_state: published
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '2'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: zhtPXoRcC6REiepM0k16zw__FDW5YOXDR6U2WlldTrs
+name: 'Basic page'
+type: page
+description: 'Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

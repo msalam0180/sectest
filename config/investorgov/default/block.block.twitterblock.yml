@@ -1,0 +1,36 @@
+uuid: 9d397878-9db1-433b-96cf-db1ea9413cb0
+langcode: en
+status: true
+dependencies:
+  module:
+    - twitter_block
+  theme:
+    - investor
+id: twitterblock
+theme: investor
+region: footer
+weight: -11
+provider: null
+plugin: twitter_block
+settings:
+  id: twitter_block
+  label: 'Twitter block'
+  label_display: '0'
+  provider: twitter_block
+  username: SEC_Investor_Ed
+  theme: dark
+  link_color: 66e0e1
+  width: ''
+  height: ''
+  chrome:
+    noheader: noheader
+    nofooter: nofooter
+    noborders: noborders
+    noscrollbar: noscrollbar
+    transparent: transparent
+  border_color: ''
+  language: ''
+  tweet_limit: '1'
+  related: ''
+  polite: polite
+visibility: {  }

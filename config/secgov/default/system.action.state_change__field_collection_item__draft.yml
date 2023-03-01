@@ -1,0 +1,11 @@
+uuid: 40aedf38-8e3f-4e6c-a3c8-2499c0c85324
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__field_collection_item__draft
+label: 'Set Field Collection Item as Draft'
+type: field_collection_item
+plugin: 'state_change:field_collection_item__draft'
+configuration: {  }

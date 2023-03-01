@@ -1,0 +1,334 @@
+uuid: bf045696-1d47-4cfd-9936-c5c3d6a94b03
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: 10426
+template: false
+archive: false
+id: request_for_individual_access
+title: 'Request for Individual Access to Records under the Privacy Act'
+description: |-
+  <span style="font-size:11pt"><span style="line-height:107%"><span style="punctuation-wrap:simple"><span style="text-autospace:none"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Times New Roman&quot;,serif">If you are seeking access to your records or records pertaining to you, you must complete this form.</span></span></span></span></span></span><br />
+  <br />
+  <span style="font-size:11.0pt"><span style="line-height:115%"><span style="font-family:&quot;Times New Roman&quot;,serif">If you are acting in a representative capacity and are seeking access to another individual&rsquo;s records, you must have the represented individual complete a <em>Consent for Disclosure of Records Protected under the Privacy Act</em> form located at (<a href="https://dcmdev1.sec.gov/forms/consent_for_disclosure">Consent for Disclosure of Records Protected under the Privacy Act</a>).</span></span></span>
+category: 'SEC Forms'
+elements: |-
+  header:
+    '#type': webform_message
+    '#message_message': |-
+      <p>If you are seeking access to your records or records pertaining to you, you must complete and sign the statement below.</p>
+      &nbsp;
+
+      <p>If you are acting in a representative capacity and are seeking access to another individual&rsquo;s records, you must have the represented individual complete a <em>Consent for Disclosure of Records Protected under the Privacy Act</em> form located at (<a href="/forms/consent_for_disclosure">Consent for Disclosure of Records Protected under the Privacy Act</a>).</p>
+  legal_name:
+    '#type': webform_name
+    '#title': 'Legal Name'
+    '#title_display': before
+    '#required': true
+    '#title__access': false
+    '#first__title': 'First Name'
+    '#first__placeholder': 'First Name'
+    '#first__required': true
+    '#middle__title': 'Middle Name'
+    '#middle__placeholder': 'Middle Name'
+    '#last__title': 'Last Name'
+    '#last__placeholder': 'Last or Family Name'
+    '#last__required': true
+    '#suffix__placeholder': Suffix
+    '#degree__access': false
+  i_confirm_that_i_have_already_submitted_a_privacy_act_request_to:
+    '#type': checkbox
+    '#title': 'I confirm that I have already submitted a Privacy Act request to the SEC and received an acknowledgement email or letter from the SEC containing my assigned SEC Request No.'
+    '#required': true
+  sec_request_no:
+    '#type': textfield
+    '#title': 'SEC Request No.'
+    '#description': 'Please enter a valid SEC Request No. (e.g. XX-XXXXX-XXXX)'
+    '#title_display': inline
+    '#description_display': after
+    '#pattern': '[\d]{2}+\-[\d]{5}+\-[a-zA-Z]{4}'
+    '#states':
+      visible:
+        ':input[name="i_confirm_that_i_have_already_submitted_a_privacy_act_request_to"]':
+          checked: true
+      required:
+        ':input[name="i_confirm_that_i_have_already_submitted_a_privacy_act_request_to"]':
+          checked: true
+  requester_information:
+    '#type': fieldset
+    '#title': 'Requester Information'
+    '#required': true
+    mailing_address_of_requester:
+      '#type': webform_address
+      '#title': 'Mailing Address of Requester'
+      '#title_display': before
+      '#required': true
+      '#address__title': 'Street Address 1'
+      '#address__required': true
+      '#address_2__title': 'Street Address 2'
+      '#city__required': true
+      '#state_province__required': true
+    email_address_of_requester:
+      '#type': email
+      '#title': 'Email Address of Requester'
+      '#title_display': inline
+      '#required': true
+  perjury_statement:
+    '#type': webform_message
+    '#message_message': |-
+      <p>In order for your request to be processed, you must provide an electronic signature below, which acknowledges that you have read and understand the following statement:</p>
+
+      <blockquote>
+      <p>I declare under penalty of perjury under the laws of the United States of America that the foregoing is true and correct, and that I am the person named above and requesting access to my records or to information pertaining to me, and I understand that any falsification of this statement is punishable under the provisions of 18 U.S.C. &sect; 1001 by a fine, imprisonment of not more than five years, or both, and that requesting or obtaining any record(s) under false pretenses is punishable under the provisions of 5 U.S.C. &sect; 552a(i)(3) by a fine of not more than $5,000</p>
+      </blockquote>
+  electronic_signature_and_date:
+    '#type': fieldset
+    '#title': 'Electronic Signature and Date'
+    '#required': true
+    signature:
+      '#type': textfield
+      '#title': Signature
+      '#required': true
+    date_signed:
+      '#type': date
+      '#title': 'Date Signed'
+      '#required': true
+      '#datepicker': true
+      '#datepicker_button': true
+      '#date_date_format': m/d/Y
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+  privacy_act_statement:
+    '#type': webform_message
+    '#message_message': |-
+      <strong><u style="text-underline:thick">Privacy Act Statement</u></strong><br />
+      <br />
+      In accordance with the SEC&rsquo;s Privacy Act Regulation, 17 C.F.R. Subpart H, personal information sufficient to identify the individuals requesting access to records under the Privacy Act of 1974, 5 U.S.C. &sect; 552a, is required. The purpose of this solicitation is to ensure that the records of individuals who are the subject of SEC systems of records are not wrongfully disclosed by the SEC. Additionally, the SEC may use the information, as necessary and authorized by the routine uses published in the SEC System of Records Notice <a href="https://www.federalregister.gov/documents/2013/07/12/2013-16681/privacy-act-of-1974-systems-of-records">Freedom of Information and Privacy Act Requests</a>, 78 FR 41962 (July 12, 2013). Requests will not be processed if this information is not furnished. False information on this form may subject the requester to criminal penalties under 18 U.S.C. &sect; 1001 and/or 5 U.S.C. &sect; 552a(i)(3).
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/request_for_individual_access
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: true
+  results_disabled_ignore: true
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  submission:
+    id: email
+    handler_id: submission
+    label: Submission
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: foiapa@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: "<p>&nbsp;<br />\r\nSubmitted on [webform_submission:created]<br />\r\nSubmitted values are:<br />\r\n<strong>Legal Name</strong><br />\r\n[webform_submission:values:legal_name]</p>\r\n\r\n<h4><strong>SEC Request No</strong></h4>\r\n\r\n<p>[webform_submission:values:sec_request_no]<br />\r\n<br />\r\n<strong>Requester Information</strong><br />\r\n<br />\r\n<strong>Mailing Address of Recipient</strong> [webform_submission:values:mailing_address_of_requester]<br />\r\n<strong>Email Address of Recipient</strong> [webform_submission:values:email_address_of_requester]</p>\r\n\r\n<p>[webform_submission:values:perjury_statement]</p>\r\n\r\n<h3>Electronic Signature</h3>\r\n\r\n<p><strong>Signature</strong><br />\r\n[webform_submission:values:signature]<br />\r\n<strong>Date</strong><br />\r\n[webform_submission:created]</p>"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

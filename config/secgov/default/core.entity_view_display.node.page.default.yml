@@ -1,0 +1,46 @@
+uuid: c5cd04b2-a34f-4de9-9683-eec375c7ab82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_date
+    - field.field.node.page.field_left_nav_override
+    - field.field.node.page.field_tags
+    - field.field.node.page.scheduling_options
+    - node.type.page
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+_core:
+  default_config_hash: oZ-7vpIJxjxL2up9B5KrJGD0lazQ9aN0P-fIPo6OrSU
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_date: true
+  field_left_nav_override: true
+  field_tags: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true

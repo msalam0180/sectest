@@ -1,0 +1,14 @@
+name: Media Entity Link
+type: module
+package: Media
+description: 'Provides a media entity of type link to add external/internal link.'
+core_version_requirement: ^8 || ^9
+core: 8.x
+dependencies:
+  - drupal:media
+  - drupal:link
+
+# Information added by Drupal.org packaging script on 2021-05-07
+version: '1.0.0'
+project: 'media_entity_link'
+datestamp: 1620392740

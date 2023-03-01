@@ -1,0 +1,21 @@
+uuid: 7e52b58d-4c19-4e7c-b715-803db70838b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.featured
+  module:
+    - text
+id: node.featured.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: featured
+label: Teaser
+description: 'The Teaser field will end at the last full sentence before the 200 character limit.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

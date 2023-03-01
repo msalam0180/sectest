@@ -1,0 +1,518 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Unicode;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+
+/**
+ * Implements hook_token_info().
+ */
+function sec_build_token_info() {
+  $info['tokens']['media']['name'] = [
+    'name' => t("Name"),
+    'description' => t("Media Name"),
+  ];
+  return $info;
+}
+/**
+ * Implements hook_tokens().
+ */
+function sec_build_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  if ($type == 'media') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'name':
+          $node = $data['media'];
+          $replacements[$original] = $node->getName();
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ *
+ * Deletes old replaced file.
+ */
+function sec_build_media_update(EntityInterface $entity) {
+
+  if (in_array($entity->bundle(), ['static_file', 'image_media'])){
+    $fileField = 'field_media_image';
+
+    if ($entity->bundle() == 'static_file') {
+      $fileField = 'field_media_file';
+    }
+
+    $oldMediaFile = $entity->original->get($fileField)->getValue();
+    $newMediaFile = $entity->get($fileField)->getValue();
+    $newMediaFileTargetID = @$newMediaFile[0]['target_id'];
+
+    if (isset($oldMediaFile[0]['target_id']) && $newMediaFileTargetID != $oldMediaFile[0]['target_id']) {
+      $fileStorage = \Drupal::service('entity_type.manager')->getStorage('file');
+      $fileEntity = $fileStorage->load($oldMediaFile[0]['target_id']);
+      if ($fileEntity) {
+        $fileEntity->delete();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ *
+ * Deletes file attached to media once media is deleted.
+ */
+function sec_build_media_delete(EntityInterface $entity) {
+  if (in_array($entity->bundle(), ['static_file', 'image_media'])){
+    $fileField = 'field_media_image';
+
+    if ($entity->bundle() == 'static_file') {
+      $fileField = 'field_media_file';
+    }
+
+    $mediaFile = $entity->get($fileField)->getValue();
+
+    if (isset($mediaFile[0]['target_id'])) {
+      $fileStorage = \Drupal::service('entity_type.manager')->getStorage('file');
+      $fileEntity = $fileStorage->load($mediaFile[0]['target_id']);
+      if ($fileEntity) {
+        $fileEntity->delete();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function sec_build_entity_type_alter(array &$entity_types) {
+  $entity_types['menu']->setListBuilderClass('Drupal\sec_build\MenuNoMenuListBuilder');
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function sec_build_menu_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->id() == 'no-menu') {
+    return AccessResult::forbidden();
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_file_download().
+ */
+function sec_build_file_download($uri) {
+  // OSSS-13961: Do not allow access to webform files as part of security.
+  $user = \Drupal::service('entity_type.manager')->getStorage('user')->load(\Drupal::currentUser()->id());
+  $allowedRoles = [
+    'administrator'
+  ];
+  if (preg_match("/^private:\/\/webform/i", $uri)) {
+    $allowed = FALSE;
+
+    // Loop through all $allowedRoles and see if user has any of the roles.
+    // If so, set $allowed to TRUE so doesn't return -1.
+    foreach ($allowedRoles as $allowedRole) {
+      if ($user->hasRole($allowedRole)) {
+        $allowed = TRUE;
+        break;
+      }
+    }
+
+    if(!$allowed) {
+      return -1;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sec_build_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  /**
+   * Hide/Show Static File media form fields based on roles.
+   */
+  $user = User::load(\Drupal::currentUser()->id());
+  $forms_static = [
+    'media_static_file_add_form',
+    'media_static_file_edit_form'
+  ];
+
+  $urlAccessRoles = [
+    'administrator',
+    'division_office_admin',
+    'sitebuilder',
+    'bad_actors',
+  ];
+
+  $publishRoles = [
+    'administrator',
+    'content_approver',
+    'division_office_admin',
+    'sitebuilder',
+    'bad_actors',
+  ];
+
+  if (in_array($form_id, $forms_static)) {
+    // Change label to Title
+    $form['name']['widget'][0]['value']['#title'] = 'Title';
+
+    // Check roles and hide/show url field
+    $canAccessUrl = FALSE;
+    foreach ($urlAccessRoles as $role) {
+      if ($user->hasRole($role)) {
+        $canAccessUrl = TRUE;
+        break;
+      }
+    }
+    if (!$canAccessUrl) {
+      $form['path']['#access'] = FALSE;
+    }
+
+    // Check roles and hide/show publish field
+    $canPublish = FALSE;
+    foreach ($publishRoles as $role) {
+      if ($user->hasRole($role)) {
+        $canPublish = TRUE;
+        break;
+      }
+    }
+    if (!$canPublish) {
+      $form['status']['#access'] = FALSE;
+    }
+
+    $form['field_file_path']['widget']['#options']['_none'] = 'Files (root)';
+    $form['#validate'][] = 'sec_build_validate_file_upload';
+  }
+
+  /**
+   * Hide/Show Video and Image media form fields based on roles.
+   */
+  $forms_image = [
+    'media_image_media_add_form',
+    'media_image_media_edit_form'
+  ];
+
+  $forms_video= [
+    'media_video_media_add_form',
+    'media_video_media_edit_form'
+  ];
+
+  $urlAccessRolesVideoImage = [
+    'administrator',
+    'division_office_admin',
+    'sitebuilder'
+  ];
+
+  $publishRolesVideoImage = [
+    'administrator',
+    'content_approver',
+    'division_office_admin',
+    'sitebuilder'
+  ];
+
+  if (in_array($form_id, array_merge ($forms_image, $forms_video) )) {
+    // Update the embed video field help text
+    if (in_array($form_id, $forms_video)) {
+      $form['field_media_oembed_video']['widget'][0]['value']['#description'] = 'You can link to media from the following services: YouTube, Vimeo. For example: https://www.youtube.com/watch?v=xf9BpXOtMcc';
+    }
+    else {
+      // Add file validation for image media form.
+      $form['#validate'][] = 'sec_build_validate_file_upload';
+    }
+
+    // Change label to Title
+    $form['name']['widget'][0]['value']['#title'] = 'Title';
+
+    // Check roles and hide/show url field
+    $canAccessUrl = FALSE;
+    foreach ($urlAccessRolesVideoImage as $role) {
+      if ($user->hasRole($role)) {
+        $canAccessUrl = TRUE;
+        break;
+      }
+    }
+    if (!$canAccessUrl) {
+      $form['path']['#access'] = FALSE;
+    }
+
+    // Check roles and hide/show publish field
+    $canPublish = FALSE;
+    foreach ($publishRolesVideoImage as $role) {
+      if ($user->hasRole($role)) {
+        $canPublish = TRUE;
+        break;
+      }
+    }
+    if (!$canPublish) {
+      $form['status']['#access'] = FALSE;
+    }
+  }
+
+  if (in_array($form_id, array_merge($forms_static, $forms_image))) {
+    $form['media_file_warning'] = [
+      '#type' => 'markup',
+      '#markup' => '<div class="media-status-help-text">This media file is accessible to the public via the full path even if left "unpublished." You must delete the file to ensure it is inaccessible.</div>',
+      '#weight' => 99,
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function sec_build_views_pre_render(ViewExecutable $view) {
+
+  $viewID = $view->id();
+  $viewDisplay = $view->current_display;
+
+  $view->element['#attached']['drupalSettings']['sec_datatable']['columnDefs'] = [];
+
+  if (($viewID == 'press_releases' && $viewDisplay == 'page_1')
+    || ($viewID == 'public_statements_list_page' && $viewDisplay == 'page_1')
+    || ($viewID == 'testimony_list_page' && $viewDisplay == 'page_1')
+    || ($viewID == 'speeches_statements_list_page' && $viewDisplay == 'page_1')
+    || ($viewID == 'speeches_list_page' && $viewDisplay == 'page_1')) {
+
+    $view->element['#attached']['drupalSettings']['sec_datatable']['columnDefs'] = [
+      ['visible' => false, 'targets' => 0],
+      ['type' => 'natural', 'targets' => 1],
+    ];
+  }
+  else if (($viewID == 'reports_and_publications' && $viewDisplay == 'page_1')
+    || ($viewID == 'investor_alerts_bulletins_list_page' && $viewDisplay == 'page_1')) {
+    $view->element['#attached']['drupalSettings']['sec_datatable']['columnDefs'] = [
+      ['targets' => 0, 'type' => 'natural'],
+    ];
+  }
+  else if ($viewID == 'fast_answers_view' && $viewDisplay == 'page_1') {
+    $view->element['#attached']['drupalSettings']['sec_datatable']['columnDefs'] = [
+      ['targets' => 1, 'type' => 'natural'],
+    ];
+    $view->element['#attached']['drupalSettings']['sec_datatable']['noRowGrouping'] = TRUE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['paginate'] = FALSE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['showInfo'] = FALSE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['sortIndex'] = 0;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['sortOrder'] = 'asc';
+  }
+  else if ($viewID == 'forms_list_page' && $viewDisplay == 'page_1') {
+    $view->element['#attached']['drupalSettings']['sec_datatable']['columnDefs'] = [
+      ['targets' => 2, 'type' => 'natural'],
+    ];
+    $view->element['#attached']['drupalSettings']['sec_datatable']['noRowGrouping'] = TRUE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['paginate'] = FALSE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['showInfo'] = FALSE;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['sortIndex'] = 0;
+    $view->element['#attached']['drupalSettings']['sec_datatable']['sortOrder'] = 'asc';
+  }
+
+}
+
+function sec_build_validate_file_upload(&$form, FormStateInterface $form_state) {
+  $replacementFile = $form_state->get('replacement_file');
+  $formStateValues = $form_state->getValues();
+
+  // Set the $replacementFile to be whatever file uploaded for creation forms.
+  if ($formStateValues['form_id'] == 'media_static_file_add_form' && isset($formStateValues['field_media_file'][0]['fids'][0])) {
+    $replacementFile = \Drupal::service('entity_type.manager')->getStorage('file')->load($formStateValues['field_media_file'][0]['fids'][0]);
+  }
+  else if ($formStateValues['form_id'] == 'media_image_media_add_form' && isset($formStateValues['field_media_image'][0]['fids'][0])) {
+    $replacementFile = \Drupal::service('entity_type.manager')->getStorage('file')->load($formStateValues['field_media_image'][0]['fids'][0]);
+  }
+
+  if ($replacementFile) {
+    $filename = $replacementFile->getFilename();
+    $filepath = "public://";
+    $redirectpath = "files/";
+    //File validation for static file media
+    if ($formStateValues['form_id'] == 'media_static_file_edit_form' && !$formStateValues['keep_original_filename']
+      || $formStateValues['form_id'] == 'media_static_file_add_form') {
+      if (!empty($formStateValues['field_file_path'][0]['target_id'])) {
+        $ancestors = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")
+          ->loadAllParents($formStateValues['field_file_path'][0]['target_id']);
+        while (!empty($ancestors)) {
+          $ancestor = array_pop($ancestors);
+          $filepath .= $ancestor->getName() . "/";
+          $redirectpath .= $ancestor->getName() . "/";
+        }
+      }
+      $filepath .= $filename;
+      $redirectpath .= $filename;
+      $filepath = _sec_build_pathauto_convert($filepath);
+      $redirectpath = _sec_build_pathauto_convert($redirectpath);
+      $entitypath = _sec_build_media_file_path_exists_get_entity_path($filepath);
+      $redirectlink = _sec_build_check_file_redirect($redirectpath);
+      if ($entitypath) {
+        $replacementFile->delete();
+        $form_state->unsetValue('field_media_file');
+        $form_state->setErrorByName('field_media_file', "File path is already in use at {$entitypath}");
+      }
+      else if ($redirectlink) {
+        $replacementFile->delete();
+        $form_state->unsetValue('field_media_file');
+        $form_state->setErrorByName('field_media_file', "File path is already in use as a redirect from {$redirectlink}");
+      }
+    }
+    // File validation for image media
+    else if ($formStateValues['form_id'] == 'media_image_media_edit_form' && !$formStateValues['keep_original_filename']
+      || $formStateValues['form_id'] == 'media_image_media_add_form') {
+      $filepath .= "images/" . $filename;
+      $redirectpath .= "images/" . $filename;
+      $filepath = _sec_build_pathauto_convert($filepath);
+      $redirectpath = _sec_build_pathauto_convert($redirectpath);
+      $entitypath = _sec_build_media_file_path_exists_get_entity_path($filepath);
+        $redirectlink = _sec_build_check_file_redirect($redirectpath);
+        if ($entitypath) {
+          $replacementFile->delete();
+          $form_state->unsetValue('field_media_image');
+          $form_state->setErrorByName('field_media_image', "File path is already in use at {$entitypath}");
+        }
+        else if ($redirectlink) {
+          $replacementFile->delete();
+          $form_state->unsetValue('field_media_image');
+          $form_state->setErrorByName('field_media_image', "File path is already in use as a redirect from {$redirectlink}");
+        }
+    }
+  }
+}
+
+function _sec_build_media_file_path_exists_get_entity_path($filepath) {
+  $db = \Drupal::database();
+
+  // Check if file exists.
+  $result = $db->select('file_managed', 'fm')
+    ->condition('fm.uri', $filepath)
+    ->fields('fm')
+    ->range(0,1)
+    ->execute()
+    ->fetchAll();
+
+  // If file record exists, we can look where it's used.
+  if (!empty($result)) {
+    $row = array_pop($result);
+
+    $mediaFileFields = [
+      'media__field_media_file' => 'field_media_file_target_id',
+      'media__field_media_image' => 'field_media_image_target_id',
+    ];
+
+    // Check if media fields uses it.
+    foreach ($mediaFileFields as $db_table => $db_field) {
+      $entitypath = _sec_build_check_file_ref_from_entity($db, 'media', $db_table, $db_field, $row->fid);
+      if ($entitypath) {
+        return $entitypath;
+      }
+    }
+
+    // Check if node fields uses it.
+    $nodeFileFields = [
+      'node__field_attached_files' => 'field_attached_files_target_id',
+      'node__field_file_upload' => 'field_file_upload_target_id',
+      'node__field_image_upload' => 'field_image_upload_target_id',
+    ];
+
+    foreach ($nodeFileFields as $db_table => $db_field) {
+      $entitypath = _sec_build_check_file_ref_from_entity($db, 'node', $db_table, $db_field, $row->fid);
+      if ($entitypath) {
+        return $entitypath;
+      }
+    }
+
+    // If no entity is referencing it, but it is still there as permanent file, link it.
+    return file_create_url($row->uri);
+  }
+
+  return FALSE;
+}
+
+function _sec_build_check_file_ref_from_entity($db, $entity_type, $db_table, $db_field, $fid) {
+  $result = $db->select($db_table, 'f')
+    ->condition("f.{$db_field}", $fid)
+    ->fields('f', ['entity_id'])
+    ->range(0,1)
+    ->execute()
+    ->fetchAll();
+
+  if (!empty($result)) {
+    return \Drupal::service('path_alias.manager')->getAliasByPath("/{$entity_type}/{$result[0]->entity_id}");
+  }
+
+  return FALSE;
+}
+
+function _sec_build_check_file_redirect($filepath) {
+  $db = \Drupal::database();
+
+  // Check if redirect exists.
+  $result = $db->select('redirect', 'r')
+    ->condition('r.redirect_redirect__uri', 'internal:/' . $filepath)
+    ->fields('r')
+    ->range(0,1)
+    ->execute()
+    ->fetchAll();
+
+  if (!empty($result)) {
+    $url = "/" . $result[0]->redirect_source__path;
+    return $url;
+  }
+
+  return FALSE;
+}
+
+function _sec_build_pathauto_convert($path) {
+  // \Drupal::logger('sec_build')->debug(print_r($path, TRUE));
+  $basename = end(explode("/", $path));
+  // \Drupal::logger('sec_build')->debug(print_r($basename, TRUE));
+  $extension = preg_match('/\.[^.]+$/', $basename, $matches) ? $matches[0] : NULL;
+  $filename = !is_null($extension) ? mb_substr($basename, 0, mb_strlen($basename) - mb_strlen($extension)) : $basename;
+  $value = str_replace($filename, \Drupal::service('pathauto.alias_cleaner')->cleanstring($filename), $path);
+  return $value;
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function sec_build_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  $types = [
+    'file',
+    'image',
+    'video',
+  ];
+
+  $user = \Drupal::service('entity_type.manager')->getStorage('user')->load($account->id());
+
+  if ($entity->getEntityTypeId() == 'node' && in_array($entity->bundle(), $types) && !$user->hasRole('administrator')) {
+    return AccessResult::forbidden();
+  }
+}
+
+function sec_build_preprocess_file_upload_help(&$variables) {
+  $webform = \Drupal::routeMatch()->getParameter('webform');
+  if ($webform && is_object($webform) && method_exists($webform, 'id') && $webform->id() == 'im_no_action') {
+    $upload_validators = $variables['upload_validators'];
+    $lastDesc = end($variables['descriptions']);
+    if (isset($upload_validators['webform_file_limit']) && $upload_validators['webform_file_limit'][0]
+      && $lastDesc && preg_match('/limit per form/', $lastDesc)) {
+      array_pop($variables['descriptions']);
+    }
+    $variables['descriptions'][0] = t(preg_replace('/unlimited/i', 'Multiple', $variables['descriptions'][0]));
+    $variables['descriptions'][1] = t(preg_replace('/mb limit\./i', 'MB limit total size.', $variables['descriptions'][1]));
+  }
+}
+
+function sec_build_webform_submission_form_alter(array &$form, $form_state, $form_id) {
+  // Attach library to only webform forms.
+  $form['#attached']['library'][] = 'sec_build/webformRecaptcha';
+}

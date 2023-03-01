@@ -1,0 +1,6 @@
+name: Static File Replacement
+type: module
+description: Utility for overwriting static files.
+core: 8.x
+package: sec
+core_version_requirement: ^8 || ^9

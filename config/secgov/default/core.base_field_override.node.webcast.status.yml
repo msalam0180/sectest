@@ -1,0 +1,22 @@
+uuid: db49b495-2c32-4dfc-a0b9-8999d1fde2c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.webcast
+id: node.webcast.status
+field_name: status
+entity_type: node
+bundle: webcast
+label: 'Publishing status'
+description: 'A boolean indicating whether the node is published.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

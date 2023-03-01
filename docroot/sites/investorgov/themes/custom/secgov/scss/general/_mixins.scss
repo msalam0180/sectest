@@ -1,0 +1,79 @@
+//
+// SASS MIXINS
+//
+// --------------------------------------------------
+
+// Responsive Breakpoints
+@mixin breakpoint($class, $orientation:'', $device:'') {
+  @if $class == 'x-small' {
+    @media (max-width : 300px) { @content; }
+  }
+
+  @if $class == 'small' {
+    @if $orientation == 'portrait' {
+      @media (min-width : 300px) and (max-width : 767px) and (orientation : portrait){ @content; }
+    }
+    @elseif $orientation == 'landscape' {
+      @media (min-width : 300px) and (max-width : 767px) and (orientation : landscape) { @content; }
+    }
+    @else {
+      @media (min-width : 300px) and (max-width: 767px) { @content; }
+    }
+  }
+ 
+  @else if $class == 'medium' { 
+    @if $device == 'ipad' {
+      @if $orientation == 'portrait' {
+        @media only screen and (min-device-width: 768px) and (orientation: portrait)
+        { @content; }
+      } @elseif $orientation == 'landscape' {
+        @media only screen and (min-device-width: 800px) and (orientation: landscape)
+        { @content; }
+      }
+    }
+    @else {
+      @if $orientation == 'portrait' {
+        @media only screen and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (orientation: portrait) { @content; }
+      }
+      @elseif $orientation == 'landscape' {
+        @media only screen and (min-device-width: 800px) 
+        and (max-device-width: 1024px) 
+        and (orientation: landscape) 
+        { @content; }
+      } @else {
+        @media only screen and (min-device-width: 768px) { @content; }
+      }
+    }
+  }
+  @else if $class == 'medium-and-up' {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $class == 'large' {
+    @media (min-width: 1024px) { @content; }
+  }
+   @else if $class == 'x-large' {
+    @media (min-width: 1440px) { @content; }
+  }
+}
+
+// TODO: What is this used for?
+@mixin section {
+  clear: both;
+  display: block;
+  float:none;
+  margin-left:auto;
+  margin-right:auto;
+  padding:0;
+}
+
+
+// Clear child elements
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

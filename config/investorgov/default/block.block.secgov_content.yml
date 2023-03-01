@@ -1,0 +1,22 @@
+uuid: c39cfcaa-0c7e-458c-9d2e-0019b1c0c15b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: secgov_content
+theme: secgov
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,76 @@
+mapbox_gl_access_token: pk.eyJ1Ijoic2Nod2FydHpqIiwiYSI6IlE4emJPWmcifQ.x2K4cXtctCMqCZYoupWmhA
+regional_offices_style_url: 'mapbox://styles/schwartzj/cjim0ibrd4xfa2rmhanzysngj'
+regional_offices:
+  atlanta:
+    map:
+      center:
+        latitude: 33.861
+        longitude: -84.352
+      zoom: 9.2
+  boston:
+    map:
+      center:
+        latitude: 42.353
+        longitude: -71.056
+      zoom: 11.5
+  chicago:
+    map:
+      center:
+        latitude: 41.878012
+        longitude: -87.633185
+      zoom: 13
+  denver:
+    map:
+      center:
+        latitude: 39.747065
+        longitude: -104.989784
+      zoom: 13
+  fort-worth:
+    map:
+      center:
+        latitude: 32.750982
+        longitude: -97.334836
+      zoom: 13
+  los-angeles:
+    map:
+      center:
+        latitude: 34.051828
+        longitude: -118.254971
+      zoom: 13
+  miami:
+    map:
+      center:
+        latitude: 25.766184
+        longitude: -80.190688
+      zoom: 13
+  new-york:
+    map:
+      center:
+        latitude: 40.71507
+        longitude: -74.0168679
+      zoom: 13
+  philadelphia:
+    map:
+      center:
+        latitude: 39.950936
+        longitude: -75.152
+      zoom: 13
+  salt-lake:
+    map:
+      center:
+        latitude: 40.769348
+        longitude: -111.89205
+      zoom: 13
+  san-francisco:
+    map:
+      center:
+        latitude: 37.789512
+        longitude: -122.402081
+      zoom: 13
+regional_offices_map:
+  center:
+    latitude: '35.368'
+    longitude: -97.097
+  zoom: 2.8
+_core:
+  default_config_hash: btQxY9Xi81mfdHe8V1_kfeeBmx5p0p9zAUVGXDivU3c

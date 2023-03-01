@@ -1,0 +1,218 @@
+#map_viz {
+  max-width: 950px;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+}
+
+#map_viz .categories {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+#map_viz .categories section {
+  flex: 1;
+  padding: 0 1rem;
+  border-left: 1px solid;
+}
+#map_viz .categories section[type="where"] {
+  flex: 0.5 1 0;
+}
+#map_viz .categories section[type="how"] {
+  flex: 1 1 0;
+}
+#map_viz .categories section[type="when"] {
+  flex: 2 1 0;
+}
+#map_viz .categories li {
+  font-size: small;
+  list-style: none;
+  margin: 0.5rem 0;
+  font-size: small;
+  padding: 0 0.5rem;
+}
+#map_viz .categories li.active {
+  background-color: var(--active-color);
+}
+#map_viz .categories li:hover {
+  cursor: pointer;
+  background-color: var(--highlight-color);
+}
+#map_viz .categories .description {
+  font-size: small;
+}
+#map_viz .highcharts-markers path.highcharts-point {
+  fill: rgba(0, 0, 0, 0.45);
+}
+
+#map_viz .colorQuantity-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+#map_viz .colorQuantity-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+#map_viz .colorQuantity-item .color {
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 15px;
+  border: 0.1rem #252525 solid;
+  margin-right: 10px;
+}
+#map_viz .moreinfo {
+  box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+  min-width: 320px;
+  opacity: 1;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: #fff;
+}
+#map_viz .moreinfo-header {
+  height: 35px;
+  background: #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#map_viz .moreinfo-header--title {
+  color: #fff;
+  background-color: #252525;
+  height: 15px;
+  width: 50%;
+  padding: 10px;
+  text-transform: uppercase;
+}
+#map_viz .moreinfo-header--actions {
+  font-size: 22px;
+  font-weight: 700;
+}
+#map_viz .moreinfo-header--actions span {
+  padding: 10px;
+  cursor: pointer;
+}
+#map_viz .moreinfo-content {
+  padding: 10px;
+}
+#map_viz .moreinfo-content div {
+  padding-bottom: 10px;
+}
+#map_viz tspan.highcharts-text-outline {
+  fill: none;
+  stroke: none;
+}
+#map_viz #filter .filterContainer,
+#map_viz #filterPlaceholder .filterContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+#map_viz .form-container label{
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+}
+#map_viz select {
+  height: auto !important;
+  background-size: contain;
+  appearance: none;
+  padding: 9px 34px 9px 7px;
+}
+#map_viz #filter .filterContainer p {
+  font-weight: 600;
+}
+#map_viz #filter input[type="reset"],
+#map_viz #filter input[type="submit"],
+#map_viz #stateFilter input[type="reset"],
+#map_viz #stateFilter input[type="submit"] {
+  padding: 0.5rem;
+}
+#map_viz .actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+#map_viz .actionButtons button {
+  margin: 0.5rem;
+}
+#map_viz .actionButtons #methodInfo {
+  position: absolute;
+  top: 100px;
+  z-index: 1;
+}
+#map_viz .highcharts-key-as-6514,
+#map_viz .highcharts-key-as-6515,
+#map_viz .highcharts-key-mp-ro,
+#map_viz .highcharts-key-mp-sa,
+#map_viz .highcharts-key-mp-ti {
+  display: none;
+}
+#map_viz input[type="button"] {
+  padding: 0.5rem;
+}
+.countiesHolder {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#countyContainer .highcharts-zoom-in,
+#countyContainer .highcharts-zoom-out,
+#guam-countyContainer .highcharts-zoom-in,
+#guam-countyContainer .highcharts-zoom-out,
+#vi-countyContainer .highcharts-zoom-in,
+#vi-countyContainer .highcharts-zoom-out {
+  display: none;
+}
+#map_viz .stylized-box-1{
+  padding: 1.2rem 1.7rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 555px) {
+  #map_viz .categories {
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 490px;
+    margin: unset;
+  }
+  #map_viz .categories section {
+    flex: 1;
+    border-left: none;
+    margin-bottom: 10px;
+  }
+
+}
+
+@media screen and (max-width: 490px) {
+  #map_viz .categories {
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 480px;
+    margin: unset;
+  }
+  #map_viz .categories section {
+    flex: 1;
+    border-left: none;
+  }
+  #map_viz .categories section[type="where"] {
+    flex: 1;
+  }
+  #map_viz .categories section[type="how"] {
+    flex: 1;
+  }
+  #map_viz .categories section[type="when"] {
+    flex: 1;
+  }
+  #map_viz #methodology-section {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,48 @@
+uuid: 6820f54f-1cd2-48be-83d5-19fddd31d3a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_dist_upload
+    - node.type.data_distribution
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[node:field_associated_dataset:entity:field_primary_division_office:entity:field_abbreviated]/data/[node:field_associated_dataset:entity:field_article_sub_type_secart]/[node:field_associated_dataset:entity:field_display_title]'
+      options:
+        slashes: false
+        pathauto: true
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: true
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: true
+_core:
+  default_config_hash: 0VSuD9VrMwj98aeOw1gUypd67RvOrqDVk-X2TKakrlg
+id: node.data_distribution.field_data_dist_upload
+field_name: field_data_dist_upload
+entity_type: node
+bundle: data_distribution
+label: 'File Upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[current-page:url:path]'
+  file_extensions: 'asx avi css csv doc docx gif h htm html idx iff jpg js json map midi mov mp3 mp4 mpg pdf png ppt rss rtf sdp shtml smi txt wav wma wmv xbrl xfd xls xlsx xml xsd xsl xslt zip'
+  max_filesize: '1 GB'
+  description_field: false
+field_type: file

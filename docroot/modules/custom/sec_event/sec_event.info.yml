@@ -1,0 +1,6 @@
+name: 'SEC Event'
+description: 'Provides Event content type and related configuration. '
+type: module
+core: 8.x
+package: SEC
+core_version_requirement: ^8 || ^9

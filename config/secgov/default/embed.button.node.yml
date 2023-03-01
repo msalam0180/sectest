@@ -1,0 +1,63 @@
+uuid: 87784608-67e0-4b90-9090-50d5d6355f67
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embed
+    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.thumbnail_title_teaser
+    - core.entity_view_mode.node.title_and_date
+    - core.entity_view_mode.node.title_only
+    - node.type.article_type
+    - node.type.ba
+    - node.type.data_distribution
+    - node.type.data_visualization
+    - node.type.event
+    - node.type.govdelivery_form
+    - node.type.landing_page
+    - node.type.link
+    - node.type.news
+    - node.type.news_type
+    - node.type.page
+    - node.type.sec_alert
+    - node.type.sec_hero
+    - node.type.secarticle
+    - node.type.secperson
+    - node.type.webcast
+  module:
+    - entity_embed
+    - node
+label: 'Embed Content'
+id: node
+type_id: entity
+type_settings:
+  entity_type: node
+  bundles:
+    - secarticle
+    - article_type
+    - page
+    - data_distribution
+    - data_visualization
+    - event
+    - govdelivery_form
+    - sec_hero
+    - ba
+    - landing_page
+    - link
+    - news
+    - news_type
+    - secperson
+    - sec_alert
+    - webcast
+  display_plugins:
+    - 'view_mode:node.embed'
+    - 'view_mode:node.full'
+    - 'view_mode:node.teaser'
+    - 'view_mode:node.thumbnail_title_teaser'
+    - 'view_mode:node.title_and_date'
+    - 'view_mode:node.title_only'
+  entity_browser: ''
+  entity_browser_settings: {  }
+icon: {  }
+icon_uuid: null

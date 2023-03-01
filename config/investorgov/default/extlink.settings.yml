@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: rHbHZIIF9TP3H2Vs37uCHz4Gm4phULg0rQ_OKihxJfM
+extlink_exclude_admin_routes: false
+extlink_target: true
+extlink_target_no_override: false
+extlink_nofollow: false
+extlink_follow_no_override: false
+extlink_subdomains: true
+extlink_alert: true
+extlink_alert_text: "You are about to leave Investor.gov...\r\n\r\nThe link you have selected is located on another server. Please click on the link below to leave Investor.gov and proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site."
+extlink_exclude: 'https?:\/\/(.+?\.)?(.+\.gov)'
+extlink_include: ''
+extlink_class: ext
+extlink_label: '(link is external)'
+extlink_img_class: false
+extlink_css_exclude: ''
+extlink_css_explicit: ''
+extlink_mailto_class: mailto
+extlink_mailto_label: '(link sends email)'

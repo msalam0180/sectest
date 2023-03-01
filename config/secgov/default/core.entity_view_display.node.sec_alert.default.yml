@@ -1,0 +1,45 @@
+uuid: 3a7e012b-5ec9-4bf1-8f85-e40f3bb8d1ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sec_alert.body
+    - field.field.node.sec_alert.field_alert_type
+    - field.field.node.sec_alert.field_creator
+    - field.field.node.sec_alert.field_sec_content_approver
+    - field.field.node.sec_alert.field_tags
+    - field.field.node.sec_alert.field_webcast
+    - node.type.sec_alert
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.sec_alert.default
+targetEntityType: node
+bundle: sec_alert
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_alert_type: true
+  field_creator: true
+  field_sec_content_approver: true
+  field_tags: true
+  field_webcast: true
+  langcode: true
+  search_api_excerpt: true

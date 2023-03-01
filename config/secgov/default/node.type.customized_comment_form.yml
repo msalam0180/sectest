@@ -1,0 +1,48 @@
+uuid: 525b606e-ed7e-4aa6-8086-d226fda150cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '0'
+    edit_location: ''
+    edit_destination: 0
+name: 'Comment Form'
+type: customized_comment_form
+description: 'This content type is used in creating feedback comment form for SEC ruling.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

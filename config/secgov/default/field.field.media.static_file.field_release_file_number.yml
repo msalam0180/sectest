@@ -1,0 +1,29 @@
+uuid: e4784fc0-879e-428a-acb7-96db43871241
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_release_file_number
+    - media.type.static_file
+    - taxonomy.vocabulary.rulemaking_index
+id: media.static_file.field_release_file_number
+field_name: field_release_file_number
+entity_type: media
+bundle: static_file
+label: 'Release File Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      rulemaking_index: rulemaking_index
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a single field in a view.
+ *
+ * Available variables:
+ * - view: The view that the field belongs to.
+ * - field: The field handler that can process the input.
+ * - row: The raw result of the database query that generated this field.
+ * - output: The processed output that will normally be used.
+ *
+ * When fetching output from the row this construct should be used:
+ * data = row[field.field_alias]
+ *
+ * The above will guarantee that you'll always get the correct data, regardless
+ * of any changes in the aliasing that might happen if the view is modified.
+ *
+ * @see template_preprocess_views_view_field()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{#split date on space#}
+	{% set date = view.field.field_publish_date_1.original_value.__toString()|striptags|trim %}
+	{% set dateArray = date|split(' ')%}
+	{% set month = dateArray|first %}
+	{% set year = dateArray|last %}
+	{% set season = "" %}
+
+{% if (month is same as("Jan.")) or  (month is same as("Feb.")) or (month is same as("March")) %}
+	{% set season = "WINTER" %}
+
+{% elseif (month is same as("April")) or  (month is same as("May")) or (month is same as("June")) %}
+	{% set season = "SPRING" %}
+
+{% elseif (month is same as("July")) or  (month is same as("Aug.")) or (month is same as("Sept.")) %}
+	{% set season = "SUMMER" %}
+
+{% elseif (month is same as("Oct.")) or  (month is same as("Nov.")) or (month is same as("Dec.")) %}
+	{% set season = "FALL" %}
+
+{% endif %}
+
+{% set seasonText = season ~ ' ' ~ year %}
+{{view.field.field_publish_date_1.original_value|replace({ (date) : (seasonText) })}}
+
+
+
+
+
+
+
+
+
+
+
+
+

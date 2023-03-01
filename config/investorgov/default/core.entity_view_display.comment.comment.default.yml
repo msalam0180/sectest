@@ -1,0 +1,78 @@
+uuid: b45d84e0-f66c-4449-8bf5-5580f73c5e28
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.field.comment.comment.comment_body
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          7143a6f6-ee98-4253-88e3-8d0f88f55f72:
+            uuid: 7143a6f6-ee98-4253-88e3-8d0f88f55f72
+            region: content
+            configuration:
+              id: 'field_block:comment:comment:comment_body'
+              label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          27623b1f-51bb-4aa3-905c-e261d9107f15:
+            uuid: 27623b1f-51bb-4aa3-905c-e261d9107f15
+            region: content
+            configuration:
+              id: 'extra_field_block:comment:comment:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          430950cf-4c64-4891-b044-022fa378773b:
+            uuid: 430950cf-4c64-4891-b044-022fa378773b
+            region: content
+            configuration:
+              id: 'extra_field_block:comment:comment:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: 77Ye1kR-P6AaiGfEO8mnXNSr7nqtnP3PiiVBwJeGGMI
+id: comment.comment.default
+targetEntityType: comment
+bundle: comment
+mode: default
+content:
+  comment_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

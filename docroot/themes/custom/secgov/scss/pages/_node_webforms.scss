@@ -1,0 +1,384 @@
+//
+// WEBFORMS general styles
+// Forms created using the webform module general styles
+//
+// --------------------------------------------------
+
+// ------------------------------------------------------------------
+// -------------------General Webform Styles-------------------------
+// ------------------------------------------------------------------
+
+$wf-field-width: 450px;
+$wf-field-height: 30px;
+$wf-field-spacing: 15px;
+$wf-error-color: #770303;
+$wf-error-bgcolor: #ffdada;
+
+.webform-submission-form {
+  tbody tr:hover {
+    background-color: transparent;
+  }
+
+  h2{
+    margin-bottom: 20px;
+    line-height: 1.4em;
+  }
+
+  a{
+    text-decoration: underline;
+  }
+}
+
+.path-webform .main-content{
+  
+  form{
+    line-height: 1.5em;
+    margin-bottom: 50px;
+  }
+  
+  .red {color:red;} // bad name for a class
+
+  .form-required:after {
+    content: " *";
+    color:red;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  .stylized-box-1{
+    padding: 25px;
+    margin: 20px 0 20px 0;
+
+    &.mt0{ margin-top: 0; }
+    ul{ margin-left: 0; }
+
+    & > :first-child{ margin-top: 0; }
+    & > h2:first-child{
+      padding-top: 0;
+      margin-bottom: 15px;
+    }
+    & > :last-child{
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+// ------------------------------------------------------------------
+// ---------------- Webform Server Error Message---------------------
+// ------------------------------------------------------------------
+
+.path-webform{
+  .highlighted .message {
+    display: block;
+    text-align: left;
+    position: static;
+    margin: 0 auto;
+    width: 83.05085%;
+    float: none;
+    max-width: 920px;
+    padding: 0;
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+    
+    ul:last-child {
+        margin-bottom: 0;
+    }
+  }
+
+  .highlighted {
+    [aria-label="Error message"] {
+      padding: 20px;
+      background: $wf-error-bgcolor;
+      color: $wf-error-color;
+      font-size: 1em;
+    }
+  
+    [aria-label="Status message"] {
+      padding: 20px;
+      background: #d6e7ff;
+      color: #000000;
+      font-size: 1em;
+    }
+  }
+
+  // ----------- Hidden Field Labels
+  // fields that are hidden and then show have two labels, this hides the second one from screen readers
+  .js-webform-states-hidden {
+    label + label {
+      display: none;
+    }
+  }
+
+  // ----------- inline error styles in inline errers are turned on
+  // .error {
+  //   border: 1px solid $wf-error-color !important;
+  //   background: $wf-error-bgcolor;
+  // }
+  
+  // .form-item--error-message{
+  //   color: $wf-error-color;
+  // }
+
+}
+
+// ------------------------------------------------------------------
+// ------------------------------Fields------------------------------
+// ------------------------------------------------------------------
+
+
+.path-webform .main-content {
+
+  // -----------Form Item
+  .form-item{
+    margin-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  // -----------fieldset
+  .webform-type-fieldset, .fieldgroup{
+    padding: 18px 25px 22px;
+    border: 1px solid #bfbfbf;
+    margin: 0;
+    margin: 25px 0;
+    & > legend > .fieldset-legend{
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.3em;
+      font-weight: 600;
+      padding: 0 .5em;
+      display: inline-block;
+      // max-width: 85%;
+    }
+
+    .webform-type-fieldset, .fieldgroup{
+
+      &:first-child{
+        margin-top: 0;
+      }
+
+      border: 1px solid #E3e3e3;
+      & > legend > .fieldset-legend{
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  // -----------Label
+  label{
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
+
+  // -----------General field styles
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  select
+  {
+    margin: 0;
+    height: $wf-field-height;
+    padding: 5px 8px;
+    border: 1px solid #8a8a8a;
+    max-width: $wf-field-width;
+    width: 100%;
+
+  }
+
+  .webform-element--title-inline{
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="time"],
+    input[type="url"],
+    select{
+      width: 66.10169% !important;
+    }
+  }
+
+  // -----------Document Fields
+  .js-form-type-webform-document-file, .js-form-type-managed-file{
+
+    border: 1px solid #bfbfbf;
+    padding: 15px;
+    margin: 25px 0;
+    
+    input[type="file"]{
+      padding: 7px 9px;
+      background: #dedede;
+    }
+
+  }
+
+  #ajax-wrapper{
+    .js-form-type-webform-document-file, .js-form-type-managed-file {
+      margin: 25px 0;
+    }
+
+    &:last-child{
+      .js-form-type-webform-document-file, .js-form-type-managed-file {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .button {
+    height: auto;
+  }
+
+  .file-upload-js-error.messages--error {
+    color: $wf-error-color;
+    margin: 8px 0;
+  }
+
+  [aria-label="Error message"]{
+    color: $wf-error-color;
+    background-color: $wf-error-bgcolor;
+    padding: 10px;
+    li{
+      color: $wf-error-color;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    ul:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  // -----------description text
+  .description{
+    font-size: 0.95em;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #656565;
+    margin-top: 5px;
+  }
+
+  // -----------select fields
+  select {
+    appearance: none;
+    background:  url(get-base-url() + 'images/Filter-arrows-blue.png') no-repeat right #FFF;
+    background-size: auto;
+    height: $wf-field-height !important;
+  }
+
+  select[multiple="multiple"]{
+    height: auto !important;
+    background: none;
+  }
+
+  // -----------Radio and checkbox fields
+  .js-form-type-radio.form-item,
+  .js-form-type-checkbox.form-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0 10px 0;
+
+    label{
+      margin-left: 3px;
+      font-family: 'Raleway', sans-serif;
+    }
+    input{
+      margin-top: 2px;
+    }
+  }
+
+  // -----------textarea fields
+  textarea{
+    margin: 3px 0;
+    width: 100%;
+  }
+
+  // -----------frm actions/buttons/submit
+  .form-actions {
+    margin: 20px 0;
+
+    .button {
+      font-size: 1.5em;
+      height: auto;
+    }
+  }
+
+  .webform-button--submit{
+    background-color: #2f64b1;
+
+    &:hover, &:active{
+      background-color: #273a56;
+    }
+  }
+
+}
+
+// -----------Likert Table fields
+.webform-submission-form .webform-likert-table-wrapper {
+  margin: 1rem 0;
+
+  th, td {
+    padding: 8px 12px;
+  }
+
+  .js-form-type-radio {
+    justify-content: center;
+  }
+
+  [data-likert-answers-count="2"] th {
+    width: 10%;
+  }
+}
+
+// -----------advanced address field
+#edit-advanced-address--wrapper #edit-advanced-address-country-code{
+  margin-bottom: 15px;
+}
+
+// -----------recaptcha
+.g-recaptcha {
+  margin: 20px 0;
+}
+
+// -----------Helpers
+
+// simple columns for header or footer text
+
+.grid-wrap{
+  display: grid;
+  gap: 20px;
+
+  @include breakpoint('small'){
+    display: block;
+  }
+}
+
+.grid-2col-2-1{
+  grid-template-columns: 2fr 1fr;
+}
+
+.grid-2col-1-2{
+  grid-template-columns: 1fr 2fr;
+}
+
+.grid-1-1{
+  grid-template-columns: 1fr 1fr;
+}
+
+.messages.messages--info {
+  background-position: 5px 11px;
+  padding: 10px 20px 10px 30px;
+}

@@ -1,0 +1,19 @@
+uuid: 545d55f3-c775-4b14-b9ab-c2c6cdb8f976
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dM98nOvs2XCX-wpnSPtTqyJCTfqIDQlhVwQ9W3_lnac
+id: are_you_a
+label: 'Are you a'
+category: SEC
+likert: false
+options: |
+  'Individual Investor': 'Individual Investor'
+  'Registered Representative': 'Registered Representative'
+  Accountant: Accountant
+  'Other Financial Professional': 'Other Financial Professional'
+  'Issuer/Attorney for an Issuer': 'Issuer/Attorney for an Issuer'
+  'Brokerage Firm Compliance Officer': 'Brokerage Firm Compliance Officer'
+  Academic/Researcher/Student: Academic/Researcher/Student
+  'Member of the Press': 'Member of the Press'

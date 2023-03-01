@@ -1,0 +1,10 @@
+uuid: 1e047fbe-0532-498b-aa68-5c9b1272beac
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nqPk3qMCXgDI0vuLLGfKZNiUR4iHBPDAEJ4qRivLkF8
+id: foia
+label: FOIA
+description: 'Freedom of Information Act Menu'
+locked: false

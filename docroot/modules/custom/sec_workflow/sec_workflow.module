@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * @file
+ * Extend the Core workflow and provides email notification.
+ */
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\SafeMarkup;
+
+/**
+ * Implements hook_mail().
+ */
+
+function sec_workflow_mail($key, &$message, $params) {
+  $options = [
+    'langcode' => $message['langcode'],
+  ];
+
+  switch ($key) {
+    case 'sec_content_workflow':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = Html::escape($params['message']);
+      break;
+    case 'sec_user_activities_log':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = $params['subject'];
+      $message['body'][] = Html::escape($params['body']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+
+function sec_workflow_cron() {
+  $cron_config = \Drupal::configFactory()->getEditable('workflow.cron');
+  // Default to 1 day interval. Of course, cron has to be running at least
+  // daily for this to work.
+  $interval = $cron_config->get('interval');
+  $interval = !empty($interval) ? $interval : 86400;
+  $next_execution = \Drupal::state()->get('cron_workflow.next_execution');
+  $next_execution = !empty($next_execution) ? $next_execution : 0;
+  $baseUrl = \Drupal::request()->getHost();
+  $baseUrl = 'https://'.$baseUrl;
+  $config = \Drupal::service('config.factory')->getEditable('sec_workflow.settings');
+
+  if (\Drupal::time()->getRequestTime() >= $next_execution) {
+
+    \Drupal::logger('cron_Sec_workflow')->notice('Cron SEC Workflow ran');
+
+    if (\Drupal::state()->get('sec_workflow_cron_show_status_message')) {
+      \Drupal::messenger()->addStatus(t('SEC Workflow cron executed at %time', ['%time' => date('c', \Drupal::time()->getRequestTime())]));
+      \Drupal::state()->set('sec_workflow_cron_show_status_message', FALSE);
+    }
+    //Add all our email recipients;
+    if ($_ENV['AH_PRODUCTION'] == 1) {
+    $baseUrl = "https://dcm.sec.gov";
+    $recipients = [
+     'drupalsupport@SEC.GOV',
+     'KurupL@SEC.GOV',
+     'schwartzj@SEC.GOV',
+     'findleys@SEC.GOV',
+     'buenaventurac@SEC.GOV',
+     'opadigital@SEC.GOV'
+    ];
+    }else{
+    $recipients = [
+     'drupalsupport@SEC.GOV',
+     'findleys@SEC.GOV',
+     'buenaventurac@SEC.GOV',
+    ];
+    }
+
+    if ( empty($recipients) ) { return; }
+    //Setup MailManager service for email notification;
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'sec_workflow';
+    $key = 'sec_user_activities_log';
+    $to =  rtrim(implode(",",$recipients), ',');
+    $params['subject'] = t("Drupal User and Content Activity Report");
+    $params['body'] = t('<p>
+    <p>This is a daily email of the Drupal User and Content Activity Report.</p>
+    <p>- Click the link below to access the Drupal User Activities Report. This report shows all content activity performed by the Drupal users, but can be filtered to a certain period of time.</p>
+    <a href="@baseUrl/admin/user-activities">SEC User Activities Report</a>
+      <em>(User will need to sign-in to access)</em>
+    <p>- The link below is a downloadable CSV file that generates the User Activities Report of the last 24 hours.</p>
+    <a href="@baseUrl/admin/export/24hr">Download Report</a> <em>( Activities report for last 24hr )</em>
+    <a href="@baseUrl/admin/export/count/24hr">Download Report</a> <em>( Activities count for last 24hr )</em>
+    </p>',['@baseUrl' => $baseUrl]);
+
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $send = true;
+    $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+
+    if ($result['result'] !== true) {
+      $message = t('There was a problem sending your Activity report email notification to @email', ['@email' => $to]);
+        \Drupal::messenger()->addError($message);
+      \Drupal::logger('SEC Workflow')->error($message);
+      return;
+    }else {
+      $message = t('Activity report email notification has been sent to @email.', ['@email' => $to]);
+      \Drupal::messenger()->addStatus($message);
+      \Drupal::logger('SEC Workflow')->notice($message);
+    }
+      \Drupal::state()->set('cron_workflow.next_execution', \Drupal::time()->getRequestTime() + $interval);
+    }
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+
+function sec_workflow_mail_alter(&$message) {
+  switch ($message['key']) {
+    case 'sec_user_activities_log':
+    case 'sec_content_workflow':
+      $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed; delsp=yes';
+      break;
+  }
+}

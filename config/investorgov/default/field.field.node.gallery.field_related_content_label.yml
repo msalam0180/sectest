@@ -1,0 +1,21 @@
+uuid: 7ad3301c-746f-4173-9cfb-b4186a379ed0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_content_label
+    - node.type.gallery
+id: node.gallery.field_related_content_label
+field_name: field_related_content_label
+entity_type: node
+bundle: gallery
+label: 'Related Content Label'
+description: 'You can use this field to customize the label for the related content display block.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 'Related Content'
+default_value_callback: ''
+settings: {  }
+field_type: string

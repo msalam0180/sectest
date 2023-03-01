@@ -1,0 +1,681 @@
+uuid: 24fb3b14-c5b3-43ba-95e2-843eb3faa781
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: nkFzaOTeM_WFAcf3-76P3TscN2cWKsgn2HhZ90c6HPk
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: schedaselectiveplacement
+title: 'Non-Competitive Hiring Authorities'
+description: ''
+category: ''
+elements: |-
+  header:
+    '#type': processed_text
+    '#text': |
+      <div class="stylized-box-1">
+      <h2><acronym title="Securities and Exchange Commission">SEC Employment Opportunities for People with Disabilities and Veterans</acronym></h2>
+
+      <p>The SEC welcomes applications from people with disabilities and veterans. If you are eligible for one of the following non-competitive hiring authorities, you may submit your application for consideration using this form.</p>
+
+      <p><a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4a8ce822-b2f3-47f9-9f9c-66320f4d6b04" href="/node/307671">Schedule A: People with Disabilities</a>&nbsp;|&nbsp;<a href="/ohr/Article/veterans-program-page-link.html">Veterans' Recruitment Appointment (VRA)</a>&nbsp;|&nbsp;<a href="/ohr/Article/veterans-program-page-link.html">30% or More Disabled Veterans</a></p>
+
+      <p>Your application will remain on file with the SEC’s Talent Acquisition Group for <strong>one year</strong> from receipt of your application or you receive an offer of employment with the Commission, whichever happens first. <strong>Placement is <em>not </em>required nor guaranteed.</strong></p>
+      </div>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  applicant_information:
+    '#type': fieldset
+    '#title': 'Applicant Information'
+    '#description': |
+      <strong>Must be a U.S. Citizen for consideration and placement.</strong><br />
+      &nbsp;
+    '#description_display': before
+    name:
+      '#type': textfield
+      '#title': 'First Name'
+      '#required': true
+    last_name:
+      '#type': textfield
+      '#title': 'Last Name'
+      '#required': true
+    us_citizen:
+      '#type': radios
+      '#title': 'Are you a U.S. Citizen?'
+      '#options': yes_no
+      '#required': true
+      '#wrapper_type': form_element
+    citizen_message:
+      '#type': processed_text
+      '#states':
+        visible:
+          ':input[name="us_citizen"]':
+            value: 'No'
+      '#text': |
+        <p>Must be a U.S. Citizen to obtain employment at the SEC.</p>
+      '#format': full_html
+    state:
+      '#type': webform_address
+      '#title': Location
+      '#required': true
+      '#wrapper_type': form_element
+      '#address__access': false
+      '#address_2__access': false
+      '#city__access': false
+      '#state_province__title': State
+      '#state_province__required': true
+      '#postal_code__access': false
+      '#country__access': false
+    alternate_contact_information_telephone:
+      '#type': tel
+      '#title': 'Phone Number'
+      '#required': true
+    your_email_address:
+      '#type': email
+      '#title': 'Your Email Address'
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    veterans_preference:
+      '#type': radios
+      '#title': 'Do you claim Veterans'' Preference?'
+      '#options': yes_no
+      '#wrapper_type': form_element
+      '#select2': true
+    veterans_preference_type:
+      '#type': radios
+      '#title': 'If yes, select one preference type.'
+      '#options':
+        CP: CP
+        CPS: CPS
+        SSP: SSP
+        TP: TP
+        XP: XP
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="veterans_preference"]':
+            value: 'Yes'
+    highest_college_degree_obtained:
+      '#type': select
+      '#title': 'Highest College Degree Obtained'
+      '#options':
+        'Associate’s Degree ': 'Associate’s Degree '
+        'Bachelor’s Degree ': 'Bachelor’s Degree '
+        'Master’s Degree, LL.B., or J.D.': 'Master’s Degree, LL.B., or J.D.'
+        'Ph.D. or LL.M.': 'Ph.D. or LL.M.'
+  most_recent_position_information:
+    '#type': fieldset
+    '#title': 'Most Recent Position Information'
+    federal_government_employee:
+      '#type': radios
+      '#title': 'Are you a current/former Federal Government employee?'
+      '#options': yes_no
+      '#required': true
+      '#wrapper_type': form_element
+    title:
+      '#type': textfield
+      '#title': Title
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+    series:
+      '#type': textfield
+      '#title': Series
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+    grade:
+      '#type': textfield
+      '#title': Grade
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+    start_date:
+      '#type': date
+      '#title': 'Start Date (approximate)'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+      '#date_date_format': ''
+    end_date:
+      '#type': date
+      '#title': 'End Date (approximate)'
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+      '#date_date_format': ''
+    agency:
+      '#type': textfield
+      '#title': Agency
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+    highest_grade_held:
+      '#type': textfield
+      '#title': 'Highest Grade Held'
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+    schedule_c_appointment:
+      '#type': radios
+      '#title': 'Have you served on a Schedule C appointment or as a political appointee anytime within the last 5 years?'
+      '#options': yes_no
+      '#required': true
+      '#states':
+        visible:
+          ':input[name="federal_government_employee"]':
+            value: 'Yes'
+  fs_program_eligibility:
+    '#type': fieldset
+    '#title': 'Program Eligibility'
+    program_eligibility:
+      '#type': checkboxes
+      '#title': 'Select the hiring authorities for which you are eligible and wish to be considered.'
+      '#options':
+        people_with_disabilities: 'Schedule A: People with Disabilities'
+        vra: 'Veterans Recruitment Appointment (VRA)'
+        30_or_more_disabled_veterans: '30% or More Disabled Veterans'
+      '#required': true
+      '#wrapper_type': form_element
+  fs_location_of_interest:
+    '#type': fieldset
+    '#title': 'Location of Interest'
+    location_of_interest:
+      '#type': select
+      '#title': 'Select the one (1) location you wish to be placed.'
+      '#options':
+        'Atlanta, Georgia': 'Atlanta, Georgia'
+        'Boston, Massachusetts': 'Boston, Massachusetts'
+        'Chicago, Illinois': 'Chicago, Illinois'
+        'Denver, Colorado': 'Denver, Colorado'
+        'Fort Worth, Texas': 'Fort Worth, Texas'
+        'Los Angeles, California': 'Los Angeles, California'
+        'Miami, Florida': 'Miami, Florida'
+        'New York, New York': 'New York, New York'
+        'Philadelphia, Pennsylvania': 'Philadelphia, Pennsylvania'
+        'Salt Lake City, Utah': 'Salt Lake City, Utah'
+        'San Francisco, California': 'San Francisco, California'
+        'Washington, DC': 'Washington, DC'
+      '#required': true
+  desired_position_s_information:
+    '#type': fieldset
+    '#title': 'Desired Position(s) Information'
+    '#description': |-
+      Select up to two (2) positions and two (2) grades per position for which you desire to be considered.<br />
+      &nbsp;
+    '#description_display': before
+    select_series_1:
+      '#type': select
+      '#title': 'Position 1'
+      '#options':
+        'Security Specialist (0080) | Education Requirement: No': 'Security Specialist (0080) | Education Requirement: No'
+        'Economist (0110) | Education Requirement: Yes': 'Economist (0110) | Education Requirement: Yes'
+        'Financial Economist (0110) | Education Requirement: Yes': 'Financial Economist (0110) | Education Requirement: Yes'
+        'Human Resources Specialist (0201) | Education Requirement: No': 'Human Resources Specialist (0201) | Education Requirement: No'
+        'Human Resources Assistant (0203) | Education Requirement: No': 'Human Resources Assistant (0203) | Education Requirement: No'
+        'Equal Employment Specialist (0260) | Education Requirement: No': 'Equal Employment Specialist (0260) | Education Requirement: No'
+        'Miscellaneous Administration and Program Support (0301) | Education Requirement: No': 'Miscellaneous Administration and Program Support (0301) | Education Requirement: No'
+        'Program Support Assistant (0303) | Education Requirement: No': 'Program Support Assistant (0303) | Education Requirement: No'
+        'Mail Clerk/Mail File Clerk (0305) | Education Requirement: No': 'Mail Clerk/Mail File Clerk (0305) | Education Requirement: No'
+        'Records and Information Management Specialist (0308) | Education Requirement: No': 'Records and Information Management Specialist (0308) | Education Requirement: No'
+        'Secretary (0318) | Education Requirement: No': 'Secretary (0318) | Education Requirement: No'
+        'Support Services Specialist (0342) | Education Requirement: No': 'Support Services Specialist (0342) | Education Requirement: No'
+        'Management and Program Analyst (0343) | Education Requirement: No': 'Management and Program Analyst (0343) | Education Requirement: No'
+        'Financial Management Specialist (0501) | Education Requirement: No': 'Financial Management Specialist (0501) | Education Requirement: No'
+        'Financial & Operational Risk Analyst (0501) | Education Requirement: No': 'Financial & Operational Risk Analyst (0501) | Education Requirement: No'
+        'Accountant (0510) | Education Requirement: Yes': 'Accountant (0510) | Education Requirement: Yes'
+        'Staff Accountant (0510) | Education Requirement: Yes': 'Staff Accountant (0510) | Education Requirement: Yes'
+        'Auditor (0511) | Education Requirement: Yes': 'Auditor (0511) | Education Requirement: Yes'
+        'Budget Analyst (0560) | Education Requirement: No': 'Budget Analyst (0560) | Education Requirement: No'
+        'Architect (0808) | Education Requirement: Yes': 'Architect (0808) | Education Requirement: Yes'
+        'Petroleum Engineer (0881) | Education Requirement: Yes': 'Petroleum Engineer (0881) | Education Requirement: Yes'
+        'Industrial Engineer (0896) | Education Requirement: Yes': 'Industrial Engineer (0896) | Education Requirement: Yes'
+        'Paralegal Specialist (0950) | Education Requirement: No': 'Paralegal Specialist (0950) | Education Requirement: No'
+        'Legal Assistant (0986) | Education Requirement: No': 'Legal Assistant (0986) | Education Requirement: No'
+        'Investor Assistance Specialist (1001) | Education Requirement: No': 'Investor Assistance Specialist (1001) | Education Requirement: No'
+        'Public Affairs Specialist (1035) | Education Requirement: No': 'Public Affairs Specialist (1035) | Education Requirement: No'
+        'Writer-Editor (1082) | Education Requirement: No': 'Writer-Editor (1082) | Education Requirement: No'
+        'Contract Specialist (1102) | Education Requirement: Yes': 'Contract Specialist (1102) | Education Requirement: Yes'
+        'Procurement Analyst (1102) | Education Requirement: Yes': 'Procurement Analyst (1102) | Education Requirement: Yes'
+        'Financial Analyst (1160) | Education Requirement: No': 'Financial Analyst (1160) | Education Requirement: No'
+        'Realty Specialist (1170) | Education Requirement: No': 'Realty Specialist (1170) | Education Requirement: No'
+        'Librarian (1410) | Education Requirement: Yes': 'Librarian (1410) | Education Requirement: Yes'
+        'Quantitative Research Analyst (1501) | Education Requirement: Yes': 'Quantitative Research Analyst (1501) | Education Requirement: Yes'
+        'Operations Research Analyst (1515) | Education Requirement: Yes': 'Operations Research Analyst (1515) | Education Requirement: Yes'
+        'Statistician (1530) | Education Requirement: Yes': 'Statistician (1530) | Education Requirement: Yes'
+        'Education Program Specialist (1701) | Education Requirement: Yes': 'Education Program Specialist (1701) | Education Requirement: Yes'
+        'Ethics Compliance Analyst (1801) | Education Requirement: No': 'Ethics Compliance Analyst (1801) | Education Requirement: No'
+        'Investigation Case Analyst (1801) | Education Requirement: No': 'Investigation Case Analyst (1801) | Education Requirement: No'
+        'Market Surveillance Specialist (1801) | Education Requirement: No': 'Market Surveillance Specialist (1801) | Education Requirement: No'
+        'Securities Compliance Examiner (1831) | Education Requirement: No': 'Securities Compliance Examiner (1831) | Education Requirement: No'
+        'Supply Management Specialist (2003) | Education Requirement: No': 'Supply Management Specialist (2003) | Education Requirement: No'
+        'Information Technology Specialist (2210) | Education Requirement: No': 'Information Technology Specialist (2210) | Education Requirement: No'
+      '#sort_options': true
+    grade_level_1:
+      '#type': checkboxes
+      '#title': 'Select up to two (2) grade level(s) for Position 1'
+      '#multiple': 2
+      '#description': '<strong>Please select 2 or less from the list below, otherwise your webform will not be submitted.</strong>'
+      '#description_display': before
+      '#options':
+        SK-03: 'SK-03 (equivalent to GS-03)'
+        SK-04: 'SK-04 (equivalent to GS-04)'
+        SK-05: 'SK-05 (equivalent to GS-05)'
+        SK-06: 'SK-06 (equivalent to GS-06)'
+        SK-07: 'SK-07 (equivalent to GS-07)'
+        SK-08: 'SK-08 (equivalent to GS-08)'
+        SK-09: 'SK-09 (equivalent to GS-09)'
+        SK-11: 'SK-11 (equivalent to GS-11)'
+        SK-12: 'SK-12 (equivalent to GS-12)'
+        SK-13: 'SK-13 (equivalent to GS-13)'
+        SK-14: 'SK-14 (equivalent to GS-14)'
+        SK-16: 'SK-16 (equivalent to GS-15)'
+      '#states':
+        visible:
+          ':input[name="select_series_1"]':
+            filled: true
+    select_series_2:
+      '#type': select
+      '#title': 'Position 2'
+      '#options':
+        'Security Specialist (0080) | Education Requirement: No': 'Security Specialist (0080) | Education Requirement: No'
+        'Economist (0110) | Education Requirement: Yes': 'Economist (0110) | Education Requirement: Yes'
+        'Financial Economist (0110) | Education Requirement: Yes': 'Financial Economist (0110) | Education Requirement: Yes'
+        'Human Resources Specialist (0201) | Education Requirement: No': 'Human Resources Specialist (0201) | Education Requirement: No'
+        'Human Resources Assistant (0203) | Education Requirement: No': 'Human Resources Assistant (0203) | Education Requirement: No'
+        'Equal Employment Specialist (0260) | Education Requirement: No': 'Equal Employment Specialist (0260) | Education Requirement: No'
+        'Miscellaneous Administration and Program Support (0301) | Education Requirement: No': 'Miscellaneous Administration and Program Support (0301) | Education Requirement: No'
+        'Program Support Assistant (0303) | Education Requirement: No': 'Program Support Assistant (0303) | Education Requirement: No'
+        'Mail Clerk/Mail File Clerk (0305) | Education Requirement: No': 'Mail Clerk/Mail File Clerk (0305) | Education Requirement: No'
+        'Records and Information Management Specialist (0308) | Education Requirement: No': 'Records and Information Management Specialist (0308) | Education Requirement: No'
+        'Secretary (0318) | Education Requirement: No': 'Secretary (0318) | Education Requirement: No'
+        'Support Services Specialist (0342) | Education Requirement: No': 'Support Services Specialist (0342) | Education Requirement: No'
+        'Management and Program Analyst (0343) | Education Requirement: No': 'Management and Program Analyst (0343) | Education Requirement: No'
+        'Financial Management Specialist (0501) | Education Requirement: No': 'Financial Management Specialist (0501) | Education Requirement: No'
+        'Financial & Operational Risk Analyst (0501) | Education Requirement: No': 'Financial & Operational Risk Analyst (0501) | Education Requirement: No'
+        'Accountant (0510) | Education Requirement: Yes': 'Accountant (0510) | Education Requirement: Yes'
+        'Staff Accountant (0510) | Education Requirement: Yes': 'Staff Accountant (0510) | Education Requirement: Yes'
+        'Auditor (0511) | Education Requirement: Yes': 'Auditor (0511) | Education Requirement: Yes'
+        'Budget Analyst (0560) | Education Requirement: No': 'Budget Analyst (0560) | Education Requirement: No'
+        'Architect (0808) | Education Requirement: Yes': 'Architect (0808) | Education Requirement: Yes'
+        'Petroleum Engineer (0881) | Education Requirement: Yes': 'Petroleum Engineer (0881) | Education Requirement: Yes'
+        'Industrial Engineer (0896) | Education Requirement: Yes': 'Industrial Engineer (0896) | Education Requirement: Yes'
+        'Paralegal Specialist (0950) | Education Requirement: No': 'Paralegal Specialist (0950) | Education Requirement: No'
+        'Legal Assistant (0986) | Education Requirement: No': 'Legal Assistant (0986) | Education Requirement: No'
+        'Investor Assistance Specialist (1001) | Education Requirement: No': 'Investor Assistance Specialist (1001) | Education Requirement: No'
+        'Public Affairs Specialist (1035) | Education Requirement: No': 'Public Affairs Specialist (1035) | Education Requirement: No'
+        'Writer-Editor (1082) | Education Requirement: No': 'Writer-Editor (1082) | Education Requirement: No'
+        'Contract Specialist (1102) | Education Requirement: Yes': 'Contract Specialist (1102) | Education Requirement: Yes'
+        'Procurement Analyst (1102) | Education Requirement: Yes': 'Procurement Analyst (1102) | Education Requirement: Yes'
+        'Financial Analyst (1160) | Education Requirement: No': 'Financial Analyst (1160) | Education Requirement: No'
+        'Realty Specialist (1170) | Education Requirement: No': 'Realty Specialist (1170) | Education Requirement: No'
+        'Librarian (1410) | Education Requirement: Yes': 'Librarian (1410) | Education Requirement: Yes'
+        'Quantitative Research Analyst (1501) | Education Requirement: Yes': 'Quantitative Research Analyst (1501) | Education Requirement: Yes'
+        'Operations Research Analyst (1515) | Education Requirement: Yes': 'Operations Research Analyst (1515) | Education Requirement: Yes'
+        'Statistician (1530) | Education Requirement: Yes': 'Statistician (1530) | Education Requirement: Yes'
+        'Education Program Specialist (1701) | Education Requirement: Yes': 'Education Program Specialist (1701) | Education Requirement: Yes'
+        'Ethics Compliance Analyst (1801) | Education Requirement: No': 'Ethics Compliance Analyst (1801) | Education Requirement: No'
+        'Investigation Case Analyst (1801) | Education Requirement: No': 'Investigation Case Analyst (1801) | Education Requirement: No'
+        'Market Surveillance Specialist (1801) | Education Requirement: No': 'Market Surveillance Specialist (1801) | Education Requirement: No'
+        'Securities Compliance Examiner (1831) | Education Requirement: No': 'Securities Compliance Examiner (1831) | Education Requirement: No'
+        'Supply Management Specialist (2003) | Education Requirement: No': 'Supply Management Specialist (2003) | Education Requirement: No'
+        'Information Technology Specialist (2210) | Education Requirement: No': 'Information Technology Specialist (2210) | Education Requirement: No'
+      '#sort_options': true
+    grade_level_2:
+      '#type': checkboxes
+      '#title': 'Select up to two (2) grade level(s) for Position 2'
+      '#multiple': 2
+      '#description': '<strong>Please select 2 or less from the list below, otherwise your webform will not be submitted.</strong>'
+      '#description_display': before
+      '#options':
+        SK-03: 'SK-03 (equivalent to GS-03)'
+        SK-04: 'SK-04 (equivalent to GS-04)'
+        SK-05: 'SK-05 (equivalent to GS-05)'
+        SK-06: 'SK-06 (equivalent to GS-06)'
+        SK-07: 'SK-07 (equivalent to GS-07)'
+        SK-08: 'SK-08 (equivalent to GS-08)'
+        SK-09: 'SK-09 (equivalent to GS-09)'
+        SK-11: 'SK-11 (equivalent to GS-11)'
+        SK-12: 'SK-12 (equivalent to GS-12)'
+        SK-13: 'SK-13 (equivalent to GS-13)'
+        SK-14: 'SK-14 (equivalent to GS-14)'
+        SK-16: 'SK-16 (equivalent to GS-15)'
+      '#states':
+        visible:
+          ':input[name="select_series_2"]':
+            filled: true
+  resume:
+    '#type': webform_document_file
+    '#title': Resume
+    '#description': '<p>Resume writing tips are located <a href="https://www.usajobs.gov/Help/faq/application/documents/resume/what-to-include/" target="_blank">here</a>. Be sure to include title, pay plan, series, and grade for all Federal Government positions held (e.g., Accountant, SK-0510-12).</p>'
+    '#description_display': before
+    '#required': true
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  schedule_a_certification:
+    '#type': webform_document_file
+    '#title': 'Schedule A Certification'
+    '#description': |
+      A template Schedule A letter is located <a href="https://www.opm.gov/policy-data-oversight/disability-employment/getting-a-job/sampleschedaletters.pdf" target="_blank">here</a>.<br />
+      &nbsp;
+    '#description_display': before
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  dd_214:
+    '#type': webform_document_file
+    '#title': 'DD-214, Member-4 Copy'
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  veterans_affairs_letter:
+    '#type': webform_document_file
+    '#title': 'Veterans Affairs Letter (to include compensable service-connected disability %)'
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  transcript:
+    '#type': webform_document_file
+    '#title': Transcript(s)
+    '#description': 'If a position you are interested has an education requirement, be sure to attach your transcript(s).'
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  footer:
+    '#type': processed_text
+    '#text': |
+      <p><u>Additional Information</u></p>
+
+      <p>Equal Employment Opportunity Statement: The SEC is an equal opportunity employer.</p>
+
+      <p>Reasonable Accommodation: Applicants requiring reasonable accommodation for any part of the application process should contact the agency at <a href="mailto:ReasonableAccommodation@sec.gov">ReasonableAccommodation@sec.gov</a>. You can request a reasonable accommodation at any time during the application or hiring process or while on the job. Determinations on requests for reasonable accommodation will be made on a case-by-case basis.</p>
+
+      <p><u>Privacy Act Statement</u></p>
+
+      <p>Pursuant to 5 U.S.C. § 552a(e)(3), this Privacy Act Statement serves to inform you of the following concerning the collection of your information. Collection of the information solicited on this form is authorized by 5 U.S. Code § 3101, General authority to employ; 5 U.S. Code § 3109, Employment of experts and consultants; temporary or intermittent; Executive Orders 9397, as amended by 13478, 9830, and 12107; and Civil Service Regulations promulgated thereunder. The SEC Office of Human Resources (OHR) will use your information to verify your eligibility for selective placement from a non-competitive hiring authority serving people with disabilities or Veterans. In addition to those disclosures generally permitted under 5 U.S.C. 552a(b) of the Privacy Act, your information may be disclosed outside the Commission as a routine use under SORN SEC-10: Personnel Management Employment and Staffing/Training Files (40 FR 39253). Furnishing this information is voluntary; however, failure to do so may prevent or delay consideration of an application.</p>
+
+      <p><u>Submit</u></p>
+
+      <p>Please do not submit more than one application.</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/schedaselectiveplacement
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: DisabilityEmploymentProgram@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

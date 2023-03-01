@@ -1,0 +1,8 @@
+uuid: ef70d38b-99b8-4258-bc1b-e79e4248e134
+langcode: en
+status: true
+dependencies: {  }
+id: oca-new-menu
+label: 'OCA new menu'
+description: ''
+locked: false

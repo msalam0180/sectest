@@ -1,0 +1,8 @@
+uuid: 794d87f6-9620-41ef-9479-0f5e17fae9a2
+langcode: en
+status: true
+dependencies: {  }
+id: media-gallery-left-nav
+label: 'Media Gallery Left Nav'
+description: 'Left navigation links for Media Gallery page'
+locked: false

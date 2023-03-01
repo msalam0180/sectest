@@ -1,0 +1,49 @@
+# Migration for English PDFs.
+id: files_english
+label: Files English
+migration_group: investor_files_group
+audit: true
+migration_tags:
+  - Drupal 7
+  - Content
+dependencies:
+  enforced:
+    module:
+      - investor_migrate
+
+source:
+  #plugin: investor_english
+  plugin: d7_file
+  scheme: public
+  constants:
+    #source_base_path: '/c/Users/john.shortess/Sites/devdesktop/ussec-prod/docroot/sites/default/files/'
+    source_base_path: 'C:\Users\john.shortess\Sites\devdesktop\ussec-prod\docroot\sites\default\files\'
+
+process:
+  fid: fid
+  filename: filename
+  source_full_path:
+    -
+      plugin: concat
+      delimiter: \
+      source:
+        - constants/source_base_path
+        - filepath
+    -
+      plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - '@source_full_path'
+      - uri
+  filemime: filemime
+  status: status
+  created: timestamp
+  changed: timestamp
+  uid:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: 'entity:file'
+migration_dependencies: {}

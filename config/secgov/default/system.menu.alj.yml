@@ -1,0 +1,10 @@
+uuid: 1cca82c6-2dd0-420a-9b8d-688c56c70413
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Wum4167RW2SeLWDFIkerrVva38yAewn7uFY__k6XKX4
+id: alj
+label: ALJ
+description: 'Office of Administrative Law Judges'
+locked: false

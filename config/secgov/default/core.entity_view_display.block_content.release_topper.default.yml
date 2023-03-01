@@ -1,0 +1,72 @@
+uuid: 03bd4889-49b0-4d01-bf14-0d9a69347920
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.release_topper
+    - field.field.block_content.release_topper.body
+    - field.field.block_content.release_topper.field_customized_quick_links
+    - field.field.block_content.release_topper.field_introduction
+    - field.field.block_content.release_topper.field_quick_links
+  module:
+    - empty_fields
+    - field_group
+    - link
+    - text
+third_party_settings:
+  field_group:
+    group_release_group:
+      children:
+        - field_introduction
+        - field_customized_quick_links
+      label: 'Release Group'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: release-group
+        show_empty_fields: true
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: block_content.release_topper.default
+targetEntityType: block_content
+bundle: release_topper
+mode: default
+content:
+  field_customized_quick_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      empty_fields:
+        handler: text
+        settings:
+          empty_text: empty
+    weight: 2
+    region: content
+  field_introduction:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      empty_fields:
+        handler: nbsp
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_quick_links: true
+  langcode: true
+  search_api_excerpt: true

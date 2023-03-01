@@ -1,0 +1,11 @@
+type: module
+name: 'Investor Migrate'
+description: 'Investor.gov D8 node migrations'
+package: Migrate
+core: '8.x'
+dependencies:
+ - drupal:migrate
+ - drupal:migrate_plus
+ - drupal:migrate_tools
+ - drupal:migrate_drupal
+core_version_requirement: ^8 || ^9

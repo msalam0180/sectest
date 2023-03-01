@@ -1,0 +1,83 @@
+uuid: 7d7aa2c8-ab06-4814-adf3-f7175109729f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.data_distribution.field_access_url
+    - field.field.node.data_distribution.field_associated_dataset
+    - field.field.node.data_distribution.field_creator
+    - field.field.node.data_distribution.field_data_dist_upload
+    - field.field.node.data_distribution.field_description_abstract
+    - field.field.node.data_distribution.field_display_title
+    - field.field.node.data_distribution.field_publish_date
+    - field.field.node.data_distribution.field_sec_content_approver
+    - node.type.data_distribution
+  module:
+    - datetime
+    - file
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: MbdvzQRhzSLnd00c1Q8aKNTM_JBdAhSzL2qpAGDUJjQ
+id: node.data_distribution.default
+targetEntityType: node
+bundle: data_distribution
+mode: default
+content:
+  field_associated_dataset:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_data_dist_upload:
+    type: file_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_description_abstract:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_access_url: true
+  field_creator: true
+  field_sec_content_approver: true
+  langcode: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

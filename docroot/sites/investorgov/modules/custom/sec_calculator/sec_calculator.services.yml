@@ -1,0 +1,4 @@
+services:
+  plugin.manager.sec_calculator:
+    class: Drupal\sec_calculator\SecCalculatorPluginManager
+    parent: default_plugin_manager

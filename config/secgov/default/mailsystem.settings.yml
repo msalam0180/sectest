@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: 2nRyJqa28EPao-Qw7avTJtk5UHpsrZtczJMp_HTsaFA
+theme: current
+defaults:
+  sender: swiftmailer
+  formatter: swiftmailer
+modules:
+  swiftmailer:
+    none:
+      sender: swiftmailer
+      formatter: swiftmailer
+  sec_workflow:
+    none:
+      sender: php_mail
+      formatter: php_mail
+  sec_investor_general:
+    none:
+      sender: php_mail
+      formatter: php_mail

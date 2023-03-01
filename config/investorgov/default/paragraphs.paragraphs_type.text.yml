@@ -1,0 +1,9 @@
+uuid: c407d53c-d41e-40d3-aec3-95ae544cb72c
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+description: 'A large WYSIWYG field.'
+behavior_plugins: {  }

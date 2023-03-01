@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Hero template (can be used by any type of content as long as the vars are passed)
+ *
+ * Available Vars
+ * title - hero title (required)
+ * body - short description or summary for the card body
+ * url - link to where the card links to
+ * imageURL - This should be in the following format - public://2020-01/climate-kic-350836.jpg
+
+ * Example template call:
+  {{ include('@investor/includes/component/card.html.twig', 
+    {
+      'title': item.content['#paragraph'].field_link.0.title,
+      'body': item.content['#paragraph'].field_text.0.value|raw,
+      'url': item.content['#paragraph'].field_link.0.url,
+      'imageURL':'public://2020-01/climate-kic-350836.jpg'
+    }) 
+  }}
+
+  NOTE: you must a add the direct wrapper around all the cards example .card-items > .card-item
+        if you want a border you must also add an additional class to the wrapper .card-items-with-border.card-items > .card-item
+#}
+
+{% if imageURL %}
+  {% set imageURLSized = imageURL|image_style('card_image') %}
+{% endif %}
+<div class="cardColumn">
+  <a href="{{ url }}" class="card-item">
+    {% if imageURL %}
+      <div><img src="{{(imageURLSized) ? imageURLSized : ''}}" alt=""></div>
+    {% endif %}
+
+    {% if title %}
+    <h3 class="card-title">{{ title }}</h3>
+    {% endif %}
+    {% if body %}
+      <div class="card-body">
+        {{ body|raw }}
+      </div>
+    {% endif %}
+  </a>
+</div>

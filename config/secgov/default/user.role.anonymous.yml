@@ -1,0 +1,38 @@
+uuid: f3f2a4d5-2f3f-4bb8-8a11-0869ac4d789a
+langcode: en
+status: true
+dependencies:
+  module:
+    - access_unpublished
+    - media
+    - protected_pages
+    - search
+    - system
+_core:
+  default_config_hash: NyazbVJLDypY9UUjXX5mlOVXvN4D0onW2KvqbRt34Ao
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access protected page password screen'
+  - 'access_unpublished node article_type'
+  - 'access_unpublished node data_distribution'
+  - 'access_unpublished node data_visualization'
+  - 'access_unpublished node event'
+  - 'access_unpublished node file'
+  - 'access_unpublished node image'
+  - 'access_unpublished node landing_page'
+  - 'access_unpublished node link'
+  - 'access_unpublished node news'
+  - 'access_unpublished node news_type'
+  - 'access_unpublished node page'
+  - 'access_unpublished node sec_alert'
+  - 'access_unpublished node sec_hero'
+  - 'access_unpublished node secarticle'
+  - 'access_unpublished node secperson'
+  - 'access_unpublished node video'
+  - 'access_unpublished node webcast'
+  - 'search content'
+  - 'view media'

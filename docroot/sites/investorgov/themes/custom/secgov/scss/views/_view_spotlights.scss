@@ -1,0 +1,135 @@
+//
+// SPOTLIGHTS
+// VIEW NAME: Spotlights
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.spotlights-view {
+
+  .views-exposed-form {
+    @include span(12 last);
+    display: none;
+
+    .form-item, .form-text {
+      margin-right: 0;
+    }
+
+    input#edit-submit-spotlights:not(#edit-reset) {
+      margin-left: 0;
+      padding: 0px 8px;
+      top: 0;
+    }
+
+    input#edit-reset {
+      background-color: $cloudy-gray;
+      display: inline;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 19px;
+      margin-left: 0;
+      padding: 0px 8px;
+    }
+
+  }
+
+  header {
+
+    h2 {
+      font-size: 1.5em;
+      line-height: 1.15;
+      padding: 0px 0px 10px;
+    }
+
+    .featured-view{
+      .views-row.promote {
+        .views-field-field-thumbnail {
+          @include span (4);
+          margin-right: gutter(2 of 12);
+          height: initial;
+          @include breakpoint('small'){
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .featured-view-spotlight {
+      .views-row.promote {
+        margin: 0px;
+        padding: 0px;
+        min-height: initial;
+        border-bottom: none !important;
+      }
+      #table_paging {
+        display: none;
+      }
+    }
+  }
+
+  h3 {
+    // @include raleway;
+    clear: both;
+    color: $cloudy-gray;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  .views-field-field-display-title {
+    @include span(9 last);
+    font-size: 1.3em;
+    margin-bottom: 5px;
+  }
+
+  .views-field-field-teaser-text {
+    @include span(9 last);
+  }
+
+  .views-row {
+    @include span(12 last);
+    float: none;
+    border-bottom: solid 1px #EBEBEB;
+    display: block;
+    line-height: 16px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    min-height: 160px;
+    padding-bottom: 20px;
+
+    &:after {
+      content: ' ';
+      clear: both;
+      height: 20px;
+    }
+
+    .views-field-field-thumbnail {
+      @include span(3);
+      height: 140px;
+      overflow-y: hidden;
+
+      img {
+        width: 100%;
+      }
+      
+    }
+  }
+
+  input[type="text"] {
+    margin: 0px;
+  }
+
+}
+
+footer {
+
+  h2.former-spotlight-archive {
+    border-bottom: 1px solid #BFBFBF;
+    margin: 10px 0px 18px 0px;
+    color: $cloudy-gray;
+  }
+
+}

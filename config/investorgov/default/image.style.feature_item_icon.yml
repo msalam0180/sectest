@@ -1,0 +1,15 @@
+uuid: c89eda2f-785d-446a-8f60-eb487495d462
+langcode: en
+status: true
+dependencies: {  }
+name: feature_item_icon
+label: 'Feature item icon (48x48)'
+effects:
+  b39a8762-c9b7-4c66-a31b-687ac926fde4:
+    uuid: b39a8762-c9b7-4c66-a31b-687ac926fde4
+    id: image_scale
+    weight: 1
+    data:
+      width: 48
+      height: 48
+      upscale: true

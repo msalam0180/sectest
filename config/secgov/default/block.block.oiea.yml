@@ -1,0 +1,32 @@
+uuid: 49f40f10-33a3-4490-9704-a1f5230c1276
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.oiea
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: XjfoBwjVAFKsSots-08qqsEaYRMwseXe7rZ8WySM9r8
+id: oiea
+theme: secgov
+region: sidebar_first
+weight: -21
+provider: null
+plugin: 'system_menu_block:oiea'
+settings:
+  id: 'system_menu_block:oiea'
+  label: OIEA
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oiea\r\n/oiea/*"

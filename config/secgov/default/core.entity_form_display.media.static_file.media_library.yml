@@ -1,0 +1,67 @@
+uuid: e7c7cf63-47e3-415a-9b71-cba1e1ffde1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.static_file.field_act
+    - field.field.media.static_file.field_audience
+    - field.field.media.static_file.field_creator
+    - field.field.media.static_file.field_description_abstract
+    - field.field.media.static_file.field_display_title
+    - field.field.media.static_file.field_file_path
+    - field.field.media.static_file.field_link_text_override
+    - field.field.media.static_file.field_media_file
+    - field.field.media.static_file.field_primary_division_office
+    - field.field.media.static_file.field_publish_date
+    - field.field.media.static_file.field_regulation
+    - field.field.media.static_file.field_release_file_number
+    - field.field.media.static_file.field_sec_content_approver
+    - field.field.media.static_file.field_static_file_type
+    - field.field.media.static_file.field_supporting_division_office
+    - field.field.media.static_file.field_tags
+    - media.type.static_file
+  module:
+    - workbench_moderation
+id: media.static_file.media_library
+targetEntityType: media
+bundle: static_file
+mode: media_library
+content:
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_creator: true
+  field_description_abstract: true
+  field_display_title: true
+  field_file_path: true
+  field_link_text_override: true
+  field_media_file: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_release_file_number: true
+  field_sec_content_approver: true
+  field_static_file_type: true
+  field_supporting_division_office: true
+  field_tags: true
+  path: true
+  replace_file: true
+  status: true
+  uid: true

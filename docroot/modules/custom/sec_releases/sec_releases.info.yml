@@ -1,0 +1,7 @@
+name: SEC Releases
+type: module
+description: 'Provides customization for SEC releases.'
+package: SEC
+core: 8.x
+version: 1.1
+core_version_requirement: ^8 || ^9

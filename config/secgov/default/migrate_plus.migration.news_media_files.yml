@@ -1,0 +1,40 @@
+uuid: 4c2024a2-742a-41bd-b7e0-b647ebb36acc
+langcode: en
+status: true
+dependencies: {  }
+id: news_media_files
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: media
+label: 'SEC Article Media Files'
+source:
+  plugin: media_entity_generator
+  entity_type: node
+  bundle: news
+  langcode: en
+  field_names:
+    - field_file_upload
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  bundle:
+    plugin: default_value
+    default_value: static_file
+  name:
+    plugin: media_name
+    source: file_name
+  existing_media_file:
+    plugin: check_media_duplicate
+    source: target_id
+  unique_file_id:
+    plugin: check_duplicate
+    source: target_id
+  field_media_file/target_id: target_id
+  langcode: langcode
+  uid: uid
+destination:
+  plugin: 'entity:media'
+migration_dependencies: null

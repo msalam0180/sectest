@@ -1,0 +1,24 @@
+uuid: 08db17fb-4bf4-49c7-b954-4d3271e5f1da
+langcode: en
+status: false
+dependencies:
+  config:
+    - simple_block.simple_block.webcast_player_help_block
+  module:
+    - simple_block
+  theme:
+    - secgov
+_core:
+  default_config_hash: O-SsgP_B3yEf_dG0fy8ReZYXKv8HRnEBG2ulrvai9g8
+id: webcast_trouble
+theme: secgov
+region: header
+weight: -19
+provider: null
+plugin: 'simple_block:webcast_player_help_block'
+settings:
+  id: 'simple_block:webcast_player_help_block'
+  label: 'Webcast Troubleshooting Guide'
+  label_display: visible
+  provider: simple_block
+visibility: {  }

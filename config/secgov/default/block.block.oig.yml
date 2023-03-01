@@ -1,0 +1,32 @@
+uuid: e2f7c1fd-c391-4b3a-8360-3ef5a43304d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.oig
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: Z0d3Q-va6P1rvIJEllZgJQGhME3M-biVdmssb6_JDas
+id: oig
+theme: secgov
+region: sidebar_first
+weight: -20
+provider: null
+plugin: 'system_menu_block:oig'
+settings:
+  id: 'system_menu_block:oig'
+  label: OIG
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oig\r\n/oig*\r\n/inspector-general/*"

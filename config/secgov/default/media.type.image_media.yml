@@ -1,0 +1,24 @@
+uuid: e7ef1770-8380-4168-be63-6b083b379f8b
+langcode: en
+status: false
+dependencies:
+  module:
+    - workbench_moderation
+third_party_settings:
+  workbench_moderation:
+    enabled: 0
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+id: image_media
+label: Image
+description: ''
+source: image
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

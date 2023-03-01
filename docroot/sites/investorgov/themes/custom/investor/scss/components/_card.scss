@@ -1,0 +1,169 @@
+@mixin card ($cardDirectWrapper, $card, $cardTitle, $cardDescription){
+  //container
+  #{$cardDirectWrapper}{
+    $sectionHSpacing: 10px;
+    margin-left: -$sectionHSpacing;
+    margin-right: -$sectionHSpacing;
+    display: flex;
+    
+    @media screen and (max-width: 800px) and (min-width: 431px) {
+      flex-wrap: wrap;
+    }
+
+    // large screens
+    @media screen and (max-width: 430px) {
+      flex-direction: column;
+    }
+
+    & > .cardColumn{
+      padding-left: $sectionHSpacing;
+      padding-right: $sectionHSpacing;
+      max-width: 400px;
+      flex-grow: 1;
+      margin-bottom: $sectionHSpacing + $sectionHSpacing;
+
+
+      // middle width
+      @media screen and (max-width: 800px) and (min-width: 431px) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      
+      // large width
+      @media screen and (min-width: 801px) {
+        flex-basis: 25%;
+      }
+
+    }
+
+    //Four or more cards add a set width and wrap so the cards form a grid
+    &.cardLargeCount{
+      @media screen and (min-width: 801px) {
+        flex-wrap: wrap;
+        & > .cardColumn{
+          width: 25%;
+          flex-grow: 0;
+        }
+      }
+    }
+
+    //each card
+    #{$card}{
+      display: block;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      height: 100%;
+
+      &:hover, &:focus{
+        background: #fdfdfd;
+        #{$cardTitle}{
+          text-decoration: underline;
+        }
+        img{
+          opacity: .85;
+        }
+      }
+
+      //Title
+      #{$cardTitle}{
+        @extend .text--md;
+      }
+
+      //Details
+      #{$cardDescription}{
+        color: #101f36;
+        font-size: 0.8em;
+        p:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin cardAddBorder ($cardDirectWrapper, $card, $cardTitle, $cardDescription){
+  //container
+  #{$cardDirectWrapper}{
+
+    //each card
+    #{$card}{
+      border: 1px solid #e3e3e3;
+
+      //Title
+      #{$cardTitle}{
+        padding: 20px 20px 0 20px;
+      }
+
+      //Details
+      #{$cardDescription}{
+        padding: 0 20px 20px 20px;
+      }
+    }
+  }
+}
+
+
+
+//Card
+@include card('.card-items', '.card-item', '.card-title', '.card-body');
+@include cardAddBorder('.card-items-with-border', '.card-item', '.card-title', '.card-body');
+
+
+//view card
+@include card('.card-view-items .view-content', '.card-item', '.card-title', '.card-body');
+@include cardAddBorder('.card-view-items .view-content', '.card-item', '.card-title', '.card-body');
+
+.hideRelatedContentLabel .block-title-related-content-label {
+  display: none;
+}
+
+.hideFeaturedContent #block-featured-content-block {
+  display: none;
+}
+
+//Featured Content
+@media print{
+  #block-featured-content-block{
+    display: none;
+  }
+}
+
+//Related Content
+
+.field--name-field-related-content-label{
+  margin-top: 40px;
+}
+
+@media print{
+  .field--name-field-related-content{
+    a.card-item::after{
+      content: " (" attr(href) ") ";
+      text-align: right;
+      display: block;
+      padding: 0px 10px 10px 10px;
+      font-size: .8em;
+    }
+
+    &.card-items{
+      flex-direction: column;
+
+      & > .cardColumn{
+        max-width: none;
+      }
+
+      .card-title, .card-body{
+        padding: 0;
+      }
+
+      .card-title{
+        padding: 10px 10px 0 10px;
+      }
+
+      //Details
+      .card-body{
+        padding: 0 10px 10px 10px;
+      }
+    }
+  }
+}

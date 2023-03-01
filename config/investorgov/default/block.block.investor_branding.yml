@@ -1,0 +1,25 @@
+uuid: af4702c2-34c0-43a5-b0e2-0413e9d0a516
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - investor
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: investor_branding
+theme: investor
+region: header
+weight: -12
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

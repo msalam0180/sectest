@@ -1,0 +1,30 @@
+uuid: f1529ee3-1a46-405a-a69e-9b8f1ecc181d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - book
+    - comment
+    - contact
+    - filter
+    - media
+    - media_entity_download
+    - search_api_autocomplete
+    - system
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: -10
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access printer-friendly version'
+  - 'access site-wide contact form'
+  - 'download media'
+  - 'use search_api_autocomplete for search_content'
+  - 'use text format restricted_html'
+  - 'view media'

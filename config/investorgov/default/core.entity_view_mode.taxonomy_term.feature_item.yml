@@ -1,0 +1,10 @@
+uuid: bf42c6b1-a78c-40a2-afd8-699a9bf89058
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.feature_item
+label: 'Feature item'
+targetEntityType: taxonomy_term
+cache: true

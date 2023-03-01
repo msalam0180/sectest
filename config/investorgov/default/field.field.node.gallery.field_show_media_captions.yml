@@ -1,0 +1,23 @@
+uuid: e356b614-231f-4a94-b9dc-373e9c4ee389
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_media_captions
+    - node.type.gallery
+id: node.gallery.field_show_media_captions
+field_name: field_show_media_captions
+entity_type: node
+bundle: gallery
+label: 'Show Media Captions'
+description: 'When checked, the captions will show in the gallery and slideshow'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

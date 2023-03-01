@@ -1,0 +1,14 @@
+uuid: 8b6f0534-11d7-4f9a-8d21-b3072a01fd24
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: default_node_pattern
+label: 'Default Node Pattern'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria: {  }
+selection_logic: and
+weight: -6
+relationships: {  }

@@ -1,0 +1,23 @@
+uuid: 5c8852de-a47e-4ea3-8d3d-b4c8ae8b56d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ap_usdc
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: YNq7vkIVlEuGcRThc7jRiIQ_M2ErrDJduXF70otigIk
+id: node.ba.field_ap_usdc
+field_name: field_ap_usdc
+entity_type: node
+bundle: ba
+label: AP/USDC
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

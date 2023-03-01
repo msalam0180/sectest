@@ -1,0 +1,10 @@
+uuid: 3b4eb570-7b2f-4a8d-90a8-7fd96716d86a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TMVYxftaI9sbBsBS2rUWHOpVD9zWKM8xlFjTW0DBg5o
+name: 'Page Type'
+vid: page_type
+description: ''
+weight: 0

@@ -1,0 +1,25 @@
+uuid: ffb0cd5b-5d7d-4c71-b0b4-27adbec7f285
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.regulatory-actions
+  module:
+    - system
+  theme:
+    - secgov
+id: regulatoryactions
+theme: secgov
+region: header
+weight: -20
+provider: null
+plugin: 'system_menu_block:regulatory-actions'
+settings:
+  id: 'system_menu_block:regulatory-actions'
+  label: 'Regulatory Actions'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

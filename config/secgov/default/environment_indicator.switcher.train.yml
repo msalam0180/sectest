@@ -1,0 +1,10 @@
+uuid: d03a6176-06f9-4c5b-a699-c27cab702ddd
+langcode: en
+status: true
+dependencies: {  }
+machine: train
+description: null
+name: Train
+url: 'https://dcmtrain.sec.gov'
+fg_color: '#d0d0d0'
+bg_color: '#0d0d0d'

@@ -1,0 +1,32 @@
+uuid: c9ffc149-9fad-4b09-a054-2908a2d137e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.about
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: SnNZ0ndmJBQ499V_GzZA7OMhmNpLSc979CMzVAnS5I4
+id: about
+theme: secgov
+region: sidebar_first
+weight: -17
+provider: null
+plugin: 'system_menu_block:about'
+settings:
+  id: 'system_menu_block:about'
+  label: About
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/about\r\n/about/*\r\n/divisions.shtml\r\n/divisions\r\n/data\r\n/data/*\r\n/reports\r\n/fwro-whats-new\r\n/biography/*"

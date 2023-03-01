@@ -1,0 +1,227 @@
+
+// *******Footer Vars
+$footer-bg-color: $primary_1;
+
+// *******Footer Layout
+.site-footer {
+  background-color: $footer-bg-color;
+  color: $white;
+  clear: both;
+  padding: 20px 0;
+  
+  @media print{
+    display: none;
+  }
+}
+
+.region-footer{
+  max-width: $site-width;
+
+  @media screen and (min-width: 750px){
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  & > .block{
+    margin-bottom: 20px;
+    @media screen and (min-width: 750px){
+      flex:1;
+      margin: 0;
+      &:not(:last-child){
+        padding-right: 30px;
+        margin-bottom: 0;
+      }
+    }
+  } 
+
+  @media screen and (max-width: $site-width) {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+
+}
+
+//*******General footer styles
+.site-footer{
+  h1, h2, h3, h4, h5, h6, p{
+    font-family: $font_primary;
+    font-weight: $font_primary_weight_bold;
+    color: $gray_white;
+  }
+
+  h2{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  a,
+  a:visited,
+  a:link {
+    font-family: $font_secondary;
+    font-weight: $font_secondary_weight_semi_bold;
+    color: $secondary_2c;
+    font-size: .9rem;
+    line-height: 1rem;
+  }
+
+  a:hover {
+    text-decoration:underline;
+  }
+
+  .block-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+//*******Each block styles
+
+.site-footer{
+  
+  //***Sign up for Investor Updates
+  .block-title-footer---email-signup{
+    // min-width: 315px;
+    // flex-grow: 3;
+
+    .signupWrapper{
+      display: flex;
+      align-items: flex-end;
+    }
+    .email_fields{
+      flex-grow: 1;
+    }
+
+    .email_fields input,
+    .form_button{
+      height: 2.5em;
+      margin: 0;
+      padding: 0 1rem;
+      border: none;
+      font-size: 1.0rem;
+      line-height: 2.5em;
+    }
+
+    label{
+      @include element-invisible;
+    }
+
+    //input
+    .email_fields input{
+      width: 100%;
+    }
+
+    //button
+    .form_button {
+      font-family: $font_secondary;
+      font-weight: $font_secondary_weight_extra_bold;
+      color: $gray_white;
+      background: $primary_2;
+
+      &:focus, &:hover, &:active {
+        box-shadow: 0px 0px 0px 1px $gray_white;
+        background: darken($primary_2, 5%);
+      }
+    }
+
+  }
+
+  //***Social Media Links
+  .block--investor-theme-utility-social-media-links {
+    width: 100%;
+    margin-top: 20px;
+
+    .item-list{
+
+      ul{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li{
+        float: none;
+        padding: 0;
+        margin: 0;
+
+        a{
+          display: flex;
+          width: 42px;
+          height: 39px;
+          // border: 1px solid #004e8e;
+          align-items: center;
+          background-color: #0c7878;
+          margin-right: 5px;
+          justify-content: center;
+          &:hover,
+          &:focus,
+          &:active{
+            background-color: darken(#0c7878, 5%);
+            box-shadow: 0px 0px 0px 1px $gray_white;
+          }
+        }
+      }
+
+      svg.ext{
+        display: none;
+      }
+    }
+
+    .item-list li a {
+      &:after {
+        content: '';
+        display: block;
+        background-image: url('/sites/investorgov/themes/custom/investor/images/sprites/spritesheet.png');
+      }
+
+      &.social-media-link--twitter:after {
+        background-position: -549px -239px;
+        height: 21px;
+        width: 24px;
+      }
+
+      &.social-media-link--facebook:after {
+        background-position: -466px -236px;
+        height: 26px;
+        width: 14px;
+      }
+
+      &.social-media-link--youtube:after {
+        background-position: -428px -239px;
+        height: 22px;
+        width: 28px;
+      }
+
+      .social-media-link__label {
+        display: none;
+      }
+
+      span.ext {
+        display: none;
+      }
+    }
+
+  }
+
+  //***Twitter Block
+  .twitter_block{
+    min-width: 360px;
+
+    iframe{
+      padding: 5px !important;
+      background-color: #063a65;
+    }
+
+    // iframe {
+    //   // border: 5px solid #003d6f !important;
+    //   box-shadow: 0px 0px 0px 4px #003d6f;
+    //   padding: 5px !important;
+    // }
+  }
+}

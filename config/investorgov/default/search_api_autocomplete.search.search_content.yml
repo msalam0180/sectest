@@ -1,0 +1,25 @@
+uuid: fa25ba3f-a2cb-40c2-bc02-60f05ff65176
+langcode: en
+status: true
+dependencies:
+  config:
+    - search_api.index.default_index
+    - views.view.search_content
+  module:
+    - views
+    - search_api_autocomplete
+id: search_content
+label: 'Search content'
+index_id: default_index
+suggester_settings:
+  live_results:
+    fields: {  }
+    view_modes: {  }
+suggester_weights: {  }
+suggester_limits: {  }
+search_settings:
+  'views:search_content':
+    displays:
+      default: true
+      selected: {  }
+options: {  }

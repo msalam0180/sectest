@@ -1,0 +1,133 @@
+/* line 3, ../sass/tablesaw-override.scss */
+.tablesaw {
+  border: 1px solid #ebebeb;
+}
+/* line 6, ../sass/tablesaw-override.scss */
+.tablesaw thead, .tablesaw tfoot {
+  background: none;
+}
+/* line 10, ../sass/tablesaw-override.scss */
+.tablesaw th, .tablesaw td {
+  padding: .9em .7em;
+}
+@media (min-width: 300px) and (max-width: 767px) {
+  /* line 3, ../sass/tablesaw-override.scss */
+  .tablesaw {
+    /*b.tablesaw-cell-label {
+      display: table-cell !important;
+    }
+    span.tablesaw-cell-content {
+      display: table-cell !important;
+    }*/
+  }
+}
+@media (max-width: 300px) {
+  /* line 3, ../sass/tablesaw-override.scss */
+  .tablesaw {
+    /*b.tablesaw-cell-label {
+      display: table-cell !important;
+    }
+    span.tablesaw-cell-content {
+      display: table-cell !important;
+    }*/
+  }
+}
+/* line 32, ../sass/tablesaw-override.scss */
+.tablesaw thead th {
+  background: none;
+  border: none;
+}
+/* line 35, ../sass/tablesaw-override.scss */
+.tablesaw thead th:hover, .tablesaw thead th:focus {
+  background: none;
+}
+/* line 42, ../sass/tablesaw-override.scss */
+.tablesaw tbody tr {
+  border: none !important;
+  /*display: table-row;*/
+}
+@media (min-width: 300px) and (max-width: 767px) and (orientation: portrait) {
+  /* line 42, ../sass/tablesaw-override.scss */
+  .tablesaw tbody tr {
+    display: table-row;
+  }
+}
+@media (max-width: 300px) {
+  /* line 42, ../sass/tablesaw-override.scss */
+  .tablesaw tbody tr {
+    display: table-row;
+  }
+}
+/* line 51, ../sass/tablesaw-override.scss */
+.tablesaw tbody tr th, .tablesaw tbody tr td {
+  /*> b.tablesaw-cell-label {
+    display: none;
+    width: inherit;
+  }*/
+}
+
+/* line 68, ../sass/tablesaw-override.scss */
+.block table td {
+  border: none !important;
+}
+
+/* Zebra striping */
+/* line 74, ../sass/tablesaw-override.scss */
+.tablesaw-row-zebra tr:nth-child(2n) {
+  background-color: #ebebeb !important;
+}
+
+/* line 78, ../sass/tablesaw-override.scss */
+.tablesaw caption {
+  text-align: left;
+  margin: .59375em 0;
+}
+
+/* line 83, ../sass/tablesaw-override.scss */
+.tablesaw-swipe .tablesaw-cell-persist {
+  border-right: none !important;
+}
+
+/* line 87, ../sass/tablesaw-override.scss */
+.tablesaw-swipe-shadow .tablesaw-cell-persist {
+  border-right-width: 1px;
+}
+
+/* line 91, ../sass/tablesaw-override.scss */
+.tablesaw-swipe-shadow .tablesaw-cell-persist {
+  box-shadow: 3px 0 4px -1px #e4e1de;
+}
+
+/* line 95, ../sass/tablesaw-override.scss */
+.tablesaw thead tr:first-child {
+  background: rgba(24, 50, 112, 0.45);
+}
+
+/* line 96, ../sass/tablesaw-override.scss */
+.tablesaw tbody td[colspan], .tablesaw tbody td.colspan {
+  background: rgba(24, 50, 112, 0.3);
+}
+
+/* line 97, ../sass/tablesaw-override.scss */
+.tablesaw tbody th {
+  background: rgba(24, 50, 112, 0.15);
+}
+
+/* Buttons */
+/* line 100, ../sass/tablesaw-override.scss */
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
+  left: 1em !important;
+  top: .75em !important;
+}
+
+/* line 105, ../sass/tablesaw-override.scss */
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn {
+  margin-left: 1.5em !important;
+  padding: 1.25em !important;
+}
+
+/* line 109, ../sass/tablesaw-override.scss */
+.tablesaw-bar .btn, .tablesaw-enhanced .tablesaw-bar .btn {
+  margin-bottom: 1em !important;
+}

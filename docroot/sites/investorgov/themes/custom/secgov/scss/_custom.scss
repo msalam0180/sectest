@@ -1,0 +1,284 @@
+@import 'general/vars';
+
+/* --------------------------------------- GLOBAL STYLES --------------------------------------- */
+
+/* SEC Text Color styles */
+.text-charcoal {color: $charcoal !important;}
+.text-dark-navy {color: $dark-navy !important;}
+.text-navy {color: $navy !important;}
+.text-gray-blue {color: $gray-blue !important;}
+.text-deep-sea {color: $deep-sea !important;}
+.text-azure {color: $azure !important;}
+.text-yellow-orange {color: $yellow-orange !important;}
+.text-raven {color: $raven !important;}
+.text-asphalt {color: $asphalt !important;}
+.text-serenity {color: $serenity !important;}
+.text-stone {color: $stone !important;}
+.text-cloudy-gray {color: $cloudy-gray !important;}
+.text-shadow {color: $shadow !important;}
+.text-mist {color: $mist !important;}
+.text-light-gray {color: $light-gray !important;}
+.text-porcelain {color: $porcelain !important;}
+.text-white-sand {color: $white-sand !important;}
+
+/* SEC Background Color styles */
+.bkg-charcoal {background-color: $charcoal !important;}
+.bkg-dark-navy {background-color: $dark-navy !important;}
+.bkg-navy {background-color: $navy !important;}
+.bkg-gray-blue {background-color: $gray-blue !important;}
+.bkg-deep-sea {background-color: $deep-sea !important;}
+.bkg-azure {background-color: $azure !important;}
+.bkg-yellow-orange {background-color: $yellow-orange !important;}
+.bkg-raven {background-color: $raven !important;}
+.bkg-asphalt {background-color: $asphalt !important;}
+.bkg-serenity {background-color: $serenity !important;}
+.bkg-stone {background-color: $stone !important;}
+.bkg-cloudy-gray {background-color: $cloudy-gray !important;}
+.bkg-shadow {background-color: $shadow !important;}
+.bkg-mist {background-color: $mist !important;}
+.bkg-light-gray {background-color: $light-gray !important;}
+.bkg-porcelain {background-color: $porcelain !important;}
+.bkg-white-sand {background-color: $white-sand !important;}
+
+/* SEC Border Color styles applicable to SEC.gov */
+.border-charcoal {border-color: $charcoal !important;}
+.border-dark-navy {border-color: $dark-navy !important;}
+.border-navy {border-color: $navy !important;}
+.border-gray-blue {border-color: $gray-blue !important;}
+.border-deep-sea {border-color: $deep-sea !important;}
+.border-azure {border-color: $azure !important;}
+.border-yellow-orange {border-color: $yellow-orange !important;}
+.border-raven {border-color: $raven !important;}
+.border-asphalt {border-color: $asphalt !important;}
+.border-serenity {border-color: $serenity !important;}
+.border-stone {border-color: $stone !important;}
+.border-cloudy-gray {border-color: $cloudy-gray !important;}
+.border-shadow {border-color: $shadow !important;}
+.border-mist {border-color: $mist !important;}
+.border-light-gray {border-color: $light-gray !important;}
+.border-porcelain {border-color: $porcelain !important;}
+.border-white-sand {border-color: $white-sand !important;}
+
+
+/*  Double Letter Spacing  */
+.line-height-2x {line-height: 2;}
+
+
+/*  Button Icon Box  */
+.button-icon-box {
+  width: 100% !important;
+
+  span {
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+
+  a {
+    background-color: #E9E9E9 !important;
+    border: thin solid #BFBFBF;
+    color: #273a56 !important;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #273a56 !important;
+      border-color: #273a56;
+      color: #273a56;
+      .fa {
+        color: #FFC057;
+      }
+      .svg-icon {
+        color: #FFC057;
+      }
+      .description {
+        color: #FFF;
+      }
+    }
+    .fa {
+      background-color: inherit;
+      color: inherit;
+
+    }
+    .description {
+      line-height: 1.4;
+      padding: 10px 0 10px 20px !important;
+    }
+  }
+}
+
+
+/*  Fintech (spotlight/fintech) and Hurricane Spotlight pages (/page/2017-hurricane-relief-effort & linked pages) but can be used elsewhere as needed  */
+
+/*  Image hover effect */
+.item {
+	position: relative;
+	border: none;
+	overflow: hidden;
+}
+.item img {
+	max-width: 100%;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.item:hover img {
+	-webkit-transform: translate(0, 0) scale(1.1);
+	transform: translate(0, 0) scale(1.1);
+}
+
+// /* Accordion styles */
+
+// #accordion {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+//   h2 {
+//     font-size: 14px;
+//     margin: 0px;
+//     padding: 10px;
+//     background: rgba(24, 50, 112, 0.24);
+//     // font-family: raleway;
+//     width: inherit;
+//   }
+//   .expander-icon {
+//       margin-right: 15px;
+//       font-size: 25px;
+//       // font-family: raleway;
+//   }
+//   li {
+//     &.single {
+//       background: rgba(25, 53, 92, 0.26);
+//     }
+//     &.expand {
+//       &:hover {
+//         background: rgba(22, 68, 112, 0.05);
+//         cursor: pointer;
+//       }
+//     }
+//     div {
+//       display: none;
+//       padding: 10px;
+//       background: #f9f9f9;
+//       border: 1px solid #ddd;
+//     }
+
+//   }
+// }
+
+
+/*  Nav-button Box styles */
+
+.nav-box .button-box.active a {background: #2F64B1;}
+
+.nav-box .button-box.center.small-4 {
+  	clear: both;
+  	float: none !important;
+  	margin: 0 auto !important;
+}
+
+.nav-box .button-box a,
+.nav-box .button-box a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+@include breakpoint('small'){
+  .nav-box .small-4 {
+    width: 100%;
+  }
+}
+
+
+/* Alt-border styles */
+
+.alt-border-treatment {
+	border-top: none;
+	border-bottom: none;
+	border-left: 3px solid #273a56;
+	border-right: 3px solid #273a56;
+}
+
+@include breakpoint('small'){
+	.alt-border-treatment {
+		border-top: 3px solid #273a56;
+	  	border-bottom: 3px solid #273a56;
+	  	border-left: none;
+	  	border-right: none;
+	}
+}
+
+
+/* --------------------------------------- PAGE-SPECIFIC STYLES --------------------------------------- */
+
+/*  Jobs Act Spotlight: https://www.sec.gov/spotlight/jobs-act.shtml   */
+#tabs-jobsact .ui-tabs-panel {
+ padding: 10px;
+}
+#tabs-jobsact .ui-tabs-panel ul {
+  margin: 10px;
+}
+#accordion-rules h3 {
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #ebebeb;
+  border-left: none;
+  clear: both;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+}
+#accordion-rules h3.ui-state-active {
+  border-bottom: none;
+}
+#accordion-rules .ui-accordion-content.ui-accordion-content-active {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #EBEBEB;
+  border-left: none;
+}
+
+#accordion-rules .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  left: 0.25em;
+  top: 1.35em;
+}
+
+#accordion-rules dl {
+  min-height: 120px;
+}
+
+/*  Feds Feeds Families: https://www.sec.gov/spotlight/feds-feed-families-2017.shtml  */
+@media only screen and (min-width:1024px) {
+.feds-feeds-logo {margin-left:20px;}
+}
+
+/*  Cybersecurity Spotlight: https://www.sec.gov/spotlight/feds-feed-families-2017.shtml  */
+#cybersecurity-info .fa {
+	background-color: transparent;
+    border-radius: none;
+    color: #273a56;
+    padding: 0;}
+
+#cybersecurity-info .fa:hover {background-color: transparent;}
+
+#tabs-resources li.ui-state-default {
+  background-color: #273a56;
+}
+#tabs-resources li.ui-state-default a {
+  color: #FFF;
+}
+#tabs-resources li.ui-tabs-active {
+  background-color: #FFC057;
+}
+#tabs-resources li.ui-tabs-active a {
+  color: #273a56;
+}
+
+
+/*  Whistleblower 100 Million Spotlight: https://www.sec.gov/page/whistleblower-100million  */
+.responsive-iframe {margin: 0 auto; max-width: 880px; position: relative; height: 0; padding-bottom: 50%; /*2:1 ratio*/}
+.responsive-iframe iframe {height:100%; position: absolute; top: 0; left: 0; width: 100%;}
+.responsive-iframe iframe::-webkit-scrollbar {display: none;}
+
+#regionalOfficeMap {
+  max-width: 100%;
+  height: 300px;
+}

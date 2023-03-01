@@ -1,0 +1,5 @@
+enable_override: true
+view: releases_via_taxonomy
+view_display: page_3
+inherit_settings: true
+pass_arguments: true

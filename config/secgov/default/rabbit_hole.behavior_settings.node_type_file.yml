@@ -1,0 +1,14 @@
+uuid: fb13f071-5149-484d-98d0-602808521666
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.file
+id: node_type_file
+entity_type_id: node_type
+entity_id: file
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

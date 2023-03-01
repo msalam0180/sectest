@@ -1,0 +1,23 @@
+uuid: 7b09bb8f-7185-4e05-a761-ca1889c0b5ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_sub_type_secart
+    - node.type.secarticle
+  module:
+    - options
+_core:
+  default_config_hash: 7WSr9KsXA2pTTnydJ9ogKQ3QuUm5GSXVZb-8Ei1T5og
+id: node.secarticle.field_article_sub_type_secart
+field_name: field_article_sub_type_secart
+entity_type: node
+bundle: secarticle
+label: 'Article SubType'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

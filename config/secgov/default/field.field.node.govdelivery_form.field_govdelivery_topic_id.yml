@@ -1,0 +1,21 @@
+uuid: 50c71415-7e8a-4704-8148-430d264df248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_govdelivery_topic_id
+    - node.type.govdelivery_form
+_core:
+  default_config_hash: b7T105I5ijo3qKQ_Y5x849A8AgkJV5SPAvV8pMYrtxE
+id: node.govdelivery_form.field_govdelivery_topic_id
+field_name: field_govdelivery_topic_id
+entity_type: node
+bundle: govdelivery_form
+label: 'Topic ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: e1cb5e1a-c933-486f-a94d-347e583d2d72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webcast
+    - node.type.sec_alert
+    - node.type.webcast
+id: node.sec_alert.field_webcast
+field_name: field_webcast
+entity_type: node
+bundle: sec_alert
+label: 'Associated Webcast'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      webcast: webcast
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

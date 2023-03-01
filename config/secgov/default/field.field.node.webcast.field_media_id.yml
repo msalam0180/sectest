@@ -1,0 +1,19 @@
+uuid: 51bc49d1-3072-43e6-874c-cab585ae83ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_id
+    - node.type.webcast
+id: node.webcast.field_media_id
+field_name: field_media_id
+entity_type: node
+bundle: webcast
+label: 'Media ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

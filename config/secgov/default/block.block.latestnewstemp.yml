@@ -1,0 +1,32 @@
+uuid: bd9836f0-758c-4bb8-8765-230a4f7989b6
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1b1e7546-5848-4d40-bf5c-9adb51968912'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - secgov
+id: latestnewstemp
+theme: secgov
+region: sidebar_first
+weight: -35
+provider: null
+plugin: 'block_content:1b1e7546-5848-4d40-bf5c-9adb51968912'
+settings:
+  id: 'block_content:1b1e7546-5848-4d40-bf5c-9adb51968912'
+  label: 'Latest News - temp'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:block_content':
+    id: 'entity_bundle:block_content'
+    negate: false
+    context_mapping: {  }
+    bundles:
+      basic: basic

@@ -1,0 +1,53 @@
+---
+menu_name: 'Sidebar'
+items:
+  - title: 'Main Link 1'
+    url: '#'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false
+  - title: 'Main Link 2'
+    url: '#'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: true
+    below:
+      - title: 'Child item one'
+        url: '#'
+        original_link:
+          options:
+            attributes:
+              class: ''
+        in_active_trail: false
+      - title: 'Child item two'
+        url: '#'
+        original_link:
+          options:
+            attributes:
+              class: ''
+        in_active_trail: true
+      - title: 'Child item three'
+        url: '#'
+        original_link:
+          options:
+            attributes:
+              class: ''
+        in_active_trail: false
+  - title: 'Main Link 3'
+    url: '#'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false
+  - title: 'Main Link 4'
+    url: '#'
+    original_link:
+      options:
+        attributes:
+          class: ''
+    in_active_trail: false

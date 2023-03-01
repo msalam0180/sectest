@@ -1,0 +1,21 @@
+uuid: bfd6c239-0f40-4ae1-8cdc-cb91acdf09a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webcast_source
+    - node.type.webcast
+  module:
+    - options
+id: node.webcast.field_webcast_source
+field_name: field_webcast_source
+entity_type: node
+bundle: webcast
+label: 'Webcast Source'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,10 @@
+uuid: bcd314ec-7b0c-4fd1-af6b-ad59e9bda4ec
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: z--klOdYfQ-ValCB-WFYQ1Ul0UYpRFwUe7RneTOTggM
+id: oig
+label: OIG
+description: 'Office of Inspector General'
+locked: false

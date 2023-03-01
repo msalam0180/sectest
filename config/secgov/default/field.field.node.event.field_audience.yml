@@ -1,0 +1,28 @@
+uuid: 6cdbb618-0946-4533-a546-5670dfa188ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.event
+    - taxonomy.vocabulary.audience
+id: node.event.field_audience
+field_name: field_audience
+entity_type: node
+bundle: event
+label: Audience
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

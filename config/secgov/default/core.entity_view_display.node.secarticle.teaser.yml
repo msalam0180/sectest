@@ -1,0 +1,122 @@
+uuid: 6a4b9158-9cd5-4137-8385-4190b1570395
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.secarticle.body
+    - field.field.node.secarticle.field_accrual_periodicity
+    - field.field.node.secarticle.field_act
+    - field.field.node.secarticle.field_alternate_title_secarticle
+    - field.field.node.secarticle.field_article_sub_type_secart
+    - field.field.node.secarticle.field_article_type_secarticle
+    - field.field.node.secarticle.field_associated_dataset
+    - field.field.node.secarticle.field_audience
+    - field.field.node.secarticle.field_case_number
+    - field.field.node.secarticle.field_contact_email
+    - field.field.node.secarticle.field_contact_name
+    - field.field.node.secarticle.field_creator
+    - field.field.node.secarticle.field_data_dictionary_notes
+    - field.field.node.secarticle.field_date
+    - field.field.node.secarticle.field_description_abstract
+    - field.field.node.secarticle.field_display_title
+    - field.field.node.secarticle.field_division_office
+    - field.field.node.secarticle.field_ext_pub_secarticle
+    - field.field.node.secarticle.field_external_resource
+    - field.field.node.secarticle.field_featured_graphic
+    - field.field.node.secarticle.field_file_upload
+    - field.field.node.secarticle.field_hide_publish_date
+    - field.field.node.secarticle.field_left_nav_override
+    - field.field.node.secarticle.field_left_nav_secarticle
+    - field.field.node.secarticle.field_list_page_det_secarticle
+    - field.field.node.secarticle.field_market_statistics_category
+    - field.field.node.secarticle.field_media_file_upload
+    - field.field.node.secarticle.field_media_image_upload
+    - field.field.node.secarticle.field_more_about_this_topic
+    - field.field.node.secarticle.field_organization
+    - field.field.node.secarticle.field_person
+    - field.field.node.secarticle.field_primary_division_office
+    - field.field.node.secarticle.field_publish_date
+    - field.field.node.secarticle.field_regulation
+    - field.field.node.secarticle.field_related_materials
+    - field.field.node.secarticle.field_release_number
+    - field.field.node.secarticle.field_requestor
+    - field.field.node.secarticle.field_sec_content_approver
+    - field.field.node.secarticle.field_show_full_width_page
+    - field.field.node.secarticle.field_tags
+    - field.field.node.secarticle.field_top_right_column
+    - field.field.node.secarticle.scheduling_options
+    - node.type.secarticle
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: qXyIUMDYiS8kEc4osHBby08Yrjj4o4Cs6pq6cNUZmtQ
+id: node.secarticle.teaser
+targetEntityType: node
+bundle: secarticle
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_accrual_periodicity: true
+  field_act: true
+  field_alternate_title_secarticle: true
+  field_article_sub_type_secart: true
+  field_article_type_secarticle: true
+  field_associated_dataset: true
+  field_audience: true
+  field_case_number: true
+  field_contact_email: true
+  field_contact_name: true
+  field_creator: true
+  field_data_dictionary_notes: true
+  field_date: true
+  field_description_abstract: true
+  field_display_title: true
+  field_division_office: true
+  field_ext_pub_secarticle: true
+  field_external_resource: true
+  field_featured_graphic: true
+  field_file_upload: true
+  field_hide_publish_date: true
+  field_left_nav_override: true
+  field_left_nav_secarticle: true
+  field_list_page_det_secarticle: true
+  field_market_statistics_category: true
+  field_media_file_upload: true
+  field_media_image_upload: true
+  field_more_about_this_topic: true
+  field_organization: true
+  field_person: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_related_materials: true
+  field_release_number: true
+  field_requestor: true
+  field_sec_content_approver: true
+  field_show_full_width_page: true
+  field_speaker_position_override: true
+  field_tags: true
+  field_top_right_column: true
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

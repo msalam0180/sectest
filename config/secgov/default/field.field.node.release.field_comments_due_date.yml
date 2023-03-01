@@ -1,0 +1,21 @@
+uuid: 99b938cf-6fac-45a1-bb7b-597dc47fa752
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments_due_date
+    - node.type.release
+  module:
+    - datetime
+id: node.release.field_comments_due_date
+field_name: field_comments_due_date
+entity_type: node
+bundle: release
+label: 'Comments Due Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,6 @@
+name: 'SEC Title Manager'
+description: 'Updates title with display title in search results'
+type: module
+core: 8.x
+package: SEC
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,6 @@
+#Provides link to 'Approvers' needs review page.
+sec_admin_content.content-search:
+  route_name: sec_admin_content.contentSearch
+  title: 'Search'
+  weight: 2
+  base_route: system.admin_content

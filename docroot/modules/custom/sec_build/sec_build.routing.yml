@@ -1,0 +1,7 @@
+sec_build.update_idd_content:
+  path: '/admin/config/migrate/node_media/update/idd'
+  defaults:
+    _title: 'Update IDD Content Type for Static File field'
+    _form: '\Drupal\sec_build\Form\IDDUpdateStaticFileFieldBatchForm'
+  requirements:
+    _permission: 'migrate content'

@@ -1,0 +1,59 @@
+// TODO Replace hardcoded values with variables on colors/fonts/etc. in this file
+
+.block-local-tasks-block {
+  $tabs-border-color-top-active: lighten($primary_1, 20%);
+  $tabs-border-color-top: $primary_1;
+  $tabs-border-width: 1px;
+  $tabs-border-width-top: 4px;
+
+  $tabs-bg-color: #e3e3e3;  
+
+  margin: 0 0 20px 0;
+  padding: 13px 5px 0 5px;
+  background: $tabs-bg-color;
+
+  .tabs {
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+
+      > li {
+        margin: 0;
+        padding: 0;
+
+        > a {
+          padding: .5rem 1.1rem;
+          display: block;
+          background: $white;
+          border-top: $tabs-border-width-top solid $tabs-border-color-top;
+          border-bottom: none;
+          margin: 0 2px;
+          font-size: 1.2em;
+          color: $primary_1;
+          &.is-active, &:hover, &:focus{
+            border-top: $tabs-border-width-top solid $tabs-border-color-top-active;
+            text-decoration: none;
+            padding-bottom: 10px;
+            @media screen and (max-width: 799px){
+              padding-bottom: 6px;
+            }
+          }
+
+          @media screen and (max-width: 799px){
+            padding: 0.2rem 0.5rem;
+            font-size: 1em
+          }
+        }
+      }
+    }
+  }
+  
+  @media print{
+    display: none;
+  }
+}

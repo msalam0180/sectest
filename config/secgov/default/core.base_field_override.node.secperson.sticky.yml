@@ -1,0 +1,22 @@
+uuid: 3a54c046-68ae-4b06-ab11-81a1e46b94a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secperson
+id: node.secperson.sticky
+field_name: sticky
+entity_type: node
+bundle: secperson
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,30 @@
+uuid: 31d5fc60-62a9-4831-a73c-de46c9fbb7c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_regulation
+    - node.type.news
+    - taxonomy.vocabulary.regulation
+_core:
+  default_config_hash: kqVsfAX5lddxLWKML8yk1NJvTrUkamwDfHbZ_fh1-TU
+id: node.news.field_regulation
+field_name: field_regulation
+entity_type: node
+bundle: news
+label: Regulation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      regulation: regulation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

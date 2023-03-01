@@ -1,0 +1,142 @@
+id: events
+label: JSON import of Events
+migration_group: sec
+migration_tags:
+  - events
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/events.json
+  fields: 
+    -
+      name: id
+      label: 'Identifier'
+      selector: id
+    -
+      name: display_title
+      label: 'display_title'
+      selector: display_title
+    -
+      name: docid
+      label: 'docid'
+      selector: docid
+    -
+      name: title
+      label: 'title'
+      selector: title
+    -
+      name: cancelled
+      label: 'cancelled'
+      selector: cancelled
+    -
+      name: body
+      label: 'body'
+      selector: body
+    -
+      name: info
+      label: 'info'
+      selector: info
+    -
+      name: begin_date
+      label: 'begin_date'
+      selector: begin_date
+    -
+      name: end_date
+      label: 'end_date'
+      selector: end_date
+    -
+      name: category
+      label: 'category'
+      selector: category
+    -
+      name: no_webcast_archive
+      label: 'no_webcast_archive'
+      selector: no_webcast_archive
+
+  ids:
+    id:
+      type: string
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: event
+
+  title: title
+  
+  body:
+    plugin: html_import
+    source: body
+
+  status:
+      plugin: default_value
+      default_value: 1
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  created: 
+    plugin: date_import
+    source: begin_date
+    return_timestamp: TRUE
+
+  changed: '@created'
+#
+#  Drupal content type user-defined fields
+#
+  field_additional_information: 
+    plugin: html_import
+    source: info
+  
+  field_display_title: display_title
+  
+  field_cancelled_postponed:
+    plugin: static_map
+    source: cancelled
+    map:
+      'true': Cancelled
+      'false': ''
+
+  field_webcast:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: 'docid'
+    -
+      plugin: migration
+      migration: webcasts
+
+  field_sec_event_date:
+    plugin: date_import
+    source: begin_date
+    
+  field_sec_event_end_date:
+    plugin: date_import
+    source: end_date
+    default_value: begin_date
+    
+  field_show_end_date:
+    plugin: default_value
+    default_value: 0
+    
+  field_event_type:
+    plugin: default_value
+    default_value: meeting
+    
+  field_meeting_category:
+    plugin: static_map
+    source: category
+    map:
+      'Open Meeting': 'Open Meeting'
+      'Advisory Committee': 'Advisory Committee'
+      'Roundtable': Roundtable
+      'Forum': Forum
+      'Other': Other
+  field_no_webcast_archive: no_webcast_archive
+  
+destination:
+  plugin: entity:node

@@ -1,0 +1,13 @@
+uuid: 83d20f5b-0b89-44de-866f-a6e5255656cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+_core:
+  default_config_hash: 6OSuOiyaHfX86UyKvertbU9p3BmYGXjRnHMzt1Pxnts
+id: webcast_info_block
+title: 'Need Help?'
+content:
+  value: "<p>Viewing SEC live and archived webcasts requires free <a href=\"http://get.adobe.com/flashplayer/\">Adobe Flash Player</a> If this is not already installed for your browser, the player can be downloaded from the <a href=\"http://get.adobe.com/flashplayer/\">Adobe</a> website</p>\r\n"
+  format: full_html

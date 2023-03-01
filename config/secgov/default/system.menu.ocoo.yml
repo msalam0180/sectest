@@ -1,0 +1,10 @@
+uuid: 70413730-e8e8-4164-86f2-7078688955f9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fYT_FjMtBDxi_cn1lrMcIRUR9C3epcDi6n6BVPjyaRE
+id: ocoo
+label: OCOO
+description: 'Office of the Chief Operating Officer'
+locked: false

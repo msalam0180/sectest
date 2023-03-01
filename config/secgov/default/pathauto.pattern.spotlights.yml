@@ -1,0 +1,24 @@
+uuid: cd077879-a2a5-41b6-a94a-f50087bf23b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: a3RRdjWyx7hh8SdSWsjwgPrAzwkgDHgKjeI45ERv7k8
+id: spotlights
+label: Spotlights
+type: 'canonical_entities:node'
+pattern: '/news/spotlights/[node:title]'
+selection_criteria:
+  5fcfecbe-1bf0-41cf-b75f-ee569d7e8b2e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5fcfecbe-1bf0-41cf-b75f-ee569d7e8b2e
+    context_mapping:
+      node: node
+    bundles:
+      spotlight: spotlight
+selection_logic: and
+weight: -5
+relationships: {  }

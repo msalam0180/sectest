@@ -1,0 +1,131 @@
+//
+// TABS
+// Tabbed interfaces that use jQuery UI
+// --------------------------------------------------
+
+// TODO: Review all code in this file, clean it and, and move it into the correct places
+
+.ui-tabs {
+  background: none;
+  border: 0 !important;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0px;
+  position: relative; /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+  padding: 0;
+
+  .ui-tabs-nav {
+    background: none;
+    border:0;
+    margin: 0;
+    padding: 0;
+  }
+    .ui-tabs-nav ul {list-style: none;}
+  .ui-tabs-nav li {
+    border-bottom: 1px solid $border-color;
+    float: left;
+    margin: 0;
+    overflow-y: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    white-space: normal;
+    a {
+      // @include raleway;
+      font-size: 13px;
+      font-weight: 600;
+      color: $cloudy-gray;
+      text-align: center;
+      width: 100%;
+      word-wrap: break-word;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    padding: .5em .25em;
+    text-decoration: none;
+
+    @include breakpoint('small'){
+      padding: 5px 0;
+    }
+  }
+
+  .ui-tabs-nav .ui-state-default {
+    background: $mist;
+  }
+
+  .ui-tabs-nav li.ui-tabs-active {
+    background: $white;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    border: 1px solid #c5c5c5;
+  }
+
+  .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+  .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+  .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+    cursor: text;
+  }
+
+  .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+    cursor: pointer;
+  }
+
+  .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+      border-radius: 0px;
+    }
+
+  .tabs-pane, .ui-tabs-panel {
+    background: none;
+    border: 1px solid $border-color;
+    border-top: none;
+    display: inline-block;
+    font-size: 13px;
+    min-height: 180px;
+    padding: 1em 1.4em;
+    width: 100%;
+    word-break: break-word;
+    word-wrap: normal;
+    white-space: normal;
+    
+    p { line-height: 1.4; }
+    
+    a {
+      // @include raleway;
+      font-size: 13px;
+      font-weight: 600;
+      color: $azure;
+      width: 100%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+      &:visited {
+        color: $cloudy-gray;
+      }
+    }
+  }
+}
+
+.vertical-tabs.ui-tabs {
+  @include breakpoint('small') {
+    .ui-tabs-nav li {
+      border-color: $border-color;
+      border-radius: 0;
+      clear: both;
+      display: block;
+      float: none;
+      width: 100%;
+
+      a { 
+        padding: 10px;
+        width: 100%; 
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+uuid: 44846860-e43e-4ff1-ba20-2b7fd6e4727a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view.field_view
+    - paragraphs.paragraphs_type.view
+  module:
+    - viewfield
+id: paragraph.view.default
+targetEntityType: paragraph
+bundle: view
+mode: default
+content:
+  field_view:
+    type: viewfield_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

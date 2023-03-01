@@ -1,0 +1,31 @@
+uuid: c990b7b1-7096-4594-83a4-9ff1cc89a08e
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:8ab8832d-4640-4585-b586-28faf27a89b2'
+  module:
+    - block_content
+    - system
+  theme:
+    - investor
+id: menupressreleases
+theme: investor
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:8ab8832d-4640-4585-b586-28faf27a89b2'
+settings:
+  id: 'block_content:8ab8832d-4640-4585-b586-28faf27a89b2'
+  label: 'Menu: Press Releases'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/additional-resources/news-alerts/selected-press-releases\r\n/additional-resources/news-alerts/press-releases/*"

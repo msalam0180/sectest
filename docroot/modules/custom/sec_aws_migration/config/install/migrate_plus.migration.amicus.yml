@@ -1,0 +1,154 @@
+id: amicus
+label: Import of Amicus Briefs AWS content
+migration_group: aws
+migration_tags:
+  - aws
+  - amicus
+source:
+  plugin: csv
+  path: public://migration/commission_amicus_friend_of_court.csv
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: id
+    1:
+      name: date
+      label: 'Date'
+    2:
+      name: brief
+      label: 'Brief'
+    3:
+      name: briefurl
+      label: 'Brief URL'
+    4:
+      name: description
+      label: 'Description'
+  constants:
+    delimiter: ','
+    division_office: 'Enforcement'
+    article_type: 'Amicus Brief'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+
+  moderation_state:
+    plugin: default_value
+    default_value: 'published'
+
+  type:
+    plugin: default_value
+    default_value: secarticle
+
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'j-M-y'
+    from_timezone: 'America/New_York'
+    to_format: 'U'
+
+  changed: '@created'
+
+  field_publish_date:
+    plugin: format_date
+    source: date
+    from_format: 'j-M-y'
+    from_timezone: 'America/New_York'
+    to_format: 'Y-m-d\TH:i:s'
+
+  title:  brief
+
+  path/alias:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - '.pdf'
+        - '.txt'
+      source: briefurl
+    -
+      plugin: str_replace
+      search: 'https://www.sec.gov'
+      replace: ''
+    -
+      plugin: str_replace
+      search: '.htm'
+      replace: ''
+
+  path/pathauto:
+    plugin: default_value
+    default_value: false # Disable pathauto.
+
+  body:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - '.pdf'
+        - '.txt'
+      source: briefurl
+    -
+      plugin: html_to_string
+    -
+      plugin: body_html_import
+
+
+  modified_date:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - '.pdf'
+        - '.txt'
+      source: briefurl
+    -
+      plugin: html_to_string
+    -
+      plugin: get_modified_date
+
+  field_date: '@modified_date'
+
+  field_list_page_det_secarticle:
+    plugin: html_import
+    source: description
+
+  field_display_title: brief
+
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: constants/division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+
+  field_article_type_secarticle:
+    plugin: entity_lookup
+    access_check: 0
+    entity_type: node
+    bundle: article_type
+    property: title
+    source: constants/article_type
+    value_key: title
+    bundle_key: type
+
+  field_media_file_upload:
+    plugin: migration_lookup
+    migration: amicusfiles
+    no_stub: true
+    source: id
+
+  field_left_nav_override:
+    plugin: default_value
+    default_value: 'enforcement'
+
+destination:
+  plugin: entity:node
+
+migration_dependencies:
+  required:
+    - amicusfiles

@@ -1,0 +1,23 @@
+uuid: 77327485-d8c2-499b-a93c-fc307ac5047f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_quick_links
+    - taxonomy.vocabulary.release_type
+  module:
+    - options
+id: taxonomy_term.release_type.field_quick_links
+field_name: field_quick_links
+entity_type: taxonomy_term
+bundle: release_type
+label: 'Quick Links'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: show
+default_value_callback: ''
+settings: {  }
+field_type: list_string

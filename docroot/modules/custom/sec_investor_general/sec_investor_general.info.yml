@@ -1,0 +1,12 @@
+name: SEC and Investor General
+type: module
+description: 'Provides customized administrative functions for Investor.'
+core: 8.x
+package: Custom Shared
+stylesheets:
+  all:
+    - css/env_indicator.css
+scripts:
+  - js/env_indicator.js
+
+core_version_requirement: ^8 || ^9

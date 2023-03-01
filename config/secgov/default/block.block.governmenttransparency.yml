@@ -1,0 +1,25 @@
+uuid: 7550d7b9-f497-4ed9-bd43-3531b861aaba
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.government-transparency
+  module:
+    - system
+  theme:
+    - secgov
+id: governmenttransparency
+theme: secgov
+region: footer
+weight: -35
+provider: null
+plugin: 'system_menu_block:government-transparency'
+settings:
+  id: 'system_menu_block:government-transparency'
+  label: Transparency
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

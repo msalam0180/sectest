@@ -1,0 +1,395 @@
+@import 'general/vars';
+
+/* --------------------------------------- GLOBAL STYLES --------------------------------------- */
+
+/* SEC Text Color styles */
+.text-charcoal {color: $charcoal !important;}
+.text-dark-navy {color: $dark-navy !important;}
+.text-navy {color: $navy !important;}
+.text-gray-blue {color: $gray-blue !important;}
+.text-deep-sea {color: $deep-sea !important;}
+.text-azure {color: $azure !important;}
+.text-yellow-orange {color: $yellow-orange !important;}
+.text-raven {color: $raven !important;}
+.text-asphalt {color: $asphalt !important;}
+.text-serenity {color: $serenity !important;}
+.text-stone {color: $stone !important;}
+.text-cloudy-gray {color: $cloudy-gray !important;}
+.text-shadow {color: $shadow !important;}
+.text-mist {color: $mist !important;}
+.text-light-gray {color: $light-gray !important;}
+.text-porcelain {color: $porcelain !important;}
+.text-white-sand {color: $white-sand !important;}
+.text-white {color: $white !important;}
+
+/* SEC Background Color styles */
+.bkg-charcoal {background-color: $charcoal !important;}
+.bkg-dark-navy {background-color: $dark-navy !important;}
+.bkg-navy {background-color: $navy !important;}
+.bkg-gray-blue {background-color: $gray-blue !important;}
+.bkg-deep-sea {background-color: $deep-sea !important;}
+.bkg-azure {background-color: $azure !important;}
+.bkg-yellow-orange {background-color: $yellow-orange !important;}
+.bkg-raven {background-color: $raven !important;}
+.bkg-asphalt {background-color: $asphalt !important;}
+.bkg-serenity {background-color: $serenity !important;}
+.bkg-stone {background-color: $stone !important;}
+.bkg-cloudy-gray {background-color: $cloudy-gray !important;}
+.bkg-shadow {background-color: $shadow !important;}
+.bkg-mist {background-color: $mist !important;}
+.bkg-light-gray {background-color: $light-gray !important;}
+.bkg-porcelain {background-color: $porcelain !important;}
+.bkg-white-sand {background-color: $white-sand !important;}
+.bkg-white {background-color: $white !important;}
+
+/* SEC Border Color styles applicable to SEC.gov */
+.border-charcoal {border-color: $charcoal !important;}
+.border-dark-navy {border-color: $dark-navy !important;}
+.border-navy {border-color: $navy !important;}
+.border-gray-blue {border-color: $gray-blue !important;}
+.border-deep-sea {border-color: $deep-sea !important;}
+.border-azure {border-color: $azure !important;}
+.border-yellow-orange {border-color: $yellow-orange !important;}
+.border-raven {border-color: $raven !important;}
+.border-asphalt {border-color: $asphalt !important;}
+.border-serenity {border-color: $serenity !important;}
+.border-stone {border-color: $stone !important;}
+.border-cloudy-gray {border-color: $cloudy-gray !important;}
+.border-shadow {border-color: $shadow !important;}
+.border-mist {border-color: $mist !important;}
+.border-light-gray {border-color: $light-gray !important;}
+.border-porcelain {border-color: $porcelain !important;}
+.border-white-sand {border-color: $white-sand !important;}
+.border-white {border-color: $white !important;}
+
+/*  Double Letter Spacing  */
+.line-height-2x {line-height: 2;}
+
+
+/*  Button Icon Box  */
+.button-icon-box {
+  width: 100% !important;
+
+  &.margin-bottom-0 {
+    margin-bottom: 0;
+  }
+
+  span {
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+
+  a {
+    background-color: #E9E9E9;
+    border: thin solid #BFBFBF;
+    color: #273a56;
+
+    &.bkg-charcoal {background-color: $charcoal;}
+    &.bkg-dark-navy {background-color: $dark-navy;}
+    &.bkg-navy {background-color: $navy;}
+    &.bkg-gray-blue {background-color: $gray-blue;}
+    &.bkg-deep-sea {background-color: $deep-sea;}
+    &.bkg-azure {background-color: $azure;}
+    &.bkg-yellow-orange {background-color: $yellow-orange;}
+    &.bkg-raven {background-color: $raven;}
+    &.bkg-asphalt {background-color: $asphalt;}
+    &.bkg-serenity {background-color: $serenity;}
+    &.bkg-stone {background-color: $stone;}
+    &.bkg-cloudy-gray {background-color: $cloudy-gray;}
+    &.bkg-shadow {background-color: $shadow;}
+    &.bkg-mist {background-color: $mist;}
+    &.bkg-light-gray {background-color: $light-gray;}
+    &.bkg-porcelain {background-color: $porcelain;}
+    &.bkg-white-sand {background-color: $white-sand;}
+
+    &.border-charcoal {border-color: $charcoal;}
+    &.border-dark-navy {border-color: $dark-navy;}
+    &.border-navy {border-color: $navy;}
+    &.border-gray-blue {border-color: $gray-blue;}
+    &.border-deep-sea {border-color: $deep-sea;}
+    &.border-azure {border-color: $azure;}
+    &.border-yellow-orange {border-color: $yellow-orange;}
+    &.border-raven {border-color: $raven;}
+    &.border-asphalt {border-color: $asphalt;}
+    &.border-serenity {border-color: $serenity;}
+    &.border-stone {border-color: $stone;}
+    &.border-cloudy-gray {border-color: $cloudy-gray;}
+    &.border-shadow {border-color: $shadow;}
+    &.border-mist {border-color: $mist;}
+    &.border-light-gray {border-color: $light-gray;}
+    &.border-porcelain {border-color: $porcelain;}
+    &.border-white-sand {border-color: $white-sand;}
+
+    &.text-charcoal {color: $charcoal;}
+    &.text-dark-navy {color: $dark-navy;}
+    &.text-navy {color: $navy;}
+    &.text-gray-blue {color: $gray-blue;}
+    &.text-deep-sea {color: $deep-sea;}
+    &.text-azure {color: $azure;}
+    &.text-yellow-orange {color: $yellow-orange;}
+    &.text-raven {color: $raven;}
+    &.text-asphalt {color: $asphalt;}
+    &.text-serenity {color: $serenity;}
+    &.text-stone {color: $stone;}
+    &.text-cloudy-gray {color: $cloudy-gray;}
+    &.text-shadow {color: $shadow;}
+    &.text-mist {color: $mist;}
+    &.text-light-gray {color: $light-gray;}
+    &.text-porcelain {color: $porcelain;}
+    &.text-white-sand {color: $white-sand;}
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #273a56;
+      border-color: #273a56;
+      color: #FFC057;
+
+      &.bkg-charcoal--hover {background-color: $charcoal;}
+      &.bkg-dark-navy--hover {background-color: $dark-navy;}
+      &.bkg-navy--hover {background-color: $navy;}
+      &.bkg-gray-blue--hover {background-color: $gray-blue;}
+      &.bkg-deep-sea--hover {background-color: $deep-sea;}
+      &.bkg-azure--hover {background-color: $azure;}
+      &.bkg-yellow-orange--hover {background-color: $yellow-orange;}
+      &.bkg-raven--hover {background-color: $raven;}
+      &.bkg-asphalt--hover {background-color: $asphalt;}
+      &.bkg-serenity--hover {background-color: $serenity;}
+      &.bkg-stone--hover {background-color: $stone;}
+      &.bkg-cloudy-gray--hover {background-color: $cloudy-gray;}
+      &.bkg-shadow--hover {background-color: $shadow;}
+      &.bkg-mist--hover {background-color: $mist;}
+      &.bkg-light-gray--hover {background-color: $light-gray;}
+      &.bkg-porcelain--hover {background-color: $porcelain;}
+      &.bkg-white-sand--hover {background-color: $white-sand;}
+
+      &.border-charcoal--hover {border-color: $charcoal;}
+      &.border-dark-navy--hover {border-color: $dark-navy;}
+      &.border-navy--hover {border-color: $navy;}
+      &.border-gray-blue--hover {border-color: $gray-blue;}
+      &.border-deep-sea--hover {border-color: $deep-sea;}
+      &.border-azure--hover {border-color: $azure;}
+      &.border-yellow-orange--hover {border-color: $yellow-orange;}
+      &.border-raven--hover {border-color: $raven;}
+      &.border-asphalt--hover {border-color: $asphalt;}
+      &.border-serenity--hover {border-color: $serenity;}
+      &.border-stone--hover {border-color: $stone;}
+      &.border-cloudy-gray--hover {border-color: $cloudy-gray;}
+      &.border-shadow--hover {border-color: $shadow;}
+      &.border-mist--hover {border-color: $mist;}
+      &.border-light-gray--hover {border-color: $light-gray;}
+      &.border-porcelain--hover {border-color: $porcelain;}
+      &.border-white-sand--hover {border-color: $white-sand;}
+
+      &.text-charcoal--hover {color: $charcoal;}
+      &.text-dark-navy--hover {color: $dark-navy;}
+      &.text-navy--hover {color: $navy;}
+      &.text-gray-blue--hover {color: $gray-blue;}
+      &.text-deep-sea--hover {color: $deep-sea;}
+      &.text-azure--hover {color: $azure;}
+      &.text-yellow-orange--hover {color: $yellow-orange;}
+      &.text-raven--hover {color: $raven;}
+      &.text-asphalt--hover {color: $asphalt;}
+      &.text-serenity--hover {color: $serenity;}
+      &.text-stone--hover {color: $stone;}
+      &.text-cloudy-gray--hover {color: $cloudy-gray;}
+      &.text-shadow--hover {color: $shadow;}
+      &.text-mist--hover {color: $mist;}
+      &.text-light-gray--hover {color: $light-gray;}
+      &.text-porcelain--hover {color: $porcelain;}
+      &.text-white-sand--hover {color: $white-sand;}
+
+      .fa {
+        color: inherit;
+      }
+      .svg-icon {
+        color: inherit;
+      }
+      .description {
+        color: inherit;
+      }
+    }
+    .description {
+      line-height: 1.4;
+      padding: 10px 20px;
+    }
+  }
+}
+
+
+/*  Fintech (spotlight/fintech) and Hurricane Spotlight pages (/page/2017-hurricane-relief-effort & linked pages) but can be used elsewhere as needed  */
+
+/*  Image hover effect */
+.item {
+	position: relative;
+	border: none;
+	overflow: hidden;
+}
+.item img {
+	max-width: 100%;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.item:hover img {
+	-webkit-transform: translate(0, 0) scale(1.1);
+	transform: translate(0, 0) scale(1.1);
+}
+
+/* Accordion styles */
+
+#accordion {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  h2 {
+    font-size: 14px;
+    margin: 0px;
+    padding: 10px;
+    background: rgba(24, 50, 112, 0.24);
+    font-family: raleway;
+    width: inherit;
+  }
+  .expander-icon {
+      margin-right: 15px;
+      font-size: 25px;
+      font-family: raleway;
+  }
+  li {
+    &.single {
+      background: rgba(25, 53, 92, 0.26);
+    }
+    &.expand {
+      &:hover {
+        background: rgba(22, 68, 112, 0.05);
+        cursor: pointer;
+      }
+    }
+    div {
+      display: none;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+    }
+
+  }
+}
+
+
+/*  Nav-button Box styles */
+
+.nav-box .button-box.active a {background: #2F64B1;}
+
+.nav-box .button-box.center.small-4 {
+  	clear: both;
+  	float: none !important;
+  	margin: 0 auto !important;
+}
+
+.nav-box .button-box a,
+.nav-box .button-box a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+@include breakpoint('small'){
+  .nav-box .small-4 {
+    width: 100%;
+  }
+}
+
+
+/* Alt-border styles */
+
+.alt-border-treatment {
+	border-top: none;
+	border-bottom: none;
+	border-left: 3px solid #273a56;
+	border-right: 3px solid #273a56;
+}
+
+@include breakpoint('small'){
+	.alt-border-treatment {
+		border-top: 3px solid #273a56;
+	  	border-bottom: 3px solid #273a56;
+	  	border-left: none;
+	  	border-right: none;
+	}
+}
+
+
+/* --------------------------------------- PAGE-SPECIFIC STYLES --------------------------------------- */
+
+/*  Jobs Act Spotlight: https://www.sec.gov/spotlight/jobs-act.shtml   */
+#tabs-jobsact .ui-tabs-panel {
+ padding: 10px;
+}
+#tabs-jobsact .ui-tabs-panel ul {
+  margin: 10px;
+}
+#accordion-rules h3 {
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #ebebeb;
+  border-left: none;
+  clear: both;
+  font-weight: 500;
+  outline: none;
+  position: relative;
+}
+#accordion-rules h3.ui-state-active {
+  border-bottom: none;
+}
+#accordion-rules .ui-accordion-content.ui-accordion-content-active {
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #EBEBEB;
+  border-left: none;
+}
+
+#accordion-rules .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  left: 0.25em;
+  top: 1.35em;
+}
+
+#accordion-rules dl {
+  min-height: 120px;
+}
+
+/*  Feds Feeds Families: https://www.sec.gov/spotlight/feds-feed-families-2017.shtml  */
+@media only screen and (min-width:1024px) {
+.feds-feeds-logo {margin-left:20px;}
+}
+
+/*  Cybersecurity Spotlight: https://www.sec.gov/spotlight/feds-feed-families-2017.shtml  */
+#cybersecurity-info .fa {
+	background-color: transparent;
+    border-radius: none;
+    color: #273a56;
+    padding: 0;}
+
+#cybersecurity-info .fa:hover {background-color: transparent;}
+
+#tabs-resources li.ui-state-default {
+  background-color: #273a56;
+}
+#tabs-resources li.ui-state-default a {
+  color: #FFF;
+}
+#tabs-resources li.ui-tabs-active {
+  background-color: #FFC057;
+}
+#tabs-resources li.ui-tabs-active a {
+  color: #273a56;
+}
+
+
+/*  Whistleblower 100 Million Spotlight: https://www.sec.gov/page/whistleblower-100million  */
+.responsive-iframe {margin: 0 auto; max-width: 880px; position: relative; height: 0; padding-bottom: 50%; /*2:1 ratio*/}
+.responsive-iframe iframe {height:100%; position: absolute; top: 0; left: 0; width: 100%;}
+.responsive-iframe iframe::-webkit-scrollbar {display: none;}
+
+#regionalOfficeMap {
+  max-width: 100%;
+  height: 300px;
+}

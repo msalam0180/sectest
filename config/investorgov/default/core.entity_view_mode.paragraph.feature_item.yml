@@ -1,0 +1,10 @@
+uuid: aafa1923-e9bb-41dd-abc6-733459308d5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.feature_item
+label: 'Feature item'
+targetEntityType: paragraph
+cache: true

@@ -1,0 +1,28 @@
+{% set positionTitle = '' %}
+{% set positionType = '' %}
+{% set firstName = node.field_first_name_secperson.value %}
+{% set lastName = node.field_last_name_secperson.value %}
+{# Loop to determine current position #}
+{# break var simulates break command in twig #}
+{% set break = false %} 
+{% for item in node.field_position_history_paragraph if not break %}
+    {% if item.entity.field_current_position.value %}
+        {% set positionType = item.entity.field_position_category.value == 'Chair' ? 'Chairman' : item.entity.field_position_category.value %}
+        {% set positionTitle = item.entity.field_position_title.value %}
+        {% set break = true %}
+    {% endif %}
+{% endfor %}
+<span class="person-title-only">
+    {% if positionType is same as('Chairman') %}
+    {% if positionTitle == true %}
+            {{ positionTitle }} {{ firstName }} {{ lastName }}
+    {% else %}
+            {{ positionType }} {{ firstName }} {{ lastName }}
+    {% endif %}
+    {% elseif positionType is same as('Commissioner') %}
+        {{ positionType }} {{ firstName }} {{ lastName }}
+    {% else %}
+        {{ firstName }} {{ lastName }}<br/><em>{{ positionTitle }}</em>
+    {% endif %}
+</span>
+</a>

@@ -1,0 +1,21 @@
+uuid: 817306b5-9996-4455-9b4c-c8e4ca1a0401
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_dictionary_notes
+    - node.type.secarticle
+  module:
+    - text
+id: node.secarticle.field_data_dictionary_notes
+field_name: field_data_dictionary_notes
+entity_type: node
+bundle: secarticle
+label: 'Data Dictionary Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,49 @@
+uuid: c384b20e-1183-47a6-9e7f-562363cc26e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '0'
+    edit_location: ''
+    edit_destination: 0
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: 1OchZ8xghmlhxesJkgBxOvk3qRXllaFUF6wZfa4lya0
+name: 'Data Distribution'
+type: data_distribution
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

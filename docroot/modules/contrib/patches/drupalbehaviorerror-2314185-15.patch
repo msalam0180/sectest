@@ -1,0 +1,15 @@
+diff --git a/core/modules/quickedit/js/quickedit.js b/core/modules/quickedit/js/quickedit.js
+index 56bb746..98e9a9e 100644
+--- a/core/modules/quickedit/js/quickedit.js
++++ b/core/modules/quickedit/js/quickedit.js
+@@ -185,6 +185,10 @@
+     if (entityElement.length === 0) {
+       var $lowestCommonParent = $entityElement.parents().has(fieldElement).first();
+       entityElement = $lowestCommonParent.find($entityElement);
++
++      if (entityElement.length === 0) {
++        return;
++      }
+     }
+     var entityInstanceID = entityElement.get(0).getAttribute('data-quickedit-entity-instance-id');
+

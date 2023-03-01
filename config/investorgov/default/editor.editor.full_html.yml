@@ -1,0 +1,86 @@
+uuid: 520cc130-c2ad-4c7b-bab0-04fafa6fb65a
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: 967ijj7p6i7rwrYl7r08WQFeCY_c23YAh0h8u-w_CXM
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - Outdent
+            - Indent
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Edit
+          items:
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+        -
+          name: Media
+          items:
+            - Blockquote
+            - embed_entity
+            - DrupalImage
+            - Table
+            - HorizontalRule
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
+          name: Styles
+          items:
+            - Styles
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - Source
+            - Maximize
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: media_linkit
+    stylescombo:
+      styles: "div.pullquote | Pullquote\r\ndiv.pullquote.offset| Pullquote Offset\r\ndiv.igovBox | iGovBox\r\nh2.text--alt--lg|H2 Smaller Alt\r\nh2.text--alt--md.fw700|H2 Smallest Alt\r\nh3.text--md|H3 Smaller Alt\r\nh3.text--sm.fw700|H3 Smallest Alt\r\ndiv.footnote|Footnote\r\ndiv.by-line|By Line\r\np.text--cke-lg| P Large font\r\np.text--cke-sm| P Small font\r\np.text--cke-xs| P Smallest font"
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

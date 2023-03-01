@@ -1,0 +1,23 @@
+uuid: 45f99483-52f3-46fe-b8e3-cccb46cddeb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_text_theme
+  module:
+    - options
+id: block_content.hero.field_text_theme
+field_name: field_text_theme
+entity_type: block_content
+bundle: hero
+label: 'Text Theme'
+description: 'If you use a dark background image, then you MUST to use the dark theme. If not, then you have the option of the light theme, but you Must then test for 508 compliance. The dark theme is always accessible.'
+required: true
+translatable: false
+default_value:
+  -
+    value: dark
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: ce9533e7-3d64-4f8e-af6c-10b6c584f117
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.release_topper
+    - field.storage.block_content.field_introduction
+  module:
+    - text
+id: block_content.release_topper.field_introduction
+field_name: field_introduction
+entity_type: block_content
+bundle: release_topper
+label: Introduction
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

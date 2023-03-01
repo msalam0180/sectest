@@ -1,0 +1,27 @@
+uuid: fc89ca05-8b04-4bfb-8d0e-f75d1e672d08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_market_statistics_category
+    - node.type.secarticle
+id: node.secarticle.field_market_statistics_category
+field_name: field_market_statistics_category
+entity_type: node
+bundle: secarticle
+label: 'Market Statistics Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      market_statistics_category: market_statistics_category
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

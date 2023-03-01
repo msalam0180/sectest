@@ -1,0 +1,22 @@
+uuid: 3c4f7441-e8f2-4af9-9515-0e5eba2327d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - investor
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: investor_messages
+theme: investor
+region: admin_details
+weight: -11
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: visible
+  provider: system
+visibility: {  }

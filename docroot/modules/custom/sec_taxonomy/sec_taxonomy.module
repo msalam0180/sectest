@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_taxonomy.module.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+ /*
+  * Implements hook_cron
+  */
+
+function sec_taxonomy_cron() {
+  try {
+
+    \Drupal::logger('SEC Taxonomy')->notice('SEC Taxonomy cron::begin');
+    $datetzny = new DateTimeZone('America/New_York');
+    $datetimeny = new DateTime("now", $datetzny);
+    $offset_s = $datetzny->getOffset($datetimeny);
+    $offset_f = sprintf('%03d:%02d:%02d', ($offset_s/3600),($offset_s/60%60), $offset_s%60);
+
+    $tid = _sec_taxonomy_get_taxonomy_term_id('sec_system_variables', 'America/Eastern TZ Offset');
+    $term = Term::load($tid);
+    if ($term) {
+      $term_offset = $term->field_system_variable_value->value;
+      
+      if ($term_offset != $offset_f) {
+        $term->field_system_variable_value->value = $offset_f;
+        $term->save();
+        \Drupal::logger('SEC Taxonomy')->notice('SEC Taxonomy cron::field_system_variable_value updated');
+      }
+    }
+    \Drupal::logger('SEC Taxonomy')->notice('SEC Taxonomy cron::end');
+  }
+
+
+  catch(Exception $e) {
+    \Drupal::logger('SEC Taxonomy')->error('Exception raised in sec_taxonomy_cron: ' . $e->getMessage());
+  }
+}
+
+/*
+ * Function for retrieving America/Eastern timezone offset from taxonomy
+ */
+function _sec_taxonomy_get_tz_offset() {
+  $tid = _sec_taxonomy_get_taxonomy_term_id('sec_system_variables', 'America/Eastern TZ Offset');
+  $term = Term::load($tid);
+  $term_offset = $term->field_system_variable_value->value;
+  if ($term_offset != '') {
+    return $term_offset;
+  }
+  return false;
+}
+
+/*
+ * Function for term_id based on vocabulary id and term name
+ */
+function _sec_taxonomy_get_taxonomy_term_id($vid, $term) {
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', $vid);
+  $query->condition('name', $term);
+  $query->sort('weight');
+  $tids = $query->execute();
+  foreach($tids as $tid) {
+    return intval($tid);
+  }
+}

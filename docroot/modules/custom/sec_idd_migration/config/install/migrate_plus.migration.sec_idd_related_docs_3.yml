@@ -1,0 +1,73 @@
+id: sec_idd_related_docs_3
+label: JSON import of Individual Defendants Database Related Documents 3
+migration_group: sec
+migration_tags:
+  - sec_idd_related_docs_3
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/files/migration/source/sec_idd.json
+  fields:
+    -
+      name: related_document_link_3
+      label: 'related_document_link_3'
+      selector: related_document_link_3
+    -
+      name: related_document_link_name_3
+      label: 'related_document_link_name_3'
+      selector: related_document_link_name_3    
+    -
+      name: related_document_link_3_type
+      label: 'related_document_link_3_type'
+      selector: related_document_link_3_type
+    -
+      name: related_document_link_3_document_date
+      label: 'related_document_link_3_document_date'
+      selector: related_document_link_3_document_date
+    
+  ids:
+    related_document_link_3:
+      type: string
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: related_document_s_
+
+  field_static_file/target_id:
+    -
+      plugin: skip_on_contains
+      contains: 'http'
+      method: process     
+      source: related_document_link_3
+    -
+      plugin: migration_lookup
+      migration: sec_idd_files_3  
+  field_document_type: related_document_link_3_type
+  field_document_url/uri: 
+    -
+      plugin: skip_on_empty
+      method: row
+      source: related_document_link_3
+    -
+      plugin: skip_on_contains
+      contains: '-cv-'
+      method: process
+    -
+      plugin: get
+  field_document_url/title: related_document_link_name_3
+  field_document_date: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: related_document_link_3_document_date
+    -
+      plugin: format_date
+      from_format: 'n/j/Y'
+      to_format: 'Y-m-d'
+  
+destination:
+  plugin: 'entity_reference_revisions:paragraph'

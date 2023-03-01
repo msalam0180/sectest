@@ -1,0 +1,21 @@
+uuid: 6193e2fc-0fc6-4f61-a05e-2e569f96d59c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_last_name_secperson
+    - node.type.secperson
+_core:
+  default_config_hash: ofR09SAYx7sVNEWqMi45RInNEN9kvOELMIAfRHHax9Q
+id: node.secperson.field_last_name_secperson
+field_name: field_last_name_secperson
+entity_type: node
+bundle: secperson
+label: 'Last Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

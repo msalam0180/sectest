@@ -1,0 +1,8 @@
+uuid: f73d33b4-4563-4e98-9def-4163879b225f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Sub-Type'
+vid: article_sub_type
+description: ''
+weight: -9

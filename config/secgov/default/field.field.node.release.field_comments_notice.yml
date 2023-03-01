@@ -1,0 +1,21 @@
+uuid: 52c5148f-13fe-4161-acaf-b87629167e1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments_notice
+    - node.type.release
+  module:
+    - text
+id: node.release.field_comments_notice
+field_name: field_comments_notice
+entity_type: node
+bundle: release
+label: 'Comments Due Text'
+description: 'This field will ONLY display if the "Comments Due Date" field is blank'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,44 @@
+id: sec_idd_related_docs_0
+label: JSON import of Individual Defendants Database Related Documents 0
+migration_group: sec
+migration_tags:
+  - sec_idd_related_docs_0
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/files/migration/source/sec_idd.json
+  fields:
+    -
+      name: file_no_link_aps
+      label: 'file_no_link_aps'
+      selector: file_no_link_aps
+    -
+      name: file_no_link_name_aps
+      label: 'file_no_link_name_aps'
+      selector: file_no_link_name_aps
+
+  ids:
+    file_no_link_aps:
+      type: string
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: related_document_s_
+
+  field_document_url/uri: 
+    -
+      plugin: skip_on_empty
+      method: row
+      source: file_no_link_aps
+    -
+      plugin: get
+  field_document_url/title: file_no_link_name_aps
+  
+
+  
+destination:
+  plugin: 'entity_reference_revisions:paragraph'

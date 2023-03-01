@@ -1,0 +1,25 @@
+uuid: 898d491b-19dc-4415-af2d-950ae312b2b4
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:8101f1a5-3f2f-4c1d-9c5e-2dbb67c6bc40'
+  module:
+    - block_content
+  theme:
+    - secgov
+id: dera_marketparticipants
+theme: secgov
+region: header
+weight: -23
+provider: null
+plugin: 'block_content:8101f1a5-3f2f-4c1d-9c5e-2dbb67c6bc40'
+settings:
+  id: 'block_content:8101f1a5-3f2f-4c1d-9c5e-2dbb67c6bc40'
+  label: DERA_Market-Participants
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

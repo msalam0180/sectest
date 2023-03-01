@@ -1,0 +1,17 @@
+uuid: d63b2625-339c-442e-9acd-56817462bed8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: fK2dGYuWD4r3Ou0TRzSGPtaWiY28I5qNJBgrt3mxadY
+name: video_gallery
+label: 'Video Gallery (256x144)'
+effects:
+  880dd4be-f6ee-4b74-944d-396e1e1d5b73:
+    uuid: 880dd4be-f6ee-4b74-944d-396e1e1d5b73
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 256
+      height: 144
+      anchor: center-center

@@ -1,0 +1,45 @@
+uuid: 74d2d47e-d7c2-4f75-a3db-f234d9fb75f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.customized_comment_form
+  module:
+    - node
+    - panelizer
+    - webform
+    - webform_node
+    - webform_templates
+id: webform
+label: Webform
+weight: 8
+is_admin: null
+permissions:
+  - 'access any webform configuration'
+  - 'access webform help'
+  - 'access webform overview'
+  - 'access webform submission user'
+  - 'administer panelizer node customized_comment_form content'
+  - 'administer panelizer node customized_comment_form defaults'
+  - 'administer panelizer node customized_comment_form layout'
+  - 'administer webform templates'
+  - 'create customized_comment_form content'
+  - 'create webform'
+  - 'delete any customized_comment_form content'
+  - 'delete own customized_comment_form content'
+  - 'delete own webform'
+  - 'delete own webform submission'
+  - 'edit any customized_comment_form content'
+  - 'edit any webform'
+  - 'edit own customized_comment_form content'
+  - 'edit own webform'
+  - 'edit webform assets'
+  - 'edit webform source'
+  - 'edit webform submissions own node'
+  - 'edit webform twig'
+  - 'revert customized_comment_form revisions'
+  - 'view any webform submission'
+  - 'view customized_comment_form revisions'
+  - 'view own webform submission'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

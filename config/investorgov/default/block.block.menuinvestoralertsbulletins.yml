@@ -1,0 +1,31 @@
+uuid: cecc6a2e-38fc-4bf3-be26-52466e7cc257
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:6fce7de2-fb91-4d67-bbc6-f276cd5c9e0b'
+  module:
+    - block_content
+    - system
+  theme:
+    - investor
+id: menuinvestoralertsbulletins
+theme: investor
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:6fce7de2-fb91-4d67-bbc6-f276cd5c9e0b'
+settings:
+  id: 'block_content:6fce7de2-fb91-4d67-bbc6-f276cd5c9e0b'
+  label: 'Menu: Investor Alerts & Bulletins'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/introduction-investing/general-resources/news-alerts/alerts-bulletins\r\nintroduction-investing/general-resources/news-alerts/alerts-bulletins/*"

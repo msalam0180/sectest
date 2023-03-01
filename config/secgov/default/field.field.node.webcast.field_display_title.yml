@@ -1,0 +1,19 @@
+uuid: 678db903-6e99-49bd-b60c-9fadb23ff3e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.webcast
+id: node.webcast.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: webcast
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,88 @@
+.mg-centered {
+  margin-left: auto;
+  margin-right: auto !important;
+  float: none !important;
+}
+
+.item-all {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid #E9E9E9 !important;
+}
+
+.media-boxes-search {
+  width: 100%;
+}
+
+/* ----------------------------------------------------------------------
+   MEDIA BOX GALLERY STYLES
+   ---------------------------------------------------------------------- */
+  @media only screen and (max-width: 800px) {
+    .js #local-nav {
+      padding: 20px 20px 0;
+    }
+    .media-boxes-search {
+      height: 40px !important;
+    }
+  }
+  .js #local-nav > ul > li > span,
+  .js #local-nav > ul > li > span.current,
+  .js #local-nav > ul > li > a {
+    background-color: transparent;
+  }
+  .js #local-nav > ul > li:first-child > a {
+    border-top-width: 1px;
+  }
+  .media-boxes-search {
+    border: 1px solid #aaa !important;
+    font-size: 12px !important;
+    min-height: 26px;
+    padding: 0.41667em !important;
+  }
+
+  .media-box-container {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    background: transparent;
+  }
+  .media-box-content {
+    background-color: #e9e9e9;
+    color: #273A56;
+  }
+  .media-box-title {
+    color: inherit;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+  }
+  .media-box-footer {padding: 20px 5px;}
+  img.mfp-img {
+    width: auto;
+  }
+  .mfp-bottom-bar {
+    font-family: Raleway, sans-serif;
+    font-size: 20px !important;
+    font-weight: 400;
+  }
+  .media-boxes-load-more-button {
+    clear: both;
+  }
+  .media-box-social-buttons em {
+    color: #C7C7C7;
+    -webkit-transition: color .1s;
+    -moz-transition: color .1s;
+    -o-transition: color .1s;
+    -ms-transition: color .1s;
+    transition: color .1s;
+  }
+  .media-box-social-buttons em:hover {
+    color: #273A56;
+  }
+  .svg-icon-circle-fill {
+    background-color: #C7C7C7;
+    border-radius: 50%;
+    color: #F8F8F8 !important;
+    margin: 0 .5em;
+  }
+  .svg-icon-circle-fill:hover {
+    background-color: #273a56;
+  }

@@ -1,0 +1,203 @@
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+@import './typography';  
+
+body {
+  min-width: 380px;
+}
+
+// Element Base Typography
+h2, h3, h4, h5, h6{
+  line-height: $heading-line-height;
+  color: $primary_1;
+  font-weight: 600;
+}
+
+h1, .block-entity-fieldnodetitle{
+  color: #6F7479; //TODO: replace with var
+  @extend .text--xxl;
+  font-weight: 600;
+  margin-top: 0;
+  font-size: 33px;
+}
+
+h2 {
+  @extend .text--alt--xl;
+  font-weight: normal;
+}
+
+h3 {
+  @extend .text--lg;
+}
+
+h4 {
+  @extend .text--md;
+}
+
+h5 {
+  @extend .text--sm;
+  font-weight: 700;
+}
+
+h6 {
+  @extend .text--xs;
+  font-weight: 600;
+  font-style: italic;  
+}
+
+p {
+  line-height: $body-line-height;
+  margin-bottom: $space-md;
+}
+
+ol, ul, dl{
+  margin-bottom: $space-md;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd{
+  text-indent: 15px;
+}
+
+// Links
+a{
+  &:link, &:hover, &:active, &:focus {
+    color: $anchor-color;
+    text-decoration: none;
+  }
+  
+  &:visited {
+    color: $anchor-color-visited;
+  }
+
+  &:hover, &:focus{
+    text-decoration: underline;
+  }
+}
+
+//external links
+svg.ext,  svg.mailto{
+  width: 11px;
+  height: 11px;
+  margin-left: 3px;
+  padding: 0;
+  position: relative;
+  top: -1px;
+  overflow: visible;
+}
+
+svg.ext,  svg.mailto{
+  fill: $base-text-color;
+  path{
+    stroke: $base-text-color;
+  }
+}
+
+em, i {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+address{
+  margin-bottom: $space-md;
+}
+
+hr {
+  border-top: 1px solid #BFBFBF;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+$border-color: #e3e3e3; //TODO: Check this color
+table {
+  margin-bottom: $space-md;
+  border: 1px solid $border-color;
+
+  th, td {
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+img, object, embed { max-width: 100%; height: auto; }
+
+object, embed { height: 100%; }
+
+img { -ms-interpolation-mode: bicubic; }
+
+img { display: inline-block; vertical-align: middle; }
+
+
+.node__content.main{
+  iframe, .flex-video{
+    margin-bottom: $space-sm;
+  }
+  p a{
+    word-break: break-word;
+  }
+}
+
+
+
+// TODO: Other Fixes : Move to correct places
+//TODO: Remove Role content
+.content-area {
+  padding-bottom: 40px;
+}
+
+.main-content [role="article"] {
+    float: none;
+}
+
+.main {
+    margin-bottom: 40px;
+}
+
+/* Fix Toolbar Tray Overlay */
+
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed {
+  margin-left: 0px;
+}
+
+
+//Tab Section
+.admin_details{
+  width: 100%;
+  .path-frontpage &{
+    display: none;
+  }
+  @media print{
+    display: none;
+  }
+}
+
+// add margins for heading created in a WYSIWYG editor
+.field--type-text-with-summary{
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+  }
+}
+
+// Helper Styles a user can add to a page in a WYSIWYG editor
+.footnote{
+  @extend .text--xs;
+  font-weight: 500;
+  font-style: italic;
+  border-top: 1px solid #bfbfbf;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.by-line{
+  color: #6F7479;
+  font-style: italic;
+}

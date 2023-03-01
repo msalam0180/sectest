@@ -1,0 +1,52 @@
+uuid: e873e888-7510-44cc-b79b-3f0af75c4ee2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.glossary_term.body
+    - field.field.node.glossary_term.field_additional_information
+    - field.field.node.glossary_term.field_alternate_name
+    - field.field.node.glossary_term.field_glossary_category
+    - field.field.node.glossary_term.field_related_content
+    - field.field.node.glossary_term.field_related_content_label
+    - field.field.node.glossary_term.field_show_featured_content
+    - node.type.glossary_term
+  module:
+    - text
+    - user
+id: node.glossary_term.default
+targetEntityType: node
+bundle: glossary_term
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_additional_information:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_alternate_name: true
+  field_glossary_category: true
+  field_related_content: true
+  field_related_content_label: true
+  field_show_featured_content: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: 1f1f52ff-09ca-4425-871e-fcf32ec99b52
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: niRAy4uGdPEp07jrReYRfxqUPacfMC9hAokINN8wKUY
+name: Target
+vid: target
+description: ''
+weight: 0

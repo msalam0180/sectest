@@ -1,0 +1,10 @@
+uuid: 33b3898e-6578-45c1-a327-3372e66280d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.thumbnail_title_teaser
+label: 'Thumbnail, Title, Teaser'
+targetEntityType: node
+cache: true

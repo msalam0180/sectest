@@ -1,0 +1,23 @@
+uuid: f8d08a30-3618-40d8-846a-daa66f361a90
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.storage.block_content.field_align_text
+  module:
+    - options
+id: block_content.hero.field_align_text
+field_name: field_align_text
+entity_type: block_content
+bundle: hero
+label: 'Align Text'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: center
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,50 @@
+//
+// DATA LIST PAGE
+// VIEW NAME: Data List Page
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.data-list {
+
+  .view-field-display-title-table-column {
+    width: 66%;
+    word-wrap: normal;
+  }
+  
+}
+
+@include breakpoint('small'){
+
+  .data-list {
+    thead th {
+      min-width: 90px;
+      &.views-field-field-date {
+        display: inline-block;
+      }
+      &.views-field-field-article-sub-type-secart {
+        display: none !important;
+      }
+    }
+  }
+
+  .data-list .list {
+    thead {
+      tr.header {
+        top:-42px;
+      }
+      th {
+        min-width: 90px;
+        &.views-field-field-display-title {
+        }
+        &#view-field-date-table-column {
+          display: inline-block;
+        }
+        &.views-field-field-article-sub-type-secart {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

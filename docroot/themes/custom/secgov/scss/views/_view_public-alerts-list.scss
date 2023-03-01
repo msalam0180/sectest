@@ -1,0 +1,55 @@
+//
+// PUBLIC ALERTS LIST PAGE
+// VIEW NAME: PAUSE List Page
+// 
+// --------------------------------------------------
+
+
+.pause-view {
+
+  header {
+    margin-bottom: 0 !important;
+  }
+
+  .stylized-box-1 {
+    padding: 20px;
+  }
+
+  .stylized-box-4 {
+    border-width: 1px;
+    margin-bottom: 0;
+    padding: 2.25em 3em 2em 2.5em;
+
+    label[for='listSearch'] {
+      display: table-cell;
+      height: 25px;
+      vertical-align: middle;
+    }
+  }
+
+  .subscribe-rss {display: none; visibility: hidden;}
+
+  label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+  }
+  
+  #tabs-pause li.ui-state-default a {
+    color: #273a56;
+  }
+  #tabs-pause li.ui-tabs-tab {
+    height: auto !important;
+  }
+  #tabs-pause li.ui-tabs-active {
+    background-color:#273a56 ; 
+  }
+  #tabs-pause li.ui-tabs-active a {
+    color: #FFC057;
+  }
+
+  #tabs-pause .ui-tabs-panel {
+    padding: 1em 1.5em 0;
+    min-height: 397px;
+  }
+
+}

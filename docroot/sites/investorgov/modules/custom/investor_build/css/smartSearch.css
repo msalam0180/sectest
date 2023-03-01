@@ -1,0 +1,125 @@
+.smart-search-container{
+    position: relative!important;
+    top: 0px!important;
+    padding: 0!important;
+    border: none!important;
+    margin: 0!important;
+    height: 0!important;
+    /*width: 100%!important;*/
+}
+div.smart-search-entity-hints {
+    text-align: left;
+    background-color: white !important;
+    border: darkgray thin solid !important;
+    position: absolute !important;
+    padding-bottom: 10px;
+    z-index: 1000 !important;
+    display: none;
+    border-bottom-right-radius: .25rem !important;
+    border-bottom-left-radius: .25rem !important;
+}
+div.smart-search-entity-hints a, div.smart-search-entity-hints span{
+    text-transform: none!important;
+    padding: 0!important;
+    display: inline!important;
+}
+div.smart-search-entity-hints span.smart-search-SEC-gov{
+    display:inline-block;
+    color: #404040!important;
+    font-weight: 900;
+    font-size: 1.15em;
+    margin: 20px 1px 10px 8px !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.smart-search-entity-hints span.smart-search-EDGAR{
+    border: none!important;
+    padding: 0!important;
+    text-transform: none!important;
+    display:inline-block!important;
+    color: #90AADC!important;
+    font-weight: 900;
+    font-size:  1.15em;
+    margin: 20px 1px 10px 8px !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div.smart-search-entity-hints span.smart-search-resources{
+    border: none!important;
+    padding: 0!important;
+    text-transform: none!important;
+    display:inline-block!important;
+    color: #404040!important;
+    font-weight: normal;
+    font-size:  1.15em;
+    margin: 20px 4px 10px 5px !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table.smart-search-entity-hints{
+    margin-left: 15px;
+    margin-bottom: 0;
+    width: fit-content;
+    table-layout: fixed;
+}
+table.smart-search-entity-hints, table.smart-search-entity-hints td.smart-search-hint-cik,  table.smart-search-entity-hints th {
+    border: none !important;
+    padding: 1px 10px!important;
+}
+table.smart-search-entity-hints td.smart-search-hint-entity{
+    border: none !important;
+    padding: 1px 10px 1px 10px !important;
+    text-indent: 0;
+    width: 300px !important;
+}
+
+table.smart-search-entity-hints td.smart-search-hint-cik{
+    width: 120px !important;
+}
+table.smart-search-entity-hints a, span.smart-search-search-text {
+    color: rgb(34, 70, 133)!important;
+}
+table.smart-search-entity-hints th {
+    font-weight: bold!important;
+}
+table.smart-search-entity-hints tr.smart-search-hint {
+    padding: 5px 10px;
+    border: none;
+    min-height: 10px!important;
+    cursor: pointer!important;
+    display: table-row!important;
+}
+div.smart-search-entity-hints .smart-search-selected-hint, div.smart-search-entity-hints .smart-search-selected-hint td {
+    background-color: lightblue;
+}
+/*table.smart-search-entity-hints:hover tr.smart-search-hint.smart-search-selected-hint, table.smart-search-entity-hints:hover #smart-search-sec-gov-website.smart-search-selected-hint, table.smart-search-entity-hints:hover #smart-search-edgar-full-text.smart-search-selected-hint{
+    background-color: white;
+}*/
+@media (max-width: 767px){
+    table.smart-search-entity-hints tr.smart-search-hint td.smart-search-hint-cik {
+        display: none;
+    }
+}
+tr.smart-search-hint:hover, .smart-search-sec-gov-website:hover, .smart-search-edgar-full-text:hover{
+    text-decoration: underline;
+    background-color: lightblue;
+}
+table.smart-search-entity-hints tr:visited{
+    color: #273a56!important;
+}
+
+.smart-search-edgar-full-text, .smart-search-sec-gov-website{
+    font-style: italic!important;
+    color: rgb(34, 70, 133)!important;
+    float: none;
+    margin: 0 0 0 35px!important;
+}
+.smart-search-sec-gov-website:hover {
+    text-decoration: underline;
+}
+.smart-search-edgar-full-text span, .smart-search-sec-gov-website span {
+    font-weight: bolder;
+}
+
+input#global-search-box::-ms-clear { display: none; }
+#global-nav.responsive{
+    overflow: visible!important;
+}

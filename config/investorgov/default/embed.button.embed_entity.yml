@@ -1,0 +1,29 @@
+uuid: c796883d-5adb-483c-9475-2f81d153d6fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.video
+  module:
+    - entity_embed
+    - media
+label: 'Embed Entity'
+id: embed_entity
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - audio
+    - file
+    - image
+    - video
+  display_plugins:
+    - 'entity_reference:entity_reference_entity_view'
+  entity_browser: ''
+  entity_browser_settings:
+    display_review: false
+icon: {  }
+icon_uuid: null

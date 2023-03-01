@@ -1,0 +1,19 @@
+uuid: 3acfe656-9d1e-4bf1-812b-1de3c3ac8107
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_submit_comments
+field_name: field_submit_comments
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

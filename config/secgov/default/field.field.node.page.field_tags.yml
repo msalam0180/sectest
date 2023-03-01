@@ -1,0 +1,23 @@
+uuid: 3a3fafab-3c68-489a-b851-aac67b3cbac5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.page
+_core:
+  default_config_hash: 5oWMsh9B6OTTMa6KRp_WRnfheHGbbw0DTYxH3T42heo
+id: node.page.field_tags
+field_name: field_tags
+entity_type: node
+bundle: page
+label: Tags
+description: 'Select the tag.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings: {  }
+field_type: entity_reference

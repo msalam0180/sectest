@@ -1,0 +1,44 @@
+uuid: 3d537e66-5667-463a-ab0e-1b12039d6092
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_item
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.list
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: paragraph.list.field_list_item
+field_name: field_list_item
+entity_type: paragraph
+bundle: list
+label: 'List Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      link: link
+      text: text
+      view: view
+    negate: 0
+    target_bundles_drag_drop:
+      link:
+        weight: 6
+        enabled: true
+      list:
+        weight: 5
+        enabled: false
+      text:
+        weight: 7
+        enabled: true
+      view:
+        weight: 8
+        enabled: true
+field_type: entity_reference_revisions

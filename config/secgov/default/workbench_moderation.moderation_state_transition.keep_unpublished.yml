@@ -1,0 +1,11 @@
+uuid: 3fb46c0c-9c65-469b-b879-f6a84536b5bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - workbench_moderation.moderation_state.archived
+id: keep_unpublished
+label: 'Keep Unpublished'
+stateFrom: archived
+stateTo: archived
+weight: -10

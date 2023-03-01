@@ -1,0 +1,24 @@
+uuid: 5b21909e-23d3-4beb-aa06-4116ba18949c
+langcode: en
+status: false
+dependencies:
+  module:
+    - workbench_moderation
+third_party_settings:
+  workbench_moderation:
+    enabled: 0
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+id: static_file
+label: 'Static File'
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: true
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

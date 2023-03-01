@@ -1,0 +1,443 @@
+uuid: db3a3748-42da-4232-a300-b24cffb61dfa
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: GQ48s2wMsw9EAoIrLk9thQfzCz1uyapYx7bheVo7pZA
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: request_appeal
+title: 'Freedom of Information Act Appeal'
+description: ''
+category: ''
+elements: |-
+  header:
+    '#type': processed_text
+    '#text': |
+      <p>Please call the FOIA Office phone: (202) 551-7900 for assistance filing an appeal.</p>
+
+      <p>Under the FOIA, you have the right to appeal any adverse determination denying your request. The following are adverse determinations and are subject to appeal:</p>
+
+      <ul>
+      	<li>A requested record is denied in whole or in part.</li>
+      	<li>A search of files failed to identify responsive records.</li>
+      	<li>The denial of a fee category claim by a requester, the denial of a request for waiver or reduction of fees, and a dispute regarding fee estimates.</li>
+      	<li>A determination not to grant expedited processing.</li>
+      	<li>Not providing a response determination to a FOIA request within the statutory time limits.</li>
+      	<li>Any determination found to be adverse in nature by the requester.</li>
+      </ul>
+
+      <p>See the <a href="http://www.ecfr.gov/cgi-bin/retrieveECFR?gp=&amp;SID=a2195d9e0503544dad5a2ddeca6576ac&amp;r=PART&amp;n=pt17.3.200#se17.3.200_180">SEC FOIA Regulations</a> on appeals at 17 CFR 200.80 (f).</p>
+
+      <p><u>Three different methods are available for submitting FOIA Appeals</u>:</p>
+
+      <ol>
+      	<li>Online Form – Submit your request using a form that is fillable online. This is the preferred method for submitting requests, due the quality of copy and its compatibility with our FOIA tracking system.
+      	<p><a href="#appeal" style="border-radius: 1em; color: black; font-weight: bold; text-decoration: none; background-color: rgb(102, 153, 255);">&nbsp;CLICK HERE TO ACCESS THE ONLINE APPEAL FORM&nbsp;</a></p>
+      	</li>
+      	<li>Postal Mail or Courier – Submit your request by mailing the required documentation to:
+      	<p>Securities and Exchange Commission<br />
+      	Office of FOIA Services<br />
+      	ATTN: FOIA Appeals<br />
+      	100 F Street NE, Mail Stop 2465<br />
+      	Washington, DC 20549</p>
+      	</li>
+      	<li>Facsimile (Fax) – Submit your request by facsimile to:
+      	<p>(202) 772-9337</p>
+      	</li>
+      </ol>
+
+      <p><a id="appeal"></a></p>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  contact_information:
+    '#type': fieldset
+    '#title': 'Contact Information'
+    name:
+      '#type': webform_name
+      '#title': Name
+      '#required': true
+      '#title__title': Prefix
+      '#title__options': titles_modern
+      '#first__required': true
+      '#middle__title': MI
+      '#last__required': true
+      '#suffix__description': 'Examples: Jr., Ph.D., CPA, Esquire'
+      '#degree__access': false
+    telephone:
+      '#type': tel
+      '#title': Telephone
+      '#required': true
+    email:
+      '#type': email
+      '#title': Email
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    company_name_if_applicable:
+      '#type': textfield
+      '#title': 'Company Name, if Applicable'
+    address:
+      '#type': webform_address
+      '#title': Address
+      '#description_display': invisible
+      '#access_create_roles': {  }
+      '#access_create_users':
+        - '1'
+      '#address__access': false
+      '#address_2__access': false
+      '#city__access': false
+      '#state_province__access': false
+      '#postal_code__access': false
+      '#country__access': false
+    advanced_address:
+      '#type': address
+      '#title': Address
+      '#required': true
+      '#default_value': |-
+        country_code: US
+        langcode: ''
+        address_line1: ''
+        address_line2: ''
+        locality: ''
+        administrative_area: ''
+        postal_code: ''
+        given_name: null
+        additional_name: null
+        family_name: null
+        organization: null
+        sorting_code: null
+        dependent_locality: null
+      '#field_overrides':
+        givenName: hidden
+        additionalName: hidden
+        familyName: hidden
+        organization: hidden
+        dependentLocality: hidden
+  appeal_details:
+    '#type': fieldset
+    '#title': 'Appeal Details'
+    foia_request_number:
+      '#type': textfield
+      '#title': 'FOIA Request Number'
+      '#required': true
+    foia_request_subject:
+      '#type': textfield
+      '#title': 'FOIA Request Subject'
+    name_of_the_deciding_official:
+      '#type': textfield
+      '#title': 'Name of the Deciding Official'
+    date_of_denial:
+      '#type': date
+      '#title': 'Date of Denial'
+      '#required': true
+    adverse_decision:
+      '#type': select
+      '#title': 'Adverse Decision'
+      '#multiple': true
+      '#options':
+        - 'ADEQUACY OF SEARCH (No Information Found)'
+        - 'EXPEDITED PROCESSING DENIAL'
+        - 'FEE CLASSIFICATION'
+        - 'FEE WAIVER DENIAL'
+        - 'FIFO DETERMINATION'
+        - 'TIMELINESS OF RESPONSE'
+        - '(b)(2) DENIAL'
+        - '(b)(3) DENIAL'
+        - '(b)(4) DENIAL'
+        - '(b)(5) DENIAL'
+        - '(b)(6) DENIAL'
+        - '(b)(7)(A) DENIAL'
+        - '(b)(7)(B) DENIAL'
+        - '(b)(7)(C) DENIAL'
+        - '(b)(7)(D) DENIAL'
+        - '(b)(7)(E) DENIAL'
+        - '(b)(7)(F) DENIAL'
+        - '(b)(8) DENIAL'
+        - OTHER
+      '#required': true
+    your_foia_appeal:
+      '#type': textarea
+      '#title': 'Your FOIA Appeal'
+      '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">The appeal should state why the requester disagrees with the determination and provide any additional supporting information.</span>'
+      '#description_display': before
+    attachment_file:
+      '#type': webform_document_file
+      '#title': 'Attachment File'
+      '#max_filesize': '10'
+      '#file_extensions': 'txt pdf doc docx'
+  privacy:
+    '#type': processed_text
+    '#text': '<p>Please read our <a target="_blank" href="http://www.sec.gov/privacy.htm">Privacy Act Notice</a> to learn more about how we may use the information you send to us.</p>'
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/request_appeal
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: foiapa@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]-[webform_submission:values:name] '
+      body: "<p><span style=\"font-size:11pt\">Submitted on [webform_submission:created]</span></p>\r\n\r\n<p><span style=\"font-size:11pt\">[webform_submission:values]</span></p>"
+      excluded_elements:
+        address: address
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: true
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

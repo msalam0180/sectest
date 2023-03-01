@@ -1,0 +1,25 @@
+uuid: 87f9f840-7514-44cc-8e28-fcce6e2ace0a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0535507c-803b-48e5-be6d-59bd234da454'
+  module:
+    - block_content
+  theme:
+    - investor
+id: footeremailsignup
+theme: investor
+region: footer
+weight: -10
+provider: null
+plugin: 'block_content:0535507c-803b-48e5-be6d-59bd234da454'
+settings:
+  id: 'block_content:0535507c-803b-48e5-be6d-59bd234da454'
+  label: 'Footer - Email Signup'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

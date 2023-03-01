@@ -1,0 +1,23 @@
+uuid: b81bbafd-9bde-4cf8-af48-66b70beb5c2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_top_right_column
+    - node.type.news
+  module:
+    - text
+_core:
+  default_config_hash: f0eu2Wh7VPyv4zz9cZdfO74NOXjOi1ZhDy8JRbct4uI
+id: node.news.field_top_right_column
+field_name: field_top_right_column
+entity_type: node
+bundle: news
+label: 'Top Right Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

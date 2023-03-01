@@ -1,0 +1,355 @@
+$usa-banner-bg-color: #f0f0f0;
+$usa-banner-link-color: darken($primary_3, 5%);
+
+.usa-banner {
+  background-color: $usa-banner-bg-color;
+  @media (min-width: 40em) {
+    font-size: 0.87rem;
+    padding-bottom: 0;
+  }
+
+  @media print {
+    display: none;
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Layout                                   */
+  /* -------------------------------------------------------------------------- */
+  .grid-row {
+    display: flex;
+    flex-wrap: wrap;
+    &.grid-gap-lg {
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
+    &.grid-gap-lg > * {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+  [class*="grid-col"] {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .grid-col-auto {
+    width: auto;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+  .grid-col-fill {
+    flex: 1 0 0;
+    width: auto;
+    max-width: 100%;
+  }
+
+  @media (min-width: 40em) {
+    .tablet\:grid-col-auto {
+      width: auto;
+      max-width: 100%;
+    }
+    .tablet\:grid-col-auto {
+      flex: 0 0 auto;
+    }
+    .tablet\:grid-col-6 {
+      width: 50%;
+    }
+    .tablet\:grid-col-6 {
+      flex: 0 0 auto;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                                   Header                                   */
+  /* -------------------------------------------------------------------------- */
+  
+  .usa-banner__header {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 0.8rem;
+    min-height: 3rem;
+    position: relative;
+    @media (min-width: 40em) {
+      padding-bottom: 0.25rem;
+      padding-top: 0.25rem;
+      min-height: 0;
+    }
+  }
+
+  .usa-banner__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $site-width;
+    padding-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-right: 0;
+    @media (min-width: 40em) {
+      align-items: center;
+      padding-left: 10px;
+    }
+  }
+
+  .usa-banner__header-text {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+  
+  @media (max-width: 39.99em) {
+    .usa-banner__header--expanded .usa-banner__header-text{
+      max-width: 70%;
+    }
+  }
+
+  .usa-banner__header-action {
+    color: $usa-banner-link-color;
+    line-height: 1.1;
+    margin-bottom: 0;
+    margin-top: 2px;
+    text-decoration: underline;
+
+    @media (min-width: 40em) {
+      display: none;
+    }
+    //arrow icon
+    &:after {
+      background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-down-primary.svg),
+        linear-gradient(transparent, transparent);
+      background-position: 45% 45%;
+      background-repeat: no-repeat;
+      background-size: 0.5rem;
+      content: "";
+      display: inline-block;
+      height: 0.5rem;
+      width: 0.5rem;
+      margin-left: 0.25rem;
+    }
+
+    &:hover:after {
+      background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-down-primary-hover.svg),
+        linear-gradient(transparent, transparent);
+      background-repeat: no-repeat;
+    }
+  }
+
+  .usa-banner__header-flag {
+    float: left;
+    margin-right: 0.5rem;
+    width: 1rem;
+  }
+
+  .usa-banner__header--expanded {
+    @media (min-width: 40em) {
+      background-color: transparent;
+      // color: #1b1b1b;
+      display: block;
+      font-size: 0.8rem;
+      min-height: 0;
+      padding-right: 0;
+    }
+    .usa-banner__inner {
+      margin-left: 0;
+      @media (min-width: 40em) {
+        margin-left: auto;
+      }
+    }
+    .usa-banner__header-action {
+      display: none;
+    }
+  }
+
+  .usa-banner__button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    color: $usa-banner-link-color;
+    text-decoration: underline;
+    vertical-align: baseline;
+    display: block;
+    font-size: 0.8rem;
+    height: auto;
+    line-height: 1.1;
+    padding: 0;
+    text-decoration: none;
+    width: auto;
+
+    &:hover {
+      color: darken($usa-banner-link-color, 5%);
+    }
+    &:active {
+      color: $usa-banner-link-color;
+    }
+    &:focus {
+      color: darken($usa-banner-link-color, 5%);
+      outline: 0.25rem solid #2491ff;
+      outline-offset: 0;
+    }
+    &:visited {
+      color: $usa-banner-link-color;
+    }
+
+    &:active,
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+
+    @media (min-width: 40em) {
+      position: static;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      top: auto;
+      display: inline;
+      margin-left: 0.5rem;
+      position: relative;
+
+      &:after {
+        background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-down-primary.svg),
+          linear-gradient(transparent, transparent);
+        background-position: 45% 45%;
+        background-repeat: no-repeat;
+        background-size: 0.5rem;
+        content: "";
+        display: inline-block;
+        height: 0.5rem;
+        width: 0.5rem;
+        margin-left: 2px;
+      }
+
+      &:hover:after {
+        background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-down-primary-hover.svg),
+          linear-gradient(transparent, transparent);
+        background-repeat: no-repeat;
+      }
+    }
+
+    @media (max-width: 39.99em) {
+      width: 100%;
+    }
+
+    &[aria-expanded="true"] {
+      background-image: none;
+      @media (min-width: 40em) {
+        height: auto;
+        padding: 0;
+        position: relative;
+      }
+      &:after {
+        position: absolute;
+        right: 1rem;
+        top: 0.75rem;
+        @media (min-width: 40em) {
+          position: static;
+          background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-up-primary.svg),
+            linear-gradient(transparent, transparent);
+          background-position: 45% 45%;
+          background-repeat: no-repeat;
+          background-size: 0.5rem;
+          content: "";
+          display: inline-block;
+          height: 0.5rem;
+          width: 0.5rem;
+          margin-left: 2px;
+        }
+        @media (max-width: 39.99em) {
+          background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/close-blue-60v-alt.svg),
+            linear-gradient(transparent, transparent);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: 1rem;
+          content: "";
+          display: inline-block;
+          height: 3rem;
+          width: 3rem;
+          margin-left: 0;
+          top: 0;
+          position: absolute;
+          right: 0;
+          background-color: #dcdee0;
+          bottom: 0;
+          height: auto;
+        }
+      }
+      &:hover:after {
+        @media (min-width: 40em) {
+          background-image: url(/sites/investorgov/themes/custom/investor/libraries/uswds/img/angle-arrow-up-primary-hover.svg),
+            linear-gradient(transparent, transparent);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+
+  .usa-banner__button-text {
+    position: absolute;
+    left: -999em;
+    text-decoration: underline;
+    @media (min-width: 40em) {
+      position: static;
+      display: inline;
+    }
+  }
+
+  /* -------------------------------------------------------------------------- */
+  /*                      Content (Hide and show section)                       */
+  /* -------------------------------------------------------------------------- */
+  .usa-banner__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $site-width;
+    background-color: transparent;
+    font-size: 1rem;
+    overflow: hidden;
+    padding: 0.25rem 1rem 1rem 0.5rem;
+    width: 100%;
+    & > :first-child {
+      margin-top: 0;
+    }
+    & > :last-child {
+      margin-bottom: 0;
+    }
+    p:first-child {
+      margin: 0;
+    }
+    @media (min-width: 40em) {
+      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+    }
+  }
+
+  //Columns in content
+  .usa-banner__guidance {
+    padding-top: 1rem;
+    @media (min-width: 40em) {
+      padding-top: 0;
+    }
+  }
+
+  //images in content
+  .usa-banner__icon {
+    width: 2.5rem;
+  }
+
+  .usa-media-block__img {
+    float: left;
+    margin-right: 0.5rem;
+  }
+
+  .usa-media-block__body {
+    overflow: hidden;
+  }
+
+}

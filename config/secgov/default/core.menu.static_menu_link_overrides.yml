@@ -1,0 +1,51 @@
+_core:
+  default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM
+definitions:
+  contact__site_page:
+    menu_name: footer
+    parent: ''
+    weight: -30
+    expanded: false
+    enabled: false
+  standard__front_page:
+    menu_name: main
+    parent: ''
+    weight: -35
+    expanded: false
+    enabled: false
+  block__admin_display_view__block_content__page_1:
+    menu_name: admin
+    parent: block.admin_display
+    weight: 0
+    expanded: false
+    enabled: false
+  comment__admin:
+    menu_name: admin
+    parent: system.admin_content
+    weight: 1
+    expanded: false
+    enabled: true
+  'admin_toolbar_tools__extra_links:view__files':
+    menu_name: admin
+    parent: system.admin_content
+    weight: 3
+    expanded: false
+    enabled: true
+  'admin_toolbar_tools__extra_links:media_page':
+    menu_name: admin
+    parent: system.admin_content
+    weight: 4
+    expanded: false
+    enabled: true
+  'admin_toolbar_tools__extra_links:add_media':
+    menu_name: admin
+    parent: system.admin_content
+    weight: 5
+    expanded: false
+    enabled: true
+  entity__scheduled_update__collection:
+    menu_name: admin
+    parent: system.admin_content
+    weight: 6
+    expanded: false
+    enabled: true

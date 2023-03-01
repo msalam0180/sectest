@@ -1,0 +1,12 @@
+//
+// COMMA SEPERATED
+// PARAGRAPH VIEW MODE: Comma Seperated
+// Using this display mode on an entity will create a comma seperated list of fields (may take some configuring in the UI)
+//
+// --------------------------------------------------
+
+.paragraph--view-mode--comma-seperated{
+	& > div{
+		display: inline-block;
+	}
+}

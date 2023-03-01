@@ -1,0 +1,53 @@
+# Migration Group for nodes
+id: investor_nodes_group
+label: Investor Nodes Group
+description: Common config for Investor node migrations
+
+# Here we add any default configuration settings to be shared
+# among all migrations in the group.
+shared_configuration:
+  source:
+    key: investor_d7_migrate
+
+  destination:
+    plugin: entity:node
+
+  process:
+    nid: nid
+    vid: vid
+    type: type
+    title: title
+    langcode:
+      plugin: default_value
+      default_value: 'en'
+    uid:
+      plugin: default_value
+      default_value: 1
+    status: status
+    created: created
+    changed: changed
+    comment: comment
+    promote: promote
+    sticky: sticky
+
+    'path/pathauto':
+      plugin: default_value
+      default_value: 0 # Disable pathauto.
+    'path/alias': alias
+  
+    body:
+      plugin: iterator
+      source: body
+      process:
+        format:
+          plugin: static_map
+          bypass: true
+          source: format
+          map:
+            plain_text: plain_text
+            filtered_html: basic_html
+            full_html: full_html
+        value: value
+        summary: summary
+
+  dependencies: { }

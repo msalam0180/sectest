@@ -1,0 +1,14 @@
+uuid: 003b2898-7dd0-4366-84b6-9d04fdace770
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.division_office_admin
+  module:
+    - user
+id: user_add_role_action.division_office_admin
+label: 'Add the Division/Office Admin role to the selected users'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: division_office_admin

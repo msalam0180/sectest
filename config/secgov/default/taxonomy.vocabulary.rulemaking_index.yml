@@ -1,0 +1,8 @@
+uuid: 859adacc-e1df-4a58-8488-4a494f83e03d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Rulemaking Index'
+vid: rulemaking_index
+description: 'Allows you to view the proposed rules, final rules and other actions related to a particular rulemaking.'
+weight: 0

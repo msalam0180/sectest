@@ -1,0 +1,10 @@
+uuid: 12345ef0-3854-4f4a-ad65-ff2a66ddd97f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: staeV16YVIWae7uksPhNr1v7I1s_1cVJzGRhizQEExU
+id: mobile-navigation
+label: 'Mobile Navigation'
+description: 'Menu for mobile view'
+locked: false

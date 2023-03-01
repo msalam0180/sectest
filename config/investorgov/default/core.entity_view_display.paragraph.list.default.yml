@@ -1,0 +1,66 @@
+uuid: f6c771f2-cce0-43f6-8116-0f6cf372cfbf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.list.field_list_item
+    - field.field.paragraph.list.field_list_type
+    - paragraphs.paragraphs_type.list
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_discovery
+    - options
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          3a819829-3193-4a4f-acb2-0d993bf2c75d:
+            uuid: 3a819829-3193-4a4f-acb2-0d993bf2c75d
+            region: content
+            configuration:
+              id: 'field_block:paragraph:list:field_list_item'
+              label: 'List Item'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.list.default
+targetEntityType: paragraph
+bundle: list
+mode: default
+content:
+  field_list_item:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_list_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

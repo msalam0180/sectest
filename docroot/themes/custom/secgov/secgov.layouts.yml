@@ -1,0 +1,124 @@
+herolandingpage:
+  label: Hero Landing Page
+  category: 'Columns: 1'
+  path: templates/layouts/herolandingpage
+  icon: herolandingpage.png
+  css: herolandingpage.css
+  template: panels-herolandingpage
+  regions:
+    alert:
+      label: Alert
+    hero:
+      label: Hero
+    section_1_title:
+      label: Section 1 Title
+    section_1_left:
+      label: Section 1 Left Content
+    section_1_right:
+      label: Section 1 Right Content
+    section_2_title:
+      label: Section 2 Title
+    section_2_left:
+      label: Section 2 Left Content
+    section_2_right:
+      label: Section 2 Right Content
+    section_3_title:
+      label: Section 3 Title
+    section_3_left:
+      label: Section 3 Left Content
+    section_3_right:
+      label: Section 3 Right Content
+    section_4_title:
+      label: Section 4 Title
+    section_4_left:
+      label: Section 4 Left Content
+    section_4_right:
+      label: Section 4 Right Content
+    section_5_title:
+      label: Section 5 Title
+    section_5_left:
+      label: Section 5 Left Content
+    section_5_right:
+      label: Section 5 Right Content
+    section_6_title:
+      label: Section 6 Title
+    section_6_left:
+      label: Section 6 Left Content
+    section_6_right:
+      label: Section 6 Right Content
+
+toptwocol:
+  label: Top Span Two Column
+  category: 'Columns: 2'
+  path: templates/layouts/toptwocol
+  icon: toptwocol.png
+  template: panels-toptwocol
+  regions:
+    top:
+      label: Top Content
+    left:
+      label: Main Content
+    right:
+      label: Sidebar Content
+
+toptwocolalt:
+  label: Top Span Two Column (9/3)
+  category: 'Columns: 2'
+  path: templates/layouts/toptwocolalt
+  icon: toptwocolalt.png
+  template: panels-toptwocolalt
+  regions:
+    top:
+      label: Top Content
+    left:
+      label: Main Content
+    right:
+      label: Sidebar Content
+
+toptwocolnestedcols:
+  label: Top, Left with Nested Columns and Right Column
+  category: 'Columns: 2'
+  path: templates/layouts/toptwocolnestedcols
+  icon: toptwocolnestedcols.png
+  template: panels-toptwocolnestedcols
+  regions:
+    top:
+      label: Top
+    left:
+      label: Main
+    maintop:
+      label: Main-Top Content
+    mainleft:
+      label: Main-Left Column
+    mainright:
+      label: Main-Right Column
+    mainbottom:
+      label: Main-Bottom Column
+    sidebar:
+      label: Sidebar Content
+
+twocolonecolbottom:
+  label: Two Column, Bottom Span
+  category: 'Columns: 2'
+  path: templates/layouts/twocolonecolbottom
+  icon: twocolonecolbottom.png
+  template: panels-twocolonecolbottom
+  regions:
+    left:
+      label: Main Content
+    right:
+      label: Sidebar Content
+    bottom:
+      label: Bottom Content
+
+twocol:
+  label: Two Columns
+  category: 'Columns: 2'
+  path: templates/layouts/twocol
+  icon: twocol.png
+  template: panels-twocol
+  regions:
+    left:
+      label: Main Content
+    right:
+      label: Sidebar Content

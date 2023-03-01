@@ -1,0 +1,14 @@
+{
+  "name": "drupal/sec_custom_libraries",
+  "type": "drupal-module",
+  "description": "SEC Custom Libraries",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/sec_custom_libraries",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/sec_custom_libraries",
+    "source": "http://cgit.drupalcode.org/sec_custom_libraries"
+  },
+  "require": { }
+}

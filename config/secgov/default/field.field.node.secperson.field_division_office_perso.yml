@@ -1,0 +1,30 @@
+uuid: 8d314f20-3e51-4c32-91de-3f40b7a4b677
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_division_office_perso
+    - node.type.secperson
+    - taxonomy.vocabulary.division_office
+_core:
+  default_config_hash: pE81OnIa4ysl48a0jZCFKDjgVePSc3t8yitxh6eivHI
+id: node.secperson.field_division_office_perso
+field_name: field_division_office_perso
+entity_type: node
+bundle: secperson
+label: 'Supporting Division / Office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      division_office: division_office
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

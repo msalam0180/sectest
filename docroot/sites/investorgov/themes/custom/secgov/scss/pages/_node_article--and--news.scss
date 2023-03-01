@@ -1,0 +1,603 @@
+//
+// CONTENT TYPE: ARTICLE && NEWS - DETAIL PAGES
+// Styles apply to ARTICLE & NEWS nodes
+//
+// NOTES: These two content types styles are in a single file
+// because they were so intertwined. They should be separated
+// and there should be a simple class that you can add to each
+// type where styles overlap
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+[role="article"] {
+  @include span(12);
+  clear: both;
+  display: block;
+  font-size: 1em;
+
+  // #page-title {
+  //   display: block;
+  //   margin-bottom: 20px;
+  //   padding: 0;
+  //   position: relative;
+
+  //   h1 {
+  //     @include raleway;
+  //     border-bottom: 1px solid $border-color;
+  //     width: 100% !important;
+  //     font-size: 1.5em;
+  //     font-weight: 600;
+  //     line-height: 1.5;
+  //     margin-bottom: 0;
+  //     color: $gray-heading;
+  //     padding-bottom: 10px;
+
+  //     @include breakpoint('medium','portrait'){
+  //       padding-top: 0;
+  //     }
+
+  //     a, a:visited {
+  //       color: $gray-heading;
+  //       font-size: 20px;
+  //       text-decoration: none;
+  //     }
+
+  //     a:hover, a:focus {
+  //       color: $dark-navy;
+  //       text-decoration: underline;
+  //     }
+
+  //     &.news-page-title {
+  //       font-size: 20px !important;
+  //     }
+  //   }
+
+  //   @include breakpoint('small','portrait'){
+  //     h2 {
+  //       &.pagelet {
+  //         width: 65%;
+  //       }
+  //     }
+  //   }
+  //   h3 {
+  //     font-size: 1.2em !important;
+  //     text-transform: none;
+  //   }
+
+  //   a {
+  //     &.icon {
+  //       margin-top: 5px;
+  //       margin-bottom:5px;
+  //     }
+  //   }
+  // }
+
+  .data-set--market-statistics {
+
+    #table_paging {
+      display: none;
+    }
+
+    .statistics-guide {
+      p {
+        font-family: 'helvetica', sans-serif;
+      }
+    }
+
+    .block.related-materials {
+      padding-top: 30px;
+      max-width: none;
+      h2 {
+        padding: 0;
+        margin-bottom: 0.5em;
+        border-bottom: none;
+      }
+
+      ul {
+        margin-left: 0 !important;
+        padding-left: 0;
+        list-style-type: none !important;
+      }
+    }
+
+    .block.market-statistics-disclaimer {
+      margin-top: 2em;
+    }
+  }
+
+  .article-content {
+    clear: both;
+    display: block;
+    min-height: 30vh;
+    position: relative;
+    &:after {
+      clear: both;
+      content: ' ';
+      display: block;
+    }
+
+
+    #page-title #addthis-icons {
+      bottom: 0px;
+
+      @include breakpoint('medium','portrait','ipad'){
+        bottom: -50px;
+        right: 0px;
+      }
+    }
+
+    // &.news #page-title {
+    //   margin-bottom: 20px;
+    //   #addthis-icons {
+    //     bottom: 0px;
+    //     right: 0;
+
+    //     @include breakpoint('medium','landscape'){
+    //       bottom: 0px;
+    //       right: 0;
+    //     }
+    //     @include breakpoint('medium','portrait'){
+    //       bottom: -50px;
+    //       right: 20px;
+    //     }
+    //   }
+    // }
+
+    .content.aside {
+      @include span(9);
+
+      @include breakpoint('medium','landscape'){
+        padding-left: 0px;
+      }
+
+      @include breakpoint('medium','portrait'){
+        padding: 0 20px;
+      }
+
+      @include breakpoint('small','landscape'){
+        margin-top: 40px;
+        padding: 0 10px;
+        width: 100%;
+      }
+
+      @include breakpoint('small','portrait'){
+        margin-right: 0;
+        margin-top: 50px;
+        padding: 0 10px;
+        width: 100%;
+      }
+    }
+
+    #sidebar-second {
+      @include span(3 last);
+
+      @include breakpoint('small','landscape'){
+        margin: 20px 0;
+        padding: 0 10px;
+        width: 100%;
+      }
+
+      @include breakpoint('small','portrait'){
+        margin: 20px 0;
+        padding: 0 10px;
+        width: 100%;
+      }
+    }
+
+    h1 {
+      // @include raleway;
+      font-size: 2.4em;
+      font-weight: 300;
+      color: $gray-heading;
+      padding-bottom: 0px;
+      word-break: break-word;
+    }
+
+  	.embedded-entity {
+
+  	  h1.article-title {
+  	    @include helvetica;
+  	    font-size: 1em;
+  	    line-height: 1.5;
+    		margin-bottom: 0;
+    		color: $azure;
+  	  }
+  	  .datetime, .file_embed_date {
+    		color: $cloudy-gray;
+    		font-weight: normal;
+  	  }
+  	}
+  }
+
+  .article-title {
+    // @include raleway;
+    font-size: 2.4em;
+    font-weight: 500;
+    clear: both;
+    color: $gray-heading;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .description-abstract {
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .article-date, .article-publishdate, .article-person-position, .article-subtitle, .release-number {
+    clear:both;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .article-body {
+    font-size: 1em;
+    line-height: 1.5;
+
+    em {
+      font-style: italic;
+    }
+
+    //strong {
+    //  font-weight: 600;
+    //}
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      clear: both;
+      margin: 0 0 10px 20px;
+      list-style: disc;
+      li {
+        line-height: 1.5;
+        margin-bottom: 5px;
+        ul {
+          margin-left: 20px;
+          margin-top: 10px;
+		  list-style: circle;
+        }
+      }
+    }
+    ol {
+      clear: both;
+      margin: 0px 20px;
+      list-style: decimal;
+      li {
+        line-height: 1.5;
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .article-person-position {
+    font-size: 1em;
+    font-weight: 600;
+    position: relative;
+
+    .secperson-info {
+      clear: both;
+      display: block;
+      margin-bottom: 20px;
+      position: relative;
+      width: 100%;
+      a {
+        color: $azure;
+        font-size: inherit;
+        text-decoration: none;
+
+        .field_photo_person {
+          img {
+            min-height: 100px;
+            min-width: 80px;
+          }
+        }
+
+        p.calculated_field_person_title {
+          color: $azure;
+          display: inline-block;
+          font-family: Helvetica, Arial, sans-serif;
+          font-size: 13px;
+          font-weight: 600;
+          margin: 0;
+          padding: 0;
+        }
+        .photo-attached {
+          position: absolute;
+          bottom: 0px;
+          left: 90px;
+        }
+      }
+    }
+  }
+
+  .article-file-download, .article-more-topics {
+    clear: both;
+    display: block;
+    font-size: 1em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .article-file-download {
+    h2 {
+      margin-bottom: 10px;
+    }
+    a {
+      margin: 10px 0;
+      text-transform: capitalize;
+    }
+    .icon {
+      overflow: visible;
+      padding-top: 10px;
+      position: relative;
+    }
+    .triangle {
+      clear: both;
+      display: block;
+      margin: 15px 0;
+      position: absolute;
+      right: 0;
+      top: -17px;
+      z-index: 5;
+    }
+  }
+
+  .article-more-topics {
+    font-size: 1em;
+
+    h2 {
+      border-bottom: 1px solid $border-color;
+      color: $gray-blue;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+    }
+
+    a {
+      color: $azure;
+      text-decoration: none;
+    }
+
+    ul {
+      margin-left: 20px;
+      li {
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .release-number {
+    display: block;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 4px;
+
+    .article-subtitle {
+      font-size: 1em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      word-break: break-word;
+    }
+  }
+	.article-subtitle {
+		h2 {
+			color: $gray-blue;
+      line-height:1.4;
+			margin-bottom: 20px;
+		}
+	}
+  .article-location {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .article-info {
+    clear:both;
+    font-size: 1em;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .article-label {
+    display: none;
+    font-size: 1em;
+  }
+
+  // TODO: is the class ".testimony" used anywhere? Or, Is this old code
+  .announcement, .contact-information, .fast-answers, .laws, .other, .sunshine-act-notices, .press-release, .public-statement, .speech, .testimony {
+    margin-bottom: 20px;
+  }
+
+  .announcement {}
+
+  .fast-answers { }
+
+  .press-release {
+    .pressvideobox, #pressimagebox {
+      max-width: 196px;
+      float: right;
+      clear: right;
+      margin: 0 0 1em 1em;
+
+      div {
+        border: 1px solid #454545;
+        padding: 12px;
+        background-color: #e3ecf7;
+        text-align: center;
+      }
+    }
+  }
+
+  .contact-information, .laws, .other, .sunshine-act-notices  {
+    .release-number {
+      display: block;
+      font-size: 1em;
+      font-weight: 600;
+      margin-bottom: 12px;
+
+      &:before {
+        clear: none;
+        content: ''
+      }
+    }
+  }
+
+  // TODO: is the class ".testimony" used anywhere? Or, Is this old code
+  .academic-publications, .forms, .investor-alerts-and-bulletins, .press-release, .public-statement, .testimony {
+    @include breakpoint('medium'){
+      padding-left: 15px;
+    }
+  }
+
+  .article-location-publishdate {
+      clear: left;
+      display: inline;
+      float:  left;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0 5px 0 0;
+  }
+
+  .end-of-pr {
+    clear:both;
+    display:block;
+    font-style: italic;
+    text-align: center;
+  }
+}
+
+// Node Type Article - Article Type: Academic Publications
+.academic-publications {
+  .release-number {
+    &:before {
+      clear: both;
+      display: block;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// Node Type News - New Type: Public Statement
+.public-statement {
+  .article-person-position {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .article-publishdate {
+    clear: both;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+}
+
+// Node Type News - New Type: Speech
+.speech {
+  .article-person-position {
+    // @include raleway;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .article-subtitle, .article-publishdate, .article-location {
+    clear: both;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .article-location:after {
+    content: none;
+  }
+}
+
+// Node Type News - New Type: Testimony
+.testimony {
+  .article-person-position {
+    // @include raleway;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .article-subtitle, .article-publishdate, .article-location {
+    clear: both;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+}
+
+// Node Type Article - Article Type: Data
+.article-publishdate-data {
+    font-size: 1.3em;
+    font-weight: bold;
+ }
+
+ // Node Type Article - Article Type: Data
+.associated-data-distribution {
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  table {
+
+    thead {
+      th {
+        background-color:#eee;
+      }
+      @include breakpoint('small') {
+       display: none;
+      }
+    }
+
+    tbody {
+      tr {
+       &:hover { background-color:#ebf3ff; }
+       border-bottom:1px solid #ccc;
+        td {
+          padding:0px;
+          @include breakpoint('small') {
+           em { padding-left:0px !important; }
+           span.show-for-small { float:left; }
+          }
+
+          &.views-field-extension {
+            width:70px;
+          }
+
+          &.views-field-filesize {
+            width:80px;
+          }
+
+          a {
+            text-decoration:none;
+            color:#273a56;
+            padding: 7px 5px;
+          }
+           em {
+            font-size:11px;
+            color:#6F7479;
+            line-height:12px;
+            margin:7px 0px;
+            padding-left:5px;
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}

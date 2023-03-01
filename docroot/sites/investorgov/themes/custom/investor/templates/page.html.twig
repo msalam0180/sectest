@@ -1,0 +1,187 @@
+{#
+/**
+ * @file
+ * SEC.gov's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ *
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.global_navigation: Items for the primary menu region.
+ * - page.page_title: The Page title region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.footer: Items for the first footer column.
+ *
+ * @see template_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{# TODO: Clean out this file - it has a bunch of old SECgov stuff #}
+
+<div class="container">
+  <div id="page-wrapper">
+    <div id="page" {{ attributes.addClass(classes) }}>
+
+      {% include '@investor/includes/header-all.html.twig' %}
+
+      <div id="investor-global-navigation" class="investor-global-navigation">
+        {{ page.global_navigation }}
+      </div>
+
+      {% if page.highlighted %}
+        <div class="highlighted">
+          <aside class="message section clearfix" role="complementary">
+            {{ page.highlighted }}
+          </aside>
+        </div>
+      {% endif %}
+
+      {% if page.breadcrumb %}
+        {{ page.breadcrumb }}
+      {% endif %}
+
+      {% if page.content %}
+
+      <div role="content" class="content-area">
+        <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
+           
+            {% if page.sidebar_first  %}
+
+              {% if not(fullWidthPage) %}
+                <div id="investor-sidebar-first" class="sidebar">
+                    {{ page.sidebar_first}}
+                </div>
+              {% endif %}
+            {% endif %}
+
+            {% if page.admin_details %}
+              <div class="admin_details">
+                  {{ page.admin_details }}
+              </div>
+            {% endif %}
+
+            <div id="content-wrapper" class="layout-main">
+              <a id="main-content" tabindex="-1"></a>
+              {% if page.page_title %}
+                <div class="title-wrap {{ (hideTitle and (hideTitle == 1)) ? 'hideTitle' : '' }}">
+                  {{ page.page_title }}
+                </div>
+              {% endif %}
+
+              {% if page and not node %}
+                {% if node.title.value %}
+                  <div id="page-title">
+                    <h1>{{ node.title.value }}</h1>
+                  </div>
+                {% else %}
+                  <div id="page-title">
+                    <h1>{{ page['#title'] }}</h1>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              {% if page.content %}
+                <div id="content"{% if page.sidebar_second and pageType != 'error-page-content' %}{{ attributes.addClass('content aside') }}{% else %}{{ attributes.addClass('content') }}{% endif %}>
+                  {{ page.content }}
+                </div>
+              {% endif %}
+
+              {% if page.sidebar_second and pageType != 'error-page-content' %}
+                <aside id="sidebar-second" role="complementary">
+                  {{ page.sidebar_second }}
+                </aside>
+              {% endif %}
+
+              {% if page.sidebar_grid and pageType != 'error-page-content' %}
+                <aside id="sidebar-grid" role="complementary">
+                  {{ page.sidebar_grid }}
+                </aside>
+              {% endif %}
+
+            </div>
+
+            {% if pageContentType is same as('landing_page') or pageType is same as('error-page-content') %}
+              <p class="modified-date"><em>Modified: {{ node.field_date.0.value is not null ? node.field_date.0.value|apdate : node.changed.value|apdate }}</em></p>
+            {% endif %}
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% include '@investor/includes/footer-all.html.twig' %}
+
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-523c659066501d0e"></script>
+      {% if page and not node %}
+        <script>
+          if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "{{page['#title']|striptags|trim}}"});
+        </script>
+      {% else %}
+        {% set nodeTitle = node.title.value %}
+        {% if (nodeTitle is same as("Error 403: Forbidden")) or (nodeTitle is same as("This page is temporarily unavailable.")) or (nodeTitle is same as("Oops! We can't find this file")) %}
+          <script>
+            if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "Error Page", "errorType": "WCM Error Page"});
+          </script>
+        {% elseif nodeTitle is same as("Newsroom")%}
+          <script>
+            if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "Home Page"});
+          </script>
+        {% else %}
+          <script>
+            if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "{{nodeTitle}}"});
+          </script>
+        {% endif %}
+      {% endif %}
+        </div>
+    <script type="text/javascript" src="/sites/investorgov/themes/custom/investor/js/third-party/addthis_widget.js#pubid=ra-523c659066501d0e"></script>
+  {% if page and not node %}
+    <script>
+      if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "{{page['#title']|striptags|trim}}"});
+    </script>
+  {% else %}
+    {% set nodeTitle = node.title.value %}
+    {% if (nodeTitle is same as("Error 403: Forbidden")) or (nodeTitle is same as("This page is temporarily unavailable.")) or (nodeTitle is same as("Oops! We can't find this file")) %}
+      <script>
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "Error Page", "errorType": "WCM Error Page"});
+      </script>
+    {% elseif nodeTitle is same as("Newsroom")%}
+      <script>
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "Home Page"});
+      </script>
+    {% else %}
+      <script>
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "{{nodeTitle}}"});
+      </script>
+    {% endif %}
+  {% endif %}
+  </div>
+</div>
+
+<div class="off-canvas">
+  {{ page.off_canvas }}
+</div>
+

@@ -1,0 +1,103 @@
+<?php
+
+use \Drupal\views\ViewExecutable;
+use \Drupal\views\Plugin\views\query\QueryPluginBase;
+use \Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_views_pre_render().
+*/
+
+function sec_views_views_pre_render(ViewExecutable $view) {
+ //Conditionally attach an js to the view.
+  $view->element['#attached']['library'][] = 'sec_views/sec_views_lib';
+  if ( ($view->id()) === 'associated_data_distribution' && isset($view->result)) {
+    foreach ($view->result as $key => $value) {
+      if ( empty($value->file_managed_node__field_data_dist_upload_fid )) {
+         unset($view->result[$key]);
+      }
+    }
+  }
+  elseif ($view->id() === 'dera_data_library') {
+    /* Use description/abstract as placeholder for rewriting formatted max
+       publish date field. By default, views unintelligently outputs the year */
+    foreach($view->result as $key => $value) {
+      $timestamp = strtotime($value->field_associated_dataset_node_field_data__node__field_publis);
+      if ($timestamp === false) {
+        $timestamp = strtotime($value->node__field_date_field_date_value);
+      }
+      $value->node__field_description_abstract_field_description_abstract_ = $timestamp;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+*/
+
+function sec_views_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+ //Remove - All - option from exposed form in content search view;
+ if ( $form['#id'] !== "views-exposed-form-content-page-2" ) { return; }
+  if (isset($form['type']['#options']['All'])) { unset($form['type']['#options']['All']); }
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * @param array $attachments
+ */
+function sec_views_page_attachments(array &$attachments) {
+  if (\Drupal::currentUser()->isAnonymous()) { return; }
+  $attachments['#attached']['library'][] = 'sec_views/toolbar-icon';
+}
+
+/**
+ * Implements hook_views_views_query_alter().
+ * @param \Drupal\views\ViewExecutable $view
+ * @param \QueryPluginBase $query
+*/
+
+function sec_views_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'content') {
+    $table_node_revision = $query->getTableInfo('node_field_revision_workbench_revision_tracker__node_revision');
+    if (isset($table_node_revision['join']->type) && $table_node_revision['join']->type === "INNER") {
+      $table_node_revision['join']->type = 'LEFT';
+    }
+  }
+
+  if ($view->id() === 'frequently_requested_documents' && $view->current_display == 'page_1'){
+
+    $sql = <<<SQL
+    CASE
+    WHEN node__field_date.field_date_value IS NULL
+      THEN node__field_publish_date.field_publish_date_value
+          ELSE node__field_date.field_date_value
+    END
+SQL;
+
+    $query->addField(NULL, $sql, 'combined_date');
+    array_unshift($query->orderby, [
+      'field' => 'combined_date',
+      'direction' => 'DESC',
+    ]);
+  }
+}
+
+/**
+ * Implements hook_views_pre_view() to store a count of how many times we are rendering this view 
+ * and use that count for the dom_id (OSSS-11819).
+ */
+function sec_views_views_pre_view(ViewExecutable $view, $display_id, $args) {
+  $cache = &drupal_static(__FUNCTION__, array());
+  
+  // Ensure the dom_id is css ready
+  $id = Html::cleanCssIdentifier($view->id());
+  
+  if (empty($cache[$id])) {
+    $cache[$id] = 1;
+  } else {
+    $cache[$id]++;    
+  }
+
+  $view->dom_id = $id . '-' . $cache[$id];
+}

@@ -1,0 +1,178 @@
+.page-node-1076 #main {
+  .main-content {
+    position: relative;
+    .page__title {
+      padding-right: 0;
+      @include clearfix;
+      &:after {
+        margin-top: 2.5rem;
+//        @include retina-sprite($mindistcalc-icon-group);
+        content: "";
+        display: block;
+        float: none;
+        position: relative;
+      }
+    }
+
+    .block--investor-calculators-min-dist-calc,
+    .block--min-dist-calculator {
+      // margin-bottom: 0;
+      .calculator__left h3 {
+        @include font-weight-color-size($font_primary, $font_primary_weight_bold, $gray_white, 2.4);
+        line-height: 2.6rem;
+        padding-bottom: 1.2rem;
+        text-transform: capitalize;
+      }
+
+      .calculator {
+        border-bottom: 2px solid $gray_white;
+
+        li:first-of-type .calculator__left {
+          padding-top: 2.5rem;
+        }
+
+        li:last-of-type .calculator__left {
+          padding-bottom: 2.5rem;
+        }
+      }
+
+      .calculator__right {
+
+        .calc_textfield, .form-select, .calc_auto {
+          width: 100%;
+          height: 3.5rem;
+          @include font-weight-color-size($font_secondary, $font_secondary_weight_extra_bold, $gray_white, 1.8);
+          text-transform: uppercase;
+          background: $primary_3;
+          display: block;
+          text-align: right;
+          padding-right: 1.5rem;
+
+          &::placeholder {
+            color: $primary_1;
+            opacity: 1;
+          }
+
+          &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+            color: $primary_1;
+            opacity: 1;
+          }
+        }
+
+        .form-select {
+          text-align: center;
+          padding-right: 2.5rem;
+          // max-width: 285px;
+
+          .sod_label {
+            height: 2.2rem;
+            line-height: 2.2rem;
+          }
+
+          .sod_list_wrapper .sod_list .sod_option {
+            &:first-child {
+              background: $gray_1b;
+              font-style: italic;
+
+              &.active {
+                background: $gray_1b;
+              }
+            }
+          }
+        }
+
+        .calc_auto {
+          background: $gray_1b;
+        }
+/**
+        @include breakpoint($tablet-to-desktop) {
+          padding-top: 2rem;
+        }
+        **/
+      }
+
+      .calculator__combined {
+        padding-bottom: 10px;
+      }
+
+      .account-inputs {
+        position: relative;
+
+        .calculator__symbol {
+          @include font-weight-color-size($font_secondary, $font_secondary_weight_extra_bold, $gray_1d, 1.8);
+          position: absolute;
+          // left: 50%;
+          margin-left: 0;
+          left: 25px;
+          top: 10px;
+          margin-top: 0;
+
+          // @include breakpoint($desktop) {
+          //   top: 75px;
+          // }
+        }
+      }
+
+      .ajax-progress {
+        position: absolute;
+        top: .5rem;
+        left: 0;
+        margin-left: 3%;
+        display: block;
+        text-align: center;
+        text-transform: uppercase;
+        @include font-weight-color-size($font_primary, $font_primary_weight_regular, $gray_white, 2.0);
+      }
+
+      tr .ajax-progress .throbber {
+        margin: 0 2px;
+      }
+
+      .ajax-progress-bar {
+        width: 16em;
+      }
+
+      .form-item-age .ajax-progress {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+      }
+
+      #min-calc__buttons {
+        position: relative;
+
+        .calc-errors {
+          .messages--error {
+            margin: 2.5rem 2.5rem 0;
+          }
+        }
+      }
+    }
+/**
+    @include breakpoint($tablet-to-desktop) {
+      .page__title {
+        padding-right: 150px;
+        &:after {
+          position: absolute;
+          right: 2.5rem;
+          top: 0;
+          margin-top: 0;
+        }
+      }
+
+      @include breakpoint($wide-desktop) {
+        .page__title {
+          // padding-right: 0;
+          &:after {
+            // float: right;
+            right: 0;
+            // top: -93px;
+            // position: relative;
+          }
+        }
+      } // wide-desktop
+    }
+**/
+  }
+}

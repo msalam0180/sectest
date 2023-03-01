@@ -1,0 +1,23 @@
+uuid: 094b8c70-dcb0-4587-823a-91b17d1f67ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_information
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: '-yr5Nj7qDdl-k036P5xzsG43NuMHydYv8eMPfRywG0g'
+id: node.event.field_additional_information
+field_name: field_additional_information
+entity_type: node
+bundle: event
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

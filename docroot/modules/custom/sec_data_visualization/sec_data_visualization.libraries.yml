@@ -1,0 +1,9 @@
+sec_data_visualization.toastr:
+  version: 1.x
+  css:
+      component:
+        misc/alert/css/alert.css: {}
+  js:
+      misc/alert/js/alert.js: { minified: true }
+  dependencies:
+    - core/jquery

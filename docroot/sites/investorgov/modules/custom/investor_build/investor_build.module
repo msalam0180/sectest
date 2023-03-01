@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function investor_build_theme() {
+  return array(
+    'edgar_search_block' => array(
+      'template' => 'edgar-search',
+    ),
+  );
+}
+
+function investor_build_views_data_alter(array &$data)
+{
+  $data['node_field_data']['year'] = [
+    'title' => t('Custom Year'),
+    'filter' => [
+      'title' => t('Custom Year filter (Date)'),
+      'help' => t('Filters nodes on given Year (*Requires relationship with field_date)'),
+      'field' => 'field_date_value',
+      'id' => 'investor_year_filter'
+    ],
+  ];
+
+}

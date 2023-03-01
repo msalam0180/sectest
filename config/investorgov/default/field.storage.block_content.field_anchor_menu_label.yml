@@ -1,0 +1,20 @@
+uuid: c0188ce5-5999-40a5-90bd-0723ee2f68d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_anchor_menu_label
+field_name: field_anchor_menu_label
+entity_type: block_content
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

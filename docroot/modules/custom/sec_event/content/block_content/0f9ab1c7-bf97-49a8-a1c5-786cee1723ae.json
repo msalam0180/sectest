@@ -1,0 +1,68 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/472?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        }
+    },
+    "id": [
+        {
+            "value": "472"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0f9ab1c7-bf97-49a8-a1c5-786cee1723ae"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "472"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Upcoming Events: Header",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1480547246",
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<div class=\"upcoming-events-header field-item even\">\r\n<p>This page provides a schedule of the upcoming meetings of the Commission, public appearances of senior SEC officials, and other events. Contact information is provided for additional information. Please note that all events are subject to change. For past events, see our <a href=\"\/news\/upcoming-events\/archive\">Event Archive<\/a>.<\/p>\r\n\r\n<div class=\"jump-link-container\">\r\n<p class=\"jump-link\"><a href=\"#upcoming_events_sec_meetings\">SEC Meetings and Other Events<\/a><\/p>\r\n\r\n<p class=\"jump-link\"><a href=\"#upcoming_events_public_appearances\">Public Appearances by Officials<\/a><\/p>\r\n\r\n<p class=\"jump-link\"><a href=\"#upcoming_events_public_hearings\">Public Hearings in Administrative Proceedings<\/a><\/p>\r\n<\/div>\r\n\r\n<p>All times appearing below are listed in Eastern Time unless otherwise noted.<\/p>\r\n<\/div>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+uuid: 3d6b8789-f374-4f7a-b845-834c1b3683e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: vKHuOIb37fEz0NDin_egS8gwk3_Rew5SVCDne0-rUj8
+name: Webcast
+type: webcast
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_brokerage_account_statement.module.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/nav');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_one');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_two');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_three');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_four');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_five');
+module_load_include('inc', 'sec_brokerage_account_statement', '/includes/page_six');
+
+/**
+ * Custom function to assemble renderable array for block content.
+ *
+ * Returns a renderable array with the block content.
+ *
+ * @return string
+ *   returns a renderable array of block content.
+ */
+function sec_brokerage_account_statement_content() {
+  $nav = brokerage_account_statement_nav();
+  $page_one = brokerage_account_statement_page_one();
+  $page_two = brokerage_account_statement_page_two();
+  $page_three = brokerage_account_statement_page_three();
+  $page_four = brokerage_account_statement_page_four();
+  $page_five = brokerage_account_statement_page_five();
+  $page_six = brokerage_account_statement_page_six();
+
+  return $nav .
+           '<div class="content-container">' .
+           $page_one .
+           $page_two .
+           $page_three .
+           $page_four .
+           $page_five .
+           $page_six .
+           '<div class="info-overlay"></div>
+            <div class="information">
+              <a href="javascript:;" class="close-btn">
+              <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+              </svg>
+              <span>' . t('Close Information Modal') . '</span></a>
+              <div class="infobox"></div>
+            </div>
+           </div>';
+}

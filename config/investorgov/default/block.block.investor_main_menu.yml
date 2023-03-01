@@ -1,0 +1,31 @@
+uuid: ec17e600-d1b1-44cc-a2fe-632a0728f89f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block_title
+    - system
+  theme:
+    - investor
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+_core:
+  default_config_hash: rx9IrdDv7Ldc4kpalZAxdhIPZfYIeOMh1N-qKoQZwHo
+id: investor_main_menu
+theme: investor
+region: global_navigation
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: false
+visibility: {  }

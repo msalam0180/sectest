@@ -1,0 +1,23 @@
+uuid: 62101adb-d830-4b57-92b3-cddc6b1009d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.release_topper
+    - field.storage.block_content.field_customized_quick_links
+  module:
+    - link
+id: block_content.release_topper.field_customized_quick_links
+field_name: field_customized_quick_links
+entity_type: block_content
+bundle: release_topper
+label: 'Customized Quick Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

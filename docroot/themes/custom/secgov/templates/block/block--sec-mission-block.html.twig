@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="block sec_mission_block">
+  <div id="sec-mission">
+      <div class="hp-content">
+          <div class="hp-content-item odd">
+          <a href="#section-2" title="Go to We Inform and Protect Investors">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Inform and Protect Investors" src="/themes/custom/secgov/images/homepage/inform-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Inform and Protect Investors</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item even">
+          <a href="#section-3" title="Go to We Facilitate Capital Formation">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Facilitate Capital Formation" src="/themes/custom/secgov/images/homepage/cap-formation.png" />
+              </div>
+              <div class="hp-content-title">We Facilitate Capital Formation</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item odd">
+          <a href="#section-4" title="Go to We Enforce Federal Securities Laws">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Enforce Federal Securities Laws" src="/themes/custom/secgov/images/homepage/enforce-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Enforce Federal Securities Laws</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item even">
+          <a href="#section-5" title="Go to We Regulate Securities Markets">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Regulate Securities Markets" src="/themes/custom/secgov/images/homepage/regulate-securities.png" />
+              </div>
+              <div class="hp-content-title">We Regulate Securities Markets</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item odd">
+          <a href="#section-6" title="Go to We Provide Data">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Provide Data" src="/themes/custom/secgov/images/homepage/data-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Provide Data</div>
+          </a>
+          </div>
+      </div>
+  </div>
+</div>

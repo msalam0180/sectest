@@ -1,0 +1,23 @@
+uuid: 2d89e06a-f0e1-4c89-9cd9-878e0e92776c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list_type
+    - paragraphs.paragraphs_type.list
+  module:
+    - options
+id: paragraph.list.field_list_type
+field_name: field_list_type
+entity_type: paragraph
+bundle: list
+label: 'List Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Unordered list'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

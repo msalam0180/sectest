@@ -1,0 +1,27 @@
+uuid: 00a1e0ab-dfa9-4095-87fb-5dc8c2b5427c
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 9SPLTvLIK7iH7jakq-GEeYb-g9rfKrbLc-EFve1gYtI
+id: secgov_tools
+theme: secgov
+region: header
+weight: -25
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

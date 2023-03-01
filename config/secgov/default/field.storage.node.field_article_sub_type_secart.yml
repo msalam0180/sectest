@@ -1,0 +1,173 @@
+uuid: 5e1cd0da-c03e-41ea-a5b7-0cc8814c1cfd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: '-8bzIFI7q9i8ddeR1XX8yPNYJB7lgrWSPqRb46-IY4c'
+id: node.field_article_sub_type_secart
+field_name: field_article_sub_type_secart
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Data-BrokerDealers
+      label: Broker-Dealers
+    -
+      value: Data-Enforcement
+      label: Enforcement
+    -
+      value: Data-FundsandAdvisers
+      label: 'Funds and Advisers'
+    -
+      value: Data-InvestmentCompanies
+      label: 'Investment Companies'
+    -
+      value: Data-InvestorComplaints
+      label: 'Investor Complaints'
+    -
+      value: Data-MarketStatistics
+      label: 'Market Statistics'
+    -
+      value: Data-MarketStructure
+      label: 'Market Structure'
+    -
+      value: Data-Other
+      label: Other
+    -
+      value: Data-PublicCompanies
+      label: 'Public Companies'
+    -
+      value: 'Data Highlight-Visualization'
+      label: Visualization
+    -
+      value: 'Reports and Publications-AnnualReports'
+      label: 'Annual Reports'
+    -
+      value: 'Reports and Publications-BudgetReports'
+      label: 'Budget Reports'
+    -
+      value: 'Reports and Publications-BuyAmericanAct'
+      label: 'Buy American Act'
+    -
+      value: 'Reports and Publications-ConferenceSpending'
+      label: 'Conference Spending'
+    -
+      value: 'Reports and Publications-FAIRAct'
+      label: 'FAIR Act'
+    -
+      value: 'Reports and Publications-FederalEmployeeViewpointSurvey'
+      label: 'Federal Employee Viewpoint Survey'
+    -
+      value: 'Reports and Publications-InternalSupervisoryControls'
+      label: 'Internal Supervisory Controls'
+    -
+      value: 'Reports and Publications-InvestorPublications'
+      label: 'Investor Publications'
+    -
+      value: 'Reports and Publications-Other'
+      label: Other
+    -
+      value: 'Reports and Publications-SelectSECandMarketData'
+      label: 'Select SEC and Market Data'
+    -
+      value: 'Reports and Publications-ServiceContractInventory'
+      label: 'Service Contract Inventory'
+    -
+      value: 'Reports and Publications-SpecialStudies'
+      label: 'Special Studies'
+    -
+      value: 'Reports and Publications-StrategicPlan'
+      label: 'Strategic Plan'
+    -
+      value: 'Staff Papers-Economic-Analyses'
+      label: 'Studies and Reports'
+    -
+      value: 'Staff Papers-Economics-Notes'
+      label: 'Economics Notes'
+    -
+      value: 'Staff Papers-Other'
+      label: Other
+    -
+      value: 'Staff Papers-WhitePapers'
+      label: 'White Papers'
+    -
+      value: 'Staff Papers-WorkingPapers'
+      label: 'Working Papers'
+    -
+      value: 'Staff Papers-QuarterlyOutlook'
+      label: 'Quarterly Outlook'
+    -
+      value: Webcasts-AdvisoryCommittees
+      label: 'Advisory Committees'
+    -
+      value: Webcasts-NewsConferences
+      label: 'News Conferences'
+    -
+      value: Webcasts-OpenMeetings
+      label: 'Open Meetings'
+    -
+      value: Webcasts-Other
+      label: Other
+    -
+      value: Webcasts-Roundtables
+      label: Roundtables
+    -
+      value: 'Accounting and Disclosure Information-Accounting'
+      label: Accounting
+    -
+      value: 'Accounting and Disclosure Information-DistributionArrangements'
+      label: 'Distribution Arrangements'
+    -
+      value: 'Accounting and Disclosure Information-DividendsandDistributions'
+      label: 'Dividends and Distributions'
+    -
+      value: 'Accounting and Disclosure Information-ElectronicCommunications'
+      label: 'Electronic Communications'
+    -
+      value: 'Accounting and Disclosure Information-FeesandExpenses'
+      label: 'Fees and Expenses'
+    -
+      value: 'Accounting and Disclosure Information-FilingProcedures'
+      label: 'Filing Procedures'
+    -
+      value: 'Accounting and Disclosure Information-FundNames'
+      label: 'Fund Names'
+    -
+      value: 'Accounting and Disclosure Information-Performance'
+      label: Performance
+    -
+      value: 'Accounting and Disclosure Information-PrincipalRisks'
+      label: 'Principal Risks'
+    -
+      value: 'Accounting and Disclosure Information-PrincipalStrategies'
+      label: 'Principal Strategies'
+    -
+      value: 'Accounting and Disclosure Information-ProxyMaterials'
+      label: 'Proxy Materials'
+    -
+      value: 'Accounting and Disclosure Information-SpecialtyFunds'
+      label: 'Specialty Funds'
+    -
+      value: 'Accounting and Disclosure Information-VariableInsuranceProducts'
+      label: 'Variable Insurance Products'
+    -
+      value: 'Public Alerts-FictitiousRegulators'
+      label: 'Fictitious Regulators'
+    -
+      value: 'Public Alerts-ImpersonatorsofGenuineFirms'
+      label: 'Impersonators of Genuine Firms'
+    -
+      value: 'Public Alerts-UnregisteredSolicitingEntities'
+      label: 'Unregistered Soliciting Entities'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

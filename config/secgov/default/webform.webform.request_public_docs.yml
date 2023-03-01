@@ -1,0 +1,493 @@
+uuid: c785b109-1e71-44cd-98ef-3eeaaa5e6cbf
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: QeRUkFwDKwNrEnkTH5hbwpekupihFz7N5il4qwXYqwc
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: request_public_docs
+title: 'Request for Copies of Documents'
+description: ''
+category: ''
+elements: |-
+  header:
+    '#type': processed_text
+    '#text': |
+      <p>Please call the Office of FOIA Services at (202) 551-7900 for assistance with this form. (For users of screen reader technology only, please note you may hear some extraneous information related to Google's reCAPTCHA.)</p>
+
+      <p>The Securities and Exchange Commission (<acronym title="Securities and Exchange Commission">SEC</acronym>) maintains public and non-public records. Many records, such as registration statements and reports filed by regulated companies and individuals, <acronym title="Securities and Exchange Commission">SEC</acronym> decisions and releases, staff manuals, no-action and interpretive letters, and public comments on proposed rules, can be viewed and printed for free by using the <a href="https://www.sec.gov/edgar/searchedgar/companysearch.html"><acronym title="Securities and Exchange Commission">SEC</acronym> on-line search feature.</a>&nbsp;Please use the form below to obtain non-public records, such as records compiled in investigations, consumer complaints, and staff comment letters. We will release non-public records, unless the record is protected by one of nine <a href="https://www.sec.gov/foia/nfoia.htm">FOIA exemptions.</a>&nbsp;If we can reasonably segregate or delete exempt information from a requested record, we will release to you the rest of the record. You may also use the form below for records not posted to the web (usually dated prior to 1996) including <acronym title="Securities and Exchange Commission">SEC</acronym> records and documents, historic Commission filings, special reports and studies, speeches, and testimony.</p>
+
+      <p>If you have any difficulties using this form please send a fax to 202-772-9337.</p>
+
+      <p>If you require certified copies, <a href="https://www.sec.gov/forms/request_cert_docs">please click here.</a></p>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  contact_information:
+    '#type': fieldset
+    '#title': 'Contact Information'
+    name:
+      '#type': webform_name
+      '#title': Name
+      '#title__options': titles_modern
+      '#first__required': true
+      '#middle__title': MI
+      '#last__required': true
+      '#suffix__title': 'Suffix (If any)'
+      '#degree__access': false
+    telephone:
+      '#type': tel
+      '#title': Telephone
+      '#required': true
+    email:
+      '#type': email
+      '#title': Email
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    company_name_if_applicable:
+      '#type': textfield
+      '#title': 'Company Name, if Applicable'
+    address:
+      '#type': webform_address
+      '#title': Address
+      '#access_create_roles': {  }
+      '#access_create_users':
+        - '1'
+      '#address__access': false
+      '#address__title': 'Address line 1'
+      '#address_2__access': false
+      '#address_2__title': 'Address line 2'
+      '#city__access': false
+      '#city__title': City
+      '#state_province__access': false
+      '#state_province__title': State
+      '#postal_code__access': false
+      '#postal_code__title': Zip
+      '#country__access': false
+    advanced_address:
+      '#type': address
+      '#title': Address
+      '#required': true
+      '#default_value': |-
+        country_code: US
+        langcode: ''
+        address_line1: ''
+        address_line2: ''
+        locality: ''
+        administrative_area: ''
+        postal_code: ''
+        given_name: null
+        additional_name: null
+        family_name: null
+        organization: null
+        sorting_code: null
+        dependent_locality: null
+      '#field_overrides':
+        givenName: hidden
+        additionalName: hidden
+        familyName: hidden
+        organization: hidden
+        dependentLocality: hidden
+  request_details:
+    '#type': fieldset
+    '#title': 'Request Details'
+    subject_company_name:
+      '#type': textfield
+      '#title': 'Subject/Company Name'
+      '#required': true
+      '#description': '<sub>Please submit only one company or entity name per request. Do not submit multiple subjects in one request.</sub>'
+    date_or_range_of_document:
+      '#type': textfield
+      '#title': 'Date or range of document'
+      '#required': true
+    film_document_control_:
+      '#type': textfield
+      '#title': 'Film/Document Control #'
+    file_number:
+      '#type': textfield
+      '#title': 'File Number'
+    cik_:
+      '#type': textfield
+      '#title': 'CIK #'
+    type_of_document:
+      '#type': select
+      '#title': 'Type of document'
+      '#options':
+        1: 'ADV (Investment Adviser Applications and Amendments)'
+        2: 'BD (Broker Dealer Applications and Amendments)'
+        3: 'ARS (Annual Report to Shareholders)'
+        4: 'Forms 144 (Notice of Proposed Sale of Securities)'
+        5: 'Form 3, 4, or 5 (Insider Ownership Reports)'
+        6: 'NO ACT (No Action Letter)'
+        7: 'REG D (Form D)'
+        8: 'X-17A-5 (Annual Audited Report by Brokers and Dealers)'
+        9: '10-K (Annual Report)'
+        10: '10-Q (Quarterly Report)'
+        11: '8-K (Current Report)'
+        12: '12G3-2B (Exemption for foreign private investors)'
+        13: '12G32BR (Application for reinstatement of a granted 12g3-2b exemption)'
+        14: 'Administrative Proceeding'
+        15: 'Comment letter (describe type)'
+        16: 'Comment letters'
+        17: 'Consumer complaints'
+        18: 'Exhibits to public filings'
+        19: Investigations
+        20: 'Orders (describe type)'
+        21: 'Speeches (identify)'
+        22: 'Other (fully describe)'
+      '#required': true
+    other_pertinent_information:
+      '#type': textarea
+      '#title': 'Other pertinent information'
+      '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Provide a clear and complete description of document(s) requested. If you do not know the specific date, you must provide a date range, i.e. month and/or year</span>'
+    attachment_file:
+      '#type': webform_document_file
+      '#title': 'Attachment File'
+      '#file_extensions': 'txt pdf doc docx'
+  fee_authorization:
+    '#type': fieldset
+    '#title': 'Fee Authorization'
+    '#required': true
+    fee_info:
+      '#type': processed_text
+      '#text': |
+        <p>To avoid delays in processing your request, please provide your willingness to pay at least $61. Check the box to indicate your agreement. Pre-authorization of <a href="https://www.sec.gov/foia/feesche.htm">fees</a> to a specific dollar amount in your request letter will speed the processing of your FOIA request. However, do not send pre-payment for your request. If you incur billable charges, an itemized invoice will accompany our final response to your request. You will be provided the option of paying the invoice online or by mail. Note that if fees are likely to exceed $250, the <acronym title="Securities and Exchange Commission">SEC</acronym> does have the discretion to require advance payment prior to commencing any work.</p>
+      '#format': full_html
+    fee_authorization_field:
+      '#type': webform_radios_other
+      '#title': 'Fee Authorization'
+      '#options':
+        1: 'Willing to Pay $61'
+      '#other__option_label': 'Other Amount $'
+      '#other__placeholder': 'Enter other amount here.'
+      '#required': true
+  requesting_a_fee_waiver:
+    '#type': fieldset
+    '#title': 'Requesting a Fee Waiver'
+    waiver_details:
+      '#type': processed_text
+      '#text': |
+        <p>If you are seeking a fee waiver, it is your responsibility to provide detailed information to support your request. You must submit this information with your FOIA request. Each fee waiver request is judged on its own merit. The <acronym title="Securities and Exchange Commission">SEC</acronym> does not grant "blanket" fee waivers. The fact that you have received a fee waiver in the past does not mean you are automatically entitled to a fee waiver for other requests you submit, because an essential element of any fee waiver determination is whether the release of the particular documents sought will likely contribute significantly to public understanding of the operations or activities of the Government.</p>
+      '#format': full_html
+  fee_waiver_criteria:
+    '#type': fieldset
+    '#title': 'Fee Waiver Criteria'
+    waiver_info_field:
+      '#type': processed_text
+      '#text': |
+        <p>An essential element of any fee waiver determination is whether the release of the particular records sought will likely contribute significantly to public understanding of the operation or activities of the Government. The <acronym title="Securities and Exchange Commission">SEC</acronym> will release records responsive to a request without charge or at a reduced rate if the <acronym title="Securities and Exchange Commission">SEC</acronym> determines, based on all available information, that you have demonstrated that disclosing the information is:</p>
+
+        <ol>
+        	<li>Is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government, and</li>
+        	<li>Is not primarily in your commercial interest.</li>
+        </ol>
+
+        <p>In deciding whether you have met the criteria above, the <acronym title="Securities and Exchange Commission">SEC</acronym> will consider the following factors:</p>
+
+        <ol>
+        	<li>The subject of the request must concern identifiable operations or activities of the Federal government, with a connection that is direct and clear, not remote or attenuated.</li>
+        	<li>The disclosable portions of the requested records must be meaningfully informative about government operations or activities to be "likely to contribute" to an increased public understanding of those operations or activities. Information that already is in the public domain, in either the same or a substantially identical form, would not contribute to such understanding.</li>
+        	<li>The disclosure must contribute to the understanding of a reasonably broad audience of persons interested in the subject, as opposed to your individual understanding. The <acronym title="Securities and Exchange Commission">SEC</acronym> will consider your expertise in the subject area as well as your ability and intention to effectively convey information to the public.</li>
+        	<li>The public's understanding of the subject must be enhanced to a significant extent by the disclosure.</li>
+        </ol>
+      '#format': full_html
+    fee_waiver_is_requested:
+      '#type': radios
+      '#title': 'Fee Waiver is Requested'
+      '#options': yes_no
+    if_you_meet_the_criteria_please_explain_below_:
+      '#type': textarea
+      '#title': 'If you meet the criteria, please explain below.'
+  requesting_expedited_treatment:
+    '#type': fieldset
+    '#title': 'Requesting Expedited Treatment'
+    expedited_details:
+      '#type': processed_text
+      '#text': |
+        <p>If you would like expedited treatment you must show "compelling need" in one of two ways: by establishing that your failure to obtain the records quickly "could reasonably be expected to pose an imminent threat to the life or physical safety of an individual"; or, if you are a "person primarily engaged in disseminating information," by demonstrating that an "urgency to inform the public concerning actual or alleged Federal Government activity" exists.</p>
+      '#format': full_html
+    expedited_service_is_requested:
+      '#type': radios
+      '#title': 'Expedited Service is Requested'
+      '#options': yes_no
+    if_you_meet_the_criteria_please_explain_below:
+      '#type': textarea
+      '#title': 'If you meet the criteria, please explain below.'
+  footer:
+    '#type': processed_text
+    '#text': '<p>Please read our <a target="_blank" href="https://www.sec.gov/privacy.htm">Privacy Act Notice</a> to learn more about how we may use the information you send to us.</p>'
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/request_public_docs
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: foiapa@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]-[webform_submission:values:name] '
+      body: |-
+        <p style="font-size:11pt;">Submitted on [webform_submission:created]</p>
+        <p style="font-size:11pt;">[webform_submission:values]</p>
+      excluded_elements:
+        address: address
+      ignore_access: false
+      exclude_empty: false
+      exclude_empty_checkbox: true
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

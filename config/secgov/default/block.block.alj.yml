@@ -1,0 +1,32 @@
+uuid: bad9a232-8403-4a4f-a0b3-4d8426103f00
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.alj
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: IQRyr3gImA36CI68__cjJoj9rE9aPthC6zWkXQTK9bo
+id: alj
+theme: secgov
+region: sidebar_first
+weight: -34
+provider: null
+plugin: 'system_menu_block:alj'
+settings:
+  id: 'system_menu_block:alj'
+  label: ALJ
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/alj\r\n/alj/*"

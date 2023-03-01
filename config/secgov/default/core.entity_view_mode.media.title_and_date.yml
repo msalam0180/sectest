@@ -1,0 +1,10 @@
+uuid: 31fbc190-fbc3-4594-b96a-3e28e8e1f424
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.title_and_date
+label: 'Title and Date'
+targetEntityType: media
+cache: true

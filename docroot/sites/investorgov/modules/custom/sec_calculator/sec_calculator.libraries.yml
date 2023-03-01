@@ -1,0 +1,11 @@
+sec_calculator:
+  header: true
+  js:
+    js/sec_calculator.js: { preprocess: false }
+  css:
+    theme:
+      css/sec_calculator.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

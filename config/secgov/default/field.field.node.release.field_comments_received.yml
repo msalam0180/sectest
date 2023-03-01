@@ -1,0 +1,23 @@
+uuid: 79328530-03c3-42ad-a321-5207f64df860
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_comments_received
+    - node.type.release
+  module:
+    - link
+id: node.release.field_comments_received
+field_name: field_comments_received
+entity_type: node
+bundle: release
+label: 'Comments Received'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

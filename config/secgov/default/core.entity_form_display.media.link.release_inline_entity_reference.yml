@@ -1,0 +1,52 @@
+uuid: 4c855e69-0f0d-43f4-8884-6ebdc7de56ff
+langcode: und
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.release_inline_entity_reference
+    - field.field.media.link.field_media_entity_link
+    - media.type.link
+  module:
+    - link
+    - workbench_moderation
+_core:
+  default_config_hash: g7zLfrhBRtHEoHxK4Eud0Tv0ZuEyBzWWxRTQwZU9aZE
+id: media.link.release_inline_entity_reference
+targetEntityType: media
+bundle: link
+mode: release_inline_entity_reference
+content:
+  field_media_entity_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  uid: true

@@ -1,0 +1,28 @@
+uuid: 6f876b99-df38-4a69-9b92-5a1822d46f4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webcast
+    - node.type.event
+    - node.type.webcast
+id: node.event.field_webcast
+field_name: field_webcast
+entity_type: node
+bundle: event
+label: 'Event Webcasts'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      webcast: webcast
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

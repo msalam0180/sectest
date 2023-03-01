@@ -1,0 +1,3 @@
+services:
+  sec_blocks:
+    class: \Drupal\sec_block_layout\Service\SECBlocks

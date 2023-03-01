@@ -1,0 +1,26 @@
+uuid: 2fee2bb8-16ea-4063-9887-b30fccbc3d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sec_event_date
+    - node.type.event
+  module:
+    - datetime
+_core:
+  default_config_hash: 6aLUORAG_ls1I0cneKKcIoy9gCKebhilx9uN6HaB5es
+id: node.event.field_sec_event_date
+field_name: field_sec_event_date
+entity_type: node
+bundle: event
+label: 'SEC Event Date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

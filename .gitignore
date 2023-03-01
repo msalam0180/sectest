@@ -1,0 +1,37 @@
+# Ignore paths that contain user-generated content.
+docroot/example.gitignore
+docroot/INSTALL.txt
+docroot/README.md
+
+#docroot/files
+#docroot/sites/*/files
+#docroot/sites/*/private
+#docroot/sites/sites.local.php
+#docroot/sites/default/settings.local.php
+#docroot/sites/investorgov/settings.local.php
+#docroot/sites/secgov/settings.local.php
+#docroot/themes/custom/secgov/css/**
+#acquia-files
+#test/bin/
+#test/vendor/
+#test/behat-screenshots/
+#test/**/node_modules/
+test/**/.tmp/
+#files-private/
+#docroot/themes/custom/secgov/node_modules
+#docroot/themes/custom/investor/node_modules
+#docroot/sites/investorgov/themes/custom/secgov/node_modules
+#docroot/sites/investorgov/themes/custom/investor/node_modules
+.DS_Store
+#/.buildpath
+#/.project
+#/package-lock.json
+#/.settings/
+.idea
+
+# Ignore lando local override file since this will be unique for everyone
+#.lando.local.yml
+
+# Ignore sql files.
+*.sql
+*.sql.gz

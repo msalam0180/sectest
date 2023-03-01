@@ -1,0 +1,30 @@
+uuid: 5bd04330-5566-4851-9eab-c69bb4b2a5e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_block.simple_block.webcast_info_block
+  module:
+    - simple_block
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: GMNZUsRkV6yf1VP3de9j9zSdw1Ockqzi7dvs1F1Xjbw
+id: need_help
+theme: secgov
+region: content
+weight: -32
+provider: null
+plugin: 'simple_block:webcast_info_block'
+settings:
+  id: 'simple_block:webcast_info_block'
+  label: Info
+  label_display: '0'
+  provider: simple_block
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /news/webcasts

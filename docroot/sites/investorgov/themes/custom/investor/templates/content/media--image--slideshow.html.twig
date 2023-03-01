@@ -1,0 +1,45 @@
+
+{% if (media.field_media_image.value) %}
+  {% set dataType = "inline" %}
+  {% set thumbnail = file_url(media.field_media_image.entity.uri.value) %}
+  {% set src = "#image" ~ media.id %}
+  <div id="image{{media.id}}" class="image-embed-field-responsive-image mfp-hide">
+    <div id="imageplayer">
+      {{ content }}
+    </div>
+    <div class="mfp-bottom-bar">
+        <div class="mfp-title">{{ media.field_caption.value }}</div>          
+        <div class="mfp-counter"></div>
+    </div>
+  </div>
+
+{% endif %}
+
+<!-- -------------------------- BOX MARKUP -------------------------- -->
+<div class="media-box image">
+  <div class="media-box-content">
+    <div class="media-box-title">{{ media.name.value }}</div>
+  </div>
+
+  <button
+    class="media-box-image mb-open-popup"
+    data-src="{{ src }}"
+    data-title="<span class='titleText'>{{ media.field_caption.value }}</span>"
+    data-alt="{{ media.name.value }}"
+    data-type="{{dataType}}"
+  >
+    <div  
+      data-height="270"
+      data-thumbnail="{{thumbnail}}"
+      data-title="{{ media.field_caption.value }}"
+      data-width="480"
+      data-alt="{{ media.name.value }}"
+    >
+    </div>
+
+    <div class="thumbnail-overlay"></div>
+  </button>
+  {% if (media.field_caption.value) %}
+  <div class="media-box-footer">{{media.field_caption.value}}</div>
+  {% endif %}
+</div>

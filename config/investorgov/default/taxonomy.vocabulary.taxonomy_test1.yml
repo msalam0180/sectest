@@ -1,0 +1,8 @@
+uuid: dc9835ad-6e87-44ca-9db5-4c669cc5f4ae
+langcode: en
+status: true
+dependencies: {  }
+name: 'taxonomy test1'
+vid: taxonomy_test1
+description: ''
+weight: 0

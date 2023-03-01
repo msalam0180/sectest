@@ -1,0 +1,21 @@
+uuid: 7c741f0b-a3f0-4654-967c-fd5844e749e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_introduction
+    - taxonomy.vocabulary.release_type
+  module:
+    - text
+id: taxonomy_term.release_type.field_introduction
+field_name: field_introduction
+entity_type: taxonomy_term
+bundle: release_type
+label: Introduction
+description: 'This introduction text will appear at the top of the page for this Release Type.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

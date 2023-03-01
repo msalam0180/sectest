@@ -1,0 +1,24 @@
+uuid: 68de344b-2767-4f36-9b7b-7a573a2e0964
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.video
+_core:
+  default_config_hash: Vno3DE3wsVuMxM_AqCdMbl3nni8wa-uwbAKrlaTymMU
+id: node.video.promote
+field_name: promote
+entity_type: node
+bundle: video
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

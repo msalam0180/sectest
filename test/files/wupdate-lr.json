@@ -1,0 +1,170 @@
+{
+    "aaer": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": null,
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat Litigation"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "LR-24939"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "AAER-4185",
+                    "uri": "\/litigation\/litreleases\/2020\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": [
+
+            ],
+            "field_rel_date": [
+                "2020-10-05"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": null,
+            "fnid": [
+                "NA"
+            ],
+            "rnid": [
+                "AAER-4185"
+            ],
+            "upload_files": [
+
+            ]
+        }
+    ],
+    "aljo": null,
+    "ap": null,
+    "ap_case": null,
+    "ic": null,
+    "id": null,
+    "lr": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": null,
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat Litigation"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "AAER-4185"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "LR-24939",
+                    "uri": "\/litigation\/litreleases\/2020\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": [
+
+            ],
+            "field_rel_date": [
+                "2020-10-05"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "SEC Obtains Final Judgment Against, and Suspends, Accountant Formerly with Construction Management Consulting Company"
+            ],
+            "fnid": [
+                "NA"
+            ],
+            "rnid": [
+                "LR-24939"
+            ],
+            "upload_files": [
+                {
+                    "file": "1234-9876.pdf",
+                    "title": "LR-24939",
+                    "year": "2020"
+                }
+            ]
+        }
+    ],
+    "op": null,
+    "sro": null,
+    "ts": null
+}

@@ -1,0 +1,8 @@
+uuid: 17e7fa03-a0fe-48d2-98ec-d5df4f0f6203
+langcode: en
+status: true
+dependencies: {  }
+id: regulatory-actions
+label: 'Regulatory Actions'
+description: ''
+locked: false

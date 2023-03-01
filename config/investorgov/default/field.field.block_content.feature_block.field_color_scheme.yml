@@ -1,0 +1,23 @@
+uuid: 790cdafe-f866-4cfe-a9a2-131addf7c397
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.feature_block
+    - field.storage.block_content.field_color_scheme
+  module:
+    - options
+id: block_content.feature_block.field_color_scheme
+field_name: field_color_scheme
+entity_type: block_content
+bundle: feature_block
+label: 'Color scheme'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: blue
+default_value_callback: ''
+settings: {  }
+field_type: list_string

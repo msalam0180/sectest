@@ -1,0 +1,33 @@
+uuid: 46bfa584-2ead-40e5-ad28-d197931e8aaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_color_scheme
+field_name: field_color_scheme
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blue
+      label: Blue
+    -
+      value: red
+      label: Red
+    -
+      value: gray
+      label: Gray
+    -
+      value: teal
+      label: Teal
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

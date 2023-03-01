@@ -1,0 +1,10 @@
+uuid: 84d82f05-8fe5-4810-af5e-2aa1a4dabf31
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: KT0kg9UolLyrUVOmMmG02six21rsVRXZu0tArPftvec
+id: olia
+label: OLIA
+description: 'Office of Legislative and Intergovernmental Affairs'
+locked: false

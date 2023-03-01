@@ -1,0 +1,96 @@
+//
+// OCR: LANDING PAGE
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed 
+// Most code here could be broken up into the blocks that they belong to
+// Buttons should be renamed into something more reusable and moved to the button file
+
+#ocr-header-graphic {
+  position: relative;
+}
+
+#ocr-header-graphic a.header-btn {
+  // font-family: raleway, sans-serif;
+  font-weight:600;
+  background-color: #010066;
+  padding: .75em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  /*margin-bottom: 1em;*/
+  -webkit-transition: background-color 500ms ease;
+  -moz-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+  display: block;
+  position: absolute;
+  bottom: 12.5%;
+  /*left: 2em;*/
+  left: 5%;
+}
+
+#ocr-header-graphic a.header-btn:hover {
+  background-color: #2F64B2;
+    text-decoration: none;
+    color: #FFF;
+}
+
+#ocr-header-graphic a.header-btn:visited {
+  color: #FFF;
+}
+
+a.ocr-button {
+  display: block;
+  background-color: #2F64B2;
+  padding: 1em;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  border: 1px solid #273a56;
+  margin-bottom: 1em;
+  -webkit-transition: background-color 500ms ease;
+  -moz-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+
+    &:hover {
+      background-color: #6297E5;
+      text-decoration: none !important;
+      color: #FFF;
+    }
+    &:visited {
+      color: #FFF;
+    }
+}
+
+.ocr-button.secondary {
+  background-color: #ebebeb;
+  border: 1px solid #aaa;
+  color: $azure;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #D2D2D2;
+    color: $azure;
+    text-decoration: none;
+  }
+}
+
+.ocr-intro {
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+@media only screen and (min-width:700px) {
+  .right-column .ocr-button {
+    width: 85%;
+    margin: 0 auto 1em auto;
+  }
+  .left-column .ocr-button {
+    width: 80%;
+  }
+}

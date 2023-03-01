@@ -1,0 +1,25 @@
+uuid: 33ed4db2-13b2-4919-be16-fb5a025781e4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:84a1e71b-c9f3-4cbf-99f3-b2c61126ec19'
+  module:
+    - block_content
+  theme:
+    - secgov
+id: digitalgovsearch
+theme: secgov
+region: header
+weight: -35
+provider: null
+plugin: 'block_content:84a1e71b-c9f3-4cbf-99f3-b2c61126ec19'
+settings:
+  id: 'block_content:84a1e71b-c9f3-4cbf-99f3-b2c61126ec19'
+  label: 'Global Header: DigitalGov Search'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

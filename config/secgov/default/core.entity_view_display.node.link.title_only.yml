@@ -1,0 +1,66 @@
+uuid: 692b2232-c446-4eeb-9e98-e8afcadfaeb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_only
+    - field.field.node.link.field_act
+    - field.field.node.link.field_audience
+    - field.field.node.link.field_description_abstract
+    - field.field.node.link.field_division_office
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_person
+    - field.field.node.link.field_primary_division_office
+    - field.field.node.link.field_publish_date
+    - field.field.node.link.field_regulation
+    - field.field.node.link.field_subtopic
+    - field.field.node.link.field_tags
+    - field.field.node.link.field_topics
+    - field.field.node.link.field_url
+    - field.field.node.link.scheduling_options
+    - node.type.link
+  module:
+    - link
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.link.title_only
+targetEntityType: node
+bundle: link
+mode: title_only
+content:
+  field_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_act: true
+  field_audience: true
+  field_description_abstract: true
+  field_division_office: true
+  field_link_type: true
+  field_person: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_subtopic: true
+  field_tags: true
+  field_topics: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

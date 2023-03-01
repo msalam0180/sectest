@@ -1,0 +1,22 @@
+uuid: e4949bc8-4d60-4906-a4e2-31bdfde49b56
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - investor
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: investor_breadcrumbs
+theme: investor
+region: breadcrumb
+weight: -10
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

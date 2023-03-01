@@ -1,0 +1,21 @@
+uuid: 31fe4a4a-c9ee-4f2f-88c0-6628b0283c6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speaker_combined
+    - node.type.secperson
+_core:
+  default_config_hash: wvD_qcWZrK1e7JN53YmBVy-gx6uEIuTWYjaE5K4ebhE
+id: node.secperson.field_speaker_combined
+field_name: field_speaker_combined
+entity_type: node
+bundle: secperson
+label: 'Speaker Combined'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

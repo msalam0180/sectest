@@ -1,0 +1,21 @@
+uuid: 8c4a1659-b016-41b4-addd-7c924999e92e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.layout_block
+    - field.storage.block_content.field_layout_item_type
+  module:
+    - options
+id: block_content.layout_block.field_layout_item_type
+field_name: field_layout_item_type
+entity_type: block_content
+bundle: layout_block
+label: 'Layout Item Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

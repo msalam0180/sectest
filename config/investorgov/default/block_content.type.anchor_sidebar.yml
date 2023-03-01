@@ -1,0 +1,8 @@
+uuid: 055cca85-7942-447e-8980-68d8d468d3bf
+langcode: en
+status: true
+dependencies: {  }
+id: anchor_sidebar
+label: 'Anchor Sidebar'
+revision: 1
+description: 'A block for creating scrolling anchor navigation'

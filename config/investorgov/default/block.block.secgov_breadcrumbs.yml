@@ -1,0 +1,22 @@
+uuid: 071214e3-28fb-4087-9f03-c55e1bf4d002
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: secgov_breadcrumbs
+theme: secgov
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

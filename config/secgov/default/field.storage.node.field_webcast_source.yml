@@ -1,0 +1,35 @@
+uuid: 7b5c2f51-b6b9-41ce-b38f-8e5326341ba0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: ZfFjwIF9OXEuW9xmHUllk8xKu7ArD2NgKiOdzDXlrso
+id: node.field_webcast_source
+field_name: field_webcast_source
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: VNOC_1@360510
+      label: VNOC
+    -
+      value: MPR_1@330284
+      label: 'Multipurpose Room'
+    -
+      value: SPA_1@330283
+      label: 'Station Place Auditorium'
+    -
+      value: None
+      label: None
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

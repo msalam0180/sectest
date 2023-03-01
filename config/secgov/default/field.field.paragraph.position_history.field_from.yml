@@ -1,0 +1,21 @@
+uuid: 95da5bc3-404d-471e-90ed-14a0383fecc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_from
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - datetime
+id: paragraph.position_history.field_from
+field_name: field_from
+entity_type: paragraph
+bundle: position_history
+label: From
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

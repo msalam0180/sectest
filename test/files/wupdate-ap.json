@@ -1,0 +1,347 @@
+{
+    "aaer": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-20169"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat AP"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "1234-9876, 34-90664"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "AAER-4196",
+                    "uri": "\/litigation\/admin\/2020\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": [
+
+            ],
+            "field_rel_date": [
+                "2020-12-14"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Order Instituting Public Administrative and Cease-and-Desist Proceedings Pursuant to Section 8A of the Securities Act of 1933 and Sections 4C and 21C of the Securities Exchange Act of 1934 and Rule 102(e) of the Commission's Rules of Practice, Making Findings, and Imposing Remedial Sanctions and a Cease-and-Desist Order"
+            ],
+            "fnid": [
+                "3-20169"
+            ],
+            "rnid": [
+                "AAER-4196"
+            ],
+            "upload_files": [
+
+            ]
+        },
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-20167"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Mark E. Watson III"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "1234-9876-o"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "AAER-4195",
+                    "uri": "\/litigation\/admin\/2020\/1234-9876-o.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": [
+
+            ],
+            "field_rel_date": [
+                "2020-12-10"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Order Instituting Cease-and-Desist Proceedings Pursuant to Section 21C of the Securities Exchange Act of 1934, Making Findings, and Imposing a Cease-and-Desist Order"
+            ],
+            "fnid": [
+                "3-20167"
+            ],
+            "rnid": [
+                "AAER-4195"
+            ],
+            "upload_files": [
+
+            ]
+        }
+    ],
+    "aljo": null,
+    "ap": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-20169"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat AP"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "34-90664, AAER-4196"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "1234-9876",
+                    "uri": "\/litigation\/admin\/2020\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": null,
+            "field_rel_date": [
+                "2020-12-14"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Order Instituting Public Administrative and Cease-and-Desist Proceedings Pursuant to Section 8A of the Securities Act of 1933 and Sections 4C and 21C of the Securities Exchange Act of 1934 and Rule 102(e) of the Commission's Rules of Practice, Making Findings, and Imposing Remedial Sanctions and a Cease-and-Desist Order"
+            ],
+            "fnid": [
+                "3-20169"
+            ],
+            "rnid": [
+                "1234-9876"
+            ],
+            "upload_files": [
+                {
+                    "file": "1234-9876.pdf",
+                    "title": "1234-9876",
+                    "year": "2020"
+                }
+            ]
+        },
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-20167"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Mark E. Watson III"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+                "AAER-4195"
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "1234-9876-o",
+                    "uri": "\/litigation\/admin\/2020\/1234-9876-o.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": null,
+            "field_rel_date": [
+                "2020-12-10"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "Administrative Summary",
+                    "uri": "http:\/\/www.sec.gov\/enforce\/1234-9876-o-s"
+                }
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Order Instituting Cease-and-Desist Proceedings Pursuant to Section 21C of the Securities Exchange Act of 1934, Making Findings, and Imposing a Cease-and-Desist Order"
+            ],
+            "fnid": [
+                "3-20167"
+            ],
+            "rnid": [
+                "1234-9876-o"
+            ],
+            "upload_files": [
+                {
+                    "file": "1234-9876-o.pdf",
+                    "title": "1234-9876-o",
+                    "year": "2020"
+                },
+                {
+                    "file": "1234-9876-o-s",
+                    "title": "1234-9876-o-s",
+                    "year": "2020"
+                }
+            ]
+        }
+    ],
+    "ap_case": null,
+    "ic": null,
+    "id": null,
+    "lr": null,
+    "op": null,
+    "sro": null,
+    "ts": null
+}

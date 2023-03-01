@@ -1,0 +1,21 @@
+uuid: c669d521-a0ae-4d65-86a7-c4a929285780
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accrual_periodicity
+    - node.type.secarticle
+  module:
+    - options
+id: node.secarticle.field_accrual_periodicity
+field_name: field_accrual_periodicity
+entity_type: node
+bundle: secarticle
+label: Frequency
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

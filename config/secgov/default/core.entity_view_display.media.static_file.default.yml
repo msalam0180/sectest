@@ -1,0 +1,77 @@
+uuid: f60c8b5b-d2c8-47eb-acb9-cbf43d0a3c72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.static_file.field_act
+    - field.field.media.static_file.field_audience
+    - field.field.media.static_file.field_creator
+    - field.field.media.static_file.field_description_abstract
+    - field.field.media.static_file.field_display_title
+    - field.field.media.static_file.field_file_path
+    - field.field.media.static_file.field_link_text_override
+    - field.field.media.static_file.field_media_file
+    - field.field.media.static_file.field_primary_division_office
+    - field.field.media.static_file.field_publish_date
+    - field.field.media.static_file.field_regulation
+    - field.field.media.static_file.field_release_file_number
+    - field.field.media.static_file.field_sec_content_approver
+    - field.field.media.static_file.field_static_file_type
+    - field.field.media.static_file.field_supporting_division_office
+    - field.field.media.static_file.field_tags
+    - media.type.static_file
+  module:
+    - file
+id: media.static_file.default
+targetEntityType: media
+bundle: static_file
+mode: default
+content:
+  field_description_abstract:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_display_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_media_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_creator: true
+  field_file_path: true
+  field_link_text_override: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_release_file_number: true
+  field_sec_content_approver: true
+  field_static_file_type: true
+  field_supporting_division_office: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

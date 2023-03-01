@@ -1,0 +1,34 @@
+uuid: 364b9efc-0fd1-451c-aa32-b03f2248ea64
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 8DuBtdjbcB8j7YG17jwEnqgnfVgSr8qgjcDf2kawOF0
+id: secgov_page_title
+theme: secgov
+region: page_title
+weight: -27
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Office of Compliance Inspections and Examinations'
+  label_display: '0'
+  provider: core
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      page: page
+  request_path:
+    id: request_path
+    negate: true
+    pages: /error-404-page-not-found

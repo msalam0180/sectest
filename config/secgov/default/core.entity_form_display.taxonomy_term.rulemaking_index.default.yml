@@ -1,0 +1,66 @@
+uuid: ecb983e4-9bd6-4c8f-8d0f-08d97a59c830
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.rulemaking_index.field_ap_status
+    - field.field.taxonomy_term.rulemaking_index.field_rulemaking
+    - taxonomy.vocabulary.rulemaking_index
+  module:
+    - path
+    - workbench_moderation
+id: taxonomy_term.rulemaking_index.default
+targetEntityType: taxonomy_term
+bundle: rulemaking_index
+mode: default
+content:
+  field_ap_status:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rulemaking:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  tvi:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  tvi: true

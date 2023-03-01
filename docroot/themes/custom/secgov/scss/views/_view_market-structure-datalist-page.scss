@@ -1,0 +1,65 @@
+//
+// MARKET STRUCTURE DATA LIST PAGE
+// VIEW NAME: Market Structure Data List Page
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.marketstructure-data {
+  thead th {
+    &#view-field-display-title-table-column { width: 455px; }
+    &#view-field-list-page-det-secarticle-table-column { width: 200px; }
+  }
+}
+
+@include breakpoint('small'){
+  
+  .marketstructure-data  {
+    thead {
+      th {
+
+        &#view-field-display-title-table-column { display: none !important; }
+        &.views-field-field-date { display: inline-block; }
+        &.views-field-field-list-page-det-secarticle { display: none !important; }
+        div.tablesorter-header-inner { padding: 0 !important; }
+        
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          &.views-field-field-date {
+            display: table-header-group;
+            &:after {
+              clear:both;
+              content: ' ';
+              display: block;
+              margin-bottom: 10px;
+            }
+          }
+          &.views-field-field-display-title {
+            display: table-row-group;
+            &:after {
+              clear:both;
+              content: ' ';
+              display: block;
+              margin-bottom: 10px;
+            }
+          }
+          &.views-field-field-list-page-det-secarticle {
+            display: table-footer-group;
+            .show-for-small {
+              clear: both;
+              font-weight: 600;
+              margin-bottom: 10px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

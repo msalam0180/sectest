@@ -1,0 +1,62 @@
+uuid: 08f4a364-a299-4658-a530-833e238da4ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.slideshow
+    - field.field.media.audio.field_caption
+    - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_thumbnail
+    - field.field.media.audio.field_transcript
+    - media.type.audio
+  module:
+    - file
+    - image
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
+id: media.audio.slideshow
+targetEntityType: media
+bundle: audio
+mode: slideshow
+content:
+  field_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_audio_file:
+    type: file_audio
+    label: hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_transcript: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

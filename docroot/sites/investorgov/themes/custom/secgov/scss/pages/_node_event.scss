@@ -1,0 +1,249 @@
+//
+// CONTENT TYPE: EVENT - DETAIL PAGES
+// Styles ONLY apply to event nodes
+//
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+// Should be able to be drastically reduced
+
+#page.upcoming-events {
+  // span.shorten-header {
+  //   @include raleway;
+  //   display: block;
+  //   width: 76%;
+  // }
+  .event-cancelled {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h3 {
+    // @include raleway;
+    font-size: 32px;
+    color: $stone;
+  }
+
+  .field_additional_info_title {
+    // @include raleway;
+    font-size: 48px;
+    font-weight: 300;
+  }
+
+  .field_additional_information {
+    border-top: solid 1px #EBEBEB;
+    margin-top: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    div {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 13px;
+    }
+  }
+
+  .article-content {
+    @include span(9);
+    margin-bottom: 20px
+  }
+
+  #sidebar-second {
+    @include span(3 last);
+  }
+
+  #addthis-icons {
+    bottom: 20px;
+
+    @include breakpoint('medium', 'portrait') {
+      bottom: -35px;
+    }
+    @include breakpoint('small') {
+      bottom: -35px;
+    }
+  }
+
+}
+
+.upcoming-events{
+  .modified-date {
+    display: none;
+  }
+
+
+  .field_primary_media {
+    float: right;
+    padding-left: 30px;
+
+    div {
+      font-style: italic;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+  }
+
+  .field_location .field-content {
+    float: left;
+    padding-right: 20px;
+  }
+
+  .field_location {
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .field-content {
+      float:left;
+      padding-right: 50px;
+    }
+
+  }
+
+  .field_contact > div:first-child {
+    font-weight: bold;
+  }
+
+  .field_attached_files {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: solid 1px #EBEBEB;
+    border-bottom: solid 1px #EBEBEB;
+    margin-bottom: 30px;
+
+    div {
+      display: block;
+      padding: 6px 0;
+    }
+
+    span:before {
+      @include fontawesome;
+      color: #2F64B2;
+      content: '\f016';
+      margin-right: 10px;
+    }
+  }
+
+  .field_cancelled_postponed {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .field_cancelled_postponed,
+  .field_sec_event_date,
+  .field_sec_event_end_date {
+    font-family: "-apple-system-font", "Helvetica", sans-serif;
+    font-weight: normal;
+    color: #6F7479;
+    font-size: 1.25rem;
+
+    @include breakpoint('small'){
+      font-size: 1.1rem;
+    }
+  }
+
+  .field_additional_information div, .field_location div, .field_contact div {
+    margin: 5px 0;
+  }
+
+  #block-secgov-content {
+    margin-top: 20px;
+  }
+}
+
+/* Event Detail Page */
+.upcoming-events {
+
+  #addthis-icons {
+    bottom: 0;
+  }
+
+  .field_additional_information {
+    // @include raleway;
+    font-size: 32px;
+    font-weight:300;
+
+    div {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      font-weight: normal;
+
+      h2 {
+        display: block;
+        padding-bottom: 5px !important;
+      }
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+body.node--type-event {
+  margin-bottom: 20px;
+
+  // #page-title {
+  //   position: relative;
+  //   text-align: center;
+
+  //   h1 {
+  //     text-transform: capitalize; // TODO: Should this apply to all pages titles, or just events?
+
+  //     @include breakpoint('medium', 'portrait'){
+  //       text-align: center !important;
+  //     }
+
+  //     @include breakpoint('small'){
+  //       text-align: center !important;
+  //     }
+  //   }
+  // }
+
+  // Fields
+  .field_sec_event_date {
+    position: relative;
+    top: -26px;
+  }
+
+  .field_webcast {
+
+    .field-label {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    .field-content div {
+      margin: 10px 0;
+    }
+
+  }
+
+  // TODO: What is this for?
+  .upcoming-views-block header a {
+    float: left;
+    margin-top: -150px;
+  }
+  
+  // When is this needed?
+  #sidebar-second {
+    // Flash software disclaimer
+    #block-webcast-trouble,
+    #block-flashsoftware {
+      padding:0 1em;
+      border: 1px solid #BFBFBF;
+      display: none;
+      h2 {
+        margin-top: 20px;
+        padding: 0;
+      }
+    }
+    // Move edit link over a bit
+    .contextual {
+      margin-right: 10px;
+    }
+  }
+
+  // TODO: What is this for?
+  #head1 {
+    margin-bottom:0
+  }
+}

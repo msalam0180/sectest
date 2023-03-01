@@ -1,0 +1,23 @@
+uuid: 02d7ba8b-5da6-4076-9730-ba1e7dd54fc8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: ilRsmHBMPcsGQwxgFmVrJGbtB-Cdmxyhi9FhUplKCGs
+id: node.field_location_news
+field_name: field_location_news
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

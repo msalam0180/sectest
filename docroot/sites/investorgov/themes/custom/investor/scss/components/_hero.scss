@@ -1,0 +1,95 @@
+$hero-title-color: $primary_1;
+$hero-title-dk-color: #fff;
+$hero-title-dk-bg-color: $primary_1;
+
+$hero-sub-title-color: $primary_1;
+$hero-sub-title-dk-color: $primary_1;
+$hero-sub-title-dk-bg-color: #fff;
+
+@media screen{
+
+  .hero {
+    min-height: 330px;
+    background-size: cover;
+    padding: 40px;
+    background-position: top center;
+    &.hero-text-left{
+      background-position: top right;
+    }
+    &.hero-text-right{
+      background-position: top left;
+    }
+    &.hero-space-below{
+      margin-bottom: 20px;
+    }
+    @media only screen and (max-width:799px){
+      min-height: 200px;
+    }
+  }
+  
+  .hero-title{
+    color: $hero-title-color;
+    font-size: 3.5em;
+    display: inline;
+    padding: 0 0 4px 0;
+    line-height: 1.35em;
+    .hero-text-theme-dk &{
+      color: $hero-title-dk-color;
+      box-shadow: -16px 0 0 $hero-title-dk-bg-color, 16px 0 0 $hero-title-dk-bg-color;
+      background: $hero-title-dk-bg-color;
+    }
+    @media only screen and (max-width:799px){
+      font-size: 1.5em;
+    }
+  }
+  
+  .hero-sub-title{
+    font-size: 1.7em;
+    display: inline;
+    color: $hero-sub-title-color;
+    .hero-text-theme-dk &{
+      color: $hero-sub-title-dk-color;
+      background: $hero-sub-title-dk-bg-color;
+      box-shadow: -16px 0 0 $hero-sub-title-dk-bg-color, 16px 0 0 $hero-sub-title-dk-bg-color;
+    }
+    @media only screen and (max-width:799px){
+      font-size: 1em;
+    }
+  }
+  
+  .hero-sub-title-wrap{
+    padding-top: 20px;
+    @media only screen and (max-width:799px){
+      padding-top: 10px;
+    }
+  }
+  
+  .hero-text-center{
+    text-align: center;
+  }
+  
+  .hero-text-left{
+    text-align: left;
+    display: flex;
+  }
+  
+  .hero-text-right{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .hero-text-right, .hero-text-left{
+    .hero-text{
+      max-width: 70%;
+}
+  }
+}
+
+@media print{
+  .hero {
+    border: 1px solid #e3e3e3;
+    padding: 20px 20px 0 20px;
+    background: none !important;
+  }
+}

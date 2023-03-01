@@ -1,0 +1,22 @@
+uuid: 604a51de-0bc0-452c-90cd-0dab37de2c8e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - secgov
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: secgov_local_tasks
+theme: secgov
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

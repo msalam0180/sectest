@@ -1,0 +1,24 @@
+uuid: f8e073ce-128a-4ef2-84a7-ef720378835b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 1Ewei_zTCwW1yJp_QDZ0wKA82MpMiUJsZj4YxneOfDI
+id: gallery
+label: Gallery
+type: 'canonical_entities:node'
+pattern: 'gallery/[node:title]'
+selection_criteria:
+  8bb5554f-3aa3-4aab-a25c-c8059c38fbf4:
+    id: node_type
+    bundles:
+      gallery: gallery
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8bb5554f-3aa3-4aab-a25c-c8059c38fbf4
+selection_logic: and
+weight: -5
+relationships: {  }

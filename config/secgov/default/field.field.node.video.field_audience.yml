@@ -1,0 +1,28 @@
+uuid: dff317f7-462a-4e0b-a5bd-936a230d386b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.video
+    - taxonomy.vocabulary.audience
+id: node.video.field_audience
+field_name: field_audience
+entity_type: node
+bundle: video
+label: Audience
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: ac4e422e-45fe-4a54-9222-68b7913731f5
+langcode: en
+status: true
+dependencies: {  }
+machine: train
+description: null
+name: Train
+url: 'https://dcmtrain.investor.gov'
+fg_color: '#d0d0d0'
+bg_color: '#0d0d0d'

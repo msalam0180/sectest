@@ -1,0 +1,15 @@
+sec_conditional:
+  version: VERSION
+  js:
+    js/sec_conditional_fields.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+sec_conditional.confirmDialog:
+  version: VERSION
+  js:
+    js/confirm_dialog.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

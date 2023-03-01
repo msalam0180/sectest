@@ -1,0 +1,117 @@
+uuid: 0e3a1d26-f0e1-48d0-8dbe-96b5fba4bb63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video_media.field_act
+    - field.field.media.video_media.field_audience
+    - field.field.media.video_media.field_display_title
+    - field.field.media.video_media.field_media_complete_webcast
+    - field.field.media.video_media.field_media_item_body
+    - field.field.media.video_media.field_media_oembed_video
+    - field.field.media.video_media.field_media_person
+    - field.field.media.video_media.field_media_topic
+    - field.field.media.video_media.field_media_transcript
+    - field.field.media.video_media.field_media_video_running_time
+    - field.field.media.video_media.field_primary_division_office
+    - field.field.media.video_media.field_promoted_to_front_page
+    - field.field.media.video_media.field_publish_date
+    - field.field.media.video_media.field_regulation
+    - field.field.media.video_media.field_remote_video_url
+    - field.field.media.video_media.field_supporting_division_office
+    - field.field.media.video_media.field_tags
+    - media.type.video_media
+  module:
+    - datetime
+    - link
+    - text
+    - video_embed_field
+id: media.video_media.default
+targetEntityType: media
+bundle: video_media
+mode: default
+content:
+  field_media_complete_webcast:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_item_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_media_topic:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_media_transcript:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_media_video_running_time:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_remote_video_url:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: false
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_display_title: true
+  field_media_oembed_video: true
+  field_media_person: true
+  field_primary_division_office: true
+  field_promoted_to_front_page: true
+  field_regulation: true
+  field_supporting_division_office: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

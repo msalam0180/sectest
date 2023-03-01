@@ -1,0 +1,11 @@
+uuid: c9cc9183-5f4a-451a-a33e-150e3f0d5300
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__field_collection_item__published
+label: 'Set Field Collection Item as Published'
+type: field_collection_item
+plugin: 'state_change:field_collection_item__published'
+configuration: {  }

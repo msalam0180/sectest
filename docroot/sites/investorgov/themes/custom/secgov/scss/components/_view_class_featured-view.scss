@@ -1,0 +1,117 @@
+//
+// FEATURED VIEW
+// VIEW CLASS: featured-view 
+// DIRECTIONS: Add class "featured-view" to the view in the UI
+// Styles a view in the "featured-view" style
+// 
+// EXAMPLES: Featured Video, Featured Spotlight
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.featured-view {
+  @include span(12 last);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: $gray-blue;
+  color: white;
+
+  header {
+    @include span(8 last);
+      @include breakpoint('small') {
+        @include span(12);
+      }
+  }
+
+  p {
+    color: white;
+  }
+  
+  .views-field-title, 
+  .views-field-field-display-title, 
+  .views-field-field-date, 
+  .views-field-body, 
+  .views-field-field-teaser-text {
+    @include span(8 last);
+    margin-bottom: .5rem;
+    padding-left: 1rem;
+    @include breakpoint('small') {
+        @include span(12);
+        padding-left: 0px;
+    }
+  }
+
+  .views-field-field-display-title {
+    @include breakpoint('small') {
+        padding-top: 1rem;
+    }
+    a {
+      color: $yellow-orange;
+      font-size: 1rem;
+    }
+  }
+
+  .views-field-field-date {
+    font-weight: bold;
+  }
+
+  h2.featured-block-title {
+    padding-left: 1rem;
+    color: white;
+    @include breakpoint('small') {
+      padding-left: 0px;
+    }
+  }
+}
+
+/* BEGIN SEC VIDEO STYLES */
+.featured_video-block_1 {
+	@include span(12 last);
+}
+
+.featured-view-video {
+  div:after {
+    content: ' ';
+    clear: both;
+    display:block;
+  }
+
+  .views-field-field-video {
+    @include span (4);
+    margin-right: gutter(2 of 12);
+    @include breakpoint('small'){
+			width: 100%;
+		}
+
+    .field-content {
+      display: block;
+      max-width: 320px;
+      position: relative;
+      @include breakpoint('small'){
+				max-width: initial;
+			}
+
+      .field-content-runtime {
+        background-color: lightgrey;
+        bottom: 0;
+        color: black;
+        padding: 5px 7px;
+        right: 0;
+        text-align: center;
+        width: 48px;
+        z-index: 10;
+        position: absolute;
+      }
+
+      img {
+      	@include breakpoint('small'){
+					width: 100%;
+				}
+			}
+    }
+  }
+  
+  #table_paging {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+uuid: 3fb023c1-1515-41e7-aac3-caac2c12b3d4
+langcode: en
+status: true
+dependencies: {  }
+id: government-transparency
+label: 'Government Transparency'
+description: 'Government Transparency footer menu'
+locked: false

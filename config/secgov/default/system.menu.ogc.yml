@@ -1,0 +1,10 @@
+uuid: 852197cf-533d-40f3-ac4f-c284576def21
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: urjXTSzfCaC89EvJJS3s3BviDHM8XCJuw7NwzqQt92o
+id: ogc
+label: OGC
+description: 'Office of the General Counsel Menu'
+locked: false

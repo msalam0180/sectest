@@ -1,0 +1,30 @@
+uuid: 3640e248-eb44-4fac-a49a-aebfc52b8e7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.news
+    - taxonomy.vocabulary.audience
+_core:
+  default_config_hash: VYuy6iw9CudwE0bv-nbBd_XE2pR9qsUYvwAoj5zi9LM
+id: node.news.field_audience
+field_name: field_audience
+entity_type: node
+bundle: news
+label: Audience
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

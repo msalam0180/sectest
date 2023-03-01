@@ -1,0 +1,496 @@
+uuid: 3dbac847-132d-4c46-b27e-29993ae9e52b
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: PJswSAW8V07Px8mnru6Xm5plGsj_KZCNEndP0WGSorE
+weight: 0
+open: null
+close: null
+uid: 116
+template: false
+archive: false
+id: fintech_test_form
+title: 'Request Form for FinTech-Related Meetings and Other Assistance'
+description: ''
+category: ''
+elements: |-
+  intro_text:
+    '#type': processed_text
+    '#text': |
+      <div class="clearfix margin-bottom-20"><img alt="Finhub header" data-entity-type="file" data-entity-uuid="87a36992-c401-443b-ae5f-c13d992ba2a2" src="/files/inline-images/header-finhub-4.jpg" /></div>
+
+      <p>We welcome requests for meetings and other assistance relating to FinTech issues arising under the federal securities laws.</p>
+
+      <p>Please use the form below to request a meeting or assistance from SEC staff.</p>
+
+      <h2 class="margin-bottom-10">Important Notes before completing this form:</h2>
+
+      <ul class="blue-chevron margin-bottom-20">
+      	<li>For assistance in completing this form, please refer to <a href="#general-instructions">General Instructions</a> below.</li>
+      	<li>Please read our <a href="http://www.sec.gov/privacy.htm">Privacy Act Notice</a> to learn about how we may use the information you send to us.</li>
+      	<li>To request confidential treatment of a submission, please follow the procedure detailed <a href="/FOIA/conftreat.htm">here</a>.</li>
+      	<li>Do not use this form to file a complaint or tip concerning potential securities law violations. If you wish to file a complaint or a tip, click here for the <a href="https://www.sec.gov/tcr">SEC Center for Complaints and Enforcement Tips</a>.</li>
+      	<li>Alternatively, you have the option to print this form and send it by mail to:<br />
+      	FinHub<br />
+      	U.S. Securities and Exchange Commission<br />
+      	100 F Street, NE<br />
+      	Washington, DC 20549</li>
+      	<li>Do not use this form to apply for jobs at the SEC.&nbsp; If you wish to learn more and how to apply for opportunities, please visit&nbsp;<a href="https://sec.usajobs.gov/">USA Jobs</a>.</li>
+      </ul>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  information_about_you:
+    '#type': fieldset
+    '#title': 'Information About You'
+    name:
+      '#type': textfield
+      '#title': Name
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your name.'
+      '#format_items': comma
+    email_address:
+      '#type': email
+      '#title': 'Email Address'
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your email address.'
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+      '#format_items': comma
+    phone_number:
+      '#type': tel
+      '#title': 'Phone Number'
+      '#title_display': inline
+      '#required': true
+      '#required_error': 'Please fill out your phone number.'
+      '#format_items': comma
+    best_time_of_day_eastern_us_time_to_reach_you_by_phone:
+      '#type': select
+      '#title': 'Best time of day (Eastern US time) to reach you by phone'
+      '#description': '<em>The staff will attempt to call you during the time of day you select.</em>'
+      '#title_display': inline
+      '#options':
+        Morning: Morning
+        Afternoon: Afternoon
+        Evening: Evening
+  information_about_your_meeting_request:
+    '#type': fieldset
+    '#title': 'Information About Your Meeting Request'
+    general_subject_matter_of_your_request:
+      '#type': webform_select_other
+      '#title': 'General Subject Matter of Your Request'
+      '#multiple': true
+      '#description': |-
+        Please select at least one of the listed options below for the general subject matter of your meeting request.<br />
+        <em>To select multiple options, hold down the (CTRL - PC) or (Command - Mac) key</em>
+      '#description_display': before
+      '#options':
+        'Advisory Services Related to Digital Assets': 'Advisory Services Related to Digital Assets'
+        'Automated Investment Tools / Robo-Advisers': 'Automated Investment Tools / Robo-Advisers'
+        'Digital Assets': 'Digital Assets'
+        'Digital Asset Trading Platforms': 'Digital Asset Trading Platforms'
+        'Digital Marketplace Financing': 'Digital Marketplace Financing'
+        'Funding Portals': 'Funding Portals'
+        'Machine Learning / Artificial Intelligence': 'Machine Learning / Artificial Intelligence'
+        'Pooled Investment Vehicle / Fund Related to Digital Assets': 'Pooled Investment Vehicle / Fund Related to Digital Assets'
+        'P2P Meet-up': 'P2P Meet-up'
+      '#required': true
+      '#required_error': 'Please select at least one topic from the list here.'
+    purpose_of_the_requested_meeting:
+      '#type': webform_select_other
+      '#title': 'Purpose of the Requested Meeting'
+      '#multiple': true
+      '#description': 'Please select at least one of the listed options below for the purpose of your meeting request.<br/><em>To select multiple options, hold down the (CTRL - PC) or (Command - Mac) key</em>'
+      '#description_display': before
+      '#options':
+        'Accounting-related Inquiry': 'Accounting-related Inquiry'
+        'Interpretation of Rules and Forms': 'Interpretation of Rules and Forms'
+        'Custody Inquiry': 'Custody Inquiry'
+        'Determination of Instrument as a “Security”': 'Determination of Instrument as a “Security”'
+        'Funding Portal Registration': 'Funding Portal Registration'
+        'Intermediary Registration': 'Intermediary Registration'
+        'Securities Registration': 'Securities Registration'
+        'Trading Platform Registration': 'Trading Platform Registration'
+      '#required': true
+      '#required_error': 'Please select at least one topic from the list here.'
+    your_request:
+      '#type': textarea
+      '#title': 'Your Request'
+      '#description': |
+        <p class="margin-top-10 margin-bottom-10">Please state, in reasonable detail, your request for a meeting or other assistance.</p>
+
+        <p><strong><small>DO NOT&nbsp;<em>provide </em>any sensitive personally identifiable information (PII) on this form. Examples of PII include social security number (SSN) and date of birth (DOB).</small></strong></p>
+      '#description_display': before
+      '#required': true
+      '#format_items': comma
+    additional_information:
+      '#type': textarea
+      '#title': 'Additional Information'
+      '#description': |
+        <p class="margin-top-10 margin-bottom-10">You may provide any other information that is relevant to your meeting request. For example, you may include the factual background and results of research you conducted, including references to your sources. You may also include any other pertinent information you believe will help the staff respond to your meeting request.</p>
+
+        <p><strong><small>DO NOT&nbsp;<em>provide&nbsp;</em>any sensitive personally identifiable information (PII) on this form. Examples of PII include social security number (SSN) and date of birth (DOB).</small></strong></p>
+      '#description_display': before
+      '#format_items': comma
+  upload_any_additional_information:
+    '#type': fieldset
+    '#title': 'Upload Any Additional Information'
+    upload_instructions:
+      '#type': processed_text
+      '#text': |
+        <p class="margin-bottom-20">You may provide any documents or other materials that are relevant to your meeting request, such as white papers, presentations, screen shots or offering materials. Please do not send executable files or zip files. This form will only accept PDF, Word, Excel, Powerpoint, JPG and PNG file attachments.&nbsp;File attachments are limited to attachments of 20MB in the aggregate.&nbsp;</p>
+
+        <p><strong><small>DO NOT&nbsp;<em>attach documents&nbsp;</em>containing any sensitive personally identifiable information (PII) on this form. Examples of PII include social security number (SSN) and date of birth (DOB).</small></strong></p>
+      '#format': full_html
+    upload_files:
+      '#type': webform_document_file
+      '#title': 'Upload Files'
+      '#multiple': 5
+      '#max_filesize': '20'
+      '#file_extensions': 'doc docx  jpg jpeg pdf png ppt pptx xls xlsx'
+  general_instructions:
+    '#type': processed_text
+    '#text': |
+      <h2 id="general-instructions">General Instructions for the Use of This Form</h2>
+
+      <div>
+      <p class="line-height-2x"><strong>Answers to many questions are available on this website.</strong> Before you contact FinHub, please visit “<a href="https://www.investor.gov/additional-resources/specialized-resources/spotlight-initial-coin-offerings-digital-assets">Spotlight on Initial Coin Offerings and Digital Assets</a>” and the materials linked from that page, which answer&nbsp;some of the most common questions we receive regarding digital assets. For assistance conducting research on this website, see <a href="https://www.sec.gov/investor/pubs/securitieslaws.htm">Researching the Federal Securities Laws through the SEC Website</a>. Also note that some resources for conducting research are available through the <a href="https://www.sec.gov/divisions/corpfin.shtml">Corporation Finance home page</a>, <a href="https://www.sec.gov/investment">Division of Investment Management home page</a>, and the <a href="https://www.sec.gov/page/tmsectionlanding">Division of Trading and Markets home page</a>.</p>
+
+      <p class="line-height-2x"><strong>You may include results of legal research with your request.</strong> If you are an attorney or accountant submitting a meeting request related to an interpretive matter, we request that you research all available authority before contacting us. You may include the results of your research with your question, as well as your views on the question and the basis for those views.</p>
+
+      <p class="line-height-2x"><strong>Please submit only one request concerning your issue.</strong> Do not also call the Division or Office to make your meeting request. We will direct your request to the appropriate Division or Office for you. Please wait for a staff member to contact you about your questions before providing additional information.</p>
+      </div>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+  json_attachement:
+    '#type': webform_attachment_twig
+    '#title': 'JSON attachement'
+    '#filename': FinHubRequest.json
+    '#link_title': 'Fin Hub Request'
+    '#template': |-
+      {
+        "SerialNumber": {{ serial }},
+        "DateOfInquiry": "{{created }}",
+        "Name": "{{ data['name'] }}",
+        "EmailAddress": "{{ data['email_address'] }}",
+        "PhoneNumber": "{{ data['phone_number'] }}",
+        "BestTimeToReach": "{{ data['best_time_of_day_eastern_us_time_to_reach_you_by_phone'] }}",
+        "GeneralSubjectMatter": [
+        {% for subject in data['general_subject_matter_of_your_request'] %}
+        "{{ subject }}"{{ (not loop.last) ? ',':'' }}
+        {% endfor %}
+        ],
+        "PurposeOfMeeting": [
+        {% for purpose in data['purpose_of_the_requested_meeting'] %}
+        "{{ purpose }}"{{ (not loop.last) ? ',':'' }}
+        {% endfor %}
+        ],
+        "RequestDetails": "{{ data['your_request'] }}",
+        "AdditionalInformation": "{{ data['additional_information'] }}"
+      }
+css: ".webform-submission-form input[type='text'], .webform-submission-form input[type='email'], .webform-submission-form input[type='tel'] {\r\n  width: 66.10169% !important;\r\n}\r\n\r\n.webform-submission-form fieldset.form-wrapper {\r\n  border: 1px solid #000;\r\n  margin: 20px 0;\r\n  padding: 20px;\r\n}\r\n\r\n.webform-submission-form legend {\r\n  font-family: 'Raleway', sans-serif !important;\r\n  padding: 0 .5em !important;\r\n}\r\n\r\n.webform-submission-form label {\r\n  font-family: 'Raleway', sans-serif !important;\r\n  font-size: .875rem !important;\r\n  font-weight: 600 !important;\r\n  margin: 5px 0 !important;\r\n}\r\n\r\n.webform-submission-form .webform-element--title-inline label + input {\r\n  display: inline-block !important;\r\n  height: 25px;\r\n}\r\n\r\n.webform-submission-form select {\r\n  width: 100% !important;\r\n}\r\n\r\n.webform-submission-form .form-item {\r\n margin-top: 10px; \r\n}\r\n\r\n.webform-select-other--wrapper {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.path-webform select[multiple=\"multiple\"] {\r\n  background: #ffffff !important;\r\n}\r\n\r\n/*fieldset.radios--wrapper {\r\n  background-color: #f6f6f6;\r\n}*/\r\n\r\n"
+javascript: "jQuery(function($){\r\n  $(\".fieldset-wrapper\").addClass(\"colspan-12\");\r\n  //$(\".webform-element--title-inline\").addClass(\"colspan-6\");\r\n  //$(\".webform-element--title-inline:odd\").addClass(\"last\");\r\n  //$(\".webform-element--title-inline label\").addClass(\"colspan-4\");\r\n  //$(\".webform-element--title-inline input\").addClass(\"colspan-2 last\");\r\n  //$(\"<div class='clearfix'/>\").insertAfter(\".webform-element--title-inline:odd\");\r\n  $(\".webform-element--title-inline label\").addClass(\"colspan-4\");\r\n  $(\".webform-element--title-inline input, .webform-element--title-inline .select-container, .webform-element--title-inline .description\").addClass(\"colspan-8 last\");\r\n  $(\".webform-element--title-inline .select-container\").addClass(\"margin-bottom-0\");\r\n  $(\"<div class='clearfix'/>\").insertAfter(\".webform-element--title-inline, .webform-element--title-inline .select-container\");\r\n  $(\"fieldset[id$='general-subject-matter-of-your-request'] .fieldset-wrapper\").prepend($(\"fieldset[id$='general-subject-matter-of-your-request'] .fieldset-wrapper .description\"));\r\n  $(\"fieldset[id$='purpose-of-the-requested-meeting'] .fieldset-wrapper\").prepend($(\"fieldset[id$='purpose-of-the-requested-meeting'] .fieldset-wrapper .description\"));\r\n});"
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /finhub-form
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: true
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: true
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users:
+      - 1
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: false
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: finhub@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: "A new request has been received. Please see the information regarding this request below:<br />\r\n<br />\r\n<strong>Information About You:</strong><br />\r\n[webform_submission:values:name]<br />\r\n[webform_submission:values:email_address]<br />\r\n[webform_submission:values:phone_number]<br />\r\n[webform_submission:values:best_time_of_day_eastern_us_time_to_reach_you_by_phone]<br />\r\n<br />\r\n<strong>Information About Your Meeting Request:</strong><br />\r\n<em>General Subject Matter of Your Request:</em><br />\r\n[webform_submission:values:general_subject_matter_of_your_request]<br />\r\n<br />\r\n<em>Purpose of the Requested Meeting:</em><br />\r\n[webform_submission:values:purpose_of_the_requested_meeting]<br />\r\n<br />\r\n<strong>Your Request:</strong><br />\r\n[webform_submission:values:your_request]<br />\r\n<br />\r\n<strong>Additional Information:</strong><br />\r\n[webform_submission:values:additional_information]"
+      excluded_elements:
+        json_attachement: json_attachement
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  webform_with_json_attachment:
+    id: email
+    handler_id: webform_with_json_attachment
+    label: 'Webform with JSON attachment'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 2
+    settings:
+      states:
+        - completed
+      to_mail: FinHub@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'smail - Webform submission [webform_submission:serial] from [webform_submission:webform:title]'
+      body: "A new request has been received. Please see the information regarding this request below:<br />\r\n<br />\r\n<strong>Information About You:</strong><br />\r\n[webform_submission:values:name]<br />\r\n[webform_submission:values:email_address]<br />\r\n[webform_submission:values:phone_number]<br />\r\n[webform_submission:values:best_time_of_day_eastern_us_time_to_reach_you_by_phone]<br />\r\n<br />\r\n<strong>Information About Your Meeting Request:</strong><br />\r\n<em>General Subject Matter of Your Request:</em><br />\r\n[webform_submission:values:general_subject_matter_of_your_request]<br />\r\n<br />\r\n<em>Purpose of the Requested Meeting:</em><br />\r\n[webform_submission:values:purpose_of_the_requested_meeting]<br />\r\n<br />\r\n<strong>Your Request:</strong><br />\r\n[webform_submission:values:your_request]<br />\r\n<br />\r\n<strong>Additional Information:</strong><br />\r\n[webform_submission:values:additional_information]"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

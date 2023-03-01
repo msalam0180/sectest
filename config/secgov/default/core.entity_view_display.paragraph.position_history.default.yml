@@ -1,0 +1,64 @@
+uuid: 027f0f74-c1d2-403f-97bc-db67a2cf131e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.position_history.field_current_position
+    - field.field.paragraph.position_history.field_from
+    - field.field.paragraph.position_history.field_position_category
+    - field.field.paragraph.position_history.field_position_title
+    - field.field.paragraph.position_history.field_to
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - datetime
+    - options
+id: paragraph.position_history.default
+targetEntityType: paragraph
+bundle: position_history
+mode: default
+content:
+  field_current_position:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_from:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_position_category:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_position_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_to:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  search_api_excerpt: true

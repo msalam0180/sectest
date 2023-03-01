@@ -1,0 +1,145 @@
+uuid: 8d69b91a-f772-41e1-90d6-91c57d3c271d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webcast.body
+    - field.field.node.webcast.field_date
+    - field.field.node.webcast.field_display_title
+    - field.field.node.webcast.field_division_office
+    - field.field.node.webcast.field_end_date
+    - field.field.node.webcast.field_media_id
+    - field.field.node.webcast.field_primary_division_office
+    - field.field.node.webcast.field_publish_date
+    - field.field.node.webcast.field_start_date
+    - field.field.node.webcast.field_upload_name
+    - field.field.node.webcast.field_webcast_config
+    - field.field.node.webcast.field_webcast_running_time
+    - field.field.node.webcast.field_webcast_source
+    - field.field.node.webcast.field_webcast_src
+    - field.field.node.webcast.field_webcast_state
+    - node.type.webcast
+  module:
+    - datetime
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.webcast.default
+targetEntityType: node
+bundle: webcast
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_division_office:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_media_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_primary_division_office:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_start_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_webcast_running_time:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_webcast_state:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_upload_name: true
+  field_webcast_config: true
+  field_webcast_source: true
+  field_webcast_src: true
+  langcode: true
+  search_api_excerpt: true

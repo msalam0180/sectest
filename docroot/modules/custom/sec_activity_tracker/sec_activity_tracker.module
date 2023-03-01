@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Enables tracking of moderated content & generates Views based Dashboard.
+ */
+
+use \Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+*/
+function sec_activity_tracker_views_pre_render(ViewExecutable $view) {
+  if ( $view->id() !== "sec_user_activity_log" ) {
+    return;
+  }
+  $view->element['#attached']['library'][] = 'sec_activity_tracker/sec_activity_tracker.trackedevents';
+}

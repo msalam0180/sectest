@@ -1,0 +1,22 @@
+{{ attach_library('sec_edgar/edgar-company-person') }}
+<div class="stylized-box-2">
+  <form id="sec-edgar-company-person-form" method="get" action="{{ submission_url }}">
+    <div>
+      <h2 class="hasTooltip">{{ title }}
+        <div class="tooltip" aria-describedby="text-lookup" tabindex="0"><i class="fa fa-question-circle"></i></div>
+      </h2>
+      <div id="text-lookup" class="tip-lookup">
+        <p>Please enter in the following format: 99999 (CIK), S99999 (series), C9999 (class)</p>
+      </div>
+      <div class="form-item">
+        <input name="CIK" type="hidden" value="" id="cik" alt="CIK">
+        <input type="hidden" name="sc" value="companyseries" alt="Company Series">
+        <input name="type" value="N-PX" type="hidden" alt="Form N-PX">
+        <input type="text" id="ticker" placeholder="Series, Class, Ticker or CIK" name="ticker" title="Series, Class, Ticker or CIK"  aria-required="true" aria-invalid="false"/>
+        <button name="Find" value="Search" type="submit" class="collapsed-submit">Search</button>
+        <div class="element-description">{{ description }}</div>
+      </div>
+    </div>
+  </form>
+</div>
+

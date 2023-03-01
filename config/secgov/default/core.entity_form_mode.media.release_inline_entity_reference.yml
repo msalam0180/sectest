@@ -1,0 +1,10 @@
+uuid: f7774fba-e2db-4d6c-bcfa-ada6875e7390
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.release_inline_entity_reference
+label: 'Release Inline Entity Reference'
+targetEntityType: media
+cache: true

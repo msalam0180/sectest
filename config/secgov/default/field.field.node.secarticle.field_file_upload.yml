@@ -1,0 +1,29 @@
+uuid: 0f917881-58e8-49ff-a69a-a1da0d1e88ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_upload
+    - node.type.secarticle
+  module:
+    - file
+_core:
+  default_config_hash: aCMcQWWcBmnewukaTs52hObhSTo1DDF7sW7g1FXvWeM
+id: node.secarticle.field_file_upload
+field_name: field_file_upload
+entity_type: node
+bundle: secarticle
+label: 'Data Dictionary'
+description: 'If applicable please attach data dictionary with this Article.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'asx avi css csv doc docx gif h htm html idx iff jpg js json map midi mov mp3 mp4 mpg pdf png ppt rss rtf sdp shtml smi txt wav wma wmv xfd xls xlsx xml xsd xsl xslt zip'
+  max_filesize: ''
+  description_field: false
+field_type: file

@@ -1,0 +1,29 @@
+uuid: 16a534e9-7a39-49e8-be4d-1f27d9366554
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_number
+    - node.type.customized_comment_form
+    - taxonomy.vocabulary.rulemaking_index
+id: node.customized_comment_form.field_file_number
+field_name: field_file_number
+entity_type: node
+bundle: customized_comment_form
+label: 'File Number'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      rulemaking_index: rulemaking_index
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

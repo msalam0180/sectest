@@ -1,0 +1,21 @@
+uuid: 2f696c0a-99b8-4559-8fdf-3845023d44d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.news
+_core:
+  default_config_hash: _X_sX00UVTzbKCwB4aVfgWzenIGJsm69nQna7FA17Kw
+id: node.news.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: news
+label: 'Display Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,52 @@
+uuid: 2bbaa410-4663-41d3-9620-106896b8a47b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.data_distribution.field_access_url
+    - field.field.node.data_distribution.field_associated_dataset
+    - field.field.node.data_distribution.field_creator
+    - field.field.node.data_distribution.field_data_dist_upload
+    - field.field.node.data_distribution.field_description_abstract
+    - field.field.node.data_distribution.field_display_title
+    - field.field.node.data_distribution.field_publish_date
+    - field.field.node.data_distribution.field_sec_content_approver
+    - node.type.data_distribution
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: RCMYd6srC_MWB0xa3o95-zgJCZZhJXlgd3ZIIPfuzFI
+id: node.data_distribution.teaser
+targetEntityType: node
+bundle: data_distribution
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_access_url: true
+  field_associated_dataset: true
+  field_creator: true
+  field_data_dist_upload: true
+  field_description_abstract: true
+  field_display_title: true
+  field_publish_date: true
+  field_sec_content_approver: true
+  langcode: true
+  search_api_excerpt: true

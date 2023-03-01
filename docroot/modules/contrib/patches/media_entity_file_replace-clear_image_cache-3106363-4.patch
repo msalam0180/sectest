@@ -1,0 +1,14 @@
+diff --git a/media_entity_file_replace.module b/media_entity_file_replace.module
+index c0f1c01..ad8fb94 100644
+--- a/media_entity_file_replace.module
++++ b/media_entity_file_replace.module
+@@ -216,6 +216,9 @@ function _media_entity_file_replace_submit($form, FormStateInterface $formState)
+     // the file (like size).
+     $originalFile->save();
+
++    // Clear image cache for this file. If not an image then this will be harmless.
++    image_path_flush($originalFile->getFileUri());
++
+     // The replacement file is marked as temporary and will typically be
+     // automatically deleted on cron after a certain period of time, but
+     // lets just do it now to avoid any potential confusion of the file

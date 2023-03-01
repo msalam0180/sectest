@@ -1,0 +1,28 @@
+uuid: 8ddcf3ff-0484-494b-835e-d1d4c1f73469
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person
+    - node.type.secperson
+    - node.type.video
+id: node.video.field_person
+field_name: field_person
+entity_type: node
+bundle: video
+label: Speaker
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      secperson: secperson
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

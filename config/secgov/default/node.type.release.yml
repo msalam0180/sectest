@@ -1,0 +1,40 @@
+uuid: fe5c498a-083f-4d2a-b202-581a796ae125
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '0'
+    edit_location: ''
+    edit_destination: 0
+name: Release
+type: release
+description: 'A release content type can include Trading Suspensions, Delinquent Filings, Litigation Releases, ALJ Orders'
+help: "To import a release w/ files and metadata, see the <a href=\"/admin/release_importer\">Release Importer</a>\r\n<br /><br />\r\n"
+new_revision: true
+preview_mode: 0
+display_submitted: false

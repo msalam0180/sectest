@@ -1,0 +1,8 @@
+uuid: dfa3fe71-42c7-4963-931f-556d94af3a53
+langcode: en
+status: true
+dependencies: {  }
+id: strategic-plan-menu
+label: 'Strategic Plan menu'
+description: ''
+locked: false

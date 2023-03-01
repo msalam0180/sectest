@@ -1,0 +1,36 @@
+uuid: fea10174-bc68-4c27-a827-bb1e3656dba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_creator
+    - media.type.static_file
+id: media.static_file.field_creator
+field_name: field_creator
+entity_type: media
+bundle: static_file
+label: 'SEC Content Creator'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        content_creator: content_creator
+        bad_actors: '0'
+        administrator: '0'
+        content_approver: '0'
+        sitebuilder: '0'
+        division_office_admin: '0'
+    include_anonymous: true
+field_type: entity_reference

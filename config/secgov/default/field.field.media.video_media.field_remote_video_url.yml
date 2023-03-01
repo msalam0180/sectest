@@ -1,0 +1,25 @@
+uuid: ebcc9263-9e83-463b-9a01-e544c1a512e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_remote_video_url
+    - media.type.video_media
+  module:
+    - video_embed_field
+id: media.video_media.field_remote_video_url
+field_name: field_remote_video_url
+entity_type: media
+bundle: video_media
+label: 'Remote Video URL'
+description: 'Enter the Youtube or Vimeo URL. For example: https://www.youtube.com/watch?v=xf9BpXOtMcc'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: '0'
+field_type: video_embed_field

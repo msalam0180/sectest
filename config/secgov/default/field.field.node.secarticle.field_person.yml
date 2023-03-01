@@ -1,0 +1,30 @@
+uuid: eb6e03ed-f630-48e8-8752-8fba5f750f4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person
+    - node.type.secarticle
+    - node.type.secperson
+_core:
+  default_config_hash: '-t8bReGhftotdZjTzOOd_yz5FN77c-QvTdu1ZTKtAFY'
+id: node.secarticle.field_person
+field_name: field_person
+entity_type: node
+bundle: secarticle
+label: Speaker
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      secperson: secperson
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,32 @@
+uuid: 4eee75b3-0e1b-4705-a882-d750e7bbd223
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.opa
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: Tyr-3aVMai0QVUFFXmYMdN9xfcea90z1d-ajzp_B2gk
+id: opa
+theme: secgov
+region: sidebar_first
+weight: -16
+provider: null
+plugin: 'system_menu_block:opa'
+settings:
+  id: 'system_menu_block:opa'
+  label: OPA
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/opa\r\n/opa/*"

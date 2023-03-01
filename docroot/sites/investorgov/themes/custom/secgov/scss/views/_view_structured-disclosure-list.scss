@@ -1,0 +1,18 @@
+//
+// STRUCTURED DISCLOSURE LIST
+// VIEW NAME: Structured Disclosure Announcements
+// A list of articles with the type of "Announcment" and tax of Structured Disclosure
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+@include breakpoint('small'){
+
+  .structured-disclosure-list {
+    table.list:first-of-type { margin-top:0; }
+    thead { display: none !important; }
+    .abstract { display: none; }
+  }
+
+}

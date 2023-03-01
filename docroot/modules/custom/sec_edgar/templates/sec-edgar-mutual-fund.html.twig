@@ -1,0 +1,14 @@
+{{ attach_library('sec_edgar/edgar-company-person') }}
+<h2>{{ title }}</h2>
+<form id="sec-edgar-company-person-form" method="get" action="{{ submission_url }}">
+  <div>
+    <div class="form-item">
+      <input type="text" placeholder="{{ title }}" alt="{{ title }}" name="company" size="40" aria-required="true" aria-invalid="false"/>
+      <input name="type" value="N-PX" type="hidden" alt="Form N-PX">
+      <input type="hidden" name="sc" value="companyseries" alt="Company Series">
+      <button type="submit" alt="Fund Search Field" class="collapsed-submit">Search</button>
+      <div class="element-description">{{ description }}</div>
+    </div>
+  </div>
+</form>
+

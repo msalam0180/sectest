@@ -1,0 +1,31 @@
+uuid: b69c9446-629f-4534-816d-260f62e5d673
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0d11b6fb-c150-4a11-a65c-638fb8ea82ff'
+  module:
+    - block_content
+    - system
+  theme:
+    - secgov
+id: othermultimediaresources
+theme: secgov
+region: sidebar_grid
+weight: -28
+provider: null
+plugin: 'block_content:0d11b6fb-c150-4a11-a65c-638fb8ea82ff'
+settings:
+  id: 'block_content:0d11b6fb-c150-4a11-a65c-638fb8ea82ff'
+  label: 'Other Videos'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /news/sec-videos

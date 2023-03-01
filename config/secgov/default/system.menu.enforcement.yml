@@ -1,0 +1,10 @@
+uuid: dc780006-1d29-4205-9953-549efdaeb65b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nCRm7chsWdPkbc0WN_LHzufbOKFqJpIRy0m2_hJ9F6E
+id: enforcement
+label: Enforcement
+description: 'Enforcement Menu'
+locked: false

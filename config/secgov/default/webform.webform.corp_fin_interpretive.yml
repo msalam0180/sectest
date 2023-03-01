@@ -1,0 +1,408 @@
+uuid: d7f33dc8-660e-4b54-b000-58eef91d83a4
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: xpqVk4DxjPhlb2Miz3LekJZZcDxu-9l9pHqNiN9L8OI
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: corp_fin_interpretive
+title: 'Corporation Finance Request Form for Interpretive Advice and Other Assistance'
+description: ''
+category: ''
+elements: |-
+  intro_text:
+    '#type': processed_text
+    '#text': |
+      <p>We welcome requests for interpretive advice and other assistance relating to the areas of the federal securities laws that the Division administers and interprets.</p>
+
+      <p>Important Notes Before Completing This Form:</p>
+
+      <ul>
+      	<li>For assistance in completing this form, including tips on how to locate answers to frequently asked questions and other information, please refer to the <a href="#Instructions">General Instructions</a> below.</li>
+      	<li>Responses to requests for interpretive advice are not rules, regulations, or statements of the Commission, and the Commission has neither approved nor disapproved the staff's responses or interpretations. Due to their informal nature, these responses are not necessarily binding on the staff, the Division of Corporation Finance or the Commission. Our responses do not constitute legal advice, for which you should consult with your own attorney. While the Division encourages written requests, the staff's responses to these requests will be given telephonically.</li>
+      	<li>Please read our <a href="https://www.sec.gov/privacy.htm" target="_blank">Privacy Act Notice</a> to learn about how we may use the information you send to us.</li>
+      </ul>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  information_about_you:
+    '#type': fieldset
+    '#title': 'Information About You'
+    '#pattern': '[\w-]+@([\w-]+\.)+[\w-]+'
+    your_name:
+      '#type': textfield
+      '#title': 'Your name'
+      '#required': true
+    your_email_address:
+      '#type': email
+      '#title': 'Your email address'
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    your_phone_number:
+      '#type': tel
+      '#title': 'Your phone number'
+      '#required': true
+    best_time_of_day_eastern_us_time_to_reach_you_by_phone:
+      '#type': select
+      '#title': 'Best time of day (Eastern US time) to reach you by phone'
+      '#description': |
+        <table cellspacing="0" style="font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 8pt; color: rgb(69, 69, 69); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+        	<tbody>
+        		<tr>
+        			<td style="font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:10pt">
+        			<div style="margin-top: 0.4em; margin-bottom: 0.4em; padding-top: 0px;">The staff will attempt to call you during the time of day<br />
+        			you select.</div>
+        			</td>
+        			<td style="font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:10pt"></td>
+        		</tr>
+        	</tbody>
+        </table>
+      '#options':
+        Morning: Morning
+        Afternoon: Afternoon
+        Evening: Evening
+  division_office_to_receive_your_request_field:
+    '#type': radios
+    '#title': 'Division Office to Receive Your Request'
+    '#description': 'To assist the staff, please direct your request to the appropriate Division Office in the list below. To review detailed information about the types of requests handled by each Office, please click on the &quot;Info&quot; link next to the Office&#39;s title in the list below.'
+    '#default_value': '1'
+    '#options':
+      1: 'Office of Chief Counsel'
+      2: 'Office of Chief Accountant'
+      3: 'Office of Mergers and Acquisitions'
+      4: 'Office of International Corporate Finance'
+      5: 'Office of Small Business Policy'
+      6: 'Office of Rulemaking'
+      7: 'Office of Capital Markets Trends'
+      8: 'Office of Structured Finance'
+    '#required': true
+  information_about_your_request:
+    '#type': fieldset
+    '#title': 'Information About Your Request'
+    general_subject_matter_of_your_request:
+      '#type': textarea
+      '#title': 'General Subject Matter of Your Request'
+      '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Please describe the general subject matter of your request (e.g., &quot;Use of Form S-8&quot; or &quot;Meaning of terms used in Regulation S-X&quot;). Please also include references to the statutory section(s), rule(s), and/or form(s) relating to your request.</span>'
+      '#required': true
+    your_request:
+      '#type': textarea
+      '#title': 'Your Request'
+      '#description': |
+        <span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Please state, in reasonable detail, your request for interpretive advice or other assistance.</span><br style="color: rgb(69, 69, 69); font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+        &nbsp;
+      '#required': true
+    additional_information:
+      '#type': textarea
+      '#title': 'Additional Information'
+      '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">Please provide any other information that is relevant to your request. For example, please include the results of the research you conducted, including references to your sources. It also would be helpful to know when you require a response, particularly if your matter is urgent. Please include any other pertinent information you believe will help the staff respond to your request.</span>'
+  form_use_instructions:
+    '#type': processed_text
+    '#text': |
+      <h2 id="Instructions">General Instructions for the Use of This Form</h2>
+
+      <p><strong>Answers to many questions are available on this website.</strong> Before you write or call us, please visit our "<a href="https://www.sec.gov/answers.shtml" target="_blank">Fast Answers</a>" page, which answers some of the most common questions we receive. For assistance conducting research on this website, see <a href="https://www.sec.gov/investor/pubs/securitieslaws.htm" target="_blank">Researching the Federal Securities Laws through the SEC Website.</a> Also note that some resources for conducting research are available through the <a href="https://www.sec.gov/divisions/corpfin.shtml" target="_blank">Corporation Finance home page</a>, including links to certain <a href="https://www.sec.gov/divisions/corpfin/cfrules.shtml" target="_blank">Statutes, Rules and Forms</a>, some of the Division's <a href="https://www.sec.gov/divisions/corpfin/cf-noaction.shtml" target="_blank">No-Action, Interpretive and Exemptive Letters</a>, and our published <a href="https://www.sec.gov/divisions/corpfin/cfguidance.shtml" target="_blank">Compliance and Disclosure Interpretations</a>, <a href="https://www.sec.gov/interps/legal.shtml" target="_blank">Staff Legal Bulletins</a> and <a href="https://www.sec.gov/interps/account.shtml" target="_blank">Staff Accounting Bulletins</a>.</p>
+
+      <p>If you are unable to find what you are looking for among these resources, or if you are unsure whether your question is appropriate for the Division of Corporation Finance, you may wish to visit the <a href="https://www.sec.gov/investor.shtml" target="_blank">Investor Information</a> page, which contains other helpful resources including information on how to contact our Office of Investor Education and Advocacy. If you wish to file an investor complaint, please use our online <a href="https://www.sec.gov/oiea/Complaint.html" target="_blank">Investor Complaint Form</a>.</p>
+
+      <p><strong>Provide all pertinent information.</strong> Omitting pertinent information may increase the time required to answer your request.</p>
+
+      <p><strong>Please submit only one request concerning your issue.</strong> Do not also call the Division to make your request. If your request is best handled by another area of the Commission, we will forward it for you. Please wait for a staff member to contact you about your questions before providing additional information. You can expect to receive a call from the attorney or accountant assigned to your matter within one business day.</p>
+
+      <p><strong>Conduct research and provide results with your request.</strong> If you are an attorney or accountant submitting an interpretive question, we request that you research all available authority before contacting us, and include the results of your research with your question.</p>
+
+      <p><strong>As a matter of policy, the Division does not provide informal advice on certain topics.</strong> For example, the Division does not answer hypothetical questions or questions relating to "affiliate" or "control" status. Some of these topics are discussed in <a href="https://www.sec.gov/rules/interp/33-6253.pdf" target="_blank">Release No. 33-6253</a>, Procedures Utilized by the Division of Corporation Finance for Rendering Informal Advice (Interpretive Release; October 28, 1980).</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/corp_fin_interpretive
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_email_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:division_office_to_receive_your_request_field:raw]'
+      to_options:
+        -
+          value: 1
+          text: ChiefCounselOCC@SEC.GOV
+        -
+          value: 2
+          text: ChiefAccountant@SEC.GOV
+        -
+          value: 3
+          text: MergersandAcquis@SEC.GOV
+        -
+          value: 4
+          text: InternationalCorpora@SEC.GOV
+        -
+          value: 5
+          text: SmallBusinessPolicy@SEC.GOV
+        -
+          value: 6
+          text: RULEMAKING@SEC.GOV
+        -
+          value: 7
+          text: CapitalMarketsTrend@SEC.GOV
+        -
+          value: 8
+          text: StructuredFinance_St@SEC.GOV
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

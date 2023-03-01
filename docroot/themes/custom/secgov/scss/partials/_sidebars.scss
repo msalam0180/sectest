@@ -1,0 +1,1428 @@
+//
+// SIDEBARS
+// TODO: After cleaning, write description
+//
+// --------------------------------------------------
+
+// TODO: Review all code in this file, clean it, and and move it into the correct places
+// This looks like it because a catch all for stuff in the sidebar... It need to be broken up
+
+#sidebar-first {
+  @include span(2 of 12);
+  margin-bottom: 20px;
+
+  @include breakpoint('medium','landscape'){
+    @include span(2 of 12);
+    margin-bottom: 20px;
+  }
+
+  @include breakpoint('medium','portrait'){
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 350px;
+    z-index: 500;
+  }
+
+  @include breakpoint('medium','portrait','ipad'){
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    width: 350px;
+    z-index: 500;
+  }
+
+  @include breakpoint('small'){
+    display: block;
+    margin-right: 0;
+    position: absolute;
+    right: 0px !important;
+    top: -20px;
+    width: 100%;
+    z-index: 500;
+  }
+
+  .left-nav-menu {
+    display: none;
+    .fa {
+      background: none;
+      color: $cloudy-gray;
+      font-size: 2em;
+      margin-left: 5px;
+      margin-top: 20px;
+      @include breakpoint('small'){
+        float: right;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    @include breakpoint('medium','landscape'){
+      display: none;
+    }
+
+    @include breakpoint('medium','portrait'){
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: -60px;
+    }
+
+    @include breakpoint('medium','portrait','ipad'){
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: -60px;
+    }
+
+    @include breakpoint('small','landscape'){
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: -85px;
+    }
+
+    @include breakpoint('small','portrait'){
+      display: block;
+      position: absolute;
+      right: 15px;
+      top: -75px;
+    }
+  }
+
+  /* Local navigation */
+  .local-nav {
+    display: block;
+    padding-right: 0.625em;
+    position: relative;
+    z-index: 100;
+
+    @include breakpoint('medium','landscape'){
+      display: block;
+    }
+    @include breakpoint('medium','portrait'){
+      display: none;
+    }
+    @include breakpoint('medium','portrait','ipad'){
+      display: none;
+    }
+    @include breakpoint('small'){
+      display: none;
+      padding-right: 0 !important;
+    }
+    @include breakpoint('x-small'){
+      display: none;
+      padding-right: 0 !important;
+    }
+
+    a.subHeader {
+        background-color: $mist;
+        text-transform: none;
+        font-weight: normal;
+        color: $cloudy-gray;
+        padding-right: 50px;
+    }
+
+    ul {
+        border: 1px solid $mist;
+        border-top: none;
+        display:block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+          border-bottom: 1px solid $mist;
+          padding: 0;
+          margin: 0px;
+
+          @include breakpoint('medium','portrait'){
+            background-color: $navy;
+            color: $white;
+          }
+
+          @include breakpoint('medium','portrait','ipad'){
+            background-color: $navy;
+            color: $white;
+          }
+          @include breakpoint('small'){
+            background-color: $navy;
+            color: $white;
+
+            a:focus {
+              background: $yellow-orange;
+              color: $navy;
+            }
+          }
+
+          &:first-child {
+            border-top: none;
+
+            @include breakpoint('medium','portrait'){
+              background-color: $navy;
+              color: $white;
+            }
+
+            @include breakpoint('medium','portrait','ipad'){
+              background-color: $navy;
+              color: $white;
+            }
+
+            a {
+              font-size: 11px;              
+              &:after {
+                content: ' ';
+              }
+
+              @include breakpoint('medium','portrait'){
+                font-size: 14px;
+                padding-left: 15px;
+              }
+
+              @include breakpoint('medium','portrait','ipad'){
+                font-size: 14px;
+                padding-left: 15px;
+              }
+
+              @include breakpoint('small'){
+                font-size: 14px;
+                padding-left: 15px;
+              }
+              @include breakpoint('small'){
+                &:hover {
+                  background-color: $yellow-orange;
+                }
+              }
+            }
+          }
+
+          &:last-child {
+              border-bottom: none;
+          }
+
+          a {
+            font-size: 11px;
+            color: #6f7479;
+            display: block;
+            padding: 14px 2px 14px 6px;
+            position: relative;
+            text-decoration: none;
+
+            @include breakpoint('medium','portrait'){
+              color: $white;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 10px 5px 10px 30px;
+              position: relative;
+
+              &:after {
+                @include fontawesome;
+                content: "\f105";
+                font-weight: bold;
+                font-size: 1.3rem;
+                position: absolute;
+                right: 20px;
+                top: 4px;
+              }
+              &:hover {
+                background-color: $azure;
+              }
+            }
+            @include breakpoint('medium','portrait', 'ipad'){
+              color: $white;
+              font-size: 13px;
+              font-weight: 500;
+              padding: 10px 5px 10px 30px;
+              position: relative;
+
+              &:after {
+                @include fontawesome;
+                content: "\f105";
+                font-weight: bold;
+                font-size: 1.3rem;
+                position: absolute;
+                right: 20px;
+                top: 4px;
+              }
+              &:hover {
+                background-color: $azure;
+              }
+            }
+
+            @include breakpoint('small'){
+              @include raleway;
+              color: $white;
+              font-size: 13px;
+              padding: 10px 5px 10px 30px;
+              &:after {
+                @include fontawesome;
+                content: "\f105";
+                font-weight: bold;
+                font-size: 1.3rem;
+                position: absolute;
+                right: 20px;
+                top: 4px;
+              }
+            }
+            @include breakpoint('x-small'){
+              @include raleway;
+              color: $white;
+              font-size: 13px;
+              padding: 10px 5px 10px 30px;
+               &:after {
+                @include fontawesome;
+                content: "\f105";
+                font-weight: bold;
+                font-size: 1.3rem;
+                position: absolute;
+                right: 20px;
+                top: 4px;
+              }
+            }
+
+            &:hover, &:focus {
+              background-color: $deep-sea;
+              color: #fff;
+            }
+          }
+
+          a.current, a.is-active, a.ui-state-active {
+            background-color: $gray-blue;
+            color: #fff;
+
+            @include breakpoint('medium','portrait'){
+              background-color: $dark-navy;
+              color: $white;
+            }
+
+            @include breakpoint('medium','portrait','ipad'){
+              background-color: $dark-navy;
+              color: $white;
+            }
+            @include breakpoint('small'){
+              /*background-color: $dark-navy;*/
+              background: none;
+              color: $white;
+              text-decoration: underline;
+            }
+          }
+
+          &.slider-key {
+
+            @include breakpoint('medium','portrait'){
+              background: $dark-navy;
+
+              a {
+                font-size: 13px;
+                padding-left: 15px;
+                &:after {
+                  content: ' ';
+                }
+                &:hover {
+
+                }
+              }
+            }
+            @include breakpoint('medium','portrait','ipad'){
+              background: $dark-navy;
+
+              a {
+                font-size: 13px;
+                padding-left: 15px;
+                &:after {
+                  content: ' ';
+                }
+                &:hover {
+
+                }
+              }
+            }
+            @include breakpoint('small'){
+              background: $dark-navy;
+
+              a {
+                font-size: 13px;
+                padding-left: 15px;
+                &:after {
+                  content: ' ';
+                }
+              }
+            }
+
+            .ui-accordion-header, .ui-state-default {
+              background: $mist;
+              border-radius: 0;
+              border: none;
+              margin: 0px;
+              color: $cloudy-gray;
+
+              &:hover {
+                color: $white;
+              }
+
+              @include breakpoint('medium','portrait'){
+                background:  $dark-navy;
+                color: $white;
+                font-size: 14px;
+              }
+
+              @include breakpoint('medium','portrait','ipad'){
+                background:  $dark-navy;
+                color: $white;
+                font-size: 14px;
+              }
+
+              @include breakpoint('small'){
+                background: $dark-navy;
+                color: $white;
+                font-size: 14px;
+                text-transform: none;
+              }
+
+              @include breakpoint('x-small'){
+                background: $dark-navy;
+                color: $white;
+                font-size: 14px;
+                text-transform: none;
+              }
+            }
+
+            .ui-state-default:hover {
+              background-color: $dark-navy;
+            }
+
+            .ui-accordion-header .ui-accordion-header-icon {
+              left: auto;
+              right: 5px;
+
+              @include breakpoint('medium','portrait'){
+                background: none;
+              }
+
+              @include breakpoint('medium','portrait','ipad'){
+                background: none;
+              }
+               @include breakpoint('small'){
+                background: none;
+              }
+            }
+
+            .ui-accordion-header.ui-accordion-header-active.ui-state-active {
+              @include breakpoint('medium','portrait'){
+                text-decoration: underline;
+              }
+              @include breakpoint('medium','portrait','ipad'){
+                text-decoration: underline;
+              }
+            }
+
+            .ui-accordion .ui-accordion-icons {
+              border-radius: 0;
+            }
+
+            &:last-child {
+              /* border-bottom: 1px solid $mist; */
+              border-bottom: none;
+            }
+          }
+
+          .item-rss-feeds a, .item-social-media a {
+            padding-left: 6px !important;
+          }
+          /*
+          li[class*='sec_news'] a,
+          .item-sec-channel a,
+          .item-sec-photostream a {
+            padding: 5px 1px 5px 6px;
+          }
+          */
+
+          li[class*='sec_news'] a:before,
+          .item-sec-channel a:before,
+          .item-sec-photostream a:before  {
+            @include fontawesome;
+            background-color: $cloudy-gray;
+            border-radius: 3px;
+            clear: left;
+            color: $white;
+            display: table-cell;
+            float: left;
+            height: 25px;
+            margin: -3px 3px 0 0;
+            padding: 4px;
+            text-align: center;
+            vertical-align: middle;
+            width: 25px;
+          }
+          li[class*='sec_news'] a:before { content:'\f099'; }
+          .item-sec-channel a:before { content: '\f16a'; }
+          .item-sec-photostream a:before { content: '\f16e'; word-wrap: none;}
+        }
+        > li {
+          &:first-child {
+            background-color: $mist;
+
+            a:not(.is-active) {
+              color: #4d5155; 
+              &:hover, &:focus {
+                color: #fff;
+              }
+            }
+
+            @include breakpoint('medium','portrait'){
+              border-top: 1px solid $white;
+              background-color: $dark-navy;
+
+              a {
+                padding-left: 15px;
+
+                &:after {
+                  /*content:'';*/
+                }
+              }
+            }
+            @include breakpoint('medium','portrait','ipad'){
+              border-top: 1px solid $white;
+              background-color: $dark-navy;
+
+              a {
+                padding-left: 15px;
+
+                &:after {
+                  /*content:'';*/
+                }
+              }
+            }
+
+            @include breakpoint('small'){
+              border-top: 1px solid $white;
+              background-color: $dark-navy;
+
+              a {
+                padding-left: 15px;
+
+                &:after {
+                  content: ' ';
+                }
+              }
+            }
+          }
+        }
+        ul {
+          border: none;
+          display: none;
+
+          @include breakpoint('medium','portrait'){
+            display: none;
+          }
+          @include breakpoint('medium','portrait','ipad'){
+            display: none;
+          }
+        }
+        ul.slider-children {
+
+            li {
+              padding:0;
+
+              a {
+                @include breakpoint('medium','portrait'){
+                  font-size: 13px;
+                  padding-left: 30px;
+
+                  &:after {
+                    @include fontawesome;
+                    content: "\f105";
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    right: 20px;
+                    top: 4px;
+                  }
+
+                  @include breakpoint('small'){
+                    &:hover {
+                      background-color: $yellow-orange;
+                    }
+                  }
+                }
+                @include breakpoint('small') {
+                  font-size: 13px;
+                  padding-left: 30px;
+
+                  &:after {
+                    @include fontawesome;
+                    content: "\f105";
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    right: 20px;
+                    top: 4px;
+                  }
+                }
+              }
+              a {
+                @include breakpoint('medium','portrait','ipad'){
+                  font-size: 13px;
+                  padding-left: 30px;
+
+                  &:after {
+                    @include fontawesome;
+                    content: "\f105";
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    right: 20px;
+                    top: 4px;
+                  }
+                }
+                @include breakpoint('small') {
+                  font-size: 13px;
+                  padding-left: 30px;
+
+                  &:after {
+                    @include fontawesome;
+                    content: "\f105";
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    position: absolute;
+                    right: 20px;
+                    top: 4px;
+                  }
+                }
+              }
+            }
+          }
+
+        ul li {
+          border-bottom: 1px solid $mist;
+
+          @include breakpoint('medium','portrait'){
+            background-color: $deep-sea;
+
+            a {
+              background-color: $navy;
+              font-size: 13px;
+              padding-left: 30px;
+            }
+          }
+          @include breakpoint('medium','portrait','ipad'){
+            background-color: $deep-sea;
+
+            a {
+              background-color: $navy;
+              font-size: 13px;
+              padding-left: 30px;
+            }
+          }
+
+          @include breakpoint('small'){
+            background-color: $deep-sea;
+
+            a {
+              background-color: $navy;
+              font-size: 13px;
+              padding-left: 30px;
+            }
+          }
+        }
+        ul li a {
+          margin-left: 0;
+          padding-left: 22px;
+        }
+        
+        ul li a, ul li span {
+          font-weight: normal;
+          text-transform: none;
+        }
+
+        ul li a {
+          background-color: $white;
+
+          @include breakpoint('medium','landscape'){
+            background-color: $white;
+          }
+
+          @include breakpoint('medium','portrait'){
+            background-color: $navy;
+            color: $white;
+            padding-left: 25px;
+          }
+
+          @include breakpoint('medium','portrait','ipad'){
+            background-color: $navy;
+            color: $white;
+            padding-left: 25px;
+          }
+
+          @include breakpoint('small'){
+            background-color: $navy;
+            color: $white;
+            padding-left: 25px;
+          }
+
+          @include breakpoint('x-small'){
+            background-color: $navy;
+            color: $white;
+            padding-left: 25px;
+          }
+
+          &:hover, &:focus {
+            background-color: $deep-sea;
+            color: #fff;
+          }
+        }
+
+        ul.last-menu a:hover {
+            background-color: $deep-sea;
+            color: #fff;
+        }
+
+        ul ul ul { display: none; }
+    }
+  }
+
+  /* Mobile navigation */
+  ul.mobile-nav {
+    display: none;
+    border-bottom: none;
+
+    @include breakpoint('large'){
+      display: none !important;
+    }
+    @include breakpoint('medium','landscape'){
+      display: none !important;
+    }
+    @include breakpoint('medium','portrait'){
+      background: $dark-navy;
+      display: none !important;
+    }
+    @include breakpoint('medium','portrait','ipad'){
+      background: $dark-navy;
+      display: none !important;
+    }
+    @include breakpoint('small'){
+      display: block !important;
+
+      li {
+        &.nav-list {
+          font-size: 14px;
+          padding: 10px 15px;
+
+          &.active {
+            padding-bottom: 0px;
+          }
+          a {
+            font-size: 13px;
+            color: $white;
+            display: block;
+            padding-left: 30px;
+            position: relative;
+            text-decoration: none;
+
+            &:after {
+              @include fontawesome;
+              content: "\f105";
+              font-weight: bold;
+              font-size: 1.3rem;
+              position: absolute;
+              right: 40px;
+              top: 4px;
+            }
+          }
+        }
+
+        &.slider-key:nth-child(2), &.slider-key:nth-child(3), &.slider-key:nth-child(4){
+          display: none;
+        }
+      }
+      > li {
+        &:first-child {
+          background-color: $dark-navy;
+          border-top: 1px solid $white;
+          a {
+            padding-left: 15px;
+
+            &:after {
+              content:'';
+            }
+          }
+        }
+      }
+      ul.slider-children {
+
+        li {
+          padding: 0;
+
+          a {
+            font-size: 13px;
+            padding-left: 30px;
+
+            @include breakpoint('small'){
+              &:hover {
+                background-color: $yellow-orange;
+              }
+            }
+
+            &:after {
+              @include fontawesome;
+              content: "\f105";
+              font-weight: bold;
+              font-size: 1.3rem;
+              position: absolute;
+              right: 20px;
+              top: 4px;
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint('x-small'){
+      display: block !important;
+
+      li {
+        &.nav-list {
+          font-size: 14px;
+          padding: 10px 15px;
+
+          &.active {
+            padding-bottom: 0px;
+          }
+          a {
+            font-size: 13px;
+            color: $white;
+            display: block;
+            padding-left: 25px;
+            position: relative;
+            text-decoration: none;
+
+            &:after {
+              @include fontawesome;
+              content: "\f105";
+              font-weight: bold;
+              font-size: 1.3rem;
+              position: absolute;
+              right: 40px;
+              top: 4px;
+            }
+          }
+        }
+      }
+      > li {
+        &:first-child {
+          background-color: $dark-navy;
+          border-top: 1px solid $white;
+
+          a {
+            padding-left: 25px;
+
+            &:after {
+              content:'';
+            }
+          }
+        }
+      }
+      ul.slider-children {
+
+        li {
+          padding: 0;
+
+          a {
+            padding-left: 25px;
+            &:hover {
+
+            }
+
+            &:after {
+              @include fontawesome;
+              content: "\f105";
+              font-weight: bold;
+              font-size: 1.3rem;
+              position: absolute;
+              right: 20px;
+              top: 4px;
+            }
+          }
+        }
+      }
+    }
+    li {
+        &.nav-list {
+          font-size: 14px;
+          padding: 10px 15px;
+
+          &.active {
+            padding-bottom: 0px;
+          }
+          a.current, a.is-active, a.ui-state-active {
+            background-color: $gray-blue;
+            color: #fff;
+
+            @include breakpoint('medium','portrait'){
+              background-color: $dark-navy;
+              color: $white;
+            }
+            @include breakpoint('medium','portrait','ipad'){
+              background-color: $dark-navy;
+              color: $white;
+            }
+            @include breakpoint('small'){
+              background-color: $dark-navy;
+              color: $white;
+              text-decoration: underline;
+            }
+          }
+          &.slider-key {
+            a {
+              padding-left: 15px;
+
+              &.ui-state-hover {
+                background-color: $dark-navy;
+              }
+              &.ui-accordion-header-active.ui-state-active {
+                text-decoration: underline !important;
+              }
+
+              &:after {
+                content: ' ';
+              }
+            }
+          }
+
+          a {
+            font-size: 13px;
+            color: $white;
+            display: block;
+            padding-left: 25px;
+            position: relative;
+            text-decoration: none;
+
+            &:after {
+              @include fontawesome;
+              content: "\f105";
+              font-weight: bold;
+              font-size: 1.3rem;
+              position: absolute;
+              right: 40px;
+              top: 4px;
+            }
+          }
+        }
+
+        .ui-state-active, .ui-accordion-header, .ui-state-default {
+          background: none;
+          border-radius: 0;
+          border: none;
+          color: $white;
+          font-size: 14px;
+          margin: 0px;
+
+          &:hover {
+            color: $white;
+          }
+        }
+        .ui-state-default:hover {
+          background-color: $dark-navy;
+        }
+        .ui-accordion-header .ui-accordion-header-icon {
+          left: auto;
+          right: 5px;
+          background: none;
+        }
+        .ui-accordion .ui-accordion-icons {
+          border-radius: 0;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      > li {
+        &:first-child {
+          background-color: $dark-navy;
+          border-top: 1px solid $white;
+
+          a {
+            font-size: 14px;
+            padding-left: 15px;
+
+            &:after {
+              content:'';
+            }
+          }
+        }
+      }
+  }
+}
+
+.homepage #sidebar-first {
+  display: none;
+
+  @include breakpoint('small'){
+    display: block;
+    top: 90px;
+  }
+
+  .left-nav-menu {
+    top: -75px !important;
+  }
+
+  .local-nav {
+    @include breakpoint('small'){
+      display: none;
+      padding-right: 0 !important;
+    }
+  }
+}
+
+body.user-logged-in {
+
+  @include breakpoint('small'){
+    #sidebar-first {
+      top: -15px;
+    }
+    .left-nav-menu {
+      top: -90px !important;
+    }
+    .local-nav {
+      top: 0;
+    }
+
+    .homepage {
+      #sidebar-first {
+        top: 125px;
+      }
+      .left-nav-menu {
+        top: -70px !important;
+      }
+      .local-nav {
+        top: 0;
+      }
+    }
+  }
+  @include breakpoint('x-small'){
+    #sidebar-first {
+      top: -15px;
+    }
+    .left-nav-menu {
+      top: -80px !important;
+    }
+    .local-nav {
+      top: 0;
+    }
+
+    .homepage {
+      #sidebar-first {
+        top: 125px;
+      }
+      .left-nav-menu {
+        top: -70px !important;
+      }
+      .local-nav {
+        top: 0;
+      }
+    }
+  }
+}
+
+/* Spotlight Topics Block */
+ul.spotlight-topics-list {
+    font-size: 1em;
+    list-style: disc;
+    margin-left: 20px;
+
+    li.spotlight-topic-item {
+        margin-top: 9px;
+
+        a {
+            color: $deep-sea;
+            font-size: 13px;
+            &:hover {
+                color: $azure;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+#sidebar-second {
+  @include span (3 last);
+  display: block;
+  font-size: 1rem;
+  padding-left: 0.833333em;
+  margin-right: 0;
+
+    @include breakpoint('medium','landscape'){
+      @include span(3 last);
+      padding-left: 0.833333em;
+      word-break: break-word;
+    }
+    @include breakpoint('medium','portrait'){
+      @include span(3 last);
+      padding-left: 0.833333em;
+      word-break: break-word;
+    }
+    @include breakpoint('medium','portrait','ipad'){
+      @include span(3 last);
+      padding-left: 0.833333em;
+      word-break: break-word;
+    }
+
+    @include breakpoint('small') {
+        @include span(11);
+        clear: both;
+        float: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+    @include breakpoint('x-small') {
+        @include span(11);
+        clear: both;
+        margin: 0 auto;
+        float: none;
+        padding: 0;
+    }
+
+    .field_top_right_column {
+      word-break: break-word;
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+      }
+    }
+
+    .market-statistics--right-sidebar-title {
+      margin-bottom: 0.25em;
+    }
+
+    .market-statistics--right-sidebar {
+      margin-bottom: 1em;
+      h3 {
+        font-weight: normal;
+        font-family: helvetica, sans-serif;
+        font-size: 15px;
+        margin-bottom: 0.75em;
+      }
+
+      .views-field-field-display-title {
+        margin-bottom: 0.25em;
+
+        a {
+          font-size: 13px;
+        }
+
+        :last-of-type {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+
+    .market-statistics-search-block {
+      margin-top: 15px;
+    }
+
+    .hrFade {
+      display: none;
+
+      @include breakpoint('small'){
+        background: linear-gradient(to right, #bbbbbb 0%, #1e1e1e);
+        background: -webkit-gradient(linear, 0 0, 100% 0, from(#bbbbbb), to(white), color-stop(50%, #bbbbbb));
+        /* IE10 Consumer Preview */
+        background-image: -ms-linear-gradient(to right, #bbbbbb 0%, white 100%);
+        /* Mozilla Firefox */
+        background-image: -moz-linear-gradient(to right, #bbbbbb 0%, white 100%);
+        /* Opera */
+        background-image: -o-linear-gradient(to right, #bbbbbb 0%, white 100%);
+        /* Webkit (Chrome 11+) */
+        background-image: -webkit-linear-gradient(to right, #bbbbbb 0%, white 100%);
+        /* W3C Markup, IE10 Release Preview */
+        background-image: linear-gradient(to right, #bbbbbb 0%, #ffffff 100%);
+        display: block;
+        height: 1px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .block {
+      background: none;
+      clear: both;
+      color: $navy;
+      display: block;
+      float: right;
+      font-size: 13px;
+      margin: 0 0 20px 0;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      text-align: left;
+      width: 100%;
+
+      @include breakpoint('medium'){
+        word-break: break-word;
+      }
+
+      header {
+        margin-bottom: 0px !important;
+      }
+
+      a {
+        font-size: 13px;
+      }
+
+      h2 {
+        font-size: 1.25em;
+        font-weight: 600;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+
+        a {
+          color: $navy;
+          font-size:inherit;
+          text-decoration: none;
+
+          &:hover {
+            color: $azure;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      ul {
+        list-style: disc;
+        margin-left: 20px;
+      }
+
+      footer {
+        @include breakpoint('medium','portrait') {
+          .more-link{
+            display: none ;
+          }
+        @include breakpoint('medium','portrait','ipad') {
+          .more-link{
+            display: none ;
+          }
+        }
+        @include breakpoint('small') {
+          .more-link{
+            display: none;
+          }
+        }
+        @include breakpoint('x-small') {
+          .more-link{
+            display: none;
+          }
+        }
+      }
+
+      form {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      fieldset {
+        border: none;
+      }
+
+      label {
+        color: $shadow;
+      }
+
+      input#gov-delivery-box {
+        border: 1px solid #CCC;
+        display: inline;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+
+      input#gov-delivery-submit {
+        background-color: #646464;
+        border: none;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        padding: 5px 15px;
+        text-transform: uppercase;
+
+        &:hover, &:focus {
+            background-color: $deep-sea;
+        }
+      }
+
+      span, label {
+        font-size: 13px;
+        font-weight: normal;
+      }
+
+      ul {
+        margin: 0px 20px;
+		list-style: disc;
+      }
+
+      li {
+        line-height: 1.5;
+        margin-bottom:0;
+
+        &.spotlight-topic-item {
+            margin-top: 0px;
+        }
+      }
+
+      &.related-materials h2 {
+        @include raleway;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 1px solid #BFBFBF;
+        color: #273a56;
+        margin-bottom: 20px;
+      }
+    }
+	}
+}
+
+#sidebar-grid {
+    position: absolute;
+    @include span(3);
+    clear: none;
+    padding-right: 1rem;
+    border-right: 1px solid $light-gray;
+    top: 472px;
+    @include breakpoint('medium','portrait'){
+      top: 550px;
+    }
+    @include breakpoint('small'){
+        @include span(12);
+        position: static;
+        padding-right: 0px;
+        border-right: none;
+    }
+    h2 {
+		font-family: "-apple-system-font", "Helvetica", sans-serif;
+		font-weight: bold;
+		color: $cloudy-gray;
+		font-size: 1rem;
+		margin-bottom: .75rem;
+		line-height: 1.25rem;
+		margin-top: 0rem;
+		text-transform: uppercase;
+    }
+    p a {
+		@include raleway;
+		font-weight: 500;
+		color: $stone;
+		font-size: 14px;
+		font-size: .9rem;
+		text-transform: uppercase;
+		display: block;
+		padding: 20px 30px;
+		background-color: $porcelain;
+		text-align: center;
+		position: relative;
+		margin-bottom: 20px;
+		margin-bottom: 1.2rem;
+    }
+    p a:hover {
+      background-color: $gray-blue;
+      color: $yellow-orange;
+      text-decoration: none;
+    }
+}
+
+.promo-module {
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-overlay {
+  color: #6f7479;
+  font-style: oblique;
+
+  .promo-text {
+      padding: 5px;
+  }
+}
+
+#mobile-search {
+  background: $dark-navy;
+  //border-left: 1px solid $white;
+  //border-right: 1px solid $white;
+  clear: both;
+  color: $white;
+  display: block;
+  //padding: 20px;
+
+  fieldset {
+    padding: 0;
+  }
+
+  a {
+    color:$yellow-orange;
+    text-decoration: none;
+  }
+  p.options {
+    color: $mist;
+    padding: 10px 0;
+    text-transform: uppercase;
+  }
+  .search-box-container {
+    background-color: $white;
+    height: 24px;
+    position: relative;
+    width: 100%;
+
+    .fa {
+      background: none;
+      color: $navy;
+      position: absolute;
+      z-index: 3;
+      right:0;
+      top: 0;
+    }
+
+    .overlabel {
+      background: transparent;
+      color: $shadow;
+      font-weight: normal;
+      padding: 0px 10px;
+      height: 25px;
+      line-height: 25px;
+      display: inline-block;
+      //position: absolute;
+      //left: 0;
+      //top: 0;
+      //z-index: 4
+    }
+
+    #mobile-search-box {
+      background: transparent;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 5;
+    }
+    .global-search-button {
+      border: 0;
+      background: transparent;
+      height: 24px;
+      position: absolute;
+      right: 0;
+      width: 24px;
+      z-index: 6;
+    }
+  }
+  
+  .menu-name-menu-utility-menu {
+    span {
+      &:first-child {
+        a.option-link {
+          &:after {
+            padding: 0 4px;
+          }
+        }
+      }
+    }
+  }
+}

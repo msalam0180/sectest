@@ -1,0 +1,29 @@
+uuid: c9291897-d267-4eda-bc82-b2db468d7971
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: SMQY0XnUvJTqp_11zmvWjY5gCHl9nQhX-fUtGQQy3Ag
+id: node.field_cancelled_postponed
+field_name: field_cancelled_postponed
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Cancelled
+      label: Cancelled
+    -
+      value: Postponed
+      label: Postponed
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

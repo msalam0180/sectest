@@ -1,0 +1,25 @@
+uuid: fd95c305-cce9-4dcf-8fee-681eb694ed79
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.aggregator_item.summary
+  module:
+    - aggregator
+_core:
+  default_config_hash: '-sG2MEWK6wPetYIdNjfnpH5vkjTKjdtwdvxUaoazX_I'
+id: aggregator_item.aggregator_item.summary
+targetEntityType: aggregator_item
+bundle: aggregator_item
+mode: summary
+content:
+  timestamp:
+    weight: 0
+    region: content
+hidden:
+  author: true
+  description: true
+  feed: true
+  langcode: true
+  link: true
+  search_api_excerpt: true

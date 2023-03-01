@@ -1,0 +1,14 @@
+uuid: 24d54d92-7d3f-4e86-9780-fd44904829f2
+langcode: en
+status: true
+dependencies: {  }
+id: openstreetmap
+label: OpenStreetMap
+plugin: openstreetmap
+configuration:
+  throttle:
+    period: 2
+    limit: 1
+  rootUrl: 'https://nominatim.openstreetmap.org'
+  userAgent: Mozilla/5.0
+  referer: www.sec.gov

@@ -1,0 +1,23 @@
+uuid: 7c5c3da8-809b-4634-b625-ad2c22c44efa
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - secgov
+_core:
+  default_config_hash: KxD22sQZWiCLdry7D7H-cba5xyHwldS4QxctF3EUcTo
+id: secgov_search
+theme: secgov
+region: header
+weight: -28
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }

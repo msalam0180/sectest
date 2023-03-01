@@ -1,0 +1,10 @@
+uuid: 0c262364-431f-4462-880c-d4ff7b964921
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.thumbnail_title_teaser
+label: 'Thumbnail, Title, Teaser'
+targetEntityType: media
+cache: true

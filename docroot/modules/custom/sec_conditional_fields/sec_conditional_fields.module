@@ -1,0 +1,418 @@
+<?php
+/**
+ * @file
+ * Main hooks for Sec Conditional Fields (sec_conditional_fields) module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+
+  function sec_conditional_fields_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+    if ( isset($form['#entity_type']) && $form['#entity_type'] === "node" ) {
+      //Conditionally attach an asset to the page.
+      $form['#attached']['library'][] = 'sec_conditional_fields/sec_conditional.confirmDialog';
+    }
+    $effectedID = [
+      'node_news_form',
+      'node_news_edit_form',
+      'node_secarticle_form',
+      'node_secarticle_edit_form'
+    ];
+
+    if(!in_array($form_id,$effectedID)) {
+      return;
+    }
+
+    //Conditionally attach an asset to the page.
+    $form['#attached']['library'][] = 'sec_conditional_fields/sec_conditional';
+    // OOP Call: Use a static function from ExampleController class.
+    $form['#validate'][] = 'validateForm';
+
+    //Trigger Options;
+
+    // '21' => "Press Release",
+    // '26' => "Speech"
+    // '286' => "Public Statement",
+    // '291' => "Testimony"
+
+    switch ($form_id) {
+      case 'node_news_form':
+      case 'node_news_edit_form':
+          //Conditional fields;
+
+          $form['field_speaker_name_and_title']['#states'] = [
+            'invisible' => [
+              [':input[name="field_news_type_news"]' => ['value' => '21']],
+            ],
+          ];
+
+          $form['field_approved_by_general_counse']['#states'] = [
+            'invisible' => [
+              [':input[name="field_news_type_news"]' => ['value' => '21']],
+              [':input[name="field_news_type_news"]' => ['value' => '286']],
+              [':input[name="field_news_type_news"]' => ['value' => '291']],
+            ],
+          ];
+          // OR
+          $form['field_sub_title']['#states'] = [
+            'invisible' => [
+              [':input[name="field_news_type_news"]' => ['value' => '26']],
+              [':input[name="field_news_type_news"]' => ['value' => '291']],
+              [':input[name="field_news_type_news"]' => ['value' => '286']],
+            ],
+          ];
+
+          $form['field_alternate_title_secarticle']['#states'] = [
+            'invisible' => [
+              [':input[name="field_news_type_news"]' => ['value' => '21']],
+            ],
+          ];
+
+          $form['field_location_news']['#states'] = [
+            'invisible' => [
+              [':input[name="field_news_type_news"]' => ['value' => '286']],
+            ],
+          ];
+
+          $form['field_release_number']['#states'] = [
+            'invisible' => [
+               [':input[name="field_news_type_news"]' => ['value' => '291']],
+               [':input[name="field_news_type_news"]' => ['value' => '286']],
+               [
+                ':input[name="field_news_type_news"]' => ['value' => '26']
+                ],
+            ],
+          ];
+          $form['field_ruling_comment_file_number']['#states'] = [
+              'invisible' => [
+                  [':input[name="field_news_type_news"]' => ['value' => '26']],
+                  [':input[name="field_news_type_news"]' => ['value' => '291']],
+                  [':input[name="field_news_type_news"]' => ['value' => '286']],
+              ],
+          ];
+          $form['field_ruling_comment_title']['#states'] = [
+              'invisible' => [
+                  [':input[name="field_news_type_news"]' => ['value' => '26']],
+                  [':input[name="field_news_type_news"]' => ['value' => '291']],
+                  [':input[name="field_news_type_news"]' => ['value' => '286']],
+              ],
+          ];
+        break;
+
+      case 'node_secarticle_form':
+      case 'node_secarticle_edit_form':
+
+            $fields = [
+              'field_person_position'
+            ];
+
+            //Trigger event based on this value;
+            $trigger = "field_article_type_secarticle";
+            //Envoke custom field state handler;
+            getDefaultFields($fields,$form,$trigger,$value = '16');
+
+			$form['field_contact_email']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_type_secarticle"]' => ['value' => '621']],
+            ],
+            ];
+
+			$form['field_contact_name']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_type_secarticle"]' => ['value' => '621']],
+            ],
+            ];
+
+			$form['field_accrual_periodicity']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_type_secarticle"]' => ['value' => '621']],
+            ],
+            ];
+
+      $form['field_market_statistics_category']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_sub_type_secart"]' => ['value' => 'Data-MarketStatistics']],
+            ]
+            ];
+
+      $form['field_associated_dataset']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_type_secarticle"]' => ['value' => '114371']],
+              [':input[name="field_article_type_secarticle"]' => ['value' => '626']],
+            ],
+            ];
+      $form['field_data_dictionary_notes']['#states'] = [
+            'visible' => [
+              [':input[name="field_article_type_secarticle"]' => ['value' => '621']],
+            ],
+            ];
+      break;
+
+      default:
+        return true;
+      break;
+    }
+  }
+
+/**
+ * [getDefaultFields description]
+ * @param  array  $fileds  [Array of fields]
+ * @param  [type] &$form   [Form object by refrence]
+ * @param  [type] $trigger [Trigger element for the condition]
+ * @param  [type] $value   [filed value]
+ */
+
+function getDefaultFields(array $fileds, &$form , $trigger, $value) {
+  foreach ($fileds as $field) {
+
+    $form[$field]['#states'] = [
+        'invisible' => [
+          [
+          ':input[name="'.$trigger.'"]'   => ['value' => $value]
+            ],
+        ],
+    ];
+
+    $form[$field]['#type'] = 'container';
+  }
+}
+
+  /**
+   * (@inheritdoc)
+   */
+
+  function validateForm(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+    //Fileds with single value;
+    $displayTitle = getValueforField('field_display_title',$form_state);
+    $releaseNumber = getValueforField('field_release_number',$form_state);
+    $abstract = getValueforField('field_description_abstract',$form_state);
+    $marketStatsCategory = getValueforField('field_market_statistics_category',$form_state);
+    $nid = $form_state->getFormObject()->getEntity()->nid->value;
+
+    //Retrieves target_id's for select list;
+    $speaker = getValueforField('field_person',$form_state);
+    $DivisionOffice = getValueforField('field_primary_division_office',$form_state);
+
+
+
+    if($form['#id'] === 'node-news-edit-form' || $form['#id'] === 'node-news-form') {
+
+      //validation to avoid duplicate url aliases
+   	  //pathauto pattern: /news/[node:field_news_type_news]/[node:title]
+   	  $query = \Drupal::entityQuery('node')
+      ->condition('type', 'news')
+      ->condition('status', 1)
+      ->condition('field_news_type_news', getValueforField('field_news_type_news', $form_state))
+      ->condition('title', getValueforField('title', $form_state));
+   	  if ($nid) {
+   	  	$query->condition('nid', $nid, '!=');
+   	  }
+
+      $nids = $query->execute();
+
+      if ($nids) {
+       	//duplicate
+    	$form_state->setErrorByName('title',t("Title must be unique for the selected News Type"));
+    	return false;
+      }
+
+      $selectID = getValueforField('field_news_type_news',$form_state);
+
+      switch ($selectID) {
+        case '21':
+          //PressRelease
+          if(empty($displayTitle)) {
+            $form_state->setErrorByName(
+              'field_display_title',
+              t("Field Display Title is required.")
+            );
+          }
+          if(empty($releaseNumber)) {
+             $form_state->setErrorByName(
+              'field_release_number',
+              t("Field Release Number is required.")
+            );
+          }
+
+          if(empty($DivisionOffice)) {
+             $form_state->setErrorByName(
+              'field_primary_division_office',
+              t("Primary Division/Office field is required.")
+            );
+          }
+        break;
+        case '26':
+          //Speech
+          if(empty($displayTitle)) {
+            $form_state->setErrorByName(
+              'field_display_title',
+              t("Field Display Title is required.")
+            );
+          }
+
+          if(empty($abstract)) {
+            $form_state->setErrorByName(
+              'field_description_abstract',
+              t("Field Description/Abstract is required.")
+            );
+          }
+
+          if(empty($speaker)) {
+            $form_state->setErrorByName(
+              'field_person',
+              t("Field Speaker is required.")
+            );
+          }
+
+        break;
+        //Public Statement &&  Testimony
+        case '286':
+        case '291':
+
+        if(empty($displayTitle)) {
+            $form_state->setErrorByName(
+              'field_display_title',
+              t("Field Display Title is required.")
+            );
+          }
+
+        if(empty($abstract)) {
+            $form_state->setErrorByName(
+              'field_description_abstract',
+              t("Field Description/Abstract is required.")
+            );
+        }
+
+        break;
+
+        default:
+           return;
+          break;
+      }
+
+   }else if ($form['#id'] === 'node-secarticle-form' ||$form['#id'] ===  'node-secarticle-edit-form') {
+     $value = $form_state->getValue('field_article_type_secarticle');
+     $tags = getValueforField('field_tags',$form_state);
+     $field_contact_name = getValueforField('field_contact_name',$form_state);
+     $field_date = getValueforField('field_date',$form_state);
+     $field_contact_name = getValueforField('field_contact_name',$form_state);
+     $field_contact_email = getValueforField('field_contact_email',$form_state);
+     $selectID = $value[0]['target_id'];
+     //validation to avoid duplicate url aliases
+     //pathauto pattern: /[node:field_primary_division_office]/[node:field_article_type_secarticle]/[node:field_article_sub_type_secart]/[node:title]
+     $query = \Drupal::entityQuery('node')
+     ->condition('type', 'secarticle')
+     ->condition('status', 1)
+     ->condition('field_primary_division_office', getValueforField('field_primary_division_office', $form_state))
+     ->condition('field_article_type_secarticle', getValueforField('field_article_type_secarticle', $form_state))
+     ->condition('title', getValueforField('title', $form_state));
+     if (getValueforField('field_article_sub_type_secart', $form_state)) {
+     	$query->condition('field_article_sub_type_secart', getValueforField('field_article_sub_type_secart', $form_state));
+     }
+     if ($nid) {
+     	$query->condition('nid', $nid, '!=');
+     }
+
+     $nids = $query->execute();
+
+     if ($nids && !in_array($form_state->getFormObject()->getEntity()->nid->value, $nids)) {
+     	//duplicate
+     	$form_state->setErrorByName('title',t("Title must be unique for the selected Primary Division/Office, Article Type, and Article SubType"));
+     	return false;
+     }
+
+     switch ($selectID) {
+      //Announcement
+       case '16':
+        if (empty($displayTitle)) {
+          $form_state->setErrorByName(
+            'field_display_title',
+            t("Field Display Title is required.")
+          );
+        }
+
+        if(empty($DivisionOffice)) {
+          $form_state->setErrorByName(
+            'field_display_title',
+            t("Field Division/Office is required.")
+          );
+        }
+        break;
+        //Data
+        case '621':
+
+        if (empty($abstract)) {
+            $form_state->setErrorByName(
+             'field_description_abstract',
+             t("Field Description/Abstract is required.")
+            );
+          }
+
+        if (empty($tags)) {
+           $form_state->setErrorByName(
+             'field_tags',
+             t("Field Tags is required.")
+           );
+        }
+
+        if (empty($field_contact_name)) {
+           $form_state->setErrorByName(
+             'field_contact_name',
+             t("Field Contact Name is required.")
+           );
+        }
+
+        if (empty($field_date)) {
+           $form_state->setErrorByName(
+             'field_date',
+             t("Field Modified Date is required.")
+           );
+        }
+
+        if (empty($field_contact_name)) {
+           $form_state->setErrorByName(
+             'field_contact_name',
+             t("Field Contact Name is required.")
+           );
+        }
+
+        if (empty($field_contact_email)) {
+           $form_state->setErrorByName(
+             'field_contact_email',
+             t("Field Contact Email is required.")
+           );
+        }
+
+        break;
+        default:
+           return;
+        break;
+     }
+   }
+
+  }
+
+  /**
+   * [getValueforField description]
+   * @param  [type] $fileld [description]
+   * @return [type]         [description]
+   */
+  function getValueforField($fieldId,$form_state) {
+    $currentValue = $form_state->getValue($fieldId);
+    if($fieldId === 'field_person'
+    	|| $fieldId === 'field_primary_division_office'
+    	|| $fieldId === 'field_news_type_news'
+    	|| $fieldId === 'field_article_type_secarticle'
+      || $fieldId === 'field_tags') {
+      return isset($currentValue[0]) ? $currentValue[0]['target_id'] : null;
+    }else {
+      return isset($currentValue[0]) ? $currentValue[0]['value'] : null;
+    }
+  }
+
+
+function passThrough($form_state) {
+  $form_state->clearErrors();
+}

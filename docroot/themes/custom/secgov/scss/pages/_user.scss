@@ -1,0 +1,160 @@
+//
+// USER
+// User login and user pages
+//
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+body {
+
+	.user-logged-in {
+		display: none;
+	}
+
+	.user-not-logged-in {
+		display: block;
+	}
+
+	&.path-user {
+		.mobile-menu .fa {
+			display: none;
+		}
+	}
+
+}
+
+body.user-logged-in {
+
+	.user-logged-in {
+		display: block;
+	}
+
+	.user-not-logged-in {
+		display: none;
+	}
+
+	h4.user-roles {
+		display: inline-block;
+	}
+}
+
+#user-login {
+	padding: 20px 100px;
+
+		@media (min-width : 320px) and (max-width: 700px) {
+			margin-bottom: 35px;
+			padding: 20px;
+		}
+
+	#user-login-content {
+		background-color: $mist;
+		border: 1px solid $deep-sea;
+		-webkit-box-shadow: 0px 0px 25px $cloudy-gray;
+		-moz-box-shadow: px 0px 25px $cloudy-gray;
+		box-shadow: 0px 0px 25px $cloudy-gray;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 100px;
+		padding: 50px;
+		text-align: left;
+
+		@media only screen and (min-device-width: 700px) {
+			padding: 30px 20px;
+		}
+
+		@media (min-width : 320px) and (max-width: 700px) {
+			margin-bottom: 35px;
+			padding: 20px 10px;
+		}
+
+		&:after {
+			clear: both;
+			content: ' ';
+			display: block;
+		}
+    .form-no-label {
+      font-family: 'Raleway', sans-serif;
+    }
+		h4.label {
+			display: inline;
+	    	margin-right: 4px;
+	    	&:after {
+	    		content:':';
+	    	}
+		}
+		h4.user-roles {
+			padding-top: 25px;
+		}
+		ul.roles-list {
+			display: inline;
+			margin: 0;
+			padding: 0 0 30px 5px;
+      font-family: 'Raleway', sans-serif;
+			&:after {
+				content: '';
+				display: block;
+				height: 10px;
+			}
+			li {
+				display: inline;
+				list-style-type: none;
+			}
+		}
+	}
+
+	.user-login-form {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+		width: 420px;
+
+		@media (min-width : 320px) and (max-width: 700px) {
+			width: 280px;
+		}
+
+		label {
+			clear: both;
+			color: $navy;
+			display: block;
+			font-weight: 600;
+			margin-bottom: 10px;
+			width: auto;
+		}
+
+		input[type="text"], input[type="password"] {
+			margin-bottom: 5px;
+			padding: 5px;
+			width: 100%;
+			@media (min-width : 320px) and (max-width: 700px) {
+				width: 90%;
+			}
+		}
+
+		.description {
+			color: $stone;
+			font-style: italic;
+			margin-bottom: 20px;
+		}
+
+		input[type="submit"] {
+		    background-color: $cloudy-gray;
+		    border-width: 0px;
+		    height: 29px;
+		    color: white;
+		    cursor: pointer;
+		    font-weight: 600;
+		    padding: 5px 10px;
+			&:hover {
+				background-color: $azure;
+			}
+		}
+	}
+}
+
+.path-user {
+  #addthis-icons {
+    display: none;
+  }
+}

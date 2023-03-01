@@ -1,0 +1,8 @@
+uuid: 5eb196b6-b15e-4137-9317-1d9c8d4eeac4
+langcode: en
+status: true
+dependencies: {  }
+id: capital-raising-hub-menu
+label: 'capital raising hub menu'
+description: 'capital raising hub menu'
+locked: false

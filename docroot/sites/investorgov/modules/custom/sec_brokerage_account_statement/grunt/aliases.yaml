@@ -1,0 +1,31 @@
+default:
+  - 'uglify:build'
+  - 'sass:build'
+  - 'imagemin:build'
+  - 'postcss:build'
+
+build:
+  - 'uglify:build'
+  - 'sprite:build'
+  - 'sass:build'
+  - 'imagemin:build'
+  - 'postcss:build'
+
+prod:
+  - 'uglify:prod'
+  - 'sprite:build'
+  - 'sass:prod'
+  - 'imagemin:build'
+  - 'postcss:prod'
+
+performance:
+  - 'sitespeedio'
+
+testjs:
+  - 'jshint'
+
+testsass:
+  - 'scsslint'
+
+testvisual:
+ - 'phantomcss'

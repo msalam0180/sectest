@@ -1,0 +1,133 @@
+uuid: 899fbfe7-c7a1-4541-913b-046c87630d31
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.node.landing.default
+    - core.entity_view_display.node.news.full
+    - media.type.audio
+    - media.type.file
+    - media.type.image
+    - media.type.video
+    - node.type.article
+    - node.type.featured
+    - node.type.gallery
+    - node.type.glossary_term
+    - node.type.landing
+    - node.type.news
+    - node.type.page
+    - node.type.publication
+    - taxonomy.vocabulary.glossary_term_categories
+    - workflows.workflow.editorial
+  module:
+    - book
+    - content_moderation
+    - contextual
+    - entity_browser
+    - environment_indicator
+    - layout_builder
+    - media
+    - node
+    - replicate_ui
+    - system
+    - taxonomy
+    - toolbar
+id: content_creator
+label: 'Content Creator'
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access environment indicator'
+  - 'access gallery_browser entity browser pages'
+  - 'access media overview'
+  - 'access printer-friendly version'
+  - 'access toolbar'
+  - 'add content to books'
+  - 'administer book outlines'
+  - 'configure editable landing node layout overrides'
+  - 'configure editable news node layout overrides'
+  - 'create and edit custom blocks'
+  - 'create article content'
+  - 'create audio media'
+  - 'create featured content'
+  - 'create file media'
+  - 'create gallery content'
+  - 'create glossary_term content'
+  - 'create image media'
+  - 'create landing content'
+  - 'create media'
+  - 'create new books'
+  - 'create news content'
+  - 'create page content'
+  - 'create publication content'
+  - 'create video media'
+  - 'delete any article content'
+  - 'delete any featured content'
+  - 'delete any gallery content'
+  - 'delete any glossary_term content'
+  - 'delete any page content'
+  - 'delete any publication content'
+  - 'delete gallery revisions'
+  - 'delete media'
+  - 'delete own article content'
+  - 'delete own audio media'
+  - 'delete own featured content'
+  - 'delete own file media'
+  - 'delete own gallery content'
+  - 'delete own glossary_term content'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own publication content'
+  - 'delete own video media'
+  - 'delete terms in glossary_term_categories'
+  - 'edit any article content'
+  - 'edit any audio media'
+  - 'edit any featured content'
+  - 'edit any file media'
+  - 'edit any gallery content'
+  - 'edit any glossary_term content'
+  - 'edit any image media'
+  - 'edit any landing content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit any publication content'
+  - 'edit any video media'
+  - 'edit own article content'
+  - 'edit own audio media'
+  - 'edit own featured content'
+  - 'edit own file media'
+  - 'edit own gallery content'
+  - 'edit own glossary_term content'
+  - 'edit own image media'
+  - 'edit own landing content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'edit own publication content'
+  - 'edit own video media'
+  - 'edit terms in glossary_term_categories'
+  - 'replicate entities'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert gallery revisions'
+  - 'revert glossary_term revisions'
+  - 'revert page revisions'
+  - 'revert publication revisions'
+  - 'update any media'
+  - 'update media'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_for_review'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view article revisions'
+  - 'view gallery revisions'
+  - 'view glossary_term revisions'
+  - 'view landing revisions'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
+  - 'view publication revisions'
+  - 'view the administration theme'

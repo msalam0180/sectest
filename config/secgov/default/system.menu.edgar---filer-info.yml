@@ -1,0 +1,8 @@
+uuid: 5a9d0e84-b5f5-475f-ba8b-d7d4d825dd53
+langcode: en
+status: true
+dependencies: {  }
+id: edgar---filer-info
+label: 'EDGAR - Filer Info'
+description: 'EDGAR - Information for Filers Menu'
+locked: false

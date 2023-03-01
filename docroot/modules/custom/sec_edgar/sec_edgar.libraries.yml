@@ -1,0 +1,24 @@
+tooltip:
+  js:
+    js/tooltip.js: {}
+edgar-plugin:
+  version: 1.x
+  css:
+    theme:
+      css/sec-edgar.plugin.css: {}
+  js:
+    js/sec-edgar.plugin.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - sec_edgar/tooltip
+edgar-company-person:
+  css:
+    theme:
+      css/sec-edgar-company-person-lookup.css: {}
+  js:
+    js/sec-edgar-company-person-lookup.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - sec_edgar/tooltip

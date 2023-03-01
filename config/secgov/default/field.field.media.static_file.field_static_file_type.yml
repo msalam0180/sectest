@@ -1,0 +1,29 @@
+uuid: 37fb5755-8169-4492-8422-60b218b9bf48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_static_file_type
+    - media.type.static_file
+    - taxonomy.vocabulary.static_file_type
+id: media.static_file.field_static_file_type
+field_name: field_static_file_type
+entity_type: media
+bundle: static_file
+label: 'Static File Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      static_file_type: static_file_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

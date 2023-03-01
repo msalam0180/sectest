@@ -1,0 +1,32 @@
+name: Investor
+description: Investor.gov Drupal 8 sub-theme of SEC.gov
+type: theme
+base theme: secgov
+# core: 8.x
+package: Core
+logo: logo.png
+core_version_requirement: ^8 || ^9
+
+regions:
+  header: 'Header'
+  header2: 'Header2'
+  highlighted: 'Highlighted'
+  global_navigation: 'Global Navigation'
+  sidebar_first: 'Left Navigation'
+  breadcrumb: 'Breadcrumb Navigation'
+  admin_details: 'Admin Details'
+  page_title: 'Page Title'
+  content: 'Main Content'
+  sidebar_second: 'Right Sidebar'
+  sidebar_grid: 'Grid Sidebar'
+  footer: 'Global Footer'
+  footer2: 'Global Footer2'
+  off_canvas: 'Off Canvas'
+  page_bottom: 'Page Bottom'
+
+libraries:
+  - investor/global-styling
+  - investor/global-js
+
+ckeditor_stylesheets:
+  - css/layout.css

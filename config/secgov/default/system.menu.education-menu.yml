@@ -1,0 +1,8 @@
+uuid: 05356d6c-454e-407b-b1d8-192a849e9d86
+langcode: en
+status: true
+dependencies: {  }
+id: education-menu
+label: 'Education menu'
+description: 'Education menu'
+locked: false

@@ -1,0 +1,8 @@
+uuid: 15eee3ce-1840-4bf1-8e62-808f3704e9b8
+langcode: en
+status: true
+dependencies: {  }
+id: node__secperson
+label: 'Content: Person'
+tags:
+  title: '[site:slogan] | [node:field_first_name_secperson] [node:field_last_name_secperson]'

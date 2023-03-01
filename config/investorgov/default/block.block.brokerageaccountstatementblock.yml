@@ -1,0 +1,26 @@
+uuid: dce042ae-d6ff-4925-a557-e9487180b86b
+langcode: en
+status: true
+dependencies:
+  module:
+    - sec_brokerage_account_statement
+    - system
+  theme:
+    - investor
+id: brokerageaccountstatementblock
+theme: investor
+region: content
+weight: -10
+provider: null
+plugin: block_brokerageacctstmt
+settings:
+  id: block_brokerageacctstmt
+  label: 'Brokerage Account Statement block'
+  label_display: '0'
+  provider: sec_brokerage_account_statement
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /better-understanding-your-brokerage-account-statement

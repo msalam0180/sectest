@@ -1,0 +1,167 @@
+webcast_archive_player:
+  version: 1.0
+  js:
+    components/scripts/webcast-archive-player.js: {}
+    //video.limelight.com/player/embed.js: { type: external, minified: false }
+  css:
+    layout:
+      components/stylesheets/webcast-archive-player.css: {}
+
+legacy_detail:
+  version: 1.0
+  js:
+    components/scripts/legacy-detail.js: {}
+  css:
+    layout:
+      components/stylesheets/legacy-detail.css: {}
+
+cybersecurity_quiz:
+  version: 1.0
+  js:
+    components/scripts/cybersecurity-quiz.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/quiz.css: {}
+
+teacher_quiz:
+  version: 1.0
+  js:
+    components/scripts/teacher-quiz.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/quiz.css: {}
+
+military_quiz:
+  version: 1.0
+  js:
+    components/scripts/military-financial-quiz.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/quiz.css: {}
+
+media_gallery:
+  version: 1.1
+  js:
+    components/scripts/media-gallery.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/media-gallery.css: {}
+
+isotope:
+  version: 3.0.2
+  js:
+    components/scripts/isotope.pkgd.min.js: {preprocess: false}
+
+img_gallery_resizer:
+  version: 1.1
+  js:
+    components/scripts/gallery-resizer.js: {}
+  css:
+    layout:
+      components/stylesheets/gallery-resizer.css: {}
+
+media_boxes:
+  version: 3.3
+  js:
+    components/scripts/jquery.isotope.min.js: {preprocess: false}
+    components/scripts/jquery.imagesLoaded.min.js: {preprocess: false}
+    components/scripts/jquery.transit.js: {}
+    components/scripts/jquery.easing.js: {}
+    components/scripts/waypoints.min.js: {preprocess: false}
+    components/scripts/modernizr.custom.min.js: {preprocess: false}
+    components/scripts/jquery.mediaBoxes.js: {}
+    components/scripts/jquery.mediaBoxes.dropdown.js: {}
+    components/scripts/jquery.magnific-popup.js: {}
+  css:
+    layout:
+      components/stylesheets/magnific-popup.css: {}
+      components/stylesheets/mediaBoxes.css: {}
+
+registration_fee_estimator:
+  version: 1.0
+  js:
+    components/scripts/autoNumeric.min.js: {preprocess: false}
+    components/scripts/FileSaver.min.js: {preprocess: false}
+    components/scripts/jspdf.min.js: {preprocess: false}
+    components/scripts/registration-fee-estimator.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/jquery-ui.min.css: {preprocess: false}
+
+inputmask:
+  version: 3.3.4
+  js:
+    components/scripts/jquery.inputmask.bundle.js: {preprocess: false}
+
+moment:
+  js:
+    components/scripts/moment.min.js: { preprocess: false }
+
+oasb-wizard-tool:
+  version: 1.0
+  js:
+    components/scripts/oasb-wizard-tool.js: {preprocess: false}
+
+chartJs:
+  version: 2.5.0
+  js:
+    components/scripts/modernizr-custom-canvas.js: { preprocess: false }
+    components/scripts/excanvas.js: { preprocess: false, browsers: { IE: 'lte IE 8', '!IE': false } }
+    components/scripts/jquery.csv.min.js: { preprocess: false }
+    components/scripts/Chart.min.js: { preprocess: false }
+    components/scripts/Chart.PieceLabel.js: { preprocess: true }
+    components/scripts/hammer.min.js: { preprocess: false }
+    components/scripts/hammer-time.min.js: { preprocess: false }
+    components/scripts/chartjs-plugin-zoom.min.js: { preprocess: true }
+    components/scripts/custom/script.js: { preprocess: true }
+  css:
+   layout:
+     components/stylesheets/custom/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/underscore
+    - sec_custom_libraries/moment
+
+tablesaw:
+  version: 3.0.1
+  js:
+    components/scripts/tablesaw.js: {preprocess: false}
+    components/scripts/tablesaw-init.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/tablesaw.css: {}
+      components/stylesheets/tablesaw-override.css: {}
+  dependencies:
+    - core/jquery
+
+jquery-modal:
+  version: 0.8.0
+  js:
+    components/scripts/jquery.modal.min.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/jquery.modal.css: {}
+  dependencies:
+    - core/jquery
+
+jquery-quiz:
+  version: 0.0.1
+  js:
+    components/scripts/jquery.quiz-min.js: {preprocess: false}
+  css:
+    layout:
+      components/stylesheets/jquery.quiz.css: {}
+  dependencies:
+    - core/jquery
+
+mapbox-gl-js:
+  version: 0.45.0
+  js:
+    https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js: { type: external }
+    components/scripts/regional-office.js: { preprocess: false }
+  css:
+    layout:
+      https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css: { type: external }
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

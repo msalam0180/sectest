@@ -1,0 +1,10 @@
+uuid: ba390398-dcb9-4eff-bb2c-b949cc13006f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q0hYjxO3nkaaqrRfXnX3Kx5MPktx3EueHEj36vP40dM
+id: published
+label: Published
+published: true
+default_revision: true

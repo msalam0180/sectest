@@ -1,0 +1,9 @@
+name: SEC Required Minimum Distribution Calculator
+type: module
+description: Provides a calculator to estimate IRA/401(k) required minimum distributions.
+core: 8.x
+package: Calculators
+dependencies:
+  - block
+  - sec_calculator
+core_version_requirement: ^8 || ^9

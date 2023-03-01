@@ -1,0 +1,10 @@
+uuid: a8bb9a33-0635-4617-8cfb-74df4b73b648
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xTPdNjnfvVh67fw1pK2LdFC458WvWWQOf5HCQ3t-a_g
+id: corpfin-left-nav
+label: Corpfin
+description: 'Corpfin Menu'
+locked: false

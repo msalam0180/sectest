@@ -1,0 +1,12 @@
+#Provides link to 'Approvers' needs review page.
+sec_views.needs-review:
+  route_name: sec_view.needsReviewApprovers
+  title: 'Needs Review'
+  weight: 11
+  menu_name: workbench
+#Provides link to 'Creators' needs review page.
+sec_views.needs-review-creator:
+  route_name: sec_view.needsReviewCreator
+  title: 'Needs Edit'
+  weight: 11
+  menu_name: workbench

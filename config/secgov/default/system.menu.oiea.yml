@@ -1,0 +1,10 @@
+uuid: df2b67b7-362d-4b97-acd6-9a5ad6c9051c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7e--e39gi2rwjzoYKBXHMOW61OZJjLwBTY33MC2YPB8
+id: oiea
+label: OIEA
+description: 'Office of Investor Education and Advocacy'
+locked: false

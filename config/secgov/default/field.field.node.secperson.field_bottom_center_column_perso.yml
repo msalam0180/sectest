@@ -1,0 +1,23 @@
+uuid: 611cd0aa-aa03-4aa8-ac1d-1928dca6df75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bottom_center_column_perso
+    - node.type.secperson
+  module:
+    - text
+_core:
+  default_config_hash: _LPXsYxif0VX76Nq6OC82-hSU2juItkhmKfrL2cyNrg
+id: node.secperson.field_bottom_center_column_perso
+field_name: field_bottom_center_column_perso
+entity_type: node
+bundle: secperson
+label: 'Bottom Center Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

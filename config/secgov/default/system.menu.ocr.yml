@@ -1,0 +1,10 @@
+uuid: c2fc7369-31dd-4e7b-b4e5-32752b94d952
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: YVCMeMPqkaHayHRoBzUbQbN0gZjSTEOqHrMsph3pmFI
+id: ocr
+label: OCR
+description: 'Office of Credit Ratings Menu'
+locked: false

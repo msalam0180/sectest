@@ -1,0 +1,27 @@
+//
+// MESSAGES
+// TODO: What is this used for?
+//
+// --------------------------------------------------
+
+.highlighted {
+	@include span(12);
+	clear:both;
+	position: relative;
+	text-align:center;
+
+	.message {
+		display: none;
+		font-size:1.15em;
+		left: 0;
+		padding: 20px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		z-index: 100;
+
+		&.show {
+			display:block;
+		}
+	}
+}	

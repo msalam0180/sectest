@@ -1,0 +1,21 @@
+uuid: 68e3eec9-b77d-48ff-bdc7-73ceb03cf7e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: v_-ca1BReNTVSNNzgizkVOyMn4gGa34RFj8su9euf38
+id: node.field_complete_webcast
+field_name: field_complete_webcast
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

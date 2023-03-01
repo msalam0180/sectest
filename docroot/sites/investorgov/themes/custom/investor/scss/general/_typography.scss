@@ -1,0 +1,145 @@
+html{
+  font-size: $text-base-size;
+  line-height: $body-line-height;
+}
+
+body{
+  font-family: $font_secondary;
+  font-weight: 600;
+  color: $base-text-color;
+  line-height: $base-line-height;
+}
+
+// @include breakpoint(md) {
+
+//     // you can manage typography editing only these 2 variables
+//     $text-base-size: 1.25em;
+//     $text-scale-ratio: 1.25;
+
+// }
+
+/* text size */
+
+.text--xxxl {
+  font-family: $font_secondary;
+  font-size: $text-xxxl;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--xxl {
+  font-family: $font_secondary;
+  font-size: $text-xxl;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--xl {
+  font-family: $font_secondary;
+  font-size: $text-xl;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--lg {
+  font-family: $font_secondary;
+  font-size: $text-lg;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--md {
+  font-family: $font_secondary;
+  font-size: $text-md;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--sm {
+  font-family: $font_secondary;
+  font-size: $text-sm;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+.text--xs {
+  font-family: $font_secondary;
+  font-size: $text-xs;
+  margin-bottom: $space-xxs;
+  margin-top: 0;
+  line-height: $heading-line-height;
+}
+
+// Alternate font type
+.text--alt--xxl {
+  @extend .text--xxl;
+  font-family: $font_primary;
+}
+
+.text--alt--xl {
+  @extend .text--xl;
+  font-family: $font_primary;
+}
+
+.text--alt--lg {
+  @extend .text--lg;
+  font-family: $font_primary;
+}
+
+.text--alt--md {
+  @extend .text--md;
+  font-family: $font_primary;
+}
+
+.text--alt--sm {
+  @extend .text--sm;
+  font-family: $font_primary;
+}
+
+.text--alt--xs {
+  @extend .text--xs;
+  font-family: $font_primary;
+}
+
+// OSSS-17386: Add new paragraph styles for WYSIWIG/CKE editor
+.text--cke-xs {
+  font-size: .75em;
+}
+
+.text--cke-sm {
+  font-size: .875em;
+}
+
+.text--cke-lg {
+  font-size: 1.125em;
+}
+
+.fw800{
+  font-weight: 800;
+}
+
+.fw700{
+  font-weight: 700;
+}
+
+.fw600{
+  font-weight: 600;
+}
+
+.fw500{
+  font-weight: 500;
+}
+
+.fw400{
+  font-weight: 400;
+}
+
+.fw300{
+  font-weight: 300;
+}

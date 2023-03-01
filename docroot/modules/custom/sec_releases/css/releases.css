@@ -1,0 +1,33 @@
+/* Release Content View: Make the Also see files appear inline */
+.view-release-content .views-field-field-see-also .media {
+  display: inline;
+  margin-right: -3px;
+}
+.view-release-content .views-field-field-see-also .media .file {
+  display: inline;
+}
+
+.view-table_subfield.view-table_subfield_see_also .view-table_subfield_value .contextual {
+  display: none;
+}
+
+.view-table_subfield.view-table_subfield_see_also .view-table_subfield_value .media {
+  display: inline;
+  margin-right: -3px;
+}
+
+.view-table_subfield_comments_notice p {
+  margin: 0;
+}
+
+.view-table_subfield_label {
+  font-weight: bold;
+}
+
+.view-table_subfield_comments_due p {
+  margin: 0;
+}
+
+.view-table_subfield_comments_due .view-table_subfield_value *:first-child {
+  display: inline;
+}

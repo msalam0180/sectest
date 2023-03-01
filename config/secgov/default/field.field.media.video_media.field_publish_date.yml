@@ -1,0 +1,24 @@
+uuid: aa349ab7-33a8-4321-9cbe-18606a46f430
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_publish_date
+    - media.type.video_media
+  module:
+    - datetime
+id: media.video_media.field_publish_date
+field_name: field_publish_date
+entity_type: media
+bundle: video_media
+label: 'Publish Date'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

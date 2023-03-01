@@ -1,0 +1,290 @@
+uuid: 6e3ccc44-8c3b-44a8-8e5a-5126bb489347
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: eULLaFv6jNS-TJq0hyHWRQsexDgiAMtE9C1FHlUj0YA
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: 8b_letter
+title: 'Notice of Representation Pursuant to SEC Conduct Rule 8(b) and Request for Waiver Pursuant to SEC Conduct Rule 8(d)'
+description: ''
+category: ''
+elements: |-
+  header:
+    '#type': processed_text
+    '#text': |
+      <p>SEC Conduct Rule 8(b) [17 CFR 200.735-8(b)] states that any former member or employee of the Commission who, within two years after ceasing to be such, is employed or retained as the representative of any person outside the Government in any matter in which it is contemplated that he or she will appear before the Commission, or communicate with the Commission or its employees, shall within ten days of such retainer or employment (or of the time when appearance before, or communication with the Commission is first contemplated), file a statement with the Office of the Ethics Counsel, which includes all of the information specified by the rule.</p>
+
+      <p>SEC Conduct Rule 8(d) [17 CFR 200.735-8(d)] states that partners or associates of any person disqualified from appearing or practicing before the Commission in a particular matter are also disqualified. Such partners or associates (the firm) may request a waiver of this prohibition from the Commission by writing a letter to the General Counsel setting forth the facts of the proposed representation and the individual's disqualification. Waivers ordinarily will be granted where the firm makes a satisfactory representation that it has adopted effective screening measures for the individual lawyer disqualified and that the disqualified attorney will not be sharing in any fees attributable to the matter.</p>
+
+      <p>A <a href="/about/offices/ethics/post-emp-sample-ltrs.pdf">sample Rule 8(b) representation letter and a sample 8(d) waiver letter</a> are available.</p>
+
+      <p>These letters must be submitted to the Office of the Ethics Counsel either in paper or electronic format. If electronic, the letter must be in PDF format and contain a manual signature, and be submitted using the form below:</p>
+    '#format': full_html
+  electronic_submission:
+    '#type': fieldset
+    '#title': 'Electronic Submission'
+    required_text:
+      '#type': processed_text
+      '#text': |
+        <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+      '#format': full_html
+    upload_letter:
+      '#type': managed_file
+      '#title': 'Upload letter'
+      '#description': 'The PDF file may not have active content. The size of the PDF file must be less than&nbsp;10 MB.'
+      '#required': true
+      '#max_filesize': '10'
+      '#file_extensions': pdf
+    additional_comments:
+      '#type': textarea
+      '#title': 'Additional Comments'
+  paper_submission:
+    '#type': fieldset
+    '#title': 'Paper Submission'
+    paper_message:
+      '#type': processed_text
+      '#text': |
+        <p>Notices submitted in paper should be sent to:</p>
+
+        <p>U.S. Securities and Exchange Commission<br />
+        Office of the Ethics Counsel<br />
+        100 F Street NE<br />
+        Washington, DC 20549-9150</p>
+
+        <p>The Ethics Office also provides advice and action, on a normal or expedited basis, to all former <acronym title="Securities and Exchange Commission">SEC</acronym> employees on post-employment restrictions as well as post-employment clearances required under Rule 8(b) prior to appearing before the Commission. Any former <acronym title="Securities and Exchange Commission">SEC</acronym> employee is welcome to call the Ethics Office, at 202-551-5170.</p>
+      '#format': full_html
+  privacy:
+    '#type': processed_text
+    '#text': |
+      <p>Please read our <a href="http://www.sec.gov/privacy.htm" target="_blank">Privacy Act Notice</a> to learn more about how we may use the information you send to us.</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/8b-letter
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: ethics8b@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

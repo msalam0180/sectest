@@ -1,0 +1,7 @@
+sec_release_importer.form:
+  path: '/admin/release_importer'
+  defaults:
+    _form: '\Drupal\sec_release_importer\Form\ImporterForm'
+    _title: 'Release Importer Form'
+  requirements:
+    _role: 'content_creator+content_approver+sitebuilder+administrator'

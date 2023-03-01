@@ -1,0 +1,509 @@
+uuid: 66af967e-c9b5-4551-a0e4-802655031f3f
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: xsFvvTru2BuRo-wOmcz5NYtEo0fQs4uS7HjeTMoJzxI
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: investor_complaint_form
+title: 'Investor Complaint Form'
+description: ''
+category: 'SEC Forms'
+elements: |-
+  form_header:
+    '#type': webform_markup
+    '#markup': |
+      <div class="container">
+      <div class="col-one">
+      <p>You may use this form to send your complaint to the SEC. Although we use secure socket layer encryption, do not hesitate to&nbsp;<a href="javascript:safePrint()">print this form</a>&nbsp;and send it by&nbsp;<a href="http://www.sec.gov/investor/oieaaddress.htm" onclick="javascript:window.open('http://www.sec.gov/investor/oieaaddress.htm','addressWindows','scrollbars=no,menubar=no,height=300,width=400,left=500,top=250,innerHeight=300,innerWidth=400'); return false" target="_blank">mail or fax</a>&nbsp;if you have any concerns about security. Please read our&nbsp;<a href="http://www.sec.gov/privacy.htm">Privacy Act Notice</a>&nbsp;to learn more about how we may use the information you send to us.</p>
+
+      <p>Please read our brochure,&nbsp;<a href="http://www.sec.gov/investor/pubs/howoiea.htm">How We Handle Complaints</a>, for information on what we will do with your complaint, your legal rights, and options for resolving your complaint.</p>
+      </div>
+
+      <div class="col-two">
+      <table border="0" summary="OMB Interior Box">
+      	<tbody>
+      		<tr>
+      			<td class="SmallFormText" colspan="3">OMB Number:</td>
+      			<td class="SmallFormTextR">3235-0547</td>
+      		</tr>
+      		<tr>
+      			<td class="SmallFormText">Expires:</td>
+      			<td class="SmallFormTextR" colspan="3">October 31, 2017</td>
+      		</tr>
+      		<tr>
+      			<td class="SmallFormText" colspan="4">Estimated average burden</td>
+      		</tr>
+      		<tr>
+      			<td class="SmallFormText" colspan="3">hours per response:</td>
+      			<td class="SmallFormTextR">0.25</td>
+      		</tr>
+      	</tbody>
+      </table>
+      </div>
+      </div>
+  header_radio:
+    '#type': radios
+    '#title': header_radio
+    '#title_display': invisible
+    '#options':
+      'Yes, send the form to the firm or company.': 'Yes, send the form to the firm or company.'
+      'No, do not send the form to the firm or company. If you choose "no", we will record your complaint in our database, but we cannot help you any further.': 'No, do not send the form to the firm or company. If you choose "no", we will record your complaint in our database, but we cannot help you any further.'
+  tell_us_about_yourself:
+    '#type': fieldset
+    '#title': 'Tell Us About Yourself'
+    '#open': true
+    required_text:
+      '#type': processed_text
+      '#text': |
+        <p><span class="red">*</span> You must complete this information.</p>
+      '#format': full_html
+    titles:
+      '#type': select
+      '#title': Title
+      '#options': titles
+    first_name:
+      '#type': textfield
+      '#title': 'First name'
+      '#required': true
+    middle_initial:
+      '#type': textfield
+      '#title': 'Middle initial'
+      '#size': 4
+      '#maxlength': 4
+    last_name:
+      '#type': textfield
+      '#title': 'Last name'
+      '#required': true
+    street_address:
+      '#type': webform_address
+      '#title': 'Street address'
+      '#default_value':
+        'Street address': ''
+        'Address (cont.)': ''
+        city: ''
+        state_province: ''
+        postal_code: ''
+        country: ''
+      '#address__title': 'Street address'
+      '#address__required': true
+      '#address_2__title': 'Address (cont.)'
+      '#city__title': City
+      '#city__required': true
+      '#state_province__title': 'State/Province (required if US or Canada)'
+      '#state_province__required': true
+      '#postal_code__title': 'Zip/Postal code'
+      '#postal_code__required': true
+      '#country__required': true
+    daytime_phone:
+      '#type': tel
+      '#title': 'Daytime phone'
+    alternate_phone:
+      '#type': tel
+      '#title': 'Alternate phone'
+    fax:
+      '#type': tel
+      '#title': Fax
+    e_mail:
+      '#type': email
+      '#title': E-mail
+      '#required': true
+      '#pattern': '.+@([\w-]+\.)+[\w-]+'
+    are_you_a:
+      '#type': select
+      '#title': 'Are you a'
+      '#options': are_you_a
+      '#required': true
+  tell_us_about_the_firm_or_individual_you_have_a_complaint_agains:
+    '#type': fieldset
+    '#title': 'Tell Us About the Firm or Individual You Have a Complaint Against'
+    firm_name:
+      '#type': textfield
+      '#title': 'Firm name'
+    type_of_firm:
+      '#type': select
+      '#title': 'Type of firm'
+      '#options': type_of_firm
+    broker_advisor_or_salesperson:
+      '#type': textfield
+      '#title': 'Broker, Advisor, or Salesperson'
+    address_group2:
+      '#type': webform_address
+      '#title': address
+      '#default_value':
+        address: ''
+        'address (cont.)': ''
+        city: ''
+        state_province: ''
+        postal_code: ''
+        country: ''
+      '#address__title': 'Street address'
+      '#address_2__title': 'Address (cont.)'
+      '#city__title': City
+  tell_us_about_your_investment:
+    '#type': fieldset
+    '#title': 'Tell Us About Your Investment'
+    type_of_security:
+      '#type': select
+      '#title': 'Type of security'
+      '#options': type_of_security
+    security_symbol:
+      '#type': textfield
+      '#title': 'Security symbol'
+      '#size': 5
+    name_of_issuer_or_security:
+      '#type': textfield
+      '#title': 'Name of Issuer or Security'
+  tell_us_about_your_complaint:
+    '#type': fieldset
+    '#title': 'Tell Us About Your Complaint'
+    complaint:
+      '#type': textarea
+      '#title': 'Please describe your complaint in as much detail as possible, including the full name(s) on the account, the exact type of account, the dates of specific transactions or conversations, the name or ticker symbol of the security(ies) involved, and the names of all the people at the firm you have contacted about this complaint.'
+      '#required': true
+    what_types_of_documents_would_you_be_able_to_provide_us_if_reque:
+      '#type': webform_checkboxes_other
+      '#title': 'What types of documents would you be able to provide us if requested?'
+      '#options':
+        'TRUE': 'Notes of conversation with Firm'
+      '#other__option_label': Other
+  tell_us_what_action_you_have_taken:
+    '#type': fieldset
+    '#title': 'Tell Us What Action You Have Taken'
+    have_you_complained_to_the_firm_:
+      '#type': radios
+      '#title': 'Have you complained to the firm?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    have_you_contacted_any_other_regulators_:
+      '#type': radios
+      '#title': 'Have you contacted any other regulators?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    if_yes_whom_:
+      '#type': webform_checkboxes_other
+      '#title': 'If yes, whom?'
+      '#options':
+        'FINRA (Financial Industry Regulatory Authority)': 'FINRA (Financial Industry Regulatory Authority)'
+        'State Regulators': 'State Regulators'
+        'Other Federal Regulators': 'Other Federal Regulators'
+        'Foreign Regulators': 'Foreign Regulators'
+        'Stock Exchange': 'Stock Exchange'
+      '#other__option_label': Other
+    test:
+      '#type': select
+      '#title': Exchange
+      '#options':
+        NYSE: NYSE
+        AMEX: AMEX
+        NASDAQ: NASDAQ
+      '#states':
+        visible:
+          ':input[name="if_yes_whom_[checkboxes][Stock Exchange]"]':
+            checked: true
+    have_you_taken_legal_action_if_so_what_type_:
+      '#type': checkboxes
+      '#title': 'Have you taken legal action?   If so, what type:'
+      '#options':
+        Mediation: Mediation
+        Arbitration: Arbitration
+        'Court Action': 'Court Action'
+    describe_the_details_of_the_legal_action_you_have_taken_:
+      '#type': textarea
+      '#title': 'Describe the details of the legal action you have taken.'
+  privacy_act_disclaimer:
+    '#type': processed_text
+    '#text': |
+      <p>This collection of information has been reviewed by the Office of Management and Budget ("OMB") in accordance with the clearance requirements of 44 U.S.C. §3507. The applicable Privacy Act system of records (SORN) is SEC 65 and the routine uses of the records are set forth at 76 FR 30213 (May 24, 2011). This SORN is exempt from certain sections of the Privacy Act and the citation for the rule exempting the notice is 76 FR 57636 (September 16, 2011).</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /oiea/Complaint.html
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:e_mail:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form.&nbsp;[webform:url]
+      excluded_elements:
+        header_radio: header_radio
+        titles: titles
+        first_name: first_name
+        middle_initial: middle_initial
+        last_name: last_name
+        street_address: street_address
+        daytime_phone: daytime_phone
+        alternate_phone: alternate_phone
+        fax: fax
+        e_mail: e_mail
+        are_you_a: are_you_a
+        firm_name: firm_name
+        type_of_firm: type_of_firm
+        broker_advisor_or_salesperson: broker_advisor_or_salesperson
+        address_group2: address_group2
+        please_check_all_that_apply_and_give_us_details_about_your_compl: please_check_all_that_apply_and_give_us_details_about_your_compl
+        _please_describe_your_complaint_in_detail_: _please_describe_your_complaint_in_detail_
+        are_you_able_to_send_us_a_copy_of_the_privacy_notice_and_opt_out: are_you_able_to_send_us_a_copy_of_the_privacy_notice_and_opt_out
+        have_you_complained_to_the_firm_: have_you_complained_to_the_firm_
+        have_you_contacted_any_other_regulators_: have_you_contacted_any_other_regulators_
+        if_yes_whom_: if_yes_whom_
+        test: test
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: 'buenaventurac@SEC.GOV,fergusonm@SEC.GOV,balmakhtars@SEC.GOV,alshaero@SEC.GOV'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

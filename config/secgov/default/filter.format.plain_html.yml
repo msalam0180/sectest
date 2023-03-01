@@ -1,0 +1,10 @@
+uuid: 8fe6acc5-51a0-4427-b1d8-7f49702f2e36
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zf2MsnVBda_Vjr8ReA-kE7pO5ChI18-aqC5IrbcXYRI
+name: 'Plain HTML'
+format: plain_html
+weight: 0
+filters: {  }

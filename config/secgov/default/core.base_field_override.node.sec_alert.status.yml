@@ -1,0 +1,22 @@
+uuid: 9a70555f-5ecd-4e3c-bec4-01e0158ebd4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sec_alert
+id: node.sec_alert.status
+field_name: status
+entity_type: node
+bundle: sec_alert
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,198 @@
+uuid: ee10d5fc-ab0a-41c0-b883-e82184665a38
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Vbpf94jGhlrfNeznCMJpFEAjWVIjUSsuwUdWkJbrr7w
+id: link
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - link
+migration_group: sec
+label: 'JSON import of SEC Link content'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: 'http://secgovdcmdev1.prod.acquia-sites.com/files/migration/source/link.json'
+  fields:
+    -
+      name: uid
+      label: 'Unique identifier'
+      selector: uid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: act
+      label: Act
+      selector: act
+    -
+      name: audience
+      label: Audience
+      selector: audience
+    -
+      name: description_abstract
+      label: Description/Abstract
+      selector: description_abstract
+    -
+      name: division_office
+      label: 'Primary Division/Office'
+      selector: division_office
+    -
+      name: supporting_division_office
+      label: 'Supporting Division/Office'
+      selector: supporting_division_office
+    -
+      name: external_flag
+      label: 'External link flag'
+      selector: external_flag
+    -
+      name: regulation
+      label: Regulation
+      selector: regulation
+    -
+      name: speaker
+      label: Speaker
+      selector: speaker
+    -
+      name: link_text
+      label: 'Link Text'
+      selector: link_text
+    -
+      name: url
+      label: URL
+      selector: url
+    -
+      name: topic
+      label: 'TRG Topic'
+      selector: topic
+    -
+      name: subtopic
+      label: 'TRG Subtopic'
+      selector: subtopic
+    -
+      name: tags
+      label: Tags
+      selector: tags
+    -
+      name: status
+      label: Status
+      selector: status
+    -
+      name: moderation_state
+      label: 'Moderation State'
+      selector: moderation_state
+  ids:
+    uid:
+      type: string
+process:
+  type:
+    plugin: default_value
+    default_value: link
+  title:
+    plugin: skip_on_empty
+    method: process
+    source: title
+    message: 'Title field cannot be empty'
+  field_act:
+    plugin: entity_lookup
+    source: act
+    value_key: name
+    bundle_key: vid
+    bundle: act
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_audience:
+    plugin: entity_lookup
+    source: audience
+    value_key: name
+    bundle_key: vid
+    bundle: audience
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_description_abstract: description_abstract
+  field_link_type: external_flag
+  field_url:
+    -
+      plugin: get
+      source:
+        - link_text
+        - url
+    -
+      plugin: flatten
+    -
+      plugin: link_import
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_division_office:
+    plugin: entity_lookup
+    source: division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_regulation:
+    plugin: entity_lookup
+    source: regulation
+    value_key: name
+    bundle_key: vid
+    bundle: regulation
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_person:
+    plugin: entity_lookup
+    source: speaker
+    value_key: title
+    bundle: secperson
+    entity_type: node
+    ignore_case: true
+  field_topics:
+    plugin: entity_lookup
+    source: topic
+    value_key: name
+    bundle_key: vid
+    bundle: topics
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_subtopic:
+    plugin: entity_lookup
+    source: subtopic
+    value_key: name
+    bundle_key: vid
+    bundle: subtopics
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_tags:
+    -
+      plugin: explode
+      delimiter: ', '
+      source: tags
+    -
+      plugin: entity_lookup
+      value_key: name
+      bundle_key: vid
+      bundle: tags
+      entity_type: taxonomy_term
+      ignore_case: true
+  uid:
+    -
+      plugin: default_value
+    -
+      default_value: 1
+  status: status
+  moderation_state: moderation_state
+destination:
+  plugin: 'entity:node'
+migration_dependencies: {  }

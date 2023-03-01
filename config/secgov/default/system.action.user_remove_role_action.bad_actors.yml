@@ -1,0 +1,14 @@
+uuid: 7ffd7f59-c561-42d3-b3dd-dfd2aa3f7853
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bad_actors
+  module:
+    - user
+id: user_remove_role_action.bad_actors
+label: 'Remove the Individual Defendants role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: bad_actors

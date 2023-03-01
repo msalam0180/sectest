@@ -1,0 +1,22 @@
+uuid: 681c39e8-c96b-42bd-90e7-20b93a601e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: bUOpBT3MAwnNPFzFEBuWQS6J6Tcmr8PuvELvy88pJsc
+id: secgov_messages
+theme: secgov
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

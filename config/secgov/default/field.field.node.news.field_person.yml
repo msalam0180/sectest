@@ -1,0 +1,30 @@
+uuid: 571b9393-de50-41e9-934f-5058c0bc8756
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person
+    - node.type.news
+    - node.type.secperson
+_core:
+  default_config_hash: U4K91bD_zqMlxB2uiv3pp21KIXfUaz3jj49O_WfkIsw
+id: node.news.field_person
+field_name: field_person
+entity_type: node
+bundle: news
+label: Speaker
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      secperson: secperson
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

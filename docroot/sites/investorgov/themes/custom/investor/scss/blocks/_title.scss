@@ -1,0 +1,76 @@
+#block-investor-page-title--2 {
+  h1 {
+    text-align: left;
+    border: 0;
+    margin-bottom:0;
+
+    span {
+      font-family: $font_secondary;
+      font-weight: $font_secondary_weight_extra_bold;
+      color: $gray_1b;
+      font-size: 2.2rem;
+      line-height: 2.3rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.layout__region--second {
+  > div.block.title {
+    text-align: left;
+    border: 0;
+    margin-bottom:15px;
+
+    span {
+      font-family: $font_secondary;
+      font-weight: $font_secondary_weight_extra_bold;
+      color: $gray_1b;
+      font-size: 2.2rem;
+      line-height: 2.3rem;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// div#page-title {
+//   h1 {
+//     text-align: left;
+//     border: 0;
+//     margin-bottom:0 !important;
+//     font-family: $font_secondary;
+//     font-weight: $font_secondary_weight_extra_bold;
+//     color: $gray_1b;
+//     font-size: 2.2rem;
+//     line-height: 2.3rem;
+//     text-transform: uppercase;
+//   }
+
+//   @media only screen and (min-device-width: 768px) and (orientation: portrait) {
+//     margin-bottom: 0;
+//   }
+
+//   @media (max-width: 767px) and (min-width: 300px) and (orientation: portrait) {
+//     // margin-bottom: 0;
+//     // margin-left: 25px;
+//   }
+
+// }
+
+.path-frontpage #page-title {
+    display: none;
+}
+
+// //Extras
+// #page-title h1 span.shorten-header {
+//     width: 100%;
+//     float: none;
+//     margin-right: 0;
+//     margin: 0;
+// }
+
+
+//Title
+.hideTitle{
+  @include element-invisible;
+}

@@ -1,0 +1,7 @@
+name: 'SEC Admin Content'
+description: 'Overrides the /admin/content view with added filters '
+type: module
+core: 8.x
+version: ' 8.x-1.5'
+package: SEC
+core_version_requirement: ^8 || ^9

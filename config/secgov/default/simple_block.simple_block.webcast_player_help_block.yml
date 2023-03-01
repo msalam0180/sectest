@@ -1,0 +1,13 @@
+uuid: edbcdbea-a4b8-4514-b82e-15ccc7148109
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+_core:
+  default_config_hash: E7nr-1-roauKZIptRjEDv3AiXhEjbVWxbd_erEhFJcA
+id: webcast_player_help_block
+title: Troubleshooting
+content:
+  value: "<p>See our <a href=\"/video/video-troubleshooting-checklist.htm\" target=\"new\">troubleshooting checklist</a> to resolve video and audio problems.</p>\r\n"
+  format: full_html

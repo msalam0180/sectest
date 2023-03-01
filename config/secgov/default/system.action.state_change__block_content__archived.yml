@@ -1,0 +1,11 @@
+uuid: 26fc0258-fd39-443e-8d70-ab2532a0c20e
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__block_content__archived
+label: 'Set Custom block as Unpublished'
+type: block_content
+plugin: 'state_change:block_content__archived'
+configuration: {  }

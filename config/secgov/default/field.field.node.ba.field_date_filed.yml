@@ -1,0 +1,23 @@
+uuid: 709ea707-96ad-4aa9-b782-659443cc4110
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_filed
+    - node.type.ba
+  module:
+    - datetime
+_core:
+  default_config_hash: 2CVMjkxKxqFOZuJFFMkgoFMErda4iJiBt1QXEXpzgZE
+id: node.ba.field_date_filed
+field_name: field_date_filed
+entity_type: node
+bundle: ba
+label: 'Date Filed'
+description: 'Please enter the date in the format MM/DD/YYYY.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

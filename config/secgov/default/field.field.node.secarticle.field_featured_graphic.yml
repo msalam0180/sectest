@@ -1,0 +1,57 @@
+uuid: ace2f36a-6d90-469d-ab4d-ffaf16cade19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_featured_graphic
+    - node.type.secarticle
+  module:
+    - filefield_paths
+    - image
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+id: node.secarticle.field_featured_graphic
+field_name: field_featured_graphic
+entity_type: node
+bundle: secarticle
+label: 'Featured Graphic'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

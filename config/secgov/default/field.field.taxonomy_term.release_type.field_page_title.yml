@@ -1,0 +1,19 @@
+uuid: 8960e6c9-c09c-4eed-b905-163cba61fe44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_page_title
+    - taxonomy.vocabulary.release_type
+id: taxonomy_term.release_type.field_page_title
+field_name: field_page_title
+entity_type: taxonomy_term
+bundle: release_type
+label: 'Page Title Override'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

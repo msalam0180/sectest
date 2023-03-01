@@ -1,0 +1,116 @@
+//
+// EXPOSED FORMS
+// Base styles for form exposed by views
+// 
+// Changes here should affect *ALL* Exposed Forms on the site
+// -----------------------------------
+
+// TODO: Review all code in this file, clean it
+
+// .views-exposed-form {
+//   input.form-submit {
+//     display: none;
+//   }
+//   @include breakpoint('small') {
+//     select { width: auto; }
+//   }
+// }
+
+
+// .views-exposed-form {
+//   background-color: $porcelain;
+//   display: block;
+//   padding: 10px 10px 5px 10px;
+//   margin: 0;
+
+//   div.form-item {
+//   	display: inline-block;
+//   	margin-right: 10px;
+//   	padding-bottom: 5px;
+
+//     @include breakpoint('medium'){
+//         margin-right:5px;
+//     }
+
+//     @include breakpoint('small','portrait') {
+//         display: inline-block;
+//         padding-bottom: 10px;
+//         width: 100%;
+//     }
+
+//   	label {
+//   		clear: both;
+//       color: $navy;
+//   		display: block;
+//       font-size: 12px;
+//       font-weight: 600;
+//   		margin-bottom: 0;
+//       padding-bottom: 5px;
+//   	}
+
+//   	select {
+//       font-size: 13px;
+//   	}
+//   }
+
+//   #edit-reset {
+
+//     border: none;
+//     background: $button-gray;
+//     color:$white;
+//     font-size: 10px;
+//     font-weight: 600;
+//     height: 26px;
+//     vertical-align: middle;
+//     padding: 6px 6px;
+    
+//     &:hover {
+//       background: $azure;
+//       text-decoration: none;
+//     }
+//   }
+
+//   div#edit-actions {
+//     display: inline-block;
+//     margin-right: 10px;
+//     padding-bottom: 5px;
+//   }
+  
+// }
+
+// #exposed-filter-footer {
+//   margin-bottom: 20px;
+//   .subscribe-rss {
+//     display: none;
+//   }
+// }
+
+
+// .views-exposed-form {
+//   font-size: 13px;
+
+//   @include breakpoint('small'){
+//     background: none;
+//     float: none;
+//     font-size: 10px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 100%;
+//   }
+
+//   @include breakpoint('small','landscape'){
+//     margin-bottom: 20px;
+//     padding-bottom: 20px;
+//   }
+
+//   @include breakpoint('small','portrait'){
+//     margin-bottom: 0px;
+//     min-width: 300px;
+//     padding-bottom: 0px;
+//   }
+
+//   input[type="text"] {
+//     height: 25px;
+//     margin: 0 0 5px;
+//   }
+// }

@@ -1,0 +1,330 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "page_type": "question",
+      "pid": 1,
+      "pre_text": "<p>When raising capital, a business may not offer or sell <a href='/jargon-z#Security' target='_blank'>securities</a> unless the offering has been registered with the SEC or falls within an exemption from registration. Each exemption has specific requirements that a company must meet. </p><p>This interactive tool can help you navigate the many regulatory pathways to raise capital, based on the criteria that matter most to you. While this tool does not provide legal advice, it can help you better understand your options so that you make informed decisions. Let’s get started!</p>",
+      "question": "<h2> Does your business already exist?</h2>",
+      "more_info": "<p>Have you formed your business under applicable state or territorial law and finalized organizational documents (such as bylaws or operating agreements)?</p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Yes",
+          "img": "icon-q1-yes_business_exists.png",
+          "next_id": 3
+        },
+        {
+          "cid": 2,
+          "text": "No",
+          "img": "icon-q1-no_business_does_not_exist_yet.png",
+          "next_id": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "page_type": "resources",
+      "question": "<h2>Let’s explore business fundamentals!</h2>",
+      "more_info": "<p>Based on your answer to the last question, the following resources may be helpful for you at this step in your capital-raising journey:</p><ul><li>U.S. Small Business Administration’s (SBA) <a href='https://www.sba.gov/business-guide/10-steps-start-your-business' target='_blank'>10 Steps to Start Your Business</a></li><li>SBA’s <a href='https://www.sba.gov/business-guide/' target='_blank'>Business Guide</a>, including information on how to plan, launch, manage, and grow your business</li><li>Internal Revenue Service’s (IRS) <a href='https://www.irs.gov/businesses/small-businesses-self-employed/checklist-for-starting-a-business' target='_blank'>Checklist for Starting a Business</a></li><li>IRS’s <a href='https://www.irs.gov/businesses/small-businesses-self-employed/state-government-websites' target='_blank'>list of state government websites</a> for information on doing business, taxes, and employment</li><li>Find local assistance, training, and business counseling from the <a href='https://www.sba.gov/local-assistance/find' target='_blank'>SBA</a> and their network of independent organizations and from the <a href='https://www.mbda.gov/mbda-programs' target='_blank'>Minority Business Development Administration</a></li></ul><p>If you’d like to continue exploring capital raising pathways, click <a href='#3' class='next_id' data-next-id='3' data-choice-id='1'>continue.</a></p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Continue",
+          "next_id": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "page_type": "question",
+      "pid": 2,
+      "question": "<h2>Have you explored your options for external capital before focusing on raising capital from investors?</h2>",
+      "more_info": "<p>Founders often focus on non-<a href='/jargon-z#Dilution' target='_blank'>dilutive</a> capital or lower cost capital, such as grants or loans, before raising capital from investors.</p>",
+      "more_info_2": "<div class='callout'><h3 class='callout-title'>Did you know?</h3><div class='callout-text'>Fewer than 6% of entrepreneurs raise capital from investors.</div><p class='callout-text-source'>Source: Federal Reserve Banks, 2020 Small Business Credit Survey</p></div>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Yes",
+          "img": "icon-q2-yes_explored_options.png",
+          "next_id": 5
+        },
+        {
+          "cid": 2,
+          "text": "Not Yet",
+          "img": "icon-q2-no_explored_options.png",
+          "next_id": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "page_type": "resources",
+      "question": "<h2>Let’s explore options for external capital!</h2>",
+      "more_info": "<p>Based on your answer to the last question, the following resources may be helpful for you at this step in your capital-raising journey:</p><ul><li>U.S. Small Business Administration’s (SBA) <a href='https://www.sba.gov/funding-programs' target='_blank'>funding programs</a> overview, including loans, investment capital, disaster assistance, surety bonds, and grants</li><li>SBA’s guide to <a href='https://www.sba.gov/business-guide/plan-your-business/fund-your-business' target='_blank'>funding your business</a></li><li>U.S. Economic Development Administration’s <a href='https://eda.gov/funding-opportunities/' target='_blank'>funding opportunities</a></li><li>U.S. Department of Agriculture’s <a href='https://www.rd.usda.gov/programs-services/all-programs/business-programs' target='_blank'>rural development business programs</a><li>Find local assistance, training, and business counseling from the <a href='https://www.sba.gov/local-assistance/find' target=_blank>SBA</a> and their network of independent organizations and from the <a href='https://www.mbda.gov/mbda-programs' target='_blank'>Minority Business Development Administration</a></li></ul><p>If you’d like to continue exploring capital raising pathways with the navigator, click <a href='#5' class='next_id' data-next-id='5' data-choice-id='1'>continue.</a></p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Continue",
+          "next_id": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "page_type": "question",
+      "pid": 3,
+      "question": "<h2>Have you already decided what type of offering you want to pursue?</h2>",
+      "more_info": "<p>If your mind is made up, select “Yes” to shortcut to our resources on various offerings types under the securities laws.</p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Yes",
+          "img": "icon-q3-yes_decided_on_type_of_offering.png",
+          "next_id": 5,
+          "link": "https://www.sec.gov/smallbusiness"
+        },
+        {
+          "cid": 2,
+          "text": "Not Yet",
+          "img": "icon-q3-no_decided_on_type_of_offering.png",
+          "next_id": 6
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "page_type": "question",
+      "pid": 4,
+      "question": "<h2>How much money do you plan to raise?</h2>",
+      "more_info": "<p>Different offering pathways allow you to raise different amounts of capital.</p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Less than $1 million",
+          "result_value": [
+            "rule2",
+            "rule7"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 2,
+          "text": "$1 million to $5 million",
+          "result_value": [
+            "rule7"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 3,
+          "text": "$5 million to $10 million",
+          "result_value": [
+            "rule4",
+            "rule5",
+            "rule7"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 4,
+          "text": "$10 million to $20 million",
+          "result_value": [
+            "rule3",
+            "rule4",
+            "rule5",
+            "rule7"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 5,
+          "text": "$20 million to $75 million",
+          "result_value": [
+            "rule3",
+            "rule4",
+            "rule5",
+            "rule7"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 6,
+          "text": "$75 million or more",
+          "result_value": [
+            "rule3",
+            "rule4",
+            "rule5",
+            "rule6"
+          ],
+          "next_id": 8
+        },
+        {
+          "cid": 8,
+          "text": "I don't know.",
+          "result_value": [
+            "rule7"
+          ],
+          "next_id": 7
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "page_type": "resources",
+      "question": "<h2>Let’s explore resources!</h2>",
+      "more_info": "<p>Based on your answer to the last question, the following resources may be helpful for you at this step in your capital-raising journey:</p><ul><li>U.S. Small Business Administration’s (SBA) <a href='https://www.sba.gov/business-guide/10-steps-start-your-business' target='_blank'>10 Steps to Start Your Business</a></li><li>Find local assistance, training, and business counseling from the <a href='https://www.sba.gov/local-assistance/find' target='_blank'>SBA</a> and their network of independent organizations and from the <a href='https://www.mbda.gov/mbda-programs' target='_blank'>Minority Business Development Administration</a></li><li>SBA’s guide to <a href='https://www.sba.gov/business-guide/plan-your-business/calculate-your-startup-costs' target='_blank'>calculating your startup costs</a></li></ul><p>If you’d like to continue exploring capital raising pathways with the navigator, click <a href='#8' class='next_id' data-next-id='8' data-choice-id='1'>continue.</a></p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Continue",
+          "next_id": 8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "page_type": "question",
+      "pid": 5,
+      "question": "<h2>How do you plan to connect with potential investors?</h2>",
+      "more_info": "<p>Different rules apply depending on whether you are soliciting investors with whom you already have a pre-existing, substantive relationship, as well as if you plan to sell securities online.</p>",
+      "more_info_2": "<div class='callout'><h3 class='callout-title'>Did you know?</h3><div class='callout-text'>Some offering pathways, such as Rule 506(b), are not available if a company uses general solicitation to broadly market their offering.</div></div>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Using Only My Network",
+          "img": "icon-q5-using_only_my_personal_network.png",
+          "result_value": null,
+          "next_id": 9
+        },
+        {
+          "cid": 2,
+          "text": "Online or via Advertising",
+          "img": "icon-q5-online_or_via_advertising.png",
+          "result_value": [
+            "rule1",
+            "rule3"
+          ],
+          "next_id": 9
+        },
+        {
+          "cid": 3,
+          "text": "Other or Unknown",
+          "img": "icon-q5-other_connection_to_potential_investors.png",
+          "result_value": null,
+          "next_id": 9
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "page_type": "question",
+      "pid": 6,
+      "question": "<h2>Where are your potential investors located?</h2>",
+      "more_info": "<p>You may be able to raise capital from investors within your state or territory using an exemption for intrastate offerings.</p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Intrastate Only",
+          "img": "icon-q6-intrastate_results-intrastate_offering.png",
+          "result_value": null,
+          "next_id": 10
+        },
+        {
+          "cid": 2,
+          "text": "Out of State or Undecided",
+          "img": "icon-q6-out_of_state.png",
+          "result_value": [
+            "rule5"
+          ],
+          "next_id": 10
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "page_type": "question",
+      "pid": 7,
+      "question": "<h2>Are your investors all accredited?</h2>",
+      "more_info": "<p>Depending on what offering pathway you use, you may be limited in what types of investors can participate. The vast majority of capital raised by emerging companies is from <a href='/jargon-z#AI' target='_blank'>accredited investors</a>.</p>",
+      "choices": [
+        {
+          "cid": 1,
+          "text": "Yes",
+          "img": "icon-q7-yes_all_accredited.png",
+          "result_value": null,
+          "next_id": 11
+        },
+        {
+          "cid": 2,
+          "text": "No",
+          "img": "icon-q7-no_not_accredited.png",
+          "result_value": [
+            "rule1",
+            "rule2"
+          ],
+          "next_id": 11
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "page_type": "results",
+      "pid": 8,
+      "question": "<h2>The results are in!</h2>",
+      "more_info": "<p>Based on your answers, the following are the most relevant pathways for you to raise capital. For information on how the navigator narrowed the results, visit the <a href='#12' class='next_id' data-next-id='12'>\"Methodology\"</a> page to learn more.</p>",
+      "more_info_2": "<p>The following are other pathways to raise capital that are less relevant based on your answers.</p>",
+      "post_text": "<h3>Next steps</h3><p>Before you raise capital, make sure you are fully prepared:</p><ol><li>Find legal and/or financial advisors with capital raising experience.</li><li>Prepare your investor disclosures, including financials and cap table.</li><li>Hone your pitch.</li><li>Connect to local entrepreneurial support organizations for support.</li></ol><p>Looking for more resources? Check out <a href='/smallbusiness' target='_blank'>resources to help small businesses navigate raising capital.</a></p><p>The Office of the Advocate for Small Business Capital Formation has provided this information as a service to small businesses and their investors. It is neither a legal interpretation nor a statement of SEC policy. If you have questions concerning the meaning or application of a particular law or rule, please consult with an attorney who specializes in securities law. Have suggestions to improve the navigator? Reach out to the SEC’s <a href='/oasb' target='_blank'>Office of the Advocate for Small Business Capital Formation.</a></p>"
+    },
+    {
+      "id": 12,
+      "page_type": "page",
+      "question": "<h2>Navigating Your Options: Methodology</h2>",
+      "more_info": "<p>The capital raising navigator tool was created by the SEC’s <a href='/oasb' target='_blank'>Office of the Advocate for Small Business Capital Formation</a> in collaboration with colleagues from across the agency. It is intended as an educational tool to make pathways to raising capital more accessible. Importantly, the tool is not a substitute for legal counsel and should not be construed as legal advice or a statement of SEC policy. If you have questions about the meaning or application of a particular law or rule, please consult with an attorney who specializes in securities law.  Below is some background information on how the tool works so that you can understand why certain results were displayed.</p><h2>Offering Types</h2><p>The navigator helps users decide among the following offering pathways that operating companies use to raise capital:</p><ul><li>Rule 506(b) Private Placements</li><li>Rule 506(c) General Solicitation Offerings</li><li>Rule 504 Limited Offerings</li><li>Regulation Crowdfunding Offerings</li><li>Intrastate Offerings</li><li>Regulation A Offerings (sometimes called “Mini-IPOs”)</li><li>Initial Public Offerings and other Registered Offerings</li></ul><p>It does not include offerings conducted under Section 4(a)(2) of the Securities Act that do not rely on a safe harbor listed above. </p><h2>Dynamic Filtering</h2><p>Based on the answers you selected to the questions, the navigator filters offering types to hone in on the most relevant pathways based on the criteria below.</p><h2>Q1: Does your business already exist?</h2><p>This question flags for nascent companies that have not yet been formed under state or territorial law the importance of organizational documentation prior to raising capital. Users who have not yet formed their business entity are directed to resources that may be more relevant to the stage of their journey than actively exploring capital raising opportunities. However, it does not filter out any offering pathways for users that proceed through the remaining questions.</p><h2>Q2: Have you explored your options for external capital before focusing on raising capital from investors?</h2><p>This question flags for nascent companies the importance of evaluating the breadth of options to fund their business, including non-dilutive sources of capital (such as grants or loans) and lower costs of capital. However, it does not filter out any offering pathways for users that proceed through the remaining questions.</p><h2>Q3: Have you already decided what type of offering you want to pursue?</h2><p>For users who have already identified a particular regulatory pathway under the securities laws, they can navigate directly to pertinent capital raising information. Selecting “yes” does not filter out any offering pathways, but instead provides users with a shortcut directly to further resources.</p><h2>Q4: How much money do you plan to raise?</h2><p>This question filters based on the amount the user seeks by using both upper-bound offering limitations as well as lower-bound offering utilization data, as follows:</p><table><caption>Offering Type Utilization</caption><tr><td></td><th scope='col'>$1M</th><th scope='col'>$1M to <$5M</th><th scope='col'>$5M to <$10M</th><th scope='col'>$10M to <$20M</th><th scope='col'>$20M to <$75M</th><th scope='col'>≥$75M</th></tr><tr><th scope='row'>Intrastate Offering</th><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td></tr><tr><th scope='row'>Regulation Crowdfunding</th><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td></tr><tr><th scope='row'>Rule 504</th><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td></tr><tr><th scope='row'>Rule 506(b)</th><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td></tr><tr><th scope='row'>Rule 506(c)</th><td class='not-relevant'>Not used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td></tr><tr><th scope='row'>Regulation A</th><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='relevant'>Used</td><td class='not-relevant'>Not used</td></tr><tr><th scope='row'>Registered Offering/IPO</th><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='not-relevant'>Not used</td><td class='relevant'>Used</td></tr></table><h2>Upper-bound Offering Limitations</h2><p>Certain exemptions limit the total offering proceeds that can be raised under that exemption during a given time period, including:</p><ul><li>Regulation Crowdfunding: $5 million over a 12-month period</li><li>Rule 504: $10 million over a 12-month period</li><li>Regulation A: $20 million over a 12-month period for a Tier 1 offering and $75 million over a 12-month period for a Tier 2 offering</li><li>Intrastate Offerings: no Federal limit but individual States and territories generally have offering limits between $1 and $5 million over a 12-month period<a href='#_ftn1' name='_ftnref1'>[1]</a></li></ul><p>The filters flag offering types as “less relevant” if users indicate they are seeking more capital than the maximum offering limit for that exemption would permit in a 12-month period.</p><p></p><p></p><h2>Lower-bound Offering Utilization Data</h2><p>None of the offering pathways include requirements for minimum amount of capital raised to qualify. However, market usage of the different offering types varies. The navigator uses a lower-bound threshold and filters offering pathways as “less relevant” where the amount sought by the user falls within the lower quartile (25%) of market usage of each offering pathway. This lower quartile was determined using both the aggregate number of offerings conducted, as well as the aggregate amount raised. For example, offerings under $1 million fall within the bottom quartile of utilization for Rule 506(c) offerings, and offerings under $75 million fall within the bottom quartile of utilization for initial public offerings and other registered offerings. The navigator uses those two figures as lower-bound offering limitations for those two offering pathways, and filters them as “less relevant” where the user indicates they plan to raise a lower dollar amount. More information on the data used for this analysis is below.</p><p>The navigator directs users who select “I do not know” to resources that may be more relevant than actively exploring capital raising opportunities. However, for users who click to continue, the system filters public offerings as “less relevant” on the assumption that the company is seeking earlier-stage capital.</p><h2>Q5: How are you planning to connect with potential investors?</h2><p>This question filters out Rule 506(b) and Rule 504 offerings where the user selects the option for “Online or via Advertising” because companies relying on Rule 506(b) may not use general solicitation or advertising, and Rule 504 permits general solicitation only in limited circumstances.  If the user selects “Using My Personal Network” or “Other or I do not know,” then no options are filtered.</p><h2>Q6: Where are your potential investors located?</h2><p>If the user indicates that potential investors are out of state or undecided, this question filters Intrastate offerings as “less relevant.”</p><h2>Q7: Are your investors all accredited?</h2><p>If the user indicates that all investors are not accredited, then Rule 506(b) and Rule 506(c) offerings are filtered as “less relevant.” While Rule 506(b) permits an issuer to include up to 35 sophisticated non-accredited investors, the tool filters this type of offering as “less relevant” based on an estimate by the Commission that, in 2019, between approximately 4.45% and 9% of all Rule 506(b) offerings by issuers other than pooled investment funds included non-accredited purchasers.<a href='#_ftn2' name='_ftnref2'>[2]</a>  Rule 506(c) does not permit non-accredited investors to participate in the offering. While non-accredited investors are subject to investment limits in Regulation Crowdfunding offerings and Regulation A Tier 2 offerings where the securities will not be listed on a national securities exchange, this question does not filter out those offering pathways.</p><h2>Navigator Output</h2><p>Because the navigator is intended as an educational tool and not as legal advice to steer a company towards a particular offering pathway, the output of the navigator shows users which pathways are “relevant” based on their inputs, but also shows users the other pathways that are deemed “less relevant.” Users have an opportunity to explore all offering pathways to better understand their options.</p><h2>General Information on Supporting Data</h2><p>Data is based on amounts reported or estimated as raised during the two-year period from January 1, 2019 through December 31, 2020. Data on offerings under Regulations D and Crowdfunding is based on information reported by companies and was collected from EDGAR filings (new filings and amendments) on Forms D and C, respectively. Data on registered offerings was collected from Thomson Financial’s SDC Platinum database. For offerings under Regulation Crowdfunding, estimates of the number of offerings are based on offerings completed during this period as shown on progress updates on Form C-U; estimates of amounts raised are based on proceeds reported in progress updates on Form C-U filed during the report period. For offerings under Regulation A, estimates of the number of offerings are based on offerings qualified during this period, excluding post-qualification amendments; estimates of amounts raised are based on proceeds reported in Forms 1-Z, 1-K, 1-SA, 1-U, and offering circular supplements pertaining to completed and ongoing Regulation A offerings and post-qualification amendments filed during the period, and for companies whose shares have become exchange-listed, information from other public sources. The data excludes offerings conducted by pooled investment funds under Rule 506(b) and Rule 506(c) of Regulation D and via registered offerings.</p><h2>Feedback</h2><p>If you have feedback regarding this tool, including ways to improve it, please reach out to the <a href='/oasb' target='_blank'> Office of the Advocate for Small Business Capital Formation</a>.</p><div><hr align='left' size='1' width='33%'><div id='ftn1'><p><a href='#_ftnref1' name='_ftn1'>[1]</a> See Table 1 in \"Facilitating Capital Formation and Expanding Investment Opportunities by Improving Access to Capital in Private Markets,\" Rel. No. 33-10884 (Nov. 2, 2020) at <a href='https://www.sec.gov/rules/final/2020/33-10884.pdf' target='_blank'>https://www.sec.gov/rules/final/2020/33-10884.pdf</a>.</p></div><div id='ftn2'><p><a href='#_ftnref2' name='_ftn2'>[2]</a>See Note 127 in \"Facilitating Capital Formation and Expanding Investment Opportunities by Improving Access to Capital in Private Markets,\" Rel. No. 33-10884 (Nov. 2, 2020) at <a href='https://www.sec.gov/rules/final/2020/33-10884.pdf' target='_blank'>https://www.sec.gov/rules/final/2020/33-10884.pdf</a>.</p></div></div></div>"
+    }
+  ],
+  "results": {
+    "rule1": {
+      "title": "Rule 506(b) Private Placement",
+      "more_info": "Rule 506(b) Private Placement",
+      "img": "icon-results-rule_506-b.png",
+      "link": "/smallbusiness/exemptofferings/rule506b"
+    },
+    "rule2": {
+      "title": "Rule 506(c) General Solicitation Offering",
+      "more_info": "Rule 506(c) General Solicitation Offering",
+      "img": "icon-results-rule_506-c_offerings.png",
+      "link": "/smallbusiness/exemptofferings/rule506c"
+    },
+    "rule3": {
+      "title": "Rule 504 Limited Offering",
+      "more_info": "Rule 504 Limited Offering",
+      "img": "icon-results-rule_504_offering.png",
+      "link": "/smallbusiness/exemptofferings/rule504"
+    },
+    "rule4": {
+      "title": "Regulation Crowdfunding",
+      "more_info": "<p>Regulation Crowdfunding allows eligible companies to raise up to $5 million in a 12-month period from investors online via a registered funding portal.</p><p><a href='#'>Click to learn more</a></p>",
+      "img": "icon-results-regulation_crowdfunding.png",
+      "link": "/smallbusiness/exemptofferings/regcrowdfunding"
+    },
+    "rule5": {
+      "title": "Intrastate Offering",
+      "more_info": "Intrastate Offering",
+      "img": "icon-q6-intrastate_results-intrastate_offering.png",
+      "link": "/smallbusiness/exemptofferings/intrastateofferings"
+    },
+    "rule6": {
+      "title": "Regulation A ”Mini-IPO”",
+      "more_info": "Regulation A ”Mini-IPO”",
+      "img": "icon-results-regulation_a.png",
+      "link": "/smallbusiness/exemptofferings/rega"
+    },
+    "rule7": {
+      "title": "Registered Offering (or IPO)",
+      "more_info": "Registered Offering (or IPO)",
+      "img": "icon-results-registered_offering.png",
+      "link": "/smallbusiness/goingpublic"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+uuid: 9c1c1361-8211-4562-8ef1-9e321338ed88
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.feature_block
+    - field.storage.block_content.field_width_factor
+  module:
+    - options
+id: block_content.feature_block.field_width_factor
+field_name: field_width_factor
+entity_type: block_content
+bundle: feature_block
+label: 'Width factor'
+description: "How wide would you like this to be?<br />\r\nThe normal width of the site can accommodate 3 1x blocks, 1 1x and 1 2x blocks, or 1 3x block.<br />\r\nThis does not apply to Landing page layouts unless you are using a Flowing grid sections (choose any value)"
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_replicate_settings.module.
+ */
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function sec_replicate_settings_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity) {
+
+	$unallowedBundles = ['image', 'video', 'file'];
+
+  	if(in_array($entity->bundle(), $unallowedBundles)) {
+
+	unset($operations['replicate']);
+
+  }
+
+}
+
+/**
+ * function sec_replicate_settings_menu_local_tasks_alter(&$data, $route_name) {
+ * unset($data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']);
+ * }
+ */

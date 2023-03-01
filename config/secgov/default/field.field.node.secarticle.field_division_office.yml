@@ -1,0 +1,30 @@
+uuid: 8ce93d87-6be7-40f9-bf3f-322cd0baa9bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_division_office
+    - node.type.secarticle
+    - taxonomy.vocabulary.division_office
+_core:
+  default_config_hash: kv-8dJ2oz-vb98MLVD0Hl9y6OpbMvXPzPZbKQfLNaVI
+id: node.secarticle.field_division_office
+field_name: field_division_office
+entity_type: node
+bundle: secarticle
+label: 'Supporting Division / Office'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      division_office: division_office
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

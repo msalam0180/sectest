@@ -1,0 +1,19 @@
+uuid: 9ebbf16a-632e-415f-beb9-0ca8b2cd3f61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entity_name
+    - node.type.ba
+id: node.ba.field_entity_name
+field_name: field_entity_name
+entity_type: node
+bundle: ba
+label: 'Entity Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

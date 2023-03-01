@@ -1,0 +1,21 @@
+uuid: 50e20523-2e42-4497-9fad-ee10ffd23bef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name
+    - node.type.ba
+_core:
+  default_config_hash: IWpUs7tyzv-f5ynjq3NMvqayAK8idFf0jvf8QnAYlZA
+id: node.ba.field_first_name
+field_name: field_first_name
+entity_type: node
+bundle: ba
+label: First
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

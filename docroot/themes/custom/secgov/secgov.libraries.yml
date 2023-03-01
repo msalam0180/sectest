@@ -1,0 +1,65 @@
+global-css:
+  css:
+    theme:
+      css/screen.css: {}
+      css/print.css: {}
+      css/layout.css: {}
+      css/contextual.css: {}
+      css/smartSearch.css: {}
+
+panel-layouts-toptwocolnestedcols:
+  css:
+    layout:
+      css/toptwocolnestedcols.css: {}
+
+toptwocol:
+  css:
+    layout:
+      templates/layouts/toptwocol/toptwocol.css: {}
+
+panel-layouts-twocolonecolbottom:
+  css:
+    layout:
+      css/twocolonecolbottom.css: {}
+
+panel-layouts-toptwocolalt:
+  css:
+    layout:
+      css/toptwocolalt.css: {}
+
+panel-layouts-twocol:
+  css:
+    layout:
+      css/twocol.css: {}
+
+
+
+global-js-header:
+  header: true
+  js:
+    js/third-party/foresee-trigger.js: {}
+    # js/third-party/jquery-ui.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - jquery_ui_accordion/accordion
+    - jquery_ui_tabs/tabs
+global-js:
+  js:
+    js/third-party/naturalSort.js: {}
+    js/third-party/jquery.tablesorter.js: {}
+    js/third-party/enquire.min.js: {}
+    js/mobileMenu.js: {}
+    js/mobileSubmenu.js: {}
+    js/third-party/superfish.js: {}
+    js/third-party/hoverIntent.js: {}
+    js/third-party/jquery.canvas.min.js: {}
+    js/third-party/addthis_widget.js: { attributes: { async: true }}
+    js/shared.js: {}
+    js/smartSearch.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - jquery_ui_accordion/accordion
+    - jquery_ui_tabs/tabs
+    - core/drupalSettings

@@ -1,0 +1,57 @@
+// Component: Sidebar Menu
+$show-hide-btn-width: units(5);
+
+.usa-sidenav {
+  &.c-menu {
+    margin-bottom: units(2.5);
+  }
+
+  .show-hide__group {
+    position: relative;
+
+    a:not(.usa-button):not(.c-dropbutton__toggle-button):not(.c-button) {
+      padding-right: $show-hide-btn-width;
+    }
+  }
+
+  .is-active {
+    @extend .usa-current;
+  }
+
+  a.is-active:not(.usa-button):not(.c-dropbutton__toggle-button):not(.c-button):not(.usa-current) {
+    color: color($theme-link-color);
+  }
+}
+
+.usa-sidenav__item [data-showHideBtn] {
+  background-color: transparent;
+  background-position: center; // LTR
+  background-repeat: no-repeat;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform 0.2s;
+  width: $show-hide-btn-width;
+  z-index: 20;
+
+  &:hover,
+  &:focus {
+    background-color: color(base-lightest);
+  }
+
+  &[aria-expanded='true'] {
+    background-image: url(#{$theme-image-path}/usa-icons/expand_more.svg);
+  }
+
+  &[aria-expanded='false'] {
+    background-image: url(#{$theme-image-path}/usa-icons/expand_more.svg);
+    transform: rotate(-90deg);
+  }
+}
+
+.usa-sidenav .is-active::after {
+  content: none;
+}

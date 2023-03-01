@@ -1,0 +1,27 @@
+uuid: 37dd5bac-b5d7-49be-9153-20c8c0875ffc
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+  theme:
+    - secgov
+id: pagetitle
+theme: secgov
+region: page_title
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      release: release

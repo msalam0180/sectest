@@ -1,0 +1,20 @@
+uuid: 26069119-0586-49d6-9532-c8b89c3b1a87
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - webform
+id: node.field_custom_webform_attachment
+field_name: field_custom_webform_attachment
+entity_type: node
+type: webform
+settings:
+  target_type: webform
+module: webform
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

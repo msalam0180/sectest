@@ -1,0 +1,55 @@
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+ $messages-color--status: #025802;
+ $messages-color--warning: #ecc655;
+ $messages-color--error: #b90010;
+
+ .messages {
+  padding: 15px 20px 15px 20px;
+  word-wrap: break-word;
+  border: 1px solid;
+  border-width: 1px 1px 1px 10px;  /* LTR */
+  border-radius: 2px;
+  background: no-repeat 10px 17px;  /* LTR */
+  overflow-wrap: break-word;
+
+  &:last-child {
+    margin-bottom: 1em;
+  }
+}
+
+.messages + .messages {
+  margin-top: .5em;
+}
+
+.messages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+
+.messages--status {
+  color:  $messages-color--status;
+  border-color:  $messages-color--status;  /* LTR */
+}
+
+.messages--warning {
+  color:  darken($messages-color--warning, 50%);
+  border-color: $messages-color--warning;
+}
+
+.messages--error {
+  color: $messages-color--error;
+  border-color: $messages-color--error;
+}
+
+.messages--error p.error {
+  color: #a51b00;
+}

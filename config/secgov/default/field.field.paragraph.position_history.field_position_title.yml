@@ -1,0 +1,19 @@
+uuid: e88cca79-2a82-4ae6-b5ea-435d314c2d87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position_title
+    - paragraphs.paragraphs_type.position_history
+id: paragraph.position_history.field_position_title
+field_name: field_position_title
+entity_type: paragraph
+bundle: position_history
+label: 'Position Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

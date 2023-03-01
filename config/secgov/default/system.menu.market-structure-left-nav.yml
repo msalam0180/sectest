@@ -1,0 +1,10 @@
+uuid: 2bbf0cbf-5f76-4714-9b9b-860cf6a84f30
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Buey313ITlz2ij9vbfPQFQGMQMMY32ZusUfLQ81VYtA
+id: market-structure-left-nav
+label: 'Market Structure'
+description: 'Market Structure Menu'
+locked: false

@@ -1,0 +1,90 @@
+uuid: 80aa3f0a-1094-43a4-9a9f-7cd1ac9342ec
+langcode: en
+status: true
+dependencies: {  }
+id: amicusfiles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - aws
+  - amicus
+migration_group: aws
+label: 'Import of Amicus Briefs AWS content'
+source:
+  plugin: csv
+  path: 'public://migration/commission_amicus_friend_of_court.csv'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    -
+      name: id
+      label: id
+    -
+      name: date
+      label: Date
+    -
+      name: brief
+      label: Brief
+    -
+      name: briefurl
+      label: 'Brief URL'
+    -
+      name: description
+      label: Description
+  constants:
+    delimiter: ','
+    division_office: Enforcement
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  filename:
+    plugin: end
+    source: briefurl
+    delimiter: /
+  fileurl: briefurl
+  title: '@filename'
+  field_display_title: '@filename'
+  field_static_file_type:
+    plugin: entity_lookup
+    source: constants/staticFileType
+    value_key: name
+    bundle_key: vid
+    bundle: static_file_type
+    entity_type: taxonomy_term
+    ignore_case: true
+  created:
+    plugin: format_date
+    source: date
+    from_format: j-M-y
+    from_timezone: America/New_York
+    to_format: U
+  changed: '@created'
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: constants/division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_file_path:
+    plugin: get_file_path
+    source: briefurl
+    vocabulary: file_path
+  field_media_file:
+    -
+      plugin: skip_on_contains
+      source: '@fileurl'
+      contains: .htm
+      method: row
+    -
+      plugin: file_import
+      source: '@fileurl'
+      file_exists: 'use existing'
+destination:
+  plugin: 'entity:media'
+  default_bundle: static_file
+migration_dependencies: null

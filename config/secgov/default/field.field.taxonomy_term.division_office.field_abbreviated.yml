@@ -1,0 +1,19 @@
+uuid: 14c783c0-812d-4c3c-a441-cd20eb82564b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_abbreviated
+    - taxonomy.vocabulary.division_office
+id: taxonomy_term.division_office.field_abbreviated
+field_name: field_abbreviated
+entity_type: taxonomy_term
+bundle: division_office
+label: 'Abbreviated Name'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

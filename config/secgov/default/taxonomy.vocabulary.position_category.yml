@@ -1,0 +1,10 @@
+uuid: 6b913ee0-108c-4a23-be04-c2b890c3b4a6
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: KFBDdY_gD0zl-S3ozKHWYgppIb3Zis4-7LA1BTi6lMY
+name: 'Position Category'
+vid: position_category
+description: ''
+weight: 0

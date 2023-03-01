@@ -1,0 +1,15 @@
+{% set classes = [
+  'usa-logo',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+<div {{ add_attributes({ 'class': classes }) }} id="extended-logo">
+  <a href="{{ url }}" aria-label="{{ 'Home '|t ~ site_name }}" class="usa-logo__image-wrapper">
+    {% if site_logo %}
+      <img src="{{site_logo}}" alt="" role="presentation" class="usa-logo__img"> 
+    {% endif %}
+    <em class="usa-logo__text">
+      {{ site_name }}
+    </em>
+  </a>
+</div>

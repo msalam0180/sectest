@@ -1,0 +1,14 @@
+uuid: fe14c9b8-6149-47ee-a3ff-eba3f4b2558b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.qctc_tester
+  module:
+    - user
+id: user_remove_role_action.qctc_tester
+label: 'Remove the QCTC Tester role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: qctc_tester

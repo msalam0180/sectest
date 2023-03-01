@@ -1,0 +1,22 @@
+uuid: c0d2b079-d2b2-400f-abf6-fab6e25b501f
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+_core:
+  default_config_hash: 0H5cYB4S7gQPVUqqJ3fy6oSsgkqiMVw6Pc122GAIscI
+id: node.field_judgment_date
+field_name: field_judgment_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

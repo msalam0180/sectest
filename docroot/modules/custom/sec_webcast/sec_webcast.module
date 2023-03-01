@@ -1,0 +1,129 @@
+<?php
+/**
+ * @file
+ * Increase FIELD size to 255;
+ */
+
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Cache\Cache;
+
+/**
+ * Implements hook_node_update().
+ * Clears cache for related events on webcast node insert/update
+ */
+function sec_webcast_node_update(Node $entity) {
+  if ($entity->bundle() == 'webcast') {
+    $events = _sec_webcast_get_related_events($entity->nid->value);
+    foreach ($events as $event) {
+      $node = Node::load($event);
+      $tags = $node->getCacheTagsToInvalidate();
+      Cache::invalidateTags($tags);
+    }
+    // Take a look at webcast state and presence of alert
+    if (in_array($entity->field_webcast_state->value, ['live', 'ended'])) {
+      $alert = _sec_webcast_get_webcast_alert($entity->nid->value);
+      if ($alert) {
+        // Live webcast alerts are updated to 'Happening Now'
+        // Alerts for webcasts that have ended need to be unpublished
+        if ($entity->field_webcast_state->value == 'live') {
+          $alert->set('title', 'Happening Now');
+          $alert->setPublished(true);
+          $alert->set('moderation_state', 'published');
+        }
+        else {
+          $alert->set('moderation_state', 'archived');
+          $alert->setPublished(false);
+        }
+        $alert->setNewRevision(true);
+        $alert->setRevisionCreationTime(time());
+        $alert->save();
+      }
+    }
+  }
+}
+
+function _sec_webcast_get_related_events($webcastId) {
+  $query = \Drupal::entityQuery('node')
+  ->condition('type', 'event')
+  ->condition('status', 1)
+  ->condition('field_webcast', $webcastId);
+
+  return $query->execute();
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function sec_webcast_update_8001() {
+
+  $database = \Drupal::database();
+
+  // Retrieve existing field data.
+  $entity_type = 'node';
+  $field = 'field_webcast_running_time';
+  $tables = [
+    "{$entity_type}__$field",
+    "{$entity_type}_revision__$field",
+  ];
+
+  $existing_data = [];
+  foreach ($tables as $table) {
+
+    // Get the old data.
+    $existing_data[$table] = $database->select($table)
+      ->fields($table)
+      ->execute()
+      ->fetchAll(PDO::FETCH_ASSOC);
+
+    // Wipe it.
+    $database->truncate($table)->execute();
+  }
+
+  $field_storage_configs = \Drupal::entityTypeManager()
+    ->getStorage('field_storage_config')
+    ->loadByProperties([
+      'field_name' => $field,
+    ]);
+
+  foreach ($field_storage_configs as $field_storage) {
+    $new_field_storage = $field_storage->toArray();
+    $new_field_storage['settings']['max_length'] = 255;
+
+    $new_field_storage = FieldStorageConfig::create($new_field_storage);
+    $new_field_storage->original = $new_field_storage;
+    $new_field_storage->enforceIsNew(FALSE);
+
+    $new_field_storage->save();
+  }
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function sec_webcast_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    if ($form_id === 'node_webcast_edit_form' || $form_id === 'node_webcast_form') {
+        $form['#attached']['library'][] = 'sec_webcast/player.config';
+    }
+}
+
+function _sec_webcast_get_webcast_alert($webcast_node_id) {
+  $query_str = <<<SQL
+    SELECT entity_id 'alert_node_id'
+      FROM node__field_webcast
+     WHERE field_webcast_target_id = :webcast_node_id
+       AND bundle = 'sec_alert'
+SQL;
+  $db_conn = \Drupal::database();
+  $result = $db_conn->query($query_str, [':webcast_node_id' => intval($webcast_node_id)]);
+  $alert_record = $result->fetchObject();
+  if ($alert_record) {
+    $alert_node = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->load(intval($alert_record->alert_node_id));
+    return $alert_node;
+  }
+  return $alert_record;
+}

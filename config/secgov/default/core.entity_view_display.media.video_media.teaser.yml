@@ -1,0 +1,86 @@
+uuid: 54d21442-5228-46a7-b153-02cac658d646
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.teaser
+    - field.field.media.video_media.field_act
+    - field.field.media.video_media.field_audience
+    - field.field.media.video_media.field_display_title
+    - field.field.media.video_media.field_media_complete_webcast
+    - field.field.media.video_media.field_media_item_body
+    - field.field.media.video_media.field_media_oembed_video
+    - field.field.media.video_media.field_media_person
+    - field.field.media.video_media.field_media_topic
+    - field.field.media.video_media.field_media_transcript
+    - field.field.media.video_media.field_media_video_running_time
+    - field.field.media.video_media.field_primary_division_office
+    - field.field.media.video_media.field_promoted_to_front_page
+    - field.field.media.video_media.field_publish_date
+    - field.field.media.video_media.field_regulation
+    - field.field.media.video_media.field_remote_video_url
+    - field.field.media.video_media.field_supporting_division_office
+    - field.field.media.video_media.field_tags
+    - media.type.video_media
+  module:
+    - datetime
+    - video_embed_field
+id: media.video_media.teaser
+targetEntityType: media
+bundle: video_media
+mode: teaser
+content:
+  field_media_video_running_time:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_remote_video_url:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: false
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_display_title: true
+  field_media_complete_webcast: true
+  field_media_item_body: true
+  field_media_oembed_video: true
+  field_media_person: true
+  field_media_topic: true
+  field_media_transcript: true
+  field_primary_division_office: true
+  field_promoted_to_front_page: true
+  field_regulation: true
+  field_supporting_division_office: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

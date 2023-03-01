@@ -1,0 +1,10 @@
+uuid: 8ab70a3b-d697-44f7-84d5-f13b1069369c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vX5TE3sFmqKPhUXFCsEEfwxfVdzc_FTMaGJYk2W2D0A
+id: structured-data-left-nav
+label: 'Structured Data'
+description: 'Structured Data Menu'
+locked: false

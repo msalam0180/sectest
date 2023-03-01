@@ -1,0 +1,10 @@
+name: "SEC Brokerage Account Statement"
+description: "SEC Office of Investor Education and Advocacy Brokerage Account Statement Investor Alert"
+type: module
+package: SEC
+version: 8.x
+core: 8.x
+dependencies:
+  - node
+  - block
+core_version_requirement: ^8 || ^9

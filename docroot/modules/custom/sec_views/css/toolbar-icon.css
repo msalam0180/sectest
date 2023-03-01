@@ -1,0 +1,19 @@
+/**
+ * Tray item: Needs Edit
+ */
+.toolbar-icon-sec-views-needs-review::before {
+    background-image: url("../images/icons/787878/workbench.svg");
+}
+.toolbar-icon-sec-views-needs-review.is-active::before {
+    background-image: url("../images/icons/000000/workbench.svg");
+}
+
+/**
+ * Tray item: Needs Review
+ */
+.toolbar-icon-sec-views-needs-review-creator::before {
+    background-image: url("../images/icons/787878/workbench.svg");
+}
+.toolbar-icon-sec-views-needs-review-creator.is-active::before {
+    background-image: url("../images/icons/000000/workbench.svg");
+}

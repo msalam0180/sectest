@@ -1,0 +1,44 @@
+uuid: 3844c4e9-8f5a-4cf2-9e4c-004f9acbf3b9
+langcode: en
+status: true
+dependencies:
+  module:
+    - access_unpublished
+    - media
+    - protected_pages
+    - system
+    - toolbar
+    - video_embed_field
+    - workbench_moderation
+_core:
+  default_config_hash: _yH67Q9LZpEmzQaQpPYml-fzq5474Vlqn9vRssx055k
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access protected page password screen'
+  - 'access toolbar'
+  - 'access_unpublished node article_type'
+  - 'access_unpublished node data_distribution'
+  - 'access_unpublished node data_visualization'
+  - 'access_unpublished node event'
+  - 'access_unpublished node file'
+  - 'access_unpublished node image'
+  - 'access_unpublished node landing_page'
+  - 'access_unpublished node link'
+  - 'access_unpublished node news'
+  - 'access_unpublished node news_type'
+  - 'access_unpublished node page'
+  - 'access_unpublished node sec_alert'
+  - 'access_unpublished node sec_hero'
+  - 'access_unpublished node secarticle'
+  - 'access_unpublished node secperson'
+  - 'access_unpublished node video'
+  - 'access_unpublished node webcast'
+  - 'never autoplay videos'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view media'
+  - 'view the administration theme'

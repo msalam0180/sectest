@@ -1,0 +1,62 @@
+diff --git a/modules/symfony_mailer_bc/src/Plugin/EmailBuilder/LegacyEmailBuilder.php b/modules/symfony_mailer_bc/src/Plugin/EmailBuilder/LegacyEmailBuilder.php
+index 09aac03bca..3fbaa58afa 100644
+--- a/modules/symfony_mailer_bc/src/Plugin/EmailBuilder/LegacyEmailBuilder.php
++++ b/modules/symfony_mailer_bc/src/Plugin/EmailBuilder/LegacyEmailBuilder.php
+@@ -129,7 +129,12 @@ protected function emailFromArray(EmailInterface $email, array $message) {
+     // Add attachments.
+     $attachments = $message['params']['attachments'] ?? [];
+     foreach ($attachments as $attachment) {
+-      $email->attachFromPath($attachment['filepath'], $attachment['filename'] ?? NULL, $attachment['filemime'] ?? NULL);
++      if (!empty($attachment['filepath'])) {
++        $email->attachFromPath($attachment['filepath'], $attachment['filename'] ?? NULL, $attachment['filemime'] ?? NULL);
++      } else {
++        $stream = fopen('data://' . $attachment['filemime'] . ',' . $attachment["filecontent"], 'r');
++        $email->attach(stream_get_contents($stream), $attachment['filename'] ?? NULL, $attachment['filemime'] ?? NULL);
++      }
+     }
+
+     // Add Address headers from message array to Email object.
+diff --git a/src/BaseEmailInterface.php b/src/BaseEmailInterface.php
+index 146ba23680..6c5ce5fdf4 100644
+--- a/src/BaseEmailInterface.php
++++ b/src/BaseEmailInterface.php
+@@ -220,6 +220,20 @@ public function getHtmlBody(): ?string;
+    */
+   public function attachFromPath(string $path, ?string $name = NULL, ?string $mimeType = NULL);
+
++  /**
++   * Adds an attachment by content.
++   *
++   * @param string $content
++   *   The path to the file.
++   * @param string|null $name
++   *   (optional) The file name. Defaults to the base name of the path.
++   * @param string|null $mimeType
++   *   (optional) The mime type. If omitted, the type will be guessed.
++   *
++   * @return $this
++   */
++  public function attach(string $content, ?string $name = NULL, ?string $mimeType = NULL);
++
+   // @codingStandardsIgnoreStart
+   /**
+    * @return $this
+diff --git a/src/BaseEmailTrait.php b/src/BaseEmailTrait.php
+index 6098f29c04..0f7ecf87e5 100644
+--- a/src/BaseEmailTrait.php
++++ b/src/BaseEmailTrait.php
+@@ -188,6 +188,14 @@ public function attachFromPath(string $path, string $name = NULL, string $mimeTy
+     return $this;
+   }
+
++  /**
++   * {@inheritdoc}
++   */
++  public function attach(string $content, string $name = NULL, string $mimeType = NULL) {
++    $this->inner->attach($content, $name, $mimeType);
++    return $this;
++  }
++
+   // @codingStandardsIgnoreStart
+   // public function embedFromPath(string $path, string $name = null, string $contentType = null);
+   // @codingStandardsIgnoreEnd

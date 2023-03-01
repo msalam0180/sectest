@@ -1,0 +1,148 @@
+#planning-tools-page-items {
+  .planning-tools-item {
+    text-align:center;
+    min-height:470px;
+    width:100%;
+    padding:35px 25px;
+    border-bottom: 2px solid $gray_white;
+
+    h2, p {
+      font-family: $font_primary;
+      color: inherit;
+      text-align: center;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 2.0rem;
+    }
+    p {
+      font-weight: 400;
+      font-size: 1.0rem;
+      line-height: 1.6rem;
+    }
+    img {
+      padding-top:20px;
+      max-width: 200px;
+    }
+
+    a {
+      font-family: $font_secondary;
+      font-weight: 800;
+      font-size: 1.3rem;
+      background: inherit;
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 2px solid $gray_white;
+      color:$gray_white;
+      padding: 1.0rem;
+      text-align: center;
+      letter-spacing: 1px;
+      max-width:340px;
+
+      &:hover,
+      &:focus {
+        background-color:$secondary_1a;
+      }
+    }
+
+
+    /** Color schemes **/
+    h2, a, p {
+      color:$gray_white;
+    }
+
+    &.rmd-calculator,
+    &.retirement-estimator {
+      background:$primary_1;
+    }
+
+    &.ci-calculator,
+    &.mutual-fund {
+      background: $secondary_1b;
+      color:$gray_black;
+
+      h2, a, p {
+        color:$gray_black;
+      }
+
+      a {
+        border: 2px solid $gray_black;
+
+        &:hover,
+        &:focus {
+          color:$gray_white;
+          border-color:$gray_white;
+        }
+      }
+    }
+
+    &.ss-estimator,
+    &.expense-analyzer {
+      background:$primary_3;
+    }
+
+
+    /** Desktop mode **/
+
+    @media only screen and (min-width:960px) {
+      width:800px;
+      padding:35px 50px;
+      min-height:200px;
+      display:flex;
+
+      &:nth-child(even) {
+        padding-left:0;
+
+        .right-side {
+          order:-1;
+        }
+      }
+      &:nth-child(odd) {
+        padding-right:0;
+      }
+
+      h2, p {
+        text-align:left;
+      }
+
+      a {
+        width:280px;
+      }
+
+      img {
+        max-width:162px;
+      }
+
+      .left-side,
+      .right-side {
+        flex:1;
+      }
+
+      .right-side {
+        display:flex;
+        align-items:center;
+        justify-content: center;
+
+        img {
+          width:50%;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

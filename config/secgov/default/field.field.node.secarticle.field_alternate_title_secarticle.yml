@@ -1,0 +1,21 @@
+uuid: 2489230a-53d0-4969-9214-3240885fdf14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternate_title_secarticle
+    - node.type.secarticle
+_core:
+  default_config_hash: dm8YoPGLp8f4pCA4Eik7sC5rdmBhi47HocoVwLMQQMU
+id: node.secarticle.field_alternate_title_secarticle
+field_name: field_alternate_title_secarticle
+entity_type: node
+bundle: secarticle
+label: 'Alternate Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 10ce75cf-48da-4f6b-b582-8ce7ecf9e91d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_current_position
+    - paragraphs.paragraphs_type.position_history
+id: paragraph.position_history.field_current_position
+field_name: field_current_position
+entity_type: paragraph
+bundle: position_history
+label: 'Current Position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Current Position'
+  off_label: 'Current Position'
+field_type: boolean

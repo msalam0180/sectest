@@ -1,0 +1,21 @@
+uuid: 97e60a83-63d3-489e-a64e-1548ee4cd2b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_origin
+    - media.type.video
+  module:
+    - options
+id: media.video.field_video_origin
+field_name: field_video_origin
+entity_type: media
+bundle: video
+label: 'Video Origin'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 2153d77a-d22c-4bbf-af93-88b5697dc7fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speaker_name_and_title
+    - node.type.news
+  module:
+    - text
+_core:
+  default_config_hash: kf9IwPmksb1S3kyVf40fSzLlpK5yMPt2aM7L2-6JNgc
+id: node.news.field_speaker_name_and_title
+field_name: field_speaker_name_and_title
+entity_type: node
+bundle: news
+label: 'Speaker Name and Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

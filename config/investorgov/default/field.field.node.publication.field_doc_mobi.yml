@@ -1,0 +1,27 @@
+uuid: dd8f9d65-8bd8-4d0f-a325-c06e399e2d62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_doc_mobi
+    - node.type.publication
+  module:
+    - file
+id: node.publication.field_doc_mobi
+field_name: field_doc_mobi
+entity_type: node
+bundle: publication
+label: 'Doc Mobi'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mobi
+  max_filesize: '256 MB'
+  description_field: false
+field_type: file

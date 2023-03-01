@@ -1,0 +1,93 @@
+//
+// TOPICAL REFERENCE GUIDE LIST PAGE
+// VIEW NAME: Topical Reference Guide
+// 
+// --------------------------------------------------
+
+.topical-reference-guide {
+
+  .feed-icon {display: none;}
+  
+  .form-container {
+    .subscribe-rss {
+      display: none;
+    }
+    @include breakpoint('small') {
+      .subscribe-rss {
+        top: -20px;
+      }
+    }
+    div:not(.form-actions) {
+      @include breakpoint('small') {
+        padding-bottom: 20px;
+        padding-top: 10px;
+      }
+      @include breakpoint('medium-and-up') {
+        max-width: 20%;
+
+      }
+    }
+    div {
+      select {
+        @include breakpoint('small') {
+          width: 100%;
+        }
+      }
+
+      input[type='text'] {
+        width: 100%;
+      }
+    }
+  }
+
+  th#view-field-tags-table-column {min-width:100px;}
+
+  tbody {
+    tr {
+      &.topic-labels {
+        /*display: table-row !important;*/
+        min-height: 0;
+        th {
+          text-align: center;
+          text-transform: uppercase;
+          @include breakpoint('small') {
+            text-align: left;
+          }
+        }
+        &:hover {
+          background: $navy !important;
+        }
+        @include breakpoint('small') {
+          border: none;
+          /*display: block !important;*/
+          margin: 0 !important;
+        }
+      }
+      &.trg-list-page-row {
+        margin: 10px;
+        .withdrawn {
+          background-color: #D60000; 
+          border-radius: .25em;
+          color: #FFF; 
+          display: block;
+          font-size: 1em;
+          padding: .25em;
+          text-align: center;
+          text-transform: capitalize;
+          width: 75px;
+        }
+      }
+    }
+  }
+
+}
+
+@include breakpoint('small'){
+  .topical-reference-guide {
+
+    #view-field-subtopic-table-column {
+      display: none !important;
+    }
+
+  }
+}

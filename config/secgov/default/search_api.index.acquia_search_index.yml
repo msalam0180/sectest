@@ -1,0 +1,260 @@
+uuid: 31d839ca-edc3-44dc-a511-fb1538e86bfa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_action_name_in_document
+    - field.storage.node.field_also_known_as
+    - field.storage.node.field_ap_usdc
+    - field.storage.node.field_civ_action_no_ap_file_no
+    - field.storage.node.field_date_filed
+    - field.storage.node.field_first_name
+    - field.storage.node.field_last_name
+    - field.storage.node.field_middle_initial
+    - field.storage.node.field_suffix
+    - search_api.server.acquia_search_server
+  module:
+    - search_api_solr
+    - node
+    - search_api
+third_party_settings:
+  search_api_solr:
+    highlighter:
+      maxAnalyzedChars: 51200
+      fragmenter: gap
+      usePhraseHighlighter: true
+      highlightMultiTerm: true
+      preserveMulti: false
+      regex:
+        slop: 0.5
+        pattern: blank
+        maxAnalyzedChars: 10000
+      highlight:
+        mergeContiguous: false
+        requireFieldMatch: false
+        snippets: 3
+        fragsize: 0
+      _core:
+        default_config_hash: 914vBglS7nVnl8EUqBejfUPPRT6wnWYcOhMli6oL4jY
+    term_modifiers:
+      slop: 10000000
+      fuzzy: 2
+    advanced:
+      index_prefix: ''
+    multilingual:
+      limit_to_content_language: false
+      include_language_independent: true
+      specific_languages: {  }
+      use_language_undefined_as_fallback_language: false
+      use_universal_collation: false
+_core:
+  default_config_hash: FeSCk0aWg4dNJp1GfV6HCzMnrU3Fl_AzmEEoxbSDd_w
+id: acquia_search_index
+name: 'Acquia Search Solr Index'
+description: 'Individual Defendant Database index'
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_action_name_in_document:
+    label: 'Action Name in document'
+    datasource_id: 'entity:node'
+    property_path: field_action_name_in_document
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_action_name_in_document
+  field_also_known_as:
+    label: 'Also Known As'
+    datasource_id: 'entity:node'
+    property_path: field_also_known_as
+    type: 'solr_text_custom:ngram'
+    dependencies:
+      config:
+        - field.storage.node.field_also_known_as
+  field_ap_usdc:
+    label: AP/USDC
+    datasource_id: 'entity:node'
+    property_path: field_ap_usdc
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_ap_usdc
+  field_civ_action_no_ap_file_no:
+    label: 'Civ. Action No. /AP File No'
+    datasource_id: 'entity:node'
+    property_path: field_civ_action_no_ap_file_no
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_civ_action_no_ap_file_no
+  field_date_filed:
+    label: 'Date Filed Sort'
+    datasource_id: 'entity:node'
+    property_path: field_date_filed
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_filed
+  field_first_name:
+    label: First
+    datasource_id: 'entity:node'
+    property_path: field_first_name
+    type: 'solr_text_custom:ngram'
+    dependencies:
+      config:
+        - field.storage.node.field_first_name
+  field_first_name_1:
+    label: 'First Sort'
+    datasource_id: 'entity:node'
+    property_path: field_first_name
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_first_name
+  field_last_name:
+    label: Last
+    datasource_id: 'entity:node'
+    property_path: field_last_name
+    type: 'solr_text_custom:ngram'
+    dependencies:
+      config:
+        - field.storage.node.field_last_name
+  field_last_name_1:
+    label: 'Last Sort'
+    datasource_id: 'entity:node'
+    property_path: field_last_name
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_last_name
+  field_middle_initial:
+    label: 'MI Sort'
+    datasource_id: 'entity:node'
+    property_path: field_middle_initial
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_middle_initial
+  field_middle_initial_1:
+    label: MI
+    datasource_id: 'entity:node'
+    property_path: field_middle_initial
+    type: 'solr_text_custom:ngram'
+    dependencies:
+      config:
+        - field.storage.node.field_middle_initial
+  field_suffix:
+    label: 'Suffix Sort'
+    datasource_id: 'entity:node'
+    property_path: field_suffix
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_suffix
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - ba
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url:
+    plugin_id: add_url
+    settings: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -50
+  entity_status: {  }
+  entity_type: {  }
+  ignorecase:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -49
+    all_fields: false
+    fields:
+      - body
+      - field_action_name_in_document
+      - field_also_known_as
+      - field_ap_usdc
+      - field_civ_action_no_ap_file_no
+      - field_first_name
+      - field_last_name
+      - title
+  language_with_fallback: {  }
+  rendered_item: {  }
+  solr_date_range: {  }
+  transliteration:
+    weights:
+      preprocess_index: -20
+      preprocess_query: -48
+    all_fields: false
+    fields:
+      - body
+      - field_action_name_in_document
+      - field_also_known_as
+      - field_ap_usdc
+      - field_civ_action_no_ap_file_no
+      - field_first_name
+      - field_last_name
+      - title
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+  processors:
+    language:
+      status: '1'
+      weight: -50
+      settings: {  }
+      processorPluginId: language
+server: acquia_search_server

@@ -1,0 +1,23 @@
+uuid: 5535c90a-3c53-4d61-b34d-103c3df75888
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_left_nav_override
+    - node.type.secarticle
+id: node.secarticle.field_left_nav_override
+field_name: field_left_nav_override
+entity_type: node
+bundle: secarticle
+label: 'Override Left Navigation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

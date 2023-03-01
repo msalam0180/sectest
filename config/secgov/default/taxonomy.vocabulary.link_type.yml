@@ -1,0 +1,10 @@
+uuid: 5d268ff8-c23b-4565-8676-e26cbce0a232
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: AD-ZL7VNAFC4eENo7ZNTuuXqBSTLnkyPQ721N_duwp4
+name: 'Link Type'
+vid: link_type
+description: ''
+weight: 0

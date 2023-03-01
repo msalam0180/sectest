@@ -1,0 +1,106 @@
+//
+// PULLQUOTES
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.pullquote.no-quote:before {
+  content: "";
+  margin-left: .5em;
+  margin-top: 1.125em;
+  top: 0;
+}
+
+.pullquote.no-quote:after {
+  content: "";
+}
+
+.pullquote.no-quote p {
+  text-indent: 0;
+}
+
+.pullquote {
+
+  @include raleway;
+  background-color: #e9e9e9;
+  border-top-width: .25em;
+  border-bottom-width: .25em;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin: 0;
+  padding: 2em 2.5em 2em 2em;
+  position: relative;
+  quotes: none;
+  /*text-indent: 2em;*/
+  width: inherit;
+
+  @include breakpoint('small'){
+    padding: 2em 2.5em 4em 2em;
+  }
+
+  p { line-height: 1.8; text-indent: 2em; }
+
+  p > strong {
+    display: block;
+    font-size: 80%;
+    height: 3em;
+    /*height: 50px;*/
+    text-align: right;
+    margin-top: 1em;
+  }
+
+  &:before, &:after {
+    color: #BFBFBF;
+    display: block;
+    font-size: 500%;
+    font-family: Georgia, serif;
+    line-height: 100%;
+    position: absolute;
+    width: auto;
+  }
+
+  &:before {
+    content: "\201C";
+    left: -0.05em;
+    margin-left: .4em;
+    margin-top: 0.25em;
+    max-height: 40px;
+    top: 0.05em;
+    @include breakpoint('x-small'){
+      margin-top: 1.5em;
+    }
+  }
+
+  &:after {
+    bottom: 1.55em; /* with attribution below */
+    /*bottom: .55em;*/ /* without attribution below */
+    content: "\201D";
+    right: .5em;
+    height: 0px;
+    @include breakpoint('small') {
+      bottom: 1.95em;
+    }
+  }
+  
+  &.offset {
+    float: right;
+    margin: 1em -10% 1em 1em;
+    width: 50%;
+
+    &:after {
+      bottom: 1.55em; /* with attribution below */
+      /*bottom: .75em;*/ /* without attribution below */
+    }
+
+    @include breakpoint('small') {
+      width: 100%;
+      float: none;
+      margin: 1em 0;
+    }
+  }
+}

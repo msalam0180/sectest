@@ -1,0 +1,5 @@
+sec_file_replace:
+  version: 1.x
+  css:
+    layout:
+      components/stylesheets/styles.css: {}

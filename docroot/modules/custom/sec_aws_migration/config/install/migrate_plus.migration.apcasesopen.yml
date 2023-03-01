@@ -1,0 +1,29 @@
+id: apcasesopen
+label: Import of Administrative Proceedings AWS content
+migration_group: aws
+migration_tags:
+  - aws
+source:
+  plugin: csv
+  path: public://migration/open_apcases.csv
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: id
+  constants:
+    status: 'Open'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+
+  name: id
+
+  field_ap_status: constants/status
+
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: rulemaking_index

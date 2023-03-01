@@ -1,0 +1,54 @@
+uuid: c7236c1b-504a-4b77-83ca-f065887ec628
+langcode: en
+status: false
+dependencies: {  }
+id: acquia
+label: 'Acquia Cloud'
+description: 'Config for acquia environments'
+weight: 1
+folder: ../config/secgov/acquia
+module:
+  autologout: 0
+  captcha: 0
+  clamav: 0
+  google_tag: 0
+  memcache: 0
+  recaptcha: 0
+  simplesamlphp_auth: 0
+theme: {  }
+blacklist:
+  - autologout.settings
+  - captcha.captcha_point.contact_message_feedback_form
+  - captcha.captcha_point.contact_message_personal_form
+  - captcha.captcha_point.node_article_type_form
+  - captcha.captcha_point.node_ba_form
+  - captcha.captcha_point.node_data_distribution_form
+  - captcha.captcha_point.node_data_visualization_form
+  - captcha.captcha_point.node_event_form
+  - captcha.captcha_point.node_file_form
+  - captcha.captcha_point.node_govdelivery_form_form
+  - captcha.captcha_point.node_image_form
+  - captcha.captcha_point.node_landing_page_form
+  - captcha.captcha_point.node_link_form
+  - captcha.captcha_point.node_news_form
+  - captcha.captcha_point.node_news_type_form
+  - captcha.captcha_point.node_page_form
+  - captcha.captcha_point.node_sec_alert_form
+  - captcha.captcha_point.node_sec_hero_form
+  - captcha.captcha_point.node_secarticle_form
+  - captcha.captcha_point.node_secperson_form
+  - captcha.captcha_point.node_spotlight_form
+  - captcha.captcha_point.node_video_form
+  - captcha.captcha_point.node_webcast_form
+  - captcha.captcha_point.user_login_form
+  - captcha.captcha_point.user_pass
+  - captcha.captcha_point.user_register_form
+  - captcha.settings
+  - clamav.settings
+  - google_tag.settings
+  - recaptcha.settings
+  - simplesamlphp_auth.settings
+graylist:
+  - user.settings
+graylist_dependents: true
+graylist_skip_equal: true

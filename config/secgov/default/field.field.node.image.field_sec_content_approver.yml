@@ -1,0 +1,28 @@
+uuid: 6840de7e-2955-4825-807f-f400edc9dc13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sec_content_approver
+    - node.type.image
+id: node.image.field_sec_content_approver
+field_name: field_sec_content_approver
+entity_type: node
+bundle: image
+label: 'SEC Content Approver'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

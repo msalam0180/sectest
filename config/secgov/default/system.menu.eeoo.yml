@@ -1,0 +1,10 @@
+uuid: 607ba7b8-7dcf-4a75-a2e2-848dcf7bbc4b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: PjaGKCciBpMQEgc-9o39VgPT1HKqPoEDcppA4Xyr7Qw
+id: eeoo
+label: EEOO
+description: 'Equal Employment Opportunity (EEO) Office'
+locked: false

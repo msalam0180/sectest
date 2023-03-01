@@ -1,0 +1,43 @@
+/*** General stuff ***/
+@import 'general/vars';
+
+// .main-content > *,
+// #page-title {
+//     max-width: $site-width;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
+/** Other cruft **/
+// [role="footer"] div[id*='stayconnectedfooter'] {
+//     background-color: $primary_1;
+//     color: $gray_white;
+//     padding: 20px 0;
+//     text-align: center;
+// }
+
+/** drupal-entity embeds need to adhere to their alignments **/
+.embedded-entity.align-center .field__item {
+text-align:center;
+}
+
+// .layout-main-wrapper {
+//   p,
+//   li {
+//     font-family: $font_secondary;
+//     font-weight: $font_secondary_weight_semi_bold;
+//   }
+
+//   ul,
+//   li {
+//     padding-left:10px;
+//   }
+// }
+
+
+// OSSS-16411: Remove Duplicate Menus in layout builder off canvas menu
+// Temp fix for https://www.drupal.org/project/menu_block/issues/3062278
+#drupal-off-canvas .links a[href*="system_menu_block"]{
+  display: none !important;
+}
+

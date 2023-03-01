@@ -1,0 +1,25 @@
+//
+// OCIE LIST
+// VIEW NAME: OCIE Announcements
+// A list of articles that has the type of "Announcment" and the tax of "Compliance Inspections and Examinations "
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+//TODO: Is this rule even being used?
+@include breakpoint('small'){
+	.ocie-list {
+    thead {
+      th {
+        a {
+          border: none;
+          padding: 0;
+          &:last-child {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+}

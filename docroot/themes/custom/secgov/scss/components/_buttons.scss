@@ -1,0 +1,183 @@
+//
+// BUTTONS
+// Site-wide styles and classes for buttons
+// --------------------------------------------------
+
+// TODO: Buttons - There are many other places in the code where buttons are referenced...
+// They need to all be moved here, but it will take a while to find out how they are all used and how to best merge them.
+
+//Basic Button Styles
+
+button, .button,
+button:visited, .button:visited {
+  background: $cloudy-gray;
+  border: none;
+  color: $white;
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 0 0 20px;
+  padding: 8px 10px;
+  text-decoration: none;
+  width: auto;
+  position: relative;
+  text-align: center;
+  &.small {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.5em 1.5em;
+    -webkit-appearance: none;
+  }
+}
+
+.buttonSmall {
+  background-color: $button-gray;
+    height: 26px;
+    color: $white;
+    cursor: pointer;
+    border-width: 0px;
+    text-transform: uppercase;
+
+  &:hover, &:focus { background-color: $azure; }
+
+  &#gov-delivery-submit {
+    font-size: 14px;
+    font-weight: 600;
+    height: 26px;
+    vertical-align: middle;
+  }
+}
+
+button:hover, .button:hover, button:focus, .button:focus {
+  background-color: $azure;
+  text-decoration: none;
+}
+
+button:focus, .button:focus{
+  outline: 1px solid $dark-navy;
+}
+
+// TODO: Describe an OPA button and where and how it is used
+.opa-button {
+  position: relative;
+  color: #FFFFFF;
+  background-color: $navy;
+  border: 1px solid $dark-navy;
+  font-size: 12px;
+  line-height: 5.1em;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none solid white;
+  padding: 15px;
+
+  a:hover &, a:focus & {
+    background-color: $azure;
+    text-decoration: none;
+  }
+}
+
+// TODO: Describe a button header and where and how it is used
+.button-header {
+    font-size: 20px;
+    font-weight: bold;
+}
+// TODO: Describe a button box and where and how it is used
+// TODO: Combine button box rules
+.button-box {
+  display: block;
+
+  a {
+    background-color: $dark-navy;
+    color: $white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover, &.active {
+      background-color: $azure;
+    }
+
+    .button-label {
+      @include raleway;
+      clear: both;
+      display: block;
+      font-size: 1.1rem;
+      padding: 10px;
+    }
+
+    .description {
+      clear: both;
+      display: block;
+      font-size: 1rem;
+      padding: 0 10px 10px;
+    }
+  }
+}
+
+.button-box {
+  @include span(3);
+  margin-bottom: 20px;
+
+  &.last, &:last-child {
+    @include span(last 3);
+  }
+
+  p {
+    @include raleway;
+    background-color: $gray-blue;
+    display: block;
+    font-size: 12px;
+    height: 96px;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+
+    a {
+      display: block;
+      height: 96px;
+      color: white;
+      margin: 0;
+      padding: 0 6px;
+      width: 100%;
+
+      &:hover, &:focus {
+        background-color: $azure;
+        padding: 0;
+        border: 1px solid $gray-blue;
+      }
+
+      .main-description {
+        font-size: 14px;
+        position: absolute;
+        margin: 10px;
+        top: 0px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+
+      .division-office {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        margin: 0px 10px 10px 10px;
+        text-align: center;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// TODO: Describe a Search button and where and how it is used (does this belong somewhere else?)
+.search-button {
+  &:hover, &:focus {
+    color: #fff;
+    font-weight: 500;
+  }
+  &:focus { background-color: #457ea5; }
+  &:hover { background-color: #A7A7A7; }
+}
+.search-button::-moz-focus-inner { border: 0; }

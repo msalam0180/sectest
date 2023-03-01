@@ -1,0 +1,30 @@
+uuid: 99f77ee5-ba41-4d51-8756-ccd45bdace1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.im-left-nav
+  module:
+    - system
+  theme:
+    - secgov
+id: im
+theme: secgov
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'system_menu_block:im-left-nav'
+settings:
+  id: 'system_menu_block:im-left-nav'
+  label: 'Investment Management'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/im/announcements\r\n/divisions/investment/topical-reference-guide\r\n/investment\r\n/investment/*\r\n/investment-management/*"

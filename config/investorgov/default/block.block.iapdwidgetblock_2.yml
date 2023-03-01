@@ -1,0 +1,26 @@
+uuid: aa09d4b1-8132-4697-ba81-10eb8435a05c
+langcode: en
+status: true
+dependencies:
+  module:
+    - sec_iapd_widget
+    - system
+  theme:
+    - investor
+id: iapdwidgetblock_2
+theme: investor
+region: content
+weight: -11
+provider: null
+plugin: iapd_widget_block
+settings:
+  id: iapd_widget_block
+  label: 'IAPD Widget Block'
+  label_display: '0'
+  provider: sec_iapd_widget
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/research-before-you-invest/methods-investing/working-investment-professional/using-iapd\r\n/research-you-invest/methods-investing/working-investment-professional/check-out-your-investment\r\n/search"

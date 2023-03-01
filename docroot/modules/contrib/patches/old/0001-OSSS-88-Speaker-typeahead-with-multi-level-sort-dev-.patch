@@ -1,0 +1,41 @@
+diff --git a/docroot/modules/contrib/views_autocomplete_filters/src/Controller/ViewsAutocompleteFiltersController.php b/docroot/modules/contrib/views_autocomplete_filters/src/Controller/ViewsAutocompleteFiltersController.php
+index 5d7fc54..add46d9 100644
+--- a/docroot/modules/contrib/views_autocomplete_filters/src/Controller/ViewsAutocompleteFiltersController.php
++++ b/docroot/modules/contrib/views_autocomplete_filters/src/Controller/ViewsAutocompleteFiltersController.php
+@@ -259,6 +259,36 @@
+ 
+     if (!empty($matches)) {
+       $matches = array_values(array_unique($matches, SORT_REGULAR));
++
++      if ($expose_options[autocomplete_field] === 'field_speaker_combined') {
++          $collections = [];
++          $collection = [];
++          $chair = [];
++          $commissioner = [];
++          $array_lowercase = array_map('strtolower', $matches);
++          sort($array_lowercase,$matches);
++          //Get unique values;
++          foreach($matches as $key=>$matchCollection) {
++              if(!in_array($matches[$key]['label'], $collections)) {
++                  $collections[] = $matches[$key]['label'];
++              }
++          }
++          //Re-sort values if it contanes 'chair' or 'Commissioner';
++          foreach ($collections as $key=>$value) {
++              if (strpos($value,'Chair') !== false) {
++                  $chair[] = $value;
++                  unset($collections[$key]);
++              }
++              if (strpos($value,'Commissioner') !== false) {
++                  $commissioner[] = $value;
++                  unset($collections[$key]);
++              }
++          }
++          //Merge back our collection after processing;
++          $chair = array_merge($chair,$commissioner);
++          $collection = array_merge($chair,$collections);
++          return new JsonResponse($collection);
++      }
+     }
+ 
+     return new JsonResponse($matches);

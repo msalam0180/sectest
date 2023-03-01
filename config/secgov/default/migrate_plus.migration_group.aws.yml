@@ -1,0 +1,10 @@
+uuid: 8c8cca5e-7e11-496d-a301-7b10a5f5d46c
+langcode: en
+status: true
+dependencies: {  }
+id: aws
+label: AWS
+description: 'Import of legacy AWS Content for SEC'
+source_type: csv
+module: null
+shared_configuration: null

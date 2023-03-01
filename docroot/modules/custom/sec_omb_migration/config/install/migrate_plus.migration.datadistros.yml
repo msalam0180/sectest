@@ -1,0 +1,86 @@
+id: datadistros
+label: JSON import of OMB Data Distributions
+migration_group: sec
+migration_tags:
+  - datadistros
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/datadistro.json
+#  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/datadistro-small.json
+  fields: 
+    -
+      name: id
+      label: 'Identifier'
+      selector: id
+    -
+      name: display_title
+      label: 'display_title'
+      selector: display_title
+    -
+      name: dataset_id
+      label: 'dataset_id'
+      selector: dataset_id
+    -
+      name: url
+      label: 'url'
+      selector: url
+    -
+      name: published_date
+      label: 'published_date'
+      selector: published_date
+    -
+      name: description
+      label: 'description'
+      selector: description
+    -
+      name: filename
+      label: 'filename'
+      selector: filename
+ 
+
+  ids:
+    id:
+      type: string
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: data_distribution
+
+  title: filename
+
+  status:
+      plugin: default_value
+      default_value: 1
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  created: 
+    plugin: date_import
+    source: published_date
+    return_timestamp: TRUE
+
+  changed: '@created'
+#
+#  Drupal content type user-defined fields
+#
+  field_display_title: display_title
+  field_data_dist_upload:
+    - 
+      source: url
+      plugin: file_import
+      
+  field_associated_dataset: dataset_id
+  field_description_abstract: description
+  field_publish_date: 
+    plugin: date_import
+    source: published_date
+  
+destination:
+  plugin: entity:node

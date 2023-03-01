@@ -1,0 +1,9 @@
+name: SEC Investor News Importer
+type: module
+description: Imports content from the SEC rss feed related to Investor.gov
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_plus
+  - migrate_tools
+core_version_requirement: ^8 || ^9

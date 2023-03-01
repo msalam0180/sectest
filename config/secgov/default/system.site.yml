@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: a3cc814d-398c-49d4-b872-ca807090b00c
+name: 'U.S. Securities and Exchange Commission'
+mail: no-reply@sec.gov
+slogan: SEC.gov
+page:
+  403: /node/377
+  404: /node/315836
+  front: /node/2431
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: ''

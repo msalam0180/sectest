@@ -1,0 +1,23 @@
+uuid: 689d68b2-0312-4f91-af01-4bbf55dede7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gBHNmahKfrEOn2wLDM8HZYKVNN_BGLDSHgoAiOntKX4
+id: node.field_last_name_secperson
+field_name: field_last_name_secperson
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

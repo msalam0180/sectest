@@ -1,0 +1,65 @@
+# Migration for News Nodes.
+id: news_nodes
+label: News Nodes
+migration_group: investor_nodes_group
+dependencies:
+  enforced:
+    module:
+      - investor_migrate
+
+source:
+  #plugin: d7_node
+  node_type: news
+  plugin: investor_node
+destination:
+  plugin: entity:node
+  bundle: news
+  default_bundle: news
+
+process:
+  type: news
+
+  field_date/value:
+    -
+      plugin: extract
+      source: field_date
+      index:
+        - '0'
+        - value
+    -
+      plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      from_timezone: 'America/New_York'
+      to_timezone: 'UTC'
+  field_date/datetime_type:
+    plugin: default_value
+    default_value: datetime
+
+  # field_date:
+  #   plugin: iterator
+  #   source: field_date
+  #   process:
+  #     datetime_type:
+  #       plugin: default_value
+  #       default_value: datetime
+  #     value:
+  #       plugin: substr
+  #       source: value
+  #       start: 0
+  #       length: 10
+
+  field_news_type:
+    plugin: static_map
+    source: field_news_type
+    map:
+      1: 46 # Investor Alerts
+      2: 51 # Investor Bulletins
+      3: 21 # Press Releases
+    default_value: 21
+
+    field_news_photo:
+
+    field_file_upload_english:
+
+    field_file_upload_spanish:

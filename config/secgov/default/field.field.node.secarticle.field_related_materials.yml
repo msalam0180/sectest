@@ -1,0 +1,25 @@
+uuid: 20828a50-f915-45b7-8f02-c2cee9d95f09
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_materials
+    - node.type.secarticle
+  module:
+    - link
+_core:
+  default_config_hash: OtRh98x81eHbZXTiXK0pqCJFD20rPYjEi6u_v32Cm7k
+id: node.secarticle.field_related_materials
+field_name: field_related_materials
+entity_type: node
+bundle: secarticle
+label: 'Related Materials'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

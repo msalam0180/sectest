@@ -1,0 +1,32 @@
+uuid: 9286321b-6596-43c6-b6c6-7c21df6b4a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.municipal
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 9UPhKMZIwQvy39RezCsEDkPtkp7nWQjOIdEiLiarlhk
+id: municipal
+theme: secgov
+region: sidebar_first
+weight: -11
+provider: null
+plugin: 'system_menu_block:municipal'
+settings:
+  id: 'system_menu_block:municipal'
+  label: Municipal
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/municipal\r\n/municipal/*"

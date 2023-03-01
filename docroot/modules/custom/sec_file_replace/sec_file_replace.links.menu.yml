@@ -1,0 +1,6 @@
+sec_file_replace.menu_link:
+  title: 'Replace Static File'
+  description: 'Utility for overwriting static files'
+  parent: system.file_system_settings
+  route_name: sec_file_replace.search
+  weight: 100

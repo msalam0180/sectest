@@ -1,0 +1,12 @@
+uuid: 82ec6020-d29b-4374-8c72-eb8953ee97a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: QVFbQv46jX--QtTSA7PLKk5SYBMbmxuRIKoCpcoL3zI
+id: paragraph.comma_seperated
+label: 'Comma Seperated'
+targetEntityType: paragraph
+cache: true

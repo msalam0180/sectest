@@ -1,0 +1,8 @@
+uuid: bfe4ca60-518f-4f96-9f9c-78650aff8222
+langcode: en
+status: true
+dependencies: {  }
+id: other-websites
+label: 'Other Websites'
+description: 'Other Websites footer menu'
+locked: false

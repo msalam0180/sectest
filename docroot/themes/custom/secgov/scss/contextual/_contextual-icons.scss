@@ -1,0 +1,124 @@
+/**
+ * @file
+ * Styling for contextual module icons.
+ */
+
+/**
+ * Toolbar tab icon.
+ */
+
+.toolbar-bar .toolbar-icon-edit:before {
+  background-image: url(/themes/custom/secgov/images/admin-toolbar/bebebe/pencil.svg);
+}
+
+.toolbar-bar .toolbar-icon-edit:active:before,
+.toolbar-bar .toolbar-icon-edit.is-active:before {
+  background-image: url(/themes/custom/secgov/images/admin-toolbar/ffffff/pencil.svg);
+}
+
+/**
+ * Contextual trigger.
+ */
+.contextual .trigger {
+  /* Override the .focusable height: auto */
+  height: 26px !important;
+  /* Override the .focusable height: auto */
+  width: 26px !important;
+  /* text-indent: -9999px; */
+}
+
+.contextual .trigger:hover {
+  background-image: url(/themes/custom/secgov/images/admin-toolbar/787878/pencil.svg);
+}
+
+.contextual .trigger:focus {
+  background-image: url(/themes/custom/secgov/images/admin-toolbar/5181c6/pencil.svg);
+  outline: none;
+}
+
+/**
+ * @file
+ * Icons for Quick Edit module.
+ */
+
+.quickedit .icon {
+  min-height: 1em;
+  min-width: 2.5em;
+
+}
+.quickedit .icon.icon-only {
+  text-indent: 0px;
+  position: static; 
+}
+.quickedit .icon.icon-end {
+  padding-right: 2.5em; /* LTR */
+}
+[dir="rtl"] .quickedit .icon.icon-end {
+  padding-left: 2.5em;
+  padding-right: 0;
+}
+.quickedit .icon:before {
+  background-attachment: scroll;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0; /* LTR */
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+[dir="rtl"] .quickedit .icon:before {
+  left: auto;
+  right: 0;
+}
+.quickedit .icon-end:before {
+  left: auto; /* LTR */
+  right: 0.5em; /* LTR */
+  width: 18px;
+}
+[dir="rtl"] .quickedit .icon-end:before {
+  left: 0.5em;
+  right: auto;
+}
+.quickedit button.icon {
+  font-size: 1em;
+}
+.quickedit .icon-pencil {
+  margin-left: .5em;
+  padding-left: 1.5em;
+}
+
+/**
+ * Images.
+ */
+.quickedit .icon-close:before {
+  height: 12px;
+  top: 10px;
+}
+
+.quickedit .icon-pencil:before {
+  background-position: left center;
+  background-size: 1.3em;
+}
+
+.quickedit .icon.icon-pencil {
+	border: none;
+	border-radius: 0px 0px 0px 0px; 
+	-webkit-border-radius: 0px 0px 0px 0px; 
+	-moz-border-radius: 0px 0px 0px 0px; 
+	box-shadow: inset rgba(255, 255, 255, 0.8) 0 0px 0px; 
+	-webkit-box-shadow: inset rgba(255, 255, 255, 0.8) 0 0px 0px; 
+	-moz-box-shadow: inset rgba(255, 255, 255, 0.8) 0 0px 0px; 
+	display: inline-block;
+	width: 40px; 
+	height: 30px; 
+	line-height: 12px; 
+	margin-right: 0px;
+	overflow: hidden;
+	text-decoration: none; 
+	text-align: center; 
+	vertical-align: middle; 
+}

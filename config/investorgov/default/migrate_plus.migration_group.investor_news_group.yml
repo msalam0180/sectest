@@ -1,0 +1,12 @@
+uuid: dcfaaafa-624f-4a9e-8ac0-7538898e323f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hGEAT_ZoluuC3ACCLZ_98BUHR95JSh0NFPUfsVZ09EI
+id: investor_news_group
+label: 'Investor News Group'
+description: 'Import Investor Alerts & Bulletins and Press Releases from SEC.gov'
+source_type: null
+module: null
+shared_configuration: null

@@ -1,0 +1,97 @@
+<?php
+
+/**
+ * @file
+ * Contains investor_gallery_slideshow.module.
+ */
+
+
+use Drupal\Core\Form\FormStateInterface;
+
+function investor_gallery_slideshow_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  //check content type and attach gallery css/js
+  if ($node->bundle() == 'gallery') {
+    $variables['#attached']['library'][] = 'investor_gallery_slideshow/media_boxes'; 
+    $variables['#attached']['library'][] = 'investor_gallery_slideshow/media_gallery'; 
+
+    //loop over $node->field_media 
+    foreach ($node->field_media as $media) {
+      
+      //get vimeo thumbnail manually 
+      if ($media->entity && $media->entity->bundle() == "video") {
+        $mediaUrl = $media->entity->field_video->value;
+        
+        if (!empty($mediaUrl) && strpos($mediaUrl, 'vimeo') !== false) {
+          $mediaId = explode(".com/",$mediaUrl)[1];
+          $thumbnail = investor_gallery_slideshow_getVimeoThumb($mediaId);
+          $media->entity->field_thumbnail->value = $thumbnail;
+        }
+      }
+      
+    }
+        
+  }
+}
+
+/**
+ * Gets a vimeo thumbnail url
+ * @param mixed $id A vimeo id (ie. 1185346)
+ * @return thumbnail's url
+*/
+function investor_gallery_slideshow_getVimeoThumb($id) {
+  $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+  $data = json_decode($data);
+  return $data[0]->thumbnail_medium;
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the FORM_ID() form.
+ */
+function investor_gallery_slideshow_form_media_video_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  _investor_gallery_slideshow_form_setup($form, $form_state);
+  $form['#validate'][] = '_investor_gallery_slideshow_form_media_video_validate';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the FORM_ID() form.
+ */
+function investor_gallery_slideshow_form_media_video_add_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  _investor_gallery_slideshow_form_setup($form, $form_state);
+  $form['#validate'][] = '_investor_gallery_slideshow_form_media_video_validate';
+}
+
+/**
+ * Setup the form
+ */
+function _investor_gallery_slideshow_form_setup(&$form, FormStateInterface $form_state) {
+  $form['#attached']['library'][] = 'investor_gallery_slideshow/investor_gallery_slideshow';
+}
+/**
+ * Validates submission values in the FORM_ID() form.
+ */
+function _investor_gallery_slideshow_form_media_video_validate(array &$form, FormStateInterface $form_state) {
+
+    if ($form_state->hasValue('field_video_origin')) {
+        $fieldVideoOrigin = $form_state->getValue("field_video_origin");
+
+
+        if ($fieldVideoOrigin[0]['value'] == 'youtubevimeo') {
+
+            //Check if there is a Youtube/Vimeo value when youtubevimeo is Selected
+            $fieldVideo = $form_state->getValue("field_video");
+            if (empty($fieldVideo[0]['value'])) {
+                $form_state->setErrorByName('field_video', t("Please enter the URL to the YouTube or Vimeo Video"));
+            }
+ 
+        } elseif($fieldVideoOrigin[0]['value'] == 'upload'){
+
+            //Check if there is a file uploaded
+            $fieldVideo = $form_state->getValue("field_media_video_file");
+            if (empty($fieldVideo[0]['fids'])) {
+                $form_state->setErrorByName('field_media_video_file', t("Please upload a video"));
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<?php
+/**
+ * Implements hook_install().
+ */
+function sec_paragraphs_install() {
+ drupal_get_installed_schema_version('sec_paragraphs');
+ drupal_set_installed_schema_version('sec_paragraphs', '8700');
+}
+
+
+/**
+ * Updates field and entity definitions for paragraphs field_view
+ * https://www.drupal.org/project/paragraphs/issues/3062300
+ */
+function sec_paragraphs_update_8701() {
+  $entity_definition_update_manager = \Drupal::entityDefinitionUpdateManager();//paragraph.field_view
+
+  // paragraph entity update
+  $entity_type = $entity_definition_update_manager->getEntityType('paragraph');
+  $entity_definition_update_manager->updateEntityType($entity_type);
+
+  // paragraph field_view definition update
+  $field_storage = $entity_definition_update_manager->getFieldStorageDefinition('field_view', 'paragraph');
+  $entity_definition_update_manager->updateFieldStorageDefinition($field_storage);
+}

@@ -1,0 +1,23 @@
+uuid: 73df2498-d456-4fcb-8e55-737fd381da3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - media
+id: static_file_media
+label: 'Static File Media'
+type: 'canonical_entities:media'
+pattern: '/file/[media:name]'
+selection_criteria:
+  96a16cc9-8448-4d1a-aa91-3fc46904178c:
+    id: 'entity_bundle:media'
+    negate: false
+    uuid: 96a16cc9-8448-4d1a-aa91-3fc46904178c
+    context_mapping:
+      media: media
+    bundles:
+      static_file: static_file
+selection_logic: and
+weight: 4
+relationships: {  }

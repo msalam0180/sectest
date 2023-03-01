@@ -1,0 +1,136 @@
+// Available Colors
+// AVOID USING THESE DIRECTLY!!
+// Instead, go to the Site Hues
+$color_blue_whale: #00325b;
+$color_cinnamon: #bf280d;
+$color_turquoise: #218383; // This was changed from #269092 for better contrast on smaller fonts
+$color_salmon: #e36853;
+$color_terracotta: #e88f80;
+$color_dark_teal: #1f7779;
+$color_fountain_blue: #faafb0;
+$color_aquamarine: #66e0e1;
+$color_bunker_black: #040707;
+$color_white: #fff;
+$color_nevada_gray: #66707a;
+$color_raven_gray: #73808b;
+$color_nobel_gray: #b5b5b5;
+$color_gallery_gray: #eee;
+$color_alabaster: #f7f7f7;
+
+// Site Hues
+// Primary
+$primary_1:$color_blue_whale;
+$primary_2:$color_cinnamon;
+$primary_3:$color_turquoise;
+// Secondary
+$secondary_1a:$color_salmon;
+$secondary_1b:$color_terracotta;
+$secondary_2a:$color_dark_teal;
+$secondary_2b:$color_fountain_blue;
+$secondary_2c:$color_aquamarine;
+// Gray Tones
+$gray_black:$color_bunker_black;
+$gray_white:$color_white;
+$gray_1a:$color_nevada_gray;
+$gray_1b:$color_raven_gray;
+$gray_1c:$color_nobel_gray;
+$gray_1d:$color_gallery_gray;
+$gray_1e:$color_alabaster;
+$white: #fff;
+
+////////////////////////////////////
+// Fonts
+////////////////////////////////////
+@import url('https://fonts.googleapis.com/css?family=Arvo:700,400|Open+Sans:600,800');
+
+// Primary Font "Arvo"
+$font_primary:'Arvo', serif;
+$font_primary_weight_regular: 400;
+$font_primary_weight_bold: 700;
+
+// Secondary Font "Open Sans"
+$font_secondary:'Open Sans', sans-serif;
+$font_secondary_weight_semi_bold: 600;
+$font_secondary_weight_extra_bold: 800;
+
+
+////////////////////////////////////
+// Text Sizes abs base typographic styles
+////////////////////////////////////
+
+$text-base-size: 16px;
+$text-scale-ratio: 1.2;
+
+/* type scale */
+$text-xs: calc( 1em / #{$text-scale-ratio} );
+$text-sm: 1em;
+$text-md: calc( 1em * #{$text-scale-ratio} );
+$text-lg: calc( 1em * #{$text-scale-ratio} * #{$text-scale-ratio} );
+$text-xl: calc( 1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} );
+$text-xxl: calc( 1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio}) ;
+$text-xxxl: calc( 1em * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} );
+
+/* line-height */
+
+$heading-line-height: 1.2;
+$body-line-height: 1.5;
+
+$base-line-height: 1.5rem;
+$base-text-color: $gray_black;
+$base-text-padding: $base-line-height;
+$base-heading-text-color: $gray_1b;
+
+$anchor-color: $primary_3;
+$anchor-color-visited: $gray_1a; //TODO Update Color
+
+/* spacing values */
+$space-xxxs: 0.25em;
+$space-xxs:  0.375em;
+$space-xs:   0.5em;
+$space-sm:   0.75em;
+$space-md:   1.25em;
+$space-lg:   2em;
+$space-xl:   3.25em;
+$space-xxl:  5.25em;
+$space-xxxl: 8.5em;
+
+////////////////////////////////////
+// Other base items
+////////////////////////////////////
+
+$site-width: 960px; // change to 1024 when the new hero is ready
+
+
+// FUNCTIONS
+@function get-base-url() {
+	@return '/sites/investorgov/themes/custom/investor/';
+}
+
+/////////////////////
+// Forms
+/////////////////////
+$input-bg:                       $white;
+$input-bg-disabled:              #e6e6e6;
+
+$input-color:                    $base-text-color;
+$input-border:                   #ccc;
+$input-border-radius:            0px;
+$input-border-focus:             #66afe9 !default;
+$input-color-placeholder:        #999 !default;
+
+//** Default `.form-control` height
+$input-height-base:              32px;
+
+$legend-color:                   $base-text-color;
+$legend-border-color:            #e5e5e5 !default;
+
+//** Disabled cursor for form controls and buttons.
+$cursor-disabled:                not-allowed !default;
+
+$padding-base-vertical:     6px;
+$padding-base-horizontal:   12px;
+
+$form-error-color: #b30000;
+
+// media query width for changes
+$form-small: 600px;

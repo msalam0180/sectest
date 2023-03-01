@@ -1,0 +1,21 @@
+uuid: 987a301b-b603-4de6-a7b4-8ab7fb538cec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_content_block
+    - field.storage.block_content.field_box_style
+  module:
+    - options
+id: block_content.simple_content_block.field_box_style
+field_name: field_box_style
+entity_type: block_content
+bundle: simple_content_block
+label: 'Box Style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

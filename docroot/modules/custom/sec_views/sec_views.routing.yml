@@ -1,0 +1,6 @@
+# Provides path to 'Approvers' Needs review page
+sec_view.needsReviewApprovers:
+  path: '/admin/workbench/content/needs-review'
+# Provides path to 'Creators' Needs review page
+sec_view.needsReviewCreator:
+  path: 'admin/workbench/content/needs-review-creator'

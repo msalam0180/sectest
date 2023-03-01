@@ -1,0 +1,6 @@
+name: SEC URLs
+description: 'Provides Customized URL pathauto values for SEC. '
+type: module
+core: 8.x
+package: SEC
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Hero template (can be used by any type of content as long as the vars are passed)
+ *
+ * Available Vars
+ * text - Button Text (required)
+ * url - button url (optional)
+ * align - Where should the button should be aligned (left, right, or center)
+ * size - Button size
+ * colorTheme - The color of the button
+ * spacing - Add space around the button
+
+ * Example template call:
+  {{ include('@investor/includes/component/button.html.twig', 
+  {
+    'text':  content.field_button_para[0]['#title'],
+    'url': content.field_button_para[0]['#url']|render|striptags|trim,
+    'align': content.field_button_align[0]|render|striptags|trim,
+    'size': content.field_button_size[0]|render|striptags|trim,
+    'colorTheme': content.field_button_theme[0]|render|striptags|trim,
+    'spacing': content.field_button_spacing[0]|render|striptags|trim
+  }) 
+}}
+#}
+
+{# Prep Vars #}
+{# 
+{% if spaceBelow == "On" %}
+  {% set spaceBelowClass = "button-space-below" %}
+{% endif %}
+
+{% if spaceAbove == "On" %}
+  {% set spaceAboveClass = "button-space-below" %}
+{% endif %} #}
+
+{% if align %}
+  {% set alignTrans = align|lower %}
+  {% if alignTrans == "left" %}
+    {% set alignClass = "button-wrapper-left" %}
+  {% elseif alignTrans == "right" %}
+    {% set alignClass = "button-wrapper-right" %}
+  {% elseif alignTrans == "center" %}
+    {% set alignClass = "button-wrapper-center" %}
+  {% else %}
+    {% set alignClass = "button-wrapper-full" %}
+  {% endif %}
+{% else %}
+  {% set alignClass = "button-wrapper-center" %}
+{% endif %}
+
+{% if colorTheme %}
+  {% set colorThemeTrans = colorTheme|lower %}
+  {% if colorThemeTrans == "alternate 1" %}
+    {% set colorThemeClass = "button-alt" %}
+  {% elseif colorThemeTrans == "alternate 2" %}
+    {% set colorThemeClass = "button-alt-2" %}
+  {% else %}
+    {% set colorThemeClass = "button-primary" %}
+  {% endif %}
+{% else %}
+  {% set colorThemeClass = "button-primary" %}
+{% endif %}
+
+{% if size %}
+  {% set sizeTrans = size|lower %}
+  {% if sizeTrans == "large" %}
+    {% set sizeClass = "button-size-lg" %}
+  {% else %}
+    {% set sizeClass = "button-size-reg" %}
+  {% endif %}
+{% else %}
+  {% set sizeClass = "button-size-reg" %}
+{% endif %}
+
+{% if spacing %}
+  {% set spacingTrans = spacing|lower %}
+  {% if spacingTrans == "above" %}
+    {% set spacingClass = "button-spacing-above" %}
+  {% elseif spacingTrans == "below" %}
+    {% set spacingClass = "button-spacing-below" %}
+  {% elseif spacingTrans == "above and below" %}
+    {% set spacingClass = "button-spacing-above_below" %}
+  {% else %}
+    {% set spacingClass = "" %}
+  {% endif %}
+{% else %}
+  {% set spacingClass = "" %}
+{% endif %}
+
+{# Markup #}
+<div class="button-wrapper {{alignClass}} {{spacingClass}}">
+  <a class="button {{colorThemeClass}} {{sizeClass}}" href="{{ url }}">{{text}}</a>
+</div>

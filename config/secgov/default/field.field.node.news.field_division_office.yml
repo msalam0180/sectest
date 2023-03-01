@@ -1,0 +1,30 @@
+uuid: 7fe6bf26-a451-44ad-9965-cf39d4597cd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_division_office
+    - node.type.news
+    - taxonomy.vocabulary.division_office
+_core:
+  default_config_hash: FdgTS8krRwIbDSVxZfl7iW5Ou8szfuaOa9L9KPvNqto
+id: node.news.field_division_office
+field_name: field_division_office
+entity_type: node
+bundle: news
+label: 'Supporting Division / Office'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      division_office: division_office
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

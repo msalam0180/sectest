@@ -1,0 +1,20 @@
+uuid: 0caa4c53-334c-43c9-afbc-349a6e619d44
+langcode: en
+status: true
+dependencies:
+  module:
+    - sec_custom_blocks
+  theme:
+    - uswdssec
+id: digitalgovglobalsearch
+theme: uswdssec
+region: secondary
+weight: -5
+provider: null
+plugin: digitalgov_global_search_block
+settings:
+  id: digitalgov_global_search_block
+  label: 'DigitalGov Global Search'
+  label_display: '0'
+  provider: sec_custom_blocks
+visibility: {  }

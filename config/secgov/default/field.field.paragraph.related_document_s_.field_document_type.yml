@@ -1,0 +1,23 @@
+uuid: 278111d2-fd4d-43a9-bfcf-04d7489140a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_document_type
+    - paragraphs.paragraphs_type.related_document_s_
+  module:
+    - options
+_core:
+  default_config_hash: ITWSTE7AAWrtQygPaQgJgNifFEn6ZkCyaVRUZFzf3tw
+id: paragraph.related_document_s_.field_document_type
+field_name: field_document_type
+entity_type: paragraph
+bundle: related_document_s_
+label: 'Document  Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

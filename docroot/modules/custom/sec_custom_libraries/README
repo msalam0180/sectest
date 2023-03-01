@@ -1,0 +1,62 @@
+Prerequisites
+================================================================================
+You will need NPM, Grunt CLI, RVM, Bundler, and Bower:
+
+For NPM, install the Node.js installer (https://nodejs.org/dist/v4.6.0/node-v4.6.0.pkg)
+
+After that is installed, Grunt CLI  can be installed:
+
+$ npm install -g grunt-cli
+
+Use RVM to manage your Ruby versions:
+
+https://rvm.io/rvm/install
+
+And to install Bundler:
+
+$ sudo gem update
+$ sudo gem install bundler -n /usr/local/bin
+
+Installing Bower:
+$ npm install -g bower
+
+Installing project dependencies
+================================================================================
+$ npm install
+
+Bower dependencies:
+$ bower install
+
+And finally the Ruby dependancies:
+
+$ bundle install
+
+* If you see a SELF_SIGNED_CERT_IN_CHAIN error, you will have to
+disconnect from the SEC network.
+
+Instructions for adding a new Library:
+================================================================================
+1. Add a new entry in the sec_custom_libraries.libraries.yml file in the
+   following format:
+
+   library_name:
+     version: 1.0
+     js:
+       components/scripts/library-name.js: {}
+       //path/to/cdn/script.js: { type: external }
+     css:
+       layout:
+         components/stylesheets/library-name.css: {}
+
+2. Place your JavaScript file(s) in components/scripts
+3. This module uses Grunt and Comass to compile SASS to CSS. Create a .SCSS file
+   in the components/sass directory. To compile or watch changes to the SASS
+   source file, execute 'grunt' or 'grunt watch' from the sec_custom_libraries
+   module directory.
+4. Edit sec_custom_libraries.module. In the sec_custom_libraries_page_attachments_alter
+   function, add a case statement for your page's path. Note: be sure to add a
+   path alias to the new page if one does not exist.
+5. Flush Drupal cache with 'drush cr' to view changes in the browser.
+6. If you need to alter the page template in any way (i.e. to remove a region),
+   you can do so in the sec_custom_libraries_preprocess_page function located in
+   the sec_custom_libraries.module file.

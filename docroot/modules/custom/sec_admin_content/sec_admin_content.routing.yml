@@ -1,0 +1,3 @@
+# Provides path to 'Approvers' Needs review page
+sec_admin_content.contentSearch:
+  path: '/admin/content'

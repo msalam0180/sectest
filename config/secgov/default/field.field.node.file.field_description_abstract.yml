@@ -1,0 +1,21 @@
+uuid: 902fe228-46d7-4bdf-b01c-66fc4d58e0b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_abstract
+    - node.type.file
+_core:
+  default_config_hash: SVsh3RizzlRwD2HGZlk-QZAkbt28FBgFImc4y-gMWaM
+id: node.file.field_description_abstract
+field_name: field_description_abstract
+entity_type: node
+bundle: file
+label: Description/Abstract
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

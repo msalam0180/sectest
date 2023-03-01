@@ -1,0 +1,60 @@
+// Quick fixes
+//
+// Deadlines happen, so put your quick fixes here. Hopefully there will be time
+// later to move/re-factor these styles into their proper place.
+
+// TODO: Create a layout builder scss - where should that live
+// TODO: Fix stylelint (cannot currently override ID "#drupal-off-canvas", breaks build)
+// TODO: need to not extend if possible, adding alot of weight to the rules, maybe override the off-canvas library
+/* stylelint-disable */
+#drupal-off-canvas .block-categories {
+  ul li,
+  ol li {
+    border: 0;
+    padding: 0;
+  }
+
+  li a {
+    display: block;
+    font-size: 0.8em;
+    padding: 1px 0;
+  }
+}
+
+#drupal-off-canvas details > summary {
+  cursor: pointer;
+}
+
+#drupal-off-canvas summary:hover,
+#drupal-off-canvas summary:focus {
+  text-decoration: underline;
+}
+
+#drupal-off-canvas {
+  .c-form-item__text {
+    @extend .c-form-item__text;
+    color: #000;
+  }
+  .c-form-item__select {
+    @extend .c-form-item__select;
+    color: #000;
+  }
+  .c-form-item__search {
+    @extend .c-form-item__search;
+    color: #000;
+  }
+  .c-form-item__description {
+    color: #fff;
+    font-size: .87rem;
+  }
+}
+
+#drupal-off-canvas {
+  button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    @extend .usa-button;
+  }
+}
+/* stylelint-enable */

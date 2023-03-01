@@ -1,0 +1,496 @@
+uuid: 470a9fb6-6c8c-4ae4-b3ba-3f3fd35d81ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_act
+    - field.field.node.landing_page.field_audience
+    - field.field.node.landing_page.field_center_2_box
+    - field.field.node.landing_page.field_creator
+    - field.field.node.landing_page.field_date
+    - field.field.node.landing_page.field_description_abstract
+    - field.field.node.landing_page.field_display_title
+    - field.field.node.landing_page.field_division_office
+    - field.field.node.landing_page.field_featured_graphic
+    - field.field.node.landing_page.field_left_1_box
+    - field.field.node.landing_page.field_left_2_box
+    - field.field.node.landing_page.field_left_3_box
+    - field.field.node.landing_page.field_left_4_box
+    - field.field.node.landing_page.field_left_5_box
+    - field.field.node.landing_page.field_left_nav_override
+    - field.field.node.landing_page.field_person
+    - field.field.node.landing_page.field_primary_division_office
+    - field.field.node.landing_page.field_publish_date
+    - field.field.node.landing_page.field_regulation
+    - field.field.node.landing_page.field_right_2_box
+    - field.field.node.landing_page.field_right_3_box
+    - field.field.node.landing_page.field_right_4_box
+    - field.field.node.landing_page.field_sec_content_approver
+    - field.field.node.landing_page.field_tags
+    - field.field.node.landing_page.panelizer
+    - field.field.node.landing_page.scheduling_options
+    - node.type.landing_page
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: true
+    allow: true
+    default: default
+    displays:
+      default:
+        id: panels_variant
+        label: 'Landing Page'
+        weight: 0
+        uuid: fc31f840-4b20-4f30-aabd-f7af5e6a58d7
+        blocks:
+          fb4bb394-1c89-4f83-bc79-a6c5b8188062:
+            id: 'entity_field:node:title'
+            label: Title
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: top
+            weight: -10
+            uuid: fb4bb394-1c89-4f83-bc79-a6c5b8188062
+          2e567c11-8fce-4402-b501-e5af8f7496ed:
+            id: 'entity_field:node:field_left_1_box'
+            label: 'Left 1 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: -5
+            uuid: 2e567c11-8fce-4402-b501-e5af8f7496ed
+          5abe1a52-fc8b-4909-8c4a-c0cd77ea667e:
+            id: 'entity_field:node:field_left_2_box'
+            label: 'Left 2 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: -4
+            uuid: 5abe1a52-fc8b-4909-8c4a-c0cd77ea667e
+          6d611fc8-dad3-403e-909c-ed65abf5ccb6:
+            id: 'entity_field:node:field_left_3_box'
+            label: 'Left 3 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: -3
+            uuid: 6d611fc8-dad3-403e-909c-ed65abf5ccb6
+          c306f37a-84a6-4101-a781-cef2836a874e:
+            id: 'entity_field:node:field_left_4_box'
+            label: 'Left 4 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: -2
+            uuid: c306f37a-84a6-4101-a781-cef2836a874e
+          cefdddff-d8b3-4a69-b9cd-ca3771baaafa:
+            id: 'entity_field:node:field_left_5_box'
+            label: 'Left 5 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: -1
+            uuid: 37247f8c-d7a3-4e00-a4bf-af8a3867e79e
+          f2b8665e-5110-4546-a12c-aa4e8eda17ed:
+            id: 'entity_field:node:field_center_2_box'
+            label: 'Center 2 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 0
+            uuid: f2b8665e-5110-4546-a12c-aa4e8eda17ed
+          06669b3f-ddf0-469c-84a5-9e97e9b20096:
+            id: 'views_block:landing_page_webcasts-block_2'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: -5
+            uuid: 06669b3f-ddf0-469c-84a5-9e97e9b20096
+          cc59e728-bf55-43a9-8ced-6b359d7c570a:
+            id: 'views_block:landing_page_webcasts-block_1'
+            label: ''
+            label_display: visible
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: -4
+            uuid: cc59e728-bf55-43a9-8ced-6b359d7c570a
+          51529fa1-b8f1-4ece-9886-2292b8930299:
+            id: 'entity_field:node:field_right_2_box'
+            label: 'Right 2 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: right
+            weight: -3
+            uuid: 51529fa1-b8f1-4ece-9886-2292b8930299
+          02809f7a-a474-46bf-bcb4-c8429183b26c:
+            id: 'entity_field:node:field_right_3_box'
+            label: 'Right 3 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: right
+            weight: -2
+            uuid: 02809f7a-a474-46bf-bcb4-c8429183b26c
+          37247f8c-d7a3-4e00-a4bf-af8a3867e79e:
+            id: 'entity_field:node:field_right_4_box'
+            label: 'Right 4 - Box'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: right
+            weight: -1
+            uuid: 37247f8c-d7a3-4e00-a4bf-af8a3867e79e
+        page_title: '[node:title]'
+        layout: toptwocol
+        layout_settings: {  }
+        builder: ipe
+        storage_type: panelizer_default
+        storage_id: 'node:landing_page:default:default'
+        static_context:
+          what_s_new_aro:
+            label: 'What''s New - ARO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: e0991728-acce-4cb4-9599-13ad914b8031
+          what_s_new_bro:
+            label: 'What''s New - BRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 3a1b1e3d-91b3-4263-a54f-35c3bb15677a
+          what_s_new_chro:
+            label: 'What''s New - CHRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: f81c1c78-d9d4-4123-96df-ce1bfcb0dc9f
+          what_s_new_dro:
+            label: 'What''s New - DRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 206fed75-adf9-40cf-afe3-a529a90fbfa4
+          what_s_new_fwro:
+            label: 'What''s New - FWRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 2a7249f3-827f-4e42-bdd4-adfb2e7f42cf
+          what_s_new_laro:
+            label: 'What''s New - LARO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 7ccc029f-aed8-4326-aa51-4e424193a212
+          what_s_new_miro:
+            label: 'What''s New - MIRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 70baa4ed-8fb4-43bc-8680-8129d2526aeb
+          what_s_new_nyro:
+            label: 'What''s New - NYRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 7688e616-e0f8-4e9d-8e64-e97577b49487
+          what_s_new_plro:
+            label: 'What''s New - PLRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: a9231988-dced-4ecf-9a41-7fcc98f7089b
+          what_s_new_sfro:
+            label: 'What''s New - SFRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: d8e9fb88-ceca-4966-afdc-8fa0210b1d8b
+          what_s_new_slro:
+            label: 'What''s New - SLRO'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: e1842f27-f45b-4365-a5ac-04a70d028604
+          what_s_new_im:
+            label: 'What''s New - IM'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 12c414d7-33fc-4963-8988-6c5770b10589
+          what_s_new_oca:
+            label: 'What''s New - OCA'
+            type: 'entity:taxonomy_term'
+            value: f59919cc-f000-4fd0-a54b-3158ce3492b3
+          what_s_new_oasb:
+            label: 'What''s New - OASB'
+            type: 'entity:taxonomy_term'
+            description: ''
+            value: 4683d56d-40f9-4eb6-800f-97c2f6d0f7fd
+        pattern: panelizer
+_core:
+  default_config_hash: BQXWS7oW4pFRAcYJ7wwpjCVSOe2iVw5knAtsxDBikKc
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_act:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_center_2_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_creator:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_description_abstract:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_division_office:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_left_1_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_left_2_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_left_3_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_left_4_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_left_5_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_left_nav_override:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_person:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_primary_division_office:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_regulation:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_right_2_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_right_3_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_right_4_box:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_sec_content_approver:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_date: true
+  field_featured_graphic: true
+  field_publish_date: true
+  langcode: true
+  links: true
+  panelizer: true
+  scheduling_options: true
+  search_api_excerpt: true

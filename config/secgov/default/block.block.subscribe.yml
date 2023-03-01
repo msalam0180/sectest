@@ -1,0 +1,39 @@
+uuid: 16810807-7f02-4d76-a68c-c633842c214c
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: wMkxuirL_po6d4Dd48jzNk6a4txmmm7ael5FADipJbQ
+id: subscribe
+theme: secgov
+region: header
+weight: -24
+provider: null
+plugin: 'block_content:ea02559b-82a2-4e05-9886-500965f4c7a0'
+settings:
+  id: 'block_content:ea02559b-82a2-4e05-9886-500965f4c7a0'
+  label: Subscribe
+  label_display: '0'
+  provider: core
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: "/error-403-forbidden\r\n/page-temporarily-unavailable\r\n/oops-we-cant-find-file"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      news_type: news_type
+      page: page

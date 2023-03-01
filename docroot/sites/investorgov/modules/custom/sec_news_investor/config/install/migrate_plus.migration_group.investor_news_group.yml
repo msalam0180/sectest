@@ -1,0 +1,6 @@
+# Migration Group for nodes
+id: investor_news_group
+label: Investor News Group
+description: Import Investor Alerts & Bulletins and Press Releases from SEC.gov
+
+dependencies: { }

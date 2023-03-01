@@ -1,0 +1,10 @@
+uuid: bb7351a9-a089-4628-8b86-ea6f5b7ce6ad
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.title_only
+label: 'Title Only'
+targetEntityType: node
+cache: true

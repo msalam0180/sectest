@@ -1,0 +1,81 @@
+uuid: 7b6b0734-7e33-45af-91fd-a50e193eef41
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ba.body
+    - field.field.node.ba.field_action_name_in_document
+    - field.field.node.ba.field_action_number
+    - field.field.node.ba.field_age_in_document
+    - field.field.node.ba.field_also_known_as
+    - field.field.node.ba.field_ap_usdc
+    - field.field.node.ba.field_basis_for_state
+    - field.field.node.ba.field_civ_action_no_ap_file_no
+    - field.field.node.ba.field_cms_notes
+    - field.field.node.ba.field_court
+    - field.field.node.ba.field_date_filed
+    - field.field.node.ba.field_display_no_display
+    - field.field.node.ba.field_entity_name
+    - field.field.node.ba.field_first_name
+    - field.field.node.ba.field_individual_name_in_documen
+    - field.field.node.ba.field_judgment_date
+    - field.field.node.ba.field_judgment_final_order_appea
+    - field.field.node.ba.field_last_name
+    - field.field.node.ba.field_middle_initial
+    - field.field.node.ba.field_related_documents
+    - field.field.node.ba.field_state_idd
+    - field.field.node.ba.field_suffix
+    - node.type.ba
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: AgN_6K2Qk3KKjjvfKNwyxNLmQJ_wVshTbD_UqFd-Q98
+id: node.ba.teaser
+targetEntityType: node
+bundle: ba
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_action_name_in_document: true
+  field_action_number: true
+  field_age_in_document: true
+  field_also_known_as: true
+  field_ap_usdc: true
+  field_basis_for_state: true
+  field_civ_action_no_ap_file_no: true
+  field_cms_notes: true
+  field_court: true
+  field_date_filed: true
+  field_display_no_display: true
+  field_entity_name: true
+  field_first_name: true
+  field_individual_name_in_documen: true
+  field_judgment_date: true
+  field_judgment_final_order_appea: true
+  field_last_name: true
+  field_middle_initial: true
+  field_related_documents: true
+  field_state_idd: true
+  field_suffix: true
+  langcode: true
+  search_api_excerpt: true

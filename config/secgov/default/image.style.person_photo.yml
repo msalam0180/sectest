@@ -1,0 +1,17 @@
+uuid: 6fbd5562-bb17-4673-8328-e06dd15a60e7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: EH6LXq043u3E5C6JEtQqSH01cQOi52wgKN-6EQ1kThQ
+name: person_photo
+label: 'Person Photo (264x330)'
+effects:
+  8db07701-2896-45d9-8c81-dea6f13b6a8f:
+    uuid: 8db07701-2896-45d9-8c81-dea6f13b6a8f
+    id: image_scale
+    weight: 1
+    data:
+      width: 264
+      height: 330
+      upscale: false

@@ -1,0 +1,44 @@
+# Migration for Page Nodes.
+id: glossary_term_nodes
+label: Glossary Term Nodes
+migration_group: investor_nodes_group
+dependencies:
+  enforced:
+    module:
+      - investor_migrate
+
+source:
+  #plugin: d7_node
+  node_type: glossary_terms
+  plugin: investor_node
+destination:
+  plugin: entity:node
+  bundle: glossary_term
+  default_bundle: glossary_term
+
+process:
+  type: glossary_term
+
+  field_glossary_category:
+    plugin: migration_lookup
+    source: field_glossary_category
+    migration: glossary_term_categories
+    no_stub: true
+
+  field_additional_information:
+    plugin: iterator
+    source: field_additional_information
+    process:
+      format:
+        plugin: static_map
+        bypass: true
+        source: format
+        map:
+          plain_text: plain_text
+          filtered_html: basic_html
+          full_html: full_html
+      value: value
+
+migration_dependencies:
+  required:
+    - glossary_term_categories

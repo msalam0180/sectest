@@ -1,0 +1,8 @@
+uuid: cd0930c8-c9f7-40e8-aa3a-fde4a13709d2
+langcode: en
+status: true
+dependencies: {  }
+id: ea
+label: EA
+description: 'Enterprise Architecture'
+locked: false

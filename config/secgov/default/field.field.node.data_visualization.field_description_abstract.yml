@@ -1,0 +1,21 @@
+uuid: f535dba2-28d2-4482-84d1-4ffcf128623e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_abstract
+    - node.type.data_visualization
+_core:
+  default_config_hash: lJ9L3QDY58kVaWY6qA970f3oRQOT6kTjQL-RFi-V37o
+id: node.data_visualization.field_description_abstract
+field_name: field_description_abstract
+entity_type: node
+bundle: data_visualization
+label: Description/Abstract
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

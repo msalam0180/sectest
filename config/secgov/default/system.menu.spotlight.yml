@@ -1,0 +1,8 @@
+uuid: 7d3f837d-a602-4f74-80b6-1b170648d43d
+langcode: en
+status: true
+dependencies: {  }
+id: spotlight
+label: Spotlight
+description: 'Spotlight Left Nav'
+locked: false

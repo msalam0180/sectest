@@ -1,0 +1,41 @@
+uuid: b2743888-d78c-413e-965d-29e7affea1e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+_core:
+  default_config_hash: grflBtyWRHGXuvWdpdTbnzUNXqL9eGxvBhRGOkhf4-E
+name: 'Data Visualization'
+type: data_visualization
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,23 @@
+uuid: 288f44f5-1ccf-4eb1-afeb-19adbd50fea6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_resource
+    - node.type.secarticle
+  module:
+    - link
+id: node.secarticle.field_external_resource
+field_name: field_external_resource
+entity_type: node
+bundle: secarticle
+label: 'External Resource'
+description: 'Link to content hosted in AWS or by a third party'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

@@ -1,0 +1,23 @@
+uuid: bfa1087d-b9ca-4925-900b-e9e1bd35d8c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_featured_content
+    - node.type.article
+id: node.article.field_show_featured_content
+field_name: field_show_featured_content
+entity_type: node
+bundle: article
+label: 'Show Featured Content'
+description: 'When checked, the featured content block will display on the detail page.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,10 @@
+uuid: aedcc641-2c84-4a8b-a2a9-222a1c0bc24e
+langcode: en
+status: true
+dependencies: {  }
+id: x_generator
+label: X-Generator
+description: 'Allows the declaration of the CMS type and version to be modified.'
+group: Security
+name: X-Generator
+value: ''

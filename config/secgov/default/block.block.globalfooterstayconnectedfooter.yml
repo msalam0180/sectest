@@ -1,0 +1,25 @@
+uuid: 7877a5a0-1e1f-4366-9b76-af5b7ccb3a70
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:bca4e921-9a24-4390-8ca2-51faf73f77bc'
+  module:
+    - block_content
+  theme:
+    - secgov
+id: globalfooterstayconnectedfooter
+theme: secgov
+region: footer_top
+weight: -35
+provider: null
+plugin: 'block_content:bca4e921-9a24-4390-8ca2-51faf73f77bc'
+settings:
+  id: 'block_content:bca4e921-9a24-4390-8ca2-51faf73f77bc'
+  label: 'Stay Connected Footer'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

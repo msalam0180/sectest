@@ -1,0 +1,22 @@
+uuid: 3c597aa2-254a-4e20-8f12-1e182ee16861
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: 627i_ubgrEkCfSsSiz9BQhkRLIUS75JosvwPN9OMrQI
+id: uswdssec_powered
+theme: uswdssec
+region: disabled
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

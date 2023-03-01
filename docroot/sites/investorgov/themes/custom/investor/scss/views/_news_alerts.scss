@@ -1,0 +1,117 @@
+.entity-list.view-news-alerts {
+  padding-top: 5px;
+  .view-header {
+    .button-box {
+      a.active {
+        background-color: #2f64b1;
+      }
+    }
+  }
+  .view-filters {
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+  #edit-field-news-type-target-id {
+    padding-right: 0;
+    margin-right: 45px;
+  }
+  .views-field.views-field-term-node-tid { // hide taxonomy- news category- from results display
+    display: none;
+  }
+  // resize the filter fields
+  #edit-year {
+    width: 85px;
+    padding-right: 0;
+  }
+  &.entity-list.entity-list-form-inline {
+    .views-exposed-form {
+      .form-item.form-item-keyword, .form-type-select {
+        flex: auto;
+      }
+    }
+  }
+  #edit-items-per-page {
+    width: 87px;
+    position: relative;
+    top: -74px;
+    left: 48px;
+  }
+  .pager {
+    margin-left: 100px;
+  }
+  .hidden-label {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -10px;
+  }
+  footer {
+    height: 0;
+    &:before {
+      content: "Show ";
+      position: relative;
+      left: 0;
+      top: -47px;
+      margin-bottom: 14px
+    }
+    &:after {
+      content: " Items";
+      display: inline;
+      position: relative;
+      left: 138px;
+      top: -103px;
+    }
+  }
+  .view-content + footer { // this case has no 'pager' b/c less than 5 results
+    padding-top: 40px;
+  }
+  @media screen and (max-width: 950px) {
+    .pager {
+      margin-left: 0;
+    }
+    footer {
+      height: 50px;
+      padding-top: 45px;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 985px) {
+    .button-box.colspan-3 {
+      p {
+        height: 130px !important;
+        a {
+          height: 130px !important;
+          span.division-office {
+            top: 97px !important;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 915px) {
+    #edit-field-news-type-target-id {
+      padding-right: 0;
+      margin-right: 131px;
+      font-size: 13.5px;
+      padding-left: 3px;
+      letter-spacing: -0.1pt;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .button-box {
+      float: none;
+      margin: 15px auto;
+      padding: 0 20px;
+      min-width: 100%;
+    }
+    #box-01, #box-02, #box-03, #box-04 {
+      background: none;
+    }
+  }
+  @media print {
+    .button-box a::after { // do not print out anchor(link) locations after filters
+      content: "";
+    }
+  }
+
+}

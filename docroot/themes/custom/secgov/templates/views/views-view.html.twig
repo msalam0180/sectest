@@ -1,0 +1,118 @@
+{#
+/**
+ * @file
+ * Default theme implementation for main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set current_display = id ~ "." ~ display_id %}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+{% set rssUrl = '' %}
+
+{% if 'fast-answers-list' in css_class %}
+    {% set rssUrl = '/rss/fast-answers' %}
+{% elseif 'dera-career-financial-block-list' in css_class %}
+    {% set rssUrl = '/rss/dera/dera_joblist' %}
+{% endif %}
+
+{# disabled styling for feature video blocks with no promoted video #}
+{% if current_display == 'featured_video.block_1' and rows is empty %}
+  <div></div>
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title }}
+    {{ title_suffix }}
+
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
+
+    {% if not exposed and rssUrl %}
+      <form class="views-exposed-form">
+        <div class="form-container">
+          <div class="subscribe-rss">
+            <span class="userAction"> Subscribe </span>
+              <a href="{{ rssUrl }}" aria-label="RSS Subscribe"><span class="fa fa-rss"></span></a>
+          </div>
+        </div>
+      </form>
+    {% endif %}
+    {{ exposed }}
+    {{ attachment_before }}
+    {{ rows }}
+    {{ empty }}
+    {# {{ pager }} #}
+    {{ attachment_after }}
+    {{ more }}
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+    {{ feed_icons }}
+
+    {% if itemsPerPage or pager or result %}
+      {% if current_display not in ['statistics_guide.data_set', 'data_highlights.data_set'] %}
+        {% set count = rows.0['#rows'] | length %}
+        {% if count != 0 %}
+          <div class="view--below-footer">
+            <div class="view--below-footer--perPage">
+              {% if itemsPerPage %}
+                <ul>
+                  <li><span> Show </span></li>
+                  <li role="form">{{ itemsPerPage }}</li>
+                  <li><span> Items </span></li>
+                </ul>
+              {% endif %}
+            </div>
+            <div class="view--below-footer--pager">{{ pager }}</div>
+            <div class="view--below-footer--count">{{ result }}</div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+  </div>
+{% endif %}
+
+{% set pluginId = rows.0['#view'].getStyle().pluginId %}
+{% set rowsCount = rows.0['#rows'] %}
+{% set itemPerPage = rows.0['#view'].getPager().options.items_per_page %}

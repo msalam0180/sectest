@@ -1,0 +1,7 @@
+#Adds a link for Individual Defendant Search.
+sec_ba.idd_admin:
+  title: 'Individual Defendant Search'
+  route_name: 'sec_ba.idd_admin'
+  menu_name: admin
+  parent: views_view:views.content.page_2
+  weight: 1

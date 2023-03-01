@@ -1,0 +1,248 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/node\/40730?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/landing_page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_primary_division_office": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/30?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "40730"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "70d38784-3cf2-4622-ab06-ccd16703400d"
+        }
+    ],
+    "vid": [
+        {
+            "value": "51589"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "landing_page"
+        }
+    ],
+    "title": [
+        {
+            "value": "Upcoming Events",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52493461-30ba-467e-9ae0-7abe8475f946"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "52493461-30ba-467e-9ae0-7abe8475f946"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing_page\/field_primary_division_office": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/30?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/division_office"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "53eec5c1-7408-4f64-b92e-8faba0f5adc6"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "1480443867",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1480517002",
+            "lang": "en"
+        }
+    ],
+    "promote": [
+        {
+            "value": "0",
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "en"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1480460991"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "en"
+        }
+    ],
+    "unpublish_on": [
+        {
+            "value": "1480443923",
+            "lang": "en"
+        }
+    ],
+    "field_display_title": [
+        {
+            "value": "Upcoming Events",
+            "lang": "en"
+        }
+    ],
+    "field_left_nav_override": [
+        {
+            "target_id": "newsroom-left-nav"
+        }
+    ],
+    "panelizer": [
+        {
+            "view_mode": "full",
+            "default": null,
+            "panels_display": {
+                "blocks": {
+                    "33078f72-e882-4fc1-bb42-b2ff4085fc5e": {
+                        "id": "views_block:upcoming_events_sec_meetings-block_1",
+                        "label": "",
+                        "provider": "views",
+                        "label_display": "visible",
+                        "views_label": "",
+                        "items_per_page": "none",
+                        "context_mapping": [],
+                        "region": "middle",
+                        "uuid": "33078f72-e882-4fc1-bb42-b2ff4085fc5e",
+                        "weight": 2
+                    },
+                    "9c60a125-2eb3-4204-82e1-c92492d12324": {
+                        "id": "block_content:0f9ab1c7-bf97-49a8-a1c5-786cee1723ae",
+                        "label": "Upcoming Events: Header",
+                        "provider": "block_content",
+                        "label_display": 0,
+                        "status": true,
+                        "info": "",
+                        "view_mode": "full",
+                        "context_mapping": [],
+                        "region": "middle",
+                        "uuid": "9c60a125-2eb3-4204-82e1-c92492d12324",
+                        "weight": 1
+                    },
+                    "77f4b401-284f-4dda-a9db-ea1946e9cc65": {
+                        "id": "views_block:upcoming_events_public_appearances-block_1",
+                        "label": "",
+                        "provider": "views",
+                        "label_display": "visible",
+                        "views_label": "",
+                        "items_per_page": "none",
+                        "context_mapping": [],
+                        "region": "middle",
+                        "uuid": "77f4b401-284f-4dda-a9db-ea1946e9cc65",
+                        "weight": 3
+                    },
+                    "a0d504db-ab8a-4143-b446-533db9aac726": {
+                        "id": "views_block:upcoming_events_public_hearings-block_1",
+                        "label": "",
+                        "provider": "views",
+                        "label_display": "visible",
+                        "views_label": "",
+                        "items_per_page": "none",
+                        "context_mapping": [],
+                        "region": "middle",
+                        "uuid": "a0d504db-ab8a-4143-b446-533db9aac726",
+                        "weight": 4
+                    }
+                },
+                "id": "panels_variant",
+                "uuid": "fc31f840-4b20-4f30-aabd-f7af5e6a58d7",
+                "label": "",
+                "weight": 0,
+                "layout": "onecol",
+                "layout_settings": [],
+                "page_title": "[node:title]",
+                "storage_type": "panelizer_field",
+                "storage_id": "node:40730:full:51589",
+                "builder": "ipe"
+            },
+            "lang": "en"
+        }
+    ]
+}

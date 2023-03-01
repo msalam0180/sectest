@@ -1,0 +1,10 @@
+uuid: cd02c331-0975-4b8f-98e2-60cc671ae339
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.feature_item
+label: 'Feature item'
+targetEntityType: block_content
+cache: true

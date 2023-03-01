@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_custom_blocks.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function sec_custom_blocks_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the sec_custom_blocks module.
+    case 'help.page.sec_custom_blocks':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('SEC Custom Blocks') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function sec_custom_blocks_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'sec_mission_block') {
+    $variables['#attached']['library'][] = 'sec_custom_blocks/edgar_search_block';
+  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function sec_custom_blocks_theme() {
+  return array(
+   'raising_capital_map' => array(
+      'variables' => array('title' => NULL, 'description' => NULL),
+      'template' => 'block--raising-capital-map',
+    ),
+    'digitalgov_global_search' => array(
+      'variables' => array('title' => NULL, 'description' => NULL),
+      'template' => 'block--digitalgov-global-search',
+    ),
+  );
+}

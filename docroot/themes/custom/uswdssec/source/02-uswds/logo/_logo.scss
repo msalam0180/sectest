@@ -1,0 +1,38 @@
+.usa-logo__image-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.usa-logo {
+  margin-right: 5px;
+}
+
+.usa-logo__img {
+  border-right: 1px solid #e3e3e3;
+  filter: invert(51%) sepia(7%) saturate(912%) hue-rotate(168deg)
+    brightness(88%) contrast(85%);
+  height: 60px;
+  margin-right: 11px;
+  padding-right: 9px;
+
+  @include breakpoint-max(gesso-breakpoint(mobile), true) {
+    height: 22px;
+  }
+
+  @include breakpoint-max(gesso-breakpoint(desktop), true) {
+    height: 32px;
+  }
+}
+
+.usa-logo__text {
+  font-size: 18px;
+
+  @include breakpoint-max(gesso-breakpoint(mobile), true) {
+    font-size: 12px;
+  }
+
+  @include breakpoint-min(gesso-breakpoint(desktop)) {
+    font-size: 24px;
+    max-width: 240px;
+  }
+}

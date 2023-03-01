@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field_collection\Entity\FieldCollectionItem;
+
+/**
+ * Migrate SECPerson "Position History" field collection entity values into paragraphs
+ */
+function sec_secperson_update_8001(){
+  
+  $database = \Drupal::database(); 
+
+  $fieldName = "field_position_history";
+  
+  $fieldStorage = FieldStorageConfig::loadByName('node', $fieldName);
+
+  if (!is_null($fieldStorage)) {    
+    //get data from Database
+    $table = 'node__' . $fieldName;
+    $currentRows = NULL;
+    // Get all current data from DB.
+    if ($database->schema()->tableExists($table)) {
+      // The table data to restore after the update is completed.
+      $currentRows = $database->select($table, 'n')
+        ->fields('n')
+        ->execute()
+        ->fetchAll();
+    }
+    
+    if (!is_null($currentRows)) {
+      foreach ($currentRows as $row) {
+        // \Drupal::logger('sec_secperson')->error(print_r($row, TRUE));
+        $thisNodeId = $row->entity_id;
+        $thisFieldCollectionItem = FieldCollectionItem::load($row->field_position_history_value);
+        $node = Node::load($thisNodeId);
+        if ($node->hasField('field_position_history_paragraph') && !empty($thisFieldCollectionItem)) {
+          // Create corresponding paragraph entity
+          $paragraph = Paragraph::create(['type' => 'position_history']);
+          
+          // \Drupal::logger('sec_secperson')->error(print_r($thisFieldCollectionItem->getFieldDefinitions(), TRUE));
+          //now match values from field collection over to paragraph
+          $paragraph->set('field_current_position', $thisFieldCollectionItem->hasField('field_current_position') ? $thisFieldCollectionItem->get('field_current_position')->getValue() : null);
+          $paragraph->set('field_from', $thisFieldCollectionItem->get('field_from')->getValue());
+          $paragraph->set('field_position_category', $thisFieldCollectionItem->get('field_position_category')->getValue());
+          $paragraph->set('field_position_title', $thisFieldCollectionItem->get('field_position_title')->getValue());
+          $paragraph->set('field_to', $thisFieldCollectionItem->get('field_to')->getValue());
+
+          $paragraph->setParentEntity($node,"field_position_history_paragraph");
+          $paragraph->save();
+          
+          // grab any existing values and append this new paragraph
+          $paragraphArray = $node->get('field_position_history_paragraph')->getValue();
+          $paragraphArray[] = array(
+              'target_id' => $paragraph->id(),
+              'target_revision_id' => $paragraph->getRevisionId(),
+            );
+          $node->set('field_position_history_paragraph', $paragraphArray);
+          $node->save();
+        }
+      }
+    }
+  }
+  
+}

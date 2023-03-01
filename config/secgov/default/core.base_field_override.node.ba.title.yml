@@ -1,0 +1,20 @@
+uuid: a1807092-baa4-4b4e-84ca-98e4831b5382
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ba
+_core:
+  default_config_hash: yhuGmoFDvxRAHzCCllqSlFk-JrYH0iKuQn0VVe9_iVo
+id: node.ba.title
+field_name: title
+entity_type: node
+bundle: ba
+label: 'Action Related Name ID'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

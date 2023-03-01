@@ -1,0 +1,10 @@
+uuid: 66abceaa-4f72-4ffb-b83a-6dcc2816cc37
+langcode: en
+status: true
+dependencies: {  }
+machine: prod
+description: null
+name: Prod
+url: 'https://dcm.investor.gov'
+fg_color: '#d0d0d0'
+bg_color: '#0d0d0d'

@@ -1,0 +1,63 @@
+uuid: 60945264-b417-4636-9916-1c97b1f8cef3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.embed
+    - field.field.node.image.field_act
+    - field.field.node.image.field_audience
+    - field.field.node.image.field_caption
+    - field.field.node.image.field_creator
+    - field.field.node.image.field_division_office
+    - field.field.node.image.field_image_upload
+    - field.field.node.image.field_person
+    - field.field.node.image.field_primary_division_office
+    - field.field.node.image.field_publish_date
+    - field.field.node.image.field_regulation
+    - field.field.node.image.field_sec_content_approver
+    - field.field.node.image.field_tags
+    - field.field.node.image.scheduling_options
+    - node.type.image
+  module:
+    - image
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.image.embed
+targetEntityType: node
+bundle: image
+mode: embed
+content:
+  field_image_upload:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_act: true
+  field_audience: true
+  field_caption: true
+  field_creator: true
+  field_division_office: true
+  field_person: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_sec_content_approver: true
+  field_tags: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

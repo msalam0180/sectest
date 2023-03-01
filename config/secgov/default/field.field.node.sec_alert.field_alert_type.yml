@@ -1,0 +1,30 @@
+uuid: 384c5f18-5be4-44c8-bdaf-a8f094f049f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alert_type
+    - node.type.sec_alert
+    - taxonomy.vocabulary.site_alert_type
+_core:
+  default_config_hash: ZuBC_YDX6ZRlfc0gl45M5gqt7h7cTIpSIjabERgjnTU
+id: node.sec_alert.field_alert_type
+field_name: field_alert_type
+entity_type: node
+bundle: sec_alert
+label: 'Alert Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      site_alert_type: site_alert_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

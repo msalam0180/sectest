@@ -1,0 +1,108 @@
+uuid: 32eef689-629a-4c85-935b-77779978855b
+langcode: en
+status: true
+dependencies: {  }
+id: appellate
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - aws
+  - appellate
+migration_group: aws
+label: 'Import of Appellate Briefs AWS content'
+source:
+  plugin: csv
+  path: 'public://migration/appellate_court_briefs.csv'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    -
+      name: id
+      label: id
+    -
+      name: date
+      label: Date
+    -
+      name: case
+      label: Case
+    -
+      name: caseurl
+      label: 'Case URL'
+    -
+      name: casesummary
+      label: Description
+  constants:
+    delimiter: ','
+    division_office: Enforcement
+    article_type: 'Appellate Brief'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  moderation_state:
+    plugin: default_value
+    default_value: published
+  type:
+    plugin: default_value
+    default_value: secarticle
+  created:
+    plugin: format_date
+    source: date
+    from_format: Y-M
+    from_timezone: America/New_York
+    to_format: U
+  changed: '@created'
+  field_publish_date:
+    plugin: format_date
+    source: date
+    from_format: Y-M
+    from_timezone: America/New_York
+    to_format: 'Y-m-d\TH:i:s'
+  title: case
+  body:
+    -
+      plugin: skip_on_contains
+      method: process
+      contains:
+        - .pdf
+        - .txt
+      source: caseurl
+    -
+      plugin: html_to_string
+    -
+      plugin: body_html_import
+  field_list_page_det_secarticle:
+    plugin: html_import
+    source: casesummary
+  body/value: constants/article_type
+  body/format: full_html
+  field_display_title: case
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: constants/division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+  field_article_type_secarticle:
+    plugin: entity_lookup
+    access_check: 0
+    entity_type: node
+    bundle: article_type
+    property: title
+    source: constants/article_type
+    value_key: title
+    bundle_key: type
+  field_media_file_upload:
+    plugin: migration_lookup
+    migration: appellatefiles
+    no_stub: true
+    source: id
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - appellatefiles

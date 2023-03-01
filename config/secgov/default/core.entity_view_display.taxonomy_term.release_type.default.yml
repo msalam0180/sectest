@@ -1,0 +1,69 @@
+uuid: 8ee20a19-ffea-4e73-82b1-25a20f8cae9c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.release_type.field_customized_quick_links
+    - field.field.taxonomy_term.release_type.field_introduction
+    - field.field.taxonomy_term.release_type.field_page_title
+    - field.field.taxonomy_term.release_type.field_quick_links
+    - field.field.taxonomy_term.release_type.field_release_path
+    - taxonomy.vocabulary.release_type
+  module:
+    - empty_fields
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - link
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+id: taxonomy_term.release_type.default
+targetEntityType: taxonomy_term
+bundle: release_type
+mode: default
+content:
+  field_customized_quick_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      empty_fields:
+        handler: text
+        settings:
+          empty_text: empty
+    weight: 1
+    region: content
+  field_introduction:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      empty_fields:
+        handler: nbsp
+    weight: 0
+    region: content
+hidden:
+  description: true
+  field_page_title: true
+  field_quick_links: true
+  field_release_path: true
+  langcode: true
+  layout_builder__layout: true
+  search_api_excerpt: true

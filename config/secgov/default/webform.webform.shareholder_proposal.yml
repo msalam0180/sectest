@@ -1,0 +1,531 @@
+uuid: 2b152d76-901a-49a3-858b-b44a80cd0cc6
+langcode: en
+status: open
+dependencies:
+  module:
+    - sec_webform
+_core:
+  default_config_hash: PJswSAW8V07Px8mnru6Xm5plGsj_KZCNEndP0WGSorE
+weight: 0
+open: null
+close: null
+uid: 9931
+template: false
+archive: false
+id: shareholder_proposal
+title: 'Shareholder Proposal'
+description: ''
+category: ''
+elements: |-
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  submitting_party:
+    '#type': radios
+    '#title': 'Submitting party'
+    '#options':
+      Company: Company
+      Proponent: Proponent
+    '#required': true
+  requesttype:
+    '#type': fieldset
+    '#title': 'Type of Request'
+    '#required': true
+    '#format': container
+    type_of_request:
+      '#type': radios
+      '#title': 'Type of Request:'
+      '#title_display': invisible
+      '#options':
+        initial_request: 'Initial Request'
+        supplemental_correspondence: 'Supplemental Correspondence'
+        reconsideration_request: 'Reconsideration Request'
+      '#options_display': side_by_side
+      '#required': true
+      '#states_clear': false
+      '#wrapper_type': form_element
+    container_reconsidertion:
+      '#type': container
+      '#states':
+        visible-slide:
+          ':input[name="type_of_request"]':
+            value: reconsideration_request
+      reference_id_reconsideration:
+        '#type': textfield
+        '#title': 'Reference ID:'
+        '#input_mask': '999999999999'
+        '#wrapper_attributes':
+          class:
+            - request-letter
+        '#attributes':
+          data-inputmask-placeholder: ''
+    container_supplemental:
+      '#type': container
+      '#states':
+        visible-slide:
+          ':input[name="type_of_request"]':
+            value: supplemental_correspondence
+      '#states_clear': false
+      '#format': container
+      reference_id_supplemental:
+        '#type': textfield
+        '#title': 'Reference ID:'
+        '#input_mask': '999999999999'
+        '#wrapper_attributes':
+          class:
+            - request-letter
+        '#attributes':
+          data-inputmask-placeholder: ''
+      letter_date:
+        '#type': date
+        '#title': 'Date of 14a-8 initial request letter:'
+        '#required': true
+        '#format': m/d/Y
+        '#date_date_format': m/d/Y
+      request_company:
+        '#type': textfield
+        '#title': 'Company relating to original request:'
+        '#default_value': null
+        '#wrapper_attributes':
+          class:
+            - request-letter
+        '#required': true
+      request_proponent:
+        '#type': textfield
+        '#title': 'Proponent relating to original request:'
+        '#wrapper_attributes':
+          class:
+            - request-letter
+        '#required': true
+  contact_information:
+    '#type': fieldset
+    '#title': 'Contact Information'
+    '#format': container
+    company:
+      '#type': webform_section
+      '#title': Company
+      '#title_tag': label
+      '#format': container
+      company_name:
+        '#type': textfield
+        '#title': 'Company Name:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Proponent
+          required:
+            ':input[name="submitting_party"]':
+              value: Company
+      contact_name:
+        '#type': textfield
+        '#title': 'Contact Name:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Proponent
+          required:
+            ':input[name="submitting_party"]':
+              value: Company
+      contact_phone:
+        '#type': tel
+        '#title': 'Contact Phone Number:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Proponent
+          required:
+            ':input[name="submitting_party"]':
+              value: Company
+      contact_email:
+        '#type': email
+        '#title': 'Contact Email:'
+        '#description': 'ex.&nbsp;name@domainname.com'
+        '#pattern': '.+@([\w-]+\.)+[\w-]+'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Proponent
+          required:
+            ':input[name="submitting_party"]':
+              value: Company
+    proponent:
+      '#type': webform_section
+      '#title': Proponent
+      '#title_tag': label
+      '#format': container
+      proponent_name:
+        '#type': textfield
+        '#title': 'Proponent Name:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Company
+          required:
+            ':input[name="submitting_party"]':
+              value: Proponent
+      proponent_contact_name:
+        '#type': textfield
+        '#title': 'Proponent Contact Name:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Company
+          required:
+            ':input[name="submitting_party"]':
+              value: Proponent
+      proponent_contact_phone_number:
+        '#type': textfield
+        '#title': 'Proponent Contact Phone Number:'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Company
+          required:
+            ':input[name="submitting_party"]':
+              value: Proponent
+      proponent_contact_email:
+        '#type': email
+        '#title': 'Proponent Contact Email:'
+        '#description': 'ex.&nbsp;name@domainname.com'
+        '#pattern': '.+@([\w-]+\.)+[\w-]+'
+        '#states':
+          optional:
+            ':input[name="submitting_party"]':
+              value: Company
+          required:
+            ':input[name="submitting_party"]':
+              value: Proponent
+  proxy_print_date:
+    '#type': date
+    '#title': 'Company''s anticipated proxy print date:'
+    '#description': 'Under Rule 14a-8(j), a company seeking to exclude a shareholder proposal must file its reasons with the Commission no later than 80 calendar days before it files its definitive proxy statement and form of proxy with the Commission.'
+    '#description_display': after
+    '#required': true
+    '#format': 'F j, Y'
+    '#date_date_format': ''
+  resolved_clause:
+    '#type': textarea
+    '#title': 'Resolved Clause:'
+    '#required': true
+    '#counter_type': character
+    '#counter_minimum': 1
+    '#counter_maximum': 2000
+    '#counter_maximum_message': 'The maximum character limit is 2000.'
+  bases_asserted:
+    '#type': webform_term_checkboxes
+    '#title': 'Bases Asserted:'
+    '#required': true
+    '#format': label
+    '#format_items': ul
+    '#vocabulary': shareholder_proposal
+    '#breadcrumb_delimiter': ''
+    '#scroll': false
+  upload_request:
+    '#type': webform_document_file
+    '#title': 'Upload Your Request:'
+    '#multiple': 5
+    '#description': 'Please wait for files to upload before submitting.'
+    '#required': true
+    '#required_error': 'Please attach one or more files to your request.'
+    '#format': name
+    '#max_filesize': '10'
+    '#file_extensions': 'pdf doc docx'
+  footer:
+    '#type': processed_text
+    '#text': |
+      <h3>Division of Corporation Finance Informal Procedures Regarding Shareholder Proposals</h3>
+
+      <p><br />
+      The Division of Corporation Finance undertakes to aid those who must comply with Exchange Act Rule 14a-8 by offering informal advice and determining, generally, whether or not it may be appropriate in a particular matter to recommend enforcement action to the Commission. In connection with a shareholder proposal under Rule 14a-8, the Division’s staff considers the information furnished to it by the company in support of its intention to exclude the proposal from the company’s proxy materials, as well as any information furnished by the proponent or the proponent’s representative.</p>
+
+      <p>Although Rule 14a-8(k) does not require any communications from shareholders to the Commission’s staff, the staff will always consider information concerning alleged violations of the statutes and rules administered by the Commission, including arguments as to whether or not activities proposed to be taken would violate the statute or rule involved. The receipt by the staff of such information, however, should not be construed as changing the staff’s informal procedures and proxy review into a formal or adversarial procedure.</p>
+
+      <p>It is important to note that the staff’s no-action responses to Rule 14a-8(j) submissions reflect only informal views. The determinations reached by the staff in connection with these submissions do not and cannot adjudicate the merits of a company’s position with respect to the proposal. Only a court, such as a U.S. District Court, can decide whether a shareholder proposal can be excluded from a company's proxy materials. Accordingly, a discretionary determination not to recommend or take Commission enforcement action does not preclude a proponent, or any shareholder of a company, from pursuing any rights he or she may have against the company in court should the company’s management omit the proposal from the company’s proxy materials.<br />
+      &nbsp;</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: "form.webform-submission-form div.webform-element label {font-weight: bolder; color: black}\r\nform.webform-submission-form div.webform-container { padding: 0.5em 0; }\r\nsection .webform-section-title {\r\n    display: block;\r\n    font-size: 1.25em;\r\n    padding: 0.5em 0;\r\n}\r\n.js-form-item.form-item.js-form-type-radio.form-item-type-of-request.js-form-item-type-of-request {\r\n    display: inline-flex;\r\n    margin-right: 1em;\r\n}\r\n.webform-managed-file-preview, .webform-file-button {\r\n    margin: 0;\r\n}"
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 2
+  preview_label: ''
+  preview_title: ''
+  preview_message: "<h1 align=\"center\">Please take a minute to review what you&#39;ve written...</h1>\r\n\r\n<p>We post all comments on our website, so please make sure that the text beneath the word <strong>comments</strong> below does not include:</p>\r\n\r\n<ul>\r\n\t<li>account numbers</li>\r\n\t<li>social security numbers, or</li>\r\n\t<li>other personal identifying information</li>\r\n</ul>"
+  preview_attributes: {  }
+  preview_excluded_elements:
+    required_message: required_message
+    footer: footer
+    captcha: captcha
+  preview_exclude_empty: false
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: completed
+  purge_days: 1
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - authenticated
+    users:
+      - 1
+    permissions: {  }
+  view_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles:
+      - administrator
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  shareholder_proposal_wts:
+    id: wts
+    handler_id: shareholder_proposal_wts
+    label: 'Shareholder Proposal WTS'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -50
+    settings: {  }
+  email1:
+    id: email
+    handler_id: email1
+    label: 'Company Email'
+    notes: ''
+    status: true
+    conditions:
+      enabled:
+        ':input[name="submitting_party"]':
+          value: Company
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:contact_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: "{% if 'initial_request' == data.type_of_request %}\r\n<p>Your request was successfully submitted and sent to the appropriate SEC division or office. The Reference Number for your submission is <strong>{{ sid }}</strong>. Please provide this number where requested when making any future submissions related to this request. <br /><a href=\"{{ webform_token('[webform:url]', webform_submission) }}\">Back to form</a></p>\r\n{% else %}\r\n<p>Your request was successfully submitted and sent to the appropriate SEC division or office. <br />\r\n<a href=\"{{ webform_token('[webform:url]', webform_submission) }}\">Back to form</a></p>\r\n{% endif %}\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email2:
+    id: email
+    handler_id: email2
+    label: 'Proponent Email'
+    notes: 'Check conditions for this.'
+    status: true
+    conditions:
+      enabled:
+        ':input[name="submitting_party"]':
+          value: Proponent
+    weight: 3
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:proponent_contact_email:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: "{% if 'initial_request' == data.type_of_request %}\r\n<p>Your request was successfully submitted and sent to the appropriate SEC division or office. The Reference Number for your submission is <strong>{{ sid }}</strong>. Please provide this number where requested when making any future submissions related to this request. <br /><a href=\"{{ webform_token('[webform:url]', webform_submission) }}\">Back to form</a></p>\r\n{% else %}\r\n<p>Your request was successfully submitted and sent to the appropriate SEC division or office. <br />\r\n<a href=\"{{ webform_token('[webform:url]', webform_submission) }}\">Back to form</a></p>\r\n{% endif %}\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

@@ -1,0 +1,22 @@
+uuid: c2ce8746-1a0d-4847-ad8e-c58879f1a509
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: rulemaking_index_taxonomy_term
+label: 'Rulemaking Index Taxonomy Term'
+type: 'canonical_entities:taxonomy_term'
+pattern: '/litigation/apdocuments/[term:name]'
+selection_criteria:
+  90c02818-c014-49e1-bc62-77bebe56353a:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 90c02818-c014-49e1-bc62-77bebe56353a
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      rulemaking_index: rulemaking_index
+selection_logic: and
+weight: -9
+relationships: {  }

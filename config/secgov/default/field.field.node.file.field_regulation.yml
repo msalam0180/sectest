@@ -1,0 +1,30 @@
+uuid: 305784d9-2a3d-4bb3-ad91-77dcf30cdc4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_regulation
+    - node.type.file
+    - taxonomy.vocabulary.regulation
+_core:
+  default_config_hash: H9Kt-75LPNvOHa7B-LD00rMkzlJ_ecAW-qoH4doF8sg
+id: node.file.field_regulation
+field_name: field_regulation
+entity_type: node
+bundle: file
+label: Regulation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      regulation: regulation
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

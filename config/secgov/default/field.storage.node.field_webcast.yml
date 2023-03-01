@@ -1,0 +1,21 @@
+uuid: 31f07b3b-0a3e-49c2-9821-b11da52a2612
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: k2p7-ekf3BrHstjI0Lquxwjb8q9fPz2xs7AQ7_tY5Qw
+id: node.field_webcast
+field_name: field_webcast
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

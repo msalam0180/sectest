@@ -1,0 +1,33 @@
+uuid: 6d0ebe35-c6cd-4cb9-8d8d-d645e27eaca4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b990e653-c29a-48d8-b90b-70e2676f6c6e'
+  module:
+    - block_content
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: ZQqtfsVwJhp1TowvnQldyBjfvajEFkqs_4GwwRWLdqk
+id: abouttheidd
+theme: secgov
+region: content
+weight: -27
+provider: null
+plugin: 'block_content:b990e653-c29a-48d8-b90b-70e2676f6c6e'
+settings:
+  id: 'block_content:b990e653-c29a-48d8-b90b-70e2676f6c6e'
+  label: 'About this Feature'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "*/sec-action-look-up\r\n/litigation/no-search"

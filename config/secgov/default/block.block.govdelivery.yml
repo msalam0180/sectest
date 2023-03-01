@@ -1,0 +1,32 @@
+uuid: 8aaa2484-5d47-45e5-9064-3b7ecdb2e90a
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:757fab8c-0595-4e09-b1d3-d6aba8217b6e'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - secgov
+id: govdelivery
+theme: secgov
+region: header
+weight: -22
+provider: null
+plugin: 'block_content:757fab8c-0595-4e09-b1d3-d6aba8217b6e'
+settings:
+  id: 'block_content:757fab8c-0595-4e09-b1d3-d6aba8217b6e'
+  label: GovDelivery
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:block_content':
+    id: 'entity_bundle:block_content'
+    negate: false
+    context_mapping: {  }
+    bundles:
+      basic: basic

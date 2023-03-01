@@ -1,0 +1,6 @@
+a.back-to-top {
+    color: $gray_1d;
+    @media print{
+        display: none !important;
+    }
+}

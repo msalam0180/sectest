@@ -1,0 +1,10 @@
+uuid: 72b6c6e5-c4d2-4c23-bbfd-8fe6581ea6b8
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 9rn5vwLDmsP_kjsYvJGD7oUAb7kJ89PPz9IjcAyLDug
+id: opa
+label: OPA
+description: 'Office of Public Affairs'
+locked: false

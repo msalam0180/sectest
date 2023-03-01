@@ -1,0 +1,23 @@
+uuid: 6231b722-2e04-42a8-a652-fafab1e6d652
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.anchor_sidebar
+    - field.storage.block_content.field_anchor_link
+  module:
+    - link
+id: block_content.anchor_sidebar.field_anchor_link
+field_name: field_anchor_link
+entity_type: block_content
+bundle: anchor_sidebar
+label: 'Anchor Link'
+description: "<p> </p>\r\n<big>Add an <b>ID</b> of  an element to <b>URL</b> field.     For example: #anchor_1 </big>\r\n<p> </p>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

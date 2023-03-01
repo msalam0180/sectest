@@ -1,0 +1,19 @@
+uuid: 074833a0-9208-48a3-99b3-c99491c2a2b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_alternate_name
+    - node.type.gallery
+id: node.gallery.field_alternate_name
+field_name: field_alternate_name
+entity_type: node
+bundle: gallery
+label: 'Alternate Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

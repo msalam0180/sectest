@@ -1,0 +1,55 @@
+{% set classes = [
+  'c-button',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% set icon_button %}
+  {% include '@components/icon/icon.twig' with {
+    'is_demo': false,
+    'is_hidden': icon_is_hidden,
+    'label': text,
+    'icon_name': icon,
+    'is_usa': icon_is_usa,
+    'classes': '',
+    'modifier_classes': 'c-button__icon',
+  } %}
+{% endset %}
+
+{% if is_button_tag %}
+  <button {{ add_attributes({ 'class': classes }) }}{% if is_disabled %} disabled{% endif %}{% if button_type %} type="{{ button_type }}"{% endif %}>{% if icon %}{{icon_button}}{% endif %}{{ text }}</button>
+{% else %}
+  {{ link(text, url, {'class': classes}) }}
+{% endif %}
+
+{% if is_demo %}
+  {{ link(text_demo, url, {'class': classes}) }}
+  <button {{ add_attributes({ 'class': classes }) }} disabled>Disabled {{ text }}</button>
+
+  {% set icon_button_demo %}
+    {% include '@components/icon/icon.twig' with {
+      'is_demo': false,
+      'is_hidden': true,
+      'label': text,
+      'icon_name': 'check',
+      'is_usa': true,
+      'classes': '',
+      'modifier_classes': 'c-button__icon',
+    } %}
+  {% endset %}
+
+  {{ link(icon_button_demo ~ 'Icon ' ~ text, url, {'class': classes}) }}
+
+  {% set icon_button_lone_demo %}
+    {% include '@components/icon/icon.twig' with {
+      'is_demo': false,
+      'is_hidden': false,
+      'label': text,
+      'icon_name': 'check',
+      'is_usa': true,
+      'classes': '',
+      'modifier_classes': 'c-button__icon c-button__icon--lone',
+    } %}
+  {% endset %}
+
+  {{ link(icon_button_lone_demo, url, {'class': classes}) }}
+{% endif %}

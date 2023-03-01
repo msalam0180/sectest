@@ -1,0 +1,296 @@
+<?php
+
+/**
+ * @file
+ * Contains sec_event.module.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_node_update().
+ */
+
+function sec_event_node_update(Node $entity) {
+  if ($entity->bundle() == 'event' && $entity->field_event_type->value != 'hidden' && \Drupal::service('module_handler')->moduleExists('sec_webcast')) {
+    create_webcast_alert($entity);
+  }
+}
+
+/**
+ * Implements hook_node_insert
+ */
+
+function sec_event_node_insert(Node $entity) {
+  if ($entity->bundle() == 'event' && $entity->field_event_type->value != 'hidden' && \Drupal::service('module_handler')->moduleExists('sec_webcast')) {
+    create_webcast_alert($entity);
+  }
+}
+
+function create_webcast_alert(Node $entity) {
+  // An alert will be created for webcasts when a webcast is associated with
+  // an event and the webcast is not already associated with an alert
+
+  // Get timezone offset stored in system variable vocabulary
+  $offset = _sec_taxonomy_get_tz_offset();
+
+  $query_str = <<<SQL
+    SELECT fwn.field_webcast_target_id 'webcast_node_id',
+           HOUR(TIMEDIFF(TIMESTAMP(STR_TO_DATE(fsed.field_sec_event_date_value, '%Y-%m-%dT%T'), :offset), TIMESTAMP(NOW(), :offset))) 'hours_to_event_start',
+           fws.field_webcast_state_value 'webcast_state',
+           wnfd.status 'webcast_publish_state',
+           TIMESTAMP(STR_TO_DATE(fsed.field_sec_event_date_value, '%Y-%m-%dT%T'), :offset) "event_start_date",
+           TIMESTAMP(STR_TO_DATE(fseed.field_sec_event_end_date_value, '%Y-%m-%dT%T'), :offset) "event_end_date",
+           sed.field_show_end_date_value "show_end_date"
+      FROM node__field_sec_event_date fsed,
+           node__field_webcast fwn,
+           node__field_show_end_date sed,
+           node_field_data wnfd,
+           node__field_webcast_state fws
+      LEFT JOIN node__field_sec_event_end_date fseed
+        ON fseed.entity_id = :event_id
+     WHERE fsed.entity_id = :event_id
+       AND sed.entity_id = :event_id
+       AND fwn.entity_id = :event_id
+       AND fwn.bundle = 'event'
+       AND wnfd.nid = fwn.field_webcast_target_id
+       AND wnfd.type = 'webcast'
+       AND fws.entity_id = wnfd.nid
+       AND NOT EXISTS (
+           SELECT 'x'
+             FROM node__field_webcast fwa
+            WHERE fwa.field_webcast_target_id = wnfd.nid
+              AND bundle = 'sec_alert'
+       )
+SQL;
+  $db_conn = \Drupal::database();
+  $query = $db_conn->query($query_str, [':event_id' => intval($entity->nid->value), ':offset' => $offset]);
+  $results = $query->fetchAll();
+  $event_url_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $entity->nid->value);
+  foreach ($results as $row) {
+    $alert_data = [];
+    $alert_data['type'] = 'sec_alert';
+    // Associate webcast with this alert
+    $alert_data['field_webcast']['target_id'] = $row->webcast_node_id;
+
+    // If webcast state is live, title should be 'Happening Now'. It is
+    // otherwise to be 'Upcoming'
+    if ($row->webcast_state == 'live') {
+      $alert_data['title'] = 'Happening Now';
+      $alert_data['field_alert_type']['target_id'] = _sec_taxonomy_get_taxonomy_term_id('site_alert_type', 'Warning');
+    }
+    else {
+      $alert_data['title'] = 'Upcoming Webcast';
+      $alert_data['field_alert_type']['target_id'] = _sec_taxonomy_get_taxonomy_term_id('site_alert_type', 'Info');
+    }
+
+    // Body is event title | date/time
+    $alert_body = '<a href="'. $event_url_alias . '">';
+    if ($entity->field_display_title->value == "") {
+      $alert_body .= $entity->title->value;
+    }
+    else {
+      $alert_body .= $entity->field_display_title->value;
+    }
+    $dateTime = new DateTime();
+    $dateTime->setTimeZone(new DateTimeZone('America/New_York'));
+
+    // Add the start/end dates; check if event starts today
+    if (date('Y-m-d') == date('Y-m-d', strtotime($row->event_start_date))) {
+      $alert_body .= sprintf(' | Today, %s', date('g:i a', strtotime($row->event_start_date)));
+    }
+    else {
+      $alert_body .= ' | ' . date('M j, g:i a', strtotime($row->event_start_date));
+    }
+
+    // account for event end date
+    if (is_null($row->event_end_date) || $row->show_end_date == 0) {
+      $alert_body .= ' ' . $dateTime->format('T');
+    }
+    elseif (date('Y-m-d', strtotime($row->event_start_date)) == date('Y-m-d', strtotime($row->event_end_date))) {
+      $alert_body .= ' - ' . date('g:i a', strtotime($row->event_end_date)) . ' ' . $dateTime->format('T');
+    }
+    else {
+      $alert_body .= ' - ' . date('M j, g:i a', strtotime($row->event_end_date)) . ' ' . $dateTime->format('T');
+    }
+    $alert_data['body'] = $alert_body . '</a>';
+
+    // If hours_to_event_start is < 24, the alert should be published
+    $alert_data['status'] = 0;
+    if (intval($row->hours_to_event_start < 24)) {
+      $alert_data['status'] = 1;
+    }
+
+    // create and save alert
+    $alert = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->create($alert_data);
+    $alert->body->format = 'full_html';
+    $alert->save();
+  }
+}
+
+/*
+ * Implements hook_cron
+ */
+function sec_event_cron() {
+  // Check for published events starting within 24 hours that have associated
+  // published webcasts in the upcoming state that have associated
+  // alerts. Publish all such alerts if they are not already.
+
+  try {
+
+    if (!\Drupal::service('module_handler')->moduleExists('sec_webcast')) {
+      return;
+    }
+
+    \Drupal::logger('SEC Event')->notice('cron::begin');
+
+    $db_conn = \Drupal::database();
+
+    // Get timezone offset stored in system variable vocabulary
+    $offset = _sec_taxonomy_get_tz_offset();
+
+    $query_str = <<<SQL
+      SELECT anfd.nid 'alert_nid',
+             n.nid 'event_nid',
+             IFNULL((SELECT field_display_title_value
+                       FROM node__field_display_title
+                      WHERE entity_id = n.nid
+                        AND bundle = 'event'), enfd.title) 'title',
+             TIMESTAMP(STR_TO_DATE(fsed.field_sec_event_date_value, '%Y-%m-%dT%T'), :offset) event_start_date,
+             (SELECT TIMESTAMP(STR_TO_DATE(field_sec_event_end_date_value, '%Y-%m-%dT%T'), :offset)
+                FROM node__field_sec_event_end_date
+               WHERE entity_id = n.nid
+                 AND bundle = 'event') event_end_date
+        FROM node n,
+             node_field_data enfd,
+             node__field_sec_event_date fsed,
+             node__field_event_type fet,
+             node__field_webcast fwn,
+             node__field_webcast fwa,
+             node_field_data wnfd,
+             node__field_webcast_state fws,
+             node_field_data anfd
+       WHERE enfd.nid = n.nid
+         AND enfd.type = 'event'
+         AND enfd.status = 1
+         AND fsed.entity_id = n.nid
+         AND HOUR(TIMEDIFF(TIMESTAMP(STR_TO_DATE(fsed.field_sec_event_date_value, '%Y-%m-%dT%T'), :offset), TIMESTAMP(NOW(), :offset))) < 24
+         AND fet.entity_id = n.nid
+         AND fet.field_event_type_value != 'hidden'
+         AND fwn.entity_id = n.nid
+         AND fwn.bundle = 'event'
+         AND wnfd.nid = fwn.field_webcast_target_id
+         AND wnfd.type = 'webcast'
+         AND wnfd.status = 1
+         AND fwa.field_webcast_target_id = wnfd.nid
+         AND fwa.bundle = 'sec_alert'
+         AND fws.entity_id = wnfd.nid
+         AND fws.field_webcast_state_value = 'upcoming'
+         AND anfd.nid = fwa.entity_id
+         AND anfd.type = 'sec_alert'
+SQL;
+
+    $query = $db_conn->query($query_str, [":offset" => $offset]);
+    $results = $query->fetchAll();
+    $updated = false;
+
+    // For each record returned, load the alert node, update to published, and save
+    foreach($results as $row) {
+      $alert = Node::load($row->alert_nid);
+
+      // Publish if currently not published
+      if (!$alert->isPublished()) {
+        $alert->setPublished(true);
+        $alert->set('moderation_state', 'published');
+        $updated = true;
+      }
+
+      // If event starts today, update the body
+      if (date('Y-m-d') == date('Y-m-d', strtotime($row->event_start_date))) {
+        // Current timezone abbreviation
+        $dateTime = new DateTime();
+        $dateTime->setTimeZone(new DateTimeZone('America/New_York'));
+        $event_url_alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'. $row->event_nid);
+        $body = '<a href="' . $event_url_alias . '">' . $row->title . ' | Today, ' . date('g:i a', strtotime($row->event_start_date));
+        if (empty($row->event_end_date)) {
+          $body .= ' ' . $dateTime->format('T');
+        }
+        elseif (date('Y-m-d', strtotime($row->event_start_date)) != date('Y-m-d', strtotime($row->event_end_date))) {
+          $body .= ' - ' . date('M j, g:i a', strtotime($row->event_end_date)) . ' ' . $dateTime->format('T');
+        }
+        else {
+          $body .= ' - ' . date('g:i a', strtotime($row->event_end_date)) . ' ' . $dateTime->format('T');
+        }
+        $alert->body->value = $body . '</a>';
+        $alert->body->format = 'full_html';
+        $updated = true;
+      }
+
+      if ($updated) { // Using this variable because not all rows returned must be updated
+        $alert->setNewRevision(true);
+        $alert->setRevisionCreationTime(time());
+        $alert->save();
+      }
+    }
+
+    \Drupal::logger('SEC Event')->notice('cron::end');
+  }
+
+  catch (Exception $e) {
+    \Drupal::logger('SEC Event')->error('Exception raised in hook_cron: ' . $e->getMessage());
+  }
+
+}
+
+/*
+ * Function for term_id based on vocabulary id and term name
+ */
+function _sec_event_get_taxonomy_term_id($vid, $term) {
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', $vid);
+  $query->condition('name', $term);
+  $query->sort('weight');
+  $tids = $query->execute();
+  foreach($tids as $tid) {
+    return intval($tid);
+  }
+}
+
+/**
+ * OSSS-14873: Date validation, provides error message to users entering incorrect event end dates
+ *
+ * @param [type] $form
+ * @param FormStateInterface $form_state
+ * @param [type] $form_id
+ * @return void
+ */
+function sec_event_form_alter(&$form, FormStateInterface $form_state, $form_id){
+  if($form_id == 'node_event_edit_form' || $form_id == 'node_event_form'){
+    $form['#validate'][] = '_sec_event_end_date_validate';
+  }
+}
+
+
+/**
+ * Provides validation for sec_event_end_date field
+ *
+ * @param [type] $form
+ * @param FormStateInterface $form_state
+ * @return void
+ */
+function _sec_event_end_date_validate(&$form, FormStateInterface $form_state){
+  if($form_state->hasValue('field_sec_event_end_date')){
+      $start_date = $form_state->getValue('field_sec_event_date')[0]['value'];
+      $end_date = $form_state->getValue('field_sec_event_end_date')[0]['value'];
+      $diff = $start_date->diff($end_date);
+
+      // Show error message
+      if($diff->invert == 1){
+        $form_state->setErrorByName('field_sec_event_end_date', t('SEC Event End Date field cannot have a value eariler than SEC Event Date field.'));
+      }
+    }
+}
+

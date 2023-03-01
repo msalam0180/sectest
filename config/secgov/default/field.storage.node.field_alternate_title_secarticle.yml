@@ -1,0 +1,23 @@
+uuid: bd67e586-b7f8-4199-b636-0e1a673b59cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Qmm88DqpLS5up4JUmtlvj8lV5yU2MxejIYRubDecdKQ
+id: node.field_alternate_title_secarticle
+field_name: field_alternate_title_secarticle
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

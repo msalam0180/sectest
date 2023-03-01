@@ -1,0 +1,28 @@
+uuid: c18648bf-fe09-4636-912f-be46a2314c63
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_static_file_media
+    - media.type.static_file
+    - paragraphs.paragraphs_type.related_document_s_
+id: paragraph.related_document_s_.field_static_file_media
+field_name: field_static_file_media
+entity_type: paragraph
+bundle: related_document_s_
+label: 'Drupal Static File Reference'
+description: 'If the document is stored as a Drupal Media as "Static File", use this field to reference the document.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      static_file: static_file
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

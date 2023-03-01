@@ -1,0 +1,109 @@
+id: sec_idd_files_1
+label: JSON import of IDD Related Static Files
+migration_group: sec
+migration_tags:
+  - sec_idd_files_1
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/files/migration/source/sec_idd.json
+  fields: 
+    -
+      name: action_related_name_id
+      label: 'action_related_name_id'
+      selector: action_related_name_id
+    -
+      name: action_name_in_document
+      label: 'action_name_in_document'
+      selector: action_name_in_document
+    -
+      name: date_filed
+      label: 'date_filed'
+      selector: date_filed
+    -
+      name: related_document_link_name_1
+      label: 'related_document_link_name_1'
+      selector: related_document_link_name_1     
+    -
+      name: related_document_link_1
+      label: 'related_document_link_1'
+      selector: related_document_link_1
+    -
+      name: related_document_link_1_type
+      label: 'related_document_link_1_type'
+      selector: related_document_link_1_type
+
+  ids:
+    related_document_link_1:
+      type: string
+  constants:
+    dash: ' - '
+    file_url_prefix: 'http://secgovdcmdev1.prod.acquia-sites.com/files/migration/idd/'
+    file_url_suffix: '.pdf'
+
+process:
+
+#
+#  Drupal content type properties
+#
+
+  type:
+    plugin: default_value
+    default_value: file
+
+  title: related_document_link_name_1
+
+  uid:
+    plugin: default_value
+    default_value: 1
+  
+  created: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: date_filed
+    -
+      plugin: format_date
+      from_format: 'm/d/Y'
+      to_format: 'Y-m-d'
+    -
+      plugin: date_import
+      return_timestamp: TRUE
+  changed: '@created'
+  published_at: '@created'
+
+#
+# Drupal user-defined fields
+#
+
+  field_description_abstract: action_name_in_document
+
+  field_display_title: '@title'
+
+  field_file_upload:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: related_document_link_1
+    -
+      plugin: skip_on_contains
+      contains: 'http'
+      method: row
+    -
+      plugin: concat
+      source:
+        - constants/file_url_prefix
+        - related_document_link_1
+        - constants/file_url_suffix
+    -
+      plugin: file_import
+
+  field_primary_division_office:
+    plugin: default_value
+    default_value: 39
+    #'Enforcement': 39 
+
+destination:
+  plugin: 'entity:node'

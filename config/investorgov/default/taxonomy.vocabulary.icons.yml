@@ -1,0 +1,8 @@
+uuid: 59747303-57ee-4057-9128-65198226fb13
+langcode: en
+status: true
+dependencies: {  }
+name: Icons
+vid: icons
+description: 'List of available icons for the site (mainly used on Feature Item blocks)'
+weight: 0

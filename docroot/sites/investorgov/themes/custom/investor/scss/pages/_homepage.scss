@@ -1,0 +1,88 @@
+
+.path-frontpage{
+  .content-area {
+    padding-bottom: 0px;
+  }
+}
+
+//RED FLAGS OF FRAUD box
+.feature-item-block.color-teal{
+
+	.field_text h3{
+	    font-family: $font_primary;
+	    font-weight: $font_primary_weight_bold;
+	    font-size: 26px;
+	    line-height: 28px;
+	    text-decoration: none;
+	}
+
+	ol {
+		list-style: none;
+		counter-reset: ol-counter;
+		-moz-column-count: 2;
+		-moz-column-gap: 20px;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 20px;
+		column-count: 2;
+		column-gap: 20px;
+		margin: 0;
+		padding: 0;
+
+		@media screen and (max-width: 640px), screen and (max-width: 960px) and (min-width:800px) {
+			-moz-column-count: 1;
+			-moz-column-gap: 20px;
+			-webkit-column-count: 1;
+			-webkit-column-gap: 20px;
+			column-count: 1;
+			column-gap: 20px;
+		}
+	}
+	
+	$large-list-numbers: 32px;
+	ol{
+		padding-top: 10px;
+	}
+	ol li {
+	  counter-increment: ol-counter;
+		padding: 0px 20px 0 $large-list-numbers+10px;
+		position: relative;
+		margin: 0;
+		height: $large-list-numbers+10px;
+		line-height: 1.2em;
+	}
+
+	ol li::before {
+		
+		content: counter(ol-counter);
+		font-weight: bold;
+		font-family: $font_primary;
+		color: $white;
+		border: 2px solid $gray_1c;
+		background: $primary_2;
+		font-size: 21px;
+		position: absolute;
+		left: 0; //calc(-1 * $large-list-numbers - 10px)
+		line-height: $large-list-numbers - 1px;
+		width: $large-list-numbers;
+		// height: $large-list-numbers;
+		text-align: center;
+		left: 0; //-$large-list-numbers
+	}
+
+}
+
+.path-frontpage .block-field-blockparagraphviewfield-view{
+	line-height: 1.2em;
+	.views-row:not(:last-child){
+		margin-bottom: 10px;
+	}
+}
+
+.path-frontpage{
+	@media screen and (min-width: 800px){
+		.block.layout-item.divider {
+				margin-top: 40px;
+				margin-bottom: 5px;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+uuid: 79ac1f78-e238-4e96-adb1-fdc6568a8959
+langcode: en
+status: true
+dependencies: {  }
+id: layout_block
+label: 'Layout Block'
+revision: 1
+description: 'Blocks to add layout elements to the page'

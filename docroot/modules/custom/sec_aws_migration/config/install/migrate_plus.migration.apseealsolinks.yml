@@ -1,0 +1,67 @@
+id: apseealsolinks
+label: Import of Administrative Proceeding See Also Links in AWS content
+migration_group: aws
+migration_tags:
+  - aws
+  - ap
+source:
+  plugin: csv
+  path: public://migration/administrative_proceedings.csv
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    0:
+      name: id
+      label: id
+    1:
+      name: releaseurl
+      label: 'Release URL'
+    2:
+      name: date
+      label: 'Date'
+    3:
+      name: respondents
+      label: 'Respondents'
+  constants:
+    delimiter: ','
+process:
+
+  status:
+    plugin: default_value
+    default_value: 1
+
+  name: id
+
+  see_also:
+    plugin: see_also_links
+    source: respondents
+
+  field_media_entity_link/uri:
+    -
+      plugin: skip_on_empty
+      source: '@see_also/1'
+      method: row
+    -
+      plugin: skip_on_contains
+      source: '@see_also/1'
+      method: row
+      contains:
+        - '.htm'
+        - '.pdf'
+        - '.txt'
+
+  field_media_entity_link/title: '@see_also/0'
+
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: 'America/New_York'
+    to_format: 'U'
+
+  changed: '@created'
+
+destination:
+  plugin: 'entity:media'
+  default_bundle: link

@@ -1,0 +1,21 @@
+uuid: cac93fc6-e80a-4d98-9bec-c6dd0cf204ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_ap_status
+    - taxonomy.vocabulary.rulemaking_index
+  module:
+    - options
+id: taxonomy_term.rulemaking_index.field_ap_status
+field_name: field_ap_status
+entity_type: taxonomy_term
+bundle: rulemaking_index
+label: Status
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

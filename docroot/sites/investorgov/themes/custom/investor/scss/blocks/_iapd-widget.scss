@@ -1,0 +1,8 @@
+// view the widget on its own - https://cdn.finra.org/iapd-widget/index.html#/
+.iapd_widget_block, .block-sec-iapd-widget {
+  width:100%;
+  @media print{
+    display: none;
+  }
+}
+

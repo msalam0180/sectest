@@ -1,0 +1,24 @@
+uuid: 14321bfc-341b-473b-9f56-98615bbc6df6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: GEybmbyRXyu6Rvv_gtDH5yLuFXqPpG110YQ6JaPJ6uM
+id: sec_videos
+label: 'SEC Videos'
+type: 'canonical_entities:node'
+pattern: '/news/sec-videos/[node:title]'
+selection_criteria:
+  3eb873c9-9469-4671-a95e-7a0c590517d3:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3eb873c9-9469-4671-a95e-7a0c590517d3
+    context_mapping:
+      node: node
+    bundles:
+      video: video
+selection_logic: and
+weight: -5
+relationships: {  }

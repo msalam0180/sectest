@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Hero template (can be used by any type of content as long as the vars are passed)
+ *
+ * Available Vars
+ * title - hero title (required)
+ * subTitle - hero Sub-Title (optional)
+ * align - Where should the text be aligned on the image (left, right, or center) Center is default
+ * textTheme - If there is a dark background image use the dark theme (options - light, dark)
+ * spaceBelow - Add space below the hero image
+ * imageURL - This should be in the following format - public://2020-01/climate-kic-350836.jpg (see docroot\sites\investorgov\themes\custom\investor\templates\block\block--bundle--hero.html.twig for example)
+
+ * Example template call:
+  {{ include('@investor/includes/component/block/hero.html.twig', 
+    {
+      'title':  content.field_hero_heading.0,
+      'subTitle': content.field_sub_text.0,
+      'imageURL': content.field_bg_image[0]['#media'].field_media_image.entity.uri.value|render|striptags|trim,
+      'align': content.field_align_text[0]|render|striptags|trim,
+      'textTheme': content.field_text_theme[0]|render|striptags|trim,
+      'spaceBelow': content.field_space_below[0]|render|striptags|trim
+    }) 
+  }}
+#}
+
+{# Prep Vars #}
+{% if imageURL %}
+  {% set imageURLSized = imageURL|image_style('hero') %}
+  {% set bgImageStyles = "background-image: url('" ~ imageURLSized ~ "')" %}
+{% endif %}
+
+{% if spaceBelow == "On" %}
+  {% set spaceBelowClass = "hero-space-below" %}
+{% endif %}
+
+{% if align %}
+  {% set alignTrans = align|lower %}
+  {% if alignTrans == "left" %}
+    {% set alignClass = "hero-text-left" %}
+  {% elseif alignTrans == ("right")%}
+    {% set alignClass = "hero-text-right" %}
+  {% else %}
+    {% set alignClass = "hero-text-center" %}
+  {% endif %}
+{% else %}
+  {% set alignClass = "hero-text-center" %}
+{% endif %}
+
+{% if textTheme %}
+  {% set textThemeTrans = textTheme|lower %}
+  {% if textThemeTrans == "dark" %}
+      {% set textThemeClass = "hero-text-theme-dk" %}
+  {% endif %}
+{% endif %}
+
+{# Markup #}
+<div class="hero {{alignClass}} {{(textThemeClass) ? textThemeClass : ''}} {{(spaceBelowClass) ? spaceBelowClass : ''}}" style="{{(bgImageStyles) ? bgImageStyles : ''}}">
+  {% if link %}
+    <a href="{{ link }}">
+  {% endif %}
+  <div class="hero-text">
+    {% if title %}
+      <h2 class="hero-title">
+        {{ title }}
+      </h2>
+    {% endif %}
+    {% if subTitle %}
+      <div class="hero-sub-title-wrap">
+        <p class="hero-sub-title">
+          {{ subTitle }}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+  {% if link %}
+    </a>
+  {% endif %}
+</div>

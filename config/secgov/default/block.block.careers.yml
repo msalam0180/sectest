@@ -1,0 +1,32 @@
+uuid: 6ee9ee12-1cb1-4ad7-9ff2-ea39d0bba999
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.careers-nav
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: eqO0jgb70su29fcjif8ibouejcInwKweBQkizK7QEfc
+id: careers
+theme: secgov
+region: sidebar_first
+weight: -33
+provider: null
+plugin: 'system_menu_block:careers-nav'
+settings:
+  id: 'system_menu_block:careers-nav'
+  label: 'Careers '
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/careers\r\n/careers/*\r\n/forms/ada4applicants\r\n/forms/ada4programs"

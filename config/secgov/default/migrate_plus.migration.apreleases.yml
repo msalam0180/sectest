@@ -1,0 +1,98 @@
+uuid: 5cc73e35-f3e7-4b3b-9e22-00cea4621d9d
+langcode: en
+status: true
+dependencies: {  }
+id: apreleases
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - aws
+  - ap
+migration_group: aws
+label: 'Import of Administrative Proceeding Release Files AWS content'
+source:
+  plugin: csv
+  path: 'public://migration/administrative_proceedings.csv'
+  header_offset: 0
+  ids:
+    - releaseurl
+  fields:
+    -
+      name: id
+      label: id
+    -
+      name: releaseurl
+      label: 'Release URL'
+    -
+      name: date
+      label: Date
+    -
+      name: respondents
+      label: Respondents
+  constants:
+    delimiter: ','
+    staticFileType: 'Administrative Proceedings Release'
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  fileurl: releaseurl
+  title: id
+  field_display_title:
+    plugin: end
+    source: releaseurl
+    delimiter: /
+  internal_path:
+    -
+      plugin: str_replace
+      source: releaseurl
+      search: 'https://www.sec.gov/'
+      replace: 'public://'
+    -
+      plugin: real_path
+  field_description_abstract:
+    plugin: get_release_title
+    source: releaseurl
+  field_primary_division_office:
+    plugin: default_value
+    default_value: 39
+  field_static_file_type:
+    plugin: entity_lookup
+    source: constants/staticFileType
+    value_key: name
+    bundle_key: vid
+    bundle: static_file_type
+    entity_type: taxonomy_term
+    ignore_case: true
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: America/New_York
+    to_format: U
+  changed: '@created'
+  publish_year:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: America/New_York
+    to_format: 'Y'
+  field_file_path:
+    plugin: get_file_path
+    source: releaseurl
+    vocabulary: file_path
+  field_media_file:
+    -
+      plugin: skip_on_contains
+      source: '@fileurl'
+      contains: .htm
+      method: row
+    -
+      plugin: file_import
+      source: '@fileurl'
+      file_exists: 'use existing'
+destination:
+  plugin: 'entity:media'
+  default_bundle: static_file
+migration_dependencies: null

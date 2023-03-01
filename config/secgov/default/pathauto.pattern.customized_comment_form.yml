@@ -1,0 +1,22 @@
+uuid: 4e44d6d5-19a7-441b-9384-13035276cca6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: customized_comment_form
+label: 'Customized Comment Form'
+type: 'canonical_entities:node'
+pattern: '/comments/[node:field_file_number]/[node:title]'
+selection_criteria:
+  82c1ca26-5737-4b58-99a3-727e92f2e464:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 82c1ca26-5737-4b58-99a3-727e92f2e464
+    context_mapping:
+      node: node
+    bundles:
+      customized_comment_form: customized_comment_form
+selection_logic: and
+weight: -5
+relationships: {  }

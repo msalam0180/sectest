@@ -1,0 +1,8 @@
+uuid: d2fbd540-52fb-4d8e-b532-749c66837585
+langcode: en
+status: true
+dependencies: {  }
+name: 'File Path'
+vid: file_path
+description: ''
+weight: 0

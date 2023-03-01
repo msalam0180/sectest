@@ -1,0 +1,3 @@
+#Adds a route for Individual Defendant Search.
+sec_ba.idd_admin:
+  path: '/admin/content/idd'

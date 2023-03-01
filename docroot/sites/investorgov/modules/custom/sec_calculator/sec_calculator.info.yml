@@ -1,0 +1,8 @@
+name: SEC Calculator
+type: module
+description: Provides an extensible framework for SEC/Investor.gov financial calculators.
+core: 8.x
+package: Calculators
+dependencies:
+  - drupal:block
+core_version_requirement: ^8 || ^9

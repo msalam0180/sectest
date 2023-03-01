@@ -1,0 +1,21 @@
+uuid: b28a8f33-ac50-471b-a13a-89464e90ff73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_action_name_in_document
+    - node.type.ba
+_core:
+  default_config_hash: UNG85zk6Bri_EPnyvn5U2mDrGNMPCPVgVgjQMXaKsns
+id: node.ba.field_action_name_in_document
+field_name: field_action_name_in_document
+entity_type: node
+bundle: ba
+label: 'Action Name in document'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

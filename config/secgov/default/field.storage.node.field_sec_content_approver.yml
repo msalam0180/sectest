@@ -1,0 +1,20 @@
+uuid: 30eccd82-660b-466c-85f5-a48da1a42bf2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_sec_content_approver
+field_name: field_sec_content_approver
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

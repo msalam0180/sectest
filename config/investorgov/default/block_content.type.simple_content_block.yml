@@ -1,0 +1,8 @@
+uuid: a0f4a856-0edd-4ca5-9c64-6da3b5abef59
+langcode: en
+status: true
+dependencies: {  }
+id: simple_content_block
+label: 'Content Block'
+revision: 1
+description: 'Content blocks can can be used in the Layout Builder (Landing Page)'

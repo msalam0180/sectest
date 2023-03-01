@@ -1,0 +1,10 @@
+uuid: 20026c48-e0d1-4019-90b8-b5c8a73d968b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WZPfCGeol77Bpt_mWKsjueoSdzKFa6db83Bimri2S6g
+id: dera
+label: DERA
+description: 'Economic and Risk Analysis Menu'
+locked: false

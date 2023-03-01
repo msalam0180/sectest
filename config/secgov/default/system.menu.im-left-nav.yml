@@ -1,0 +1,8 @@
+uuid: 7de9a0c1-b859-4b72-b5fb-31fe525ddc3d
+langcode: en
+status: true
+dependencies: {  }
+id: im-left-nav
+label: IM
+description: 'IM Menu'
+locked: false

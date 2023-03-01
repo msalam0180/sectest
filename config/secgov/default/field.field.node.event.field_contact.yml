@@ -1,0 +1,23 @@
+uuid: 65c82538-280a-4111-b5cf-882b2f8bd65c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.event
+  module:
+    - text
+_core:
+  default_config_hash: jp8cZa339dxeN-GTZ0O9xLRr9Vd6oLh7dN67wr-_aC8
+id: node.event.field_contact
+field_name: field_contact
+entity_type: node
+bundle: event
+label: Contact
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

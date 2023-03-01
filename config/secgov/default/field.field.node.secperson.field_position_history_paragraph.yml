@@ -1,0 +1,34 @@
+uuid: ee4b8875-9f0e-4606-9e03-11fd723de0cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position_history_paragraph
+    - node.type.secperson
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - entity_reference_revisions
+id: node.secperson.field_position_history_paragraph
+field_name: field_position_history_paragraph
+entity_type: node
+bundle: secperson
+label: 'Position History'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      position_history: position_history
+    negate: 0
+    target_bundles_drag_drop:
+      position_history:
+        weight: 3
+        enabled: true
+      related_document_s_:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

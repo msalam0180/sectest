@@ -1,0 +1,88 @@
+id: investor_pressreleases
+migration_group: investor_news_group
+label: 'Import Investor.gov press releases from the SEC.gov RSS feed'
+status: true
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  item_selector: /response/item
+  urls: 'https://www.sec.gov/xml/investor/pressreleases'
+
+  fields:
+    -
+      name: guid
+      label: GUID
+      selector: guid
+    -
+      name: nid
+      label: NID
+      selector: nid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: pub_date
+      label: 'Publication date'
+      selector: pubDate
+    -
+      name: release_number
+      label: SEC Press Release Number
+      selector: release_number
+    -
+      name: body
+      label: 'Body'
+      selector: description
+    -
+      name: location
+      label: Location
+      selector: location
+    -
+      name: link
+      label: Link
+      selector: link
+  ids:
+    guid:
+      type: integer
+process:
+  title:
+    plugin: trim_whitespace
+    source: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  created:
+    plugin: format_date
+    from_format: 'D, d M Y H:i:s O'
+    to_format: 'U'
+    source: pub_date
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: "basic_html"
+  field_location: location
+  field_origin_link: link
+  field_release_number: release_number
+  field_date:
+    plugin: format_date
+    from_format: 'D, d M Y H:i:s O'
+    to_format: 'Y-m-d\TH:i:s'
+    source: pub_date
+  field_news_type:
+    plugin: default_value
+    default_value: 21 # press releases
+  status:
+    plugin: default_value
+    default_value: 0
+  type:
+    plugin: default_value
+    default_value: news
+destination:
+  plugin: 'entity:node'
+
+dependencies: {}
+
+migration_dependencies:
+  required: {}
+  optional: {}

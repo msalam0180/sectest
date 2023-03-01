@@ -1,0 +1,217 @@
+//
+// UPCOMING EVENTS
+// VIEW NAME: Upcoming Events: Public Appearances, Upcoming Events: Public Hearings, Upcoming Events: SEC Meetings
+// 
+// NOTE: Used on the upcoming events landing page
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.upcoming-views-block {
+
+  .views-label, .views-field {
+    padding: 10px 0;
+  }
+
+  .views-label {
+     display: block;
+  }
+
+  .views-field-field-display-title, .views-field-views-ifempty  {
+    font-size: 20px;
+    margin-top: 0;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .views-field-field-primary-media {
+    float: right;
+    padding-left: 30px;
+    width: 240px;
+
+    .field-content {
+      img {
+        width: 100% !important;
+      }
+      .caption {
+        display: block;
+        margin-top: 10px;
+        font-style: italic;
+      }
+    }
+  }
+
+  header a {
+    float: left;
+    margin-top: -150px;
+  }
+
+  .views-row {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 2px solid #E5E5E5;
+
+    .views-field-field-primary-media {
+      float: right;
+      margin-left: 50px;
+    }
+
+    .views-label {
+      font-weight: bold;
+    }
+
+    .views-field-field-attached-files {
+      clear: left;
+    }
+
+    .views-field-field-cancelled-postponed,
+    .views-field-field-sec-event-date,
+    .views-field-field-sec-event-end-date {
+      text-transform: uppercase;
+      font-family: "-apple-system-font", "Helvetica", sans-serif;
+      font-weight: bold;
+      color: #6F7479;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .views-field-field-sec-event-date {
+      line-height: 1.5;
+    }
+
+    .views-field-view-node {
+      text-align: right;
+      clear: both;
+
+      a {
+        font-weight: 500;
+        color: #585858;
+        font-size: 13px;
+        text-decoration: none;
+      }
+    }
+
+    .views-field-title {
+      margin-bottom: 10px;
+      margin-top: 20px;
+      line-height: 20px;
+      clear: left;
+
+      a {
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        color: #2F64B2;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    }
+
+    .views-field-field-location {
+      float: left;
+      margin-right: 20px;
+      width: 25%;
+      @include breakpoint('small','portrait'){
+        width: 100%;
+      }
+    }
+
+    .views-field-field-contact {
+      display: block;
+      position: relative;
+
+      @include breakpoint('small','portrait'){
+        width: 100%;
+      }
+
+      ul {
+        margin: 10px 0;
+        padding: 0;
+        list-style: none;
+      }
+      span.file {
+        font-size: 18px;
+        a {
+          color: $azure;
+        }
+        &:before {
+          @include fontawesome;
+          color: $azure;
+          content: '\f016';
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .promote.views-row {
+    background-color: $navy;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: $white;
+
+    p, a, .views-field {
+      color: $white;
+    }
+
+    .views-field-field-display-title {
+      font-size: 20px;
+      margin-top: 0;
+      a {
+        color: $yellow-orange;
+        &:hover {
+          text-decoration:underline;
+        }
+      }
+    }
+
+    .views-field-field-cancelled-postponed {
+      font-weight: normal;
+    }
+
+    .views-field-field-sec-event-date {
+      font-weight: 550;
+    }
+
+    .views-field-field-attached-files ul{
+      margin-left: 0;
+      list-style: none;
+       li {
+        margin-left: 0;
+      }
+    }
+
+    span.file {
+      font-size: 18px;
+
+      a, &:before {
+        color: $yellow-orange;
+      }
+
+      &:before {
+        @include fontawesome;
+        color: $yellow-orange;
+        content: '\f016';
+        margin-right: 10px;
+      }
+    }
+
+    .caption {
+      color: $white;
+    }
+
+  }
+}
+
+.cancelled {
+  text-decoration: line-through !important;
+  -webkit-text-decoration-color: $asphalt;
+  -moz-text-decoration-color: $asphalt;
+  a:hover {
+    text-decoration: underline !important;
+  }
+}
+

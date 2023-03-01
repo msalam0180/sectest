@@ -1,0 +1,226 @@
+//
+// SASS MIXINS
+//
+// --------------------------------------------------
+
+// Responsive Breakpoints
+@mixin breakpoint($class, $orientation:'', $device:'') {
+  @if $class == 'x-small' {
+    @media (max-width : 300px) { @content; }
+  }
+
+  @if $class == 'small' {
+    @if $orientation == 'portrait' {
+      @media (min-width : 300px) and (max-width : 767px) and (orientation : portrait){ @content; }
+    }
+    @elseif $orientation == 'landscape' {
+      @media (min-width : 300px) and (max-width : 767px) and (orientation : landscape) { @content; }
+    }
+    @else {
+      @media (min-width : 300px) and (max-width: 767px) { @content; }
+    }
+  }
+ 
+  @else if $class == 'medium' { 
+    @if $device == 'ipad' {
+      @if $orientation == 'portrait' {
+        @media only screen and (min-device-width: 768px) and (orientation: portrait)
+        { @content; }
+      } @elseif $orientation == 'landscape' {
+        @media only screen and (min-device-width: 800px) and (orientation: landscape)
+        { @content; }
+      }
+    }
+    @else {
+      @if $orientation == 'portrait' {
+        @media only screen and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (orientation: portrait) { @content; }
+      }
+      @elseif $orientation == 'landscape' {
+        @media only screen and (min-device-width: 800px) 
+        and (max-device-width: 1024px) 
+        and (orientation: landscape) 
+        { @content; }
+      } @else {
+        @media only screen and (min-device-width: 768px) { @content; }
+      }
+    }
+  }
+  @else if $class == 'medium-and-up' {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $class == 'large' {
+    @media (min-width: 1024px) { @content; }
+  }
+   @else if $class == 'x-large' {
+    @media (min-width: 1440px) { @content; }
+  }
+}
+
+
+
+
+
+// TODO: What is this used for?
+@mixin section {
+  clear: both;
+  display: block;
+  float:none;
+  margin-left:auto;
+  margin-right:auto;
+  padding:0;
+}
+
+
+// Clear child elements
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/**
+ * Navigation bar.
+ */
+
+$base-font-size:      16px; // The font-size set on the root html element.
+$base-line-height:    24px; // The line-hieght set on the root html element.
+
+
+//Main Navigation Breakpoints
+@mixin navBreakpoints($mQuery) {
+  @if $mQuery == 'extra-small' {
+    @media (max-width : 319px) { @content; }
+  }
+  @else if $mQuery == 'small' {
+    @media (max-width : 680px) { @content; }
+  }
+  @else if $mQuery == 'small-to-medium' {
+    @media (max-width : 959px) { @content; }
+  }
+  @else if $mQuery == 'medium' {
+    @media (min-width : 680px) and (max-width : 959px) { @content; }
+  }
+  @else if $mQuery == 'mobile-header-break' {
+    @media (min-width : 960px) { @content; }
+  }
+  @else if $mQuery == 'medium-to-large' {
+    @media (min-width : 680px) { @content; }
+  }
+  @else if $mQuery == 'large' {
+    @media (min-width : 960px) { @content; }
+  }
+  @else if $mQuery == 'x-large' {
+    @media (min-width : 1060px) { @content; }
+  }
+
+  //$extra-small: max-width 375px;
+  //$small: max-width 680px;
+  //$small-to-medium: max-width 959px;
+  //$medium: 680px 959px;
+  //$mobile-header-break: min-width 960px;
+  //$medium-to-large: min-width 680px;
+  //$large: min-width 960px;
+  //$x-large: min-width 1060px;
+}
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+//Rem Fallback
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*strip-unit($base-font-size)}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+
+//Simple mixin for applying font styles
+@mixin font-weight-color-size($weight, $color, $size) {
+  font-weight: $weight;
+  color: $color;
+  @include rem-fallback('font-size', $size);
+}
+
+// Weights for Primary Font
+$medium-weight: 500;
+
+
+/**
+ * Accessibility features.
+ */
+
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.element-invisible,
+%element-invisible {
+  @include element-invisible;
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  @include element-invisible-off;
+}
+
+.element-focusable,
+%element-focusable {
+  @extend %element-invisible;
+
+  &:active,
+  &:focus {
+    @extend %element-invisible-off;
+  }
+}

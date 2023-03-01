@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Adds customizations to SEC releases
+ */
+
+ /**
+ * Implements hook_page_attachments().
+ *
+ * Adds the drupal.contextual-links library to the page for any user who has the
+ * 'access contextual links' permission.
+ *
+ * @see contextual_preprocess()
+ */
+function sec_releases_page_attachments(array &$page) {
+	$page['#attached']['library'][] = 'sec_releases/customizations';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sec_releases_theme() {
+  return [
+    'media__static_file__release_see_also_files' => [
+      'template' => 'media--static-file--release-see-also-files',
+      'base hook' => 'media'
+    ],
+    'media__link__release_see_also_files' => [
+      'template' => 'media--link--release-see-also-files',
+      'base hook' => 'media'
+    ],
+  ];
+}
+
+// Remove line breaks in the release_content view - they were messing up spacing
+function sec_releases_preprocess_views_view_field(&$variables){
+  $view = $variables['view'];
+
+  if ($view->id() == 'release_content' || 'releases'){
+    $output = str_replace("\r", '', $variables['output']);
+    $output = preg_replace('!\s+,!', ',', $output);
+    $variables['output'] = \Drupal\views\Render\ViewsRenderPipelineMarkup::create($output);
+  }
+}
+
+function sec_releases_preprocess_media(&$variables) {
+  $media = $variables['media'];
+  $viewmode = $variables['view_mode'];
+  $mediabundle =  $media->bundle();
+  if ($mediabundle == 'static_file' && $viewmode == 'release_see_also_files'){
+
+    // Define the text for a see also file field label 
+    // field_link_text_override > field_static_file_type > field_display_title > name
+    $variables['processed_file_label'] = '';
+    if ($media->hasField('field_link_text_override') && !$media->get('field_link_text_override')->isEmpty()) {
+      $variables['processed_file_label'] = $media->get('field_link_text_override')->value;
+
+    }elseif ($media->hasField('field_static_file_type') && !$media->get('field_static_file_type')->isEmpty()) {
+      $variables['processed_file_label'] = $media->get('field_static_file_type')->entity->get('name')->value;
+
+    }elseif ($media->hasField('field_display_title') && !$media->get('field_display_title')->isEmpty()) {
+      $variables['processed_file_label'] = $media->get('field_display_title')->value;
+
+    }elseif ($media->hasField('name') && !$media->get('name')->isEmpty()) {
+      $variables['processed_file_label'] = $media->get('name')->value;
+    }
+  }
+  if (($mediabundle == 'static_file' || $mediabundle == 'link') && $viewmode == 'release_see_also_files'){
+    $activeThemeName = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+    $variables['activeThemeName'] = $activeThemeName;
+  }
+}

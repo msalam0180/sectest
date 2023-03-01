@@ -1,0 +1,22 @@
+uuid: 1c5ae18c-c36b-4b45-a1b5-4e08d22bb215
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+_core:
+  default_config_hash: SqKz2XqmM_r7j3fqaHKILUmmNJ_06r99Cee-dKhNHRs
+id: node.field_division_office_perso
+field_name: field_division_office_perso
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

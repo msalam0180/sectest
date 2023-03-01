@@ -1,0 +1,10 @@
+uuid: 6eeb571f-35e0-419b-9a5c-3bc72d3c6ebc
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gkrPcMX4R0CZAQomP2gHPmLOexyS0CQlqm8OBGUrBQs
+name: Audience
+vid: audience
+description: ''
+weight: 0

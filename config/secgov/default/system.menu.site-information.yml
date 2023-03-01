@@ -1,0 +1,8 @@
+uuid: f852754d-ada3-4ca1-8f3e-ad93038c6055
+langcode: en
+status: true
+dependencies: {  }
+id: site-information
+label: 'Site Information'
+description: 'Site Information footer menu'
+locked: false

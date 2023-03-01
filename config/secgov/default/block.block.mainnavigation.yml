@@ -1,0 +1,27 @@
+uuid: 7269ad39-1e16-411d-988b-31233b02cdf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - bartik
+_core:
+  default_config_hash: R9YxYXXRiy0xXol4yiAAETVvlfV8ZE_qOyugzoKZZlc
+id: mainnavigation
+theme: bartik
+region: sidebar_first
+weight: null
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,108 @@
+//
+// VIEWS
+// These styles apply to ALL VIEWS
+//
+// --------------------------------------------------
+
+// TODO: Review all code in this file, clean it and, and move it into the correct places
+
+// View tables grouping hide on mobile width (often a month or season)
+.group, .seasonBars {
+  @include breakpoint('small'){
+    display: none;
+  }
+}
+
+// TODO: What view is this for? Maybe for many views
+td {
+  &.views-field-field-person {
+    width: 200px;
+  }
+  &.views-field-field-release-number {
+    width: 120px;
+    @include breakpoint('small') {
+       width: auto;
+    }
+  }
+  &.views-field-field-list-page-det-secarticle {
+    width: 120px;
+  }
+  &.views-field-field-date, .views-field-field-publish-date {
+    width: 110px;
+    @include breakpoint('small') {
+       width: 70px;
+    }
+  }
+  &.views-field-extension {
+    width:70px;
+  }
+  &.views-field-filesize {
+    width:80px;
+  }
+}
+
+// TODO: What view is this for? Maybe for many views
+@include breakpoint('small') {
+  td {
+
+    &.views-field-field-publish-date div,
+    &.views-field-field-display-title div,
+    &.views-field-field-release-number div,
+    &.views-field-field-person div {
+      clear: both;
+      display: block;
+    }
+  }
+}
+
+.dataTables_info {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.dataTables_paginate {
+  text-align: center;
+  font-size: 15px;
+
+  a {
+    margin-left: 15px;
+    color: #2F64B2;
+
+    &:visited {
+      color: #757575;
+    }
+  }
+}
+
+.en-datatable.datatable-paginate {
+
+  .dataTables_info {
+    float: right;
+    padding-top: 0;
+    margin-top: 30px;
+
+    @include breakpoint('small') {
+      float: unset;
+      text-align: center;
+    }
+  }
+
+  .dataTables_paginate {
+    margin-top: 30px;
+
+    .dataTables_info {
+      float: right;
+      padding-top: 0;
+      margin: 0;
+
+      @include breakpoint('small') {
+        float: unset;
+        text-align: center;
+        margin-top: 10px;
+
+      }
+    }
+  }
+
+
+}

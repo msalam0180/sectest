@@ -1,0 +1,21 @@
+{
+  "name": "sec_custom_libraries",
+  "description": "SEC Custom Libraries module",
+  "main": "index.js",
+  "authors": [
+    "Jeff Schwartz"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "autoNumeric": "^2.0.7"
+  }
+}

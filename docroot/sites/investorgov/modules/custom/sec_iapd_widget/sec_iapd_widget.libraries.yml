@@ -1,0 +1,16 @@
+widget:
+  js:
+    js/widget.js: {}
+  dependencies:
+    - core/drupal
+
+widget_test:
+  js:
+    js/widget_test.js: {}
+  dependencies:
+  - core/drupal
+
+  edgarsearch:
+    js:
+      js/edgar-search.js
+      js/typeahead.bundle.min.js

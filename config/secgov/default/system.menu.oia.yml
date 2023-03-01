@@ -1,0 +1,10 @@
+uuid: 59fe4102-3a59-4657-9a4d-49cceeb7e303
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: q7ETBSwCQ0eH36xtoTUPsXtD6ENe_hXA5ZTds7UwWuU
+id: oia
+label: OIA
+description: 'Office of International Affairs Menu'
+locked: false

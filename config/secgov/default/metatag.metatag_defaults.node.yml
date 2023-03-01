@@ -1,0 +1,13 @@
+uuid: c6fb5f30-4454-492f-b6a6-99dd820d10ee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 176HcIX82VjxvBK5DT9HF9wW0qAH2ReSZgoPrPPcI4g
+id: node
+label: Content
+tags:
+  abstract: '[node:field_description_abstract][node:field_description_abstract_perso]'
+  description: '[node:field_description_abstract][node:field_description_abstract_perso]'
+  keywords: '[node:field_tags]'
+  title: '[site:slogan] | [node:field_display_title]'

@@ -1,0 +1,21 @@
+uuid: 25e22ca2-0b6f-43b6-8763-34e5f637d6c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.data_visualization
+_core:
+  default_config_hash: T_1Fur1K0MP0ZQaP0b3hMVkdb1o9NzDmKLfVbnvq6XU
+id: node.data_visualization.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: data_visualization
+label: 'Display Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

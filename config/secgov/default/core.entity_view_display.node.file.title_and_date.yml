@@ -1,0 +1,75 @@
+uuid: 9ca18257-61a5-489e-9599-84ee8c5a1af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_and_date
+    - field.field.node.file.field_act
+    - field.field.node.file.field_audience
+    - field.field.node.file.field_creator
+    - field.field.node.file.field_description_abstract
+    - field.field.node.file.field_display_title
+    - field.field.node.file.field_division_office
+    - field.field.node.file.field_file_upload
+    - field.field.node.file.field_primary_division_office
+    - field.field.node.file.field_publish_date
+    - field.field.node.file.field_regulation
+    - field.field.node.file.field_sec_content_approver
+    - field.field.node.file.field_tags
+    - field.field.node.file.scheduling_options
+    - node.type.file
+  module:
+    - datetime
+    - file
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.file.title_and_date
+targetEntityType: node
+bundle: file
+mode: title_and_date
+content:
+  field_display_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_file_upload:
+    type: file_url_plain
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_act: true
+  field_audience: true
+  field_creator: true
+  field_description_abstract: true
+  field_division_office: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_sec_content_approver: true
+  field_tags: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

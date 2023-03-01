@@ -1,0 +1,10 @@
+// Component: Account Menu
+
+.c-menu--account,
+.c-menu--utility {
+  @extend .usa-nav__secondary-links;
+
+  .c-menu__item {
+    @extend .usa-nav__secondary-item;
+  }
+}

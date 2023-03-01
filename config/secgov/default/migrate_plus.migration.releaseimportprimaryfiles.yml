@@ -1,0 +1,147 @@
+uuid: 6829d6bf-50a4-450a-acdd-bd6b9e51c7c0
+langcode: en
+status: true
+dependencies: {  }
+id: releaseimportprimaryfiles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - sec_release_importer
+migration_group: null
+label: 'Import of Uploaded JSON/PDF Release content'
+source:
+  plugin: url
+  data_parser_plugin: json
+  item_selector: /ts
+  data_fetcher_plugin: file
+  urls: 'public://release_importer/wupdate.json'
+  fields:
+    -
+      name: id
+      selector: rnid/0
+    -
+      name: respondents1
+      selector: field_matter_of/0
+    -
+      name: respondents2
+      selector: field_matter_of/1
+    -
+      name: respondents3
+      selector: field_matter_of/2
+    -
+      name: respondents4
+      selector: field_matter_of/3
+    -
+      name: respondents5
+      selector: field_matter_of/4
+    -
+      name: releasedate
+      selector: field_rel_date/0
+    -
+      name: otherreleasenumber1
+      selector: field_other_rel_no/0
+    -
+      name: otherreleasenumber2
+      selector: field_other_rel_no/1
+    -
+      name: otherreleasenumber3
+      selector: field_other_rel_no/2
+    -
+      name: otherreleasenumber4
+      selector: field_other_rel_no/3
+    -
+      name: primaryfile
+      selector: field_primary_doc_link/0/uri
+    -
+      name: primaryfilelabel
+      selector: field_primary_doc_link/0/title
+    -
+      name: secondaryfile
+      selector: field_secondary_doc_link/0/uri
+    -
+      name: secondaryfilelabel
+      selector: field_secondary_doc_link/0/title
+    -
+      name: description
+      selector: field_title/0
+  constants:
+    division_office: Enforcement
+    staticFileType: ''
+    uploadsource: 'public://release_importer/'
+    siteurl: 'https://www.sec.gov'
+  ids:
+    id:
+      type: string
+process:
+  status:
+    plugin: default_value
+    default_value: 0
+  title: id
+  field_description_abstract: description
+  field_link_text_override: secondaryfilelabel
+  created:
+    plugin: format_date
+    source: releasedate
+    from_format: Y-m-d
+    to_format: U
+  changed: '@created'
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: constants/division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+  filename:
+    -
+      plugin: skip_on_empty
+      source: primaryfile
+      method: row
+    -
+      plugin: skip_on_value
+      value: 'public://release_importer/'
+      method: row
+    -
+      plugin: end
+      delimiter: /
+  fileurl:
+    plugin: concat
+    source:
+      - constants/uploadsource
+      - '@filename'
+  field_file_path:
+    -
+      plugin: concat
+      delimiter: ''
+      source:
+        - constants/siteurl
+        - primaryfile
+    -
+      plugin: get_file_path
+      vocabulary: file_path
+  field_media_file:
+    -
+      plugin: skip_on_missing
+      source: '@fileurl'
+      method: row
+      missing:
+        - .htm
+        - .pdf
+        - .txt
+    -
+      plugin: file_import
+      move: true
+  field_static_file_type:
+    plugin: entity_lookup
+    source: constants/staticFileType
+    value_key: name
+    bundle_key: vid
+    bundle: static_file_type
+    entity_type: taxonomy_term
+    ignore_case: true
+destination:
+  plugin: 'entity:media'
+  default_bundle: static_file
+migration_dependencies: null

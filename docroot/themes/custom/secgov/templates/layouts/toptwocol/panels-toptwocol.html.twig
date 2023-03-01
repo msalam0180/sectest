@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Template for a 2 column panel layout.
+ *
+ * This template provides a two column panel display layout, with
+ * each column roughly equal in width.
+ *
+ * Variables:
+ * - $id: An optional CSS id to use for the layout.
+ * - $content: An array of content, each item in the array is keyed to one
+ *   panel of the layout. This layout supports the following sections:
+ *   - $content['top']: Content in the top panel that holds the page title.
+ *   - $content['left']: Content in the left column.
+ *   - $content['right']: Content in the right column.
+ */
+#}
+
+{# {{ attach_library('secgov/panel-layouts-toptwocol') }}
+
+<div class="panel-display panel-2col clearfix" {% if css_id %}{{ css_id }}{% endif %}>
+  {% if content.top %}
+  <div class="panel-panel panel-top">
+  	{{ content.top }}
+  </div>
+{% endif %}
+  <div class="panel-panel panel-col-first">
+    <div class="inside">{{ content.left }}</div>
+  </div>
+
+  <div class="panel-panel panel-col-last">
+    <div class="inside">{{ content.right }}</div>
+  </div>
+</div> #}
+
+{{ attach_library('secgov/toptwocol') }}
+
+{% if content %}
+  <div{{ attributes.addClass('legacy__region', 'layout--legacy__toptwocol-section') }}>
+    {% if content.top %}
+      <div {{ region_attributes.top.addClass('layout__region', 'layout__region--top') }}>
+        {{ content.top }}
+      </div>
+    {% endif %}
+    {% if content.left %}
+      <div {{ region_attributes.left.addClass('layout__region', 'layout__region--first') }}>
+        {{ content.left }}
+      </div>
+    {% endif %}
+    {% if content.right %}
+      <div {{ region_attributes.right.addClass('layout__region', 'layout__region--second') }}>
+        {{ content.right }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

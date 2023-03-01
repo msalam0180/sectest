@@ -1,0 +1,84 @@
+{#
+/**
+ * @file
+ * Template for a 3 column panel layout.
+ *
+ * This template provides a very simple "one column" panel display layout.
+ *
+ * Variables:
+ * - $id: An optional CSS id to use for the layout.
+ * - $content: An array of content, each item in the array is keyed to one
+ *   panel of the layout. This layout supports the following sections:
+ *   $content['middle']: The only panel in the layout.
+ */
+#}
+<div class="panel-display panel-1col clearfix" {% if css_id %}{{ css_id }}{% endif %}>
+
+  {# Only render alert section if content.alert[<block_id>]['content']['#view'] exists #}
+  {% for k, o in content.alert %}
+    {% if k != '#prefix' and k != '#suffix' %}
+      {% if o['content']['#view'] %}
+        <section id="alert" class="hp-section">
+          {% for o in content.alert|slice(0, 1) %}
+            {{ content.alert }}
+          {% endfor %}
+        </section>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if content.hero %}
+	<section id="hero" class="hero">
+	{{ content.hero }}
+	</section>
+  {% endif %}
+
+  <section id="section-1" class="hp-section odd-row">
+  	<div class="panel-panel panel-col">
+    	<h2>{{ content.section_1_title }}</h2>
+    	<div class="column colspan-8">{{ content.section_1_left }}</div>
+    	<div class="column colspan-4 last">{{ content.section_1_right }}</div>
+  	</div>
+  </section>
+
+  <section id="section-2" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+    	<h2>{{ content.section_2_title }}</h2>
+      <div class="column colspan-4">{{ content.section_2_left }}</div>
+      <div class="column colspan-8 last">{{ content.section_2_right }}</div>
+    </div>
+  </section>
+
+  <section id="section-3"class="hp-section odd-row">
+    <div class="panel-panel panel-col">
+      <h2>{{ content.section_3_title }}</h2>
+      <div class="column colspan-8">{{ content.section_3_left }}</div>
+      <div class="column colspan-4 last">{{ content.section_3_right }}</div>
+    </div>
+  </section>
+
+  <section id="section-4" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+      <h2>{{ content.section_4_title }}</h2>
+      <div class="column colspan-4">{{ content.section_4_left }}</div>
+      <div class="column colspan-8 last">{{ content.section_4_right }}</div>
+    </div>
+  </section>
+
+  <section id="section-5" class="hp-section odd-row">
+    <div class="panel-panel panel-col">
+      <h2>{{ content.section_5_title }}</h2>
+      <div class="column colspan-8">{{ content.section_5_left }}</div>
+      <div class="column colspan-4 last">{{ content.section_5_right }}</div>
+    </div>
+  </section>
+
+  <section id="section-6" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+      <h2>{{ content.section_6_title }}</h2>
+      <div class="column colspan-4">{{ content.section_6_left }}</div>
+      <div class="column colspan-8 last">{{ content.section_6_right }}</div>
+    </div>
+  </section>
+
+</div>

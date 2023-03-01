@@ -1,0 +1,24 @@
+uuid: 9e606e4e-cffe-41e4-b64a-9f0b45032048
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 9b7xe3IcNz_Juc8KRKULhQ4Wol2TcawGn3DWJN-ZwFA
+id: person
+label: Person
+type: 'canonical_entities:node'
+pattern: '/[node:field_primary_division_office:entity:field_abbreviated]/biography/[node:title]'
+selection_criteria:
+  68d10766-a83d-4a16-95c9-019bcc35e6fb:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 68d10766-a83d-4a16-95c9-019bcc35e6fb
+    context_mapping:
+      node: node
+    bundles:
+      secperson: secperson
+selection_logic: and
+weight: -5
+relationships: {  }

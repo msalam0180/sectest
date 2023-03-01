@@ -1,0 +1,164 @@
+//
+// CONTENT TYPE: VIDEO - DETAILS PAGE
+// Styles ONLY apply to video nodes
+//
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.sec-video, .path-media {
+
+  .field-complete-webcast, .field-media-complete-webcast {
+    @include raleway;
+    line-height: 1.4;
+    margin: 15px auto;
+    text-align: center;
+    width: 100%;
+
+    a {
+      font-weight: 500;
+      color: #FFFFFF;
+      font-size: 14px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 13px 20px;
+      background-color: #273A56;
+      text-decoration: none;
+      position: relative;
+      border: solid 1px #6F7479;
+      max-width: 220px;
+    }
+
+    a:after {
+      content: " \f054";
+      font-family: FontAwesome;
+    }
+
+  }
+
+  .field_transcript, .field_media_transcript {
+    border-top: 1px solid $mist;
+    border-bottom: 1px solid $mist;
+    margin-bottom: 20px;
+    padding: 10px 0;
+
+    .field-label {
+      @include raleway;
+      background: none;
+      border: none;
+      font-size: 2.4em;
+      font-weight: 300;
+      color: $gray-heading;
+      padding: 0;
+      position: relative;
+
+      span.ui-accordion-header-icon {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:after {
+        @include raleway;
+        content: '+';
+        font-size: 2em;
+        font-weight: 300;
+        height: 45px;
+        line-height: 0.6;
+        margin-left: 10px;
+        padding: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .ui-accordion-content {
+      border: none;
+      clear: both;
+      display: block;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: normal;
+      font-size: 13px;
+      margin-top: 20px;
+      padding: 0;
+    }
+
+  }
+
+  .field_video, .field_remote_video_url {
+    margin-bottom: 20px;
+  }
+
+  .article-date, .article-publishdate, .article-info, .field_category, .field_topic, .field_media_topic {
+    margin-bottom: 15px;
+  }
+
+  .article-publishdate {
+    display: block;
+  }
+  .article-date, .article-publishdate {
+
+    .article-label {
+      display: inline;
+      font-weight: bold;
+      visibility: visible;
+      &:after {
+        content:': ';
+      }
+    }
+
+    .article-date.field_date {
+      display: inline;
+      margin-bottom: 0;
+    }
+
+  }
+
+  .article-info {
+
+    span {
+      display: inline;
+    }
+
+    .article-label {
+      font-weight: bold;
+      visibility: visible;
+      &:after{
+        content:': ';
+      }
+    }
+
+  }
+
+  .field_category, .field_topic, .field_media_topic {
+    .field-label {
+      display: inline-block;
+      float: left;
+      font-weight: bold;
+      &:after {
+        content:': ';
+        padding-right: 4px;
+      }
+    }
+
+    .field-content {
+      display: inline;
+
+      div {
+        display: inline;
+        &:after {
+          content:', ';
+        }
+        &:last-child {
+          &:after { content: ''; }
+        }
+      }
+    }
+  }
+
+  .body, .field_media_item_body {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,115 @@
+@mixin btn {
+  text-decoration: none;
+  text-shadow: none;
+  text-align: center;
+  display: block;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  display: inline-block;
+  line-height: 1.15em;
+
+  font-family: $font_secondary;
+  font-weight: $font_secondary_weight_extra_bold;
+  color: $gray_white;
+  background: $primary_3;
+
+  height: 32px;   //TODO: get this from vars in the forms
+  padding: 6px 12px;   //TODO: get this from vars in the forms
+
+  &:focus, &:hover, &:active {
+    box-shadow: 0px 0px 0px 1px $gray_white;
+    background: darken($primary_3, 5%);
+    text-decoration: none;
+  }
+
+  &:link, &:visited, &:focus, &:hover {
+    color: $gray_white;
+    @media only print {
+      width: auto;
+      border: 1px solid $primary_3;
+      color:  $primary_3;
+      background: none;
+    }
+  }
+
+  @media only screen and (min-width: $form-small) {
+    width: auto;
+  }
+
+}
+
+.button {
+  @include btn;
+}
+
+@mixin btn-alternate {
+  background-color: $primary_2;
+  &:focus, &:hover, &:active {
+    background: darken($primary_2, 5%);
+  }
+}
+
+.button-alt{
+  @include btn-alternate;
+}
+
+@mixin btn-alternate-2 {
+  background-color: $primary_1;
+  &:focus, &:hover, &:active {
+    background: darken($primary_1, 5%);
+  }
+}
+
+.button-alt-2{
+  @include btn-alternate-2;
+}
+
+
+.btn_go {
+  @include btn;
+  height: auto;
+  padding: 6px 25px;
+  font-size: $text-lg;
+}
+
+//Align Button
+.button-wrapper{
+  display: flex;
+  align-items: center;
+}
+.button-wrapper-center{
+  justify-content: center;
+}
+
+.button-wrapper-left{
+  justify-content: flex-start;
+}
+
+.button-wrapper-right{
+  justify-content: flex-end;
+}
+
+.button-wrapper-full{
+  > .button{
+    flex-grow: 1;
+  }
+}
+
+///Alt Button Size
+.button-size-lg{
+  padding: 13px 20px;
+  height: auto;
+  font-size: 1.4em;
+}
+
+//button spacing
+.button-spacing-above{
+  margin-top: 20px;
+}
+.button-spacing-below{
+  margin-bottom: 20px;
+}
+.button-spacing-above_below{
+  margin: 20px 0;
+}

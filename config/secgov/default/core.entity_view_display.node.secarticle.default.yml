@@ -1,0 +1,652 @@
+uuid: 74a60cee-7b93-4d15-a95a-d61e2041dea5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.secarticle.body
+    - field.field.node.secarticle.field_accrual_periodicity
+    - field.field.node.secarticle.field_act
+    - field.field.node.secarticle.field_alternate_title_secarticle
+    - field.field.node.secarticle.field_article_sub_type_secart
+    - field.field.node.secarticle.field_article_type_secarticle
+    - field.field.node.secarticle.field_associated_dataset
+    - field.field.node.secarticle.field_audience
+    - field.field.node.secarticle.field_case_number
+    - field.field.node.secarticle.field_contact_email
+    - field.field.node.secarticle.field_contact_name
+    - field.field.node.secarticle.field_creator
+    - field.field.node.secarticle.field_data_dictionary_notes
+    - field.field.node.secarticle.field_date
+    - field.field.node.secarticle.field_description_abstract
+    - field.field.node.secarticle.field_display_title
+    - field.field.node.secarticle.field_division_office
+    - field.field.node.secarticle.field_ext_pub_secarticle
+    - field.field.node.secarticle.field_external_resource
+    - field.field.node.secarticle.field_featured_graphic
+    - field.field.node.secarticle.field_file_upload
+    - field.field.node.secarticle.field_hide_publish_date
+    - field.field.node.secarticle.field_left_nav_override
+    - field.field.node.secarticle.field_left_nav_secarticle
+    - field.field.node.secarticle.field_list_page_det_secarticle
+    - field.field.node.secarticle.field_market_statistics_category
+    - field.field.node.secarticle.field_media_file_upload
+    - field.field.node.secarticle.field_media_image_upload
+    - field.field.node.secarticle.field_more_about_this_topic
+    - field.field.node.secarticle.field_organization
+    - field.field.node.secarticle.field_person
+    - field.field.node.secarticle.field_primary_division_office
+    - field.field.node.secarticle.field_publish_date
+    - field.field.node.secarticle.field_regulation
+    - field.field.node.secarticle.field_related_materials
+    - field.field.node.secarticle.field_release_number
+    - field.field.node.secarticle.field_requestor
+    - field.field.node.secarticle.field_sec_content_approver
+    - field.field.node.secarticle.field_show_full_width_page
+    - field.field.node.secarticle.field_tags
+    - field.field.node.secarticle.field_top_right_column
+    - field.field.node.secarticle.scheduling_options
+    - node.type.secarticle
+  module:
+    - datetime
+    - link
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        id: panels_variant
+        label: ''
+        weight: 0
+        uuid: 28e2c9ba-a32a-4628-8a61-499de9c1e0c6
+        blocks:
+          fdb879b5-1337-4635-bcb9-ec8b1e0e0df7:
+            id: 'entity_field:node:uid'
+            label: 'Authored by'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: author
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 0
+            uuid: fdb879b5-1337-4635-bcb9-ec8b1e0e0df7
+          e6179a43-e194-4d17-a909-e37dbb4ce56f:
+            id: 'entity_field:node:created'
+            label: 'Authored on'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: timestamp
+              weight: 0
+              label: hidden
+              settings:
+                date_format: medium
+                custom_date_format: ''
+                timezone: ''
+              third_party_settings: {  }
+            region: middle
+            weight: 0
+            uuid: e6179a43-e194-4d17-a909-e37dbb4ce56f
+          97b17387-f195-4904-97a9-0c1406794dd7:
+            id: 'entity_field:node:body'
+            label: Body
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 101
+            uuid: 97b17387-f195-4904-97a9-0c1406794dd7
+          449c9cc6-91ca-478b-8ee5-3c9057f32435:
+            id: 'entity_field:node:field_act_secarticle'
+            label: Act
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 102
+            uuid: 449c9cc6-91ca-478b-8ee5-3c9057f32435
+          c37b63af-8423-4680-b87c-7857872f6d5b:
+            id: 'entity_field:node:field_alternate_title_secarticle'
+            label: 'Alternate Title'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: above
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 103
+            uuid: c37b63af-8423-4680-b87c-7857872f6d5b
+          b479731b-bc77-4b62-b281-00583bdc5de7:
+            id: 'entity_field:node:field_article_sub_type_secart'
+            label: 'Article SubType'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: list_default
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 104
+            uuid: b479731b-bc77-4b62-b281-00583bdc5de7
+          59e8b08a-c42e-408a-bbf2-9d199e262d61:
+            id: 'entity_field:node:field_audience'
+            label: Audience
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 106
+            uuid: 59e8b08a-c42e-408a-bbf2-9d199e262d61
+          a8e985c4-4c23-48b3-ae4f-78874d5b1eae:
+            id: 'entity_field:node:field_date_secarticle'
+            label: Date
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: datetime_default
+              weight: 0
+              label: above
+              settings:
+                timezone_override: ''
+                format_type: ap_date
+              third_party_settings: {  }
+            region: middle
+            weight: 107
+            uuid: a8e985c4-4c23-48b3-ae4f-78874d5b1eae
+          b2f0d0de-4a5f-4b8c-9966-04bfd7d62cbc:
+            id: 'entity_field:node:field_descrp_abstract_secarticle'
+            label: Description/Abstract
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: basic_string
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 108
+            uuid: b2f0d0de-4a5f-4b8c-9966-04bfd7d62cbc
+          de7bba22-dbef-4607-a268-b3c64b04c7b2:
+            id: 'entity_field:node:field_display_title_secarticle'
+            label: 'Display Title'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: above
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 109
+            uuid: de7bba22-dbef-4607-a268-b3c64b04c7b2
+          1cd9385c-9bc8-491a-948c-01facd7bbcf4:
+            id: 'entity_field:node:field_division_office_secarticle'
+            label: Division/Office
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 110
+            uuid: 1cd9385c-9bc8-491a-948c-01facd7bbcf4
+          dd42bd56-b6ba-4acf-867e-802dd2f03cc5:
+            id: 'entity_field:node:field_ext_pub_stat_secarticle'
+            label: 'External Publication Status'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: boolean
+              weight: 0
+              label: above
+              settings:
+                format: default
+                format_custom_false: ''
+                format_custom_true: ''
+              third_party_settings: {  }
+            region: middle
+            weight: 111
+            uuid: dd42bd56-b6ba-4acf-867e-802dd2f03cc5
+          3ccc7420-c715-4661-a8f1-4cd1d7839ed3:
+            id: 'entity_field:node:field_file_upload_secarticle'
+            label: 'File Upload'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: file_default
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 112
+            uuid: 3ccc7420-c715-4661-a8f1-4cd1d7839ed3
+          2dadce13-300b-4a97-ad74-80b7accee490:
+            id: 'entity_field:node:field_left_nav_secarticle'
+            label: 'Left Nav'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 121
+            uuid: 2dadce13-300b-4a97-ad74-80b7accee490
+          c349ed6d-3717-4df3-bf02-9d76174e9c3b:
+            id: 'entity_field:node:field_list_page_det_secarticle'
+            label: 'List Page Details'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 113
+            uuid: c349ed6d-3717-4df3-bf02-9d76174e9c3b
+          d8077a0b-6353-4e4d-bcee-2f9bcc39778a:
+            id: 'entity_field:node:field_over_mod_date_secarticle'
+            label: 'Override Modified Date'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: datetime_default
+              weight: 0
+              label: above
+              settings:
+                timezone_override: ''
+                format_type: ap_date
+              third_party_settings: {  }
+            region: middle
+            weight: 114
+            uuid: d8077a0b-6353-4e4d-bcee-2f9bcc39778a
+          81580e51-b77d-4781-846e-401ee58f60f3:
+            id: 'entity_field:node:field_regulation_secarticle'
+            label: Regulation
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 116
+            uuid: 81580e51-b77d-4781-846e-401ee58f60f3
+          04b95ab0-c3e9-4ec1-a3fb-d9d7bd5e95a7:
+            id: 'entity_field:node:field_related_mats_secarticle'
+            label: 'Related Materials'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: field_collection_list
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 117
+            uuid: 04b95ab0-c3e9-4ec1-a3fb-d9d7bd5e95a7
+          1519b15a-b1c3-40f2-9092-a0220a2f1ade:
+            id: 'entity_field:node:field_release_num_secarticle'
+            label: 'Release Number'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: above
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: middle
+            weight: 118
+            uuid: 1519b15a-b1c3-40f2-9092-a0220a2f1ade
+          05bd5a7b-98cd-4da5-9a05-5f6a1b204e42:
+            id: 'entity_field:node:field_tags_secarticle'
+            label: Tags
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: entity_reference_label
+              weight: 0
+              label: above
+              settings:
+                link: true
+              third_party_settings: {  }
+            region: middle
+            weight: 120
+            uuid: 05bd5a7b-98cd-4da5-9a05-5f6a1b204e42
+          98504848-bb55-4603-aa6d-2dd67a89f93f:
+            id: 'entity_field:node:field_top_right_col_secarticle'
+            label: 'Top Right Column'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: middle
+            weight: 119
+            uuid: 98504848-bb55-4603-aa6d-2dd67a89f93f
+        page_title: '[node:title]'
+        layout: layout_onecol
+        layout_settings: {  }
+        builder: ipe
+        storage_type: ''
+        storage_id: ''
+_core:
+  default_config_hash: 7z4SloT87NKh2wrNPF5kTnfhRLpdeq3vS5Vp4EkzOMQ
+id: node.secarticle.default
+targetEntityType: node
+bundle: secarticle
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_alternate_title_secarticle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_article_sub_type_secart:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_article_type_secarticle:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_case_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_creator:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_data_dictionary_notes:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_description_abstract:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_display_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_hide_publish_date:
+    type: boolean
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_left_nav_override:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_media_file_upload:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: embed
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_more_about_this_topic:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_organization:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_related_materials:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_release_number:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_requestor:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_sec_content_approver:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_show_full_width_page:
+    type: boolean
+    label: hidden
+    settings:
+      format: true-false
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_top_right_column:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_accrual_periodicity: true
+  field_act: true
+  field_associated_dataset: true
+  field_audience: true
+  field_contact_email: true
+  field_contact_name: true
+  field_division_office: true
+  field_ext_pub_secarticle: true
+  field_external_resource: true
+  field_featured_graphic: true
+  field_file_upload: true
+  field_left_nav_secarticle: true
+  field_list_page_det_secarticle: true
+  field_market_statistics_category: true
+  field_media_image_upload: true
+  field_person: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_speaker_position_override: true
+  field_tags: true
+  langcode: true
+  links: true
+  scheduling_options: true
+  search_api_excerpt: true

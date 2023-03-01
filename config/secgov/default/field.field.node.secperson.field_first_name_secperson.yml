@@ -1,0 +1,21 @@
+uuid: b7d80d3f-5d22-447c-9e4f-76b29a11c155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_name_secperson
+    - node.type.secperson
+_core:
+  default_config_hash: HjDW69ox9DXoVaHjdWlbNWFkZ-bg_A9WJKwoifDuw3k
+id: node.secperson.field_first_name_secperson
+field_name: field_first_name_secperson
+entity_type: node
+bundle: secperson
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

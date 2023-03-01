@@ -1,0 +1,87 @@
+uuid: fafca5c5-afb5-4b8e-a4e0-622cbeab6225
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.feature_item
+    - field.field.taxonomy_term.icons.field_icon
+    - taxonomy.vocabulary.icons
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+third_party_settings:
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          e2072585-fbf3-43ef-b0dd-3ad8782a1fda:
+            uuid: e2072585-fbf3-43ef-b0dd-3ad8782a1fda
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:icons:field_icon'
+              label: Icon
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: feature_item_icon
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          a3c9ee6c-8761-41b8-9f83-a3d63385270d:
+            uuid: a3c9ee6c-8761-41b8-9f83-a3d63385270d
+            region: content
+            configuration:
+              id: 'field_block:taxonomy_term:icons:field_icon'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: taxonomy_term.icons.feature_item
+targetEntityType: taxonomy_term
+bundle: icons
+mode: feature_item
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_icon:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

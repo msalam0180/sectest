@@ -1,0 +1,283 @@
+//
+// NEWSROOM PAGES / PR-LISTS
+// Used on many views to include the following
+// Testimony List Page, Speeches List Page, Public Statements List Page, Press Releases List Page, WB Press Releases List Page, WB Final Orders List Page 
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+// TODO: What is the difference between .pr-list-page, .pr-list, .newsroom-list-page, .ps-list-page - Are they all being used? There seems to be overlap. They each need a purpose or they need to be combined. These styles should become a component.
+// TODO: speeches-list-page is in here too because it is intertwined with the others, but it is it's own view... When this is cleaned up, speeches should be moved o its own file
+
+.pr-list-page {
+    .form-container {
+        .subscribe-rss {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.pr-list .item-list {
+  ul {
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style: none;
+  }
+  a { font-size: 15px; }
+}
+
+.newsroom-list-page footer {
+  @include breakpoint('small'){
+    @include span(11){
+      float: none;
+      margin: 10px auto;
+      padding: 0 10px;
+    }
+  }
+}
+
+.newsroom-list-page {
+
+  .views-field-field-display-title {
+    * {
+      line-height: inherit;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      margin: inherit;
+      font: inherit;
+      display: inline;
+    }
+    span.show-for-small {
+      font-weight: 600;
+      display: none;
+      @include breakpoint('small'){
+        display: inline;
+      }
+    }
+    h1, h2, h3, h4, h5, h6 { color: inherit}
+  }
+  .views-field-field-person {
+    i,em {
+      font-style: inherit;
+    }
+    h2, h3 {
+      font-size: inherit;
+      font-weight: inherit;
+      font-family: inherit;
+    }
+    strong, b {
+      font-weight: inherit;
+    }
+
+    h4 {
+      display: none;
+    }
+  }
+
+  header {
+    font-size: 13px;
+    #gov-delivery-box {
+      display: inline;
+    }
+
+    #gov-delivery-submit {
+      display: inline;
+      float: none !important;
+      font-size: 14px;
+      font-weight: 600;
+      height: 26px;
+      margin: 0px 0px 0px 5px !important;
+      vertical-align: middle;
+    }
+    .fa.fa-envelope-o {
+      padding: 1px 5px;
+    }
+  }
+}
+
+.pr-list-page, .ps-list-page, .speeches-list-page {
+  header {
+    @include breakpoint('small','portrait') {
+      margin-bottom: 20px;
+    }
+  }
+
+  .grouped, h1.grouped {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    background-color: white;
+
+    @include breakpoint('small') {
+      display: none !important;
+    }
+  }
+
+  h1.grouped {
+    border-left: thin solid $border-color;
+    border-right: thin solid $border-color;
+    display: block;
+    margin: 0;
+    width: 99.94%;
+
+    @include breakpoint('small') {
+      display: none !important;
+    }
+  }
+}
+
+.pr-list {
+  ul {
+      margin-left: 0;
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .more-link {
+    clear: right;
+    text-align: right;
+    width: 100%;
+
+    &:after {
+      @include fontawesome;
+      color: $navy;
+      content: "\f0da";
+      padding-left: 5px;
+    }
+  }
+}
+
+@include breakpoint('small'){
+  .pr-list-page  {
+    .form-item {
+      // margin-top: 30px;
+    }
+    table {
+      width: 95%;
+      @include breakpoint('small'){
+        width: 100%;
+      }
+    }
+    thead {
+      tr {
+        border: 1px solid $border-color;
+        padding: 10px;
+
+        &:hover {
+          background: none;
+        }
+
+        th {
+          border: 1px solid $border-color;
+          background-color: $porcelain;
+          font-weight: normal;
+
+          &#view-field-display-title-table-column, &#view-field-release-number-table-column {
+            display: none !important;
+          }
+          &.sorting_asc, &.sorting_desc {
+            background-color: $mist;
+          }
+        }
+        td {
+          width:300px;
+        }
+      }
+    }
+    tbody tr {
+      padding: 15px;
+    }
+  }
+
+  .ps-list-page {
+    .form-item {
+      margin-top: 30px;
+    }
+    table{ width: 95%; }
+    thead {
+      border: none;
+      #view-field-publish-date-table-column {
+        a {
+          border: none;
+        }
+      }
+      #view-field-display-title-table-column, #view-field-person-table-column {
+        display: none !important;
+      }
+    }
+    tbody tr {
+      padding: 15px;
+      td {
+        width: 95%;
+
+        &.views-field-field-person span.show-for-small {
+          clear: both;
+          margin-bottom: 5px;
+        }
+      }
+    }
+    .form-item-field-person-target-id {
+      clear: both;
+      margin-top: 30px;
+      width: 100%;
+
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+    #edit-reset {
+      clear:both;
+    }
+  }
+
+  .speeches-list-page {
+    tr {
+      top: -33px;
+    }
+    .form-item-field-person-target-id {
+      clear: both;
+      margin-top: 30px;
+      width: 100%;
+
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+    #edit-reset {
+      clear:both;
+    }
+    thead {
+      #view-field-publish-date-table-column {
+        width: 90px;
+        a {
+          border: none;
+        }
+      }
+      #view-field-display-title-table-column, #view-field-person-table-column {
+        display: none !important;
+      }
+    }
+    tbody tr {
+      padding: 15px;
+      td {
+        &.views-field-field-person span.show-for-small {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.press-release-list-page {
+  .views-exposed-form input.form-submit {
+    display: block;
+    height: auto;
+  }
+}

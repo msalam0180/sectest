@@ -1,0 +1,167 @@
+<?php
+
+/**
+ * @file
+ * Adds customizations to admin area of Drupal
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Adds the drupal.contextual-links library to the page for any user who has the
+ * 'access contextual links' permission.
+ *
+ * @see contextual_preprocess()
+ */
+function sec_admin_page_attachments(array &$page) {
+	if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
+		return;
+	}
+
+	$page['#attached']['library'][] = 'sec_admin/customizations';
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function sec_admin_theme_registry_alter(&$theme_registry) {
+  // Replace the path to the registered template so that Drupal looks for
+  // it in this module's templates folder.
+  $theme_registry['status_messages']['path'] = drupal_get_path('module', 'sec_admin') . '/templates';
+}
+
+function strpos_arr($haystack, $needle) {
+  if(!is_array($needle)) $needle = array($needle);
+  foreach($needle as $what) {
+    if(($pos = strpos($haystack, $what))!==false) return $pos;
+  }
+  return false;
+}
+
+function sec_admin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Adding Required help text to forms
+  $forms_needs_required_help = false;
+  $need_help = array("node_", "media_", "taxonomy_term_", "taxonomy_vocabulary_", "block_content_", "block_form", "menu_link_content_", "layout_builder_update_block", "layout_builder_add_block");
+  $forms_needs_required_help = strpos_arr($form_id, $need_help);
+  
+  if ($forms_needs_required_help !== false && $forms_needs_required_help == 0) {
+    $form['required-help'] = [
+      '#type' => 'item',
+      '#markup' => '<span class="required-help">' . t('*Fields marked with an asterisk(*) are required.'). '</span>',
+      '#weight' => -21,
+    ];
+  }
+
+  if ($form_id == 'node_landing_page_layout_builder_form'){
+    $form['legacy-help'] = [
+      '#type' => 'item',
+      '#markup' => '<span class="required-help legacy-help">' . t("*Sections's outlined in red are using a legacy section. Please move those blocks into a new layout section and delete the legacy section after blocks have been moved."). '</span>',
+      '#weight' => -21,
+    ];
+  }
+
+  // Alter help text under Summary section of Body field for Event content type.
+  if (
+    $form_id == 'node_event_edit_form' ||
+    $form_id == 'node_event_form'
+  ) {
+    $form['body']['widget'][0]['summary']['#description'] = t('Enter the event summary that will display on the main event page.');
+  }
+
+}
+
+
+/**
+ * Implements HOOK_simple_sitemap_arbitrary_links_alter() to add pdf links to the sitemap.
+ */
+function sec_admin_simple_sitemap_arbitrary_links_alter(array &$arbitrary_links, $sitemap_variant) {
+  // Include files - commenting out unnecessary file types should they be needed in future 
+  $filemimes = [
+    'application/msword',
+    //'application/octet-stream',
+    'application/pdf',
+    'application/vnd.ms-excel',      
+    'application/vnd.ms-powerpoint',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    //'application/xml',
+    'application/zip',
+    //'audio/mpeg',
+    //'audio/x-wav',
+    //'image/gif',
+    //'image/jpeg',
+    //'image/png',
+    'text/csv',
+    //'text/html',
+    'text/plain',      
+  ];
+  
+  $database = \Drupal::database();
+
+  // Custom query because the tables don't connect based on revisions.
+  // To get that, we need to join tables based on all entity fields that is for files.
+  // This is quicker.
+  $queryString = "SELECT f.fid, f.uri, f.created, f.changed FROM {file_managed} AS f WHERE 
+  f.status = :status
+  AND f.filemime IN (:filemimes[])
+  AND f.fid IN (
+  SELECT fddu.field_data_dist_upload_target_id as fid FROM {node_field_data} as nfd1
+  INNER JOIN {node__field_data_dist_upload} as fddu ON nfd1.vid = fddu.revision_id
+  WHERE nfd1.status = 1
+  UNION
+  SELECT ffu.field_file_upload_target_id as fid FROM {node_field_data} as nfd2
+  INNER JOIN {node__field_file_upload} as ffu ON nfd2.vid = ffu.revision_id
+  WHERE nfd2.status = 1 AND nfd2.type != 'file'
+  UNION
+  SELECT faf.field_attached_files_target_id as fid FROM {node_field_data} as nfd3
+  INNER JOIN {node__field_attached_files} as faf ON nfd3.vid = faf.revision_id
+  WHERE nfd3.status = 1
+  UNION
+  SELECT fmf.field_media_file_target_id as fid FROM {media_field_data} as mfd
+  INNER JOIN {media__field_media_file} as fmf ON mfd.vid = fmf.revision_id
+  WHERE mfd.status = 1
+)";
+
+  $queryParams = [
+    ':filemimes[]' => $filemimes,
+    ':status' => 1
+  ];
+
+  $result = $database->query($queryString, $queryParams);
+
+  // Add each pdf file to the sitemap
+  foreach ($result as $file) {
+    $url = file_create_url($file->uri);
+    $config = \Drupal::config('simple_sitemap.settings');
+    if (!empty($config->get('base_url'))) {
+      $url = str_replace($GLOBALS['base_url'], $config->get('base_url'), $url);
+    }
+    $arbitrary_links[] = [
+      'url' => $url,
+      'priority' => '0.5',        
+      // An ISO8601 formatted date.
+      'lastmod' => date(DateTime::ISO8601, $file->changed),
+      'changefreq' => 'never',
+    ];
+  }
+}
+
+function sec_admin_preprocess_table(&$variables) {
+  // OSSS-19780: Make field-multiple-table tables be presentational for QCTC
+  $classesOnTable = $variables['attributes']['class'];
+  $typeofVar = gettype($classesOnTable);
+
+  if ($typeofVar == "array") {
+    $key = array_search("field-multiple-table", $classesOnTable);
+    if (is_numeric($key)) {
+      $variables['attributes']['role'][] = "presentation";
+    }
+  }elseif($typeofVar == "string"){
+    if ($classesOnTable == "field-multiple-table") {
+      $variables['attributes']['role'][] = "presentation";
+    }
+  }
+}

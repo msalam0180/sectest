@@ -1,0 +1,19 @@
+uuid: 7fb35a9e-de2d-425e-b94d-e83868024bf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_webcast_config
+    - node.type.webcast
+id: node.webcast.field_webcast_config
+field_name: field_webcast_config
+entity_type: node
+bundle: webcast
+label: 'Webcast Config'
+description: "Optional override of the webcast javascript config object. Please enclose all key names in double quotes. <a href=\"javascript:void(0);\" id=\"config-toggle\">Click here </a>to view <b>example</b> config. <br> For example, change auto-play to false via this value: <pre><b>{ \"autoplay\": false }</b></pre>\r\n<span id=\"config-object\">\r\n<pre><code>{\r\n  autoplay: true,\r\n  robustnessLevel: 'SW_SECURE_CRYPTO',\r\n  captioning: {\r\n    enabled: true\r\n  },\r\n  media: {\r\n    autoplay: true,\r\n    autoplayPolicy: \"muted\",\r\n    title: 'SEC Live Video',\r\n    poster: '//www.sec.gov/video/resources/images/sec-video-poster.jpg',\r\n    duration: 108,\r\n    source: [\r\n      { // Pass taxonomy vocabulary to stream\r\n        src: primary + '?enableSSLTransfer=true',\r\n        type: 'application/x-mpegURL'\r\n      },\r\n      {\r\n        src: secondary + '?enableSSLTransfer=true',\r\n        type: 'video/f4m'\r\n      }\r\n    ],\r\n    temporalType: 'live',\r\n    track: [\r\n      {\r\n        kind: 'captions',\r\n        type: (navigator.userAgent.match(/iPad/i) === null) ? 'live-oncaptioninfo' : 'text/cea-708',\r\n        srclang: 'en',\r\n        src: ''\r\n      }\r\n    ],\r\n  }\r\n}</code></pre>\r\n</span>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

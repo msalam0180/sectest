@@ -1,0 +1,168 @@
+//
+// FONTS
+// Font declarations and font usage 
+// 
+// --------------------------------------------------
+
+// Raleway - This is the display font and heading font
+// https://fonts.google.com/specimen/Raleway
+
+// @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,500,600);
+
+// Use Raleway
+// @mixin raleway {
+//   font-family: 'Raleway', sans-serif;
+//   -webkit-font-variant-ligatures: no-common-ligatures;
+//     font-variant-ligatures: no-common-ligatures;
+// }
+
+// Use Helvetica
+@mixin helvetica {
+  font-family: 'Helvetica', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+}
+
+/// /// /// /// 
+/// Icon Fonts
+/// /// /// /// 
+
+// FONTELLO
+// A custom made font from http://fontello.com/
+// If you need to add a new custom icon to this set, then you can upload this font on the website and make changes
+
+@font-face {
+  font-family: 'fontello';
+  src: url(get-base-url()+'fonts/fontello.eot');
+  src: url(get-base-url()+'fonts/fontello.eot#iefix') format('embedded-opentype'),
+    url(get-base-url()+'fonts/fontello.woff2') format('woff2'),
+    url(get-base-url()+'fonts/fontello.woff') format('woff'),
+    url(get-base-url()+'fonts/fontello.ttf') format('truetype'),
+    url(get-base-url()+'fonts/fontello.svg#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Use Fontello
+@mixin fontello {
+  font-family: "fontello";
+  font-size: 100%; /*16px*/
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-transform: none;
+}
+
+// @import '../fonts/fontello';
+
+// fontello Overrides
+
+// TODO: Icon font being used incorrectly - Remove instance of svg-icon and remove the .svg-icon code
+// Used the commented out ../fonts/fontello (Reason - could cause 508 issues)
+.svg-icon {
+  @include fontello;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-transform: none;
+  display: table-cell;
+  vertical-align: middle;
+
+  &.svg-icon-xs {font-size: 125%;} /*20px*/
+  &.svg-icon-sm {font-size: 187.5%;} /*30px*/
+  &.svg-icon-md {font-size: 250%;} /*40px*/
+  &.svg-icon-lg {font-size: 375%;} /*60px*/
+  &.svg-icon-xlg {font-size: 500%;} /*80px*/
+
+  &.svg-icon-box {display: inline-block; width: 16px !important; height: 16px !important;}
+  &.svg-icon-box-xs {width: 20px !important; height: 20px !important;}
+  &.svg-icon-box-sm {width: 30px !important; height: 30px !important;}
+  &.svg-icon-box-md {width: 40px !important; height: 40px !important;}
+  &.svg-icon-box-lg {width: 60px !important; height: 60px !important;}
+  &.svg-icon-box-xlg {width: 80px !important; height: 80px !important;}
+}
+
+// FONT AWESOME
+// Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+// http://fontawesome.io/
+/* -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url(get-base-url()+'fonts/fontawesome-webfont.eot');
+  src: url(get-base-url()+'fonts/fontawesome-webfont.eot#iefix') format('embedded-opentype'),
+    url(get-base-url()+'fonts/fontawesome-webfont.woff') format('woff'),
+    url(get-base-url()+'fonts/fontawesome-webfont.woff2') format('woff2'),
+    url(get-base-url()+'fonts/fontawesome-webfont.ttf') format('truetype'),
+    url(get-base-url()+'fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import '../fonts/font-awesome';
+
+// Use Font Awesome
+@mixin fontawesome {
+  font-family: "FontAwesome";
+  font-size: 100%; /*16px*/
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-transform: none;
+}
+
+// Font Awesome Overrides
+.fa {
+  background-color: $cloudy-gray;
+  border-radius: 3px;
+  color: $white;
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-size: inherit;
+  padding: 5px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  text-decoration: none;
+  height: 25px;
+  width: 25px;
+
+  &:hover {
+    background-color: $azure;
+  }
+}
+
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: 1;
+  vertical-align: -15%;
+  text-align: center;
+  padding: 7px;
+  height: 25px;
+  width: 25px;
+}
+
+.fa-2x {
+  font-size: 2em;
+  list-style-type: none;
+}
+
+
+
+
+
+
+
+
+

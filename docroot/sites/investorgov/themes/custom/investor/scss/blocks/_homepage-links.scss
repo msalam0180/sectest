@@ -1,0 +1,82 @@
+$homepage-links-gutter-width: 5px;
+$homepage-links-gutter-width-v: calc(#{$homepage-links-gutter-width}/2);
+$homepage-links-gutter-width-h: $homepage-links-gutter-width;
+$homepage-links-gutter-color: transparent;
+$homepage-links-button-color: $primary_2;
+
+/*** HomePage Links **/
+.block-title-homepage-links {
+  width:100%;
+  margin-bottom: 10px;
+
+  #homepage-links-wrapper {
+
+    #homepage-links {
+      display:flex;
+      flex-wrap:wrap;
+      font-size: 1em;
+
+      .homepage-link {
+        border-top: $homepage-links-gutter-width-h solid $homepage-links-gutter-color;
+        flex:1;
+        min-width:100%;
+        text-align: center;
+
+        a {
+          width: 100%;
+          padding: 12px;
+          color: $gray_white;
+          background-color: $homepage-links-button-color;
+          display: block;
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: darken($homepage-links-button-color, 10%);
+            text-decoration:none;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and(min-width:670px) {
+    #homepage-links-wrapper #homepage-links .homepage-link {
+      border-top:$homepage-links-gutter-width-h solid $homepage-links-gutter-color;
+      min-width:50%;
+
+      &:nth-child(even) {
+        border-left: $homepage-links-gutter-width-v solid $homepage-links-gutter-color;
+      }
+      &:nth-child(odd) {
+        border-right: $homepage-links-gutter-width-v solid $homepage-links-gutter-color;
+      }
+    }
+  }
+
+  @media only screen and(min-width:1045px) {
+    #homepage-links-wrapper #homepage-links .homepage-link {
+      border-top:$homepage-links-gutter-width-h solid $homepage-links-gutter-color;
+      min-width:33%;
+
+      &:nth-child(3),
+      &:nth-child(5) {
+        border-left: $homepage-links-gutter-width-v solid $homepage-links-gutter-color;
+      }
+      &:nth-child(4) {
+        border-left: none;
+      }
+      &:nth-child(2),
+      &:nth-child(4){
+        border-right: $homepage-links-gutter-width-v solid $homepage-links-gutter-color;
+      }
+      &:nth-child(3) {
+        border-right: none;
+      }
+    }
+  }
+
+  @media print{
+    display: none;
+  }
+}

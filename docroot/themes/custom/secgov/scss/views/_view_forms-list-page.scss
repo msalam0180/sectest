@@ -1,0 +1,131 @@
+//
+// FORMS LIST PAGE
+// VIEW NAME: Forms List Page
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+// TODO: Is this class being used?
+.forms {
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  .release-number {
+    font-weight:600;
+    padding-bottom: 10px;
+  }
+
+}
+
+.forms-list {
+  
+  // Set Column Widths
+  #view-field-list-page-det-secarticle-table-column { width: 120px; }
+  #view-name-table-column { width: 170px; }
+  &.views-field-field-date { width: 128px; }
+
+}
+
+@include breakpoint('small'){
+  .forms-list {
+    @include breakpoint('small') {
+      .form-item-field-audience-target-id {
+          margin-top: 25px;
+      }
+    }
+
+    .tablesorter {
+
+      tbody {
+
+        tr {
+          @include breakpoint('small') {
+            padding: 1.66667em;
+          }
+
+        }
+
+        td {
+
+          @include breakpoint('small') {
+
+            &.views-field-field-release-number {
+              display: table-header-group;
+              &:after {
+                clear: both;
+                content: ' ';
+                display: block;
+                margin-bottom: 10px
+              }
+            }
+
+            &.views-field-field-display-title {
+              display: table-footer-group;
+              &:after {
+                clear: both;
+                content: ' ';
+                display: block;
+                margin-bottom: 10px
+              }
+            }
+
+            &.views-field-field-date {
+              display: table-row-group;
+              &:after {
+                clear: both;
+                content: ' ';
+                display: block;
+                margin-bottom: 10px
+              }
+            }
+
+          }
+
+        }
+
+        @include breakpoint('small') {
+
+          .section td {
+            display: none;
+          }
+
+          .section.active td {
+            display: block;
+          }
+
+          .section .section-label {
+            display: block;
+            font-size: 12px;
+            padding: 5px;
+          }
+
+          .section .section-label {
+            background: url(/themes/custom/secgov/images/expand-plus-aaaaaa-10x10.gif) left no-repeat;
+            display: inline-block;
+            margin-left: 5px;
+            padding-left: 15px;
+          }
+
+          .section.active .section-label {
+            background: url(/themes/custom/secgov/images/collapse-minus-aaaaaa-10x10.gif) left no-repeat;
+          }
+
+          .section .section-label:hover {
+            background-color: $mist;
+          }
+        }
+      }
+    }
+
+    #view-field-display-title-table-column,
+    #view-field-list-page-det-secarticle-table-column,
+    #view-term-node-tid-table-column {
+      display: none !important;
+    }
+
+  }
+
+}

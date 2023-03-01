@@ -1,0 +1,94 @@
+{
+    "aaer": null,
+    "aljo": [
+        {
+            "field_case_id": [
+
+            ],
+            "field_case_respondent": [
+
+            ],
+            "field_comments_available": [
+
+            ],
+            "field_comments_due": [
+
+            ],
+            "field_creator": [
+
+            ],
+            "field_file_no": [
+                "3-15006"
+            ],
+            "field_ic_category": [
+
+            ],
+            "field_matter_of": [
+                "Behat ALJ Orders"
+            ],
+            "field_name": [
+
+            ],
+            "field_other_rel_no": [
+
+            ],
+            "field_primary_doc_link": [
+                {
+                    "options": [
+                        {
+                            "target": "_blank"
+                        }
+                    ],
+                    "title": "1234-9876",
+                    "uri": "\/alj\/aljorders\/2020\/1234-9876.pdf"
+                }
+            ],
+            "field_rebuttals_due": [
+
+            ],
+            "field_rel_attributes": null,
+            "field_rel_date": [
+                "2020-02-26"
+            ],
+            "field_respondent": [
+
+            ],
+            "field_sec_official": [
+
+            ],
+            "field_secondary_doc_link": [
+
+            ],
+            "field_sro_ref": [
+
+            ],
+            "field_submit_comments": [
+
+            ],
+            "field_title": [
+                "Order"
+            ],
+            "fnid": [
+                "3-15006"
+            ],
+            "rnid": [
+                "1234-9876"
+            ],
+            "upload_files": [
+                {
+                    "file": "1234-9876.pdf",
+                    "title": "1234-9876",
+                    "year": "2020"
+                }
+            ]
+        }
+    ],
+    "ap": null,
+    "ap_case": null,
+    "ic": null,
+    "id": null,
+    "lr": null,
+    "op": null,
+    "sro": null,
+    "ts": null
+}

@@ -1,0 +1,23 @@
+uuid: 06e12b0d-21ea-4f07-be37-6fec1f7f661c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_item_body
+    - media.type.video_media
+  module:
+    - text
+id: media.video_media.field_media_item_body
+field_name: field_media_item_body
+entity_type: media
+bundle: video_media
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

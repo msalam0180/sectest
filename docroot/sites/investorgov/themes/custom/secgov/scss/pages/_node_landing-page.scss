@@ -1,0 +1,125 @@
+//
+// CONTENT TYPE: LANDING PAGE - DETAIL PAGES
+// Styles ONLY apply to landing page nodes
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+
+#page.landing-page {
+  &.content {
+    width: 100%;
+  }
+
+  .landing-page.content {
+    &:after {
+      clear: both;
+      content: ' ';
+      display: block;
+      height: 1px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  #landing-page-title {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 20px;
+    position: relative;
+    @include breakpoint('medium','landscape') {
+      margin-bottom: 0px;
+      text-align: left;
+    }
+    @include breakpoint('medium','portrait'){
+      margin-bottom: 0px;
+      text-align: center;
+    }
+    @include breakpoint('medium','portrait','ipad'){
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      margin-top: 0;
+      width: 78%;
+      padding: 7px 0 0;
+
+      @include breakpoint('medium','portrait') {
+        padding: 0 10px 8px;
+        width: 100%;
+      }
+      @include breakpoint('medium','portrait','ipad') {
+        padding: 0 10px 8px;
+        width: 100%;
+      }
+      @include breakpoint('small','landscape') {
+        color: $cloudy-gray;
+        font-size: 1.5em;
+        width: 100%;
+        text-align: center;
+      }
+      @include breakpoint('small','portrait') {
+        color: $cloudy-gray;
+        font-size: 1.5em;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    #addthis-icons {
+      position: absolute;
+      bottom: 10px;
+      @include breakpoint('medium','landscape'){
+        bottom: 10px;
+      }
+      @include breakpoint('medium','portrait'){
+        bottom: -40px;
+        right: 20px;
+      }
+      @include breakpoint('medium','portrait','ipad'){
+        bottom: -40px;
+        right: 0px;
+      }
+      @include breakpoint('small'){
+        bottom: -40px;
+      }
+      @include breakpoint('medium','portrait'){
+        .addthis_default_style .at300b, .addthis_default_style .at300bo, .addthis_default_style .at300m {
+          margin-left: 4px;
+        }
+      }
+    }
+
+    @include breakpoint('medium','portrait') {
+      .block #appsIconsList span {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  h1.article-title {
+    // @include raleway;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  #sidebar-second {
+    @include span(4 last);
+  }
+
+  .modified-date {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+
+    &:before {
+      clear: both;
+      content: ' ';
+      display: block;
+      margin-top: 40px;
+    }
+  }
+}

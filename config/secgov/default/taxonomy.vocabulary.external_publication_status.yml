@@ -1,0 +1,10 @@
+uuid: 4b8e184f-cd8b-45e2-a859-a5109e007aef
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: D3kq2A0dc_J-GTAZQ7euLSlw56Slfvl9Y0f1hVSU1Ng
+name: 'External Publication Status'
+vid: external_publication_status
+description: ''
+weight: 0

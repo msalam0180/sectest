@@ -1,0 +1,80 @@
+//
+// VARIABLES
+// Site-wide variables for SASS
+// 
+// --------------------------------------------------
+
+@import "susy";
+
+$susy: (
+  flow: ltr, // ltr | rtl
+  output: float, // float | isolate
+  math: fluid, // fluid | static (requires column-width)
+  column-width: false, // false | value
+  container: auto, // length or % | auto
+  container-position: center, // left | center | right | <length> [*2] (grid padding)
+  last-flow: to,
+  columns: 12,
+  gutters: 3/16,
+  gutter-position: after, // before | after | split | inside | inside-static (requires column-width)
+  global-box-sizing: border-box, // content-box | border-box (affects inside/inside-static)
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background, // background | overlay
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true, // look for background-image mixin
+    background-options: false, // look for background-size, -origin and -clip and other compass/bourbon mixins
+    box-sizing: true, // look for custom bix sizing mixin
+    clearfix: false, // true = look for internal clearfix before using micro clearfix
+    rem: true, // look for rem mixin
+  )
+);
+
+// FUNCTIONS
+@function get-base-url() {
+	@return '/themes/custom/secgov/';
+}
+
+// TODO: Create new vars (Primary Color, etc)
+// TODO: Create new vars based on functionality
+// TODO: Then, use these vars throughout the site instead of color name vars or HEX values
+// SEE Insider for examples
+
+/* SEC COLORS */
+$charcoal: rgb(57, 61, 64);				// #393D40
+$dark-navy: rgb(16, 31, 54);			// #101F36
+$navy: rgb(39, 58, 86);					// #273a56
+$gray-blue: rgb(39, 58, 86);			// #273A56
+$deep-sea: rgb(37, 80, 142);			// #25508E
+$azure:	rgb(47, 100, 177); 				// #2F64B1
+$yellow-orange: rgb(255, 192, 87);		// #FFC057​
+$serenity: rgb(169, 186, 212);        //#A9BAD4
+
+/* SEC GRAY COLORS - Darkest to lightest */
+/* See the colors at 'sec-brand-colors-1' */
+$raven: #040707;
+$asphalt: #393C3F;
+$stone: #585858;
+$cloudy-gray: #6F7479;
+$shadow: #BFBFBF;
+$mist: #E9E9E9;
+$light-gray: #E5E5E5;
+$porcelain: #F3F3F3;
+$white-sand: #F6F6F6;
+
+$black: rgb(0, 0, 0);					// #000000
+$white: rgb(255, 255, 255);				// #FFFFFF
+
+/* TARGETED COLORS */
+$border-color: $shadow;					// #BFBFBF
+$gray-heading: $cloudy-gray;			// #6f7479
+$button-gray: $stone;				// #6F7479
+$row-hover-color: $mist;				// #E9E9E9
+
+
+// Can this be deleted not that we are no longer using compass?
+$legacy-support-for-ie: true;
+$breakpoint-ie-output: true;

@@ -1,0 +1,39 @@
+uuid: 40f11833-d1b2-4bff-a7f3-4379f376dd30
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '2'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: KKClPEye3FV0F0R3SzFAwMlzB_9USnINByIT7h7ZU6Y
+name: 'Article Type'
+type: article_type
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

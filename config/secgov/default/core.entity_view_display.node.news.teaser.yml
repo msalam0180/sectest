@@ -1,0 +1,89 @@
+uuid: f3e70d86-b612-454f-827a-b548ccfdf044
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.news.body
+    - field.field.node.news.field_act
+    - field.field.node.news.field_alternate_title_secarticle
+    - field.field.node.news.field_approved_by_general_counse
+    - field.field.node.news.field_audience
+    - field.field.node.news.field_creator
+    - field.field.node.news.field_date
+    - field.field.node.news.field_description_abstract
+    - field.field.node.news.field_display_title
+    - field.field.node.news.field_division_office
+    - field.field.node.news.field_external_resource
+    - field.field.node.news.field_file_upload
+    - field.field.node.news.field_location_news
+    - field.field.node.news.field_media_file_upload
+    - field.field.node.news.field_more_about_this_topic
+    - field.field.node.news.field_news_type_news
+    - field.field.node.news.field_person
+    - field.field.node.news.field_primary_division_office
+    - field.field.node.news.field_publish_date
+    - field.field.node.news.field_regulation
+    - field.field.node.news.field_related_materials
+    - field.field.node.news.field_release_number
+    - field.field.node.news.field_ruling_comment_file_number
+    - field.field.node.news.field_ruling_comment_title
+    - field.field.node.news.field_sec_content_approver
+    - field.field.node.news.field_speaker_name_and_title
+    - field.field.node.news.field_sub_title
+    - field.field.node.news.field_tags
+    - field.field.node.news.field_top_right_column
+    - field.field.node.news.scheduling_options
+    - node.type.news
+  module:
+    - user
+_core:
+  default_config_hash: EeqlSKoT13b35iXk_N3IBV1WuyW7ZcpGedFWd6OJGAY
+id: node.news.teaser
+targetEntityType: node
+bundle: news
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  body: true
+  field_act: true
+  field_alternate_title_secarticle: true
+  field_approved_by_general_counse: true
+  field_audience: true
+  field_creator: true
+  field_date: true
+  field_description_abstract: true
+  field_display_title: true
+  field_division_office: true
+  field_external_resource: true
+  field_file_upload: true
+  field_location_news: true
+  field_media_file_upload: true
+  field_more_about_this_topic: true
+  field_news_type_news: true
+  field_person: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_related_materials: true
+  field_release_number: true
+  field_ruling_comment_file_number: true
+  field_ruling_comment_title: true
+  field_sec_content_approver: true
+  field_speaker_name_and_title: true
+  field_sub_title: true
+  field_tags: true
+  field_top_right_column: true
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

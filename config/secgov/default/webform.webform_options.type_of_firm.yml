@@ -1,0 +1,24 @@
+uuid: 422dce90-9a50-4603-aa1d-6893b5200745
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BBrTS0xdyAOYxqSmZ-zLu6ZWoO--Ig-QnS_K1aty6oA
+id: type_of_firm
+label: 'Type of firm'
+category: SEC
+likert: false
+options: |
+  Bank: Bank
+  Broker-Dealer: Broker-Dealer
+  'Day Trading Firm': 'Day Trading Firm'
+  'Insurance Company': 'Insurance Company'
+  'Investment Advisor/Financial Planner': 'Investment Advisor/Financial Planner'
+  'Market Maker': 'Market Maker'
+  'Mutual Fund': 'Mutual Fund'
+  'Newsletter Company/Investment Publication Company': 'Newsletter Company/Investment Publication Company'
+  'On-Line Trading Firm': 'On-Line Trading Firm'
+  Other: Other
+  'Private/Closely Held Company': 'Private/Closely Held Company'
+  'Public Company': 'Public Company'
+  'Transfer Agent': 'Transfer Agent'

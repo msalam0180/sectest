@@ -1,0 +1,28 @@
+uuid: a2d88919-c6c2-441f-81e0-b9ec101543ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_act
+    - node.type.video
+    - taxonomy.vocabulary.act
+id: node.video.field_act
+field_name: field_act
+entity_type: node
+bundle: video
+label: Act
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      act: act
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

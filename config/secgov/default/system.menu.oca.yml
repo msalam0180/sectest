@@ -1,0 +1,10 @@
+uuid: e12f339f-588a-44da-bd64-4f14ae2054ba
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: B1oKofCAO0Y10u2w6V1zNxYzOMjn4eISQ-p36e5-lwA
+id: oca
+label: OCA
+description: 'Office of the Chief Accountant'
+locked: false

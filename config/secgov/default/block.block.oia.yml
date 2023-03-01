@@ -1,0 +1,32 @@
+uuid: ce06899d-da36-4eba-bdae-6e87f0ff4be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.oia
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: GlJT0qa4whzElN6n__09KEocolEDubMa8kRSEFXvI_Q
+id: oia
+theme: secgov
+region: sidebar_first
+weight: -22
+provider: null
+plugin: 'system_menu_block:oia'
+settings:
+  id: 'system_menu_block:oia'
+  label: OIA
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oia\r\n/oia/*"

@@ -1,0 +1,72 @@
+// To add this to a view add the following classes to the view
+// Advanced/Other/CSS Class: "entity-list"
+//    --To make exposed form inline also add the class "entity-list-form-inline"
+//    --To add a box around the exposed filters add the class "entity-list-form-box"
+// Field used as Title/Style Settings/Customize field HTML/Create a CSS class: "entity-list-title"
+//    --Remember to set the correct heading level
+//    --also remove wrapping container
+// Field used as date/Style Settings/Customize field HTML/Create a CSS class: "entity-list-date"
+//    --also remove wrapping container
+// Field used as summary/Style Settings/Customize field HTML/Create a CSS class: "entity-list-summary"
+//    --customize the HTML element to a div and not a span
+//    --also strip html except anchors
+//    --also trim to trim with "..."
+
+//Basic Item
+.entity-list{
+  .entity-list-title{
+    @extend .text--alt--lg;
+    font-weight: normal;
+    &.entity-list-title-tight{
+      margin-bottom: 0;
+    }
+  }
+  .entity-list-date{
+    color: #6d6d6d;
+    @extend .text--xs;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .entity-list-summary{
+    margin-bottom: $space-lg;
+  }
+}
+
+// Required filed not filled out fallback text - Text on demand
+.entity-list{
+  .error-enter-keywords{
+    padding: 20px;
+    border: 1px solid $form-error-color;
+    margin: 20px 0;
+  }
+}
+
+///////views-exposed-form INLINE
+.entity-list.entity-list-form-inline{
+  .views-exposed-form{
+    display: flex;
+    align-items: flex-end;
+    .form-item{
+      flex: 1;
+      margin-right: 5px;
+    }
+  }
+}
+
+///////views-exposed-form BOX
+.entity-list.entity-list-form-box{
+  .views-exposed-form{
+    margin-bottom: $space-lg;
+    border: 1px solid #e6e6e6;
+    padding: 0 20px;
+    background: #fbfbfb;
+  }
+}
+
+//Glossary View
+.views-letter-container{
+  @extend .text--sm;
+  font-size: .9em;
+  font-weight: bold;
+  margin-bottom: $space-lg;
+}

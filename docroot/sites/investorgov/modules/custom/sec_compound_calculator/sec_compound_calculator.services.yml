@@ -1,0 +1,3 @@
+services:
+  compound_calculator:
+    class: Drupal\sec_compound_calculator\CompoundCalculator

@@ -1,0 +1,491 @@
+uuid: 940abc16-ef2d-413a-885b-2a0b7cff98c9
+langcode: en
+status: open
+dependencies: {  }
+weight: 0
+open: null
+close: null
+uid: null
+template: false
+archive: false
+id: ruling_comments_form
+title: 'Ruling Comments Form'
+description: 'This is used to create a new webform for ruling comment.'
+category: 'Comment Form'
+elements: |-
+  organization_information:
+    '#type': webform_wizard_page
+    '#title': 'Organization Information'
+    '#prev_button_label': Back
+    header_top:
+      '#type': processed_text
+      '#text': |-
+        <h1 align="center" style="margin-top: 0 !important;">Submit Comments on [webform_submission:node:field_file_number:entity:name]<br />
+        [webform_submission:node:title]</h1>
+      '#format': full_html
+    intro_text:
+      '#type': processed_text
+      '#text': |
+        <p align="center">Complete this form to submit your comments. Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+        <p class="text-align-center">Important: All comments will be made available to the public. Submit only information that you wish to make available publicly. This form should not be used for submitting a tip or complaint (including a whistleblower complaint). If you wish to submit a tip or complaint regarding a potential violation of the federal securities laws, please use our&nbsp;<a href="https://www.sec.gov/complaint/selectconduct.shtml">online form</a>, or mail your information to the SEC Complaint Center at the following address: SEC Complaint Center, 100 F Street NE, Washington, D.C. 20549-0213. You can also send a fax to&nbsp;703-813-6965.</p>
+      '#format': full_html
+    processed_text:
+      '#type': processed_text
+      '#wrapper_attributes':
+        style: 'color:purple'
+      '#text': |-
+        <div class="stylized-box-1 mt0">
+        <p align="center">🌎 Information entered will be viewable on <a href="https://www.sec.gov/">www.sec.gov</a></p>
+        <p class="text-align-center">Please enter the commenter's name. If no name is submitted, the commenter will be identified as&nbsp;<q>Anonymous.</q>&nbsp;If this comment is being submitted on behalf of another individual or entity, please provide that name below.</p>
+        </div>
+      '#format': full_html
+    commenter_s_name_individual_or_organization_:
+      '#type': textfield
+      '#title': '🌎 Commenter''s Name (Individual or Organization)'
+      '#required': true
+      '#required_error': 'Please enter the commenter''s name. '
+    commenter_s_professional_affiliation:
+      '#type': textfield
+      '#title': '🌎 Commenter''s Professional Affiliation (if any)'
+      '#description': |-
+        <small>Examples: </small><br />
+        <small>Professor of Economics, University of Providence /or/&nbsp;</small><small>Markets Section Chair, Association of Professional Accountants /or/&nbsp;</small><small>CEO, Acme Widget Company</small>
+    follow_up_details:
+      '#type': processed_text
+      '#text': |
+        <p>This information, if provided, will allow the Commission staff to contact you if they have any follow-up questions about your comment.</p>
+      '#format': full_html
+    address:
+      '#type': webform_address
+      '#title': 'Mailing Address'
+      '#title_display': before
+      '#address_2__access': false
+      '#city__title': '🌎 City/Town'
+      '#state_province__title': '🌎  State/Province'
+      '#postal_code__title': '🌎 ZIP/Postal Code'
+      '#country__title': '🌎 Country'
+      '#flexbox': '0'
+    email_address:
+      '#type': email
+      '#title': 'Email Address'
+      '#description': |-
+        example:<br style="padding:0px; box-sizing:border-box; color:#333333; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; font-size:12.8px; font-style:normal; font-variant-ligatures:normal; font-weight:400; text-align:start; white-space:normal; background-color:#ffffff; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial" />
+        &nbsp;&nbsp;&nbsp;name@domainname.domain
+      '#help': |-
+        example:<br style="padding:0px; box-sizing:border-box; color:#333333; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; font-size:12.8px; font-style:normal; font-variant-ligatures:normal; font-weight:400; text-align:start; white-space:normal; background-color:#ffffff; text-decoration-thickness:initial; text-decoration-style:initial; text-decoration-color:initial" />
+        &nbsp;&nbsp;&nbsp;name@domainname.domain
+      '#required': true
+    phone_number:
+      '#type': tel
+      '#title': 'Phone Number'
+      '#required': true
+    on_behalf_third_party:
+      '#type': checkbox
+      '#title': 'I am submitting on behalf of a third party'
+    submitter_s_representative:
+      '#type': textfield
+      '#title': 'Submitter''s Representative'
+      '#states':
+        invisible:
+          ':input[name="on_behalf_third_party"]':
+            unchecked: true
+        visible:
+          ':input[name="on_behalf_third_party"]':
+            checked: true
+    organization_s_name:
+      '#type': textfield
+      '#title': 'Organization''s Name'
+      '#states':
+        invisible:
+          ':input[name="on_behalf_third_party"]':
+            unchecked: true
+        visible:
+          ':input[name="on_behalf_third_party"]':
+            checked: true
+    how_i_learned_about_the_opportunity_to_comment:
+      '#type': textfield
+      '#title': 'Affiliation Name'
+      '#description': 'How I learned about the opportunity to comment, such as a news article or trade publication; sec.gov; Federal Register; or specific person or group'
+      '#title_display': before
+    comments:
+      '#type': textarea
+      '#title': '🌎 Comments:'
+      '#description': 'If you are submitting your comment in an attached file, put the words &quot;Comments attached&quot; in the text box.'
+      '#required': true
+    upload_comments:
+      '#type': managed_file
+      '#title': 'Upload Comments'
+      '#multiple': 3
+      '#description': |-
+        Maximum 3 files.<br />
+        12 MB limit total.<br />
+        Allowed types: txt, doc, docx, pdf
+      '#help': |-
+        Maximum 3 files.<br />
+        12 MB limit total.<br />
+        Allowed types: txt, doc, docx, pdf
+      '#description_display': after
+      '#help_display': title_after
+      '#file_help': none
+      '#max_filesize': '12'
+      '#file_extensions': 'txt, doc, docx, pdf'
+  confirm_page:
+    '#type': webform_wizard_page
+    '#title': 'Confirm page'
+    '#open': true
+    '#prev_button_label': Back
+    '#next_button_label': Continue
+    header_confirmation:
+      '#type': processed_text
+      '#text': |
+        <h1 align="center" style="margin-top: 0 !important;">Please take a minute to review what you've written...</h1>
+      '#format': full_html
+    submit_review_instructions:
+      '#type': processed_text
+      '#text': |-
+        <p>We post all comments on our website, so please make sure that the text beneath the word&nbsp;<strong>comments</strong>&nbsp;below does not include:</p>
+
+        <ul>
+        	<li>account numbers</li>
+        	<li>social security numbers, or</li>
+        	<li>other personal identifying information</li>
+        </ul>
+
+        <hr />
+      '#format': full_html
+    full_name_webform_submission_value:
+      '#type': label
+      '#title': '<p><strong>Full Name:</strong> [webform_submission:values:commenter_s_name_individual_or_organization_]</p>'
+      '#states':
+        visible:
+          ':input[name="commenter_s_professional_affiliation"]':
+            filled: true
+    affiliation:
+      '#type': label
+      '#title': '<p><strong>Affiliation:</strong> [webform_submission:values:commenter_s_professional_affiliation]</p>'
+      '#states':
+        visible:
+          ':input[name="commenter_s_professional_affiliation"]':
+            filled: true
+    mailing_address_webform_submission_value:
+      '#type': label
+      '#title': '<p><strong>Mailing address:</strong> [webform_submission:values:address:address]</p>'
+      '#states':
+        visible:
+          ':input[name="address[address]"]':
+            filled: true
+    city_webform_submission_values_address_city:
+      '#type': label
+      '#title': '<p><strong>City:</strong> [webform_submission:values:address:city]</p>'
+      '#states':
+        visible:
+          ':input[name="address[city]"]':
+            filled: true
+      '#attributes':
+        color: green
+    state_webform_submission_values_address_state:
+      '#type': label
+      '#title': '<p><strong>State:</strong> [webform_submission:values:address:state_province]</p>'
+      '#states':
+        visible:
+          ':input[name="address[state_province]"]':
+            filled: true
+    state_webform_submission_values_address_postal_code:
+      '#type': label
+      '#title': '<p><strong>ZipCode:</strong> [webform_submission:values:address:postal_code]</p>'
+      '#states':
+        visible:
+          ':input[name="address[postal_code]"]':
+            filled: true
+    country_webform_submission_values_address_country:
+      '#type': label
+      '#title': '<p><strong>Country:</strong> [webform_submission:values:address:country]</p>'
+      '#states':
+        visible:
+          ':input[name="address[country]"]':
+            filled: true
+    email_webform_submission_values_email_address_:
+      '#type': label
+      '#title': '<p><strong>Email:</strong>  [webform_submission:values:email_address]</p>'
+    phone_number_webform_submission_values_phone_number_:
+      '#type': label
+      '#title': '<p><strong>Phone Number:</strong>  [webform_submission:values:phone_number]</p>'
+    submitter_s_representative_webform_submission_values:
+      '#type': label
+      '#title': '<p><strong>Submitter''s Representative:</strong> [webform_submission:values:submitter_s_representative]</p>'
+      '#states':
+        visible:
+          ':input[name="submitter_s_representative"]':
+            filled: true
+    organization_webform_submission_values:
+      '#type': label
+      '#title': '<p><strong>Organization:</strong> [webform_submission:values:organization_s_name]</p>'
+      '#states':
+        visible:
+          ':input[name="organization_s_name"]':
+            filled: true
+    affiliation_name_webform_submission_value:
+      '#type': label
+      '#title': '<p><strong>Affiliation Name:</strong> [webform_submission:values:how_i_learned_about_the_opportunity_to_comment]</p>'
+      '#states':
+        visible:
+          ':input[name="how_i_learned_about_the_opportunity_to_comment"]':
+            filled: true
+    confirm_comment:
+      '#type': webform_markup
+      '#display_on': both
+      '#markup': |-
+        <strong>Comments:</strong><br />
+        [webform_submission:values:comments]
+    captcha:
+      '#type': captcha
+      '#captcha_type': recaptcha/reCAPTCHA
+      '#captcha_admin_mode': true
+  webform_comments_in_html:
+    '#type': webform_attachment_twig
+    '#title': 'Webform Comments in HTML'
+    '#filename': '[webform_submission:node:field_file_number:entity:name].html'
+    '#template': |-
+      <html>
+      <head>
+      <title>Comments of {{ webform_token('[webform_submission:values:commenter_s_name_individual_or_organization_]', webform_submission) }} </title>
+      </head>
+      <body>
+      <h2>Subject: File No. {{ webform_token('[webform_submission:node:field_file_number:entity:name]', webform_submission) }} <br />
+      From: {{ webform_token('[webform_submission:values:commenter_s_name_individual_or_organization_]', webform_submission) }}</h2>
+      <p>{{ webform_token('[webform_submission:values:comments]', webform_submission) }}</p>
+      </body>
+      </html>
+  ruling:
+    '#type': hidden
+    '#title': ruling
+    '#default_value': '[webform_submission:node:field_ruling]'
+    '#prepopulate': true
+  rulepath:
+    '#type': hidden
+    '#title': rulePath
+    '#default_value': '[webform_submission:node:field_rule_path]'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#wizard_next__label': Continue
+css: /themes/custom/secgov/css/maps/pages/_node_webforms.scss
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: 12MB
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: false
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: true
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: ''
+  confirmation_message: "<p><br />\r\n<br />\r\nThank you for submitting a comment to the U.S. Securities and Exchange Commission to file [webform_submission:node:field_file_number:entity:name] on [current-date:custom:F j, Y] at [current-date:custom:g:i A].</p>\r\n\r\n<p>The SEC posts comments on the SEC&#39;s Internet Website (<a href=\"https://www.sec.gov\" style=\"color:#0563c1; text-decoration:underline\">https://www.sec.gov</a>). Comments are also available for website viewing and printing in the SEC&#39;s Public Reference Room, 100 F Street, NE, Washington, DC 20549 on official business days between the hours of 10:00 am and 3:00pm. We reserve the right, but shall have no obligation, to review, to refuse to post or to remove any or all of your submission from <a href=\"http://www.sec.gov\" style=\"color:#0563c1; text-decoration:underline\">www.sec.gov</a> that is deemed to be inappropriate for publication, including, but not limited to, obscene language, personally identifiable information, copyrighted material, and irrelevant content. When multiple comments are submitted with identical or near-identical content, only the first copy of the comment received is posted publicly, along with a running total number of that comment received. We may redact personally identifiable information from submissions, but have no obligation to do so. You should submit only information that you wish to make available publicly. We generally post comments within 3 to 5 business days after we receive them electronically.</p>\r\n\r\n<p>Please review our privacy policy at: <a href=\"https://www.sec.gov/privacy.htm\">https://www.sec.gov/privacy.htm</a>.</p>\r\n\r\n<p>You should not use this form to submit a tip or complaint (including a whistleblower complaint). If you wish to submit a tip or complaint regarding a potential violation of the federal securities laws, please use our online form at <a href=\"https://www.sec.gov/complaint/select.shtml\">https://www.sec.gov/complaint/select.shtml</a>, or mail your information to the SEC Complaint Center at the following address: SEC Complaint Center, 100 F Street NE, Washington, D.C. 20549-0213. You can also send a fax to 703-813-6965.</p>\r\n\r\n<p>If you are an investor, check out the &quot;Investor Information&quot; section of our website, at <a href=\"https://www.sec.gov/investor.shtml\">https://www.sec.gov/investor.shtml</a>, to find helpful information and tools. If you have a securities-related question, please visit our website at <a href=\"https://www.sec.gov/answers.shtml\">https://www.sec.gov/answers.shtml</a> to find fast answers to your questions and solutions to common investment problems. If you are a securities professional needing assistance on technical matters, please check the &quot;SEC Divisions&quot; and &quot;Information For&quot; pages on the top right of our website, <a href=\"http://www.sec.gov\">www.sec.gov</a>.</p>\r\n\r\n<p>We appreciate your taking the time to communicate your comments.</p>\r\n&nbsp;\r\n\r\n<p>Sincerely,<br />\r\nOffice of the Secretary<br />\r\nU.S. Securities and Exchange Commission<br />\r\n<br />\r\n&nbsp;</p>"
+  confirmation_attributes: {  }
+  confirmation_back: false
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  webform_comments_submission:
+    id: email
+    handler_id: webform_comments_submission
+    label: 'Webform Comments Submission'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: Rule-Comments@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: '[webform_submission:node:field_file_number:entity:name]: Webform Comments from [webform_submission:values:commenter_s_name_individual_or_organization_]'
+      body: "{% set fileNumber = '[webform_submission:node:field_file_number:entity:name]' %}\r\n{% set thirdParty = data.on_behalf_third_party == \"1\" ? 'True' : 'False' %}\r\n{% set isAffiliated = data.how_i_learned_about_the_opportunity_to_comment ? 'True' : 'False' %}\r\n{% set rulePath = data.rulepath %}\r\n{% set ruling = data.ruling %}\r\n{% set fileName =  fileNumber ~ '.html' %}\r\n{% set title = '[webform_submission:node:title]' %}\r\n\r\n{\r\n  \"apiVersion\": 1.0,\r\n  \"commentMetadata\": {\r\n    \"comment\":  \"{{data.comments}}\",\r\n  }, \r\n  \"commenterInfo\": {\r\n    \"lastName\": \"{{data.commenter_s_name_individual_or_organization_}}\",\r\n    \"affiliation\": \"{{data.commenter_s_professional_affiliation}}\",\r\n    \"commenterAddress\": {\r\n      \"streetAddress\": \"{{data.address.address}}\",\r\n      \"city\": \"{{data.address.city}}\",\r\n      \"state\": \"{{data.address.state_province}}\",\r\n      \"zip\": \"{{data.address.postal_code}}\",\r\n      \"country\": \"{{data.address.country}}\",\r\n    },\r\n    \"email\": \"{{data.email_address}}\",\r\n    \"phone\": \"{{data.phone_number}}\",\r\n  },\r\n  \"submitterInfo\": {\r\n    \"isThirdParty\": \"{{thirdParty}}\",\r\n    \"submitterName\": \"{{data.submitter_s_representative}}\",\r\n    \"submitterOrganization\": \"{{data.organization_s_name}}\",\r\n    \"isAffiliated\": \"{{ isAffiliated }}\",\r\n    \"affiliationName\": \"{{data.how_i_learned_about_the_opportunity_to_comment}}\",\r\n  },\r\n  \"rulingInfo\": {\r\n    \"fileNumber\": \"{{ webform_token(fileNumber, webform_submission)|upper }}\",\r\n    \"ruling\": \"{{ ruling }}\",\r\n    \"rulePath\": \"{{ rulePath }}\",\r\n    \"title\": \"{{ webform_token(title, webform_submission) }}\",\r\n  },\r\n  \"commentDate\": \"{{ completed|date('F d, Y') }}\",\r\n  \"htmlFilename\": \"{{ webform_token(fileNumber, webform_submission)|upper ~ '.html' }}\",\r\n}\r\n"
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: true
+      html: false
+      attachments: true
+      twig: true
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

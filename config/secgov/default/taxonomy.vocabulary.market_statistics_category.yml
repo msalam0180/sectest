@@ -1,0 +1,8 @@
+uuid: e0cd286b-5eb7-457a-9007-9b6b8e458d43
+langcode: en
+status: true
+dependencies: {  }
+name: 'Market Statistics Category'
+vid: market_statistics_category
+description: ''
+weight: 0

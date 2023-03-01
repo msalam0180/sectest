@@ -1,0 +1,35 @@
+uuid: cbd2b4bb-a94e-4aa7-9f45-1876d73a2bae
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: h3a0OIO1YaEzvW_3-5d-u4yYK0TaM39OgdTBU5vqzLk
+id: node.field_webcast_state
+field_name: field_webcast_state
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: upcoming
+      label: upcoming
+    -
+      value: live
+      label: live
+    -
+      value: ended
+      label: ended
+    -
+      value: testing
+      label: testing
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

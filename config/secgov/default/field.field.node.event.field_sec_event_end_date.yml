@@ -1,0 +1,26 @@
+uuid: db5177ea-08f8-4388-9219-b896fbf09489
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sec_event_end_date
+    - node.type.event
+  module:
+    - datetime
+_core:
+  default_config_hash: 6o4mZpN1dEOFoEkqYqkeLR_7lHrnfB67FEooNFCKTbU
+id: node.event.field_sec_event_end_date
+field_name: field_sec_event_end_date
+entity_type: node
+bundle: event
+label: 'SEC Event End Date'
+description: "Date Format - MM/DD/YYYY<br>Time Format - HH:MM:SS AM/PM\r\n"
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: relative
+    default_date: 'tomorrow 3:59:59'
+default_value_callback: ''
+settings: {  }
+field_type: datetime

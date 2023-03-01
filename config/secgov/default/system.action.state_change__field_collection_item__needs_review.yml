@@ -1,0 +1,11 @@
+uuid: 23e4968b-b36e-48bb-bb9f-6d373ea43ecd
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__field_collection_item__needs_review
+label: 'Set Field Collection Item as Needs Review'
+type: field_collection_item
+plugin: 'state_change:field_collection_item__needs_review'
+configuration: {  }

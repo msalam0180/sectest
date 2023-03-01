@@ -1,0 +1,240 @@
+uuid: c9586666-78c5-4706-9d9f-85517bcbdef4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.title_only
+    - field.field.node.secperson.body
+    - field.field.node.secperson.field_bottom_center_column_perso
+    - field.field.node.secperson.field_creator
+    - field.field.node.secperson.field_description_abstract_perso
+    - field.field.node.secperson.field_division_office_perso
+    - field.field.node.secperson.field_enable_biography_page
+    - field.field.node.secperson.field_first_name_secperson
+    - field.field.node.secperson.field_last_name_secperson
+    - field.field.node.secperson.field_left_nav_override
+    - field.field.node.secperson.field_left_nav_person
+    - field.field.node.secperson.field_photo_person
+    - field.field.node.secperson.field_position_history_paragraph
+    - field.field.node.secperson.field_primary_division_office
+    - field.field.node.secperson.field_sec_content_approver
+    - field.field.node.secperson.field_speaker_combined
+    - field.field.node.secperson.field_tags
+    - field.field.node.secperson.panelizer
+    - field.field.node.secperson.scheduling_options
+    - node.type.secperson
+  module:
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+    displays:
+      default:
+        id: panels_variant
+        label: ''
+        weight: 0
+        uuid: 9788baf2-ab52-4493-bfa4-8b05c5129fcb
+        blocks:
+          d67391cc-2b34-4fd8-8375-97cb2bcc5bd9:
+            id: 'entity_field:node:body'
+            label: Body
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 4
+            uuid: d67391cc-2b34-4fd8-8375-97cb2bcc5bd9
+          b7fe39da-2973-4077-993c-ad44a331c4c2:
+            id: 'entity_field:node:field_bottom_center_column_perso'
+            label: 'Bottom Center Column'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: text_default
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 6
+            uuid: b7fe39da-2973-4077-993c-ad44a331c4c2
+          3e893cce-6377-4e77-b366-0bf66fdad199:
+            id: 'entity_field:node:field_description_abstract_perso'
+            label: Description/Abstract
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: basic_string
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 5
+            uuid: 3e893cce-6377-4e77-b366-0bf66fdad199
+          840d3eee-11bb-44d9-b987-0eb1a06680b3:
+            id: 'entity_field:node:field_photo_person'
+            label: Photo
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: image
+              weight: 0
+              label: hidden
+              settings:
+                image_link: file
+                image_style: person_photo
+              third_party_settings: {  }
+            region: left
+            weight: 1
+            uuid: 840d3eee-11bb-44d9-b987-0eb1a06680b3
+          92956d88-cee3-4b94-b780-cf572f30061c:
+            id: 'views_block:person_related_press_releases-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 3
+            uuid: 92956d88-cee3-4b94-b780-cf572f30061c
+          f8cd5731-ae90-4432-9070-a6354cd25ef6:
+            id: 'views_block:person_related_public_statements-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 2
+            uuid: f8cd5731-ae90-4432-9070-a6354cd25ef6
+          d9209fb6-8824-4c07-a784-4e6fb9c6331e:
+            id: 'views_block:person_related_speeches-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 1
+            uuid: d9209fb6-8824-4c07-a784-4e6fb9c6331e
+          7325a07f-b7dc-411c-b812-b1341efe6c95:
+            id: 'views_block:person_related_testimonials-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 4
+            uuid: 7325a07f-b7dc-411c-b812-b1341efe6c95
+          dd8fac9b-2e22-4181-9ae0-ef92826973d6:
+            id: 'views_block:person_related_staff_papers-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 5
+            uuid: dd8fac9b-2e22-4181-9ae0-ef92826973d6
+          1b6147c7-de5c-41ca-a528-da3aaf4faa55:
+            id: 'views_block:person_related_academic_publications-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+            region: right
+            weight: 6
+            uuid: 1b6147c7-de5c-41ca-a528-da3aaf4faa55
+          299fa77c-c7a1-4d1b-ae47-6b3495235d46:
+            id: 'entity_field:node:title'
+            label: Title
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: above
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: left
+            weight: 2
+            uuid: 299fa77c-c7a1-4d1b-ae47-6b3495235d46
+          48b7fb66-ebf2-4bad-8d16-a533fe110fec:
+            id: 'entity_field:node:field_position_history'
+            label: 'Previous SEC Positions:'
+            label_display: visible
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: field_collection_items
+              weight: 0
+              label: hidden
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 3
+            uuid: 48b7fb66-ebf2-4bad-8d16-a533fe110fec
+        page_title: '[node:title]'
+        layout: layout_twocol
+        layout_settings: {  }
+        builder: ipe
+        storage_type: panelizer_default
+        storage_id: 'node:secperson:full:default'
+id: node.secperson.title_only
+targetEntityType: node
+bundle: secperson
+mode: title_only
+content: {  }
+hidden:
+  body: true
+  field_bottom_center_column_perso: true
+  field_creator: true
+  field_description_abstract_perso: true
+  field_division_office_perso: true
+  field_enable_biography_page: true
+  field_first_name_secperson: true
+  field_last_name_secperson: true
+  field_left_nav_override: true
+  field_left_nav_person: true
+  field_photo_person: true
+  field_position_history_paragraph: true
+  field_primary_division_office: true
+  field_sec_content_approver: true
+  field_speaker_combined: true
+  field_tags: true
+  langcode: true
+  links: true
+  panelizer: true
+  scheduling_options: true
+  search_api_excerpt: true
+  workbench_moderation_control: true

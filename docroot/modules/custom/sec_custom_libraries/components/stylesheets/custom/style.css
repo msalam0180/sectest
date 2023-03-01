@@ -1,0 +1,15 @@
+canvas {
+    margin: 1em 0;
+}
+canvas:hover {
+    cursor: move;
+}
+.data-highlight h2 {
+    border-bottom: 1px solid #BFBFBF;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+}
+.data-highlight .sidebar-container {
+    display: inline-block;
+    margin: 1em 0;
+}

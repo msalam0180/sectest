@@ -1,0 +1,62 @@
+// *******Footer2 Vars
+$footer2-bg-color: $primary_3;
+
+// *******Footer Layout
+.site-footer2 {
+  background-color: $footer2-bg-color;
+  color: $white;
+  clear: both;
+  padding: 10px 0;
+  
+  @media print{
+    display: none;
+  }
+}
+
+.region-footer2{
+  width: $site-width;
+  margin: 0 auto; 
+  @media screen and (max-width: $site-width) {
+    width: 100%;
+  }
+}
+
+//*******General footer styles
+.site-footer2{
+  a,
+  a:visited,
+  a:link {
+    font-family: $font_secondary;
+    font-weight: $font_secondary_weight_semi_bold;
+    color: $gray_white;
+  }
+
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+  }
+
+  svg.ext,  svg.mailto{
+    fill: $gray_white;
+    path{
+      stroke: $gray_white;
+    }
+  }
+
+  .menu--footer > .menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .menu-item{
+      padding: 0 10px;
+      margin: 5px 0;
+      line-height: 1em;
+      font-size: $text-xs;
+    }
+    .menu-item:not(:first-child){
+      border-left:1px solid $gray_white;
+    }
+  }
+}

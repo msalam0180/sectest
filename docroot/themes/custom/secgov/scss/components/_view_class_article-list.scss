@@ -1,0 +1,58 @@
+//
+// ARTICLE LIST
+// VIEW CLASS: article-list
+// DIRECTIONS: Add class "article-list" to the view in the UI
+// Styles a view in the "article-list" style
+// 
+// NOTES: Used on many views
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.article-list {
+  @include breakpoint('medium','portrait'){
+    padding: 0 15px;
+  }
+
+  header {
+    font-size: 13px;
+
+    ul.dashed {
+      margin: 0px 0px 20px 10px;
+      list-style-type: none !important;
+      li {
+        line-height: 1.0;
+        text-indent: -5px;
+      }
+
+      li:before {
+        content: "-";
+        margin-right: 5px;
+        margin-bottom: 0px;
+      }
+    }
+
+    #gov-delivery-box {
+      display: inline;
+    }
+
+    #gov-delivery-submit {
+      display: inline;
+      float: none !important;
+      font-size: 14px;
+      font-weight: 600;
+      height: 26px;
+      margin: 0px 0px 0px 5px !important;
+      vertical-align: middle;
+    }
+    .fa.fa-envelope-o {
+      padding: 1px 5px;
+    }
+  }
+
+  footer {
+    background-color: none;
+    margin: 20px 0;
+    padding: 0;
+  }
+}

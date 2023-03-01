@@ -1,0 +1,159 @@
+uuid: 8a757336-5159-49de-a06c-015900149179
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.secperson.body
+    - field.field.node.secperson.field_bottom_center_column_perso
+    - field.field.node.secperson.field_creator
+    - field.field.node.secperson.field_description_abstract_perso
+    - field.field.node.secperson.field_division_office_perso
+    - field.field.node.secperson.field_enable_biography_page
+    - field.field.node.secperson.field_first_name_secperson
+    - field.field.node.secperson.field_last_name_secperson
+    - field.field.node.secperson.field_left_nav_override
+    - field.field.node.secperson.field_left_nav_person
+    - field.field.node.secperson.field_photo_person
+    - field.field.node.secperson.field_position_history_paragraph
+    - field.field.node.secperson.field_primary_division_office
+    - field.field.node.secperson.field_sec_content_approver
+    - field.field.node.secperson.field_speaker_combined
+    - field.field.node.secperson.field_tags
+    - field.field.node.secperson.panelizer
+    - field.field.node.secperson.scheduling_options
+    - image.style.thumbnail
+    - node.type.secperson
+  module:
+    - image
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    displays:
+      default:
+        id: panels_variant
+        label: ''
+        weight: 0
+        uuid: 5c98afc0-17bf-454f-a837-3af370ce2e82
+        blocks:
+          4bbeb8b9-4aa4-4696-a270-b3cba4e219ef:
+            id: 'entity_field:node:field_first_name_secperson'
+            label: 'First Name'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: above
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: right
+            weight: 1
+            uuid: 4bbeb8b9-4aa4-4696-a270-b3cba4e219ef
+          d6c99fd1-ab61-41ba-9036-6b5d542a9a32:
+            id: 'entity_field:node:field_last_name_secperson'
+            label: 'Last Name'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: string
+              weight: 0
+              label: hidden
+              settings:
+                link_to_entity: false
+              third_party_settings: {  }
+            region: right
+            weight: 2
+            uuid: d6c99fd1-ab61-41ba-9036-6b5d542a9a32
+          46fa1506-b5b9-4dcb-b7a2-145debc9c66d:
+            id: 'entity_field:node:field_photo_person'
+            label: Photo
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: image
+              weight: 0
+              label: above
+              settings:
+                image_link: content
+                image_style: thumbnail
+              third_party_settings: {  }
+            region: left
+            weight: 1
+            uuid: 46fa1506-b5b9-4dcb-b7a2-145debc9c66d
+          a76a5070-b6d9-4053-a332-86f714abee60:
+            id: 'entity_field:node:field_position_history'
+            label: 'Position History'
+            label_display: '0'
+            provider: ctools_block
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            formatter:
+              type: field_collection_list
+              weight: 0
+              label: above
+              settings: {  }
+              third_party_settings: {  }
+            region: left
+            weight: 2
+            uuid: a76a5070-b6d9-4053-a332-86f714abee60
+        page_title: '[node:title]'
+        layout: layout_twocol
+        layout_settings: {  }
+        builder: ipe
+        storage_type: panelizer_default
+        storage_id: 'node:secperson:teaser:default'
+_core:
+  default_config_hash: sozk7IouJSoEbQHtq5hp7CCKbcnAGyToD780EKjj4Xk
+id: node.secperson.teaser
+targetEntityType: node
+bundle: secperson
+mode: teaser
+content:
+  field_photo_person:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  body: true
+  field_bottom_center_column_perso: true
+  field_creator: true
+  field_description_abstract_perso: true
+  field_division_office_perso: true
+  field_enable_biography_page: true
+  field_first_name_secperson: true
+  field_last_name_secperson: true
+  field_left_nav_override: true
+  field_left_nav_person: true
+  field_position_history_paragraph: true
+  field_primary_division_office: true
+  field_sec_content_approver: true
+  field_speaker_combined: true
+  field_tags: true
+  langcode: true
+  links: true
+  panelizer: true
+  scheduling_options: true
+  search_api_excerpt: true

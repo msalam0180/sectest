@@ -1,0 +1,17 @@
+/* line 1, ../sass/styles.scss */
+.form-item-files-file-upload {
+  margin-top: 1rem;
+  border-top: 1px solid #e6e4df;
+  padding-top: 1rem;
+}
+
+/* line 7, ../sass/styles.scss */
+.update-info-text {
+  margin: 0;
+  font-size: .95em;
+}
+
+/* line 12, ../sass/styles.scss */
+.form-item-send-email {
+  margin: 1rem 0 !important;
+}

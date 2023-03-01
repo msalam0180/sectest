@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - ua-based-css: Identifies the User Agent (browser) to specify if it should add the
+ *   default css or include IE specific css.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ * - window.env: Sets env var to window object showing the enviroment state
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set body_classes = [
+    path_info.arg ? 'page-' ~ path_info.arg,
+    ua_based_css ? view,
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'node--type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    view_id ? "view-id-" ~ view_id|clean_class,
+    view_display_id ? "view-display-id-" ~ view_display_id|clean_class,
+  ]
+%}
+
+<!DOCTYPE html>
+<html{{html_attributes}}>
+
+	<head-placeholder token="{{ placeholder_token }}">
+		<meta name="origin" content="Drupal"/>
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=3.0"/>
+		<title>{{ head_title|safe_join(' | ') }}</title>
+		<script>
+			window.env = "{{ env }}";
+		</script>
+		<css-placeholder token="{{ placeholder_token }}">
+		<js-placeholder token="{{ placeholder_token }}">
+	</head>
+	<!--Qualtrics code start: -->
+	<div id='ZN_2uaBz1tp3zk0RO6'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+	<!--Qualtrics code end: -->
+	<body{{attributes.addClass(body_classes)}}>
+		<a href="#main-content" class="visually-hidden focusable" tabindex="1">
+			{{ 'Skip to main content'|t }}
+		</a>
+		{% include '@investor/includes/usa-banner.html.twig' %}
+		{{ page_top }}
+		{{ page }}
+		{{ page_bottom }}
+
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i>Return to Top</a>
+
+		{% include '@secgov/components/addthis-bottom.html.twig' %}
+
+		<js-bottom-placeholder token="{{ placeholder_token }}">
+  </body>
+</html>

@@ -1,0 +1,113 @@
+uuid: 6f9f0fad-8937-4748-9fa3-2d52cff84db4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - image
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          63396571-aebc-47d6-b30b-f1a7913866d4:
+            uuid: 63396571-aebc-47d6-b30b-f1a7913866d4
+            region: content
+            configuration:
+              id: 'field_block:user:user:user_picture'
+              label_display: ''
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: thumbnail
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          43f24db0-3e49-4bfd-8e27-d5b7ab2c3f13:
+            uuid: 43f24db0-3e49-4bfd-8e27-d5b7ab2c3f13
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:member_for'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          0f51b297-bd4e-48d3-bd16-24ef1212268c:
+            uuid: 0f51b297-bd4e-48d3-bd16-24ef1212268c
+            region: content
+            configuration:
+              id: 'extra_field_block:user:user:member_for'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 4
+            additional: {  }
+          649d8466-f450-40b2-8398-32770a89ac4f:
+            uuid: 649d8466-f450-40b2-8398-32770a89ac4f
+            region: content
+            configuration:
+              id: 'field_block:user:user:user_picture'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: content
+                  image_style: thumbnail
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+      restricted_categories: {  }
+_core:
+  default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  user_picture:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

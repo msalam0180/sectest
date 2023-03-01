@@ -1,0 +1,32 @@
+uuid: 8e1c6084-2689-48b2-95a6-05b91c1154bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.whats_new.field_display_title
+    - taxonomy.vocabulary.whats_new
+  module:
+    - text
+id: taxonomy_term.whats_new.default
+targetEntityType: taxonomy_term
+bundle: whats_new
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

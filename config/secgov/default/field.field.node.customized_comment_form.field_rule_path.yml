@@ -1,0 +1,19 @@
+uuid: 2734c6a2-b209-47de-9f5d-e7cbe6c703b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rule_path
+    - node.type.customized_comment_form
+id: node.customized_comment_form.field_rule_path
+field_name: field_rule_path
+entity_type: node
+bundle: customized_comment_form
+label: rule_path
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

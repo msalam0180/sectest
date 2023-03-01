@@ -1,0 +1,8 @@
+uuid: 97f58d22-48d8-4974-b816-a0fff3246694
+langcode: en
+status: true
+dependencies: {  }
+name: 'Shareholder Proposal'
+vid: shareholder_proposal
+description: 'Contents here are listed in Shareholder Proposal form under the field Bases Asserted.'
+weight: 0

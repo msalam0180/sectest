@@ -1,0 +1,21 @@
+uuid: f0d022ca-2f8b-498c-b810-1fdbd6b3273a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publish_date
+    - node.type.webcast
+  module:
+    - datetime
+id: node.webcast.field_publish_date
+field_name: field_publish_date
+entity_type: node
+bundle: webcast
+label: 'Publish Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

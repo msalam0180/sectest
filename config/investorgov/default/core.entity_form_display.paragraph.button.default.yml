@@ -1,0 +1,53 @@
+uuid: 3390967c-02ee-4eae-a545-ad0849b86943
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.button.field_button_align
+    - field.field.paragraph.button.field_button_para
+    - field.field.paragraph.button.field_button_size
+    - field.field.paragraph.button.field_button_spacing
+    - field.field.paragraph.button.field_button_theme
+    - paragraphs.paragraphs_type.button
+  module:
+    - link
+id: paragraph.button.default
+targetEntityType: paragraph
+bundle: button
+mode: default
+content:
+  field_button_align:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_button_para:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_button_size:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_button_spacing:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_button_theme:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

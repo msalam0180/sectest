@@ -1,0 +1,29 @@
+uuid: 0efc5b33-4e1b-45d2-a1b0-40d78fe9fd60
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: q8B5hVnn7ePbM-nDsd3roRQL63ne_egivTBwxKiINMQ
+id: node.field_ext_pub_secarticle
+field_name: field_ext_pub_secarticle
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Forthcoming
+      label: Forthcoming
+    -
+      value: Published
+      label: Published
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

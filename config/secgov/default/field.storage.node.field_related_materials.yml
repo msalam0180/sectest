@@ -1,0 +1,21 @@
+uuid: ab1a0b18-f078-4159-8e99-51d4386a3309
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+_core:
+  default_config_hash: X7HpaIm1zk_g3lM_Jf1fA4yr6_RxUbBFqFr-Twk0KRs
+id: node.field_related_materials
+field_name: field_related_materials
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

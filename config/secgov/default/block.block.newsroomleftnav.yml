@@ -1,0 +1,32 @@
+uuid: 3bf29de6-2472-4441-a13e-b1bed174f8e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.newsroom-left-nav
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 8U3Um4v54zkF2LeQ6DE-X85lzLEKxa6XSPwyCxhrqSU
+id: newsroomleftnav
+theme: secgov
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'system_menu_block:newsroom-left-nav'
+settings:
+  id: 'system_menu_block:newsroom-left-nav'
+  label: 'Newsroom Left Nav'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/newsroom\r\n/news/pressreleases\r\n/news/pressrelease/*\r\n/news/press-release/*\r\n/news/pressrelease/*\r\n/news/testimony\r\n/news/testimony/*\r\n/news/statements\r\n/news/statements/*\r\n/news/statement/*\r\n/news/public-statement/*\r\n/news/speeches\r\n/news/speeches/*\r\n/news/speech/*\r\n*/sunshine-act/*\r\n/news/speeches-statements"

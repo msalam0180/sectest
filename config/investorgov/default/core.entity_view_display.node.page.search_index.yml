@@ -1,0 +1,38 @@
+uuid: 7bbd184b-2f93-4a7b-81b0-50e7f622dddf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: xBTs8g0qAlUrHQcyKIdGpebgUBgF-FOb_c0Lyu71hVc
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_alternate_name: true
+  field_related_content: true
+  field_related_content_label: true
+  field_show_featured_content: true
+  layout_builder__layout: true
+  links: true
+  search_api_excerpt: true

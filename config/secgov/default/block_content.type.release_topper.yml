@@ -1,0 +1,8 @@
+uuid: 73d4ad4c-bb48-4dd7-9be5-fec0648d4122
+langcode: en
+status: true
+dependencies: {  }
+id: release_topper
+label: 'Release Topper'
+revision: 1
+description: 'Placed at the top of a Release Page. It includes introduction text and Quick Links.'

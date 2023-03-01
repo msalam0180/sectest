@@ -1,0 +1,270 @@
+//
+// Forms
+// Base form styles
+// 
+// Changes here should affect *ALL* forms on the site
+// Additional styles for exposed form are in the exposed-forms component
+// --------------------------------------------------
+
+// TODO: Review all code in this file, clean it and, and move it into the correct places
+
+
+fieldset { border: none; }
+
+input[type="submit"], input[type="reset"] { height: 26px; }
+
+input[type="text"] {
+  height: 25px;
+  margin: 5px 0;
+  &:focus {
+    border: 2px solid #c8d4e4;
+    -webkit-box-shadow: 0px 0px 5px $azure;
+    -moz-box-shadow: 0px 3px 5px $azure;
+    box-shadow: 0px 0px 5px $azure;
+  }
+}
+
+label {
+  color: $stone;
+  font-size: 100%;
+  font-weight: 600;
+}
+
+select {
+  background: url(/ecms/images/Filter-arrows-blue.png) no-repeat right #FFF;
+  background-size: 15px 22px;
+  border: thin solid #CCC;
+  font-family: inherit;
+  font-size: 100%;
+  height: 24px !important;
+  padding-right: 22px;
+  padding-left: 2px;
+  width: 100%;
+}
+
+textarea { height: auto; min-height: 50px; }
+
+
+// TODO: Define what this is used for
+.select-container {
+  select {
+    background: url(get-base-url() + 'images/Filter-arrows-blue.png') no-repeat right #FFF;
+    background-size: 15px 22px;
+    border: thin solid #CCC;
+    height: 24px !important;
+    padding-right: 22px;
+    padding-left: 2px;
+    appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    -webkit-appearance: none;
+    background: none\9;
+    padding-right: 0px\9;
+    background-color: #FFF\9;
+
+    @include breakpoint('tablet'){
+      max-width: 240px;
+    }
+  }
+  select:disabled {
+    background: url(get-base-url() + 'images/Filter-arrows-grey.png') no-repeat right #FFF;
+    background-size: 15px 22px;
+  }
+
+  select::-ms-expand {
+    display: none;
+    height: 23px !important;
+  }
+}
+
+//Gov Delivery Form
+// TODO: What is this? Move this to where it belongs
+#subscribe-form {
+  fieldset {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .input-wrapper {
+    display:block;
+    height: 25px;
+    position: relative;
+    width: 100%;
+
+    .overlabel {
+      color: $shadow;
+      display: block;
+      font-size: 13px;
+      font-weight: normal;
+      position: absolute;
+      padding: 1px 5px;
+      z-index:0;
+    }
+
+    #gov-delivery-box {
+      background: transparent;
+      border: 1px solid $shadow;
+      height: 26px;
+      position: absolute;
+      width:100%;
+      z-index:1;
+
+      &.inline-input {
+        width: 177px !important;
+      }
+    }
+    #gov-delivery-submit {
+      float: right;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 4px 6px 3px;
+      font-weight: normal;
+      font-size: 13px;
+      height: 26px;
+      position:relative;
+      top: -1px;
+      z-index: 5;
+
+      &:hover, &:focus {
+        background-color: $azure;
+      }
+    }
+  }
+
+  #gov-delivery-submit {
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    &:hover, &:focus {
+      background-color: $azure;
+    }
+  }
+
+}
+
+// TODO: What is this? Move this to where it belongs
+input#company {
+  height: 26px;
+}
+
+// TODO: What is this? Move this to where it belongs
+input#gov-delivery-box[type="text"],
+input#listSearch[type="text"] {
+    width: 200px;
+    display: inline;
+    font-size:13px;
+    padding: 0 0 0 3px;
+	margin: -1px 0 0 0;
+	vertical-align: middle;
+}
+
+// TODO: What is this? Move this to where it belongs
+button#gov-delivery-submit, 
+input#gov-delivery-submit {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 5px 15px;
+  border: none;
+  background-color: #646464;
+  text-transform: uppercase;
+}
+
+// TODO: What is this? Move this to where it belongs
+input#listSearch[type="text"] {
+	@include span(5);
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+
+// TODO: What is this? Move this to where it belongs
+label.listSearch {
+	@include raleway;
+  color: $dark-navy;
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+// TODO: What is this? Move this to where it belongs
+#formgrid {
+  background-color: $porcelain;
+  font-size: 13px;
+  margin-top: 20px;
+  min-height: 30px;
+  padding: 8px 10px;
+}
+
+// TODO: What is this? Move this to where it belongs
+#formgrid_b {
+  background-color: $porcelain;
+  font-size: 13px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  min-height: 30px;
+  padding: 5px;
+
+  @include breakpoint('mobile'){
+    display: none;
+  }
+}
+
+// TODO: What is this? Move this to where it belongs
+.formgrid {
+    @include span(12);
+}
+
+.form-container {
+  display: block;
+  min-height: 30px;
+  position:relative;
+
+  // TODO: Part of exposed filters? Move this to where it belongs
+  .subscribe-rss {
+    clear:both;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    text-align: right;
+
+    @media only screen and (max-width: 767px) {
+      bottom: initial;
+    }
+
+    @include breakpoint('small','landscape') {
+      width: 25%;
+    }
+
+    @include breakpoint('small','portrait') {
+      top: 0;
+      width: 45%;
+    }
+
+    .fa {
+      font-size: 1.0em;
+      padding: 6px 3px;
+
+      @include breakpoint('small','landscape') {            
+        font-size: 1.25em;
+      }
+
+      @include breakpoint('small','portrait') {            
+        font-size: 1.25em;
+      }
+    }
+  }
+
+  label {
+    color: $navy;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+

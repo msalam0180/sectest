@@ -1,0 +1,32 @@
+.section-selector {
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  li {
+    float: left;
+  }
+  a {
+    display: block;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: $darkestgray;
+    border-bottom: 1px solid transparent;
+  }
+  .current {
+    color: #00325b;
+    border-bottom: 1px solid $darkestgray;
+  }
+  [data-page="prev"]:before {
+    content: "\25C0";
+    padding-right: 8px;
+    font-size: 1.4rem;
+  }
+  [data-page="next"]:after {
+    content: "\25B6";
+    padding-left: 8px;
+    font-size: 1.4rem;
+  }
+}

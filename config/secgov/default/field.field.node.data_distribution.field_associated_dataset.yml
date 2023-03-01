@@ -1,0 +1,27 @@
+uuid: 54911519-5e92-4fb1-a7fa-d04117e95d70
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_associated_dataset
+    - node.type.data_distribution
+_core:
+  default_config_hash: 5feO4FiQ_xMP2ATJr1LyC-2D-gl2xiUYdwrvxeeGyas
+id: node.data_distribution.field_associated_dataset
+field_name: field_associated_dataset
+entity_type: node
+bundle: data_distribution
+label: 'Associated Dataset'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: data_articles
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

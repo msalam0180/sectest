@@ -1,0 +1,29 @@
+uuid: e3aaafa9-bf12-4c32-82d4-667b341169d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_upload
+    - node.type.file
+  module:
+    - file
+_core:
+  default_config_hash: ls2FCccKDXfZjzAjM9ZO3X6ZkoJ1icM2QZfykrf93Zo
+id: node.file.field_file_upload
+field_name: field_file_upload
+entity_type: node
+bundle: file
+label: 'File Upload'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: 'asx avi css csv doc docx gif h htm html idx iff jpg js json map midi mov mp3 mp4 mpg pdf png ppt rss rtf sdp shtml smi txt wav wma wmv xfd xls xlsx xml xsd xsl xslt zip ics'
+  max_filesize: ''
+  description_field: false
+field_type: file

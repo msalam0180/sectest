@@ -1,0 +1,22 @@
+uuid: 21d5f408-faae-4892-8298-3e2cdc3d7807
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: news
+label: News
+type: 'canonical_entities:node'
+pattern: 'introduction-investing/general-resources/news-alerts/alerts-bulletins/[node:field_news_type:entity]/[node:title]'
+selection_criteria:
+  cda27920-d052-447c-bf09-b4c598f082b9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: cda27920-d052-447c-bf09-b4c598f082b9
+    context_mapping:
+      node: node
+    bundles:
+      news: news
+selection_logic: and
+weight: -8
+relationships: {  }

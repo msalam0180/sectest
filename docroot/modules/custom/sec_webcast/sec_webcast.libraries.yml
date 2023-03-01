@@ -1,0 +1,26 @@
+video_player:
+  version: 1.x
+  css:
+    theme:
+      css/akamai-media-player.css: {}
+  js:
+    js/webcast.js: {}
+  dependencies:
+    - core/jquery
+archive_player:
+  version: 1.x
+  js:
+    js/webcast-archive.js: {}
+    //video.limelight.com/player/limelightjs-player.js: { type: external, minified: false }
+  css:
+    layout:
+      css/webcast-archive.css: {}
+player.config:
+  version: 1.x
+  js:
+    js/player_config.js: {}
+  css:
+      theme:
+        css/player_config.css: {}
+  dependencies:
+    - core/jquery

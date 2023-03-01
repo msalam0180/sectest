@@ -1,0 +1,167 @@
+id: releaseimportts
+label: Import of Uploaded JSON/PDF Release content
+migration_tags:
+  - sec_release_importer
+source:
+  plugin: url
+  data_parser_plugin: json
+  item_selector: /ts
+  data_fetcher_plugin: file
+  urls: public://release_importer/wupdate.json
+  fields:
+    -
+      name: id
+      selector: rnid/0
+    -
+      name: respondents1
+      selector: field_matter_of/0
+    -
+      name: respondents2
+      selector: field_matter_of/1
+    -
+      name: respondents3
+      selector: field_matter_of/2
+    -
+      name: respondents4
+      selector: field_matter_of/3
+    -
+      name: respondents5
+      selector: field_matter_of/4
+    -
+      name: releasedate
+      selector: field_rel_date/0
+    -
+      name: otherreleasenumber1
+      selector: field_other_rel_no/0
+    -
+      name: otherreleasenumber2
+      selector: field_other_rel_no/1
+    -
+      name: otherreleasenumber3
+      selector: field_other_rel_no/2
+    -
+      name: otherreleasenumber4
+      selector: field_other_rel_no/3
+    -
+      name: otherreleasenumber5
+      selector: field_other_rel_no/4
+    -
+      name: otherreleasenumber6
+      selector: field_other_rel_no/5
+    -
+      name: uploadedfile1
+      selector: upload_files/0/file
+    -
+      name: uploadedfile2
+      selector: upload_files/1/file
+    -
+      name: filenumber
+      selector: fnid/0
+    -
+      name: attributes
+      selector: field_rel_attributes/0
+  constants:
+    division_office: 'Enforcement'
+    release_type: 'Trading Suspensions'
+  ids:
+    id:
+      type: string
+
+process:
+  status:
+    plugin: default_value
+    default_value: 0
+
+  type:
+    plugin: default_value
+    default_value: release
+
+  title: id
+
+  field_release_number:
+    plugin: get
+    source:
+      - id
+      - otherreleasenumber1
+      - otherreleasenumber2
+      - otherreleasenumber3
+      - otherreleasenumber4
+      - otherreleasenumber5
+      - otherreleasenumber6
+
+  field_release_file_number:
+    -
+      plugin: skip_on_value
+      method: process
+      value: "NA"
+      source: filenumber
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      source: filenumber
+      bundle: rulemaking_index
+
+  created:
+    plugin: format_date
+    source: releasedate
+    from_format: 'Y-m-d'
+    to_format: 'U'
+
+  changed: '@created'
+
+
+
+  field_publish_date:
+    plugin: format_date
+    source: releasedate
+    from_format: 'Y-m-d'
+    to_format: 'Y-m-d\TH:i:s'
+
+  field_primary_division_office:
+    plugin: entity_lookup
+    source: constants/division_office
+    value_key: name
+    bundle_key: vid
+    bundle: division_office
+    entity_type: taxonomy_term
+    ignore_case: true
+
+  field_release_type:
+    plugin: entity_lookup
+    source: constants/release_type
+    value_key: name
+    bundle_key: vid
+    bundle: release_type
+    entity_type: taxonomy_term
+    ignore_case: true
+
+  field_respondents:
+    plugin: concat
+    source:
+      - respondents1
+      - respondents2
+      - respondents3
+      - respondents4
+      - respondents5
+    delimiter: |
+
+  field_release_file:
+    plugin: migration_lookup
+    migration: releaseimportprimaryfiles
+    source: id
+
+  field_see_also:
+    plugin: migration_lookup
+    migration: releaseimportsecondaryfiles
+    source: id
+
+  field_delinquent_filings:
+    plugin: static_map
+    source: attributes
+    default_value: false
+    map:
+      'Delinquent': true
+destination:
+  plugin: entity:node

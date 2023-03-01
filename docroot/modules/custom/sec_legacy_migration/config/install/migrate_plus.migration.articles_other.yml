@@ -1,0 +1,192 @@
+id: articles_other
+label: JSON import of Legacy SEC Articles
+migration_group: sec
+migration_tags:
+  - articles_other
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/articles_other.json
+  fields:
+    -
+      name: id
+      label: 'Identifier'
+      selector: id
+    -
+      name: url
+      label: 'url'
+      selector: url
+    -
+      name: type
+      label: 'type'
+      selector: type
+
+    -
+      name: division_office
+      label: 'division_office'
+      selector: division_office
+    -
+      name: left_nav
+      label: 'left_nav'
+      selector: left_nav
+    -
+      name: filename
+      label: 'filename'
+      selector: filename
+    -
+      name: html_content
+      label: 'html_content'
+      selector: html_content
+
+
+  ids:
+    id:
+      type: string
+
+process:
+
+  type:
+    plugin: default_value
+    default_value: secarticle
+
+  title: filename
+
+  status:
+      plugin: default_value
+      default_value: 0
+
+  uid:
+    plugin: default_value
+    default_value: 1
+#
+#  created:
+#    plugin: date_import
+#    source: published_date
+#    return_timestamp: TRUE
+#
+#  changed: '@created'
+
+#
+#  Drupal content type user-defined fields
+#
+
+# hardcoded to "Other" = 651
+  field_article_type_secarticle:
+    plugin: default_value
+    default_value: 651
+#    plugin: static_map
+#    source: type
+#    map:
+#      'Other - Confirmed': 651
+
+  field_display_title:
+    plugin: html_title_import
+    source: html_content
+
+  body:
+    plugin: body_html_import
+    source: html_content
+
+  field_top_right_column:
+    plugin: rightbox_html_import
+    source: html_content
+
+  field_date:
+    plugin: modified_date_import
+    source: html_content
+
+  created: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: '@field_date'
+    -
+      plugin: date_import
+      return_timestamp: TRUE
+  changed: '@created'
+    
+#  field_publish_date:
+#    plugin: publish_date_import
+#    source: html_content
+
+#  field_data_dist_upload:
+#    -
+#      source: url
+#      plugin: file_import
+#
+#  field_associated_dataset: dataset_id
+#  field_description_abstract: description
+#  field_publish_date:
+#    plugin: date_import
+#    source: published_date
+
+  field_primary_division_office:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: division_office
+    -
+      plugin: static_map
+      map:
+        'TBD - Agency Wide': 30
+        'Agency-Wide': 30
+        'FOIA': 30
+#        'Acquisitions': 31
+#        'Administrative Law Judges': 32
+        'OCA': 33
+#        'Chief Operating Officer': 34
+        'OCIE': 35
+        'Corporation Finance': 36
+        'Corporation finance': 36
+#        'Credit Ratings': 37
+        'Economic and Risk Analysis': 38
+        'Enforcement': 39
+        'EEO': 40
+#        'Ethics Counsel': 41
+        'OFM': 42
+#        'General Counsel': 43
+#        'Human Resources': 44
+        'TBD - OHR': 44
+#        'Information Technology': 45
+#        'Inspector General': 46
+        'OIA': 47
+        'Investment Management': 48
+#        'Investor Advocate': 49
+#        'Investor Education and Advocacy': 50
+#        'Legislative and Intergovernmental Affairs': 51
+#        'Minority and Women Inclusion': 52
+        'OMS': 53
+#        'Public Affairs': 54
+#        'Secretary': 55
+#        'Structured Disclosure': 56
+#        'Support Operations': 57
+        'Trading and Markets': 58
+#        'Whistleblower': 59
+  field_left_nav_override: 
+    plugin: static_map
+    source: left_nav
+    map: 
+      'No left nav - About The SEC': 'about'
+      'OCA': 'oca'
+      'No left nav - About The SEC': 'about'
+      'Compliance Outreach Program': 'compliance-outreach-program'
+      'OCIE': 'ocie-left-nav'
+      'EEO': 'eeoo'
+      'About The Sec': 'about'
+      'OMS': 'municipal'
+      'FOIA': 'foia'
+      'Legacy Spotlight': 'spotlight'
+      'OCOO': 'ocoo'
+      'OIA': 'oia'
+      'Dera': 'dera'
+      'Enforcement': 'enforcement'
+      'OFM': 'ocoo'
+      'No left nav - Regulatory Actions': 'regulatory-actions'
+      'Newsroom': 'newsroom-left-nav'
+      'Corpfin': 'corpfin-left-nav'
+      'Trading and Markets': 'trading-and-markets'
+      'IM': 'im-left-nav'
+destination:
+  plugin: entity:node

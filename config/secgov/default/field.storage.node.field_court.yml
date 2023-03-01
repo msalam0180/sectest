@@ -1,0 +1,305 @@
+uuid: f82e67b1-8646-4bf1-923e-ed7e0be8ff16
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: 0ctpgOVDSP8Pt5Q0MkXX3QXPmO8GAxut-u90_orDJng
+id: node.field_court
+field_name: field_court
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'N.D. Ala.'
+      label: 'N.D. Ala.'
+    -
+      value: 'M.D. Ala.'
+      label: 'M.D. Ala.'
+    -
+      value: 'S.D. Ala.'
+      label: 'S.D. Ala.'
+    -
+      value: 'D. Alaska'
+      label: 'D. Alaska'
+    -
+      value: 'D. Ariz.'
+      label: 'D. Ariz.'
+    -
+      value: 'E.D. Ark.'
+      label: 'E.D. Ark.'
+    -
+      value: 'W.D. Ark.'
+      label: 'W.D. Ark.'
+    -
+      value: 'C.D. Cal.'
+      label: 'C.D. Cal.'
+    -
+      value: 'E.D. Cal.'
+      label: 'E.D. Cal.'
+    -
+      value: 'N.D. Cal.'
+      label: 'N.D. Cal.'
+    -
+      value: 'S.D. Cal.'
+      label: 'S.D. Cal.'
+    -
+      value: 'D. Colo.'
+      label: 'D. Colo.'
+    -
+      value: 'D. Conn.'
+      label: 'D. Conn.'
+    -
+      value: 'D. Del.'
+      label: 'D. Del.'
+    -
+      value: D.D.C.
+      label: D.D.C.
+    -
+      value: 'N.D. Fla.'
+      label: 'N.D. Fla.'
+    -
+      value: 'M.D. Fla.'
+      label: 'M.D. Fla.'
+    -
+      value: 'S.D. Fla.'
+      label: 'S.D. Fla.'
+    -
+      value: 'N.D. Ga.'
+      label: 'N.D. Ga.'
+    -
+      value: 'M.D. Ga.'
+      label: 'M.D. Ga.'
+    -
+      value: 'S.D. Ga.'
+      label: 'S.D. Ga.'
+    -
+      value: 'D. Guam'
+      label: 'D. Guam'
+    -
+      value: 'D. Haw.'
+      label: 'D. Haw.'
+    -
+      value: 'D. Idaho'
+      label: 'D. Idaho'
+    -
+      value: 'N.D. Ill.'
+      label: 'N.D. Ill.'
+    -
+      value: 'C.D. Ill.'
+      label: 'C.D. Ill.'
+    -
+      value: 'S.D. Ill.'
+      label: 'S.D. Ill.'
+    -
+      value: 'N.D. Ind.'
+      label: 'N.D. Ind.'
+    -
+      value: 'S.D. Ind.'
+      label: 'S.D. Ind.'
+    -
+      value: 'N.D. Iowa'
+      label: 'N.D. Iowa'
+    -
+      value: 'S.D. Iowa'
+      label: 'S.D. Iowa'
+    -
+      value: 'D. Kan.'
+      label: 'D. Kan.'
+    -
+      value: 'E.D. Ky.'
+      label: 'E.D. Ky.'
+    -
+      value: 'W.D. Ky.'
+      label: 'W.D. Ky.'
+    -
+      value: 'E.D. La.'
+      label: 'E.D. La.'
+    -
+      value: 'M.D. La.'
+      label: 'M.D. La.'
+    -
+      value: 'W.D. La.'
+      label: 'W.D. La.'
+    -
+      value: 'D. Me.'
+      label: 'D. Me.'
+    -
+      value: 'D. Md.'
+      label: 'D. Md.'
+    -
+      value: 'D. Mass.'
+      label: 'D. Mass.'
+    -
+      value: 'E.D. Mich.'
+      label: 'E.D. Mich.'
+    -
+      value: 'W.D. Mich.'
+      label: 'W.D. Mich.'
+    -
+      value: 'D. Minn.'
+      label: 'D. Minn.'
+    -
+      value: 'N.D. Miss.'
+      label: 'N.D. Miss.'
+    -
+      value: 'S.D. Miss.'
+      label: 'S.D. Miss.'
+    -
+      value: 'E.D. Mo.'
+      label: 'E.D. Mo.'
+    -
+      value: 'W.D. Mo.'
+      label: 'W.D. Mo.'
+    -
+      value: 'D. Mont.'
+      label: 'D. Mont.'
+    -
+      value: 'D. Neb.'
+      label: 'D. Neb.'
+    -
+      value: 'D. Nev.'
+      label: 'D. Nev.'
+    -
+      value: D.N.H.
+      label: D.N.H.
+    -
+      value: D.N.J.
+      label: D.N.J.
+    -
+      value: D.N.M.
+      label: D.N.M.
+    -
+      value: E.D.N.Y.
+      label: E.D.N.Y.
+    -
+      value: N.D.N.Y.
+      label: N.D.N.Y.
+    -
+      value: S.D.N.Y.
+      label: S.D.N.Y.
+    -
+      value: W.D.N.Y.
+      label: W.D.N.Y.
+    -
+      value: E.D.N.C.
+      label: E.D.N.C.
+    -
+      value: M.D.N.C.
+      label: M.D.N.C.
+    -
+      value: W.D.N.C.
+      label: W.D.N.C.
+    -
+      value: D.N.D.
+      label: D.N.D.
+    -
+      value: 'D.N. Mar. I.'
+      label: 'D.N. Mar. I.'
+    -
+      value: 'N.D. Ohio'
+      label: 'N.D. Ohio'
+    -
+      value: 'S.D. Ohio'
+      label: 'S.D. Ohio'
+    -
+      value: 'E.D. Okla.'
+      label: 'E.D. Okla.'
+    -
+      value: 'N.D. Okla.'
+      label: 'N.D. Okla.'
+    -
+      value: 'W.D. Okla.'
+      label: 'W.D. Okla.'
+    -
+      value: 'D. Or.'
+      label: 'D. Or.'
+    -
+      value: 'E.D. Pa.'
+      label: 'E.D. Pa.'
+    -
+      value: 'M.D. Pa.'
+      label: 'M.D. Pa.'
+    -
+      value: 'W.D. Pa.'
+      label: 'W.D. Pa.'
+    -
+      value: D.P.R.
+      label: D.P.R.
+    -
+      value: D.R.I.
+      label: D.R.I.
+    -
+      value: D.S.C.
+      label: D.S.C.
+    -
+      value: D.S.D.
+      label: D.S.D.
+    -
+      value: 'E.D. Tenn.'
+      label: 'E.D. Tenn.'
+    -
+      value: 'M.D. Tenn.'
+      label: 'M.D. Tenn.'
+    -
+      value: 'W.D. Tenn.'
+      label: 'W.D. Tenn.'
+    -
+      value: 'E.D. Tex.'
+      label: 'E.D. Tex.'
+    -
+      value: 'N.D. Tex.'
+      label: 'N.D. Tex.'
+    -
+      value: 'S.D. Tex.'
+      label: 'S.D. Tex.'
+    -
+      value: 'W.D. Tex.'
+      label: 'W.D. Tex.'
+    -
+      value: 'D. Utah'
+      label: 'D. Utah'
+    -
+      value: 'D. Vt.'
+      label: 'D. Vt.'
+    -
+      value: D.V.I.
+      label: D.V.I.
+    -
+      value: 'E.D. Va.'
+      label: 'E.D. Va.'
+    -
+      value: 'W.D. Va.'
+      label: 'W.D. Va.'
+    -
+      value: 'E.D. Wash.'
+      label: 'E.D. Wash.'
+    -
+      value: 'W.D. Wash.'
+      label: 'W.D. Wash.'
+    -
+      value: 'N.D. W. Va.'
+      label: 'N.D. W. Va.'
+    -
+      value: 'S.D. W. Va.'
+      label: 'S.D. W. Va.'
+    -
+      value: 'E.D. Wis.'
+      label: 'E.D. Wis.'
+    -
+      value: 'W.D. Wis.'
+      label: 'W.D. Wis.'
+    -
+      value: 'D. Wyo.'
+      label: 'D. Wyo.'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

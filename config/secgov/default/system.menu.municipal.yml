@@ -1,0 +1,10 @@
+uuid: 5a2f893f-29c5-433c-82ca-5a08f517dd0f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pMLTkEWeUNdwUNXsrCu7ZJDNmyh-aBgEvO_cmCY0vUk
+id: municipal
+label: Municipal
+description: 'Office of Municipal Securities'
+locked: false

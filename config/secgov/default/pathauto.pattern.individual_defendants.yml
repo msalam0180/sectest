@@ -1,0 +1,22 @@
+uuid: 17c3fc3c-596b-4d2c-9e9c-87a393371cf0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: individual_defendants
+label: 'Individual Defendants'
+type: 'canonical_entities:node'
+pattern: '/idd/node/[node:nid]'
+selection_criteria:
+  84495df0-d7f6-4bbc-851d-85391f08f6bd:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 84495df0-d7f6-4bbc-851d-85391f08f6bd
+    context_mapping:
+      node: node
+    bundles:
+      ba: ba
+selection_logic: and
+weight: -5
+relationships: {  }

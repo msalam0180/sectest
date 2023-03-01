@@ -1,0 +1,23 @@
+uuid: a84ec467-23d6-4823-864b-520f42451ae0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_list_page_det_secarticle
+    - node.type.secarticle
+  module:
+    - text
+_core:
+  default_config_hash: fWgIwQ-08_kVFwg8RXPuxfLOGdMxRDGfM-_RoIpwBv4
+id: node.secarticle.field_list_page_det_secarticle
+field_name: field_list_page_det_secarticle
+entity_type: node
+bundle: secarticle
+label: 'List Page Details'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,43 @@
+//
+// REPORTS AND PUBLICATIONS
+// VIEW NAME: Reports and Publications
+// A list of articles that are of the type "Reports and Publications"
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.reports-pubs-list {
+  table {
+    th#view-field-publish-date-table-column {
+      width: 15%;
+      @include breakpoint('small') {
+        width: 100px;
+      }
+    }
+    th#view-field-display-title-table-column { 
+      width: 65%;
+    }
+    th#view-field-article-sub-type-secart-table-column {
+      width: 20%;
+    }
+  }
+}
+
+@include breakpoint('small'){
+	.reports-pubs-list {
+    thead th {
+      div {
+        background: none;
+        padding: 0;
+        div { padding: 12px 8px 6px; }
+      }
+      &#view-field-display-title-table-column {
+        display: none !important;
+      }
+      &#view-field-article-sub-type-secart-table-column {
+        display: none !important;
+      }
+    }
+  }
+}

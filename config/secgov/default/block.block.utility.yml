@@ -1,0 +1,25 @@
+uuid: 7c19bac0-0380-41a1-ae8a-f068686867e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility
+  module:
+    - system
+  theme:
+    - uswdssec
+id: utility
+theme: uswdssec
+region: secondary
+weight: -6
+provider: null
+plugin: 'system_menu_block:utility'
+settings:
+  id: 'system_menu_block:utility'
+  label: utility
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

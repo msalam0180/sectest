@@ -1,0 +1,22 @@
+uuid: 12830f20-ca0b-4a06-9fb9-4f58e10dcd42
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+_core:
+  default_config_hash: Dz2gSbG9IBeKP3v4M_lC_2kxDh3oXQ7gmtgl3HhnASs
+id: node.field_left_nav_secarticle
+field_name: field_left_nav_secarticle
+entity_type: node
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,48 @@
+edgar_search_block:
+  version: 1.x
+  js:
+    js/edgar-search.js: {}
+    js/typeahead.bundle.min.js: {}
+
+highcharts:
+  version: 1.1
+  js:
+    js/highcharts/highmaps.js: {}
+    js/highcharts/data_module.js: {}
+    js/highcharts/client_export.js: {}
+    js/highcharts/export_module.js: {}
+    js/highcharts/datasrc.js: {}
+    js/highcharts/exportdata.js: {}
+    js/highcharts/countriesAll-highRes.js: {}
+    js/highcharts/territoriesAll.js: {}
+    js/highcharts/accessibility.js: {}
+  dependencies:
+    - core/jquery
+
+proj4:
+  version: 1.x
+  js:
+    js/proj4/proj4.js: {}
+  dependencies:
+    - core/jquery
+
+oasb_raising_capital_map:
+  version: 1.1
+  css:
+    theme:
+      css/oasb_raising_capital_map/style.css: {}
+  js:
+    js/oasb_raising_capital_map/main.js: {minified: false, preprocess: false}
+
+  dependencies:
+    - core/jquery
+    - sec_custom_blocks/proj4
+    - sec_custom_blocks/highcharts
+
+digitalgov_global_search:
+  version: 1.x
+  css:
+    theme:
+      css/digitalgov_global_search/smartSearch.css: {}
+  js:
+    js/digitalgov_global_search/smartSearch.js: {minified: false, preprocess: false}

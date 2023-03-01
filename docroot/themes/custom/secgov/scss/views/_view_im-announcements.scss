@@ -1,0 +1,33 @@
+//
+// IM ANNOUNCEMENTS
+// VIEW NAME: IM Announcements
+// List articles with the type of announcement and has the tax - Investment Management
+// 
+// TODO: Is this an old view? It is not visible to the public
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+@include breakpoint('small'){
+	.im-list {
+    table.list {
+      thead th {
+        border: 1px solid $border-color;
+
+        div {
+          padding: 0px !important;
+
+          a {
+            border: none;
+            color: $asphalt;
+            padding: 0;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

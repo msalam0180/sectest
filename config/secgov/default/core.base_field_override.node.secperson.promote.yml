@@ -1,0 +1,24 @@
+uuid: 708cc1d1-cc5a-4952-9386-a59f164b1667
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secperson
+_core:
+  default_config_hash: 8f6pHbKkrBq7nc_P1_lVv-kIzxnr-MUVeFm6b9bN7wk
+id: node.secperson.promote
+field_name: promote
+entity_type: node
+bundle: secperson
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

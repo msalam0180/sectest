@@ -1,0 +1,25 @@
+uuid: 3bb060cd-1306-4fb2-94df-364783bb952c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_type
+    - node.type.link
+_core:
+  default_config_hash: Pc8CnDSq1-9y4KwYwebAiA7bSqkVdfbzAUhgccfiHk4
+id: node.link.field_link_type
+field_name: field_link_type
+entity_type: node
+bundle: link
+label: 'Link Type'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: External
+  off_label: 'Off'
+field_type: boolean

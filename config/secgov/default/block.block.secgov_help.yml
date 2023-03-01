@@ -1,0 +1,22 @@
+uuid: 2bda4a3f-e705-496b-b6a2-b6dce770b7a3
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - secgov
+_core:
+  default_config_hash: IQw6OHod6o1CWDkA9xyp5urvhoQjQel2m8P38FPLnnM
+id: secgov_help
+theme: secgov
+region: header
+weight: -33
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

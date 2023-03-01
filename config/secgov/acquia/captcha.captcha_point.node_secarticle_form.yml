@@ -1,0 +1,7 @@
+uuid: aa35894b-cc64-4dc5-925d-d1a3d8014e86
+langcode: en
+status: false
+dependencies: {  }
+formId: node_secarticle_form
+captchaType: default
+label: null

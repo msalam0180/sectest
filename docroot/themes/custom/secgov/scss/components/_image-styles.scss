@@ -1,0 +1,13 @@
+//
+// IMAGE STYLES
+// 
+// --------------------------------------------------
+
+
+.image-style-featured-graphic {
+  max-width: 309px;
+
+  @include breakpoint(small) {
+    max-width: 100%;
+  }
+}

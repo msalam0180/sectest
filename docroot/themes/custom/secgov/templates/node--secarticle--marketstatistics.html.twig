@@ -1,0 +1,234 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ * @todo Remove the id attribute (or make it a class), because if that gets
+ *   rendered twice on a page this is invalid CSS for example: two lists
+ *   in different view modes.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set articleType = content.field_article_type_secarticle | render | striptags | lower | trim | replace({' ':'-'}) | replace({'/': '-'}) %}
+{% if articleType is null %}
+  {% set articleType = 'other' %}
+{% endif %}
+{% set articleSubType = content.field_article_sub_type_secart | render | striptags | lower | trim | replace({' ': '-'}) | replace({'/': '-'}) %}
+{% set hidePubDate = node.field_hide_publish_date.value %}
+{% set modifiedDate = node.field_date.value %}
+{% set publishDate = node.field_publish_date.value %}
+{% set associatedData = node.field_publish_date.value %}
+{% set displayPubDate = TRUE %}
+
+{% set fullWidthPage = node.field_show_full_width_page.value %}
+
+{% set classes = "content aside " %}
+
+<article{{ attributes.addClass('article') }}>
+
+  {% if page.breadcrumb %}
+    {{ page.breadcrumb }}
+  {% endif %}
+
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="/{{ articleType }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass(['article-content', 'data-set--market-statistics']) }}>
+    {% if not(fullWidthPage) %}
+      {% if articleSubType %}
+        {{ content.field_article_sub_type_secart }}
+      {% else %}
+        {{ content.field_article_type_secarticle }}
+      {% endif %}
+    {% endif %}
+    <div class="{{ classes }}{{ articleType }}">
+      {% if not(fullWidthPage) %}
+        <h1 class="article-title">{{ field_display_title }}</h1>
+        {% if articleType is same as('academic-publications')or articleType is same as('staff-papers') %}
+          <p class="description-abstract">
+            <em>{{ content.field_description_abstract|render|striptags|trim }}</em>
+          </p>
+        {% endif %}
+
+        {% if not(hidePubDate) %}
+          <p class="{{ articleType == 'data' ? 'article-publishdate-data' : 'article-publishdate' }}">
+            {{ (publishDate != null) ? publishDate|apdate : modifiedDate|apdate }}
+          </p>
+        {% endif %}
+
+      {% endif %}
+
+      <div class="article-content-body">
+        {{ content.body }}
+      </div>
+
+      {% if data_highlights_block %}
+        <div id="data-visualizations">
+          <h2 class="data-visualizations-header">Data Visualizations</h2>
+          <p>Click on each image below to access interactive features of the graph.</p>
+          {{ data_highlights_block }}
+        </div>
+      {% endif %}
+
+      {% if statistics_guide_block %}
+        <div class="statistics-guide" id="statistics-guide">
+          <h2 class="statistics-guide-header">Statistics Guide</h2>
+          <p>The Guide below provides a description of each metric listed above, the calculation methodology, and the data source.</p>
+          {{ statistics_guide_block }}
+        </div>
+      {% endif %}
+
+      {% if node.field_media_file_upload.entity.field_media_file.entity.fileuri %}
+          {% set fileURI = node.field_media_file_upload.entity.field_media_file.entity.fileuri %}
+          {% set fileExt = fileURI|split('.')|last %}
+
+        <div class="article-file-download">
+          {% if content.field_data_dictionary_notes | render is empty and articleType != 'data-highlight' %}
+            <h2>
+              <strong>Data Dictionary</strong>
+            </h2>
+          {% endif %}
+          {{ content.field_data_dictionary_notes }}
+          <a class="icon" href="{{ file_url(fileURI) }}" target="_blank">
+            <div class="triangle"></div>{{ fileExt }}
+          </a>
+          {{ content.field_media_file_upload }}
+        </div>
+      {% endif %}
+
+      {#  Data downloads #}
+      {% if articleType == 'data' and data_distribution_is_set != true %}
+        <div class="associated-data-distribution" id="statistics-downloads">
+          <h2>Statistics Download</h2>
+          <p>Click on the file below to access an excel file with available historical information for each metric listed above.</p>
+          {{ associated_data_distribution }}
+        </div>
+      {% endif %}
+
+      {% if not(fullWidthPage) %}
+        {% if content.field_related_materials %}
+          <div class="block related-materials" id="related-materials">
+            {{ content.field_related_materials }}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if market_statistics_disclaimer_block %}
+        {{ market_statistics_disclaimer_block }}
+      {% endif %}
+
+    </div>
+
+    <div id="sidebar-second">
+
+      <h2 class="market-statistics--right-sidebar-title">Market Statistics</h2>
+      {{ market_statistics_block }}
+
+      {{ market_statistics_search_block}}
+
+      {% if content.field_top_right_column | render | trim is not empty %}
+        <div class="block top-right-column">
+          {{ content['field_top_right_column'] }}
+        </div>
+      {% endif %}
+
+      {% if content.field_more_about_this_topic %}
+        <div class="article-more-topics">
+          {{ content.field_more_about_this_topic }}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  {% if not(fullWidthPage)and articleType is not same as("data-highlight") %}
+    <div class="article-date modified">
+      {% if modifiedDate | apdate is not null and modifiedDate | apdate is not same as(" , ") %}
+        Modified:
+        {{ modifiedDate|apdate }}
+      {% else %}
+        Modified:
+        {{ node.changed.value|apdate }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {# Adding class to Market Statistics left nav item so that it appears selected #}
+  <script>
+    jQuery(function($) {
+      $(document).ready(function() {
+        $('ul li.item-market-statistics a').addClass('is-active');
+      });
+    });
+  </script>
+
+</article>

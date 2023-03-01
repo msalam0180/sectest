@@ -1,0 +1,29 @@
+uuid: cb8af235-0bd8-4b24-a4c6-2e787b1d063d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.feature_block
+    - field.storage.block_content.field_icon
+    - taxonomy.vocabulary.icons
+id: block_content.feature_block.field_icon
+field_name: field_icon
+entity_type: block_content
+bundle: feature_block
+label: Icon
+description: 'The icon to use in the header with the title'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      icons: icons
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

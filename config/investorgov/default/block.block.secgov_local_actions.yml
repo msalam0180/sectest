@@ -1,0 +1,20 @@
+uuid: e6cfeb01-248b-4f0a-bc3b-6bc1b0a838ed
+langcode: en
+status: true
+dependencies:
+  theme:
+    - secgov
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: secgov_local_actions
+theme: secgov
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

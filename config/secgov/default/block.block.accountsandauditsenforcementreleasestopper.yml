@@ -1,0 +1,38 @@
+uuid: edf9e932-7153-4da9-928c-f0b1fba4b6f7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:release_topper:0cd90b44-f28a-4131-9389-bc4a984b0fea'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - secgov
+id: accountsandauditsenforcementreleasestopper
+theme: secgov
+region: content
+weight: -37
+provider: null
+plugin: 'block_content:0cd90b44-f28a-4131-9389-bc4a984b0fea'
+settings:
+  id: 'block_content:0cd90b44-f28a-4131-9389-bc4a984b0fea'
+  label: 'Accounts and Audits Enforcement Releases Topper'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /divisions/enforce/friactions
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated

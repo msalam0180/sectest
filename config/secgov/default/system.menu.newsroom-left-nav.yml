@@ -1,0 +1,10 @@
+uuid: 6439ae99-273b-4707-9e90-bf83c5d8634b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: LhtLyZ3tE4YaBN-AE4dqA2D0z7bCrJGXTxAltGlVQ2c
+id: newsroom-left-nav
+label: 'Newsroom Left Nav'
+description: 'Newsroom Left Navigation'
+locked: false

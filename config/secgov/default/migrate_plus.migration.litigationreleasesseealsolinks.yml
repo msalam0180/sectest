@@ -1,0 +1,65 @@
+uuid: d828fe07-7d88-4477-acc8-2e5c5c4b4906
+langcode: en
+status: true
+dependencies: {  }
+id: litigationreleasesseealsolinks
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - aws
+  - litigationreleases
+migration_group: aws
+label: 'Import of Litigation Releases See Also Links in AWS content'
+source:
+  plugin: csv
+  path: 'public://migration/litigation_releases.csv'
+  header_offset: 0
+  ids:
+    - id
+  fields:
+    -
+      name: id
+      label: id
+    -
+      name: releaseurl
+      label: 'Release URL'
+    -
+      name: date
+      label: Date
+    -
+      name: respondents
+      label: Respondents
+  constants:
+    delimiter: ','
+process:
+  status:
+    plugin: default_value
+    default_value: 1
+  name: id
+  see_also:
+    plugin: see_also_links
+    source: respondents
+  field_media_entity_link/uri:
+    -
+      plugin: skip_on_empty
+      source: '@see_also/1'
+      method: row
+    -
+      plugin: skip_on_contains
+      source: '@see_also/1'
+      method: row
+      contains:
+        - 'public://'
+  field_media_entity_link/title: '@see_also/0'
+  created:
+    plugin: format_date
+    source: date
+    from_format: 'F j, Y'
+    from_timezone: America/New_York
+    to_format: U
+  changed: '@created'
+destination:
+  plugin: 'entity:media'
+  default_bundle: link
+migration_dependencies: null

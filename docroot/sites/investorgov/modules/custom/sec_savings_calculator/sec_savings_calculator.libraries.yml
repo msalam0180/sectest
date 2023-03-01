@@ -1,0 +1,13 @@
+sec_savings_calculator:
+  header: true
+  js:
+    js/sec_savings_calculator.js: { preprocess: false }
+    js/highcharts.js: { preprocess: false }
+    js/exporting.js: { preprocess: false }
+    js/accessibility.js: { preprocess: false }
+    js/export-data.js: { preprocess: false }
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once

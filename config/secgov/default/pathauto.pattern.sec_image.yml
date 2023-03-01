@@ -1,0 +1,22 @@
+uuid: 6f07f7c1-ceeb-4ae6-822f-b4269bfcf253
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sec_image
+label: 'SEC Image'
+type: 'canonical_entities:node'
+pattern: '/image/[node:title]'
+selection_criteria:
+  53eb279c-056f-44eb-b9a8-b3dcaca4f00e:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 53eb279c-056f-44eb-b9a8-b3dcaca4f00e
+    context_mapping:
+      node: node
+    bundles:
+      image: image
+selection_logic: and
+weight: -5
+relationships: {  }

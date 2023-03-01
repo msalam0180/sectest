@@ -1,0 +1,32 @@
+uuid: 5a9e716b-2875-4aaf-a2bf-719c2c653e71
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:27a09b53-3f7a-4950-91e1-b6c3784ff8e1'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - secgov
+id: spotlighttemp
+theme: secgov
+region: content
+weight: -33
+provider: null
+plugin: 'block_content:27a09b53-3f7a-4950-91e1-b6c3784ff8e1'
+settings:
+  id: 'block_content:27a09b53-3f7a-4950-91e1-b6c3784ff8e1'
+  label: 'Spotlight - temp'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:block_content':
+    id: 'entity_bundle:block_content'
+    negate: false
+    context_mapping: {  }
+    bundles:
+      basic: basic

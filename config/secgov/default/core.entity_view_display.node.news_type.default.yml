@@ -1,0 +1,25 @@
+uuid: 48f5f1df-1c7f-402c-bd44-3f88792a36f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news_type.scheduling_options
+    - node.type.news_type
+  module:
+    - user
+_core:
+  default_config_hash: ORw0E75PoJKfmrc78eh86NmJ_O1s0dB5cami8sMCplc
+id: node.news_type.default
+targetEntityType: node
+bundle: news_type
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

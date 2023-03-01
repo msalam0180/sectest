@@ -1,0 +1,29 @@
+uuid: c9706d86-8ac8-4c0a-b11e-2e11c190d0fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.data_visualization
+  module:
+    - text
+_core:
+  default_config_hash: 1e215IVwwxu7-3cTKJWs9IeNc8wT7upWdJM0Gp9gNtw
+id: node.data_visualization.body
+field_name: body
+entity_type: node
+bundle: data_visualization
+label: Body
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: ' '
+    summary: ''
+    format: full_html
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

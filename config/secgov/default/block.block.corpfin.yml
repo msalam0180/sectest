@@ -1,0 +1,32 @@
+uuid: 15bd2218-a366-4562-99e3-cde6f2111f22
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.corpfin-left-nav
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: 9RbmZf7sRox-9hrbp9lH_KRmMx_4-WRPKp9fJcMh1Kw
+id: corpfin
+theme: secgov
+region: sidebar_first
+weight: -14
+provider: null
+plugin: 'system_menu_block:corpfin-left-nav'
+settings:
+  id: 'system_menu_block:corpfin-left-nav'
+  label: Corpfin
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/corpfin\r\n/corpfin/*\r\n/divisions/corpfin/*\r\n/corporation-finance\r\n/corporation-finance/*"

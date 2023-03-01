@@ -1,0 +1,33 @@
+uuid: 85574775-36af-4e72-9c1b-4a09ee16668d
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_quick_links
+field_name: field_quick_links
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: default
+      label: 'Show Default Quick Links'
+    -
+      value: defaultv2
+      label: 'Show Alternate Default Quick Links'
+    -
+      value: hide
+      label: 'Hide Quick Links'
+    -
+      value: customize
+      label: 'Customize Quick Links'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

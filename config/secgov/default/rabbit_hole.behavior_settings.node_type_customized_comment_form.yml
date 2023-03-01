@@ -1,0 +1,14 @@
+uuid: 871c6a9b-ac60-4220-8f01-d245aa1f31a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.customized_comment_form
+id: node_type_customized_comment_form
+entity_type_id: node_type
+entity_id: customized_comment_form
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

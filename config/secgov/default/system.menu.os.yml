@@ -1,0 +1,10 @@
+uuid: 9ab9e674-4292-467a-81dc-92536addf58c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qOqqkBhPDv1MidaW5XOTfzjvdrIbQkA_34zf6LpnwGA
+id: os
+label: OS
+description: 'Office of the Secretary'
+locked: false

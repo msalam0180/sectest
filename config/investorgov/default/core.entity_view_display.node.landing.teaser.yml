@@ -1,0 +1,42 @@
+uuid: 87b413b7-a14e-4826-93af-c0e1088d4781
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.landing.body
+    - node.type.landing
+  module:
+    - text
+    - user
+id: node.landing.teaser
+targetEntityType: node
+bundle: landing
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_alternate_name: true
+  field_hide_page_title: true
+  field_related_content: true
+  field_related_content_label: true
+  field_show_featured_content: true
+  layout_builder__layout: true
+  search_api_excerpt: true

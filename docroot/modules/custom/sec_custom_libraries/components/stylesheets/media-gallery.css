@@ -1,0 +1,122 @@
+/* line 1, ../sass/media-gallery.scss */
+.mg-centered {
+  margin-left: auto;
+  margin-right: auto !important;
+  float: none !important;
+}
+
+/* line 7, ../sass/media-gallery.scss */
+.item-all {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid #E9E9E9 !important;
+}
+
+/* line 12, ../sass/media-gallery.scss */
+.media-boxes-search {
+  width: 100%;
+}
+
+/* ----------------------------------------------------------------------
+   MEDIA BOX GALLERY STYLES
+   ---------------------------------------------------------------------- */
+@media only screen and (max-width: 800px) {
+  /* line 20, ../sass/media-gallery.scss */
+  .js #local-nav {
+    padding: 20px 20px 0;
+  }
+
+  /* line 23, ../sass/media-gallery.scss */
+  .media-boxes-search {
+    height: 40px !important;
+  }
+}
+/* line 27, ../sass/media-gallery.scss */
+.js #local-nav > ul > li > span,
+.js #local-nav > ul > li > span.current,
+.js #local-nav > ul > li > a {
+  background-color: transparent;
+}
+
+/* line 32, ../sass/media-gallery.scss */
+.js #local-nav > ul > li:first-child > a {
+  border-top-width: 1px;
+}
+
+/* line 35, ../sass/media-gallery.scss */
+.media-boxes-search {
+  border: 1px solid #aaa !important;
+  font-size: 12px !important;
+  min-height: 26px;
+  padding: 0.41667em !important;
+}
+
+/* line 42, ../sass/media-gallery.scss */
+.media-box-container {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  background: transparent;
+}
+
+/* line 48, ../sass/media-gallery.scss */
+.media-box-content {
+  background-color: #e9e9e9;
+  color: #273A56;
+}
+
+/* line 52, ../sass/media-gallery.scss */
+.media-box-title {
+  color: inherit;
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+}
+
+/* line 57, ../sass/media-gallery.scss */
+.media-box-footer {
+  padding: 20px 5px;
+}
+
+/* line 58, ../sass/media-gallery.scss */
+img.mfp-img {
+  width: auto;
+}
+
+/* line 61, ../sass/media-gallery.scss */
+.mfp-bottom-bar {
+  font-family: Raleway, sans-serif;
+  font-size: 20px !important;
+  font-weight: 400;
+}
+
+/* line 66, ../sass/media-gallery.scss */
+.media-boxes-load-more-button {
+  clear: both;
+}
+
+/* line 69, ../sass/media-gallery.scss */
+.media-box-social-buttons em {
+  color: #C7C7C7;
+  -webkit-transition: color .1s;
+  -moz-transition: color .1s;
+  -o-transition: color .1s;
+  -ms-transition: color .1s;
+  transition: color .1s;
+}
+
+/* line 77, ../sass/media-gallery.scss */
+.media-box-social-buttons em:hover {
+  color: #273A56;
+}
+
+/* line 80, ../sass/media-gallery.scss */
+.svg-icon-circle-fill {
+  background-color: #C7C7C7;
+  border-radius: 50%;
+  color: #F8F8F8 !important;
+  margin: 0 .5em;
+}
+
+/* line 86, ../sass/media-gallery.scss */
+.svg-icon-circle-fill:hover {
+  background-color: #273a56;
+}

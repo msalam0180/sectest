@@ -1,0 +1,23 @@
+uuid: 352fcaf8-839b-45cf-9c5d-a6eda8cd196b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_idd
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: qhDdaSY7clpXzRVOP2Izwk2Csqs1_YHxKCxqsZ8GZpo
+id: node.ba.field_state_idd
+field_name: field_state_idd
+entity_type: node
+bundle: ba
+label: State
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

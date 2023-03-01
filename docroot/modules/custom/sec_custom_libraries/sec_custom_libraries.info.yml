@@ -1,0 +1,6 @@
+name: SEC Custom Libraries
+type: module
+description: SEC Custom Libraries
+core: 8.x
+package: Custom
+core_version_requirement: ^8 || ^9

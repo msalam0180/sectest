@@ -1,0 +1,31 @@
+uuid: f0f4b601-8971-4690-a356-ed8c04782aae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtopic
+    - node.type.link
+    - taxonomy.vocabulary.subtopics
+_core:
+  default_config_hash: xNKuGO5WXr_YN4xS1NYuLhqpjr7zgSTF3vPtxfljZ_A
+id: node.link.field_subtopic
+field_name: field_subtopic
+entity_type: node
+bundle: link
+label: SubTopic
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      subtopics: subtopics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,11 @@
+sec_views_lib:
+  version: 1.0
+  js:
+    js/sec_views.js: {}
+  dependencies:
+    - core/jquery
+toolbar-icon:
+  version: 1.0
+  css:
+    theme:
+      css/toolbar-icon.css: {}

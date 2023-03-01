@@ -1,0 +1,30 @@
+langcode: und
+status: true
+dependencies:
+  config:
+    - field.field.media.link.field_media_entity_link
+    - media.type.link
+  module:
+    - link
+id: media.link.default
+targetEntityType: media
+bundle: link
+mode: default
+content:
+  field_media_entity_link:
+    type: link
+    label: hidden
+    weight: 0
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

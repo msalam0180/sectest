@@ -1,0 +1,12 @@
+diff --git a/src/Form/AccessUnpublishedForm.php b/src/Form/AccessUnpublishedForm.php
+index 42389c76e8..4b482d662f 100644
+--- a/src/Form/AccessUnpublishedForm.php
++++ b/src/Form/AccessUnpublishedForm.php
+@@ -159,7 +159,7 @@ public static function getDurationOptions() {
+     $dateFormatter = \Drupal::service('date.formatter');
+     $period = [86400, 172800, 345600, 604800, 1209600];
+     $period = array_map([$dateFormatter, 'formatInterval'], array_combine($period, $period));
+-    $period[-1] = t('Unlimited');
++    // $period[-1] = t('Unlimited');
+     return $period;
+   }

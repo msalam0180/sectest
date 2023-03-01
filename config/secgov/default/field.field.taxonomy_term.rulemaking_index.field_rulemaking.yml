@@ -1,0 +1,19 @@
+uuid: 26f47108-022c-44e8-b807-e46f564bf3e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_rulemaking
+    - taxonomy.vocabulary.rulemaking_index
+id: taxonomy_term.rulemaking_index.field_rulemaking
+field_name: field_rulemaking
+entity_type: taxonomy_term
+bundle: rulemaking_index
+label: Rulemaking
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

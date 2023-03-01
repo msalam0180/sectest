@@ -1,0 +1,481 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * @file
+* Functions to support theming in the theme.
+*/
+/**
+ * Returns hook-independent variables to template_preprocess().
+*/
+function secgov_preprocess_default_variables() {
+  // Variables that don't depend on a database connection.
+  $variables = array(
+    'attributes' => array(),
+    'title_attributes' => array(),
+    'content_attributes' => array(),
+    'title_prefix' => array(),
+    'title_suffix' => array(),
+    'db_is_active' => !defined('MAINTENANCE_MODE'),
+    'is_admin' => FALSE,
+    'logged_in' => FALSE,
+    'ua_based_css' => FALSE
+  );
+  // Give modules a chance to alter the default template variables.
+  \Drupal::moduleHandler()->alter('secgov_preprocess_default_variables', $variables);
+
+  // Tell all templates where they are located.
+  $variables['directory'] = \Drupal::theme()->getActiveTheme()->getPath();
+
+  return $variables;
+}
+
+/**
+ * Prepares variables for HTML document templates.
+ *
+ * Default template: html.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - page: A render element representing the page.
+ */
+function secgov_preprocess_html(&$variables) {
+
+// Checks to see if the browser is IE then add class specific to IE to body
+  $ua = $_SERVER['HTTP_USER_AGENT'];
+  if ( strpos($ua,'MSIE') !== FALSE || strpos($ua,'WOW64') !== FALSE || strpos($ua,'Trident') !== FALSE ) {
+    $variables['ua_based_css'] = TRUE;
+    $variables['view'] = 'ie-view';
+  } elseif ( strpos($ua,'iPad') !== FALSE || strpos($ua,'Mac OS') !== FALSE ) {
+    $variables['ua_based_css'] = TRUE;
+    $variables['view'] = 'mac-view';
+  } else {
+    $variables['ua_based_css'] = TRUE;
+    $variables['view'] = 'default-view';
+  }
+
+  if (isset($variables['node_type']) && $variables['node_type'] === "event"){
+    if ($variables['head_title']['title'] === "SEC.gov |") {
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ($node && $node instanceof \Drupal\node\NodeInterface) {
+        $variables['head_title']['title'] = "SEC.gov | ".$node->title->value;
+      }
+    }
+  }
+
+  if (isset($_ENV['AH_PRODUCTION']) && $_ENV['AH_PRODUCTION'] == 1){
+    $variables['env'] = "production";
+  }else {
+    $variables['env'] = "staging";
+  }
+
+  //View id and display id as a body class
+  $variables['view_id'] = '';
+  $variables['view_display_id'] = '';
+
+  // Get current route object.
+  $route = \Drupal::routeMatch()->getRouteObject();
+  if ($route) {
+    // Get view id and display id from route.
+    $view_id = $route->getDefault('view_id');
+    $display_id = $route->getDefault('display_id');
+
+    if (!empty($view_id) ) {
+      $variables['view_id'] = $view_id;
+    }
+
+    if (!empty($display_id) ) {
+      $variables['view_display_id'] = $display_id;
+    }
+    
+  }
+
+}
+
+function secgov_preprocess_page(&$vars) {
+  if(isset($vars['node'])) {
+    $vars['title'] = $vars['node']->title->value;
+  }
+  else{
+    $vars['title'] =$vars['page']['#title'];
+  }
+
+
+  $vars['env'] = isset($_ENV['AH_PRODUCTION']) && $_ENV['AH_PRODUCTION'] == 1 ? 'prod' : 'non_prod';
+
+  //env conditionals
+  if ($vars['env'] === 'prod'){
+      $vars['sitehandle'] = "secsearch";
+  }
+
+  if ($vars['env'] === 'non_prod'){
+       $vars['sitehandle'] = "sectest_i14y";
+  }
+	// Get taxonomy term if this is the what's new page
+	$current_path = \Drupal::service('path.current')->getPath();
+	$path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+	if ($path_alias == '/whats-new' && !empty($_GET['tid'])) {
+		$tid = intval($_GET['tid']);
+		$term = Term::load($tid);
+		$vars['whats_new_display_title'] = $term->field_display_title[0]->value;
+		$vars['whats_new_description'] = $term->description[0]->value;
+	}
+
+	// pass menu id of menu to be rendered for division pages
+  $route = \Drupal::routeMatch()->getRouteObject();
+  if ($route->getPath() == '/division/{division}') {
+    // default to the about menu
+    $config = \Drupal::config('secgov.menu_map');
+    // get the division for path alias
+    $division = explode('/', $path_alias)[2];
+    $menu_id = $config->get($division);
+    if (is_null($menu_id)) {
+      $menu_id = 'about';
+    }
+    $vars['menu_id'] = $menu_id;
+  }
+
+}
+
+/**
+ * [secgov_preprocess_datatable_view_table description]
+ * @param  &$variables [$variables by reference]
+ * @return null
+ */
+
+function secgov_preprocess_datatable_view_table(&$variables) {
+  if (empty($variables['#attached']['drupalSettings']['datatables'])) {
+    return;
+  }
+  $datatable = &$variables['#attached']['drupalSettings']['datatables'];
+  foreach ($datatable as $key => &$table ) {
+    foreach ($table['aoColumns'] as $key => &$settings) {
+      if ($table['aoColumns'][$key]['bVisible'] !== FALSE && $settings['bSortable'] === FALSE) {
+        $settings = ['sType' => 'html', 'bSortable' => TRUE];
+      }
+    }
+  }
+}
+
+// THEME HOOK: 'views_view'
+function secgov_preprocess_views_view(&$variables) {
+  if ( !empty($variables['exposed']['items_per_page'] )) {
+    $itemsPerPage = $variables['exposed']['items_per_page'];
+    if (isset($itemsPerPage['#title'])) {
+        unset($itemsPerPage['#title']);
+    }
+    unset($variables['exposed']['items_per_page']);
+    $variables['itemsPerPage'] = $itemsPerPage;
+  }
+
+  if ( !empty($variables['footer']['result']) ) {
+    $result = $variables['footer']['result'];
+    unset($variables['footer']['result']);
+    $variables['result'] = $result;
+  }
+}
+
+/***
+ * Implements hook_page_attachments_alter()
+ * to add meta tags with dynamic values
+ * @param array $page
+ */
+function secgov_page_attachments_alter(array &$page) {
+  // Load the node entity from current route
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $id = array(
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => array(
+        'name' => 'id',
+        'content' => is_object($node) !== false ? $node->id() : null ,
+      ),
+    );
+    $page['#attached']['html_head'][] = [$id, 'id'];
+
+    if ($node->field_publish_date) {
+      $date = array(
+        '#type' => 'html_tag',
+        '#tag' => 'meta',
+        '#attributes' => array(
+          'name' => 'date',
+          'content' => $node->field_publish_date->value,
+        ),
+      );
+      $page['#attached']['html_head'][] = [$date, 'date'];
+    }
+
+  }
+}
+
+/**
+ * template_preprocess_views_view_field()
+ */
+
+function secgov_preprocess_views_view_field(&$variables) {
+   $view = isset($variables['view']) ? $variables['view']->storage->id() : null;
+   if (!empty($view)) {
+      $variables['view_id'] = $view;
+   }
+}
+
+/**
+ * Implements hook_preprocess_node()
+ */
+function secgov_preprocess_node(&$variables) {
+
+  if ( ($variables['node']->bundle()) === "secarticle") {
+  	$variables['data_distribution_is_set'] = !views_get_view_result('associated_data_distribution');
+    $variables['associated_data_distribution'] = views_embed_view('associated_data_distribution');
+
+    // Render blocks for Market Statistics content
+    $node = $variables['node'];
+    if (sizeof($node->get('field_article_sub_type_secart')->getValue()) > 0) {
+      $subtype = $node->get('field_article_sub_type_secart')->getValue()[0]['value'];
+      if ($node->bundle() === 'secarticle' && $subtype === 'Data-MarketStatistics') {
+        $view = \Drupal\views\Views::getView('market_statistics');
+        $view->setDisplay('right_sidebar');
+        $variables['market_statistics_block'] = $view->render();
+
+        // Get Market Statistics Search Block
+        $sec_block_srvc = \Drupal::service('sec_blocks');
+        $block_id = $sec_block_srvc->getIdFromName('Market Statistics Search');
+        if ($block_id['status'] == 1) {
+          $block_entity = Drupal\block_content\Entity\BlockContent::load($block_id['block_id']);
+          $variables['market_statistics_search_block'] = \Drupal::service('entity_type.manager')
+            ->getViewBuilder('block_content')
+            ->view($block_entity);
+        }
+        else {
+          error_log($block_id['message']);
+        }
+
+        // Get Market Statistics Disclaimer Block
+        $sec_block_srvc = \Drupal::service('sec_blocks');
+        $block_id = $sec_block_srvc->getIdFromName('Market Statistics Disclaimer');
+        if ($block_id['status'] == 1) {
+          $block_entity = Drupal\block_content\Entity\BlockContent::load($block_id['block_id']);
+          $variables['market_statistics_disclaimer_block'] = \Drupal::service('entity_type.manager')
+            ->getViewBuilder('block_content')
+            ->view($block_entity);
+        }
+        else {
+          error_log($block_id['message']);
+        }
+
+        $data_highlights_view = \Drupal\views\Views::getView('market_statistics_data_highlights');
+        $data_highlights_view->setDisplay('data_set');
+        $data_highlights_view->setArguments(array($node->title->value));
+        $data_highlights_view_r = $data_highlights_view->render();
+        if ($data_highlights_view->total_rows > 0) {
+          $variables['data_highlights_block'] = $data_highlights_view_r;
+        }
+
+        $stats_guide_view = \Drupal\views\Views::getView('statistics_guide');
+        $stats_guide_view->setDisplay('data_set');
+        $stats_guide_view->setArguments(array($node->title->value));
+        $stats_guide_view_r = $stats_guide_view->render();
+        if ($stats_guide_view->total_rows > 0) {
+          $variables['view_title'] = $stats_guide_view->getTitle();
+          $variables['statistics_guide_block'] = $stats_guide_view_r;
+        }
+      }
+      elseif ($node->get('field_article_type_secarticle')->getValue()[0]['target_id'] === '114371') {
+        $nid = $variables['elements']['#node']->get('field_associated_dataset')->getValue()[0]['target_id'];
+        $ds_node = \Drupal::entityTypeManager()
+          ->getStorage('node')
+          ->load(intval($nid));
+        if ($ds_node->field_article_sub_type_secart->value === 'Data-MarketStatistics') {
+          $view = \Drupal\views\Views::getView('market_statistics');
+          $view->setDisplay('right_sidebar');
+          $variables['market_statistics_block'] = $view->render();
+
+          // Get Market Statistics Search Block
+          $sec_block_srvc = \Drupal::service('sec_blocks');
+          $block_id = $sec_block_srvc->getIdFromName('Market Statistics Search');
+          if ($block_id['status'] == 1) {
+            $block_entity = Drupal\block_content\Entity\BlockContent::load($block_id['block_id']);
+            $variables['market_statistics_search_block'] = \Drupal::service('entity_type.manager')
+              ->getViewBuilder('block_content')
+              ->view($block_entity);
+          }
+          else {
+            error_log($block_id['message']);
+          }
+
+          $data_highlights_view = \Drupal\views\Views::getView('market_statistics_data_highlights');
+          $data_highlights_view->setDisplay('data_set');
+          $data_highlights_view->setArguments(array($node->title->value));
+          $data_highlights_view_r = $data_highlights_view->render();
+          if ($data_highlights_view->total_rows > 0) {
+            $variables['data_highlights_block'] = $data_highlights_view_r;
+          }
+
+          $stats_guide_view = \Drupal\views\Views::getView('statistics_guide');
+          $stats_guide_view->setDisplay('data_set');
+          $stats_guide_view->setArguments(array($node->title->value));
+          $stats_guide_view_r = $stats_guide_view->render();
+          if ($stats_guide_view->total_rows > 0) {
+            $variables['view_title'] = $stats_guide_view->getTitle();
+            $variables['statistics_guide_block'] = $stats_guide_view_r;
+          }
+        }
+        elseif ($node->get('field_article_type_secarticle')->getValue()[0]['target_id'] === '114371') {
+          $nid = $variables['elements']['#node']->get('field_associated_dataset')->getValue()[0]['target_id'];
+          $ds_node = \Drupal::entityTypeManager()
+            ->getStorage('node')
+            ->load(intval($nid));
+          if ($ds_node->field_article_sub_type_secart->value === 'Data-MarketStatistics') {
+            $view = \Drupal\views\Views::getView('market_statistics');
+            $view->setDisplay('right_sidebar');
+            $variables['market_statistics_block'] = $view->render();
+
+            // Get Market Statistics Search Block
+            $sec_block_srvc = \Drupal::service('sec_blocks');
+            $block_id = $sec_block_srvc->getIdFromName('Market Statistics Search');
+            if ($block_id['status'] == 1) {
+              $block_entity = Drupal\block_content\Entity\BlockContent::load($block_id['block_id']);
+              $variables['market_statistics_search_block'] = \Drupal::service('entity_type.manager')
+                ->getViewBuilder('block_content')
+                ->view($block_entity);
+            }
+            else {
+              error_log($block_id['message']);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  if (($variables['node']->bundle()) === "event"){
+    if ($variables['node']->hasField('field_webcast')) {
+      $webcast = null;
+      if ($_GET != null && $_GET['webcast']) {
+        $webcast = \Drupal\Component\Utility\XSS::filter($_GET['webcast']);
+      } elseif ($variables['node']->get('field_webcast')->getValue()) {
+        $webcast = $variables['node']->get('field_webcast')->getValue()[0]['target_id'];
+      }
+
+      if ($webcast != null) {
+        $variables['request']['webcast'] = $webcast;
+        $variables['#cache']['contexts'][] = 'url.query_args';
+        $variables['#cache']['keys'][] = $webcast;
+      }
+
+      $helpBlocks = [];
+      $helpBlocks['live'] = \Drupal\block\Entity\Block::load('flashsoftware');
+      $helpBlocks['archived'] = \Drupal\block\Entity\Block::load('webcast_trouble');
+      $webcastState = $variables['node']->get('field_webcast')->entity->field_webcast_state->value === 'live' ? 'live' : 'archived' ;
+      //Return live block is user is logged in for preview;
+      if (\Drupal::currentUser()->isAnonymous() === false) {
+        $variables['help_block_live'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($helpBlocks['live']);
+      }
+      if ($helpBlocks) {
+        if ($webcastState === 'live') {
+          $variables['help_block_live'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($helpBlocks['live']);
+        }elseif($webcastState === 'archived') {
+          $variables['help_block_archived'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($helpBlocks['archived']);
+        }
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_image_style()
+ */
+function secgov_preprocess_image_style(&$variables) {
+  $style = $variables['style_name'];
+  switch ($style) {
+    case 'featured_video_image':
+      $variables['image']['#attributes']['class'][] = 'image-style-featured-video';
+      break;
+    case 'featured_graphic':
+      $variables['image']['#attributes']['class'][] = 'image-style-featured-graphic';
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_hook_alter() for node
+ */
+function secgov_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  if ($variables['elements']['#node']->hasField('field_article_type_secarticle') &&
+    $variables['elements']['#node']->hasField('field_article_sub_type_secart')) {
+    $type_item_list = $variables['elements']['#node']->get('field_article_type_secarticle')->getValue();
+    $subtype_item_list = $variables['elements']['#node']->get('field_article_sub_type_secart')->getValue();
+    $article_type = $type_item_list[0]['target_id'];
+    if ($subtype_item_list != null) {
+      $article_sub_type = $subtype_item_list[0]['value'];
+      // Article type is Data and subtype is Market Statistics
+      if ($article_type === '621' && $article_sub_type === 'Data-MarketStatistics') {
+        $suggestions[] = 'node__secarticle__marketstatistics';
+      }
+      // Looking for data highlights with association to data set of subtype 'Data-MarketStatistics'
+      elseif ($article_type === '114371') {
+        $nid = $variables['elements']['#node']->get('field_associated_dataset')->getValue()[0]['target_id'];
+        $node = \Drupal::entityTypeManager()
+          ->getStorage('node')
+          ->load(intval($nid));
+        if ($node->field_article_sub_type_secart->value === 'Data-MarketStatistics') {
+          $suggestions[] = 'node__secarticle__marketstatistics';
+          $suggestions[] = 'field__node__field_article_type_secarticle__marketstatistics';
+        }
+      }
+    }
+	}
+}
+
+/**
+ * Implements hook_theme_suggestions_hook_alter() for page
+ */
+function secgov_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+  if ($path_alias == '/whats-new') {
+    $suggestions[] = 'page__whats_new';
+	}
+}
+
+/**
+ * Implements hook_preprocess_field()
+ */
+
+function secgov_preprocess_field(&$variables) {
+  if (isset($variables['element']) && $variables['element']['#field_name'] === "field_description_abstract" && $variables['element']['#bundle'] === "data_visualization") {
+    $variables['items'][0]['content']['#prefix'] = '<p tabindex="0" class="hidden508">';
+    $variables['items'][0]['content']['#suffix'] = '</p>';
+  }
+}
+
+/*
+ * Implements hook_preprocess_file_upload_help()
+ * OSSS-7151 Insert commas between file extensions
+ */
+
+function secgov_preprocess_file_upload_help(&$variables) {
+  if (isset($variables['descriptions'][2]))
+  {
+    $extensions = $variables['descriptions'][2]->getArguments()['@extensions'];
+    $message = 'Allowed types: ' . implode(", ", preg_split("/[\s]+/", $extensions));
+    $variables['descriptions'][2]= $message;
+  }
+}
+
+
+use Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function secgov_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add required validation to the last name field for IDD Search "SEC Defendant Lookup"
+  if ($form_id == 'views_exposed_form') {
+    if ($form['#id'] == 'views-exposed-form-bad-actors-page-1') {
+        $form['last_name']['#required'] = true;
+      }
+    }
+}

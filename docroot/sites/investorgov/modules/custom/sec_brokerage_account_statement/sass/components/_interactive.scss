@@ -1,0 +1,219 @@
+.clickable {
+	width: 100%;
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: $darkestgray;
+	border: 1px solid transparent;
+	&:hover {
+		color: $filterblue;
+		svg {
+			fill: $filterblue;
+		}
+	}
+	svg {
+		fill: $darkgray;
+	}
+	&.half-width {
+		width: 50%;
+	}
+}
+
+.clickable-container {
+	h2 {
+		padding: 0 2%;
+	}
+}
+
+
+
+.clickable-container.active h2 a,
+.clickable-container.active h2 svg,
+.clickable-container.active .t_cell a.clickable,
+.clickable-container.active .t_cell a.clickable svg {
+	color: $filterblue;
+	fill: $filterblue;
+}
+
+.clickable-container h3 a.clickable,
+.clickable-container p a.clickable,
+.active-section .brokerage_info-container h3,
+.active-section .brokerage_info-container h3:hover {
+	text-transform: none;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	color: #00325b;
+	border-bottom: 1px solid transparent;
+	&:hover {
+		border-bottom: 1px solid transparent;
+	}
+}
+
+.clickable-container p a.clickable {
+	margin: 0;
+}
+
+.information .infobox h3 {
+	text-transform: none;
+	color: $white;
+	font-weight: 400;
+	padding-top: 1rem;
+}
+
+.active-section .brokerage_info-container h4,
+.active-section .clickable-container h4 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+
+.active {
+	transition: all 1s;
+	position: relative;
+	z-index: 9;
+	background: $white;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+	@include clearfix;
+}
+
+.animate {
+  transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+}
+
+.info-overlay {
+	transition: all 1s;
+	position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+	&.active-info {
+    background-color: rgba(0,0,0,.5);
+    z-index: 2;
+  }
+}
+
+.inactive-table {
+	background-color: transparent;
+}
+
+.information {
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+	transition: all 1s;
+	position: absolute;
+  z-index: -1;
+	padding: 20px;
+	color: $darkestgray;
+	font-size: 16px;
+	width: 47%;
+	background-color: $lightfilter;
+	.info-h2 {
+		color: $white;
+	}
+	.close-btn {
+		svg {
+			fill: $darkestgray;
+			float: right;
+		}
+		span {
+			text-indent: -1000px;
+			overflow: hidden;
+			display: block;
+		}
+	}
+	ul {
+		padding: 0 0 0 26px;
+		li {
+			list-style-type: disc;
+			ul li {
+				list-style-type: circle;
+			}
+		}
+	}
+  &.active-info {
+    z-index: 10;
+  }
+	.alert {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&.topLeft {
+		left: -100%;
+		&.active-info {
+			left: 1%;
+		}
+	}
+	&.topRight {
+		right: -100%;
+		&.active-info {
+			right: 1%;
+		}
+	}
+	&.mid {
+		bottom: -100%;
+		&.active-info {
+			bottom: 100px;
+		}
+	}
+	&.midRight {
+		right: -100%;
+		&.active-info {
+			right: 2%;
+		}
+	}
+	&.bottomLeft {
+		left: -100%;
+		&.active-info {
+			left: 1%;
+		}
+	}
+	&.bottomRight {
+		right: -100%;
+		&.active-info {
+			right: 1%;
+		}
+	}
+}
+
+.info {
+	clear: both;
+	box-shadow: inset -2px 5px 6px -6px rgba(0,0,0,0.4);
+	h2 {
+		color: $white;
+		margin-bottom: 15px;
+	}
+}
+
+.active-section .important-info {
+	width: 50%;
+	margin: 0 auto;
+	background: #00325b;
+	position: absolute;
+	bottom: 6px;
+	left: 50%;
+	margin-left: -25%;
+	text-align: center;
+	@include clearfix;
+	&:hover {
+		background: #269092;
+		svg {
+			fill: $white;
+		}
+	}
+	svg {
+		fill: $white;
+	}
+	.important-info-h3 {
+		line-height: 50px;
+		a {
+			color: $white;
+			padding: 5px 0;
+			margin-top: 3px;
+		}
+	}
+}
+
+.disabled {
+	pointer-events: none;
+	cursor: default;
+}

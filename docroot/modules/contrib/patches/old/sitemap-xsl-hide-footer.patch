@@ -1,0 +1,16 @@
+diff --git a/xsl/simple_sitemap.xsl b/xsl/simple_sitemap.xsl
+index b1f5def9ad..7d359ffddb 100644
+--- a/xsl/simple_sitemap.xsl
++++ b/xsl/simple_sitemap.xsl
+@@ -29,9 +29,9 @@
+           </xsl:otherwise>
+         </xsl:choose>
+
+-        <div id="footer">
++        <!-- <div id="footer">
+           <p>[generated-by]</p>
+-        </div>
++        </div> -->
+       </body>
+     </html>
+   </xsl:template>

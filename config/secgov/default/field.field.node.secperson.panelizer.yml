@@ -1,0 +1,23 @@
+uuid: b4aa0efd-506b-49b6-9c8c-c8c0587cdfec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.secperson
+  module:
+    - panelizer
+_core:
+  default_config_hash: 5szDSlpVp_LvGL7Ce56ExtmbxDoUQx4Ztagj-4uC0eU
+id: node.secperson.panelizer
+field_name: panelizer
+entity_type: node
+bundle: secperson
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: panelizer

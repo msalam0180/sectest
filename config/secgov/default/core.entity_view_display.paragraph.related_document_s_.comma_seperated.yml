@@ -1,0 +1,55 @@
+uuid: 8bdc0248-277e-431b-b300-951fe554c5dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.comma_seperated
+    - field.field.paragraph.related_document_s_.field_document_date
+    - field.field.paragraph.related_document_s_.field_document_type
+    - field.field.paragraph.related_document_s_.field_document_url
+    - field.field.paragraph.related_document_s_.field_static_file
+    - field.field.paragraph.related_document_s_.field_static_file_media
+    - paragraphs.paragraphs_type.related_document_s_
+  module:
+    - datetime
+    - link
+_core:
+  default_config_hash: AKAZToaaB7BLh81aM9GtgIUs5iup9Z9KKgeXiw83x5M
+id: paragraph.related_document_s_.comma_seperated
+targetEntityType: paragraph
+bundle: related_document_s_
+mode: comma_seperated
+content:
+  field_document_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: html_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_document_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_static_file_media:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_document_type: true
+  field_static_file: true
+  search_api_excerpt: true

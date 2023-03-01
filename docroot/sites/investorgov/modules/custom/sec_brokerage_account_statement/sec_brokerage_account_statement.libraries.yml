@@ -1,0 +1,7 @@
+sec_brokerage_account_statement:
+  version: 1.x
+  css:
+    theme:
+      css/brokerage_module.css: {}
+  js:
+    js/build/brokerage_scripts.min.js: {}

@@ -1,0 +1,148 @@
+uuid: 8c183a65-e631-407c-8a20-498274ab3025
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TEwN786eRd4ulXinWyK0jMtTGzcLbSPMmD3oV273Ecg
+id: articles_mixed
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - articles_mixed
+migration_group: sec
+label: 'JSON import of Legacy SEC Articles'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: 'http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/articles_mixed.json'
+  fields:
+    -
+      name: id
+      label: Identifier
+      selector: id
+    -
+      name: url
+      label: url
+      selector: url
+    -
+      name: type
+      label: type
+      selector: type
+    -
+      name: division_office
+      label: division_office
+      selector: division_office
+    -
+      name: left_nav
+      label: left_nav
+      selector: left_nav
+    -
+      name: filename
+      label: filename
+      selector: filename
+    -
+      name: html_content
+      label: html_content
+      selector: html_content
+  ids:
+    id:
+      type: string
+process:
+  type:
+    plugin: default_value
+    default_value: secarticle
+  title: filename
+  status:
+    plugin: default_value
+    default_value: 0
+  uid:
+    plugin: default_value
+    default_value: 1
+  field_article_type_secarticle:
+    plugin: static_map
+    source: type
+    map:
+      Other: 651
+      'Other - Confirmed': 651
+      Education/help/Guides/FAQs: 626
+  field_display_title:
+    plugin: html_title_import
+    source: html_content
+  body:
+    plugin: body_html_import
+    source: html_content
+  field_top_right_column:
+    plugin: rightbox_html_import
+    source: html_content
+  field_date:
+    plugin: modified_date_import
+    source: html_content
+  created:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@field_date'
+    -
+      plugin: date_import
+      return_timestamp: true
+  changed: '@created'
+  field_primary_division_office:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: division_office
+    -
+      plugin: static_map
+      map:
+        'TBD - Agency Wide': 30
+        Agency-Wide: 30
+        FOIA: 30
+        OCA: 33
+        OCIE: 35
+        'Corporation Finance': 36
+        'Corporation finance': 36
+        'Economic and Risk Analysis': 38
+        Enforcement: 39
+        EEO: 40
+        'Equal Employment Opportunity': 40
+        OFM: 42
+        'TBD - OHR': 44
+        OIA: 47
+        'Investment Management': 48
+        'Investor Education and Advocacy': 50
+        OMS: 53
+        'Trading and Markets': 58
+  field_left_nav_override:
+    plugin: static_map
+    source: left_nav
+    map:
+      'No left nav - About The SEC': about
+      OCA: oca
+      'Compliance Outreach Program': compliance-outreach-program
+      OCIE: ocie-left-nav
+      EEO: eeoo
+      'About The Sec': about
+      About: about
+      OMS: municipal
+      FOIA: foia
+      'Legacy Spotlight': spotlight
+      OCOO: ocoo
+      OIA: oia
+      Dera: dera
+      Enforcement: enforcement
+      OFM: ocoo
+      'No left nav - Regulatory Actions': regulatory-actions
+      Newsroom: newsroom-left-nav
+      Corpfin: corpfin-left-nav
+      'Trading and Markets': trading-and-markets
+      IM: im-left-nav
+      'Investment Management': im-left-nav
+      'Investor Information': investor-information-menu
+      'EDGAR Search Tools': edgar-search-tools
+      'EDGAR Filers': edgar-filer-info
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null

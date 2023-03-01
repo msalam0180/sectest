@@ -1,0 +1,537 @@
+/* line 1, ../sass/registration-fee-estimator.scss */
+label[for] {
+  cursor: pointer;
+}
+
+/* line 5, ../sass/registration-fee-estimator.scss */
+#colorredBlack {
+  color: Black;
+}
+
+/* line 9, ../sass/registration-fee-estimator.scss */
+#colorred {
+  color: Red;
+}
+
+/* line 13, ../sass/registration-fee-estimator.scss */
+.redasterisk:after {
+  color: red;
+  content: "*";
+  font: bold;
+}
+
+/* line 19, ../sass/registration-fee-estimator.scss */
+select {
+  height: 35px;
+  background: none !important;
+  padding-right: 0;
+}
+
+/* line 25, ../sass/registration-fee-estimator.scss */
+.input-disabled {
+  background-color: #EBEBE4 !important;
+  border: 1px solid gray;
+}
+
+/* line 30, ../sass/registration-fee-estimator.scss */
+.tooltip > .nub {
+  display: none;
+}
+
+/* line 34, ../sass/registration-fee-estimator.scss */
+.currencycontrol,
+.decimalcontrol,
+.integercontrol,
+.ratecontrol,
+input[type='text'] {
+  text-align: left;
+}
+
+/* line 42, ../sass/registration-fee-estimator.scss */
+.leftButton {
+  margin-right: 20px !important;
+}
+
+/* line 46, ../sass/registration-fee-estimator.scss */
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  height: 30px;
+  border: 1px solid #cccccc;
+}
+
+/* line 58, ../sass/registration-fee-estimator.scss */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  text-align: center;
+  float: none !important;
+}
+
+/* line 63, ../sass/registration-fee-estimator.scss */
+.noTitleStuff .ui-dialog-titlebar {
+  display: none;
+}
+
+/* line 67, ../sass/registration-fee-estimator.scss */
+i:hover {
+  cursor: pointer;
+}
+
+/*tr:nth-child(n+1) {background: white !important;}*/
+/* line 71, ../sass/registration-fee-estimator.scss */
+table#main tbody tr:nth-of-type(2) td {
+  border-top: 1px solid #99CCFF;
+}
+
+/* line 75, ../sass/registration-fee-estimator.scss */
+.tables-header-blue-color {
+  font-size: 12px !important;
+}
+
+/* line 79, ../sass/registration-fee-estimator.scss */
+.tables-header-blue-color th {
+  background-color: #99CCFF;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* line 85, ../sass/registration-fee-estimator.scss */
+.tables-header-blue-color td {
+  border: none;
+}
+
+/* line 89, ../sass/registration-fee-estimator.scss */
+#sub tr:nth-child(2) td:nth-of-type(3),
+#sub tr:nth-child(4) td:nth-of-type(3) {
+  border-bottom: 1px solid black;
+}
+
+/* line 94, ../sass/registration-fee-estimator.scss */
+.hidden {
+  display: none;
+}
+
+/* line 98, ../sass/registration-fee-estimator.scss */
+.lineht {
+  font-size: 0.875em;
+  height: 2.3125em;
+  line-height: 2.3125em;
+}
+
+/* Attach elements to the beginning or end of an input */
+/* line 104, ../sass/registration-fee-estimator.scss */
+.postfix-rfe,
+.prefix-rfe {
+  display: block;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  font-size: 0.875em;
+  height: 2.3125em;
+  line-height: 2.3125em;
+}
+
+/* Adjust padding, alignment and radius if pre/post element is a button */
+/* line 121, ../sass/registration-fee-estimator.scss */
+.postfix-rfe.button {
+  padding: 0;
+  text-align: center;
+  line-height: 2.125em;
+}
+
+/* line 127, ../sass/registration-fee-estimator.scss */
+.prefix-rfe.button {
+  padding: 0;
+  text-align: center;
+  line-height: 2.125em;
+}
+
+/* line 133, ../sass/registration-fee-estimator.scss */
+.prefix-rfe.button.radius {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 144, ../sass/registration-fee-estimator.scss */
+.postfix-rfe.button.radius {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* line 155, ../sass/registration-fee-estimator.scss */
+.prefix-rfe.button.round {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-bottomleft: 1000px;
+  -moz-border-radius-topleft: 1000px;
+  -webkit-border-bottom-left-radius: 1000px;
+  -webkit-border-top-left-radius: 1000px;
+  border-bottom-left-radius: 1000px;
+  border-top-left-radius: 1000px;
+}
+
+/* line 166, ../sass/registration-fee-estimator.scss */
+.postfix-rfe.button.round {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-topright: 1000px;
+  -moz-border-radius-bottomright: 1000px;
+  -webkit-border-top-right-radius: 1000px;
+  -webkit-border-bottom-right-radius: 1000px;
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+}
+
+/* Separate prefix-rfe and postfix-rfe styles when on span or label so buttons keep their own */
+/* line 177, ../sass/registration-fee-estimator.scss */
+label.prefix-rfe,
+span.prefix-rfe {
+  background: #f2f2f2;
+  border-color: #d9d9d9;
+  border-right: none;
+  color: #333333;
+}
+
+/* line 185, ../sass/registration-fee-estimator.scss */
+label.prefix-rfe.radius,
+span.prefix-rfe.radius {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-bottomleft: 3px;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+/* line 197, ../sass/registration-fee-estimator.scss */
+label.postfix-rfe,
+span.postfix-rfe {
+  background: #f2f2f2;
+  border-color: #cccccc;
+  border-left: none;
+  color: #333333;
+}
+
+/* line 205, ../sass/registration-fee-estimator.scss */
+label.postfix-rfe.radius,
+span.postfix-rfe.radius {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* line 217, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1.25em;
+  position: relative;
+  padding: 0.6875em 1.3125em 0.75em 0.6875em;
+  font-size: 0.875em;
+  background-color: #2ba6cb;
+  border-color: #2284a1;
+  color: white;
+}
+
+/* line 231, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe .close {
+  font-size: 1.375em;
+  padding: 5px 4px 4px;
+  line-height: 0;
+  position: absolute;
+  top: 0.4375em;
+  right: 0.3125em;
+  color: #333333;
+  opacity: 0.3;
+}
+
+/* line 242, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe .close:focus,
+.alert-box-rfe .close:hover {
+  opacity: 0.5;
+}
+
+/* line 247, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe.radius {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 252, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe.round {
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+}
+
+/* line 257, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe.success {
+  background-color: #5da423;
+  border-color: #457a1a;
+  color: white;
+}
+
+/* line 263, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe.alert {
+  background-color: #c60f13;
+  border-color: #970b0e;
+  color: white;
+}
+
+/* line 269, ../sass/registration-fee-estimator.scss */
+.alert-box-rfe.secondary {
+  background-color: #e9e9e9;
+  border-color: #d0d0d0;
+  color: #505050;
+}
+
+/* line 275, ../sass/registration-fee-estimator.scss */
+#ddlFrmType {
+  width: 20em;
+}
+
+/* line 279, ../sass/registration-fee-estimator.scss */
+#ddlSecurityType {
+  width: 20em;
+}
+
+/* line 283, ../sass/registration-fee-estimator.scss */
+.rfe-lineht {
+  line-height: 70%;
+}
+
+/* line 287, ../sass/registration-fee-estimator.scss */
+#rfe-image {
+  width: 100%;
+  height: 250px;
+}
+
+/* line 292, ../sass/registration-fee-estimator.scss */
+label {
+  color: black;
+}
+
+/* line 296, ../sass/registration-fee-estimator.scss */
+p {
+  color: black;
+}
+
+/* line 300, ../sass/registration-fee-estimator.scss */
+.indRuleSection {
+  color: red;
+  text-align: center;
+  margin: 1% 0;
+}
+
+/* line 306, ../sass/registration-fee-estimator.scss */
+input[type="text"] {
+  width: 100%;
+}
+
+/*select{display: block;width: 100%;height: 34px !important;padding: 6px 12px;font-size: 15px;line-height: 1.42857143;color: #555;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);box-shadow: inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; background-size: inherit;}
+/*select{width:auto !important}*/
+/* line 311, ../sass/registration-fee-estimator.scss */
+caption {
+  text-align: center;
+}
+
+/* line 315, ../sass/registration-fee-estimator.scss */
+table {
+  table-layout: fixed;
+  width: 100%;
+  border: 1px solid #dddddd;
+}
+
+/* line 321, ../sass/registration-fee-estimator.scss */
+.td-all-border tr > td {
+  border: 1px solid lightGray;
+}
+
+/* line 325, ../sass/registration-fee-estimator.scss */
+.td-all-border tr:nth-of-type(even) {
+  background-color: white !important;
+}
+
+/* line 329, ../sass/registration-fee-estimator.scss */
+.td-all-border tr:nth-of-type(odd) {
+  background-color: #e3eff3 !important;
+}
+
+/* line 333, ../sass/registration-fee-estimator.scss */
+.table-header-custom {
+  background-color: #273a56 !important;
+  font-size: large !important;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* line 341, ../sass/registration-fee-estimator.scss */
+ul {
+  color: black;
+  font-size: 12px;
+}
+
+/* line 346, ../sass/registration-fee-estimator.scss */
+#dataEntryCalRegFeeTable,
+#dataEntryCalRegFeeTable td,
+.dataEntryFilFootSampleP {
+  font-size: 12px;
+}
+
+/* line 352, ../sass/registration-fee-estimator.scss */
+#dataEntryEdgarOfferingnFeesTable,
+table.dataEntryEdgaroffSetInfo {
+  font-size: 12px;
+}
+
+/* line 357, ../sass/registration-fee-estimator.scss */
+table,
+table td,
+table td span {
+  color: black !important;
+  font-size: 12px;
+}
+
+/* line 364, ../sass/registration-fee-estimator.scss */
+div.ui-tooltip {
+  max-width: 400px;
+}
+
+/* line 368, ../sass/registration-fee-estimator.scss */
+div.ui-tooltip ul li {
+  font-size: small;
+}
+
+/* line 372, ../sass/registration-fee-estimator.scss */
+th.table-headers-output {
+  font-size: 18px !important;
+  text-align: center;
+  color: #273a56;
+  background-color: #ebebeb !important;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* line 381, ../sass/registration-fee-estimator.scss */
+a.btn {
+  border: 1px solid #cccccc;
+  background: #f6f6f6 url("images/ui-bg_glass_100_f6f6f6_1x400.png") 50% 50% repeat-x;
+  font-weight: bold;
+  color: #1c94c4;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+/* line 390, ../sass/registration-fee-estimator.scss */
+a.btn:focus,
+a.btn:hover {
+  border: 1px solid #fbcb09;
+  background: #fdf5ce url("images/ui-bg_glass_100_fdf5ce_1x400.png") 50% 50% repeat-x;
+  font-weight: bold;
+  color: #c77405;
+}
+
+/* line 398, ../sass/registration-fee-estimator.scss */
+#dataEntryTab3 table tr td span,
+#dataEntryTab3 table tr th {
+  font-size: 12px;
+}
+
+/* line 403, ../sass/registration-fee-estimator.scss */
+body {
+  font-family: inherit !important;
+}
+
+/* line 407, ../sass/registration-fee-estimator.scss */
+table thead tr th[scope="col"] {
+  font-size: 1em;
+}
+
+/* line 411, ../sass/registration-fee-estimator.scss */
+.focusText {
+  font-size: 17px !important;
+  font-weight: bold;
+  background-color: yellow !important;
+  /*#0543fd;;*/
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 422, ../sass/registration-fee-estimator.scss */
+.clickableDataField {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 427, ../sass/registration-fee-estimator.scss */
+#feeestimatorform div[class*="colspan"] {
+  margin-bottom: 4px !important;
+}
+
+/* line 431, ../sass/registration-fee-estimator.scss */
+table.list thead th {
+  width: 15%;
+  background: none;
+  border: none;
+  color: black;
+  font-weight: normal;
+}
+
+/* line 439, ../sass/registration-fee-estimator.scss */
+#dataEntryCalRegFeeTable thead th,
+.tables-header-blue-color thead th {
+  vertical-align: top !important;
+}
+
+/* line 444, ../sass/registration-fee-estimator.scss */
+.tables-header-blue-color thead th:hover {
+  background-color: #99CCFF !important;
+}
+
+/* line 448, ../sass/registration-fee-estimator.scss */
+.ui-state:hover .ui-icon,
+.ui-widget-header .ui-icon {
+  background-image: url("/core/assets/vendor/jquery.ui/themes/base/images/ui-icons_222222_256x240.png");
+}
+
+/* line 453, ../sass/registration-fee-estimator.scss */
+td,
+th,
+thead,
+tr {
+  border: none !important;
+}

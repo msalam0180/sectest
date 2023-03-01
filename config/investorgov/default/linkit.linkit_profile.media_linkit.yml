@@ -1,0 +1,19 @@
+uuid: 45c54d25-8fe0-45cf-8088-f45953b0c141
+langcode: en
+status: true
+dependencies: {  }
+label: 'Media Linkit'
+id: media_linkit
+description: ''
+matchers:
+  f55c324e-2cc3-4cd6-bd8a-65f745e0bc11:
+    id: 'entity:media'
+    uuid: f55c324e-2cc3-4cd6-bd8a-65f745e0bc11
+    settings:
+      metadata: ''
+      bundles:
+        file: file
+      group_by_bundle: false
+      substitution_type: media_download
+      limit: 100
+    weight: 0

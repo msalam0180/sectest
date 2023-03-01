@@ -1,0 +1,37 @@
+diff --git a/src/Plugin/SolrConnector/SearchApiSolrAcquiaConnector.php b/src/Plugin/SolrConnector/SearchApiSolrAcquiaConnector.php
+index 19cf394c85..c4435d1640 100644
+--- a/src/Plugin/SolrConnector/SearchApiSolrAcquiaConnector.php
++++ b/src/Plugin/SolrConnector/SearchApiSolrAcquiaConnector.php
+@@ -84,6 +84,14 @@ public function defaultConfiguration() {
+       // This means we can't detect which search core should be used, so we
+       // need to protect it by setting read-only mode but only if it applies.
+       if (acquia_search_should_set_read_only_mode()) {
++        // If no preferred search core could be found, use the first available
++        // core in read-only mode.
++        if ($available_cores = $preferred_core_service->getAvailableCores()) {
++          $configuration['host'] = $available_cores[0]['balancer'];
++          $configuration['core'] = $available_cores[0]['core_id'];
++          $configuration['index_id'] = $available_cores[0]['core_id'];
++          $configuration['overridden_by_acquia_search'] = ACQUIA_SEARCH_OVERRIDE_AUTO_SET;
++        }
+         $configuration = $this->setReadOnlyMode($configuration);
+       }
+     }
+diff --git a/src/PreferredSearchCoreService.php b/src/PreferredSearchCoreService.php
+index 2c7fd3bf66..75e080493b 100644
+--- a/src/PreferredSearchCoreService.php
++++ b/src/PreferredSearchCoreService.php
+@@ -263,4 +263,13 @@ public function getListOfPossibleCores() {
+
+   }
+
++  /**
++  * Returns the list of available cores for the subscription.
++  *
++  * @return array
++  */
++  public function getAvailableCores() {
++    return $this->availableCores;
++  }
++
+ }

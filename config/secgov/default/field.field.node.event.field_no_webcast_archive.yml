@@ -1,0 +1,23 @@
+uuid: 781877d1-2c6d-4d22-8a14-369a5d9dbccb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_no_webcast_archive
+    - node.type.event
+id: node.event.field_no_webcast_archive
+field_name: field_no_webcast_archive
+entity_type: node
+bundle: event
+label: 'No Webcast Archive'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'No Webcast Archive'
+  off_label: 'No Webcast Archive'
+field_type: boolean

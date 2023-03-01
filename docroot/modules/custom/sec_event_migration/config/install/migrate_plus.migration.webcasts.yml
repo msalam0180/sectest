@@ -1,0 +1,96 @@
+id: webcasts
+label: JSON import of Webcasts
+migration_group: sec
+migration_tags:
+  - webcasts
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/webcasts.json
+  fields: 
+    -
+      name: id
+      label: 'Identifier'
+      selector: document_id
+    -
+      name: title
+      label: 'title'
+      selector: title
+    -
+      name: videoid
+      label: 'videoid'
+      selector: videoid
+    -
+      name: created
+      label: 'created'
+      selector: created
+    -
+      name: description
+      label: 'description'
+      selector: description
+    -
+      name: upload_name
+      label: 'upload_name'
+      selector: upload_name
+
+  ids:
+    id:
+      type: string
+  constants:
+    webcast_time: ' 12:00:00'
+process:
+
+  type:
+    plugin: default_value
+    default_value: webcast
+
+  title: id
+  
+  body:
+    plugin: html_import
+    source: description
+    
+  status:
+      plugin: default_value
+      default_value: 1
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  created: 
+    plugin: date_import
+    source: created
+    return_timestamp: TRUE
+
+  changed: '@created'
+#
+#  Drupal content type user-defined fields
+#
+  
+  field_display_title: title
+  
+  field_media_id: videoid
+
+  field_upload_name: upload_name
+
+  field_start_date:
+    -
+      plugin: concat
+      source:
+        - created
+        - constants/webcast_time
+    -
+      plugin: date_import
+    
+  field_end_date: '@field_start_date'
+    
+  field_webcast_source:
+    plugin: default_value
+    default_value: None
+    
+  
+destination:
+  plugin: entity:node

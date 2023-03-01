@@ -1,0 +1,60 @@
+// //
+// // STAFF PAPERS LIST
+// // VIEW NAME: staff-papers-list
+// // List Articles with a type of "Staff Papers"
+// // 
+// // --------------------------------------------------
+
+// // TODO: Review all code and clean as needed
+
+// .staff-papers-list {
+// 	table {
+// 		th#view-field-publish-date-table-column { width: 15%; }
+// 		th#view-field-display-title-table-column { width: 65%; }
+// 		th#view-field-article-sub-type-secart-table-column { width: 20%; }
+// 	}
+// }
+
+// .staff-papers-list {
+//   td.views-field-field-display-title  {
+//     a {
+//       clear: both; display: block;
+//     }
+//     span.details, span.details p, span.details div {
+//       clear: both;
+//       color: $cloudy-gray;
+//       display: block;
+//       font-style: italic;
+//       font-weight: 600;
+//     }
+//   }
+// }
+
+// @include breakpoint('small'){
+//   .staff-papers-list {
+//     table.list {
+//       thead {
+//         th.tablesorter-header-inner {
+//           padding: 0 !important;
+//         }
+//         #view-field-publish-date-table-column {
+//           width: 90px !important;
+//           a {
+//             border: none;
+//           }
+//         }
+//         #view-field-display-title-table-column,
+//         #view-field-article-sub-type-secart-table-column {
+//           display: none !important;
+//         }
+//       }
+//       tbody td {
+//         &.views-field-field-display-title {
+//           a { clear: none; display: inline; }
+//           span.details, span.rel-number { display: none; }
+//         }
+//       }
+//     }
+//   }
+
+// }

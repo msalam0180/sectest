@@ -1,0 +1,100 @@
+//
+// ALERTS
+// Site-wide styles and classes for alerts
+// TODO: Describe what an alert is and how it is used.
+//
+// --------------------------------------------------
+
+.alert-box {
+  background-color: $mist !important;
+  border:none;
+  display: block;
+  float: none;
+  position: relative;
+  margin: 0 0 1.66666em;
+  width: 100%;
+}
+
+#alert .alert-box {
+  margin-bottom: 1.66666em;
+  padding-bottom: 0px;
+}
+
+/* Less than 800px */
+@media only screen and (max-width: 800px) {
+  #alert .alert-box.webcast {margin-top: 0; margin-bottom: .83333em;}
+}
+
+/* Less than 700px */
+@media only screen and (max-width: 700px) {
+  #alert .alert-box {margin-top: .83333em !important; margin-bottom: .83333em;}
+}
+
+.alert-box:not(.webcast):before {
+  content:"";
+  display: inline-block;
+  height: calc(100% - 3em);
+  position: absolute;
+  top:0;
+  left:0;
+  margin-left: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width:5px;
+}
+
+.alert-box.error {border-left-color: #b10000;border-width: 10px; border-left-style: solid}
+.alert-box.notice {border-left-color: #ffc057;border-width: 10px; border-left-style: solid}
+.alert-box.complete {border-left-color: #589f73;border-width: 10px; border-left-style: solid}
+.alert-box.upcoming {border-left-color: #589f73;border-width: 10px; border-left-style: solid}
+
+.alert-box:not(.webcast) {
+  border-radius: 4px;
+  padding-left: calc(3em + 5px);
+}
+
+.alert-box.error h2 {color: #b10000;}
+.alert-box.notice h2 {color: #ffc057;}
+.alert-box.complete h2 {color: #589f73;}
+.alert-box.upcoming h2 {color: #589f73;}
+
+.alert-box.webcast > .table-block {
+  margin-bottom: 1em;
+}
+
+.alert-box.webcast p { padding: 0 1.5em 1.5em;}
+.alert-box.webcast h2 {color: #273a56; font-size: 1.75em; padding-right: .5em;}
+.alert-box.webcast h2:before {
+  content: "\f03d";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: .25em;
+}
+
+.alert-box.webcast.no-icon h2:before {
+  content: "";
+  margin-right: 0;
+}
+
+.alert-box.webcast.no-icon p {
+  padding: 0 1.7em 1.7em;
+}
+
+/* Less than 800px */
+@media only screen and (max-width: 800px) {
+  .alert-box.webcast h2 {font-size: 2em;}
+}
+
+.alert-box.notice .views-field-field-start-date {display: none;}
+.alert-box.webcast h2 {padding: 1em 0 0 1em;}
+.alert-box .views-element-container {padding-left: 1.5em; padding-bottom: 1.5em;}
+.alert-box #table_paging {display:none;}
+.alert-box h2 {font-size: 2em; line-height: 1; margin-bottom: .5em;}
+.alert-box .field-content {color: #101f36; font-size: 1.2em; /*15px*/ font-weight: normal; line-height: 1.2; /*19px*/}
+.alert-box .views-row{ padding-bottom: 8px; }
+#page.upcoming-events-list .upcoming .views-field-title {padding: 0px;}
+#page.upcoming-events-list .alert-box .views-field {padding: 10px 0 5px;}

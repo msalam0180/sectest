@@ -1,0 +1,8 @@
+uuid: 41e55c68-e024-4493-abef-4c1cb56d8f99
+langcode: en
+status: true
+dependencies: {  }
+name: marketstructure
+vid: marketstructure
+description: ''
+weight: 0

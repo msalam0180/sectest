@@ -1,0 +1,10 @@
+uuid: 8babdd7c-fa19-4f60-b0a9-b1c046de5ea4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: O1CFEbEGIcXUWvqr3528S1QWZNwUAcwC25m0sUr5NOo
+name: SubTopics
+vid: subtopics
+description: ''
+weight: 0

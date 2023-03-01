@@ -1,0 +1,24 @@
+uuid: 0de6c86d-42c2-4e65-83c6-75fff33e902f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_publish_date
+    - media.type.static_file
+  module:
+    - datetime
+id: media.static_file.field_publish_date
+field_name: field_publish_date
+entity_type: media
+bundle: static_file
+label: 'Publish Date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

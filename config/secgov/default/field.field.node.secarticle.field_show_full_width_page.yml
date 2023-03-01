@@ -1,0 +1,23 @@
+uuid: 08590ce3-1917-4d99-a76e-da3bf25fc1c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_full_width_page
+    - node.type.secarticle
+id: node.secarticle.field_show_full_width_page
+field_name: field_show_full_width_page
+entity_type: node
+bundle: secarticle
+label: 'Show Body Only (no sidebars)'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

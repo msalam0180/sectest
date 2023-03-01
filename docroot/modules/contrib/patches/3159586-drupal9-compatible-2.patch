@@ -1,0 +1,12 @@
+diff --git a/node_save_redirect.info.yml b/node_save_redirect.info.yml
+index da7ee1c..0406e40 100644
+--- a/node_save_redirect.info.yml
++++ b/node_save_redirect.info.yml
+@@ -3,4 +3,5 @@ description: Redirect to a custom location after saving a node
+ package: Custom
+ 
+ type: module
+-core: 8.x
+\ No newline at end of file
++core: 8.x
++core_version_requirement: ^8 || ^9

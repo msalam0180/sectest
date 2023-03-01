@@ -1,0 +1,6 @@
+#Adds a local Task for Individual Defendant Search.
+sec_ba.idd_admin:
+  title: 'Individual Defendant Search'
+  route_name: 'sec_ba.idd_admin'
+  base_route: 'system.admin_content'
+  weight: 1

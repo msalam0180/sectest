@@ -1,0 +1,83 @@
+{#
+/**
+* @file
+* Theme override for a 'form' element.
+*
+* Available variables
+* - attributes: A list of HTML attributes for the wrapper element.
+* - children: The child elements of the form.
+*
+* @see template_preprocess_form()
+*/
+#}
+
+{% set rssUrl = '' %}
+{% if element['#id'] is same as('views-exposed-form-public-statements-list-page-page-1') %}
+    {% set rssUrl = '/news/statements.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-speeches-list-page-page-1') %}
+    {% set rssUrl = '/news/speeches.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-testimony-list-page-page-1') %}
+    {% set rssUrl = '/news/testimony.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-press-releases-page-1') %}
+    {% set rssUrl = '/news/pressreleases.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-edgar-filer-page-1') %}
+    {% set rssUrl = '/article/announcement/filergroup.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-academic-publications-list-page-page-1') %}
+    {% set rssUrl = '/rss/dera/academic-publications' %}
+{% elseif element['#id'] is same as('views-exposed-form-dera-newsletter-page-1') %}
+    {% set rssUrl = '/rss/dera/newsletter' %}
+{% elseif element['#id'] is same as('views-exposed-form-announcements-secarticle-page-1') %}
+    {% set rssUrl = '/rss/corpfin/announcements' %}
+{% elseif element['#id'] is same as('views-exposed-form-dera-newsletter-page-1') %}
+    {% set rssUrl = '/rss/dera/newsletter' %}
+{% elseif element['#id'] is same as('views-exposed-form-forms-list-page-page-1') %}
+    {% set rssUrl = '/rss/forms' %}
+{% elseif element['#id'] is same as('views-exposed-form-investor-alerts-bulletins-list-page-page-1') %}
+    {% set rssUrl = '/rss/investor/alerts' %}
+{% elseif element['#id'] is same as('views-exposed-form-reports-and-publications-page-1') %}
+    {% set rssUrl = '/rss/reports' %}
+{% elseif element['#id'] is same as('views-exposed-form-data-list-page-page-1') %}
+    {% set rssUrl = '/rss/data' %}
+{% elseif element['#id'] is same as('views-exposed-form-staff-papers-list-page-page-1') %}
+    {% set rssUrl = '/rss/dera/staff-papers' %}
+{% elseif element['#id'] is same as('views-exposed-form-ocie-announcements-page-1') %}
+    {% set rssUrl = '/rss/ocie/announcements' %}
+{% elseif element['#id'] is same as('views-exposed-form-structured-disclosure-announcements-view-page-1') %}
+    {% set rssUrl = '/structureddata/article/announcement.rss' %}
+{% elseif element['#id'] is same as('views-exposed-form-im-announcements-page-1') %}
+    {% set rssUrl = '/rss/divisions/investment/imnews.xml' %}
+{% elseif element['#id'] is same as('views-exposed-form-frequently-requested-documents-page-1') %}
+    {% set rssUrl = '/rss/foia-freq-docs' %}
+{% endif %}
+<form {{ attributes.setAttribute('id', 'filter') }} >
+
+  {% if attributes.hasClass('views-exposed-form') %}
+  <div class="form-container">
+  <input type="hidden" name="aId" value="">
+  {{ children }}
+    {% if children %}
+	<noscript>
+		<input type="submit" id="submitFilter" value="Go">
+	</noscript>
+	{% endif %}
+    {% if element['#id'] is same as('views-exposed-form-sec-videos-page-1') %}
+      <div class="youtube-subscribe"><a href="https://www.youtube.com/user/SECViews" target="_blank">YouTube</a></div>
+    {% elseif element['#id'] is same as('views-exposed-form-spotlights-page-1') %}
+
+    {% else %}
+      <div class="subscribe-rss">
+        <span class="userAction"> Subscribe </span>
+        <a href="{{ rssUrl }}" aria-label="RSS Subscribe"><span class="fa fa-rss"></span></a>
+      </div>
+    {% endif %}
+
+  </div>
+  {% else %}
+  {{ children }}
+    {% if children %}
+	<noscript>
+		<input type="submit" id="submitFilter" value="Go">
+	</noscript>
+	{% endif %}
+  {% endif %}
+</form>

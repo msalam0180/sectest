@@ -1,0 +1,23 @@
+uuid: 911e0d58-4448-4708-b175-3392ee26d3f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basis_for_state
+    - node.type.ba
+  module:
+    - options
+_core:
+  default_config_hash: iJJAvwNNvNC2NRWxIHD2y-LHdYq6qfMoBeLgSUXG44M
+id: node.ba.field_basis_for_state
+field_name: field_basis_for_state
+entity_type: node
+bundle: ba
+label: 'Basis for State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

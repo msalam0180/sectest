@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function sec_investor_general_install() {
+  //Setup production defaults
+  $config = \Drupal::service('config.factory')->getEditable('environment_indicator.indicator');
+  $config->set('name', 'Prod')
+          ->set('fg_color', '#2d2d2d')
+          ->set('bg_color', '#cccccc')
+          ->save();
+  //Disable Toolbar integration
+  $config = \Drupal::service('config.factory')->getEditable('environment_indicator.settings');
+  $config->set('toolbar_integration', '0')
+          ->set('favicon', false)
+          ->save();
+}

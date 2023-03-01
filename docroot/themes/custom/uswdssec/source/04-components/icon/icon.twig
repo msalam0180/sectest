@@ -1,0 +1,58 @@
+{% set classes = [
+  'c-icon',
+  is_usa ? 'usa-icon' : '',
+  modifier_classes ? modifier_classes : '',
+]|join(' ')|trim %}
+
+{% if is_demo %}
+  {% set icons = [
+    'angle-double-left',
+    'angle-double-right',
+    'angle-down',
+    'angle-left',
+    'angle-right',
+    'angle-up',
+    'rss',
+    'facebook',
+    'linkedin',
+    'twitter',
+    'close'
+  ] %}
+
+  {% for icon in icons %}
+    <p>
+      <svg {{ add_attributes({ 'class': classes }) }} role="img"{% if is_hidden %} aria-hidden="true"{% endif %}>
+        {% if label %}<title>{{ label }}</title>{% endif %}
+        <use xlink:href="{{ gesso_image_path }}/sprite.artifact.svg#{{ icon }}"></use>
+      </svg>
+      {{ icon }}
+    </p>
+  {% endfor %}
+
+  <h2>USA Icons</h2>
+  <p>For more usa icons please see <a href="https://designsystem.digital.gov/components/icon/" target="_blank">Icon Component</a> on the USWDS site.</p>
+  {% set usa_icons = [
+  'add',
+  'comment',
+  'directions_bike',
+  'expand_more'
+  ] %}
+  
+  {% for icon in usa_icons %}
+    <p>
+      <svg {{ add_attributes({ 'class': classes }) }} role="img"{% if is_hidden %} aria-hidden="true"{% endif %}>
+        {% if label %}<title>{{ label }}</title>{% endif %}
+        <use xlink:href="{{ gesso_image_path }}/sprite.svg#{{ icon }}"></use>
+      </svg>
+      {{ icon }}
+    </p>
+  {% endfor %}
+{%- else -%}
+  {% spaceless %}
+    {% set path = is_usa ? 'sprite.svg' : 'sprite.artifact.svg' %}
+    <svg {{ add_attributes({ 'class': classes }) }} role="img"{% if is_hidden %} aria-hidden="true"{% endif %}>
+      {% if label %}<title>{{ label }}</title>{% endif %}
+      <use xlink:href="{{ gesso_image_path }}/{{path}}#{{ icon_name }}"></use>
+    </svg>
+  {% endspaceless %}
+{%- endif -%}

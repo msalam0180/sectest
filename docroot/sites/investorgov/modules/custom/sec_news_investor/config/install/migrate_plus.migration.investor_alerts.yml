@@ -1,0 +1,103 @@
+id: investor_alerts
+migration_group: investor_news_group
+label: 'Import Investor.gov investor alerts and bulletins from the SEC.gov RSS feed'
+status: true
+
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  item_selector: /response/item
+  urls: 'https://www.sec.gov/xml/investor/alerts-bulletins'
+
+  fields:
+    -
+      name: guid
+      label: GUID
+      selector: guid
+    -
+      name: nid
+      label: NID
+      selector: nid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: pub_date
+      label: 'Publication date'
+      selector: pubDate
+    -
+      name: link
+      label: 'Origin link'
+      selector: link
+    -
+      name: body
+      label: 'Body'
+      selector: description
+    - name: summary
+      label: 'Summary'
+      selector: summary
+
+  ids:
+    nid:
+      type: string
+
+destination:
+  plugin: 'entity:node'
+
+process:
+  title:
+    plugin: trim_whitespace
+    source: title
+  uid:
+    plugin: default_value
+    default_value: 1
+#  field_remote_url: link
+  created:
+    plugin: format_date
+    from_format: 'D, d M Y H:i:s O'
+    to_format: 'U'
+    source: pub_date
+  body/value: body
+  body/format:
+    plugin: default_value
+    default_value: "basic_html"
+  body/summary: summary
+  field_origin_link:
+    plugin: trim_whitespace
+    source: link
+  field_date:
+    plugin: format_date
+    from_format: 'D, d M Y H:i:s O'
+    to_format: 'Y-m-d\TH:i:s'
+    source: pub_date
+  field_news_type:
+    -
+      plugin: trim_whitespace
+      source: title
+    -
+      plugin: substr
+      field: field_news_type
+      start: 0
+      length: 15
+    -
+      plugin: static_map
+      map:
+        'Investor Alert:': 46
+        'Investor Bullet': 51
+    -
+      plugin: default_value
+      default_value: 51 # investor bulletins
+  status:
+    plugin: default_value
+    default_value: 0
+  type:
+    plugin: default_value
+    default_value: news
+
+dependencies: {}
+
+migration_dependencies:
+  required: {}
+  optional: {}

@@ -1,0 +1,169 @@
+uuid: 5d6d7a57-56a8-4947-9c9f-c98b0c62adaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_act
+    - field.field.node.event.field_add_to_calendar
+    - field.field.node.event.field_additional_information
+    - field.field.node.event.field_all_day_event
+    - field.field.node.event.field_attached_files
+    - field.field.node.event.field_audience
+    - field.field.node.event.field_cancelled_postponed
+    - field.field.node.event.field_caption
+    - field.field.node.event.field_contact
+    - field.field.node.event.field_creator
+    - field.field.node.event.field_display_title
+    - field.field.node.event.field_division_office
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_geofield
+    - field.field.node.event.field_location
+    - field.field.node.event.field_meeting_category
+    - field.field.node.event.field_no_webcast_archive
+    - field.field.node.event.field_person
+    - field.field.node.event.field_primary_division_office
+    - field.field.node.event.field_primary_media
+    - field.field.node.event.field_regulation
+    - field.field.node.event.field_related_landing_page
+    - field.field.node.event.field_sec_content_approver
+    - field.field.node.event.field_sec_event_date
+    - field.field.node.event.field_sec_event_end_date
+    - field.field.node.event.field_show_end_date
+    - field.field.node.event.field_tags
+    - field.field.node.event.field_webcast
+    - field.field.node.event.scheduling_options
+    - node.type.event
+  module:
+    - address
+    - datetime
+    - file
+    - image
+    - options
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: BZm-3SRybKhk7pVjovRA4jnDjVDj4QuwFAts2P_p4Qk
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_attached_files:
+    type: file_url_plain
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_cancelled_postponed:
+    type: list_key
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_contact:
+    type: text_trimmed
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_display_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_location:
+    type: address_plain
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_primary_media:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_sec_event_date:
+    type: datetime_time_ago
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_sec_event_end_date:
+    type: datetime_time_ago
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_act: true
+  field_add_to_calendar: true
+  field_additional_information: true
+  field_all_day_event: true
+  field_audience: true
+  field_caption: true
+  field_creator: true
+  field_division_office: true
+  field_event_type: true
+  field_geofield: true
+  field_meeting_category: true
+  field_no_webcast_archive: true
+  field_person: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_related_landing_page: true
+  field_sec_content_approver: true
+  field_show_end_date: true
+  field_tags: true
+  field_webcast: true
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

@@ -1,0 +1,10 @@
+uuid: decc8a7a-acf8-4468-873a-65b76440ffb5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: TNZiNUNjcEKGqtWhHK-dWKT3aRm0wEpcasYu9tw9dUc
+name: Language
+vid: language
+description: ''
+weight: 0

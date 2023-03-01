@@ -1,0 +1,10 @@
+uuid: 9a48a33b-bbe9-41fc-93af-5d199f5a0779
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.release_see_also_files
+label: 'Release See Also Files'
+targetEntityType: media
+cache: true

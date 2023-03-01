@@ -1,0 +1,7 @@
+uuid: 05a5c382-1c28-4869-ada6-a1c58e5ec6a3
+langcode: en
+status: false
+dependencies: {  }
+formId: node_govdelivery_form_form
+captchaType: default
+label: null

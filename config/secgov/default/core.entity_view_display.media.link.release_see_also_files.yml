@@ -1,0 +1,41 @@
+uuid: efd55329-cf27-42f3-af2e-4c8a4576185f
+langcode: und
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.release_see_also_files
+    - field.field.media.link.field_media_entity_link
+    - media.type.link
+  module:
+    - layout_builder
+    - link
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: id6U7YeAsfxc9xCBM6LhPY9lxLZkqd_B76lHGBX7EFQ
+id: media.link.release_see_also_files
+targetEntityType: media
+bundle: link
+mode: release_see_also_files
+content:
+  field_media_entity_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

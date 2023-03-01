@@ -1,0 +1,7 @@
+.idea
+.DS_store
+.sass-cache
+node_modules/
+testing/sitespeed/
+testing/visual-regression/results/
+testing/visual-regression/screenshots/

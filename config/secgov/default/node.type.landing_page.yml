@@ -1,0 +1,48 @@
+uuid: 0827679c-bdad-4b26-b5d6-4e220848b533
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '2'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: 2MRhcI7b4_Fb5_yZvTniXyVQZg-U8Gup6891xVMab-U
+name: 'Landing Page'
+type: landing_page
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

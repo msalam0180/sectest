@@ -1,0 +1,46 @@
+uuid: 02033527-6207-4f23-be97-69ef756ea262
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_save_redirect:
+    save_type: '4'
+    save_location: /admin/content/idd
+    save_destination: 0
+    edit_type: '4'
+    edit_location: /admin/content/idd
+    edit_destination: 0
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+    default_moderation_state: published
+_core:
+  default_config_hash: JAG3JUfJiHCipjqHIVX1OQkwH82OWRIbz42YyL3wPg0
+name: 'Individual Defendant'
+type: ba
+description: 'Individuals in SEC Enforcement Actions (not entities).'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

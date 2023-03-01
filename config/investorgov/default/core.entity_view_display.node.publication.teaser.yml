@@ -1,0 +1,42 @@
+uuid: 318afefb-2110-43b3-b3ba-44451ba34a81
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.publication.body
+    - field.field.node.publication.field_doc_epub
+    - field.field.node.publication.field_doc_mobi
+    - field.field.node.publication.field_file_upload_english
+    - field.field.node.publication.field_file_upload_spanish
+    - field.field.node.publication.field_publication_image
+    - field.field.node.publication.field_publication_type
+    - node.type.publication
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections: {  }
+id: node.publication.teaser
+targetEntityType: node
+bundle: publication
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_doc_epub: true
+  field_doc_mobi: true
+  field_file_upload_english: true
+  field_file_upload_spanish: true
+  field_publication_image: true
+  field_publication_type: true
+  links: true

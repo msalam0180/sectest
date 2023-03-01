@@ -1,0 +1,20 @@
+uuid: fc10753c-e949-4019-a7dc-86aed78b4e87
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: node.field_left_nav_override
+field_name: field_left_nav_override
+entity_type: node
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

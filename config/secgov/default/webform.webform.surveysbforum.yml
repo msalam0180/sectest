@@ -1,0 +1,485 @@
+uuid: 38e30ba3-b9e7-422e-95fe-edf3b4726b65
+langcode: en
+status: open
+dependencies: {  }
+_core:
+  default_config_hash: t-Y-3gnHvi6Oa_MfGtkzRyHTKywY_d7Az9rs9bQagt0
+weight: 0
+open: null
+close: null
+uid: 116
+template: false
+archive: false
+id: surveysbforum
+title: 'SEC Government-Business Forum on Small Business Capital Formation'
+description: ''
+category: ''
+elements: |-
+  intro_text:
+    '#type': processed_text
+    '#text': |
+      <h2 class="center">December 12, 2018<br />
+      Electronic Ballot to Prioritize Recommendations</h2>
+
+      <p>Please specify whether you believe the SEC should give high, medium, low or no priority to each of the following recommendations. Please complete this ballot only if you participated in a breakout group session, either in person or by telephone conference call, at the 2018 SEC Small Business Forum convened on December 12, 2018, in Columbus, Ohio.&nbsp;Please vote on all ten recommendations, regardless of the breakout group in which you participated.</p>
+
+      <p>You must provide your e-mail address at the bottom of this ballot and click on the "submit" button in order to submit your selections.</p>
+    '#format': full_html
+  required_text:
+    '#type': processed_text
+    '#text': |
+      <p>Fields marked with an asterisk (<span class="red">*</span>) are required.</p>
+    '#format': full_html
+  exempt_securities_offerings_breakout_group_recommendations:
+    '#type': fieldset
+    '#title': 'Exempt Securities Offerings Breakout Group Recommendations'
+    question1:
+      '#type': radios
+      '#title': '1. Harmonization of Exempt Offerings '
+      '#description': '<p>The current regulatory framework for exempt offerings is complex, and we recommend that the Commission rationalize, harmonize, simplify, consolidate and prioritize the regulatory regime for exempt offerings, including communications restrictions, issuer eligibility, size of the offering, type of investors, disclosure and other conditions of exemption.</p>'
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question2:
+      '#type': radios
+      '#title': '2. Accredited Investor Definition'
+      '#description': |-
+        <p>Consistent with the recommendations of the SEC Advisory Committee on Small and Emerging Companies, the SEC should:</p>
+
+        <ol type="a">
+        	<li>Maintain the monetary thresholds for accredited investors; and</li>
+        	<li>Expand the categories of qualification for accredited investor status based on various types of sophistication, such as education, experience and training, including without limitation persons holding FINRA licenses or CPA or CFA designations, passing a test that demonstrates sophistication, or status as managerial or key employees affiliated with the issuer.</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question3:
+      '#type': radios
+      '#title': '3. Crowdfunding'
+      '#description': |
+        <ol type="a">
+        	<li>Accredited investors should be permitted to invest any amount they want in Regulation Crowdfunding offerings, provided they are verified. Removing the individual accredited investor limits would make Regulation Crowdfunding offerings a more attractive investment vehicle to accredited investors, and make it easier for offerings to reach their maximum offering goals.</li>
+        	<li>The limits for <em>all</em> investors should be raised. Non-accredited investors want to invest more in offerings and should be free to do so. This will only help the market grow as it allows more individual investments into the marketplace.</li>
+        	<li>The advertising rules and restrictions should be loosened to allow issuers more effectively to market their projects. It is very difficult for issuers to understand the burden of the advertising rules, and the rules run counter to the intent of the law: to promote the democratization of investing. The issuers should be allowed to speak more directly to the terms of the offering.</li>
+        	<li>Allow portals to receive securities of the issuer as compensation having different terms than the securities of the issuer received by investors in the offering (e.g., allow portals to receive warrants as compensation with different terms than the warrants sold to investors in the offering) and also allow portals to co-invest in the offerings they list.</li>
+        	<li>The SEC should lead a joint effort with FINRA to provide clear guidance to participants in Regulation Crowdfunding offerings.</li>
+        	<li>Rationalize Regulation Crowdfunding requirements for debt offerings and small offerings under $250,000, for example, by:
+        	<ol type="i">
+        		<li>Limiting the ongoing reporting obligations to actual noteholders (not to the general public); and</li>
+        		<li>Scaling regulation to reduce accounting, legal and other costs that now are relatively inelastic, regardless of the size of the offering.</li>
+        	</ol>
+        	</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question4:
+      '#type': radios
+      '#title': '4. Finders and Special Purpose Brokers'
+      '#description': |
+        <ol type="a">
+        	<li>Finders should be exempt from registration as a broker-dealer. Define permissible activities in which finders can engage without being deemed as engaged in activities that require them to register as a broker-dealer under the Securities Exchange Act of 1934.</li>
+        	<li>In the event Congress fails to enact HR 477, cited as the &ldquo;Small Business Mergers, Acquisitions, Sales, and Brokerage Simplification Act of 2017,&rdquo; during the final days of the 115th Congress, or in the first year of the 116th Congress, the SEC should promulgate a rule codifying the relief in the&nbsp;<em>M&amp;A Brokers&nbsp;</em>no-action letter (Jan. 31, 2014) issued by the SEC Division of Trading and Markets.</li>
+        	<li>Clarify the ability of funding portals to participate in Regulation A and Rule 506 offerings.</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question5:
+      '#type': radios
+      '#title': '5. General Solicitation'
+      '#description': |
+        <p>The SEC should clarify the relationship between exempt offerings in which general solicitation is not permitted&mdash;such as in Section 4(a)(2) and Rule 506(b) offerings&mdash;and exempt offerings in which general solicitation is permitted&mdash;such as in, for example, Rule 506(c) offerings, as follows:</p>
+
+        <ol type="a">
+        	<li>A facts and circumstances integration analysis similar to that used in the 2007 Regulation D proposing release, Rel. No. 33-9497 [79 FR 3925] (Dec. 18, 2013) (concerning the integration of a concurrent private placement with the filing of a registration statement under the Securities Act of 1933) should be available to determine whether investors in a concurrent Section 4(a)(2)/Rule 506(b) private placement in which general solicitation is prohibited were solicited by means of the general solicitation used in connection with a Rule 506(c) offering or through some other means that would otherwise not foreclose the availability of the Section 4(a)(2)/Rule 506(b) exemption, regardless of whether the Rule 506(c) offering has been completed, abandoned or is ongoing;&nbsp;</li>
+        	<li>Rule 152 applies to a Rule 506(c) offering so that an issuer using Rule 506(c) may subsequently engage in a registered public offering without adversely affecting the Rule 506(c) offering exemption; and&nbsp;</li>
+        	<li>Review of the pre-existing relationship requirement should be made at the time of purchase rather than at the time of offer. &nbsp;</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+  smaller_reporting_companies_breakout_group_recommendations:
+    '#type': fieldset
+    '#title': 'Smaller Registered and Regulation A Securities Offerings Breakout Group Recommendations'
+    question6:
+      '#type': radios
+      '#title': '1. Regulation A'
+      '#description': |-
+        <p>The SEC should issue guidance for broker/dealers, transfer agents, and clearing firms, regarding Regulation A securities and OTC securities. The SEC should revise Regulation A, as follows:</p>
+
+        <ol type="a">
+        	<li>Mandate blue sky preemption for secondary trading of Regulation A Tier 2 securities;</li>
+        	<li>Allow at-the-market offerings;&nbsp;</li>
+        	<li>Implement rules allowing all reporting companies to use Regulation A;&nbsp;</li>
+        	<li>Increase the maximum offering amount in any twelve month period from $50 million to $75 million for Regulation A Tier 2 offerings;&nbsp;</li>
+        	<li>Consider overriding advance notice requirements of state regulators in Regulation A offerings and limiting state filing fees for these offerings;&nbsp;</li>
+        	<li>Require any portal that is in the business of facilitating Regulation A offerings to register as a broker-dealer and comply with requirements similar to the requirements for intermediaries under Regulation Crowdfunding, and adhere to disclosure requirements including required disclosure of compensation and the amount thereof;</li>
+        	<li>The SEC should recognize use of quick response (&ldquo;QR&rdquo;) codes in lieu of a hyperlink to a prospectus or offering circular after the offering has gone effective or been qualified;</li>
+        	<li>Platforms that offer Regulation A&nbsp;securities offerings should be regulated like other portals, including adhering to FINRA guidelines; and</li>
+        	<li>The SEC should enforce Regulation SHO and Regulation T for all IPOs, including Regulation A offerings.</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question7:
+      '#type': radios
+      '#title': '2. Secondary Trading of OTC Securities'
+      '#description': |-
+        <p>The SEC should review key rules and policies impacting secondary trading of OTC securities, including:</p>
+
+        <ol type="a">
+        	<li>Evaluation of FINRA Rule 6432 to make sure that there is no undue burden on applicants and issuers (e.g. the Form 211 should be processed within 3 days on a non-merit basis). An alternative trading system should be permitted to file a Form 211 with FINRA, and FINRA Rule 5250 should be amended to allow payments for market making activities involving the FINRA Form 211 process.</li>
+        	<li>The provision of an SEC/FINRA safe harbor for clearing firms with respect to certain qualified low priced securities that meet certain best practices or minimum requirements, including re-evaluating FINRA Notice to Members 09-05.</li>
+        	<li>Allow broker-dealers and clearing firms to rely on information from transfer agents to properly trace securities in registered offerings or Regulation A offerings.</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question8:
+      '#type': radios
+      '#title': '3. Proxy Advisory Firms'
+      '#description': '<p>The SEC should promulgate a rule (and/or staff guidance) that provides for effective oversight of proxy advisory firms, with a focus on conflicts of interest, accuracy, transparency and issuer-specific decision making. Such a rule (and/or guidance) should emphasize the fiduciary duty that investment advisers owe to their clients, including when investment advisors rely on proxy advisory firms for vote recommendations.</p>'
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question9:
+      '#type': radios
+      '#title': '4. Reporting, Disclosure and Registration Simplification and Modernization'
+      '#description': |-
+        <p>We recommend reporting, disclosure and registration simplification and modernization, including:</p>
+
+        <ol type="a">
+        	<li>Aligning the definition of non-accelerated filers with the required definition of smaller reporting companies, to include issuers with a public float of less than $250 million or with annual revenues of less than $100 million (or if they have zero or no revenues, with a public float of less than $700 million);</li>
+        	<li>Making it easier for issuers to use Form S-3 registration statements, including increasing the cap on the use of Form S-3 for smaller issuers under the baby shelf rule;</li>
+        	<li>Increasing the companies that can take advantage of Form S-3&mdash;whether listed on a national exchange or not;</li>
+        	<li>Modernizing and simplifying the rules related to compensatory securities offerings by eliminating Form S-8 and allowing issuers to rely upon a modified Rule 701; and</li>
+        	<li>Allowing incorporation by reference in Form S-4 for smaller reporting companies.</li>
+        </ol>
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+    question10:
+      '#type': radios
+      '#title': '5. Business Development Companies'
+      '#description': '<p>Registered investment companies that invest in other funds are required to disclose the fees and expenses they incur indirectly from investing in those underlying funds. &nbsp;Underlying funds whose expenses must be disclosed under this &ldquo;acquired fund fees and expenses&rdquo; (&ldquo;AFFE&rdquo;) rule include business development companies (&ldquo;BDCs&rdquo;). &nbsp;The SEC should accelerate its review of the required disclosure of indirect underlying fund expenses and remedy the &ldquo;double counting&rdquo; in its AFFE rule by exempting the disclosure of BDC expenses from the rule.&nbsp;</p>'
+      '#title_display': before
+      '#description_display': before
+      '#options':
+        1: 'High priority'
+        2: 'Medium priority'
+        3: 'Low priority'
+        4: 'No priority'
+  feel_free_to_leave_comments_below:
+    '#type': textarea
+    '#title': 'Feel free to leave comments below'
+  your_e_mail_address:
+    '#type': email
+    '#title': 'Your e-mail address'
+    '#description': '<span style="-webkit-text-stroke-width:0px; background-color:#ffffff; color:#454545; display:inline !important; float:none; font-family:Verdana,Geneva,Arial,Helvetica,sans-serif; font-size:13.3333px; font-style:normal; font-variant-caps:normal; font-variant-ligatures:normal; font-weight:normal; letter-spacing:normal; orphans:2; text-align:start; text-decoration-color:initial; text-decoration-style:initial; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px">(required)</span>'
+    '#required': true
+    '#pattern': '.+@([\w-]+\.)+[\w-]+'
+  privacy_act_details:
+    '#type': processed_text
+    '#text': |
+      <p>Please read our <a href="http://www.sec.gov/privacy.htm" target="_blank">Privacy Act Notice</a> to learn about how we may use the information you send to us.</p>
+    '#format': full_html
+  captcha:
+    '#type': captcha
+    '#captcha_type': recaptcha/reCAPTCHA
+    '#captcha_admin_mode': true
+css: "ol, ol[type='a'] {list-style-type: lower-alpha;}\r\nol[type='i'] {list-style-type: lower-roman;}"
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: /forms/surveysbforum
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: both
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: false
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes: {  }
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: page
+  confirmation_url: ''
+  confirmation_title: '[webform:title]'
+  confirmation_message: 'Thank you. Your request was successfully submitted and sent to the appropriate SEC division or office.'
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  email:
+    id: email
+    handler_id: email
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[webform_submission:values:your_e_mail_address:raw]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Thank you for your submission'
+      body: |-
+        Your request was successfully submitted and sent to the appropriate SEC division or office.<br />
+        Back to form [webform:url]
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+  email_1:
+    id: email
+    handler_id: email_1
+    label: Email
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 1
+    settings:
+      states:
+        - completed
+      to_mail: BaroneA@sec.gov
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Webform submission from [webform_submission:webform:title]'
+      body: _default
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      parameters: {  }
+      debug: false
+variants: {  }

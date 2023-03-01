@@ -1,0 +1,176 @@
+//
+// UPCOMING EVENTS: LANDING PAGE
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+#page.upcoming-events-list{
+
+  .modified-date {
+    display: none;
+  }
+
+  .block {
+    h2.block-title {
+      // @include raleway;
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 2.1rem;
+    }
+  }
+  
+  #landing-page-title {
+    clear: both;
+    display: block;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+
+    @include breakpoint('medium','portrait') {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 40px;
+      min-height: 12px;
+      padding: 4px 0;
+    }
+
+    @include breakpoint('small'){
+      display:block;
+    }
+
+    h1 {
+      border-bottom: 1px solid #BFBFBF;
+      color: #6F7479;
+      display: inline-block;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 0px 0px 18px 0px;
+      min-height: 48px;
+      padding: 7px 0 8px;
+      width: 100%;
+
+      @include breakpoint('medium','portrait') {
+        color: #6F7479;
+        line-height: 1.4;
+        margin: 0;
+        padding: 4px 0;
+        text-align: center;
+        width: 100%;
+      }
+
+      @include breakpoint('small'){
+        font-size: 1.5em;
+        margin-bottom: 0;
+        min-height: 48px;
+        text-align: center;
+      }
+
+    }
+
+    #addthis-icons {
+      bottom: 20px;
+      position: absolute;
+      right: 0;
+
+      .appIconsDetail .addthis_default_style {
+        float: right;
+        padding: 10px 0;
+        width: auto;
+      }
+
+      @include breakpoint('medium','portrait'){
+        bottom: -46px;
+      }
+
+      @include breakpoint('small'){
+        bottom: -55px;
+        float: right;
+        width: 50%;
+
+        .addthis_mobile {
+          float:right;
+          margin-top: 15px;
+          margin-right: 15px;
+        }
+        .addthis_toolbox.addthis_32x32_style span {
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  @include breakpoint('small') {
+    .main-content {
+      @include span(11);
+      float: none;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  #block-secgov-content {
+    margin-top: 20px;
+  }
+}
+
+// Upcoming events landing page header
+.upcoming-events-header.field-item {
+  margin-bottom: 2rem;
+
+  .jump-link-container {
+  	@include span(12 last);
+    margin: 2rem 0px 2rem 0px;
+  }
+
+  .jump-link {
+    width: 33.33333%;
+    display: table;
+    float: left;
+    margin-right: -1px;
+    background-color: $white;
+    border: solid 1px $border-color;
+    line-height: 1.4;
+    margin-bottom: 0px;
+
+    @include breakpoint('small') {
+      @include span(12);
+      clear: both;
+      margin-right: 0;
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    a {
+      box-sizing: border-box;
+      color: $azure;
+      display: table-cell;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      height: 129px;
+      padding: 25px 50px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      vertical-align: middle;
+			@include breakpoint('medium') {
+      	padding: 20px 30px;
+			}
+    }
+
+    a:hover {
+      background-color: $navy;
+      color: $yellow-orange;
+    }
+
+    a:active {
+      outline: dotted 1px #FFC057;
+    }
+  }
+}

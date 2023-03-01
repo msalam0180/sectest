@@ -1,0 +1,31 @@
+uuid: 012d0082-41b8-4a82-a99a-31652783a7de
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:1d99d35c-749d-4e90-b085-ff7d71c0f266'
+  module:
+    - block_content
+    - system
+  theme:
+    - investor
+id: menuglossary
+theme: investor
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:1d99d35c-749d-4e90-b085-ff7d71c0f266'
+settings:
+  id: 'block_content:1d99d35c-749d-4e90-b085-ff7d71c0f266'
+  label: 'Menu: Glossary'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/introduction-investing/investing-basics/glossary\r\n/introduction-investing/investing-basics/glossary/*\r\n/introduction-investing/investing-basics/glossary/403b-plan"

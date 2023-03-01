@@ -1,0 +1,30 @@
+uuid: 9c5e3620-eee2-47ad-986e-c6c7423a0cf1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_simple_spacing
+field_name: field_simple_spacing
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: above
+      label: Above
+    -
+      value: below
+      label: Below
+    -
+      value: above_below
+      label: 'Above and Below'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

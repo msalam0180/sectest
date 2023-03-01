@@ -1,0 +1,32 @@
+uuid: 4c9c5b87-9dbb-489b-8437-518c6543cd59
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ethics
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: IkgbRotvsBTZR21M0oPvHFI3P0M1v4kjQL8sZj64qow
+id: ethics
+theme: secgov
+region: sidebar_first
+weight: -13
+provider: null
+plugin: 'system_menu_block:ethics'
+settings:
+  id: 'system_menu_block:ethics'
+  label: Ethics
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/ethics\r\n/ethics/*"

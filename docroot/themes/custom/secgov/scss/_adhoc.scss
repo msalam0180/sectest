@@ -1,0 +1,298 @@
+//
+// Adhoc
+// This is for emergency quick updates
+// Everything in this file should be removed as soon as possible
+// --------------------------------------------------
+
+// TODO: Review all code in this file and move it into the correct places
+
+/* TARGETS SPECIFIC LIST VIEWS */
+
+/* TARGETS SPECIFIC LIST VIEWS FOR MOBILE */
+@include breakpoint('small') {
+
+  .group, .seasonBars {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------------------
+   Custom Buttons
+   ---------------------------------------------------------------------- */
+
+/* Tips/Complaints/Submit Papers Button Icons */
+#submit-papers, #tips-complaints {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.custom-btn {
+  background-color: #e9e9e9;
+  box-shadow: none;
+  color: #273A56;
+  display: table-cell;
+  font-weight: 100;
+  height: 80px;
+  line-height: 1.25;
+  margin: 0;
+  padding: 8px 15px;
+  vertical-align: middle;
+  -webkit-box-shadow: none;
+  width: 270px !important;
+
+  &:visited, &:hover, &:focus {
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  &:hover, &:focus {
+    background-color: #273A56;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  span.fa {
+    background: none;
+    color: #273A56;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    text-decoration: none;
+    width: 23%;
+  }
+  span.button-text {
+    color: #273A56;
+    font-size: 1.3em;
+    font-weight: 400;
+    width: 75%;
+  }
+}
+
+.custom-btn:hover span.fa {
+  color: #FFC057;
+}
+
+.custom-btn:hover span.button-text {
+  color: #FFF;
+}
+
+/* Structured Data Page Slider */
+.structureddata-slider {
+  .flexslider {
+    margin-bottom: 30px;
+
+    .flex-control-nav.flex-control-paging {
+      bottom: -10px;
+      li {
+        margin: 10px;
+        a {
+          border-radius: 15px;
+          height: 7px;
+          width: 7px;
+        }
+      }
+    }
+
+    .flex-direction-nav {
+      a {
+        text-decoration: none;
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: -20px 0 0;
+        outline: none;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        overflow: hidden;
+        opacity: 0;
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      a:before {
+        @include fontawesome;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.8);
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+      }
+      a.flex-next:before {
+        content: '\f138';
+      }
+      a.flex-prev:before {
+        content: '\f137';
+      }
+      .flex-prev {
+        left: -50px;
+      }
+      .flex-next {
+        right: -50px;
+        text-align: right;
+      }
+    }
+  }
+  .flexslider:hover .flex-direction-nav .flex-prev {
+    opacity: 0.7;
+    left: 10px;
+  }
+  .flexslider:hover .flex-direction-nav .flex-prev:hover {
+    opacity: 1;
+  }
+  .flexslider:hover .flex-direction-nav .flex-next {
+    opacity: 0.7;
+    right: 10px;
+  }
+  .flexslider:hover .flex-direction-nav .flex-next:hover {
+    opacity: 1;
+  }
+
+  .slide-content {
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    .slide-content-image {
+      height: auto;
+      width: auto;
+    }
+    .slide-content-links {
+      left: 40px;
+      position: absolute;
+      top: 75%;
+
+      @media only screen and (max-width: 600px) {
+        top: auto;
+        bottom: 10px;
+        left: 20px;
+      }
+
+      @media only screen and (max-width: 450px) {
+        bottom: 5px;
+        left: 15px;
+      }
+
+      @media only screen and (max-width: 400px) {
+        bottom: 0;
+      }
+
+      a {
+        background-color: $navy;
+        border: 2px solid $white;
+        color: $white;
+        float: left;
+        margin-right: 10px;
+        padding: .5em;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:after {
+          margin-left: 10px;
+        }
+        &:hover {
+          background-color: $yellow-orange;
+          color: $navy;
+        }
+
+        @media only screen and (max-width: 600px) {
+          padding: 0.1em 0.5em;
+        }
+
+        @media only screen and (max-width: 400px) {
+          padding: 0.01em 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.field_script.fa {
+  background-color: transparent;
+  border-radius: 0;
+  color: $cloudy-gray;
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  canvas {
+    display: none;
+  }
+}
+
+#event-webcasts-top {
+  .no-mediaid {
+    display: none;
+  }
+}
+
+#event-webcasts-bottom {
+  .field-label {
+    display: none;
+  }
+  .live {
+    display: none;
+  }
+  .has-mediaid {
+    display: none;
+  }
+}
+
+/*class to remove background arrow image on selects which display more than 1 item*/
+select.no-img {
+  background-image: none;
+}
+
+// 508 related adhoc css rules;
+.hidden508 {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// TODO: What is this for?
+.im-disclosure {
+  .subscribe-rss {
+    display: none !important;
+  }
+}
+
+// TODO: Where is this used? What does it do?
+.form-item-speaker {
+  width: 25%;
+  input#edit-speaker {
+    width: inherit;
+  }
+}
+
+/* ----------------------------------------------
+FLEX CONTAINER
+-----------------------------------------------*/
+// TODO: Cannot find this code in the db or in the code... is it being used? Delete if not being used.
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+// TODO: Cannot find this code in the db or in the code... is it being used? Delete if not being used.
+.flex-item {
+  flex-grow: 1;
+}
+
+// WHat is this for?
+.bravo {
+  font-weight: 300;
+}

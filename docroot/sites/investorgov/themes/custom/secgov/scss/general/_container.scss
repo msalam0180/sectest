@@ -1,0 +1,391 @@
+//
+// CONTAINER
+// Page layout containers
+//
+// NOTE: When completed give a better name to this file
+// --------------------------------------------------
+
+// TODO: Review all code, clean as needed, and move it into the correct places
+// This file is a mess. Containers were added into this file, but there are so many containers on this site. Too Many...
+// These need to be cleaned, and consolidated where possible, or at least defined
+
+//TODO: <container> is not an HTML element... This needs to be changed here and in the twigs
+container { 
+	@include span(12);
+	@include section;
+	direction: ltr;
+	height: 100%;
+	padding-bottom: 54px;
+
+	@include breakpoint('x-small'){
+		min-width: 320px;
+	}
+}
+
+section {
+	display: block;
+	&:after {
+		clear: both;
+		content: ' ';
+	}
+}
+
+#page-wrapper {
+	margin-bottom:0;
+}
+
+#page {
+	margin-bottom: 0;
+    padding-bottom: 0px;
+}
+
+[role="content"] {
+	@include span (12);
+	clear: both;
+	display: block;
+}
+
+// #main-wrapper {
+// 	@include span(isolate 10 at 2);
+// 	height: inherit;
+// 	@include section;
+// 	max-width: 960px;
+// 	min-height: auto;
+// 	padding: 0 10px;
+// 	position: relative;
+
+//   @include breakpoint('medium','landscape'){
+//     @include span(12);
+// 	@include section;
+// 	min-width: 960px;
+//     padding: 0 10px;
+//   }
+
+//   @include breakpoint('medium','portrait'){
+//     margin-top: 0px;
+//     min-width: 768px;
+//     padding: 0 20px;
+//     width: 100%;
+//   }
+
+//   @include breakpoint('medium','portrait','ipad'){
+//     margin-top: 0px;
+//     min-width: 768px;
+//     padding: 0 20px;
+//     width: 100%;
+//   }
+
+//   @include breakpoint('small'){
+//     @include span(12);
+//     float: none;
+//     margin: 0;
+//     min-width: 320px;
+//     padding: 0;
+//   }
+
+//   @include breakpoint('x-small'){
+//     @include span(12);
+//     float: none;
+//     margin-left: auto;
+//     margin-right: auto;
+//     padding: 0;
+//   }
+// }
+
+.main-content {
+	@include span(12 last);
+	@include clearfix;
+
+	@include breakpoint('small','landscape'){
+	  padding: 0;
+	}
+
+	@include breakpoint('small','portrait'){
+	  /* line 75, scss/_container.scss */
+	  padding: 0;
+	}
+}
+// Layout
+[role="content"] {
+  @include span(12);
+  clear: both;
+  display: block;
+  min-height: 30vh;
+
+  @include breakpoint('medium','portrait'){
+    min-height: 25vh;
+  }
+
+  @include breakpoint('small'){
+    min-height: 25vh;
+  }
+
+  @include breakpoint('x-small'){
+    min-height: 25vh;
+  }
+}
+
+#block-secgov-content {
+  @include breakpoint('small'){
+    margin-top: 0px;
+  }
+}
+
+#block-secgov-content {
+	@include span(12 last);
+
+  @include breakpoint('small'){
+    padding-top: 10px;
+  }
+}
+#content-wrapper {
+  @include span(10);
+  color: $dark-navy;
+  display: block;
+  font-size: 1em;
+  height: inherit;
+  margin-right: 0;
+  padding-left: 0.833333em;
+
+  @include breakpoint('medium','portrait'){
+    @include span(12);
+    clear: both;
+    float: none;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  @include breakpoint('medium','portrait','ipad'){
+    @include span(12);
+    clear: both;
+    float: none;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  @include breakpoint('small'){
+    clear: both;
+    padding-left: 0;
+    width: 100%;
+  }
+  @include breakpoint('x-small'){
+    clear: both;
+    width: 100%;
+  }
+
+  #addthis-icons {
+    @include span(4 last);
+    bottom: 20px;
+    float: none;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+
+    @include breakpoint('medium','landscape'){
+      bottom: 18px;
+      right: 0;
+    }
+
+    @include breakpoint('medium','portrait'){
+      bottom: -30px;
+      right: 0px;
+    }
+
+    @include breakpoint('medium','portrait','ipad'){
+      bottom: -30px;
+      right: 0px;
+    }
+
+    @include breakpoint('small','landscape'){
+      bottom: -50px !important;
+      right: 15px;
+    }
+
+    @include breakpoint('small','portrait'){
+      bottom: -50px !important;
+      right: 15px;
+    }
+
+    @include breakpoint('x-small'){
+      bottom: -50px;
+      right: 5px;
+      width: 50%;
+    }
+
+    .addthis-wrapper {
+      @include span(12);
+
+      .appIconsDetail {
+        float: right;
+        margin-right: 0px;
+
+        @include breakpoint('medium'){
+          margin-right: 0;
+          margin-top: 10px;
+        }
+
+        @include breakpoint('small'){
+          margin-right: 0;
+        }
+        .at300b {
+          @include breakpoint('small'){
+            display: inline-block;
+          }
+        }
+        .fa {
+          @include breakpoint('small'){
+            display: block;
+            line-height: 1.5;
+            padding: 3px 0;
+            text-align: center;
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  #main {
+    @include span(12);
+    margin: 0;
+    padding: 0;
+
+    @include breakpoint('medium','portrait'){
+      padding: 0 10px;
+    }
+
+    @include breakpoint('medium','portrait','ipad'){
+      padding: 0 10px;
+    }
+  }
+
+  .content {
+    @include breakpoint('small'){
+      margin: 20px 0 0;
+      padding: 10px 20px 0;
+      width: 100%;
+    }
+  }
+
+  .content.aside {
+    @include span(9);
+    margin-right: 0;
+    padding-left:0;
+
+    @include breakpoint('medium','landscape'){
+      @include span(9);
+      margin-right: 0;
+    }
+
+    @include breakpoint('medium','portrait'){
+      @include span(9);
+      padding-left: 10px;
+    }
+
+    @include breakpoint('medium','portrait','ipad'){
+      @include span(9);
+      padding-left: 10px;
+    }
+
+    @include breakpoint('small','landscape'){
+      margin: 20px 0 0;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    @include breakpoint('small','portrait'){
+      margin: 20px 0 0;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    @include breakpoint('x-small'){
+      margin: 20px 0 0;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    span.embedded-entity {
+      display: block;
+      margin-right: 20px;
+      &:after {
+        clear: both;
+        content: ' ';
+        display: block;
+      }
+    }
+
+    .market-statistics-links {
+      ul {
+        padding-left: 0;
+        margin-left: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          width: 24%;
+
+          a {
+            background-color: #273A56;
+            border: none;
+            box-shadow: none;
+            font-size: 12px;
+            font-weight: 600;
+            // @include raleway;
+            text-align: center;
+            display: block;
+            height: auto;
+            line-height: 1.5;
+            margin-bottom: 0;
+            padding: 0.75em;
+            -webkit-box-shadow:none;
+            color: #FFFFFF;
+
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              background-color: #25508e;
+            }
+          }
+
+          @include breakpoint('small') {
+            width: 100%;
+
+            a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // header {
+  //   display: block;
+  //   margin-bottom: 30px;
+  //   width: 100%;
+
+  //   h1 {
+  //     color: $gray-heading;
+  //     line-height: 1.4;
+  //   }
+
+  //   p {
+  //     margin-bottom: 20px;
+  //   }
+  // }
+}
+
+// TODO: What is this for? How is this used?
+.grid-aside {
+  .views-view-grid {
+    @include span(9 last);
+    @include clearfix;
+    @include breakpoint('small'){
+      @include span(12 last);
+    }
+  }
+  #table_paging {
+    @include span(9 last);
+  }
+}

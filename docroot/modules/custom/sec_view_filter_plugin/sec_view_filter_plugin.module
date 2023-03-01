@@ -1,0 +1,165 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+/**
+ * @file
+ * Main hooks for SEC filters (sec_view_filter_plugin) module.
+ */
+
+use Drupal\sec_view_filter_plugin\Controller\SecFilterController;
+use Drupal\core\Database\Database;
+use \Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_form_alter().
+ */
+
+  function sec_view_filter_plugin_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    //Dynamically change default option values for select list;
+    if($form_id === "views_exposed_form") {
+      foreach ($form['#info'] as $field) {
+         if(isset($form[$field['value']]['#type']) && $form[$field['value']]['#type'] === "select") {
+          $form[$field['value']]['#options']['All'] = t('-View All-');
+         }
+      }
+    }
+
+    if($form_id === 'views_exposed_form' && isset($form['year']['#options']) || isset($form['month']['#options'])) {
+
+      $formIDs =  [
+        "views-exposed-form-testimony-list-page-page-1",
+        "views-exposed-form-speeches-list-page-page-1",
+        "views-exposed-form-speeches-statements-list-page-page-1",
+        "views-exposed-form-public-statements-list-page-page-1"
+      ];
+
+      if(in_array($form['#id'], $formIDs)) {
+        $form['field_person_target_id']['#attributes']['placeholder'] = t('Search');
+		$form['reset'] = [
+			'#markup' =>'<a href=\''.$form['#action'].'\' id=\'edit-reset\'>CLEAR ALL</a>',
+
+		];
+      }
+
+      //Validate 'year' & 'month' default values;
+      $form['year']['#validated'] = TRUE;
+      $form['month']['#validated'] = TRUE;
+      //Conditionally attach an js to the view.
+      if ($form['#id'] != 'views-exposed-form-press-releases-page-1') {
+        $form['#attached']['library'][] = 'sec_view_filter_plugin/sec_view_filter_plugin';
+      }
+    }
+
+    
+    if( $form_id === 'views_exposed_form' && isset($form['year']['#options']) || isset($form['field_topics_target_id']['#options']) || isset($form['field_subtopic_target_id']['#options']) ) {
+
+      $formIDs =  [
+        "views-exposed-form-topical-reference-guide-page-1"
+      ];
+
+      if(in_array($form['#id'], $formIDs)) {
+        $form['reset'] = [
+      '#markup' =>'<div class=\'js-form-item form-item\'><a href=\''.$form['#action'].'\' id=\'edit-reset\'>CLEAR ALL</a></div>',
+
+    ];
+      }
+
+      //Validate 'year', topic' & 'subtopic' default values;
+      $form['year']['#validated'] = TRUE;
+      $form['field_topics_target_id']['#validated'] = TRUE;
+      $form['field_subtopic_target_id']['#validated'] = TRUE;
+      //Conditionally attach an js to the view.
+
+      if ($form['#id'] != 'views-exposed-form-press-releases-page-1') {
+        $form['#attached']['library'][] = 'sec_view_filter_plugin/sec_view_filter_plugin';
+      }
+    }
+
+  }
+
+/**
+ * Implements hook_views_post_build().
+ */
+function sec_view_filter_plugin_views_post_build(ViewExecutable $view) {
+  $customFilters = ['year','month'];
+  $filterIsSet = (count(array_intersect(array_keys($view->filter), $customFilters))) > 0 ? TRUE : FALSE;
+  $baseTable = array_keys($view->getBaseTables());
+
+  if ( $baseTable[0] === "sec_activity_tracker" || !$filterIsSet) {
+      return;
+  }
+
+  if ( !empty($view->query->where['0']['conditions']) ) {
+      foreach ($view->query->where['0']['conditions'] as $key => $condition) {
+        if ( $condition['field'] === "YEAR(node__field_publish_date.field_publish_date_value) = :year" || $condition['field'] === "MONTH(node__field_publish_date.field_publish_date_value) = :month" ) {
+          unset($view->query->where['0']['conditions'][$key]);
+        }
+      }
+  }
+
+  $nids = array_keys($view->query->query()->execute()->fetchAllAssoc('nid'));
+
+  if(!empty($nids)) {
+    $select = Database::getConnection()->select('node__field_publish_date','nfd');
+    $select->join('node_field_data','nd','nfd.entity_id = nd.nid');
+    $select->fields('nfd',['field_publish_date_value']);
+    $select->condition('entity_id',$nids,'IN');
+    $results = $select->execute()->fetchCol();
+    $initial = ['All' => t('-View All-')];
+    foreach ($results as $result) {
+      $val = explode('-', $result);
+      $options[$val[0]] = $val[0];
+    }
+    if (isset($options)) {
+       arsort($options);
+       $options  = $initial + $options;
+       //Generate option list;
+       $view->query->view->exposed_widgets['year']['#options'] = $options;
+    };
+   }
+}
+
+
+
+/**
+ * Implements hook_node_presave().
+*/
+
+function sec_view_filter_plugin_node_presave(EntityInterface $node) {
+  //Return Only if the bundle Type is secperson;
+  if ($node->bundle() !== "secperson") {
+      return;
+  }
+
+  $firstName = $node->field_first_name_secperson->value;
+  $lastName = $node->field_last_name_secperson->value;
+  $collections = $node->get('field_position_history_paragraph')->referencedEntities();
+  //Iterate over field collection;
+  $collectionItem = [];
+  foreach ($collections as $collection) {
+    if ($collection->field_current_position->value === "1") {
+      $collectionItem['category'] = $collection->field_position_category->value == (string) 'Chair' ? 'Chairman' : $collection->field_position_category->value;
+      $collectionItem['title'] = $collection->field_position_title->value;
+    }
+  }
+  $fullPosition = isset($collectionItem['category']) && $collectionItem['category'] !== "Other" ? $collectionItem['category']: null;
+  $fullPosition .= ' '.$firstName;
+  $fullPosition .= ' '.$lastName;
+  //Finally set our value for speaker_combined hidden field;
+  $node->set('field_speaker_combined', $fullPosition);
+}
+
+/**
+ * Implements hook_views_pre_render().
+*/
+function sec_view_filter_plugin_views_pre_render(ViewExecutable $view) {
+    $view->element['#attached']['library'][] = 'sec_view_filter_plugin/sec_view_filter_plugin-datatables';
+
+  $id = $view->storage->id();
+  $display_id = $view->current_display;
+
+  if($id == 'duplicate_of_wb_covered_actions_list_page' && $display_id == 'page_1') {
+    $view->element['#attached']['drupalSettings']['nocaview']['isnocaview']= TRUE;
+  }
+}

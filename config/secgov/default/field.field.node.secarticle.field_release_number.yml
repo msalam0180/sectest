@@ -1,0 +1,21 @@
+uuid: b52c3c62-6b72-4e79-87c3-6c475065acf7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_number
+    - node.type.secarticle
+_core:
+  default_config_hash: SYMQnnb1XaiDHX-iZfCHBapJgI58qArc_ZJ9grBBXE4
+id: node.secarticle.field_release_number
+field_name: field_release_number
+entity_type: node
+bundle: secarticle
+label: 'Release Number'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

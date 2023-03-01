@@ -1,0 +1,25 @@
+uuid: d8c7c070-a3aa-4c87-b80a-552fa24cd930
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: JlAm4u6NCRZt7hxyz5Zvs-IIqnpMEUUvjOQOQVNmp9E
+id: uswdssec_branding
+theme: uswdssec
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

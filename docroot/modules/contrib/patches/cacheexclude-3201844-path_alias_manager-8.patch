@@ -1,0 +1,26 @@
+diff --git a/cacheexclude.info.yml b/cacheexclude.info.yml
+index 3d6e2f759a..3e23bf25bf 100644
+--- a/cacheexclude.info.yml
++++ b/cacheexclude.info.yml
+@@ -4,7 +4,8 @@ description: 'Exclude certain pages from being cached.'
+ core: '8.x'
+ core_version_requirement: ^8 || ^9
+ configure: cacheexclude.settings
+-
++dependencies:
++ - drupal:path_alias
+ # Information added by Drupal.org packaging script on 2020-10-19
+ version: '8.x-1.0'
+ project: 'cacheexclude'
+diff --git a/src/EventSubscriber/CacheexcludeSubscriber.php b/src/EventSubscriber/CacheexcludeSubscriber.php
+index 9e45bd9f0c..768ae72a95 100644
+--- a/src/EventSubscriber/CacheexcludeSubscriber.php
++++ b/src/EventSubscriber/CacheexcludeSubscriber.php
+@@ -34,7 +34,7 @@ public function disableCacheForPage() {
+     // disable page cache temporarily.
+     if (!empty($pages)) {
+       $current_path = \Drupal::service('path.current')->getPath();
+-      $current_path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
++      $current_path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+       $path_matches = \Drupal::service('path.matcher')->matchPath($current_path, $pages);
+       $alias_path_matches = \Drupal::service('path.matcher')->matchPath($current_path_alias, $pages);

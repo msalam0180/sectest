@@ -1,0 +1,41 @@
+uuid: d7b5e7a6-417b-48aa-9523-0deac8622310
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+_core:
+  default_config_hash: FBByyZlYpMLA_dcqn2dfQujnld-ssVMN0YS_iJMgtnk
+id: node.field_judgment_final_order_appea
+field_name: field_judgment_final_order_appea
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'No'
+      label: 'No'
+    -
+      value: 'Yes-Appeal Pending'
+      label: 'Yes-Appeal Pending'
+    -
+      value: Yes-Affirmed
+      label: Yes-Affirmed
+    -
+      value: Yes-Remanded
+      label: Yes-Remanded
+    -
+      value: Yes-Overturned
+      label: Yes-Overturned
+    -
+      value: Yes-Other
+      label: Yes-Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

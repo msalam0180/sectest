@@ -1,0 +1,14 @@
+uuid: 4d6f4c44-30df-456e-a4b7-c1ec56beaefa
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: BFAwoqGv9bDsqnstTLng9qzu6AWViqdUqpZOhY44wEk
+id: announcements_list
+label: 'Announcements List'
+description: ''
+use_admin_theme: false
+path: /fabio/announcements
+access_logic: and
+access_conditions: {  }
+parameters: {  }

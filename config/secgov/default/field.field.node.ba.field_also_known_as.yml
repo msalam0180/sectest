@@ -1,0 +1,21 @@
+uuid: d24977aa-54db-4ab2-9333-7df54f7d621f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_also_known_as
+    - node.type.ba
+_core:
+  default_config_hash: wFnRT6QwaTVxz3rfaFJPE93wn0OPvDsMCTo7MOGN1rQ
+id: node.ba.field_also_known_as
+field_name: field_also_known_as
+entity_type: node
+bundle: ba
+label: 'Also Known As'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

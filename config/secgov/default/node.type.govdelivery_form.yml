@@ -1,0 +1,32 @@
+uuid: b6ab073e-b10a-40b1-905a-1b39bd3a8df8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+_core:
+  default_config_hash: LF8G3Ldb_h-vZFEPhkozOJ84XyQTUL0MTiwTz6nGTj8
+name: 'GovDelivery Form'
+type: govdelivery_form
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

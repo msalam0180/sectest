@@ -1,0 +1,19 @@
+_core:
+  default_config_hash: ddsJZVNkrueJsDMhfOq7YDPRIQS0yaG80u4X_tedHDo
+max_links: 4000
+cron_generate: true
+cron_generate_interval: 12
+generate_duration: 60000
+entities_per_queue_item: 50
+remove_duplicates: true
+skip_untranslated: true
+xsl: true
+base_url: ''
+default_variant: default
+custom_links_include_images: false
+disable_language_hreflang: false
+hide_branding: true
+excluded_languages: {  }
+enabled_entity_types:
+  - node
+  - media

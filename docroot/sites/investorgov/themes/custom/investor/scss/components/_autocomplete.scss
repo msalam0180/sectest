@@ -1,0 +1,15 @@
+//Autocomplete
+.ui-autocomplete.ui-front, .search-api-autocomplete-search{
+  z-index: 9999 !important;
+  .ui-menu-item-wrapper{
+    padding: 0;
+    display: block;
+  }
+  .search-api-autocomplete-suggestion{
+    padding: 5px 8px;
+  }
+  .ui-menu-item{
+    line-height: 1.2em;
+    font-weight: normal;
+  }
+}

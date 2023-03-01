@@ -1,0 +1,39 @@
+uuid: b6598523-849a-41d4-978d-8243561d086c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.anchor_sidebar
+    - field.field.block_content.anchor_sidebar.body
+    - field.field.block_content.anchor_sidebar.field_anchor_link
+    - field.field.block_content.anchor_sidebar.field_anchor_menu_label
+  module:
+    - link
+    - text
+id: block_content.anchor_sidebar.default
+targetEntityType: block_content
+bundle: anchor_sidebar
+mode: default
+content:
+  field_anchor_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_anchor_menu_label:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  search_api_excerpt: true

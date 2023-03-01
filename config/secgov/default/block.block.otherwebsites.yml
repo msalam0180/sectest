@@ -1,0 +1,25 @@
+uuid: 77397310-8acd-443b-873b-d5fb2b8e00ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.other-websites
+  module:
+    - system
+  theme:
+    - secgov
+id: otherwebsites
+theme: secgov
+region: footer
+weight: -34
+provider: null
+plugin: 'system_menu_block:other-websites'
+settings:
+  id: 'system_menu_block:other-websites'
+  label: Websites
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

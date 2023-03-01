@@ -1,0 +1,25 @@
+uuid: ce45ff73-cf7f-413f-9443-356a650f2cb9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: nfo9f28x-Jcm4sAisl81l6-H-jkfhrQRfxgJEIT7Eco
+id: secgov_branding
+theme: secgov
+region: header
+weight: -34
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

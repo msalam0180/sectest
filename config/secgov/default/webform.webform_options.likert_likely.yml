@@ -1,0 +1,19 @@
+uuid: 22d619f6-66a5-4d83-9598-77f3479f5f3c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: AKE2SNwCpl6Mu_cmbq9ZM2_cXxCikCVj1vcPE9oHWTs
+id: likert_likely
+label: 'Likert: Likely'
+category: Likert
+likert: true
+options: |
+  1: 'Very Unlikely'
+  2: 'Moderately Unlikely'
+  3: 'Neither Likely nor Unlikely'
+  4: 'Moderately Likely'
+  5: 'Very Likely'

@@ -1,0 +1,10 @@
+name: 'Investor Replicate Settings'
+type: module
+description: 'Provides custom settings for Replicate Module'
+version: 1.0
+core: 8.x
+package: Investor
+dependencies:
+  - replicate
+  - replicate_ui
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,31 @@
+uuid: edbda411-befc-4724-bf92-0f864c140561
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topics
+    - node.type.link
+    - taxonomy.vocabulary.topics
+_core:
+  default_config_hash: P41HCYQkMusV7bmpN9eRlsSMq8jlHyi9VBif2NKenVQ
+id: node.link.field_topics
+field_name: field_topics
+entity_type: node
+bundle: link
+label: Topic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topics: topics
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

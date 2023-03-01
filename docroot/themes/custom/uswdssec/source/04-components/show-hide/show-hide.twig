@@ -1,0 +1,15 @@
+{{ attach_library('uswdssec/show_hide') }}
+
+{% set classes = [
+  'c-show-hide',
+  modifier_classes ? modifier_classes : '',
+  is_demo ? 'c-show-hide--storybook-show' : '',
+]|join(' ')|trim %}
+
+{% if is_demo %}
+<p>Currently, show hide code is only used by adding attributes to buttons and div containers. It cannot be used as a component directly without further development</p>
+<button data-showHideBtn aria-controls="show-hide-2" aria-expanded="false">Show More</button>
+<div id="show-hide-2">
+	I am visible
+</div>
+{% endif %}

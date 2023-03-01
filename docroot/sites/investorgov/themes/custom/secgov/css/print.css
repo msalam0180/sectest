@@ -1,0 +1,67 @@
+/* SEC COLORS */
+/* SEC GRAY COLORS - Darkest to lightest */
+/* See the colors at 'sec-brand-colors-1' */
+/* TARGETED COLORS */
+@media print {
+  body {
+    margin: 0;
+    padding: 0; }
+  a {
+    color: #393d40;
+    text-decoration: underline; }
+  container {
+    width: 100%;
+    float: left;
+    clear: both;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    direction: ltr;
+    height: 100%;
+    padding-bottom: 54px; }
+    container #sidebar-first {
+      display: none; }
+    container #content-wrapper {
+      width: 100%;
+      float: left;
+      margin-right: 0;
+      display: block;
+      font-size: 1em;
+      margin-right: 0px;
+      height: inherit; }
+    container #sidebar-second, container .columns-1, container .columns-2, container .columns-3,
+    container .panel-2col .panel-col-top,
+    container .panel-2col .panel-col-first, container .panel-2col .panel-col-last {
+      clear: both;
+      display: block;
+      float: none;
+      margin: 10px 0;
+      width: 100% !important; }
+  .ui-tabs-panel {
+    display: block;
+    border: 1px solid #BFBFBF;
+    min-height: 315p  x;
+    padding: 1em 1.4em;
+    background: none; }
+    .ui-tabs-panel .columns-1 {
+      clear: both;
+      display: block;
+      float: none !important;
+      margin: 0;
+      width: 100%; }
+      .ui-tabs-panel .columns-1 img {
+        display: inline-block;
+        margin-right: 10px;
+        width: 40px; }
+      .ui-tabs-panel .columns-1 br {
+        display: none; }
+  #appsIconsList, .appIconsDetail, #panels-ipe-tray, .ipe-tab-wrapper, .ipe-tabs, .ipe-tab {
+    display: none !important;
+    visibility: hidden; }
+  .hide-for-print {
+    display: none;
+    visibility: hidden; } }
+
+/*# sourceMappingURL=maps/print.css.map */

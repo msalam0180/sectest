@@ -1,0 +1,4 @@
+services:
+  sec_webform.wts:
+    class: Drupal\sec_webform\Wts
+    arguments: ['@file_system', '@logger.factory']

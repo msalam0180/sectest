@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: FSxvj4EMs4htnSvjeaP4IERWOf-f-WdA2Hg0YbWZsjE
+allow_date_only: false
+date_format: 'Y-m-d H:i:s'
+date_only_format: Y-m-d
+default_show_message_after_update: true
+default_time: '00:00:00'
+lightweight_cron_access_key: e05f67ac0baf03a69a84
+log: true
+time_only_format: 'H:i:s'

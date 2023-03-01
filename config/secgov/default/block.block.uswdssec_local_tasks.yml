@@ -1,0 +1,22 @@
+uuid: 6163101b-d349-43d4-bd1a-e566eb6451c1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: eml2QznOfxb3EnvdLviueprR8oZqxzcM57lPxOQkQS4
+id: uswdssec_local_tasks
+theme: uswdssec
+region: status
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

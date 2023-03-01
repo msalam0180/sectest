@@ -1,0 +1,28 @@
+uuid: 819989e6-49f1-4379-9d76-fc72bc8859ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_division_office
+    - node.type.secperson
+    - taxonomy.vocabulary.division_office
+id: node.secperson.field_primary_division_office
+field_name: field_primary_division_office
+entity_type: node
+bundle: secperson
+label: 'Primary Division/Office'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      division_office: division_office
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,390 @@
+//
+// PANELS
+//
+// TODO: After this file is refactored, then write the description (depends file organization)
+// --------------------------------------------------
+
+// TODO: Review all code, clean it, and move it into the correct places if necessary
+
+/* Panel pages */
+
+#panels-ipe-tray {
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+
+  .ipe-tabs {
+    /*background-color: #FFFFFF;
+    border-left: 1px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-top: 1px solid darkgray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px 5px 0;
+    width: 768px;*/
+
+    .ipe-tab {
+      border-top: none;
+    }
+
+    .ipe-tab:first-child, .ipe-tab:last-child  {
+      border-left: none;
+      border-right: none;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    li[data-tab-id='revert'] {
+      display:none;
+    }
+  }
+
+  .ipe-tabs-content {
+    a.panelizer-ipe-save-default {
+      display: none;
+    }
+
+    a.panelizer-ipe-save-custom {
+      background-color: #273a56;
+      border: 1px solid #CCC;
+      color: $white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    a.panelizer-ipe-save-custom:hover {
+      background-color: #2F64B1;
+    }
+  }
+}
+
+.block-region-top {
+	background-color: none;
+
+	h1.page-title{
+		border-bottom: 1px solid $border-color;
+		margin-top: 0;
+		margin-bottom: 18px;
+		padding-bottom: 8px;
+	}
+  @include breakpoint('medium','portrait'){
+    margin-top: 8px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  @include breakpoint('small'){
+    margin-bottom: 0;
+  }
+}
+
+#page-title {
+
+    h1.landing {
+      display: inline-block;
+    	margin-top: 0;
+    	padding-bottom: 8px;
+    	margin-bottom: 18px;
+    	text-align: center;
+    }
+}
+/* Landing Pages */
+
+.node--type-landing_page {
+	h2 {
+		padding-bottom: 0px;
+	}
+}
+
+.panel-1col {
+  margin-top: 0;
+}
+/* Panel: Right Sidebar */
+.panel-2col {
+  font-size: 1em;
+
+  .stylized-box-1, .stylized-box-2, .stylized-box-3 {
+    padding: 10px;
+
+    h2, h3 {
+      margin: 0;
+      padding: 0;
+    }
+    hr { margin-bottom: 5px; }
+    ul {
+      margin: 20px 0px;
+      list-style: disc;
+    }
+
+    li {
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+  }
+
+  @include breakpoint('small') {
+    display: block;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* Panel: Top Panel; */
+  .panel-top {
+    &:after {
+      clear: both;
+      content: ' ';
+      display: block;
+      height: 1px;
+      width: 100%;
+    }
+  }
+
+  .panel-col-first {
+    @include span(7.5);
+
+    &.alt {
+      @include span(9);
+
+      @include breakpoint('small') {
+        @include span(12);
+      }
+    }
+
+    p { font-size: 1em; }
+
+    a {
+      color: $azure;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
+      &:visited { color: #757575; }
+    }
+
+    h2 {
+        // @include raleway;
+        font-size: 1.5em;
+        font-weight: 600;
+        line-height: 1.15;
+        margin: 0px;
+        padding: 0px 0px 10px;
+        a {
+            color: $navy;
+            text-decoration: none;
+
+            &:hover {
+                color: $azure;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .item-list {
+      ul { margin: 0 !important; }
+      li {
+        list-style: none;
+        padding-left: 0;
+      }
+    }
+
+    @include breakpoint('medium','landscape') {
+      @include span(7.5);
+      margin-right: 0;
+    }
+
+    @include breakpoint('medium', 'portrait'){
+      @include span(7.5);
+      padding-left: 10px;
+    }
+
+    @include breakpoint('medium','portrait','ipad'){
+      @include span(7.5);
+      padding-left: 10px;
+    }
+
+    @include breakpoint('small'){
+      @include span(12);
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 20px;
+      width: 100%;
+    }
+
+    @include breakpoint('x-small'){
+      @include span(12);
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+      width: 100%;
+    }
+
+    .block {
+      background: none;
+      clear: both;
+      color: $navy;
+      display: block;
+      font-size: 13px;
+      margin: 0 0 15px 0;
+      padding-top: 5px 0 10px 0;
+      text-align: left;
+      width: 100%;
+
+      @include breakpoint('medium','portrait'){
+        margin-left: 0.625em;
+      }
+      @include breakpoint('small'){
+        padding: 0;
+      }
+      .views-element-container {
+        width: 100%;
+      }
+    }
+
+    @include breakpoint('small'){
+      .nested-column-2 {
+        clear: both;
+        display: block;
+        float: none;
+        width: 100%;
+        margin: 0 0 1em 0;
+      }
+    }
+    //main left/right side by side boxes on landing Pages
+    .nested-column-2 {
+      float: left;
+      width: 48%;
+      margin: 0 .5em 1em 0;
+      &.last {
+        float:right;
+      }
+    }
+    .field_center_2_box {
+        width: 100%;
+    }
+  }
+
+  .panel-col-last {
+    display: block;
+    float: right;
+    line-height:1.5;
+    margin-right: 0;
+    padding-left: 0.625em;
+    @include span(4.5 last);
+
+    &.alt {
+      @include span(3);
+      margin-right: 0;
+
+      @include breakpoint('small') {
+        @include span(12);
+        padding-left: 10px;
+      }
+    }
+
+    @include breakpoint('medium','landscape') {
+      @include span(4.5 last);
+      padding-left: 0.625em;
+    }
+
+    @include breakpoint('medium','portrait') {
+      @include span(4.5 last);
+      padding-left: 0.625em;
+      padding-right: 20px;
+    }
+
+    @include breakpoint('medium','portrait','ipad') {
+      @include span(4.5 last);
+      padding-left: 0.625em;
+      padding-right: 20px;
+    }
+
+    @include breakpoint('small') {
+      clear: both;
+      width: 100%;
+      margin-right: 0;
+      padding: 0 !important;
+    }
+
+    @include breakpoint('x-small') {
+      clear: both;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .inside {
+      margin: 0;
+    }
+
+    .block, [data-block-id*='-'] {
+      background: none;
+      clear: both;
+      color: $navy;
+      display: block;
+      margin: 0;
+      padding-bottom: 10px;
+
+      @include breakpoint('medium'){
+        padding-right: 0;
+      }
+    }
+
+    div[id^='tabs-'] ul, div.tabs ul {
+      margin: 0;
+    }
+
+    #table_paging {
+      display: none;
+      height: 1px;
+    }
+
+    @include breakpoint('small'){
+  		@include span(12);
+  		float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 15px;
+    }
+
+    header {
+      margin-bottom:0px !important;
+      &:after {
+        clear: both;
+        content: ' ';
+        display: block;
+      }
+    }
+
+    .views-row {
+      padding-bottom: 8px;
+    }
+
+    .views-field-field-display-title {
+      font-size: 1.15em;
+    }
+
+    .views-field-field-date {
+      color: #6f7479;
+    }
+
+    .more-link {
+      text-align: right;
+      padding-top: 5px;
+      @include breakpoint('medium','portrait'){
+        display: none !important;
+      }
+    }
+
+		.dynamic-block {
+			ul {
+		    list-style: none;
+				margin: 0px;
+			}
+		}
+  }
+}

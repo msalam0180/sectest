@@ -1,0 +1,49 @@
+uuid: eb1e0399-b139-483f-a8c5-9fc1a29317a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+    - workbench_moderation
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  workbench_moderation:
+    enabled: true
+    allowed_moderation_states:
+      - published
+      - archived
+      - draft
+      - needs_review
+    default_moderation_state: draft
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '3'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: 1l-RISID3rzBu2G22G1GSKsRbS6IWLyBXtj-362KOM4
+name: Video
+type: video
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

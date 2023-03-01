@@ -1,0 +1,54 @@
+//
+// FULL-WIDTH
+// Site-wide styles for full width pages
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+#full-width {
+  @include breakpoint('small') {
+    @include span(12);
+  }
+
+  .page-title {
+    clear: both;
+    @include breakpoint('small'){
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  #addthis-icons {
+    bottom: 24px;
+    position: absolute;
+    right: 0;
+    @include breakpoint('medium','portrait') {
+      bottom: -28px;
+    }
+    @include breakpoint('small'){
+      bottom: 0px;
+      position: relative;
+
+      .addthis_mobile {
+        margin-top: 15px;
+        margin-right: 15px;
+        padding: 0;
+      }
+    }
+  }
+
+  #content, .panel-col-first, .field_center_2_box {
+    width: 100%;
+    @include breakpoint('small') {
+      .main-content {
+        padding: 0 15px;
+      }
+    }
+  }
+
+  .article-content {
+    min-height: 30vh;
+  }
+  
+}

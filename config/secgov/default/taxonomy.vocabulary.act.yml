@@ -1,0 +1,10 @@
+uuid: 76f9728f-89b4-416a-a7b3-0f6b6906c927
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nka3YfSnagvVeblZFuzuVsajxXate_NNAVoSQ_kSxnc
+name: Act
+vid: act
+description: ''
+weight: 0

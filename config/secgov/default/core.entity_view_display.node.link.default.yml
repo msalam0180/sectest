@@ -1,0 +1,84 @@
+uuid: aba5e02c-ec91-4e44-9f60-1558f734e772
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.link.field_act
+    - field.field.node.link.field_audience
+    - field.field.node.link.field_description_abstract
+    - field.field.node.link.field_division_office
+    - field.field.node.link.field_link_type
+    - field.field.node.link.field_person
+    - field.field.node.link.field_primary_division_office
+    - field.field.node.link.field_publish_date
+    - field.field.node.link.field_regulation
+    - field.field.node.link.field_subtopic
+    - field.field.node.link.field_tags
+    - field.field.node.link.field_topics
+    - field.field.node.link.field_url
+    - field.field.node.link.scheduling_options
+    - node.type.link
+  module:
+    - datetime
+    - link
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: 2cqbPZX5DzdiJpRjgV2qf_ek-gi8l68tvJfuqlwgWZE
+id: node.link.default
+targetEntityType: node
+bundle: link
+mode: default
+content:
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: ap_date
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_act: true
+  field_audience: true
+  field_description_abstract: true
+  field_division_office: true
+  field_link_type: true
+  field_person: true
+  field_primary_division_office: true
+  field_regulation: true
+  field_subtopic: true
+  field_tags: true
+  field_topics: true
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

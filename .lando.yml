@@ -1,0 +1,239 @@
+name: secgov
+recipe: drupal9
+
+config:
+  php: '8.0'
+  via: apache:2.4
+  drush: false
+  composer_version: "2.1.6"
+
+services:
+  appserver:
+    webroot: docroot
+    xdebug: true
+    config:
+      php: .lando-config/php.ini
+    build_as_root:
+      - .lando-config/build.sh
+
+  # Setting up Databases.
+  secdb: # Setting up SEC.gov Database Creds
+    type: mysql:5.7
+    creds:
+      user: drupal
+      password: drupal
+      database: sec
+    config:
+      database: .lando-config/my-custom.cnf
+  investordb: # Setting up Investor.gov Database Creds
+    type: mysql:5.7
+    creds:
+      user: drupal
+      password: drupal
+      database: investor
+    config:
+      database: .lando-config/my-custom.cnf
+
+  # Set phpmyadmin database hosts.
+  pma:
+    type: phpmyadmin
+    hosts:
+      - secdb
+      - investordb
+
+  # Setup SOLR.
+  solr:
+    type: solr:7.7
+    core: sec_lando
+    portforward: true
+    run:
+      - echo '*****Start copying SOLR files.*****'
+      - cp -r /app/.lando-config/sec-solr-conf-7.x/* /opt/solr/server/solr/mycores/sec_lando/conf/. && echo '*****Copying SOLR files complete.*****'
+
+  # Setting up mailhog service for emails.
+  mail:
+    type: mailhog
+    ssl: true
+    hogfrom:
+      - appserver
+
+  # Setting up Chromedriver and Selenium.
+  chrome:
+    type: compose
+    services:
+      image: selenium/standalone-chrome-debug
+      user: root
+      volumes:
+        - /dev/shm:/dev/shm
+      command: "/opt/bin/entry_point.sh"
+      ports:
+        - '4444:4444'
+        - '5900:5900'
+      environment:
+        TZ: US/Eastern
+        VNC_NO_PASSWORD: "1"
+        JAVA_OPTS: -Dwebdriver.chrome.whitelistedIps=
+
+events:
+  post-start:
+    - .lando-config/post-start.sh
+
+proxy:
+  # Setting up static URLs for appserver, pma, chrome services.
+  appserver:
+    - sec.lndo.site
+    - investor.lndo.site
+  pma:
+    - phpmyadmin-sec.lndo.site
+  solr:
+    - solr-sec.lndo.site
+  mail:
+    - mail-sec.lndo.site
+  chrome:
+    - chrome-sec.lndo.site:4444
+
+tooling:
+  # Setting up Acquia CLI command.
+  acli:
+    service: appserver
+    description: Acquia CLI is a command-line interface for interacting with Cloud Platform services. [Usage - lando acli auth:login]
+    cmd: /usr/local/bin/acli
+  acli-drush:
+    service: appserver
+    description: Runs drush command on Acquia Cloud given site and environment. [Usage - lando acli-drush sitename-environment]
+    cmd: /usr/local/bin/acli remote:drush
+  pulldb:
+    service: appserver
+    description: Pulls database down locally.
+    cmd:
+      - .lando-config/pull-database.sh
+
+  # Setting up Drush commands.
+  drush:
+    service: appserver
+    description: Allows you to run drush locally. [Usage - lando drush cr]
+    cmd: drush --root=/app/docroot
+  drush-sec:
+    service: appserver
+    description: Allows you to run drush for local SEC site. [Usage - lando drush-sec cr]
+    cmd: drush --root=/app/docroot --uri=sec.lndo.site
+  drush-investor:
+    service: appserver
+    description: Allows you to run drush for local Investor site. [Usage - lando drush-sec cr]
+    cmd: drush --root=/app/docroot --uri=investor.lndo.site
+  initproject-sec:
+    service: appserver
+    description: Runs cr, updb, cim, user-create (lando) with admin permissions on local sec site.
+    dir: /app/docroot
+    cmd:
+      - drush --uri=sec.lndo.site cr
+      - drush --uri=sec.lndo.site updb -y
+      - drush --uri=sec.lndo.site cim -y
+      - echo 'Local Username/Password will be set as lando/lando'
+      - drush --uri=sec.lndo.site ucrt "lando" --password=lando && drush --uri=sec.lndo.site urol administrator lando
+  initproject-investor:
+    service: appserver
+    description: Runs cr, updb, cim, user-create (lando) with admin permissions on local investor site.
+    dir: /app/docroot
+    cmd:
+      - drush --uri=investor.lndo.site cr
+      - drush --uri=investor.lndo.site updb -y
+      - drush --uri=investor.lndo.site cim -y
+      - echo 'Local Username/Password will be set as lando/lando'
+      - drush --uri=investor.lndo.site ucrt "lando" --password=lando && drush --uri=investor.lndo.site urol administrator lando
+  login-sec:
+    service: appserver
+    description: Creates one-time login link as admin for local sec site.
+    dir: /app/docroot
+    cmd: drush uli --uri=sec.lndo.site --no-browser
+  login-investor:
+    service: appserver
+    description: Creates one-time login link as admin for local investor site.
+    dir: /app/docroot
+    cmd: drush uli --uri=investor.lndo.site --no-browser
+
+  # Setting up Behat commands.
+  initbehat:
+    service: appserver
+    description: Runs npm install and composer install for Behat and WDIO.
+    dir: /app/test
+    cmd:
+      - rm -rf node_modules && npm install
+      - rm -rf vendor bin && composer install
+  behat:
+    service: appserver
+    description: Runs Behat command without any Behat Parameters.
+    dir: /app/test
+    cmd: /app/test/bin/behat
+  behat-sec:
+    service: appserver
+    description: Runs Behat command for local sec site.
+    dir: /app/test
+    env: # environment gets overridden by .lando.local.yml
+      BEHAT_PARAMS: '{"extensions": {"Behat\\MinkExtension": {"base_url": "http://sec.lndo.site"},"Drupal\\DrupalExtension":{"drupal":{"drupal_root":"/app/docroot"},"drush":{"alias":"local.sec"}}}}'
+    cmd:
+      - appserver: /app/test/bin/behat --suite=default
+  behat-investor:
+    service: appserver
+    description: Runs Behat command for local investor site.
+    dir: /app/test
+    env: # environment gets overridden by .lando.local.yml
+      BEHAT_PARAMS: '{"extensions": {"Behat\\MinkExtension": {"base_url": "http://investor.lndo.site"},"Drupal\\DrupalExtension":{"drupal":{"drupal_root":"/app/docroot"},"drush":{"alias":"local.investor"}}}}'
+    cmd:
+      - /app/test/bin/behat --suite=investorgov
+
+  # Setting up theme commands.
+  theme-sec-build:
+    service: appserver
+    description: Runs npm install and compiles sec theme sass.
+    dir: /app/docroot/themes/custom/secgov
+    cmd:
+      - npm install
+      - npm run compile
+  theme-investor-build:
+    service: appserver
+    description: Runs npm install and compiles investor theme sass.
+    dir: /app/docroot/sites/investorgov/themes/custom/investor
+    cmd:
+      - npm install
+      - npm run compile
+
+  # Setting up uswdssec & Storybook theme commands.
+  theme-uswdssec-build:
+    service: appserver
+    description: Runs npm install and compiles prodution uswdssec sass and a static copy of storybook.
+    dir: /app/docroot/themes/custom/uswdssec
+    cmd:
+      - npm install
+      - npm run build-storybook
+  theme-uswdssec-dev:
+    service: appserver
+    description:  Runs npm install and compiles and watches uswdssec theme for development (sass and storybook).
+    dir: /app/docroot/themes/custom/uswdssec
+    cmd:
+      - npm install
+      - npm run dev
+
+  # Setting up xdebug commands.
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for Apache.
+    cmd: docker-php-ext-enable xdebug && /etc/init.d/apache2 reload && echo "Enabling xdebug"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for Apache.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Disabling xdebug"
+    user: root
+
+  node:
+    service: appserver
+  npm:
+    service: appserver
+  npx:
+    service: appserver
+  gulp:
+    service: appserver
+  chromedriver:
+    service: chrome
+    cmd: chromedriver

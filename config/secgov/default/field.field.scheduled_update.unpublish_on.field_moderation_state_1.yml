@@ -1,0 +1,28 @@
+uuid: a2b75186-b457-43e6-851b-8c6d347d49ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.scheduled_update.field_moderation_state_1
+    - scheduled_updates.scheduled_update_type.unpublish_on
+    - workbench_moderation.moderation_state.archived
+_core:
+  default_config_hash: yoU85-nEnJBwIwNVqxMTOZl2rXizj-9bvVhkWusO64U
+id: scheduled_update.unpublish_on.field_moderation_state_1
+field_name: field_moderation_state_1
+entity_type: scheduled_update
+bundle: unpublish_on
+label: 'Moderation state'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 1d815162-e20e-48b2-a6a2-24b67232fb31
+default_value_callback: ''
+settings:
+  handler: 'default:moderation_state'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

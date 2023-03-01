@@ -1,0 +1,5 @@
+services:
+  serializer.encoder.sitemap_xml:
+    class: Drupal\sec_views_plugins\Encoder\SECSitemapXMLEncoder
+    tags:
+      - { name: encoder, format: sitemap_xml }

@@ -1,0 +1,26 @@
+uuid: 518ab053-b0e0-477a-b998-0a1669c59715
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_script
+    - node.type.data_visualization
+  module:
+    - text
+_core:
+  default_config_hash: 3wdIve1LeQqvYXGQk5t-8zCzjNyrmvIVB5EfrVzBtMw
+id: node.data_visualization.field_script
+field_name: field_script
+entity_type: node
+bundle: data_visualization
+label: Content
+description: 'Use this field to add the content''s scripts and HTML content.'
+required: false
+translatable: false
+default_value:
+  -
+    value: " \r\n"
+    format: plain_html
+default_value_callback: ''
+settings: {  }
+field_type: text_long

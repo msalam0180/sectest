@@ -1,0 +1,5 @@
+enable_override: true
+view: taxonomy_term_rulemaking_index_
+view_display: page_1
+inherit_settings: true
+pass_arguments: true

@@ -1,0 +1,8 @@
+uuid: 5fb132a6-1e02-4466-9454-5e2d78acd00c
+langcode: en
+status: true
+dependencies: {  }
+id: edgar-search-tools
+label: 'Edgar Search Tools'
+description: ''
+locked: false

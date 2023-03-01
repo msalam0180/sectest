@@ -1,0 +1,75 @@
+diff --git a/scheduler.links.task.yml b/scheduler.links.task.yml
+index d1afd7e..cc7ad74 100644
+--- a/scheduler.links.task.yml
++++ b/scheduler.links.task.yml
+@@ -9,19 +9,3 @@ scheduler.cron_tab:
+   title: Lightweight cron
+   weight: 10
+   base_route: scheduler.admin_form
+-
+-content_moderation.content:
+-  # Use content_moderation.content which is the same key as is used in the core
+-  # Content Moderation module. If that modules is enabled this avoids two
+-  # 'Overview' links. If https://www.drupal.org/project/drupal/issues/3199682
+-  # gets committed then this route could be removed from here.
+-  title: 'Overview'
+-  route_name: system.admin_content
+-  parent_id: system.admin_content
+-
+-scheduler.scheduled_content:
+-  title: 'Scheduled content'
+-  route_name: view.scheduler_scheduled_content.overview
+-  parent_id: system.admin_content
+-  # Overview seems to have weight 0 and moderated content is weight 1.
+-  weight: 5
+diff --git a/scheduler.module b/scheduler.module
+index ff698b6..8430a75 100644
+--- a/scheduler.module
++++ b/scheduler.module
+@@ -16,6 +16,7 @@ use Drupal\Core\Url;
+ use Drupal\node\Entity\NodeType;
+ use Drupal\scheduler\SchedulerEvent;
+ use Drupal\scheduler\SchedulerEvents;
++use Drupal\views\Entity\View;
+
+ /**
+  * Implements hook_help().
+@@ -729,3 +730,38 @@ function _scheduler_get_scheduler_enabled_node_types($action) {
+     return $bundle->getThirdPartySetting('scheduler', $action . '_enable', $config->get('default_' . $action . '_enable'));
+   });
+ }
++
++/**
++ * Implements hook_local_tasks_alter().
++ */
++function scheduler_local_tasks_alter(&$local_tasks) {
++  $view = View::load('scheduler_scheduled_content');
++  if ($view && $view->getDisplay('overview')) {
++    // Views do not currently support defining secondary local tasks, define it
++    // dynamically if the view and display exists. Update this when
++    // https://www.drupal.org/project/drupal/issues/2172307 gets fixed.
++    $local_tasks['scheduler.scheduled_content'] = [
++      'title' => t('Scheduled content'),
++      'route_name' => 'view.scheduler_scheduled_content.overview',
++      'parent_id' => 'system.admin_content',
++      'class' => 'Drupal\Core\Menu\LocalTaskDefault',
++      'options' => [],
++      // Overview seems to have weight 0 and moderated content is weight 1.
++      'weight' => 5,
++    ];
++  }
++
++  if (!isset($local_tasks['content_moderation.content'])) {
++    // Define a fallback overview local task if content_moderation is not
++    // enabled. If https://www.drupal.org/project/drupal/issues/3199682
++    // gets committed then this route could be removed from here.
++    $local_tasks['content_moderation.content'] = [
++      'title' => t('Overview'),
++      'route_name' => 'system.admin_content',
++      'parent_id' => 'system.admin_content',
++      'class' => 'Drupal\Core\Menu\LocalTaskDefault',
++      'options' => [],
++      'weight' => 0,
++    ];
++  }
++}

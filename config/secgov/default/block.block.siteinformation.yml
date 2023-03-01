@@ -1,0 +1,25 @@
+uuid: d4f5d1b0-f6a2-4b0a-b8ef-7a067a29f9d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.site-information
+  module:
+    - system
+  theme:
+    - secgov
+id: siteinformation
+theme: secgov
+region: footer
+weight: -33
+provider: null
+plugin: 'system_menu_block:site-information'
+settings:
+  id: 'system_menu_block:site-information'
+  label: 'Site Information'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

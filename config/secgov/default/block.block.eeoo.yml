@@ -1,0 +1,32 @@
+uuid: e0016c42-bcc7-42a0-ac46-c7daef43d164
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.eeoo
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: X_dvESbQTP5azqfjTac0bncNdXI81fqR-sKm3_vYkbs
+id: eeoo
+theme: secgov
+region: sidebar_first
+weight: -29
+provider: null
+plugin: 'system_menu_block:eeoo'
+settings:
+  id: 'system_menu_block:eeoo'
+  label: EEO
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/eeo\r\n/eeo/*"

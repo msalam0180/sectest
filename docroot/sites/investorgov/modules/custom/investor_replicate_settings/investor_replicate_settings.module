@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains investor_replicate_settings.module.
+ */
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function investor_replicate_settings_entity_operation_alter(array &$operations, \Drupal\Core\Entity\EntityInterface $entity) {
+
+	$unallowedBundles = ['image', 'video', 'file'];
+
+  	if(in_array($entity->bundle(), $unallowedBundles)) {
+
+	unset($operations['replicate']);
+
+  }
+
+}

@@ -1,0 +1,28 @@
+uuid: e3086de7-c4bf-492f-888b-9ac5aa3da7d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_act
+    - node.type.landing_page
+    - taxonomy.vocabulary.act
+id: node.landing_page.field_act
+field_name: field_act
+entity_type: node
+bundle: landing_page
+label: Act
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      act: act
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

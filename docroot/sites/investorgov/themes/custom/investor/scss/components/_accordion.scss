@@ -1,0 +1,47 @@
+//
+// ACCORDION
+// Site-wide styles and classes for accordion using jQuery UI
+//
+// --------------------------------------------------
+
+// TODO: Consolidate any site-wide accordion styles that are currently spread throughout the theme
+
+$accordion-bg-color: #F3F3F3;
+
+div[id^="accordion-"],
+div[class^="accordion-"] {
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+
+  .ui-accordion-header {
+    padding: .5em .7em;
+  }
+  .ui-accordion-header.ui-state-default {
+    background: $accordion-bg-color;
+    //font-weight: 600;
+    /*padding: 10px 0 10px 25px;*/
+
+    &.ui-accordion-header-active.ui-state-active {
+      background-color: $accordion-bg-color;
+      border-bottom: 3px solid $primary_1;
+    }
+  }
+
+  .ui-state-active .ui-icon,
+  .ui-button:active .ui-icon {
+    background-image: url("../../../../core/assets/vendor/jquery.ui/themes/base/images/ui-icons_444444_256x240.png");
+  }
+  .ui-state-active,
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active,
+  a.ui-button:active,
+  .ui-button:active,
+  .ui-button.ui-state-active:hover {
+    color: #454545;
+  }
+
+  .ui-state-default {
+    font-weight: 600;
+  }
+}

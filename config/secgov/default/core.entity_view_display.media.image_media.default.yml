@@ -1,0 +1,57 @@
+uuid: 2843f7ca-6234-4403-badf-2bf6b04e0f04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_media.field_act
+    - field.field.media.image_media.field_audience
+    - field.field.media.image_media.field_media_caption
+    - field.field.media.image_media.field_media_image
+    - field.field.media.image_media.field_media_person
+    - field.field.media.image_media.field_primary_division_office
+    - field.field.media.image_media.field_publish_date
+    - field.field.media.image_media.field_regulation
+    - field.field.media.image_media.field_supporting_division_office
+    - field.field.media.image_media.field_tags
+    - media.type.image_media
+  module:
+    - image
+id: media.image_media.default
+targetEntityType: media
+bundle: image_media
+mode: default
+content:
+  field_media_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_act: true
+  field_audience: true
+  field_media_person: true
+  field_primary_division_office: true
+  field_publish_date: true
+  field_regulation: true
+  field_supporting_division_office: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
+  workbench_moderation_control: true

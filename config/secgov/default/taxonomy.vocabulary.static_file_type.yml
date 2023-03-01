@@ -1,0 +1,8 @@
+uuid: 9ea2995d-83f4-40db-be41-b4e65098ea6f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Static File Type'
+vid: static_file_type
+description: 'A categorization for Media: Static Files '
+weight: 0

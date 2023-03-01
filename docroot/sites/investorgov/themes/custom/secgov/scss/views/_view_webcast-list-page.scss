@@ -1,0 +1,89 @@
+//
+// WEBCAST LIST PAGE
+// VIEW NAME: Webcast List Page
+// List Articles with the Type of Webcasts
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.path-news {
+
+  h2 {
+    color:#6f7479;
+  }
+
+  .live-webcast {
+
+    padding: 1em 0;
+
+    .views-field-field-display-title a {
+      padding: 1em 0 0 1.4em;
+    }
+
+  }
+
+  .upcoming-webcast {
+
+    margin: 3em 0;
+
+    .views-row {
+      margin:1em 0;
+
+      .views-field-field-display-title { font-size: 14px;}
+      .views-field-field-start-date { font-size: 12px; margin-top:5px;}
+    }
+
+  }
+  
+  // It looks like this applys to all new pages instad of just webcasts
+  #content-wrapper {
+    header { margin-bottom: 20px; }
+    margin-bottom: 4em;
+  }
+
+  .webcast-archives {
+
+    .views-field-title {
+      a { display:block; }
+    }
+
+    .views-field-field-sec-event-date {
+      padding-left: 8px;
+    }
+  }
+
+}
+
+.live-webcast .views-row,
+.upcoming-webcast .views-row {
+  padding-left: 20px;
+}
+
+.live-webcast .views-field.views-field-views-ifempty {
+  font-size: 20px;
+}
+
+@include breakpoint('small'){
+  
+  .webcasts-list {
+    .form-item {
+      margin-top:30px;
+    }
+
+    #datatable {
+      thead {
+        tr {
+          top: -33px;
+        }
+        th {
+          padding: 10px 8px;
+        }
+        #view-field-related-materials-table-column {
+          display: none !important;
+        }
+      }
+    }
+    
+  }
+}

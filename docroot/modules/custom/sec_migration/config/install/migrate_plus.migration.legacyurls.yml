@@ -1,0 +1,64 @@
+id: legacyurls
+label: JSON import of all URL Aliases
+migration_group: sec
+migration_tags:
+  - legacyurls
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: 
+    - http://secgovdcmdev1.prod.acquia-sites.com/sites/default/files/migration/converted/legacyurls.json
+  fields: 
+    -
+      name: id
+      label: 'Identifier'
+      selector: id
+    -
+      name: url
+      label: 'URL Alias from WCM'
+      selector: url
+  ids:
+    id:
+      type: string
+  constants:
+    internal: 'internal:'
+    slash: '/'
+    node: 'node'
+process:
+  migrationid:
+    plugin: migration
+    migration: 
+      - testimony
+      - publicstatement
+      - speech
+      - pressrelease
+      - secstaticfile
+      - secimage
+      - secperson
+      - seclink
+      - articles
+      - seclandingpages
+    source: id
+  redirect_redirect:
+    plugin: concat
+    source:
+      - constants/internal
+      - constants/slash
+      - constants/node
+      - constants/slash
+      - '@migrationid'
+  redirect_source: url
+  language:
+    plugin: default_value
+    default_value: en
+  status_code:
+    plugin: default_value
+    default_value: 301
+  type:
+    plugin: default_value
+    default_value: redirect
+destination:
+  plugin: entity:redirect
+migration_dependencies: {}

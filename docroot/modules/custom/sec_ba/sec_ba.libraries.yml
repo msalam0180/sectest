@@ -1,0 +1,7 @@
+sec_ba:
+  version: VERSION
+  js:
+    js/sec_ba.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

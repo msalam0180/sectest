@@ -1,0 +1,25 @@
+uuid: 54987ed3-996f-45ae-892a-27f4b4a63c1d
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: 'Config for local environment'
+weight: 1
+folder: ../config/investorgov/local
+module:
+  dblog: 0
+  devel: 0
+  devel_generate: 0
+theme: {  }
+blacklist:
+  - dblog.settings
+  - devel.settings
+  - devel.toolbar.settings
+  - system.menu.devel
+  - views.view.watchdog
+graylist:
+  - environment_indicator.indicator
+  - user.settings
+graylist_dependents: true
+graylist_skip_equal: true

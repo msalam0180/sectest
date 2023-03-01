@@ -1,0 +1,22 @@
+uuid: a422c49f-bfad-4054-81ab-ee8dfcfcefd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: 0EvFFq7geku3o9Fw7Nse6uckHp5BqCs9lwRtl_AAmlw
+id: uswdssec_messages
+theme: uswdssec
+region: status
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

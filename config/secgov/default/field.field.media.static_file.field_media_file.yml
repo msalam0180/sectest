@@ -1,0 +1,46 @@
+uuid: 45823552-e00f-4518-a479-88271eb8010e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.static_file
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[media:field_file_path:entity:parents:join-path]/[media:field_file_path:entity:name]'
+      options:
+        slashes: false
+        pathauto: true
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: true
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: true
+id: media.static_file.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: static_file
+label: 'File Upload'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'asx avi css csv doc docx h htm html idx iff js json map midi mov mp3 mp4 mpg pdf ppt pptx rss rtf sdp shtml smi txt wav wma wmv xfd xls xlsx xml xsd xsl xslt zip ics'
+  max_filesize: ''
+  description_field: false
+field_type: file

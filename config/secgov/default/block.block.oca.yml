@@ -1,0 +1,32 @@
+uuid: 9eef8524-9488-4511-b107-7882b9e35749
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.oca
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: qY1o_l0_ZaFT_a5qryIwRvpJjqEwToNItX0R_GhQwTc
+id: oca
+theme: secgov
+region: sidebar_first
+weight: -26
+provider: null
+plugin: 'system_menu_block:oca'
+settings:
+  id: 'system_menu_block:oca'
+  label: OCA
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oca\r\n/oca/*\r\n/about/offices/oca/*\r\n/divisions/oca/*\r\n/chief-accountant/*"

@@ -1,0 +1,46 @@
+uuid: f2d4bff7-00fa-42dc-93c6-72792fc332fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.feature_block
+    - field.storage.block_content.field_items
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.list
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: block_content.feature_block.field_items
+field_name: field_items
+entity_type: block_content
+bundle: feature_block
+label: Items
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text: text
+      view: view
+      list: list
+      link: link
+    negate: 0
+    target_bundles_drag_drop:
+      link:
+        weight: 6
+        enabled: true
+      list:
+        weight: 5
+        enabled: true
+      text:
+        weight: -7
+        enabled: true
+      view:
+        weight: -5
+        enabled: true
+field_type: entity_reference_revisions

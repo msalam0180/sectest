@@ -1,0 +1,31 @@
+uuid: dbf89ee1-e851-4201-a3d8-fa29408afb93
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:layout_block:ebcb4fee-9b27-4dfd-a517-26368ff3d7f7'
+  module:
+    - block_content
+    - system
+  theme:
+    - investor
+id: divideryoursearchyieldednoresults
+theme: investor
+region: off_canvas
+weight: 0
+provider: null
+plugin: 'block_content:ebcb4fee-9b27-4dfd-a517-26368ff3d7f7'
+settings:
+  id: 'block_content:ebcb4fee-9b27-4dfd-a517-26368ff3d7f7'
+  label: 'Divider - Your Search Yielded No Results'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    context_mapping: {  }
+    pages: '*'

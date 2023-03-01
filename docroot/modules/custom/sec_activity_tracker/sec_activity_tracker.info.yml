@@ -1,0 +1,10 @@
+name: SEC Activity Tracker
+type: module
+description: 'Enables tracking of moderated content & generates views based dashboard.'
+package: SEC
+version: '8.x-1.0'
+core: 8.x
+# configure: sec_activity_tracker.admin_settings
+core_version_requirement: ^8 || ^9
+dependencies:
+  - hook_event_dispatcher:core_event_dispatcher

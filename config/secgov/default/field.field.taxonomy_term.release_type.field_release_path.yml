@@ -1,0 +1,19 @@
+uuid: c2f6cd29-54fa-44a3-9bb4-f18cce57f85b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_release_path
+    - taxonomy.vocabulary.release_type
+id: taxonomy_term.release_type.field_release_path
+field_name: field_release_path
+entity_type: taxonomy_term
+bundle: release_type
+label: 'Release Path'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

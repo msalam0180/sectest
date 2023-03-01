@@ -1,0 +1,17 @@
+//
+// TESTIMONY LIST PAGE
+// VIEW NAME: Testimony List Page
+// A list of "News" content items with the type of "Testimony"
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+//TODO: Is this rule even needed?
+@include breakpoint('small'){
+	.testimony-list-page {
+    td {
+      width: 98%;
+    }
+  }
+}

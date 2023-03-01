@@ -1,0 +1,109 @@
+stages:
+  - test
+  - build
+  - deploy
+test:
+    stage: test
+    script:
+    - 'chmod a+x test.sh'
+    - 'sh ./test.sh'
+pa11y:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./pa11y.sh'
+    when: manual
+jmeter:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./jmeter.sh'
+    when: manual
+wdio:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'pwd'
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./wdio.sh'
+    when: manual
+behat:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./behat.sh'
+    when: manual
+behat_investor:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./behat-investor.sh'
+    when: manual
+behat_nightly_investor:
+    stage: test
+    only:
+    - schedules
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./behat-investor.sh'
+behat_nightly:
+    stage: test
+    only:
+    - schedules
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./behat.sh'
+behat_rerun:
+    stage: test
+    only:
+    -  master
+    -  /^release\/.*$/
+    script:
+    - 'sh ./setup-test-environment.sh'
+    - 'sh ./behat-rerun.sh'
+    when: manual
+css_compile:
+  stage: build
+  only:
+    changes:
+      - "**/*.scss"
+  script:
+  - 'chmod a+x css-compile.sh'
+  - 'bash ./css-compile.sh'
+secgov_build:
+  stage: build
+  only:
+    - master
+  script:
+    - 'chmod a+x build.sh'
+    - 'sh ./build.sh'
+deploy_stage:
+  stage: deploy
+  only:
+    - master
+  script:
+    - 'sh ./deploy.sh'
+  environment: stage
+  when: manual
+acquia_sync:
+  stage: build
+  only:
+    -  /^release\/.*$/
+    -  /^insider\/.*$/
+    - tags
+  script:
+    - 'sh ./acquia-sync.sh'

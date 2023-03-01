@@ -1,0 +1,55 @@
+// WYSIWYG styles
+
+// Custom Gesso USWDS settings.
+@import '00-config/uswds-theme-settings.artifact';
+
+// Required USWDS styles.
+@import 'packages/required';
+
+//@import '00-config' with($wysiwyg: true);
+@import '00-config';
+
+// Global USWDS styles.
+// 'global/typography' is omitted in favor of Gesso’s base HTML styles.
+@import 'lib/normalize';
+@import 'global/font-face';
+@import 'global/focus';
+@import 'global/sizing';
+@import 'elements/typography/content';
+
+@import '01-global';
+
+// USWDS components.
+@import 'packages/form-controls';
+@import 'packages/layout-grid';
+
+@import '02-uswds';
+@import '03-layouts';
+@import '04-components';
+@import '07-utility';
+@import 'shame';
+
+// stylelint-disable-next-line
+body.cke_editable {
+  outline: none !important;
+}
+
+// stylelint-disable-next-line
+.cke_widget_drupalmedia {
+  display: inline;
+
+  drupal-media {
+    display: inline;
+    outline: none !important;
+  }
+
+  // stylelint-disable-next-line
+  .cke_widget_drag_handler_container {
+    display: none;
+  }
+}
+
+.media-library-item__edit {
+  @extend %c-button;
+  @extend %c-button--small;
+}

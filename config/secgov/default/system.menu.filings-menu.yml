@@ -1,0 +1,10 @@
+uuid: ee8c45dd-89e1-49c3-91c7-9a677da00af2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: zL2G_5YFgsBdoZjtQkALuTW8pUSlPY3wmeO0S60LN8k
+id: filings-menu
+label: 'Filings Menu'
+description: 'Filings  & Forms Menu'
+locked: false

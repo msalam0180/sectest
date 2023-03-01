@@ -1,0 +1,60 @@
+diff --git a/../.eslintignore b/../.eslintignore
+index 9c13487..9995669 100644
+--- a/../.eslintignore
++++ b/../.eslintignore
+@@ -6,3 +6,6 @@
+ profiles/**/libraries/**/*
+ **/js_test_files/**/*
+ **/node_modules/**/*
++modules/custom/**/plugins/**
++modules/custom/sec_custom_libraries/**/*
++*min.js
+diff --git a/../.eslintrc.json b/../.eslintrc.json
+index d4bbc92..dbbe8ef 100644
+--- a/../.eslintrc.json
++++ b/../.eslintrc.json
+@@ -1,3 +1,43 @@
+ {
+-  "extends": "./core/.eslintrc.json"
++  "extends": "eslint-config-airbnb-es5",
++  "root": true,
++  "env": {
++    "browser": true,
++    "node": true,
++    "qunit": true
++  },
++  "globals": {
++    "Drupal": true,
++    "drupalSettings": true,
++    "drupalTranslations": true,
++    "domready": true,
++    "jQuery": true,
++    "_": true,
++    "matchMedia": true,
++    "Backbone": true,
++    "Modernizr": true,
++    "CKEDITOR": true
++  },
++  "rules": {
++    "eqeqeq": "warn",
++    "dot-notation": "off",
++    "consistent-return": [0],
++    "no-underscore-dangle": [0],
++    "max-nested-callbacks": [1, 3],
++    "import/no-mutable-exports": [1],
++    "no-plusplus": [1, {
++      "allowForLoopAfterthoughts": true
++    }],
++    "no-param-reassign": [0],
++    "no-prototype-builtins": [0],
++    "valid-jsdoc": [1, {
++      "prefer": {
++        "returns": "return",
++        "property": "prop"
++      },
++      "requireReturn": false
++    }],
++    "brace-style": ["error", "stroustrup"],
++    "no-unused-vars": [1]
++  }
+ }

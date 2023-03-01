@@ -1,0 +1,73 @@
+//
+// ACADEMIC PUBLICATIONS LIST PAGE
+// VIEW NAME: Academic Publications List Page
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.academic-pubs-list {
+
+  .seasonBars {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    font-weight: 600;
+  }
+
+  #view-field-publish-date-table-column { width: 15%; }
+  .views-field-term-node-tid { width: 25%; }
+
+  .sorter-false.tablesorter-headerUnSorted .tablesorter-header-inner div {
+    background-image: none !important;
+  }
+
+  .ap-list-row {
+    min-height: none;
+  }
+  
+}
+
+.academic-pubs-list {
+
+  @include breakpoint('small'){
+
+    thead {
+
+      tr {
+        background: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      th {
+        border: 1px solid $border-color;
+        padding: 0;
+
+        &#view-field-publish-date-table-column {
+          width: 90px;
+          display: inline-block;
+        }
+
+        &.views-field-field-list-page-det-secarticle {
+          display: none !important;
+        }
+
+        &.views-field-term-node-tid {
+          display: none !important;
+        }
+        
+        div.tablesorter-header-inner > a {
+          padding: 0;
+        }
+      }
+
+    }
+
+    tbody td {
+      .show-for-small {
+        clear: both;
+      }
+    }
+
+  }
+}

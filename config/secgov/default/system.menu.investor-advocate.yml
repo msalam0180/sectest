@@ -1,0 +1,10 @@
+uuid: ab2f5b6c-18d6-464b-b22e-cbb073530dda
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: yYRxCnXCkcbmRJPU6NtsTL3K-TnfPG5L5s2OJCgImBE
+id: investor-advocate
+label: 'Investor Advocate'
+description: 'Office of the Investor Advocate'
+locked: false

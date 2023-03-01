@@ -1,0 +1,17 @@
+uuid: 0624dd95-9434-4550-b78f-b49fc9ec081d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 32jR7lN2PPoAcc1LCYugUfh4KeuE80g58iDZw-se6Jc
+name: featured_graphic
+label: 'Featured Graphic'
+effects:
+  d2bfe2e2-b0f6-41ce-99af-a3b8b69eee6d:
+    uuid: d2bfe2e2-b0f6-41ce-99af-a3b8b69eee6d
+    id: image_scale
+    weight: 1
+    data:
+      width: 320
+      height: null
+      upscale: false

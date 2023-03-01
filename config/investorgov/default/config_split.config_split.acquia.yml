@@ -1,0 +1,23 @@
+uuid: fa99fabb-832e-44e3-a9b4-93a532b1a0ae
+langcode: en
+status: false
+dependencies: {  }
+id: acquia
+label: 'Acquia Cloud'
+description: 'Config for acquia environments'
+weight: 1
+folder: ../config/investorgov/acquia
+module:
+  clamav: 0
+  google_tag: 0
+  simplesamlphp_auth: 0
+theme: {  }
+blacklist:
+  - clamav.settings
+  - google_tag.container.primary
+  - google_tag.settings
+  - simplesamlphp_auth.settings
+graylist:
+  - user.settings
+graylist_dependents: true
+graylist_skip_equal: true

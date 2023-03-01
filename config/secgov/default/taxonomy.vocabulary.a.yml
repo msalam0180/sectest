@@ -1,0 +1,10 @@
+uuid: 77bc053a-d4cb-4dd7-9e7b-1520d2732013
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: FPwi1j3y4a0D-8RHe97WNTUb_7gU5SW6cGnzRtDgtTo
+name: Archive
+vid: a
+description: ''
+weight: 0

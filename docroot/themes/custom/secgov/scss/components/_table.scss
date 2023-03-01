@@ -1,0 +1,870 @@
+//
+// TABLES
+// Base table styles
+//
+// Note: These are for all the tables on the site.
+// If you only want to affect datatables or tablesorter, please use those files (not yet created - see note below)
+// --------------------------------------------------
+
+// TODO: Review all code in this file, clean it and, and move it into the correct places
+// TODO: Break out datatables into a seperate file - Describe why and how to use datatables
+// TODO: Break out tablesorter into a seperate file - Describe why and how to use tablesorter
+// TODO: Describe rules
+
+table.bordered-table {
+  tr {
+    @include breakpoint('small') {
+      border: 0;
+      display: table-row;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  th, td {
+    border: thin solid $border-color;
+
+    @include breakpoint('small') {
+      display: table-cell;
+    }
+  }
+}
+
+table thead, table tfoot {
+  background: #f5f5f5;
+  font-weight: bold;
+
+  @include breakpoint('small') {
+    background: none;
+    font-weight: normal;
+  }
+}
+
+table.list {
+	background: $white;
+	border-top: none;
+	border-bottom: none;
+	border-left: thin solid $border-color;
+	border-right: thin solid $border-color;
+	margin-right: 0;
+	width: 100%;
+
+  @include breakpoint('small','landscape'){
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 340px;
+    position: relative;
+  }
+
+  @include breakpoint('small','portrait'){
+    float: none;
+    min-width: 290px;
+    position: relative;
+    width: 100%;
+  }
+
+	&:not(:first-of-type) tr.header {
+		display: none;
+	}
+
+	&:first-of-type {
+		border-top: solid 1px #ddd;
+
+    @include breakpoint('small') {
+      margin-top: 65px;
+    }
+	}
+
+	&:last-of-type {
+		border-bottom: solid 1px #ddd;
+		margin-bottom: 0;
+
+    @include breakpoint('small'){
+      tbody tr:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+    @include breakpoint('x-small'){
+      tbody tr:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+	}
+  thead  {
+    tr {
+      @include breakpoint('small') {
+        background: none;
+        margin: 0;
+        &:hover {
+          background: none;
+        }
+      }
+    }
+
+    th {
+      border-left: none;
+      border-right: none;
+
+      @include breakpoint('small') {
+        border-top: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-bottom: none;
+        border-left: 1px solid $border-color;
+      }
+    }
+  }
+
+  tbody {
+    tr, td { border: none; }
+
+    @include breakpoint('small') {
+      tr { border: 1px solid $border-color; }
+    }
+  }
+}
+
+table:not(.tablesaw) thead {
+  /*@include breakpoint('small'){
+    position: absolute;
+    top: 0;
+    left: 0;
+  }*/
+
+  th {
+    @include breakpoint('small'){
+      display: inline-block;
+    }
+    &.is-active {
+      @include breakpoint('small'){
+        background-color: $white;
+      }
+    }
+  }
+}
+
+thead {
+  background: none;
+
+  tr {
+    @include breakpoint('small'){
+      position: relative;
+    }
+
+    &:hover {
+      background-color: #EBEBEB;
+    }
+  }
+
+  th {
+    background-color: $mist;
+    border: thin solid $border-color;
+    color: $gray-blue;
+    display: table-cell;
+    font-size: 12px;
+    font-weight: bold;
+    height: 26px;
+    padding: 5px;
+    vertical-align: middle;
+
+    @include breakpoint('small'){
+      background-color: $mist;
+      height: auto;
+      padding: 0 15px 0 0;
+      width: auto;
+
+      a {
+        background-color: none;
+        border: none;
+        color: $asphalt;
+        display: block;
+        font-weight: normal;
+        padding: 0;
+      }
+
+      &:last-child {
+        border-right: 1px solid $border-color;
+      }
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+
+    &.sorting_desc, &.sorting_asc {
+      background-position-x: 98% !important;
+    }
+    &.sorting_desc div {
+      background: url(/themes/custom/secgov/images/tablesorter/sort-desc.gif) no-repeat scroll right center, linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+    }
+
+    &.sorting_asc div {
+      background: url(/themes/custom/secgov/images/tablesorter/sort-asc.gif) no-repeat scroll right center, linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+    }
+
+  }
+
+  .views-field-field-person {
+    width: 200px;
+  }
+  .views-field-field-release-number {
+    width: 120px;
+
+    @include breakpoint('small'){
+      width: auto;
+    }
+  }
+  .views-field-field-list-page-det-secarticle {
+    width: 120px;
+  }
+  .views-field-field-date, .views-field-field-publish-date {
+    width: 110px;
+    @include breakpoint('small'){
+      width: 70px;
+    }
+  }
+}
+
+tr.header, tr.tablesorter-headerRow {
+  border-bottom: 1px solid $border-color;
+}
+
+.tablesort {
+  display: inline-block;
+  float: right;
+  height: 16px;
+  margin-right: 4px;
+  width: 16px;
+}
+
+.tablesort--asc, .tablesort--desc, .tablesort--neutral {
+  background-position: 98%;
+}
+
+.tablesort--asc {
+  background-image: url(get-base-url() + 'images/tablesorter/sort-asc.gif');
+  background-repeat: no-repeat;
+}
+
+.tablesort--desc  {
+  background-image: url(get-base-url() + 'images/tablesorter/sort-desc.gif');
+  background-repeat: no-repeat;
+}
+
+.tablesort--neutral {
+  background-image: url(get-base-url() + 'images/tablesorter/sort-neutral.gif');
+  background-repeat: no-repeat;
+}
+
+.tablesorter-header {
+  padding: 5px;
+
+  &.tablesorter-headerAsc, &.tablesorter-headerDesc, &.tablesorter-headerUnSorted {
+    background-position: 98%;
+  }
+
+  &.tablesorter-headerAsc, &.tablesorter-headerDesc {
+    background-color: $white;
+  }
+
+  .tablesorter-header-inner {
+    display: block;
+    padding: 0px;
+    width: 100%;
+    text-decoration: none !important;
+    color: $gray-blue;
+    &:hover {
+      text-decoration: none;
+    }
+    div {
+      display: block;
+      width: 100%;
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+  }
+
+  &.tablesorter-headerAsc {
+    background: url(/themes/custom/secgov/images/tablesorter/sort-asc.gif) no-repeat right center $white;
+
+  }
+  &.tablesorter-headerDesc {
+    background: url(/themes/custom/secgov/images/tablesorter/sort-desc.gif) no-repeat right center $white;
+
+  }
+  &.tablesorter-headerUnSorted  {
+    background: url(/themes/custom/secgov/images/tablesorter/sort-neutral.gif) no-repeat right center $mist;
+  }
+
+}
+
+@include breakpoint('small'){
+  .tablesorter thead {
+    position: relative;
+    tr.header {
+      border: none;
+      left: 0;
+      height: 35px;
+      position: absolute;
+      top: -31px;
+      width: 100%;
+    }
+
+    th {
+      background: $mist;
+      border: 1px solid $border-color;
+      display: inline-block;
+      padding: 0 20px 0 0;
+      width: auto;
+      min-width: 60px;
+      padding-right: 20px;
+
+      &.tablesorter-headerAsc, &.tablesorter-headerDesc {
+        border-bottom: 1px solid $white;
+        outline: none;
+      }
+
+      .tablesorter-header-inner {
+        padding: 0;
+        div {
+          display: block;
+          padding: 10px 8px 8px;
+          width: 100%;
+        }
+        a {
+          padding: 0;
+        }
+      }
+
+      &.tablesorter-headerAsc {
+        background: url(/themes/custom/secgov/images/tablesorter/sort-asc.gif) no-repeat, linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+        background-position: 90%;
+      }
+
+      &.tablesorter-headerDesc {
+        background: url(/themes/custom/secgov/images/tablesorter/sort-desc.gif) no-repeat, linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+        background-position: 90%
+      }
+
+      &.tablesort--neutral, &.tablesorter-headerUnSorted {
+        background: url(/themes/custom/secgov/images/tablesorter/sort-neutral.gif) no-repeat right center $mist;
+      }
+    }
+  }
+}
+
+table:not(.tablesaw) tbody {
+
+  tr {
+    @include breakpoint('small') {
+      display: block;
+    }
+  }
+
+  td {
+
+    @include breakpoint('small'){
+      display: inline-block;
+    }
+
+    @include breakpoint('small','landscape'){
+      width: 94% !important;
+    }
+
+    @include breakpoint('small','portrait'){
+      width: 97% !important;
+    }
+  }
+
+}
+
+tbody {
+
+  tr {
+    border: 1px solid $border-color;
+    clear: both;
+    display: table-row;
+    margin: 10px 10px 0 10px;
+    padding: 20px;
+
+    &:hover {
+      background-color: $porcelain;
+    }
+
+    &:selected {
+      background-color: $porcelain;
+    }
+
+    @include breakpoint('small') {
+      min-height: 100px;
+
+      &:last-of-type {
+        margin-bottom: 10px;
+      }
+    }
+
+    &.group {
+      min-height: 0;
+      &:hover {
+        background:none !important;
+      }
+      @include breakpoint('small') {
+        display: none !important;
+      }
+    }
+
+  	&.current td {
+  		background-color: $porcelain;
+  	}
+
+  	&.header {
+      background-color: #E3E3E3;
+
+      @include breakpoint('small') {
+        background: transparent;
+        border: none !important;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        left: 0px;
+        top: -32px;
+      }
+  	}
+  }
+
+  td {
+    background: none;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 7px 5px;
+    text-align: left;
+    text-transform: normal;
+    vertical-align: top;
+
+    @include breakpoint('small'){
+
+      &:after {
+        clear: both;
+        content: ' ';
+      }
+
+      &.views-field-field-publish-date div,
+      &.views-field-field-display-title div,
+      &.views-field-field-release-number div,
+      &.views-field-field-person div {
+        clear: both;
+        display: block;
+      }
+    }
+
+    &.views-field div {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    div, a {
+      word-break: break-word;
+      word-wrap: break-word;
+      overflow-wrap: break-all;
+    }
+
+    .show-for-small {
+      display: none;
+    }
+
+    @include breakpoint('small'){
+      .show-for-small {
+        display: inline;
+        font-weight: 600;
+        margin-right: 4px;
+      }
+    }
+
+    span.abstract {
+      color: $cloudy-gray;
+      font-style: italic;
+    }
+
+    div, a, p {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    a span {
+      float:right;
+
+      &.firstname_lastname {
+        float:none;
+        text-align: left;
+      }
+    }
+
+    .list-accordion {
+
+      .ui-corner-all, .ui-corner-top, .ui-corner-rightr {
+        border-radius: 0px;
+      }
+
+      .ui-state-default {
+        background: none;
+        border: none;
+      }
+
+      .ui-state-active {
+        border: none;
+      }
+
+      .ui-widget-content {
+        border:none;
+        padding: 0px;
+      }
+
+      .ui-accordion-header {
+        color: $asphalt;
+        font-weight: bold;
+        outline: none;
+        padding: 0 0 0 25px;
+
+        .ui-icon {
+          display: none;
+        }
+
+        &:before {
+          background:none;
+          display: inline-block;
+          @include fontawesome;
+          content: "\f196";
+          height: 16px;
+          overflow: visible;
+          text-indent:0;
+          width: 16px;
+        }
+
+        &.ui-accordion-header-active  {
+          color: $asphalt;
+
+          &:before {
+            background:none;
+            display: inline-block;
+            @include fontawesome;
+            content: "\f147";
+            height: 16px;
+            overflow: visible;
+            text-indent:0;
+            width: 16px;
+          }
+        }
+      }
+
+      .ui-accordion-content {
+        background: transparent !important;
+        font-family: Arial, sans-serif;
+        padding: 5px 25px;
+      }
+    }
+  }
+}
+
+.dataTables_wrapper {
+  clear: both;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+  color: #333;
+
+  .dataTables_length {
+    float: left;
+    padding-top: 0.5em;
+	}
+
+	.dataTables_paginate {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 0.5em;
+	}
+
+	.dataTables_info {
+    clear: both;
+    float: right;
+    padding-top: 0.5em;
+	}
+}
+
+a.back-to-top {
+
+  i {
+    font-style: normal;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-right: 6px;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0px;
+    width: 13px;
+
+    &:hover, &:focus{
+      background:transparent;
+    }
+  }
+
+  background:#666;
+  font-size:1.2em;
+  display: none;
+  color:$white;
+  border-radius: 3px;
+  position: fixed;
+  padding-right:3px;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  padding: 5px 10px;
+  &:hover, &:focus{
+    background:#4e4e4e;
+    box-shadow: 0px 0px 1px 1px white, 0px 0px 1px 3px #46484a;
+    text-decoration: none;
+  }
+}
+
+.dataTable {
+  border-top: none;
+  border: 1px solid $border-color;
+
+  @include breakpoint('small'){
+    clear: both;
+    margin-top: 70px;
+    position: relative;
+  }
+
+  thead {
+
+    @include breakpoint('small'){
+      position: relative;
+    }
+
+    tr {
+      &.header { background-color: #E3E3E3; }
+      &:hover { background-color: $porcelain; }
+
+      @include breakpoint('small'){
+        background-color: none;
+        display: block;
+        left: 0px;
+        height: 50px;
+        position: absolute;
+        width: 100%;
+        top: -31px;
+
+        &.header {
+          background: none;
+          border: 0;
+          padding: 0;
+        }
+      }
+    }
+
+  	th {
+    	padding: 5px 2px 5px 5px;
+    	background-color: #E3E3E3;
+    	border-bottom: none;
+      min-width: 100px;
+
+      @include breakpoint('small'){
+        background-color: $porcelain;
+        border: 1px solid $border-color;
+        display: table-cell !important;
+        padding: 0;
+        margin-right: 1px;
+        min-width: 70px;
+      }
+
+      div {
+        width: 100%;
+        @include breakpoint('small'){
+          padding: 10px 20px 8px 10px;
+        }
+      }
+
+  	}
+
+    .sorting {
+      background: $mist;
+
+      div {
+        background: url('/themes/custom/secgov/images/tablesorter/sort-neutral.gif') no-repeat right center;
+        display: block;
+        width: 100%;
+        @include breakpoint('small') {
+          background: none;
+        }
+      }
+    }
+
+    .sorting_asc {
+      background: $white;
+
+      @include breakpoint('small') {
+        background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+        border-bottom: 1px solid $white;
+      }
+
+      div {
+       background: url('/themes/custom/secgov/images/tablesorter/sort-asc.gif') no-repeat;
+       background-position: right center;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .sorting_desc {
+      background: $white;
+
+      @include breakpoint('small') {
+        background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 70%);
+        border-bottom: 1px solid $white;
+      }
+
+      div {
+        background: url('/themes/custom/secgov/images/tablesorter/sort-desc.gif') no-repeat;
+        background-position: right center;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .tablesort {
+    display: none;
+  }
+
+}
+
+.dataTables_paging {
+  font-size: 12px;
+  margin-top: 10px;
+
+  @include breakpoint('small') {
+    display: block;
+    position: relative;
+  }
+
+  @include breakpoint('x-small') {
+    display: none;
+  }
+
+  div#datatable_paginate {
+    padding-top:8px;
+
+  	@include breakpoint('small','portrait'){
+      clear: both;
+      display: block;
+      margin: 10px 0;
+  	  padding-top: 0;
+  	  text-align: center;
+      width: 100%;
+  	}
+
+    .last { float:none; }
+
+    .paginate_button {
+       padding: 0 0.85em;
+       &:hover { text-decoration: underline !important; background: none!important;}
+       color: #2F64B2! important;
+       border:none;
+       border-radius:none;
+
+       @include breakpoint('small','portrait') {
+       	padding: 0 3px;
+       }
+    }
+
+    color: #2F64B2;
+    text-decoration: none;
+
+    .current {
+      background: none;
+      border: none;
+      color: #101f36 !important;
+      text-decoration: underline !important;
+      &:hover { text-decoration: underline;  }
+    }
+
+    float: left;
+    width:65%;
+    text-align: center;
+  }
+
+  div#datatable_info {
+    float: right;
+    clear:none;
+    padding-top:8px;
+
+    @include breakpoint('small','portratit'){
+      display: block;
+    	padding: 10px 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    	text-align: right;
+      width: 60%;
+    }
+  }
+
+  div#datatable_length {
+    float: left;
+    height: 32px;
+    padding: 5px 0;
+
+    select {
+      width:auto;
+      background: url("/themes/custom/secgov/images/Filter-arrows-blue.png") no-repeat right #FFF;
+      background-size: 15px 22px;
+      border: thin solid #CCC;
+      height: 24px !important;
+      padding-right: 22px;
+      padding-left: 2px;
+      appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      -webkit-appearance: none;
+      background: none\9;
+      padding-right: 0px\9;
+      background-color: #FFF\9;
+    }
+  }
+}
+
+
+.mobile-paging {
+  display: none;
+
+  @include breakpoint('small'){
+    display: block;
+    margin: 20px 0;
+  }
+}
+
+td[headers='view-field-person-table-column'] {
+  i,em { display: none; }
+}
+
+table.joint-release-table td h3 {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 13px;
+  font-weight: normal;
+  color: $navy;
+  padding-bottom: 0px;
+  width: 100%;
+
+  &:hover {
+    background:none;
+  }
+
+}

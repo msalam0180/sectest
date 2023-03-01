@@ -1,0 +1,27 @@
+uuid: b5fe0172-d401-4bc9-8735-37de0b94f05e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_video_origin
+field_name: field_video_origin
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: youtubevimeo
+      label: 'YouTube or Vimeo'
+    -
+      value: upload
+      label: Upload
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

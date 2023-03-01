@@ -1,0 +1,51 @@
+uuid: 8750a8e3-8b07-45c0-a202-4146cf8e6fd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_ap_status
+field_name: field_ap_status
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'ALJ Pending'
+      label: 'ALJ Pending'
+    -
+      value: 'ALJ Remand Pending'
+      label: 'ALJ Remand Pending'
+    -
+      value: Closed
+      label: Closed
+    -
+      value: 'Commission Disg Pending'
+      label: 'Commission Disg Pending'
+    -
+      value: 'Commission Pending'
+      label: 'Commission Pending'
+    -
+      value: 'Commission Remand Pending'
+      label: 'Commission Remand Pending'
+    -
+      value: 'Intentionally Omitted'
+      label: 'Intentionally Omitted'
+    -
+      value: 'SRO Pending'
+      label: 'SRO Pending'
+    -
+      value: 'SRO Remand Pending'
+      label: 'SRO Remand Pending'
+    -
+      value: Open
+      label: Open
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

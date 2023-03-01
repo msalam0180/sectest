@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+langcode: en
+uuid: 03925943-f997-4842-ab4c-cf4a56797a34
+name: Investor.gov
+mail: no-reply@sec.gov
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/11601
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: no-reply@sec.gov

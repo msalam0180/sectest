@@ -1,0 +1,10 @@
+uuid: 7b88f4d1-0f26-441a-bb92-e391528d9492
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sBueiAWOWG9e8V_yKnA-hB1hifWRFRwb6Z7WwS9d4-A
+id: ethics
+label: Ethics
+description: 'Ethics Menu'
+locked: false

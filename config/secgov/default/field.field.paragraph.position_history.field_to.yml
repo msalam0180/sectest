@@ -1,0 +1,21 @@
+uuid: b91c1ab1-701c-41bd-841e-73f7977f75c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_to
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - datetime
+id: paragraph.position_history.field_to
+field_name: field_to
+entity_type: paragraph
+bundle: position_history
+label: To
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

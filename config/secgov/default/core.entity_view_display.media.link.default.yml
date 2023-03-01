@@ -1,0 +1,35 @@
+uuid: 421e8476-1ed2-4e02-881c-380f26d94bfb
+langcode: und
+status: true
+dependencies:
+  config:
+    - field.field.media.link.field_media_entity_link
+    - media.type.link
+  module:
+    - link
+_core:
+  default_config_hash: id6U7YeAsfxc9xCBM6LhPY9lxLZkqd_B76lHGBX7EFQ
+id: media.link.default
+targetEntityType: media
+bundle: link
+mode: default
+content:
+  field_media_entity_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

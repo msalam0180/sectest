@@ -1,0 +1,20 @@
+uuid: 2ad5d1fd-c575-4a50-8d98-58a59b3ef4cf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: ETFAwRjPyEvqeLDVTzujyUlBJVWWVOELffML90utoeo
+id: uswdssec_page_title
+theme: uswdssec
+region: page_title
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

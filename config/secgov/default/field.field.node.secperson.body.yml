@@ -1,0 +1,25 @@
+uuid: 31e2dfbf-cbaf-4ef8-b289-ec1ea0d8e463
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.secperson
+  module:
+    - text
+_core:
+  default_config_hash: MYtK-IVs-37dcM-bXwa-ztuq3RE0bCrsRoteH203iV8
+id: node.secperson.body
+field_name: body
+entity_type: node
+bundle: secperson
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

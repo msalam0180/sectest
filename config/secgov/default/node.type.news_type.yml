@@ -1,0 +1,40 @@
+uuid: 1b6043b1-6d7e-49b0-b08b-7176e2019098
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_save_redirect
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: null
+    fields_display_mode: null
+    publish_enable: false
+    publish_past_date: null
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_save_redirect:
+    save_type: '0'
+    save_location: ''
+    save_destination: 0
+    edit_type: '2'
+    edit_location: ''
+    edit_destination: 1
+_core:
+  default_config_hash: J-M27qKFiKb916zYq_dHIN_e4gSIsAj7s-ZSW_VqcxE
+name: 'News Type'
+type: news_type
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

@@ -1,0 +1,24 @@
+//
+// HR SPECIAL
+// Special versions of the <hr> or Horizontal Rule
+// 
+// NOTE: There is currently only one of these. If it is eliminated, then delete this file.
+// --------------------------------------------------
+
+// A faded line on mobile interfaces - Only used on Press Release View - http://secgov.dev.dd:8083/news/pressreleases
+// TODO: See if this can be removed from the code and add a regular border instead in the press release styles
+.hrFade {
+  @include breakpoint('small'){
+    margin: 15px 0 0;
+    background: #BBB;
+    background: linear-gradient(to right, #bbbbbb 0%, #1e1e1e);
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#bbbbbb), to(white), color-stop(50%, #bbbbbb));
+    background-image: -ms-linear-gradient(to right, #bbbbbb 0%, white 100%);
+    background-image: -moz-linear-gradient(to right, #bbbbbb 0%, white 100%);
+    background-image: -o-linear-gradient(to right, #bbbbbb 0%, white 100%);
+    background-image: -webkit-linear-gradient(to right, #bbbbbb 0%, white 100%);
+    background-image: linear-gradient(to right, #bbbbbb 0%, #ffffff 100%);
+    display: block;
+    height: 1px;
+  }
+}

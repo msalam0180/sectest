@@ -1,0 +1,14 @@
+uuid: 0b6f759a-c7d6-4a16-a876-57106f0e09f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.sec_alert
+id: node_type_sec_alert
+entity_type_id: node_type
+entity_id: sec_alert
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

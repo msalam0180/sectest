@@ -1,0 +1,23 @@
+{
+  "name": "sec_custom_libraries",
+  "version": "1.0.0",
+  "description": "SEC Custom Libraries module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeff Schwartz",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "load-grunt-config": "^0.19.2"
+  },
+  "dependencies": {
+    "isotope-layout": "^3.0.2",
+    "jquery.inputmask": "^3.3.4",
+    "jspdf": "^1.3.3",
+    "tablesaw": "^3.0.1"
+  }
+}

@@ -1,0 +1,130 @@
+//
+// INVESTOR ALERTS/BULLETINS LIST PAGE
+// VIEW NAME: Investor Alerts/Bulletins List Page
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+.investor-alerts-list {
+  thead {
+    .views-field-field-publish-date {
+      width: 125px;
+    }
+    .views-field-term-node-tid {
+      width: 180px;
+    }
+  }
+}
+
+@include breakpoint('small'){
+  .investor-alerts-list {
+    .button-box {
+      float: none;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+    thead {
+      th {
+        &.views-field-field-publish-date {
+          width: auto;
+        }
+        &#view-field-display-title-table-column {
+          display: none !important;
+        }
+
+        div {
+          padding: 12px 8px 6px;
+
+          a {
+            border: none;
+            color: $asphalt;
+            padding: 0;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        max-width: 320px;
+      }
+      td {
+        &.views-field-field-display-title {
+          span.abstract {
+            display: none;
+          }
+        }
+
+        div {
+          padding: 12px 8px 6px;
+
+          a {
+            border: none;
+            color: $asphalt;
+            padding: 0;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+
+    #view-term-node-tid-table-column {
+      display: none !important;
+    }
+  }
+}
+
+@include breakpoint('small', 'landscape'){
+
+  .investor-alerts-list {
+    .colspan-3 {
+      @include span(3);
+
+      &.last {
+        float: right;
+        margin-right: 0;
+      }
+    }
+    #view-term-node-tid-table-column {
+      display: none !important;
+    }
+  }
+}
+
+// TODO: Check where this is being used
+.investor-alerts-and-bulletins {
+  .article-publishdate {
+    font-style: normal;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .article-date {
+    font-style: italic;
+    font-weight: normal;
+    text-align: right;
+  }
+
+  .disclaimer {
+    background-color: #FFFF99;
+    border-top: 2px solid $cloudy-gray;
+    border-left: 2px solid $cloudy-gray;
+    border-bottom: 4px solid $cloudy-gray;
+    border-right: 2px solid $cloudy-gray;
+    @include raleway;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 10px 15px;
+    width: 100%;
+  }
+}

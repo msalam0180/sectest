@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function sec_edgar_theme($existing, $type, $theme, $path) {
+  return [
+    'sec_edgar_variable_insurance_products' => [
+      'variables' => [
+        'title' => '',
+        'submission_url' => '',
+        'description' => '',
+      ],
+    ],
+    'sec_edgar_fast_search_mutual' => [
+      'variables' => [
+        'title' => '',
+        'submission_url' => '',
+        'description' => '',
+      ],
+    ],
+    'sec_edgar_fast_search_variable' => [
+      'variables' => [
+        'title' => '',
+        'submission_url' => '',
+        'description' => '',
+      ],
+    ],
+    'sec_edgar_mutual_fund' => [
+      'variables' => [
+        'title' => '',
+        'submission_url' => '',
+        'description' => '',
+      ],
+    ],
+    'sec_edgar_company_person_lookup' => [
+      'variables' => [
+        'submission_url' => '',
+      ],
+    ],
+  ];
+
+}

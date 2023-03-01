@@ -1,0 +1,29 @@
+uuid: 25ff2c85-132b-4dd4-a7bd-fad716e22459
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_primary_division_office
+    - media.type.static_file
+    - taxonomy.vocabulary.division_office
+id: media.static_file.field_primary_division_office
+field_name: field_primary_division_office
+entity_type: media
+bundle: static_file
+label: 'Primary Division/Office'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      division_office: division_office
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

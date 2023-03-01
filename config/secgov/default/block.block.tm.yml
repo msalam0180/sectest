@@ -1,0 +1,30 @@
+uuid: 2f4c5553-9f97-4d7e-8aa7-3cdb90928560
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.trading-markets
+  module:
+    - system
+  theme:
+    - secgov
+id: tm
+theme: secgov
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'system_menu_block:trading-markets'
+settings:
+  id: 'system_menu_block:trading-markets'
+  label: TM
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/divisions/trading-markets\r\n/tm\r\n/divisions/marketreg"

@@ -1,0 +1,10 @@
+uuid: 11e3939b-9005-43fb-b983-7a67ede7aca6
+langcode: en
+status: true
+dependencies: {  }
+machine: prod
+description: null
+name: Prod
+url: 'https://dcm.sec.gov'
+fg_color: '#d0d0d0'
+bg_color: '#0d0d0d'

@@ -1,0 +1,18 @@
+uuid: e41e1c01-df26-4a1d-8811-98e81007e445
+langcode: en
+status: false
+dependencies: {  }
+id: prod
+label: Prod
+description: 'Config for production environment'
+weight: 2
+folder: ../config/secgov/prod
+module: {  }
+theme: {  }
+blacklist:
+  - google_tag.container.primary
+  - google_tag.settings
+graylist:
+  - environment_indicator.indicator
+graylist_dependents: true
+graylist_skip_equal: true

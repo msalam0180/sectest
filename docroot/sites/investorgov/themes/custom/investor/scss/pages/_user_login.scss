@@ -1,0 +1,55 @@
+$usr-bg-color: #eee;
+
+body {
+	.user-logged-in {display: none;}
+	.user-not-logged-in {display: block;}
+}
+
+body.user-logged-in {	
+	.user-logged-in {display: block;}
+	.user-not-logged-in {display: none;}
+}
+
+#user-login {
+	padding: 40px 0;
+  margin: 0 auto;
+
+	#user-login-content {
+		background-color: $usr-bg-color;
+		padding: 30px 50px;
+		text-align: left;
+
+		.main-content{
+      float: none;
+    }
+	}
+
+	.user-login-form {
+		display: block;
+		margin-bottom: 20px;
+		width: 420px;
+
+		@media (max-width: 700px) { 
+			width: auto;
+		}
+
+		label {
+			font-weight: 600;
+		}
+
+		.description {
+			color: #3e3e3e;
+			font-style: italic;
+      line-height: 1.2em;
+      margin-top: 5px;
+		}
+
+    .simplesamlphp-auth-login-link {
+      color: #217570;
+    }
+
+    input[type="submit"]{
+      cursor: pointer;
+    }
+	}
+}

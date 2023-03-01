@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes.addClass('formgrid') }}>
+  <div class="form-container">
+	  {{ children }}
+	  <div class="subscribe-rss">
+	    <span class="userAction"> Subscribe </span>
+	    <a href="/rss/fast-answers"><span class="fa fa-2x fa-rss-square"></span></a>
+	  </div>
+  </div>
+</form>

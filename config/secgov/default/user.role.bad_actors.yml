@@ -1,0 +1,72 @@
+uuid: fbd8b019-4529-46c5-8162-1fad81ad3835
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.full_html
+    - filter.format.plain_html
+    - media.type.static_file
+    - node.type.ba
+  module:
+    - contextual
+    - environment_indicator
+    - file
+    - filter
+    - media
+    - node
+    - path
+    - rabbit_hole
+    - redirect
+    - replicate_ui
+    - shortcut
+    - workbench_moderation
+_core:
+  default_config_hash: 9OfOBwUTMOTVXyo_kJGWd589IrPMN0IrQSLl2bd3w5E
+id: bad_actors
+label: 'Individual Defendants'
+weight: -7
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access environment indicator'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access shortcuts'
+  - 'administer nodes'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer shortcuts'
+  - 'create ba content'
+  - 'create static_file media'
+  - 'create url aliases'
+  - 'customize shortcut links'
+  - 'delete any ba content'
+  - 'delete any static_file media'
+  - 'delete own ba content'
+  - 'delete own static_file media'
+  - 'edit any ba content'
+  - 'edit any static_file media'
+  - 'edit own ba content'
+  - 'edit own static_file media'
+  - 'rabbit hole bypass node'
+  - 'replicate entities'
+  - 'revert all revisions'
+  - 'revert ba revisions'
+  - 'switch shortcut sets'
+  - 'update media'
+  - 'use archived_published transition'
+  - 'use draft_published transition'
+  - 'use keep_unpublished transition'
+  - 'use published_archived transition'
+  - 'use published_published transition'
+  - 'use text format basic_html'
+  - 'use text format full_html'
+  - 'use text format plain_html'
+  - 'view all media revisions'
+  - 'view all revisions'
+  - 'view ba revisions'
+  - 'view moderation states'
+  - 'view own unpublished content'
+  - 'view own unpublished media'

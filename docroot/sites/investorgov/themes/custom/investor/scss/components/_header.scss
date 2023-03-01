@@ -1,0 +1,213 @@
+// For print styles, this is a mess of importants because is it having to overide SECgov parent theme and Investor theme styles. Working on a solution with O&M.
+
+$mobileNavAndDown: 959px;
+$desktopNavAndUp: $mobileNavAndDown +1;
+
+//Layout
+.site-header {
+  height: auto;
+  margin-bottom:0;
+  position: relative;
+
+  @media screen and (max-width: $mobileNavAndDown) {
+    border-bottom: 1px solid $color_raven_gray;
+  }
+
+  .header-content {
+    padding: 20px 0;
+    background: url('/sites/investorgov/themes/custom/investor/images/sec-header-background.jpg');
+    background-repeat: no-repeat;
+    background-position: 100px;
+    max-width: $site-width;
+    margin: 0 auto;
+    display: flex;
+
+    @media screen and (max-width: $mobileNavAndDown) {
+      display: block;
+      padding: 10px 10px;
+    }
+    @media (max-width: $site-width + 20px) and (min-width: 300px){
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media print {
+      background: none !important;
+      padding: 10px 0;
+    }
+  }
+}
+
+.region {
+  flex: 1;
+}
+
+.region-header2{
+  @media print{
+    display: none;
+  }
+}
+
+//****Branding
+$brandingSmall: 800px;
+
+//Link surrounding Anchor
+.branding{
+  display: flex;
+  &:link, &:hover, &:visited, &:active, &:focus{
+    text-decoration: none;
+  }
+}
+
+.banner-org-name{
+  border-left: 1px solid #ddd;
+  margin-left: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  a:hover, a:active, a:focus{
+    text-decoration: none;
+  }
+
+  .site-name{
+    font-family: $font_primary;
+    font-size: 3em;
+    color: #bf280d;
+    line-height: 1;
+    font-weight: 900;
+    -webkit-font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: no-common-ligatures;
+    padding-bottom: 5px;
+    @media screen and (max-width: $brandingSmall) {
+      font-size: 1.8em;
+    }
+    @media print {
+      font-size: 1.8em;
+    }
+  }
+
+  .site-name-extra{
+    font-family: $font_secondary;
+    color: $color_nevada_gray;
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    max-width: 230px;
+    width: 90%;
+    @media screen and (max-width: $brandingSmall) {
+      font-size: .85em;
+      max-width: auto;
+    }
+    @media print {
+      font-size: .85em;
+      max-width: 210px;
+    }
+  }
+}
+
+.banner-seal {
+  max-width: 135px;
+  @media screen and (max-width: $brandingSmall) {
+    max-width: 70px;
+  }
+  @media print {
+    max-width: 70px;
+  }
+}
+
+//**** Mobile Search and Aux Menu Container
+.mobile-menu-search-container{
+  background: $primary_3;
+  padding: 20px;
+}
+
+//Auxiliary Header Menu
+.menu--auxiliary-header{
+  $auxiliary-link-color: $primary_1;
+  $auxiliary-link-color-mobile: #fff;
+  .menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: .8em;
+
+    @media screen and (max-width: $mobileNavAndDown) {
+      justify-content: center;
+      // margin: 20px 0;
+      font-size: 1.1em;
+      flex-wrap: wrap;
+    }
+  }
+  .menu-item{
+    padding: 0 5px;
+    margin: 0;
+    line-height: 1em;
+
+    @media screen and (max-width: $mobileNavAndDown) {
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+
+    &:not(:last-child){
+      border-right: 1px solid $auxiliary-link-color;
+      @media screen and (max-width: $mobileNavAndDown) {
+        border-color: $auxiliary-link-color-mobile;
+      }
+    }
+    a{
+      color: $auxiliary-link-color;
+      @media screen and (max-width: $mobileNavAndDown) {
+        color: $auxiliary-link-color-mobile;
+      }
+    }
+  }
+}
+
+//Search Block
+.block-views-blocksearch-content-block-1{
+  .views-exposed-form{
+    display: flex;
+    align-items: flex-end;
+  
+    .form-item-keys{
+      label{
+        @include element-invisible;
+      }
+    }
+  
+    @media screen and (min-width: $desktopNavAndUp){
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    @media screen and (max-width: $mobileNavAndDown){
+      .form-item, .form-actions{
+        margin-top: 0;
+      }
+      .form-item {
+        flex-grow: 1;
+      }
+      .button{
+        @include btn-alternate;
+      }
+    }
+
+  }
+  
+  //Hide stuff that should not display in the header
+  .views-row, header, nav, .error-enter-keywords, .form-item--error-message { 
+    display: none;
+  }
+}
+
+
+// Only On mobile 
+.mobile-menu-search-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

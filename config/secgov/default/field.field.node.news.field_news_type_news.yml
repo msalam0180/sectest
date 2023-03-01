@@ -1,0 +1,30 @@
+uuid: e47e030b-4ec1-479f-ad51-867a6dd052d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_type_news
+    - node.type.news
+    - node.type.news_type
+_core:
+  default_config_hash: kLUQahOtXiFUeWMesN2ffBYkbkBktPpEpPYVIQMZDsg
+id: node.news.field_news_type_news
+field_name: field_news_type_news
+entity_type: node
+bundle: news
+label: 'News Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      news_type: news_type
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

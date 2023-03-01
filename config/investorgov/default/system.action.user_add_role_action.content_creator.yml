@@ -1,0 +1,14 @@
+uuid: 4aa53b3c-ca3e-497c-b2da-387335b9e7de
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_creator
+  module:
+    - user
+id: user_add_role_action.content_creator
+label: 'Add the Content Creator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: content_creator

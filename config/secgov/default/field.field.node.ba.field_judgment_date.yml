@@ -1,0 +1,23 @@
+uuid: 9fefd01c-f464-488d-9190-4936e804ac14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_judgment_date
+    - node.type.ba
+  module:
+    - datetime
+_core:
+  default_config_hash: sFS9lXmDF3acDxl_K4I0bS6ahmF614a3juJzK5iHPEY
+id: node.ba.field_judgment_date
+field_name: field_judgment_date
+entity_type: node
+bundle: ba
+label: 'Judgment Date'
+description: 'Please enter the date in the format MM/DD/YYYY.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

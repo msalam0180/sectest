@@ -1,0 +1,101 @@
+
+.brokerage_account_section {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+	padding: 2% 2% 9% 2%;
+  background-color: $white;
+	font-size: 1.4rem;
+  h2 {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  &.active-section {
+    left: 0;
+    &[data-index="4"] {
+      height: 1000px;
+    }
+  }
+  &.inactive-right {
+    left: 100%;
+  }
+  &.inactive-left {
+    left: -100%;
+  }
+	@include breakpoint($mobile) {
+      h2 {
+				margin-bottom: 0;
+			}
+  }
+}
+
+.brokerage_info-container {
+	display: table;
+	width: 100%;
+	// padding: 0 2%;
+	// margin-bottom: 25px;
+  padding: 0 2% 25px 2%;
+	&.col {
+		width:50%;
+		float:left;
+		@include breakpoint($mobile) {
+			width:100%;
+		}
+	}
+	.t_row {
+		display: table-row;
+
+	}
+	.t_cell {
+		display: table-cell;
+		border-bottom: 1px solid #b5b5b5;
+		padding: 5px;
+		text-align: right;
+		&:first-of-type {
+			text-align: left;
+		}
+	}
+}
+
+.statement-period {
+	font-weight: 700;
+	display: block;
+}
+
+.info {
+	padding: 2%;
+	background-color: $lightfilter;
+}
+
+.address {
+	display: block;
+}
+
+.disclosure.bullet-point {
+  padding: 0 10px;
+  margin: 14px 0;
+  position: relative;
+  &:before {
+    content: "\2022";
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+}
+
+.all-text .col {
+  padding: 0 1%;
+  width: 48%;
+}
+
+.paragraph-icon {
+  float: right;
+}
+
+.t_cell sup,
+p sup {
+  vertical-align: super;
+  font-size: smaller;
+}

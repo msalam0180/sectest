@@ -1,0 +1,23 @@
+uuid: db8197c4-efdc-4de4-8739-4fde92168671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_button_spacing
+    - paragraphs.paragraphs_type.button
+  module:
+    - options
+id: paragraph.button.field_button_spacing
+field_name: field_button_spacing
+entity_type: paragraph
+bundle: button
+label: Spacing
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: above
+default_value_callback: ''
+settings: {  }
+field_type: list_string

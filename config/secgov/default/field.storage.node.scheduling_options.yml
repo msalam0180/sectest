@@ -1,0 +1,22 @@
+uuid: 9f32745b-3969-41ce-a51a-ba1b6ff91ece
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - scheduled_updates
+_core:
+  default_config_hash: '-8dH1Gyh7S5kvfi2GzeOZ0NE_7UosREw5xV9uADrDIY'
+id: node.scheduling_options
+field_name: scheduling_options
+entity_type: node
+type: entity_reference
+settings:
+  target_type: scheduled_update
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

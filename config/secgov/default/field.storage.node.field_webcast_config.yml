@@ -1,0 +1,21 @@
+uuid: 27f8652b-2881-446b-9bea-23b02ef0ef6c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: zrrOlmSkwWIth7NiHE9cLLTN4CVn9R6WtijVeV6pn38
+id: node.field_webcast_config
+field_name: field_webcast_config
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,13 @@
+diff --git a/core/lib/Drupal/Core/DrupalKernel.php b/core/lib/Drupal/Core/DrupalKernel.php
+index 490eebd6e9..ab5641caa0 100644
+--- a/core/lib/Drupal/Core/DrupalKernel.php
++++ b/core/lib/Drupal/Core/DrupalKernel.php
+@@ -741,7 +741,7 @@ public function prepareLegacyRequest(Request $request) {
+   protected function moduleData($module) {
+     if (!$this->moduleData) {
+       // First, find profiles.
+-      $listing = new ExtensionDiscovery($this->root);
++      $listing = new ExtensionDiscovery($this->root, TRUE, NULL, $this->getSitePath());
+       $listing->setProfileDirectories([]);
+       $all_profiles = $listing->scan('profile');
+       $profiles = array_intersect_key($all_profiles, $this->moduleList);

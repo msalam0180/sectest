@@ -1,0 +1,8 @@
+uuid: d465967b-322f-4bc4-be79-9dcfe558e1e4
+langcode: en
+status: true
+dependencies: {  }
+id: about-the-sec
+label: 'About The SEC'
+description: 'About The SEC footer menu'
+locked: false

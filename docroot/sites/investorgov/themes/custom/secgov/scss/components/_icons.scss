@@ -1,0 +1,39 @@
+//
+// ICONS
+// TODO: What is this used for?
+// --------------------------------------------------
+
+.icon { 
+  background: #fbfbfb; 
+  border-radius: 0px 20px 0px 0px; 
+  -webkit-border-radius: 0px 18px 0px 0px; 
+  -moz-border-radius: 0px 10px 0px 0px; 
+  box-shadow: inset rgba(255, 255, 255, 0.8) 0 1px 1px; 
+  -webkit-box-shadow: inset rgba(255, 255, 255, 0.8) 0 1px 1px; 
+  -moz-box-shadow: inset rgba(255, 255, 255, 0.8) 0 1px 1px; 
+  border: 1px solid $border-color; 
+  display: block;
+  color: $asphalt; 
+  font-family: Helvetica, sans-serif; 
+  font-size: 12px; 
+  font-weight: bold;
+  width: 40px; 
+  height: 56px; 
+  line-height: 36px; 
+  margin-right: 20px;
+  overflow: hidden;
+  text-decoration: none; 
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+.triangle { 
+  width: 0px; 
+  height: 0px; 
+  border-style: solid; 
+  border-width: 15px 0px 0px 15px; 
+  border-color: white white white #cccccc; 
+  margin-left: 26px; 
+  position: relative; 
+}
+

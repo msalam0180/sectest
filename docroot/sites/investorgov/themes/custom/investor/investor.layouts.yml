@@ -1,0 +1,12 @@
+flowinggrid:
+  label: 'Flowing Grid'
+  category: 'Investor Layouts'
+  path: templates/layouts/flowinggrid
+  template: layout--flowinggrid
+  library: investor/flowinggrid
+  default_region: content
+  icon_map:
+    - [content]
+  regions:
+    content:
+      label: Main content

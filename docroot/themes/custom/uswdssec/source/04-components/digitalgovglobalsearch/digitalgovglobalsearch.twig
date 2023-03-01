@@ -1,0 +1,28 @@
+{% set classes = [
+  'c-digitalgovglobalsearch',
+  modifier_classes ? modifier_classes : ''
+] %}
+
+<div {{ add_attributes({ class: classes }) }}>
+
+
+{% set hiddenFields %}
+  <input name="utf8" type="hidden" value="?" />
+  <input class="affiliate" name="affiliate" type="hidden" value="secsearch" />
+{% endset %}
+
+{% include '@uswds/search/search.twig' with {
+  'modifier_classes': 'usa-search--small',
+  'label': 'Search SEC.gov',
+  'hide_button_text': true,
+  'button_text': 'Search',
+  'action': '//secsearch.sec.gov/search',
+  'hiddenFields': hiddenFields,
+  'id': 'global-search-box',
+  'attributes': attributes.setAttribute('name', 'form_iQueryForm').setAttribute('id', 'global-search-form'),
+  'searchAttributes': searchAttributes.setAttribute('data-item', '23'),
+  'name': 'query',
+  'autocomplete': 'off',
+  'placeholder': 'Search Sec.gov'
+} %}
+</div>

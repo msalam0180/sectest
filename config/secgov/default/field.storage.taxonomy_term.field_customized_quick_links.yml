@@ -1,0 +1,19 @@
+uuid: a21bd69e-f46c-4484-9984-e4b523e0a300
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_customized_quick_links
+field_name: field_customized_quick_links
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

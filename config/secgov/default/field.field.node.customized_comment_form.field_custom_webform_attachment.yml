@@ -1,0 +1,32 @@
+uuid: 8a2fd390-d0ff-459b-bcf4-8a348cd46cd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custom_webform_attachment
+    - node.type.customized_comment_form
+    - webform.webform.ruling_comments_form
+  module:
+    - webform
+id: node.customized_comment_form.field_custom_webform_attachment
+field_name: field_custom_webform_attachment
+entity_type: node
+bundle: customized_comment_form
+label: 'Custom Webform Attachment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 940abc16-ef2d-413a-885b-2a0b7cff98c9
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

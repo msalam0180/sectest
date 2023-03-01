@@ -1,0 +1,224 @@
+// main Page Layouts
+
+//reset layouts from sec.gov
+@media (max-width: 767px) and (min-width: 300px){
+  #content-wrapper .content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+// @media (max-width: 767px) and (min-width: 300px) and (orientation: portrait){
+//   div#page-title {
+//       margin: 0;
+//       padding: 0;
+//   }
+// }
+
+#main-wrapper{
+  max-width: $site-width;
+  margin: 0 auto;
+  float: none;
+  width: auto;
+  padding: 0;
+  @media (max-width: $site-width + 20px){
+    margin: 0 !important;
+    padding: 0 20px;
+  }
+}
+
+/////////////////Page Layout
+
+//content wrapper
+.layout--threecol-25-50-25,
+#main-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.layout--threecol-25-50-25 > .layout__region,
+.layout--threecol-25-50-25 > .layout__region--second,
+#investor-sidebar-first, #content-wrapper{
+  flex: 0 1 100%;
+}
+
+.layout--threecol-25-50-25 > .layout__region--second,
+  #content-wrapper {
+    order: 1;
+    padding: 0;
+    width: auto;
+  }
+
+.layout--threecol-25-50-25 > .layout__region--first,
+#investor-sidebar-first{
+  margin: 0px;
+  order: 3;
+}
+
+@media screen and (min-width: 40em) {
+  .layout--threecol-25-50-25 > .layout__region--first,
+  .layout--threecol-25-50-25 > .layout__region--third,
+  #investor-sidebar-first {
+    flex: 0 1 25%;
+  }
+  .layout--threecol-25-50-25 > .layout__region--second,
+  #content-wrapper {
+    flex: 0 1 50%;
+    flex-grow:1;
+    order: 2;
+  }
+
+  .layout--threecol-25-50-25 > .layout__region--first,
+  #investor-sidebar-first{
+    margin-right: 40px;
+    order: 1;
+  }
+}
+
+//Masonry layout print styles
+@media print {
+  .main .layout--flowinggrid > .layout__region--content{
+    height: auto !important;
+  }
+
+}
+
+// accordions - open for print
+@media print {
+  // open accordions
+  .ui-accordion-content.ui-widget-content {
+    display: block !important;  // needed to override inline style
+  }
+  .ui-accordion {
+    margin-top: 20px; // space above the whole component
+  }
+  // turn off border on active
+  .main > div[id^="accordion-"] > .ui-accordion-header.ui-state-default.ui-accordion-header-active.ui-state-active {
+    border: 0;
+  }
+  .ui-widget-content {
+    border: 0; // turn off ghost borders on content areas
+    h5 { // keep closer to related content under
+      margin-top: 20px;
+      margin-bottom: -5px;
+    }
+  }
+  .ui-accordion-content > :first-child {
+    margin-top: 0; // close up space under the header/label of each section when open
+  }
+
+  p.ui-accordion-header {
+    margin-top: 20px !important; // top of each details /label
+  }
+  .ui-accordion .ui-accordion-content { //top and bottom of each open accordions' content area
+    padding: 10px 0 15px 0;
+  }
+}
+
+//General Print
+@media print {
+  h1 { // reduce from 2em on all pages
+    font-size: 1.6em;
+  }
+  .env-indicator-text { // just in case a lower env is printed from
+    display: none;
+  }
+  h1, h2, h3, h4, h5, h6 { // dont break these onto 2 pages
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  img {
+    page-break-inside: avoid; // dont break these onto 2 pages
+    page-break-after: avoid;
+  }
+  p { // show no less than 3 lines of a p spanning 2 pages at the top or bottom of the first page
+    orphans: 2;
+    widows: 2;
+  }
+}
+
+// Display hrefs after anchors for print in ()
+@media print {
+  #content a::after {
+    content: " (" attr(href) ") ";
+  }
+  #content a[href^="#"]::after { // do not print out anchor(link) locations after anchors
+    content: "";
+  }
+  #content a[name^="widget"] > span:only-child { // remove 'widget' placeholder text
+    display: none;
+  }
+  #content a[name^="widget"]::after { // do not print out a tags with no href attribute /widget markup
+    content: "";
+  }
+  a {
+    page-break-inside: avoid; // avoid breaking onto 2 pages
+  }
+}
+
+
+// Sticky Anchor Nav Block
+.sticky-anchor {
+  position: fixed;
+  top: 0;  // keep at top
+  background: white; // prevent overlap if any
+  width: 236px; // rendered width of sidebar
+}
+@media screen and (max-width: 860px) {
+  .sticky-anchor {
+    width: 174px;
+  }
+}
+
+#sticky-anchor {
+  height: 0;  // placeholder element for detecting position of menu below it
+}
+
+div[class^='block-title-anchor'], div[class*=' block-title-anchor'] {
+  border: 2px solid #eee;
+  margin-top: 20px;
+  color: #218383;
+  > h2 {
+    display: none; // hide the default block description
+  }
+  .field--name-field-anchor-menu-label {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  span:last-of-type a {
+    border-bottom: none;
+  }
+  a {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    color: #218383;
+    font-size: 15px;
+    display: block;
+    padding: 10px 70px 10px 20px;
+    line-height: 17px;
+    border-bottom: 2px solid #eee;
+  }
+
+  a:hover {
+    color: white;
+    background-color:  #218383;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div[class^='block-title-anchor'], div[class*=' block-title-anchor'], .sticky-anchor {
+    display: none;
+  }
+}
+
+.layout-builder__link--remove {
+  border: 1px solid #6e6969 !important;
+  background: url(../../../../../../core/misc/icons/787878/ex.svg) center center / 16px 16px no-repeat !important;
+}
+.layout-builder__link--remove:hover {
+  border: 1px solid #302e2e !important;
+  box-shadow: 0 0 1px 1px #2f91da;
+  background: url(../../../../../../core/misc/icons/787878/ex.svg) center center / 19px 19px no-repeat !important;
+}

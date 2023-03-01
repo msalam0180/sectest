@@ -1,0 +1,281 @@
+{
+  "name": "acquia/acquia-ra-composer",
+  "description": "Project json for Acquia Remote Administration Composer builds",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "ckeditor-plugin/link": "4.18.0",
+    "composer/installers": "^1.3",
+    "cweagans/composer-patches": "^1.6",
+    "drupal/access_unpublished": "^1.5",
+    "drupal/acquia_connector": "^4.0",
+    "drupal/acquia_purge": "^1.3",
+    "drupal/acquia_search": "^3.1",
+    "drupal/address": "^1.11",
+    "drupal/addtocalendar": "^3.2",
+    "drupal/admin_toolbar": "^3.3",
+    "drupal/adminimal_admin_toolbar": "^1.10",
+    "drupal/adminimal_theme": "^1.6",
+    "drupal/advagg": "^4.1",
+    "drupal/aggregator": "^1.0",
+    "drupal/akamai": "^4.0",
+    "drupal/anchor_link": "^2.6",
+    "drupal/autologout": "^1.3",
+    "drupal/better_exposed_filters": "^5.2",
+    "drupal/bg_image_formatter": "^1.16",
+    "drupal/cacheexclude": "^1.0",
+    "drupal/captcha": "^1.0",
+    "drupal/clamav": "^2.0",
+    "drupal/color": "^1.0",
+    "drupal/components": "^2.4",
+    "drupal/config_filter": "^1.10",
+    "drupal/config_split": "^1.9",
+    "drupal/config_update": "^1.7",
+    "drupal/core": "~9.4.0",
+    "drupal/core-composer-scaffold": "~9.4.0",
+    "drupal/core-project-message": "~9.4.0",
+    "drupal/core-recommended": "~9.4.0",
+    "drupal/core_context": "^1.1",
+    "drupal/csv_serialization": "^2.0",
+    "drupal/ctools": "^3.13",
+    "drupal/datatables": "^2.0",
+    "drupal/devel": "^4.2",
+    "drupal/easy_breadcrumb": "^2.0",
+    "drupal/embed": "^1.6",
+    "drupal/empty_fields": "^1.0@beta",
+    "drupal/entity_browser": "^2.9",
+    "drupal/entity_embed": "^1.3",
+    "drupal/entity_reference_revisions": "^1.10",
+    "drupal/environment_indicator": "^4.0",
+    "drupal/externalauth": "^1.4",
+    "drupal/extlink": "^1.7",
+    "drupal/fakeobjects": "^1.2",
+    "drupal/features": "^3.12",
+    "drupal/feeds": "^3.0",
+    "drupal/field_group": "^3.4",
+    "drupal/filefield_paths": "^1.0@beta",
+    "drupal/flag": "^4.0",
+    "drupal/flexslider": "^2.0",
+    "drupal/geocoder": "^3.31",
+    "drupal/geofield": "^1.52",
+    "drupal/google_tag": "^1.5",
+    "drupal/hal": "^1.0",
+    "drupal/hook_event_dispatcher": "^3.3",
+    "drupal/http_response_headers": "^2.0@RC",
+    "drupal/inline_entity_form": "^1.0",
+    "drupal/jquery_ui": "^1.6",
+    "drupal/jquery_ui_accordion": "^1.1",
+    "drupal/jquery_ui_autocomplete": "^1.1",
+    "drupal/jquery_ui_datepicker": "^1.4",
+    "drupal/jquery_ui_draggable": "^1.5",
+    "drupal/jquery_ui_droppable": "^1.5",
+    "drupal/jquery_ui_tabs": "^1.1",
+    "drupal/jquery_ui_touch_punch": "^1.1",
+    "drupal/layout_builder_modal": "^1.2",
+    "drupal/layout_builder_restrictions": "^2.17",
+    "drupal/layout_library": "^1.0@beta",
+    "drupal/leaflet": "^2.2",
+    "drupal/linkit": "^5.0",
+    "drupal/login_security": "^2.0",
+    "drupal/mailsystem": "^4.3",
+    "drupal/media_entity_download": "^2.1",
+    "drupal/media_entity_file_replace": "^1.1",
+    "drupal/media_entity_link": "^1.0",
+    "drupal/memcache": "2.3",
+    "drupal/menu_block": "^1.8",
+    "drupal/menu_block_title": "^1.4",
+    "drupal/menu_link_attributes": "^1.0",
+    "drupal/metatag": "^1.19",
+    "drupal/migrate_file": "^2.0",
+    "drupal/migrate_file_to_media": "^2.0",
+    "drupal/migrate_plus": "^5.3",
+    "drupal/migrate_source_csv": "^3.4",
+    "drupal/migrate_source_directory": "^2.0",
+    "drupal/migrate_tools": "^5.0",
+    "drupal/no_autocomplete": "^1.6",
+    "drupal/page_manager": "^4.0",
+    "drupal/panelizer": "^5.0@beta",
+    "drupal/panels": "^4.7",
+    "drupal/paragraphs": "^1.14",
+    "drupal/path_redirect_import": "^1.0",
+    "drupal/pathauto": "^1.10",
+    "drupal/protected_pages": "^1.2",
+    "drupal/purge": "^3.4",
+    "drupal/rabbit_hole": "^1.0",
+    "drupal/recaptcha": "^3.0",
+    "drupal/recreate_block_content": "^2.1",
+    "drupal/redirect": "^1.7",
+    "drupal/replicate": "^1.0",
+    "drupal/replicate_actions": "^1.1",
+    "drupal/replicate_ui": "^1.0",
+    "drupal/role_log": "^1.2",
+    "drupal/scheduled_updates": "1.x-dev@dev",
+    "drupal/scheduler": "^1.4",
+    "drupal/search_api": "^1.28",
+    "drupal/search_api_autocomplete": "^1.7",
+    "drupal/search_api_solr": "^4.2",
+    "drupal/search_api_spellcheck": "^3.0@beta",
+    "drupal/simple_block": "^1.3",
+    "drupal/simple_sitemap": "^4.1",
+    "drupal/simplesamlphp_auth": "^3.2",
+    "drupal/subpathauto": "^1.2",
+    "drupal/swiftmailer": "^2.2",
+    "drupal/taxonomy_manager": "^2.0",
+    "drupal/token": "^1.10",
+    "drupal/token_filter": "^1.4",
+    "drupal/tvi": "^1.0@RC",
+    "drupal/twig_field_value": "^2.0",
+    "drupal/twig_tweak": "^2.5",
+    "drupal/twitter_block": "^3.0",
+    "drupal/video_embed_field": "^2.4",
+    "drupal/viewfield": "^3.0",
+    "drupal/views_autocomplete_filters": "^1.3",
+    "drupal/views_data_export": "^1.1",
+    "drupal/webform": "^6.1",
+    "drupal/workbench": "^1.4",
+    "drupal/workbench_access": "^1.1",
+    "drupal/workbench_moderation": "^1.7",
+    "drupal/workbench_moderation_actions": "1.x-dev@dev",
+    "drush/drush": "10.5",
+    "geocoder-php/nominatim-provider": "^5.4",
+    "league/csv": "^9.7.1",
+    "simplesamlphp/simplesamlphp": "^1.18.6",
+    "smalot/pdfparser": "^2.1",
+    "solarium/solarium": "^6.1",
+    "zodiacmedia/drupal-libraries-installer": "^1.4"
+  },
+  "require-dev": {
+    "behat/mink": "^1.7",
+    "phpunit/phpunit": "^9.5"
+  },
+  "conflict": {
+    "drupal/core": "7.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "drupal-scaffold": {
+      "file-mapping": {
+        "[web-root]/robots.txt": {
+          "append": "custom/robots.txt"
+        },
+        "[web-root]/.eslintignore":{
+          "append": "custom/.eslintignore"
+        },
+        "[web-root]/.eslintrc.json":{
+          "mode": "skip"
+        },
+        "[web-root]/.htaccess":{
+          "mode": "skip"
+        },
+        "[web-root]/sites/development.services.yml": {
+          "mode": "skip"
+        }
+      },
+      "locations": {
+        "web-root": "./docroot"
+      }
+    },
+    "installer-paths": {
+      "docroot/sites/investorgov/modules/contrib/{$name}": [
+        "drupal/menu_block",
+        "drupal/menu_block_title",
+        "drupal/menu_link_attributes",
+        "drupal/path_redirect_import",
+        "drupal/search_api_autocomplete",
+        "drupal/search_api_spellcheck",
+        "drupal/viewfield"
+      ],
+      "docroot/core": ["type:drupal-core"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "docroot/libraries/{$name}": ["type:drupal-library"]
+    },
+    "drupal-libraries": {
+      "datatables": "https://datatables.net/releases/DataTables-1.9.3.zip",
+      "fakeobjects": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.18.0.zip",
+      "flexslider": "https://github.com/woocommerce/FlexSlider/archive/refs/tags/2.6.3.zip",
+      "swiftmailer": "https://github.com/swiftmailer/swiftmailer/archive/refs/tags/v5.4.8.zip"
+    },
+    "enable-patching": true,
+    "patches": {
+      "ckeditor-plugin/link": {
+        "Drupal Issue: https://www.drupal.org/project/anchor_link/issues/2802085": "docroot/modules/contrib/patches/custom-removing-duplicate-edit-link-wysiwyg-based-on-2802085-18.patch"
+      },
+      "drupal/access_unpublished": {
+        "Custom patch": "docroot/modules/contrib/patches/access_unpublished-entity_type_does_not_exist.patch",
+        "Custom patch - Remove unlimited option": "docroot/modules/contrib/patches/osss-15874-access-unpublished-remove-unlimited.patch"
+      },
+      "drupal/adminimal_admin_toolbar":{
+        "D9 icon update patch https://www.drupal.org/project/adminimal_admin_toolbar/issues/3163092": "docroot/modules/contrib/patches/icon-update-3163092-4.patch"
+      },
+      "drupal/cacheexclude": {
+        "Fix non-existent service path.alias_manager https://www.drupal.org/project/cacheexclude/issues/3201844": "docroot/modules/contrib/patches/cacheexclude-3201844-path_alias_manager-8.patch"
+      },
+      "drupal/core": {
+        "Drupal Issue: https://www.drupal.org/project/drupal/issues/2918537": "docroot/modules/contrib/patches/core-book-outline-revisions-validation-2918537-61.patch",
+        "Drupal Issue: https://www.drupal.org/project/drupal/issues/2314185": "docroot/modules/contrib/patches/drupalbehaviorerror-2314185-15.patch",
+        "Drupal Issue: https://www.drupal.org/project/drupal/issues/2985199": "docroot/modules/contrib/patches/specify_sitepath_cache_rebuild_extension_discovery-2985199-3.patch",
+        "Drupal Issue: https://www.drupal.org/project/drupal/issues/2959134": "docroot/modules/contrib/patches/cached-rss-feeds-http-header-2959134-14.patch"
+      },
+      "drupal/http_response_headers": {
+        "Drupal issue: https://www.drupal.org/project/http_response_headers/issues/3193303": "docroot/modules/contrib/patches/http_response_headers-3193303.patch",
+        "Drupal issue: https://www.drupal.org/project/http_response_headers/issues/3193304": "docroot/modules/contrib/patches/http_response_headers-3193304.patch",
+        "Drupal issue: https://www.drupal.org/project/http_response_headers/issues/3316677": "docroot/modules/contrib/patches/3316677-4.patch"
+      },
+      "drupal/inline_entity_form": {
+        "Allow to hide the Edit button in Complex widget": "docroot/modules/contrib/patches/optional_edit-3143422-2.patch"
+      },
+      "drupal/media_entity_file_replace": {
+        "Clear image cache after updating media image: https://www.drupal.org/project/media_entity_file_replace/issues/3106363": "docroot/modules/contrib/patches/media_entity_file_replace-clear_image_cache-3106363-4.patch"
+      },
+      "drupal/paragraphs": {
+        "Drupal Issue: https://www.drupal.org/project/paragraphs/issues/2901390": "docroot/modules/contrib/patches/paragraphs-set_langcode_widgets-2901390-29.patch"
+      },
+      "drupal/scheduled_updates": {
+        "D9 Compatibility Fix patch https://www.drupal.org/project/scheduled_updates/issues/3172330": "docroot/modules/contrib/patches/scheduled_updates-3172330-24.patch"
+      },
+      "drupal/scheduler": {
+        "Drupal issue: https://www.drupal.org/project/scheduler/issues/3224340": "docroot/modules/contrib/patches/3224340-22.local_tasks_alter.patch"
+      },
+      "drupal/symfony_mailer": {
+        "Custom patch: fix attachment filepath error": "docroot/modules/contrib/patches/OSSS-20705-fixed-attachment-filepath-error.patch"
+      },
+      "drupal/views_ifempty": {
+        "D9 Compatibility Rector Fixes https://www.drupal.org/project/views_ifempty/issues/3142112": "docroot/modules/contrib/patches/views_ifempty.1.x-dev.rector.patch"
+      },
+      "drupal/webform": {
+        "Custom patch: Hiding option to include file with webform export result": "docroot/modules/contrib/patches/osss-13961-hide-option-to-download-files.patch"
+      }
+    },
+    "composer-exit-on-patch-failure": true
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": [
+        {
+          "name": "ckeditor-plugin/link",
+          "type": "drupal-library",
+          "version": "4.18.0",
+          "dist": {
+            "type": "zip",
+            "url": "https://download.ckeditor.com/link/releases/link_4.18.0.zip"
+          }
+        }
+      ]
+    },
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "discard-changes": true,
+    "platform": {
+      "php": "8.0"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+uuid: 425dc52c-3a07-4d1b-a26c-c56277a2b576
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: eYtQ3073YzYTJdS7dnfP5IsTQGPxGG69sJJvd7rVV3A
+id: node.field_associated_dataset
+field_name: field_associated_dataset
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

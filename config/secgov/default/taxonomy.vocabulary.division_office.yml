@@ -1,0 +1,10 @@
+uuid: c2955374-4224-4b86-9ee1-8a031bdfd9e7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: HNxhpSLJ24nBCAR-dIwYqM6Sg1uEU6eQRcUiK44No8c
+name: Division/Office
+vid: division_office
+description: ''
+weight: 0

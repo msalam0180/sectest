@@ -1,0 +1,66 @@
+uuid: 2fdcdcdf-8a91-4044-bcc3-ac3bb458e3a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sec_system_variables.field_system_variable_value
+    - taxonomy.vocabulary.sec_system_variables
+  module:
+    - path
+    - text
+    - workbench_moderation
+id: taxonomy_term.sec_system_variables.default
+targetEntityType: taxonomy_term
+bundle: sec_system_variables
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_system_variable_value:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  tvi:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

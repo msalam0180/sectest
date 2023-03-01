@@ -1,0 +1,21 @@
+uuid: c867f23d-c79c-4e26-bc93-63771d406f2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_title
+    - node.type.sec_hero
+_core:
+  default_config_hash: zkAA39FOZfZG7CDVXvu2ZzjurTuuIw4CmzTiMT0dCi4
+id: node.sec_hero.field_display_title
+field_name: field_display_title
+entity_type: node
+bundle: sec_hero
+label: 'Display Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

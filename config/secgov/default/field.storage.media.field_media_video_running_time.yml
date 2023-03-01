@@ -1,0 +1,21 @@
+uuid: e786795d-e54b-4f34-b680-d54c7a9c484f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.field_media_video_running_time
+field_name: field_media_video_running_time
+entity_type: media
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

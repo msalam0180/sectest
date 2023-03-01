@@ -1,0 +1,656 @@
+/**
+ * @file
+ * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
+ *
+ * When you turn on CSS aggregation at admin/config/development/performance, all
+ * of these @include files will be combined into a single file.
+ */
+/* Import Sass mixins, variables, Compass modules, etc. */
+/**
+ * Titles.
+ */
+/* line 57, ../sass/base/_typography.scss */
+.page__title,
+.node__title,
+.block__title,
+.comments__title,
+.comments__form-title,
+.comment__title {
+  /* Comment title. */
+  margin: 0;
+}
+
+/* line 75, ../sass/base/_typography.scss */
+h1 {
+  font-family: "PT Serif", Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+  font-size: 40px;
+  font-weight: normal;
+  padding-left: 3.3rem;
+}
+
+/* line 82, ../sass/base/_typography.scss */
+h1.results__heading, h2 {
+  font-family: "Roboto", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+/* line 88, ../sass/base/_typography.scss */
+h2 {
+  font-family: "Roboto", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-weight: normal;
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+/* line 6, ../sass/base/_accesibility.scss */
+.element-invisible,
+.element-focusable {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* line 12, ../sass/base/_accesibility.scss */
+.element-focusable:active, .element-focusable:focus {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+/* line 29, ../sass/base/_accesibility.scss */
+.skip-link {
+  margin: 0;
+}
+/* line 32, ../sass/base/_accesibility.scss */
+.skip-link a,
+.skip-link a:visited {
+  display: block;
+  width: 100%;
+  padding: 2px 0 3px;
+  text-align: center;
+  background-color: #adadad;
+  color: #ffffff;
+}
+
+/* line 47, ../sass/base/_accesibility.scss */
+.main-content {
+  outline: none;
+}
+
+/* Layout rules */
+/* Component (SMACSS module) rules */
+/* line 1, ../sass/components/_main.scss */
+main {
+  background-color: #ffffff;
+  padding-top: 5rem;
+  max-width: 96rem;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+/* line 43, ../sass/base/_mixins.scss */
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 11, ../sass/components/_main.scss */
+.content-container {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+/* line 43, ../sass/base/_mixins.scss */
+.content-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 19, ../sass/components/_main.scss */
+.col {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+@media (max-width: 600px) {
+  /* line 19, ../sass/components/_main.scss */
+  .col {
+    width: 100%;
+  }
+}
+
+/* line 29, ../sass/components/_main.scss */
+.cf {
+  clear: both;
+}
+
+/* line 2, ../sass/components/_section.scss */
+.brokerage_account_section {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2% 2% 9% 2%;
+  background-color: #ffffff;
+  font-size: 1.4rem;
+}
+/* line 11, ../sass/components/_section.scss */
+.brokerage_account_section h2 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+/* line 15, ../sass/components/_section.scss */
+.brokerage_account_section.active-section {
+  left: 0;
+}
+/* line 17, ../sass/components/_section.scss */
+.brokerage_account_section.active-section[data-index="4"] {
+  height: 1000px;
+}
+/* line 21, ../sass/components/_section.scss */
+.brokerage_account_section.inactive-right {
+  left: 100%;
+}
+/* line 24, ../sass/components/_section.scss */
+.brokerage_account_section.inactive-left {
+  left: -100%;
+}
+@media (max-width: 600px) {
+  /* line 28, ../sass/components/_section.scss */
+  .brokerage_account_section h2 {
+    margin-bottom: 0;
+  }
+}
+
+/* line 34, ../sass/components/_section.scss */
+.brokerage_info-container {
+  display: table;
+  width: 100%;
+  padding: 0 2% 25px 2%;
+}
+/* line 40, ../sass/components/_section.scss */
+.brokerage_info-container.col {
+  width: 50%;
+  float: left;
+}
+@media (max-width: 600px) {
+  /* line 40, ../sass/components/_section.scss */
+  .brokerage_info-container.col {
+    width: 100%;
+  }
+}
+/* line 47, ../sass/components/_section.scss */
+.brokerage_info-container .t_row {
+  display: table-row;
+}
+/* line 51, ../sass/components/_section.scss */
+.brokerage_info-container .t_cell {
+  display: table-cell;
+  border-bottom: 1px solid #b5b5b5;
+  padding: 5px;
+  text-align: right;
+}
+/* line 56, ../sass/components/_section.scss */
+.brokerage_info-container .t_cell:first-of-type {
+  text-align: left;
+}
+
+/* line 62, ../sass/components/_section.scss */
+.statement-period {
+  font-weight: 700;
+  display: block;
+}
+
+/* line 67, ../sass/components/_section.scss */
+.info {
+  padding: 2%;
+  background-color: #9cadbc;
+}
+
+/* line 72, ../sass/components/_section.scss */
+.address {
+  display: block;
+}
+
+/* line 76, ../sass/components/_section.scss */
+.disclosure.bullet-point {
+  padding: 0 10px;
+  margin: 14px 0;
+  position: relative;
+}
+/* line 80, ../sass/components/_section.scss */
+.disclosure.bullet-point:before {
+  content: "\2022";
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+/* line 88, ../sass/components/_section.scss */
+.all-text .col {
+  padding: 0 1%;
+  width: 48%;
+}
+
+/* line 93, ../sass/components/_section.scss */
+.paragraph-icon {
+  float: right;
+}
+
+/* line 97, ../sass/components/_section.scss */
+.t_cell sup,
+p sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+/* line 1, ../sass/components/_interactive.scss */
+.clickable {
+  width: 100%;
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: #393c3f;
+  border: 1px solid transparent;
+}
+/* line 8, ../sass/components/_interactive.scss */
+.clickable:hover {
+  color: #12659c;
+}
+/* line 10, ../sass/components/_interactive.scss */
+.clickable:hover svg {
+  fill: #12659c;
+}
+/* line 14, ../sass/components/_interactive.scss */
+.clickable svg {
+  fill: #33383f;
+}
+/* line 17, ../sass/components/_interactive.scss */
+.clickable.half-width {
+  width: 50%;
+}
+
+/* line 23, ../sass/components/_interactive.scss */
+.clickable-container h2 {
+  padding: 0 2%;
+}
+
+/* line 30, ../sass/components/_interactive.scss */
+.clickable-container.active h2 a,
+.clickable-container.active h2 svg,
+.clickable-container.active .t_cell a.clickable,
+.clickable-container.active .t_cell a.clickable svg {
+  color: #12659c;
+  fill: #12659c;
+}
+
+/* line 38, ../sass/components/_interactive.scss */
+.clickable-container h3 a.clickable,
+.clickable-container p a.clickable,
+.active-section .brokerage_info-container h3,
+.active-section .brokerage_info-container h3:hover {
+  text-transform: none;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #00325b;
+  border-bottom: 1px solid transparent;
+}
+/* line 47, ../sass/components/_interactive.scss */
+.clickable-container h3 a.clickable:hover,
+.clickable-container p a.clickable:hover,
+.active-section .brokerage_info-container h3:hover,
+.active-section .brokerage_info-container h3:hover:hover {
+  border-bottom: 1px solid transparent;
+}
+
+/* line 52, ../sass/components/_interactive.scss */
+.clickable-container p a.clickable {
+  margin: 0;
+}
+
+/* line 56, ../sass/components/_interactive.scss */
+.information .infobox h3 {
+  text-transform: none;
+  color: #ffffff;
+  font-weight: 400;
+  padding-top: 1rem;
+}
+
+/* line 63, ../sass/components/_interactive.scss */
+.active-section .brokerage_info-container h4,
+.active-section .clickable-container h4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* line 70, ../sass/components/_interactive.scss */
+.active {
+  transition: all 1s;
+  position: relative;
+  z-index: 9;
+  background: #ffffff;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+/* line 43, ../sass/base/_mixins.scss */
+.active:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 79, ../sass/components/_interactive.scss */
+.animate {
+  transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+}
+
+/* line 84, ../sass/components/_interactive.scss */
+.info-overlay {
+  transition: all 1s;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+/* line 90, ../sass/components/_interactive.scss */
+.info-overlay.active-info {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* line 96, ../sass/components/_interactive.scss */
+.inactive-table {
+  background-color: transparent;
+}
+
+/* line 100, ../sass/components/_interactive.scss */
+.information {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+  transition: all 1s;
+  position: absolute;
+  z-index: -1;
+  padding: 20px;
+  color: #393c3f;
+  font-size: 16px;
+  width: 47%;
+  background-color: #9cadbc;
+}
+/* line 110, ../sass/components/_interactive.scss */
+.information .info-h2 {
+  color: #ffffff;
+}
+/* line 114, ../sass/components/_interactive.scss */
+.information .close-btn svg {
+  fill: #393c3f;
+  float: right;
+}
+/* line 118, ../sass/components/_interactive.scss */
+.information .close-btn span {
+  text-indent: -1000px;
+  overflow: hidden;
+  display: block;
+}
+/* line 124, ../sass/components/_interactive.scss */
+.information ul {
+  padding: 0 0 0 26px;
+}
+/* line 126, ../sass/components/_interactive.scss */
+.information ul li {
+  list-style-type: disc;
+}
+/* line 128, ../sass/components/_interactive.scss */
+.information ul li ul li {
+  list-style-type: circle;
+}
+/* line 133, ../sass/components/_interactive.scss */
+.information.active-info {
+  z-index: 10;
+}
+/* line 136, ../sass/components/_interactive.scss */
+.information .alert {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 140, ../sass/components/_interactive.scss */
+.information.topLeft {
+  left: -100%;
+}
+/* line 142, ../sass/components/_interactive.scss */
+.information.topLeft.active-info {
+  left: 1%;
+}
+/* line 146, ../sass/components/_interactive.scss */
+.information.topRight {
+  right: -100%;
+}
+/* line 148, ../sass/components/_interactive.scss */
+.information.topRight.active-info {
+  right: 1%;
+}
+/* line 152, ../sass/components/_interactive.scss */
+.information.mid {
+  bottom: -100%;
+}
+/* line 154, ../sass/components/_interactive.scss */
+.information.mid.active-info {
+  bottom: 100px;
+}
+/* line 158, ../sass/components/_interactive.scss */
+.information.midRight {
+  right: -100%;
+}
+/* line 160, ../sass/components/_interactive.scss */
+.information.midRight.active-info {
+  right: 2%;
+}
+/* line 164, ../sass/components/_interactive.scss */
+.information.bottomLeft {
+  left: -100%;
+}
+/* line 166, ../sass/components/_interactive.scss */
+.information.bottomLeft.active-info {
+  left: 1%;
+}
+/* line 170, ../sass/components/_interactive.scss */
+.information.bottomRight {
+  right: -100%;
+}
+/* line 172, ../sass/components/_interactive.scss */
+.information.bottomRight.active-info {
+  right: 1%;
+}
+
+/* line 178, ../sass/components/_interactive.scss */
+.info {
+  clear: both;
+  box-shadow: inset -2px 5px 6px -6px rgba(0, 0, 0, 0.4);
+}
+/* line 181, ../sass/components/_interactive.scss */
+.info h2 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* line 187, ../sass/components/_interactive.scss */
+.active-section .important-info {
+  width: 50%;
+  margin: 0 auto;
+  background: #00325b;
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  margin-left: -25%;
+  text-align: center;
+}
+/* line 43, ../sass/base/_mixins.scss */
+.active-section .important-info:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 197, ../sass/components/_interactive.scss */
+.active-section .important-info:hover {
+  background: #269092;
+}
+/* line 199, ../sass/components/_interactive.scss */
+.active-section .important-info:hover svg {
+  fill: #ffffff;
+}
+/* line 203, ../sass/components/_interactive.scss */
+.active-section .important-info svg {
+  fill: #ffffff;
+}
+/* line 206, ../sass/components/_interactive.scss */
+.active-section .important-info .important-info-h3 {
+  line-height: 50px;
+}
+/* line 208, ../sass/components/_interactive.scss */
+.active-section .important-info .important-info-h3 a {
+  color: #ffffff;
+  padding: 5px 0;
+  margin-top: 3px;
+}
+
+/* line 216, ../sass/components/_interactive.scss */
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* line 2, ../sass/components/_nav.scss */
+.section-selector ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+/* line 7, ../sass/components/_nav.scss */
+.section-selector li {
+  float: left;
+}
+/* line 10, ../sass/components/_nav.scss */
+.section-selector a {
+  display: block;
+  margin: 0 10px;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #393c3f;
+  border-bottom: 1px solid transparent;
+}
+/* line 18, ../sass/components/_nav.scss */
+.section-selector .current {
+  color: #00325b;
+  border-bottom: 1px solid #393c3f;
+}
+/* line 22, ../sass/components/_nav.scss */
+.section-selector [data-page="prev"]:before {
+  content: "\25C0";
+  padding-right: 8px;
+  font-size: 1.4rem;
+}
+/* line 27, ../sass/components/_nav.scss */
+.section-selector [data-page="next"]:after {
+  content: "\25B6";
+  padding-left: 8px;
+  font-size: 1.4rem;
+}
+
+/**
+ * @file
+ * Print styling
+ *
+ * We provide some sane print styling for Drupal using Zen's layout method.
+ */
+/**
+ * By importing this CSS file as media "all", we allow this print file to be
+ * aggregated with other stylesheets, for improved front-end performance.
+ */
+@media print {
+  /* Underline all links. */
+  /* line 15, ../sass/_print.scss */
+  a:link,
+  a:visited {
+    text-decoration: underline !important;
+    /* Don't underline header. */
+  }
+  /* line 20, ../sass/_print.scss */
+  a:link.header__site-link,
+  a:visited.header__site-link {
+    text-decoration: none !important;
+  }
+
+  /* line 25, ../sass/_print.scss */
+  #content {
+    /* Add visible URL after links. */
+    /* Only display useful links. */
+    /* Add visible title after abbreviations. */
+  }
+  /* line 27, ../sass/_print.scss */
+  #content a[href]:after {
+    content: " (" attr(href) ")";
+    font-weight: normal;
+    font-size: 10px;
+  }
+  /* line 34, ../sass/_print.scss */
+  #content a[href^="javascript:"]:after,
+  #content a[href^="#"]:after {
+    content: "";
+  }
+  /* line 40, ../sass/_print.scss */
+  #content abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* Un-float the content. */
+  /* line 46, ../sass/_print.scss */
+  #content {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Turn off any background colors or images. */
+  /* line 54, ../sass/_print.scss */
+  body,
+  #page,
+  #main,
+  #content {
+    color: #000;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Hide sidebars and nav elements. */
+  /* line 64, ../sass/_print.scss */
+  #skip-link,
+  #toolbar,
+  #navigation,
+  .region-sidebar-first,
+  .region-sidebar-second,
+  #footer,
+  .breadcrumb,
+  .tabs,
+  .action-links,
+  .links,
+  .book-navigation,
+  .forum-topic-navigation,
+  .pager,
+  .feed-icons {
+    visibility: hidden;
+    display: none;
+  }
+}
+/* SMACSS theme rules */
+/* @import "theme-A"; */
+/* @import "theme-B"; */
+
+/*# sourceMappingURL=brokerage_module.css.map */

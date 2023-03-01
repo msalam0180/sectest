@@ -1,0 +1,23 @@
+uuid: 4304f137-f3b1-430f-b365-09e5c209d182
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_top_right_column
+    - node.type.secarticle
+  module:
+    - text
+_core:
+  default_config_hash: xH7Tbz5cW13z8XWDSwYEkBK4164YvwkpZ_VWrXUMd-s
+id: node.secarticle.field_top_right_column
+field_name: field_top_right_column
+entity_type: node
+bundle: secarticle
+label: 'Top Right Column'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

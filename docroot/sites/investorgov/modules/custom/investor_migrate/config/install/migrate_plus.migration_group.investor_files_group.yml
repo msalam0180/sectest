@@ -1,0 +1,23 @@
+# Migration Group for nodes
+id: investor_files_group
+label: Investor Files Group
+description: Common config for Investor file migrations
+
+# Here we add any default configuration settings to be shared
+# among all migrations in the group.
+shared_configuration:
+  source:
+    key: investor_d7_migrate
+
+  destination:
+    plugin: entity:file
+
+  process:
+    langcode:
+      plugin: default_value
+      default_value: 'en'
+    uid:
+      plugin: default_value
+      default_value: 1
+
+  dependencies: { }

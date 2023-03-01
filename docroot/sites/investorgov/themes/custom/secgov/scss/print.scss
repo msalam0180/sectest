@@ -1,0 +1,90 @@
+//
+// Print Styles
+// Styles that control the site when it is printed
+// This compiles to a seperate "Print" stylesheet
+//
+// --------------------------------------------------
+@import 'general/vars';
+@import 'general/mixins';
+@media print {
+
+  body { 
+    margin: 0;
+    padding: 0;
+  }
+
+	a {
+		color: $charcoal;
+		text-decoration: underline;
+	}
+
+	container {
+		width: 100%;
+		float: left;
+		clear: both;
+		display: block;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 0;
+		direction: ltr;
+		height: 100%;
+		padding-bottom: 54px;
+
+    #sidebar-first { display: none; }
+
+    #content-wrapper {
+      width: 100%;
+      float: left;
+      margin-right: 0;
+      display: block;
+      font-size: 1em;
+      margin-right: 0px;
+      height: inherit;
+    }
+
+    #sidebar-second, .columns-1, .columns-2, .columns-3, 
+    .panel-2col .panel-col-top, 
+    .panel-2col .panel-col-first, .panel-2col .panel-col-last  {
+      clear: both;
+      display: block;
+      float: none;
+      margin: 10px 0;
+      width: 100% !important;
+    }
+  }
+  
+.ui-tabs-panel {
+  display: block;
+  border: 1px solid $border-color;
+  min-height: 315p  x;
+  padding: 1em 1.4em;
+  background: none;
+
+  .columns-1 {
+    clear: both;
+    display: block;
+    float: none !important;
+    margin: 0;
+    width: 100%;
+
+    img {
+      display: inline-block;
+      margin-right: 10px;
+      width: 40px;
+    }
+
+    br { display: none; }
+  }
+}
+
+  #appsIconsList, .appIconsDetail, #panels-ipe-tray, .ipe-tab-wrapper, .ipe-tabs, .ipe-tab { 
+    display: none !important; 
+    visibility: hidden;
+  }
+
+  .hide-for-print {
+    display: none;
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,9 @@
+// HTML Element: List Item
+
+li {
+  @extend %usa-list-item;
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

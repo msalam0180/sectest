@@ -1,0 +1,23 @@
+uuid: 401acc4d-8d06-4313-a9e1-1486a1bc32ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_left_nav_override
+    - node.type.page
+id: node.page.field_left_nav_override
+field_name: field_left_nav_override
+entity_type: node
+bundle: page
+label: 'Left Navigation'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:menu'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,75 @@
+uuid: 7689214f-c996-465e-aa79-19110a71aa9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sec_hero.body
+    - field.field.node.sec_hero.field_creator
+    - field.field.node.sec_hero.field_display_title
+    - field.field.node.sec_hero.field_sec_content_approver
+    - field.field.node.sec_hero.field_tags
+    - field.field.node.sec_hero.scheduling_options
+    - node.type.sec_hero
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+_core:
+  default_config_hash: 4QUXnPYDh0Tika5x0xcwjDQ-Hkply-ZA-5Tkt7tQsl0
+id: node.sec_hero.default
+targetEntityType: node
+bundle: sec_hero
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_creator:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_display_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_sec_content_approver:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_tags: true
+  langcode: true
+  scheduling_options: true
+  search_api_excerpt: true

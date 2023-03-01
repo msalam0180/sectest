@@ -1,0 +1,48 @@
+uuid: d5966c3a-ab16-4bd4-9594-631a1ba0c2cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_video_file
+    - media.type.video
+  module:
+    - file
+    - filefield_paths
+third_party_settings:
+  filefield_paths:
+    enabled: true
+    file_path:
+      value: '[date:custom:Y]-[date:custom:m]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    file_name:
+      value: '[file:ffp-name-only-original].[file:ffp-extension-original]'
+      options:
+        slashes: false
+        pathauto: false
+        transliterate: false
+    redirect: false
+    retroactive_update: false
+    active_updating: false
+_core:
+  default_config_hash: OA1qtcEH8xxQhIPvf4TykZOp1MqSTA1R4HoWxbcWZD0
+id: media.video.field_media_video_file
+field_name: field_media_video_file
+entity_type: media
+bundle: video
+label: 'Video file'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: mp4
+  max_filesize: '1 GB'
+  description_field: false
+field_type: file

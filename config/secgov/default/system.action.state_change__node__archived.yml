@@ -1,0 +1,11 @@
+uuid: 05ae38af-d18b-42a9-96cb-7cbfbed23518
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__node__archived
+label: 'Set Content as Unpublished'
+type: node
+plugin: 'state_change:node__archived'
+configuration: {  }

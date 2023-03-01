@@ -1,0 +1,8 @@
+uuid: 0b05914d-9af5-4491-a5b8-01bad2b871dd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Types of Fraud'
+vid: types_of_fraud
+description: ''
+weight: -6

@@ -1,0 +1,10 @@
+uuid: 1891c49e-d903-4591-ace2-4445c510f836
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7I_lpTTqU-uWAD1rafJE1K6for8cuerRoGXtM2269Mc
+id: investor-information-menu
+label: 'Investor Information Menu'
+description: 'Investor Information Menu'
+locked: false

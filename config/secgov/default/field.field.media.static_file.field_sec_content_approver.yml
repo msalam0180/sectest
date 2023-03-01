@@ -1,0 +1,36 @@
+uuid: 90beba98-1599-479c-b370-5b6448835e6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_sec_content_approver
+    - media.type.static_file
+id: media.static_file.field_sec_content_approver
+field_name: field_sec_content_approver
+entity_type: media
+bundle: static_file
+label: 'SEC Content Approver'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+    filter:
+      type: role
+      role:
+        content_approver: content_approver
+        bad_actors: '0'
+        administrator: '0'
+        content_creator: '0'
+        sitebuilder: '0'
+        division_office_admin: '0'
+    include_anonymous: false
+field_type: entity_reference

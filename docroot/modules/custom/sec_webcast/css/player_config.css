@@ -1,0 +1,7 @@
+#config-object { display: none; }
+span#config-object pre {
+    background: #eee;
+    padding: 1em;
+    color: #333;
+    border-left: 1px solid rgba(204, 204, 204, 0.3);
+}

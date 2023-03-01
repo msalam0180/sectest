@@ -1,0 +1,405 @@
+id: sec_idd
+label: JSON import of Individual Defendants Database
+migration_group: sec
+migration_tags:
+  - sec_idd
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: json
+  item_selector: 0
+  urls: http://secgovdcmdev1.prod.acquia-sites.com/files/migration/source/sec_idd.json
+  fields:
+    -
+      name: id
+      label: id
+      selector: id
+    -
+      name: action_number
+      label: 'action_number'
+      selector: action_number
+    -
+      name: date_filed
+      label: 'date_filed'
+      selector: date_filed
+    -
+      name: action_related_name_id
+      label: 'action_related_name_id'
+      selector: action_related_name_id
+    -
+      name: judgment_date
+      label: 'judgment_date'
+      selector: judgment_date
+    -
+      name: published_not_published
+      label: published_not_published
+      selector: published_not_published
+    -
+      name: ap_usdc
+      label: 'ap_usdc'
+      selector: ap_usdc
+    -
+      name: individual_name_in_document
+      label: 'individual_name_in_document'
+      selector: individual_name_in_document
+    -
+      name: also_known_as
+      label: 'also_known_as'
+      selector: also_known_as
+    -
+      name: first
+      label: 'first'
+      selector: first
+    -
+      name: mi
+      label: 'mi'
+      selector: mi
+    -
+      name: last
+      label: 'last'
+      selector: last
+    -
+      name: suffix
+      label: 'suffix'
+      selector: suffix
+    -
+      name: age_in_document
+      label: 'age_in_document'
+      selector: age_in_document
+    -
+      name: state
+      label: 'state'
+      selector: state
+    -
+      name: basis_for_state
+      label: 'basis_for_state'
+      selector: basis_for_state
+    -
+      name: action_name_in_document
+      label: 'action_name_in_document'
+      selector: action_name_in_document
+    -
+      name: court
+      label: 'court'
+      selector: court
+    -
+      name: civ_action_no_ap_file_no
+      label: 'civ_action_no_ap_file_no'
+      selector: civ_action_no_ap_file_no
+    -
+      name: other_information
+      label: 'other_information'
+      selector: other_information
+    -
+      name: file_no_link_aps
+      label: 'file_no_link_aps'
+      selector: file_no_link_aps
+    -
+      name: file_no_link_name_aps
+      label: 'file_no_link_name_aps'
+      selector: file_no_link_name_aps
+    -
+      name: judgment_final_order_appealed
+      label: 'judgment_final_order_appealed'
+      selector: judgment_final_order_appealed
+    -
+      name: cms_notes
+      label: 'cms_notes'
+      selector: cms_notes
+    - 
+      name: related_document_link_1
+      label: 'related_document_link_1'
+      selector: related_document_link_1
+    - 
+      name: related_document_link_2
+      label: 'related_document_link_2'
+      selector: related_document_link_2
+    - 
+      name: related_document_link_3
+      label: 'related_document_link_3'
+      selector: related_document_link_3 
+    - 
+      name: related_document_link_4
+      label: 'related_document_link_4'
+      selector: related_document_link_4
+    - 
+      name: related_document_link_5
+      label: 'related_document_link_5'
+      selector: related_document_link_5
+    - 
+      name: related_document_link_6
+      label: 'related_document_link_6'
+      selector: related_document_link_6
+
+
+  ids:
+    id:
+      type: string
+  constants:
+    delimiter: ','
+process:
+
+  type:
+    plugin: default_value
+    default_value: ba
+
+  title: action_related_name_id
+
+  status:
+    plugin: static_map
+    source: published_not_published
+    map:
+      'Not Published: Pending': 0
+      'Not Published: Loss': 0
+      'Not Published: Other': 0
+      'Published': 1
+
+  uid:
+    plugin: default_value
+    default_value: 1
+
+
+  created: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: date_filed
+    -
+      plugin: format_date
+      from_format: 'm/d/Y'
+      to_format: 'Y-m-d'
+    -
+      plugin: date_import
+      return_timestamp: TRUE
+  changed: '@created'
+  published_at: '@created'
+  
+  body:
+    plugin: html_import
+    source: other_information
+#
+#  Drupal content type user-defined fields
+#
+  
+  field_action_name_in_document: action_name_in_document
+  field_action_number: action_number
+  field_action_related_name_id: action_related_name_id
+  field_age_in_document: 
+    plugin: skip_on_empty
+    method: process
+    source: age_in_document
+  field_also_known_as:  
+    plugin: skip_on_empty
+    method: process
+    source: also_known_as
+  field_ap_usdc: 
+    plugin: static_map
+    source: ap_usdc
+    map:
+      AP: ap
+      USDC: usdc
+  field_civ_action_no_ap_file_no: civ_action_no_ap_file_no
+  field_cms_notes:  
+    plugin: skip_on_empty
+    method: process
+    source: cms_notes
+  field_court:  
+    plugin: skip_on_empty
+    method: process
+    source: court
+  field_date_filed:
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: date_filed
+    -
+      plugin: format_date
+      from_format: 'm/d/Y'
+      to_format: 'Y-m-d'
+  field_display_no_display:
+    -
+      plugin: skip_on_value
+      value: 'Published'
+      method: process
+      source: published_not_published
+    -
+      plugin: static_map
+      map:
+        'Not Published: Pending': 0
+        'Not Published: Loss': 1
+        'Not Published: Other': 2
+  field_first_name:  
+    plugin: skip_on_empty
+    method: process
+    source: first
+  field_middle_initial:  
+    plugin: skip_on_empty
+    method: process
+    source: mi
+  field_last_name:  
+    plugin: skip_on_empty
+    method: process
+    source: last
+  field_suffix:  
+    plugin: skip_on_empty
+    method: process
+    source: suffix
+  field_individual_name_in_documen: 
+    plugin: skip_on_empty
+    method: process
+    source: individual_name_in_document
+  field_judgment_final_order_appea:  
+    plugin: skip_on_empty
+    method: process
+    source: judgment_final_order_appealed
+  field_judgment_date: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: judgment_date
+    -
+      plugin: format_date
+      from_format: 'm/d/Y'
+      to_format: 'Y-m-d'
+  
+  field_state_idd: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: state
+    -
+      plugin: static_map
+      map:
+        'Alabama - AL': 'Alabama'
+        'Alaska - AK': 'Alaska'
+        'Arizona - AZ': 'Arizona'
+        'Arkansas - AR': 'Arkansas'
+        'California - CA': 'California'
+        'Colorado - CO': 'Colorado'
+        'Connecticut - CT': 'Connecticut'
+        'Delaware - DE': 'Delaware'
+        'Florida - FL': 'Florida'
+        'Georgia - GA': 'Georgia'
+        'Hawaii - HI': 'Hawaii'
+        'Idaho - ID': 'Idaho'
+        'Illinois - IL': 'Illinois'
+        'Indiana - IN': 'Indiana'
+        'Iowa - IA': 'Iowa'
+        'Kansas - KS': 'Kansas'
+        'Kentucky - KY': 'Kentucky'
+        'Louisiana - LA': 'Louisiana'
+        'Maine - ME': 'Maine'
+        'Maryland - MD': 'Maryland'
+        'Massachusetts - MA': 'Massachusetts'
+        'Michigan - MI': 'Michigan'
+        'Minnesota - MN': 'Minnesota'
+        'Mississippi - MS': 'Mississippi'
+        'Missouri - MO': 'Missouri'
+        'Montana - MT': 'Montana'
+        'Nebraska - NE': 'Nebraska'
+        'Nevada - NV': 'Nevada'
+        'New Hampshire - NH': 'New Hampshire'
+        'New Jersey - NJ': 'New Jersey'
+        'New Mexico - NM': 'New Mexico'
+        'New York - NY': 'New York'
+        'North Carolina - NC': 'North Carolina'
+        'North Dakota - ND': 'North Dakota'
+        'Ohio - OH': 'Ohio'
+        'Oklahoma - OK': 'Oklahoma'
+        'Oregon - OR': 'Oregon'
+        'Pennsylvania - PA': 'Pennsylvania'
+        'Rhode Island - RI': 'Rhode Island'
+        'South Carolina - SC': 'South Carolina'
+        'South Dakota - SD': 'South Dakota'
+        'Tennessee - TN': 'Tennessee'
+        'Texas - TX': 'Texas'
+        'Utah - UT': 'Utah'
+        'Vermont - VT': 'Vermont'
+        'Virginia - VA': 'Virginia'
+        'Washington - WA': 'Washington'
+        'West Virginia - WV': 'West Virginia'
+        'Wisconsin - WI': 'Wisconsin'
+        'Wyoming - WY': 'Wyoming'
+        'American Samoa - AS': 'American Samoa'
+        'District of Columbia - DC': 'District of Columbia'
+        'Federated States of Micronesia - FM': 'Federated States of Micronesia'
+        'Guam - GU': 'Guam'
+        'Marshall Islands - MH': 'Marshall Islands'
+        'Northern Mariana Islands - MP': 'Northern Mariana Islands'
+        'Palau - PW': 'Palau'
+        'Puerto Rico - PR': 'Puerto Rico'
+        'Virgin Islands - VI': 'Virgin Islands'
+        'Foreign Country': 'Foreign Country'
+      
+  field_basis_for_state: 
+    - 
+      plugin: skip_on_empty
+      method: process
+      source: basis_for_state
+    -
+      plugin: static_map
+      map:
+        'State/Residence': state_residence
+        'State/License': state_license
+        'State/Registrant Locale ': state_registrant_locale
+        'State/Registrant Locale': state_registrant_locale
+        'State/Other Basis': state_other_basis
+      
+  field_related_documents:
+    -
+      plugin: concat
+      source:
+        - file_no_link_aps
+        - constants/delimiter
+        - related_document_link_1
+        - constants/delimiter
+        - related_document_link_2
+        - constants/delimiter
+        - related_document_link_3
+        - constants/delimiter
+        - related_document_link_4
+        - constants/delimiter
+        - related_document_link_5
+        - constants/delimiter
+        - related_document_link_6
+        - constants/delimiter
+    -
+      plugin: str_replace
+      search: ',,'
+      replace: ''
+    -
+      plugin: str_replace
+      regex: true
+      search: '/,$/i'
+      replace: ''
+    -
+      plugin: str_replace
+      regex: true
+      search: '/^,/i'
+      replace: ''
+    -
+      plugin: explode
+      strict: false
+      delimiter: ','
+    -
+      plugin: migration_lookup
+      no_stub: true
+      migration: 
+         - sec_idd_related_docs_0
+         - sec_idd_related_docs_1
+         - sec_idd_related_docs_2
+         - sec_idd_related_docs_3
+         - sec_idd_related_docs_4
+         - sec_idd_related_docs_5
+         - sec_idd_related_docs_6
+    -
+      plugin: array_filter
+    -
+      plugin: sub_process
+      process:
+        target_id: '0'
+        target_revision_id: '1'
+    
+
+destination:
+  plugin: entity:node

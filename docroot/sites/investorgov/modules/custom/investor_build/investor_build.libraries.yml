@@ -1,0 +1,9 @@
+edgar-search:
+  css:
+    theme:
+      css/smartSearch.css: {}
+      css/investor_edgar_search.css: {}
+  js:
+    js/smartSearch.js: {}
+  dependencies:
+    - core/drupal

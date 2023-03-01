@@ -1,0 +1,30 @@
+uuid: b602740a-5bfa-45ec-9d74-37d1f0384d8c
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: wFdh0Uac5V4uVVNk6giBApNkPMhFordMcKV36qRCBRY
+id: promoblocksecheadquarters
+theme: secgov
+region: header
+weight: -29
+provider: null
+plugin: 'block_content:a96b122d-aa4a-40bc-8d7e-04ad660cc9c6'
+settings:
+  id: 'block_content:a96b122d-aa4a-40bc-8d7e-04ad660cc9c6'
+  label: 'Promo Block: SEC Headquarters'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: /newsroom

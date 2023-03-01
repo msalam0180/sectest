@@ -1,0 +1,21 @@
+uuid: ceea3f7f-ffa4-477b-8ddb-ecee593bfc17
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description_abstract_perso
+    - node.type.secperson
+_core:
+  default_config_hash: wZ8r9FsjflwO7HWlzDyTFCgdxwgOm8aH63_Ycx6aVmM
+id: node.secperson.field_description_abstract_perso
+field_name: field_description_abstract_perso
+entity_type: node
+bundle: secperson
+label: Description/Abstract
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

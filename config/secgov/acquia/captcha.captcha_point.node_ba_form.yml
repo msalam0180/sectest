@@ -1,0 +1,7 @@
+uuid: facb0b90-9417-4a38-921c-58a10dbef55b
+langcode: en
+status: false
+dependencies: {  }
+formId: node_ba_form
+captchaType: default
+label: null

@@ -1,0 +1,31 @@
+uuid: ec0b03fa-b1fa-4e6c-96df-3c70d8f14b9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_type_secarticle
+    - node.type.article_type
+    - node.type.secarticle
+_core:
+  default_config_hash: IKAgdA_cW8Q0ABGX6dOL7b0PSby_s0TwKrvngXvm32Q
+id: node.secarticle.field_article_type_secarticle
+field_name: field_article_type_secarticle
+entity_type: node
+bundle: secarticle
+label: 'Article Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article_type: article_type
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

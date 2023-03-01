@@ -1,0 +1,10 @@
+uuid: 941fa208-3547-4e40-bc2b-01cefac9a78a
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: _bG4OLBcGoQOmAoZHXFBsiGRyADpgFV3oVZNce6JZko
+id: about
+label: About
+description: 'About Menu'
+locked: false

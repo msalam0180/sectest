@@ -1,0 +1,89 @@
+//
+// CONTENT TYPE: PERSON - DETAIL PAGES (SECPERSON)
+// TODO: Description of purpose
+// 
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+
+body.node--type-secperson {
+	
+  // Person's Image
+  .block.field_photo_person {
+    @include span(4);
+    display: block;
+    margin-bottom: 2px;
+    margin-top: 5px;
+    padding: 0;
+    z-index: 99;
+    a {
+      padding-bottom: 4px;
+    }
+    img {
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  }
+
+  // Person's Name - Node Title
+  .block.title {
+    @include span(8);
+    clear: none;
+    margin-right: 0;
+    padding: 0 0 0 5px;
+    z-index: 10;
+
+    span.title {
+      color: rgb(111, 116, 121);
+      // @include raleway;
+      font-weight: 300;
+      font-size: 2.4em;
+      line-height: 1.4;
+
+      em {
+        display: block;
+        font-size: 0.75em;
+      }
+    }
+  }
+
+  // Node Body
+  .block.body {
+    clear: none;
+    width: inherit;
+
+    .articleTitle {
+      padding: 0 0 0 5px;
+    }
+    .bioOtherTitle {
+      font-weight: 300;
+      font-size: 28px;
+      font-style: italic;
+    }
+
+    ul { margin-left: 0; list-style: none;  }
+  }
+
+  // Bottom Center Column
+  .block.field_bottom_center_column_perso {
+    clear: both;
+    display: block;
+  }
+
+  // Previous SEC Positions
+  .block.field_position_history h2 {
+    font-size: inherit;
+  }
+
+  .block-region-left {
+    .block.field_photo_person {
+      @include span(6);
+    }
+    .block.title {
+      @include span(6);
+      margin-right: 0;
+      padding-left: 0;
+    }
+  }
+
+}

@@ -1,0 +1,200 @@
+<?php
+
+/**
+ *  Implements hook_theme_suggestions_block_alter()
+ */
+function investor_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    // Add theme suggestions for all custom block types
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+
+    // If the block type is a feature-block, remove the block__block_content
+    // suggestion because it's overriding what we want to use
+    $block_type = $variables['elements']['content']['#block_content']->bundle();
+    if ( $block_type == 'feature_block' || $block_type == 'layout_block') {
+      foreach ($suggestions as $key => $s) {
+        if ($s == "block__block_content") {
+          unset ($suggestions[$key]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ *  Implements hook_theme_suggestions_field_alter
+ */
+function investor_theme_suggestions_field_alter(&$suggestions, $variables) {
+  // Add suggestions for fields depending on view_mode
+  $sanitized_view_mode = strtr($variables['element']['#view_mode'], '.', '_');
+  $suggestions[] = 'field__' . $variables['element']['#field_name'] . '__' . $sanitized_view_mode;
+
+  // If the view_mode a feature-item, remove the field.html.twig suggestion
+  /*
+  if ( $sanitized_view_mode == 'feature_item') {
+    foreach ($suggestions as $key => $s) {
+      if ($s == "field") {
+        unset ($suggestions[$key]);
+      }
+    }
+  }
+  */
+}
+
+/**
+ * Implements hook_theme_suggestions_taxonomy_term_alter().
+ */
+function investor_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  // Add view mode theme suggestions.
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+/**
+ * Implements template_preprocess_block().
+ */
+function investor_preprocess_block(&$vars) {
+
+  // Add all the block content for the feature item blocks template
+  if (!empty($vars['content']['#block_content']) && $vars['content']['#block_content']->bundle() == 'feature_block') {
+    $block_content = $vars['content']['#block_content'];
+    // Load the fields that we're going to use as classes to format the block
+    $vars['field_color_scheme'] = $block_content->get('field_color_scheme')->getValue()[0]['value'];
+    $vars['field_width_factor'] = $block_content->get('field_width_factor')->getValue()[0]['value'];
+    // Load the title to use in the block header
+    $vars['field_title'] = $block_content->get('field_title')->getValue()[0]['value'];
+    // Load the term for the icon in the header -> get the file field on the term -> convert it to a renderable array, hiding label
+    if($block_content->get('field_icon')->getValue()) {
+      $vars['field_icon'] = \Drupal\taxonomy\Entity\Term::load($block_content->get('field_icon')->getValue()[0]['target_id'])->get('field_icon')->view(['label' => 'hidden']);
+    }
+    // Load the items paragraph
+    $vars['field_items'] = $block_content->get('field_items')->view(['view_mode' => 'feature_item', 'label' => 'hidden']);
+    // Load the bottom link
+    $vars['field_link'] = $block_content->get('field_link')->view(['view_mode' => 'feature_item', 'label' => 'hidden',]);
+    // Load the URI for the background image, if it exists
+    if($block_content->get('field_background_image')->getValue()) {
+      $vars['field_background_image_uri'] = \Drupal\file\Entity\File::load($block_content->get('field_background_image')->getValue()[0]['target_id'])->getFileUri();
+    }
+  }
+  else if (!empty($vars['content']['#block_content']) && $vars['content']['#block_content']->bundle() == 'layout_block') {
+    $block_content = $vars['content']['#block_content'];
+
+    // Load the fields that we're going to use as classes to format the block
+    if ($block_content->get('field_layout_item_type')->getValue()) {
+      $vars['field_layout_item_type'] = $block_content->get('field_layout_item_type')
+        ->getValue()[0]['value'];
+
+      // If it's a divider, we want to send along the plain text, so we can avoid
+      // markup being added and put it in an <h2> tag in the template
+      if ($vars['field_layout_item_type'] == 'divider' && $block_content->get('field_text')->getValue()) {
+        $vars['field_text_plain'] = $block_content->get('field_text')->getValue()[0]['value'];
+        unset($vars['content']['field_text']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function investor_preprocess_html(&$variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+  }
+
+  if ($node && method_exists($node,'id')) {
+    $variables['attributes']['class'][] = 'page-node-' . $node->id();
+  }
+
+  //add support for gallery captions/titles
+  if ($node && method_exists($node,'bundle') && $node->bundle() == "gallery") {
+    $showTitles = $node->field_show_media_titles->value;
+    $showCaptions = $node->field_show_media_captions->value;
+    if (!$showTitles) $variables['attributes']['class'][] = "hideGalleryTitles";
+    if (!$showCaptions) $variables['attributes']['class'][] = "hideGalleryCaptions";
+  }
+
+  // handle Show Featured Content boolean
+  if($node && method_exists($node,'bundle') &&  $node->bundle() != "featured"){
+    $showFeaturedContent = $node->field_show_featured_content->value;
+    if (!$showFeaturedContent) $variables['attributes']['class'][] = "hideFeaturedContent";
+  }
+}
+
+
+/**
+ * Implements hook_cron().
+ */
+function investor_cron() {
+
+  /* Was originally created to do a migration import; now not necessary.
+  TODO If this function is still unused when the site goes live, it can be deleted
+  Just don't want to have to redo the cron stuff if it's needed. */
+
+/*
+
+  // We access our configuration.
+  $cron_config = \Drupal::configFactory()
+    ->getEditable('investor.settings');
+
+  // Default to an hourly interval. Of course, cron has to be running at least
+  // hourly for this to work.
+  $interval = $cron_config
+    ->get('interval');
+  $interval = !empty($interval) ? $interval : 180;
+
+  // We usually don't want to act every time cron runs (which could be every
+  // minute) so keep a time for the next run in the site state.
+  $next_execution = \Drupal::state()
+    ->get('investor.next_execution');
+  $next_execution = !empty($next_execution) ? $next_execution : 0;
+  if (REQUEST_TIME >= $next_execution) {
+
+    // Do your stuff here
+
+  }
+
+*/
+
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function investor_preprocess_page(&$vars) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.node.canonical') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+  }
+  if($node && method_exists($node,'bundle') && $node->bundle() === "landing") {
+    $vars['hideTitle'] = $vars['node']->field_hide_page_title->value;
+  }
+}
+
+/***
+ * implements hook_preprocess_node()
+ */
+
+ function investor_preprocess_node(&$variables) {
+  $node = $variables['node'] ?? NULL;
+  if ($node && !is_string($node) && $node->field_related_content != NULL) {
+    $variables["field_related_content"] = $node->field_related_content->view(['label' => 'hidden']);
+  }
+ }
+
+/**
+ * Implements hook_preprocess_layout()
+ */
+function investor_preprocess_layout(&$variables) {
+  // Adds variable for Spanish page language.
+  $path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+  if ($path_alias === '/financial-tools-calculators/calculators/calculadora-de-interes-compuesto') {
+    $variables['langES'] = 'es';
+  }
+}

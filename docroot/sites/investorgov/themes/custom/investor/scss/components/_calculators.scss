@@ -1,0 +1,231 @@
+$calc-color: #fff;
+$calc-bg-color: $primary_1;
+$calc-step-heading-bg-color: $primary_3;
+$calc-mq-sm-down: 'only screen and (max-width:700px)';
+
+#rmd-calc-wrapper, #savings-calc-wrapper, #compound-interest-calc-wrapper{
+  & > .form-required{
+    margin: 0;
+    &:after{
+      content: none;
+    }
+  }
+}
+
+//calculator container
+div.sec-calculator {
+  color: $calc-color;
+  background-color: $calc-bg-color;
+  margin-bottom:20px;
+
+  //reset form fields
+  .form-item, .form-actions{
+    margin: 0;
+  }
+}
+
+.calculator{
+
+  //layout fields
+  .calculator__form-input > .form-item {
+    display: flex;
+    flex-wrap: wrap;
+
+    label{
+      flex-basis: 80%;
+      margin: 0;
+    }
+    input, select{
+      flex-basis: 20%;
+      max-width: 20%;
+      @media #{$calc-mq-sm-down} {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        max-width: 100%;
+      }
+    }
+    .form-item--error-message{
+      flex-basis: 50%;
+      @media #{$calc-mq-sm-down} {
+        text-align:center;
+      }
+    }
+    .description{
+      flex-basis: 70%;
+    }
+    @media #{$calc-mq-sm-down} {
+      > * {
+        flex-basis: 100% !important;
+      }
+    }
+  }
+  .calculator__form-input > .form-type-select {
+    label{
+      flex-basis: 70%;
+    }
+    select{
+      flex-basis: 30%;
+      max-width: 30%;
+      @media #{$calc-mq-sm-down} {
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+    .description{
+      flex-basis: 60%;
+    }
+  }
+    
+  //Calculator step wraps one or more calculator__form-input
+  .calculator_step > h3{
+    color: $calc-color;
+    background: $calc-step-heading-bg-color;
+    font-weight: 400;
+    padding: 10px 10px;
+    margin: 0;
+    font-size: 1.1em;
+    font-family: $font_primary;
+  }
+  
+  //label, input, error, and message wrapper
+  .calculator__form-input{
+    padding: 20px;
+  }
+  
+  .calculator__form-input + .calculator__form-input {
+    border-top: 1px solid #fafafa;
+  }
+  
+  label.form-required::after{
+    content: "";
+    background-size: 10px;
+    height: 10px;
+    width: 10px;
+    padding: 0;
+  }
+  
+  .form-item--error-message{
+    color: #b30000;
+    font-weight: normal;
+    background-color: #ffebeb;
+    display: inline-block;
+    line-height: 1.3em;
+    padding: 5px;
+    clear: both;
+    border-left: 1px solid red;
+    margin: 0 0 7px 0;
+    @media #{$calc-mq-sm-down} {
+      border: 1px solid red;
+    }
+  }
+  
+  .description{
+    font-size: 0.75em;
+    line-height: 1.3em;
+    color: #eaeaea;
+  }
+  
+  
+  /* BUTTONS!!!! */
+  .buttons [id^="edit-actions"] {
+    display:flex;
+    flex-wrap:wrap;
+    padding: 20px 15px;
+    justify-content: flex-end;
+    border-top: 1px solid #fff;
+  
+    > input {
+      // flex:1;
+      background-color: $primary_2;
+      text-transform: uppercase;
+      margin: 0 5px;
+
+      @media #{$calc-mq-sm-down} {
+        width:100%;
+        margin-bottom: 5px;
+      }
+    }
+    
+    // reset button
+    > input[id^="edit-reset"] {
+      background-color: $primary_3;
+    }
+  
+    .ajax-progress-throbber {
+      background-color: transparent;
+      color: white;
+      order:-1;
+      text-align:center;
+      width:100%;
+      margin:10px 10px 0 10px;
+    }
+  }
+
+}
+
+.results-container{
+  background-color: $primary_3;
+  padding: 20px 20px;
+
+  h2 {
+    text-align: center;
+    color: #fff;
+  }
+
+  .calculator__results-amount {
+    color: $gray_white;
+    text-align: center;
+    border-bottom: 1px solid #8cb1b1;
+    padding-bottom: 20px;
+
+    .amount{
+      font-weight: 700;
+      display: inline-block;
+      padding: 2px 7px;
+      background: #106060;
+    }
+  }
+
+  .calculator__results-note {
+    font-weight: 400;
+  }
+
+  button#toggle_table {
+    font-family: $font_secondary;
+    font-weight: 800;
+    color: $gray_white;
+    text-transform: uppercase;
+
+    display: block;
+    border: none;
+    padding: 10px 15px;
+    background: $primary_1;
+    border-radius: 0;
+    text-shadow: none;
+    margin: 20px auto 0;
+    font-size: 16px !important;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0px 0px 0px 1px #fff;
+    }
+
+    @media #{$calc-mq-sm-down} {
+      width:100%;
+    }
+  }
+
+  .results_container__table{
+    color: #000;
+    margin-top: 10px;
+  }
+
+  .highcharts-data-table table {
+    margin-bottom: 0;
+  }
+
+  .highcharts-table-caption {
+    font-size: 16px;
+    padding: 0;
+  }
+}

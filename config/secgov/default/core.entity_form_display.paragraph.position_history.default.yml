@@ -1,0 +1,54 @@
+uuid: 414cbab0-b771-4066-b446-b1fbbfafcef6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.position_history.field_current_position
+    - field.field.paragraph.position_history.field_from
+    - field.field.paragraph.position_history.field_position_category
+    - field.field.paragraph.position_history.field_position_title
+    - field.field.paragraph.position_history.field_to
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - datetime
+id: paragraph.position_history.default
+targetEntityType: paragraph
+bundle: position_history
+mode: default
+content:
+  field_current_position:
+    type: boolean_checkbox
+    weight: 4
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_from:
+    type: datetime_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position_category:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_position_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_to:
+    type: datetime_default
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,30 @@
+diff --git a/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutPublishNode.php b/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutPublishNode.php
+index dac967e..eb3418e 100644
+--- a/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutPublishNode.php
++++ b/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutPublishNode.php
+@@ -55,8 +55,8 @@
+    */
+   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
+     $result = parent::access($object, $account, TRUE)
+-      ->andif(AccessResult::forbiddenIf($this->moderationInfo->isModeratableEntity($object))->addCacheableDependency($object));
+-
++      ->andif(AccessResult::allowedIf(!$this->moderationInfo->isModeratableEntity($object))->addCacheableDependency($object));
++      
+     return $return_as_object ? $result : $result->isAllowed();
+   }
+ }
+diff --git a/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutUnpublishNode.php b/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutUnpublishNode.php
+index f041f49..fc7a45d 100644
+--- a/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutUnpublishNode.php
++++ b/docroot/modules/contrib/workbench_moderation/src/Plugin/Action/ModerationOptOutUnpublishNode.php
+@@ -55,8 +55,8 @@
+    */
+   public function access($object, AccountInterface $account = NULL, $return_as_object = FALSE) {
+     $result = parent::access($object, $account, TRUE)
+-      ->andif(AccessResult::forbiddenIf($this->moderationInfo->isModeratableEntity($object))->addCacheableDependency($object));
+-
++      ->andif(AccessResult::allowedIf(!$this->moderationInfo->isModeratableEntity($object))->addCacheableDependency($object));
++      
+     return $return_as_object ? $result : $result->isAllowed();
+   }
+ }

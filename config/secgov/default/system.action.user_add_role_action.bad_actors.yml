@@ -1,0 +1,14 @@
+uuid: aee25f43-352d-40f3-97c5-c8e7fabbd78e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.bad_actors
+  module:
+    - user
+id: user_add_role_action.bad_actors
+label: 'Add the Individual Defendants role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: bad_actors

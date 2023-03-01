@@ -1,0 +1,8 @@
+uuid: 6386b748-b829-4767-ad8c-fde129a77773
+langcode: en
+status: true
+dependencies: {  }
+name: 'SEC System Variables'
+vid: sec_system_variables
+description: 'Vocabulary for storing custom system variables'
+weight: 0

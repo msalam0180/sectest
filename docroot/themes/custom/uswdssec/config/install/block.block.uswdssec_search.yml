@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - uswdssec
+id: uswdssec_search
+theme: uswdssec
+region: disabled
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }

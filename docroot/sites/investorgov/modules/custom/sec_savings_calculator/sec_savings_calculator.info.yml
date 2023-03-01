@@ -1,0 +1,9 @@
+name: SEC Savings Goal Calculator
+type: module
+description: Provides a calculator to compute savings goals.
+core: 8.x
+package: Calculators
+dependencies:
+  - drupal:block
+  - sec_calculator:sec_calculator
+core_version_requirement: ^8 || ^9

@@ -1,0 +1,24 @@
+uuid: a57b1bf4-c4d0-43cf-91ba-0ca1514c0697
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 3w4BF3U6Om3vCJCzPXqD_Y6knImK9Y19YbecY7hsr_o
+id: events
+label: Events
+type: 'canonical_entities:node'
+pattern: '/news/upcoming-events/event_type_[node:field_event_type]/[node:title]'
+selection_criteria:
+  75010818-f872-48a3-8df2-56fbbd334d54:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 75010818-f872-48a3-8df2-56fbbd334d54
+    context_mapping:
+      node: node
+    bundles:
+      event: event
+selection_logic: and
+weight: -5
+relationships: {  }

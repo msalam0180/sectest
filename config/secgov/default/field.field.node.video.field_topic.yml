@@ -1,0 +1,30 @@
+uuid: 339563e9-ca4d-4353-b535-0293b349df38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic
+    - node.type.video
+    - taxonomy.vocabulary.topics
+_core:
+  default_config_hash: P41GWwrwjbPmBBfJT8KbEZW0xSRmei6siMT-YH8uAp4
+id: node.video.field_topic
+field_name: field_topic
+entity_type: node
+bundle: video
+label: Topic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      topics: topics
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

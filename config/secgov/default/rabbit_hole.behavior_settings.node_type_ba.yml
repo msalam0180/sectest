@@ -1,0 +1,16 @@
+uuid: 9d34eefa-1798-4173-9204-537452dc0876
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.ba
+_core:
+  default_config_hash: v4uir8ean-VgfHbO1amvBcIzgy99JuHUVWiHxBvUZiw
+id: node_type_ba
+entity_type_id: node_type
+entity_id: ba
+action: page_redirect
+allow_override: 1
+redirect: /litigations/sec-action-look-up
+redirect_code: 301
+redirect_fallback_action: access_denied

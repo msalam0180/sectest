@@ -1,0 +1,3 @@
+modules/custom/**/plugins/**
+modules/custom/sec_custom_libraries/**/*
+*min.js

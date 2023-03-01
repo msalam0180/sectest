@@ -1,0 +1,25 @@
+uuid: be91a23b-2e48-43d2-8571-dea315d91a35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.secarticle
+  module:
+    - text
+_core:
+  default_config_hash: 1FE9_QChsvRUWe435TbgpJtZWsmvXo09bdFaANqnIBA
+id: node.secarticle.body
+field_name: body
+entity_type: node
+bundle: secarticle
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

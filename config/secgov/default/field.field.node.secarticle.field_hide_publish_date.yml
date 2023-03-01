@@ -1,0 +1,25 @@
+uuid: b4c5cc33-283b-4169-b296-6499dd21f3b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hide_publish_date
+    - node.type.secarticle
+_core:
+  default_config_hash: vr7Jy4D46qSr6tvkNX-ibFGtazY6ps_kwsU5oO3bj9w
+id: node.secarticle.field_hide_publish_date
+field_name: field_hide_publish_date
+entity_type: node
+bundle: secarticle
+label: 'Hide Publish Date on Detail Page'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Hide Publish Date on Detail Page'
+  off_label: 'Hide Publish Date on Detail Page'
+field_type: boolean

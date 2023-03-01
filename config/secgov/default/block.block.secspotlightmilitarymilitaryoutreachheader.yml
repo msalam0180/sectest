@@ -1,0 +1,25 @@
+uuid: cff2c52f-ccae-424e-a5bb-4a82bb5f135a
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:973cfe9c-ce40-425a-9670-2e11a4da3a4f'
+  module:
+    - block_content
+  theme:
+    - secgov
+id: secspotlightmilitarymilitaryoutreachheader
+theme: secgov
+region: header
+weight: -27
+provider: null
+plugin: 'block_content:973cfe9c-ce40-425a-9670-2e11a4da3a4f'
+settings:
+  id: 'block_content:973cfe9c-ce40-425a-9670-2e11a4da3a4f'
+  label: 'Secspotlight-Military: Military Outreach Header'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

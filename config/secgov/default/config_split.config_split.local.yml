@@ -1,0 +1,27 @@
+uuid: accb064e-5369-4ddb-9f19-8a637afa7978
+langcode: en
+status: false
+dependencies: {  }
+id: local
+label: Local
+description: 'Config for local environment'
+weight: 1
+folder: ../config/secgov/local
+module:
+  dblog: 0
+  devel: 0
+  devel_generate: 0
+theme: {  }
+blacklist:
+  - dblog.settings
+  - devel.settings
+  - devel.toolbar.settings
+  - system.menu.devel
+  - views.view.watchdog
+graylist:
+  - environment_indicator.indicator
+  - search_api.server.acquia_search_server
+  - user.settings
+  - webform.settings
+graylist_dependents: true
+graylist_skip_equal: true

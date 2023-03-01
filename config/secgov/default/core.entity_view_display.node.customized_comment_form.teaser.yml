@@ -1,0 +1,37 @@
+uuid: f49ee8c9-9c7a-4063-9d9a-49754078ad8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.customized_comment_form.field_custom_webform_attachment
+    - field.field.node.customized_comment_form.field_display_title
+    - field.field.node.customized_comment_form.field_file_number
+    - field.field.node.customized_comment_form.field_rule_path
+    - field.field.node.customized_comment_form.field_ruling
+    - node.type.customized_comment_form
+  module:
+    - user
+id: node.customized_comment_form.teaser
+targetEntityType: node
+bundle: customized_comment_form
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  workbench_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+hidden:
+  field_custom_webform_attachment: true
+  field_display_title: true
+  field_file_number: true
+  field_rule_path: true
+  field_ruling: true
+  langcode: true
+  search_api_excerpt: true

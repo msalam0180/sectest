@@ -1,0 +1,115 @@
+@import '../../../../../themes/custom/secgov/css/scss/mixins';
+
+.tablesaw {
+  border: 1px solid #ebebeb;
+
+  thead, tfoot {
+    background: none;
+  }
+
+  th, td {
+    padding: .9em .7em;
+  }
+
+  @include breakpoint('small') {
+    /*b.tablesaw-cell-label {
+      display: table-cell !important;
+    }
+    span.tablesaw-cell-content {
+      display: table-cell !important;
+    }*/
+  }
+  @include breakpoint('x-small') {
+    /*b.tablesaw-cell-label {
+      display: table-cell !important;
+    }
+    span.tablesaw-cell-content {
+      display: table-cell !important;
+    }*/
+  }
+
+  thead {
+    th {
+      background: none;
+      border: none;
+      &:hover, &:focus {
+        background: none;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border: none !important;
+      /*display: table-row;*/
+      @include breakpoint('small','portrait') {
+        display: table-row;
+      }
+      @include breakpoint('x-small') {
+        display: table-row;
+      }
+      th, td {
+        /*> b.tablesaw-cell-label {
+          display: none;
+          width: inherit;
+        }*/
+      }
+    }
+  }
+
+  &.tablesaw-stack {
+  }
+
+  &.tablesaw-swipe { 
+  }
+
+}
+
+.block table td {
+  border: none !important;
+}
+
+/* Zebra striping */
+
+.tablesaw-row-zebra tr:nth-child(2n) {
+  background-color: #ebebeb !important;
+}
+
+.tablesaw caption {
+  text-align: left;
+  margin: .59375em 0;
+}
+
+.tablesaw-swipe .tablesaw-cell-persist {
+  border-right: none !important;
+}
+
+.tablesaw-swipe-shadow .tablesaw-cell-persist {
+  border-right-width: 1px;
+}
+
+.tablesaw-swipe-shadow .tablesaw-cell-persist {
+  box-shadow: 3px 0 4px -1px #e4e1de;
+}
+
+.tablesaw thead tr:first-child {background: rgba(24, 50, 112, .45);}
+.tablesaw tbody td[colspan], .tablesaw tbody td.colspan {background: rgba(24, 50, 112, .3);}
+.tablesaw tbody th {background: rgba(24, 50, 112, .15);}
+
+/* Buttons */
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.left:before,
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn.right:before {
+  left: 1em !important;
+  top: .75em !important;
+}
+.tablesaw-bar .tablesaw-advance a.tablesaw-nav-btn {
+  margin-left: 1.5em !important;
+  padding: 1.25em !important;
+}
+.tablesaw-bar .btn, .tablesaw-enhanced .tablesaw-bar .btn {
+  margin-bottom: 1em !important;
+}
+
+
+
+

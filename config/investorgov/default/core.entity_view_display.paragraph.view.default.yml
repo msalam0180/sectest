@@ -1,0 +1,60 @@
+uuid: 0de4ee7b-c6cf-4e1b-a0f9-70fa5197b215
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view.field_view
+    - paragraphs.paragraphs_type.view
+  module:
+    - layout_builder
+    - layout_discovery
+    - viewfield
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          8a9a5eb7-a2c3-4b75-a9b4-b7403ee970ef:
+            uuid: 8a9a5eb7-a2c3-4b75-a9b4-b7403ee970ef
+            region: content
+            configuration:
+              id: 'field_block:paragraph:view:field_view'
+              label: View
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: viewfield_default
+                label: hidden
+                settings:
+                  view_title: hidden
+                  always_build_output: false
+                  empty_view_title: hidden
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
+id: paragraph.view.default
+targetEntityType: paragraph
+bundle: view
+mode: default
+content:
+  field_view:
+    type: viewfield_default
+    label: above
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

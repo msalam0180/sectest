@@ -1,0 +1,11 @@
+security:
+  Content-Security-Policy: ''
+  Strict-Transport-Security: ''
+  Public-Key-Pins: ''
+  Access-Control-Allow-Origin: '*'
+  X-Xss-Protection: '1; mode=block'
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+performance:
+  Cache-Control: ''
+performance_authenticated_only: 1

@@ -1,0 +1,10 @@
+uuid: e0a4b5ac-cd59-4dcb-85e6-0c53a684b233
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 3mmK0uERwHgdZKcJMg1oL5gszotGdjL9iWma2NwTKRM
+name: 'SEC Mission'
+vid: sec_mission
+description: ''
+weight: 0

@@ -1,0 +1,8 @@
+sec_rmd_calculator:
+  header: true
+  js:
+    js/sec_rmd_calculator.js: { preprocess: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

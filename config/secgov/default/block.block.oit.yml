@@ -1,0 +1,38 @@
+uuid: b99e0517-4d26-45ca-8e25-bc6a5ba74e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.oit
+  module:
+    - ctools
+    - system
+  theme:
+    - secgov
+id: oit
+theme: secgov
+region: sidebar_first
+weight: -30
+provider: null
+plugin: 'system_menu_block:oit'
+settings:
+  id: 'system_menu_block:oit'
+  label: OIT
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      secarticle: secarticle
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oit\r\n/oit/*"

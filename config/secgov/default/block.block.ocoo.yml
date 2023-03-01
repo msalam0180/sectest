@@ -1,0 +1,30 @@
+uuid: 91b9bbdd-acfe-4af6-961d-2cbff88dd235
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.ocoo
+  module:
+    - system
+  theme:
+    - secgov
+id: ocoo
+theme: secgov
+region: sidebar_first
+weight: -27
+provider: null
+plugin: 'system_menu_block:ocoo'
+settings:
+  id: 'system_menu_block:ocoo'
+  label: OCOO
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/oacq\r\n/oacq/*\r\n/ocoo\r\n/ocoo/*\r\n/ofm\r\n/ofm/*\r\n/ohr\r\n/ohr/*\r\n/oit\r\n/oit/*\r\n/osi\r\n/osi/*\r\n/oso\r\n/oso/*\r\n/information-technology/*\r\n/acquisitions/*\r\n/human-resources/*\r\n/support-operations/*"

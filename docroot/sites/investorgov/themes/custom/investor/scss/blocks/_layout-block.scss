@@ -1,0 +1,143 @@
+.block.layout-item.divider {
+  background:$gray_white;
+  width: 97vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 30px -50vw;
+  text-transform: uppercase;
+
+  /** Fix the issue where the green dividers are causing the page to push out and scroll horizontally **/
+  @media screen and (min-width: 338px) {
+    width: 97.5vw;
+  }
+  @media screen and (min-width: 420px) {
+    width: 97.8vw;
+  }
+  @media screen and (min-width: 500px) {
+    width: 98vw;
+  }
+  @media screen and (min-width: 550px) {
+    width: 98.5vw;
+  }
+  @media screen and (min-width: 650px) {
+    width: 98.7vw;
+  }
+  @media screen and (min-width: 750px) {
+    width: 98.9vw;
+  }
+  @media screen and (min-width: 1000px) {
+    width: 99.1vw;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 99.3vw;
+  }
+  @media screen and (min-width: 1500px) {
+    width: 99.4vw;
+  }
+
+  @media screen and (min-width: 800px) {
+    margin-top:20px;  
+    margin-bottom: 5px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    padding-right: 100%;
+    margin-top: 19px;
+    border-top: 2px solid #269092;
+  }
+
+  & > .divider-content {
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (min-width: $site-width) {
+      width: $site-width;
+    }
+  }
+
+  > .divider-content h2 {
+    position: relative;
+    background: $gray_white;
+    font-family: $font_primary;
+    font-weight: 400;
+    color: $primary_3;
+    font-size: 28px;
+    line-height: 30px;
+    display: inline-block;
+    padding: 0 20px;
+    margin: 0;
+    max-width: 80%;
+  }
+}
+
+
+.node-landing-layout-builder-form .block.layout-item.divider{
+  width: 100%;
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  right: auto;
+  left: auto;
+  &:before {
+    padding: 0;
+    width: 94%;
+  }
+}
+
+.node--type-landing .block.layout-item.divider{
+  min-height: 60px;
+  @media screen and (min-width: $site-width) {
+    &.layout-block-left .divider-content{
+      text-align: left;
+      h2{
+        margin-left: -15px;
+      }
+    }
+    &.layout-block-right .divider-content{
+      text-align: right;
+    }
+    &.layout-block-center .divider-content{
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 380px) {
+    min-height: 40px;
+    position: static;
+    margin: auto;
+    width: auto;
+    border-top: 2px solid #269092;
+    margin: 40px 0 20px;
+
+    h2{
+      text-align: left;
+      width: 100%;
+      min-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      margin-top: -40px;
+      display: block;
+    }
+    &:before {
+      content: none;
+    }
+  }
+}
+
+.node--type-landing .block.layout-item.divider > .divider-content{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.node--type-landing .node-landing-layout-builder-form .block.layout-item.divider > .divider-content{
+  margin-top: 0;
+}
+
+.node--type-landing .field--name-field-media-image img{
+  @media print{
+    // max-width: 40%;
+    border: 1px solid #000;
+  }
+}

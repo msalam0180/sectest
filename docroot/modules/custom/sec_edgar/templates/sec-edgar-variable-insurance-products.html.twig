@@ -1,0 +1,10 @@
+{{ attach_library('sec_edgar/edgar-company-person') }}
+<h2>{{ title }}</h2>
+<form id="sec-edgar-company-person-form" method="get" action="{{ submission_url }}">
+  <div class="form-item">
+    <input type="text" placeholder="Product Name" size="40" name="company" aria-required="true" aria-invalid="false"/>
+    <button type="submit" class="collapsed-submit">Search</button>
+    <input type="hidden" name="sc" value="companyseries">
+    <div class="element-description">{{ description }}</div>
+  </div>
+</form>

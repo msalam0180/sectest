@@ -1,0 +1,22 @@
+uuid: c68f897f-41ed-4e7e-a597-571140cb0559
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - uswdssec
+_core:
+  default_config_hash: qBXf3qntdZMVtXYJbXNEU2zdkssdgg05vQJpl2IVgFc
+id: uswdssec_content
+theme: uswdssec
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

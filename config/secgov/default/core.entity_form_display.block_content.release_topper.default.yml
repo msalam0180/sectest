@@ -1,0 +1,58 @@
+uuid: 7071b82c-6328-46ec-b3f8-d1dd8411e73b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.release_topper
+    - field.field.block_content.release_topper.body
+    - field.field.block_content.release_topper.field_customized_quick_links
+    - field.field.block_content.release_topper.field_introduction
+    - field.field.block_content.release_topper.field_quick_links
+  module:
+    - link
+    - text
+    - workbench_moderation
+id: block_content.release_topper.default
+targetEntityType: block_content
+bundle: release_topper
+mode: default
+content:
+  field_customized_quick_links:
+    type: link_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_introduction:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_quick_links:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  body: true

@@ -1,0 +1,21 @@
+uuid: 7a592977-f7c0-479d-a336-ca65ae83c247
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.release_topper
+    - field.storage.block_content.field_quick_links
+  module:
+    - options
+id: block_content.release_topper.field_quick_links
+field_name: field_quick_links
+entity_type: block_content
+bundle: release_topper
+label: 'Quick Links'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

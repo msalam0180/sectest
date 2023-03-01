@@ -1,0 +1,27 @@
+uuid: ca721dcf-42b6-4e51-a636-a5b2b48c1cfb
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.mobile-navigation
+  module:
+    - system
+  theme:
+    - secgov
+_core:
+  default_config_hash: qyMfKt0kDBGViakO0COWAebj-uwXCIxQcfMm5wWQZVs
+id: mobilenavigation
+theme: secgov
+region: header
+weight: -31
+provider: null
+plugin: 'system_menu_block:mobile-navigation'
+settings:
+  id: 'system_menu_block:mobile-navigation'
+  label: 'Mobile Navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Main hooks for Sec Link target module
+ */
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_entity_base_field_info_alter()
+ */
+function sec_link_target_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'menu_link_content') {
+    $fields['link']->setDisplayOptions('form', [
+      'type' => 'sec_link_target',
+      'weight' => 1,
+    ]);
+  }
+}
+
+

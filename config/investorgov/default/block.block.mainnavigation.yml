@@ -1,0 +1,41 @@
+uuid: c5d75657-0f80-4859-bebe-243354bb5af3
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+    - menu_block_title
+    - system
+  theme:
+    - investor
+third_party_settings:
+  menu_block_title:
+    modify_title: false
+id: mainnavigation
+theme: investor
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation (glossary)'
+  label_display: '0'
+  provider: menu_block
+  follow: false
+  follow_parent: child
+  label_link: false
+  label_type: block
+  level: 1
+  depth: 0
+  expand_all_items: true
+  parent: 'main:menu_link_content:ef45f6de-2aa6-4ac6-8a61-2f4868638170'
+  suggestion: main
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    context_mapping: {  }
+    pages: "/introduction-investing/investing-basics/glossary\r\n/introduction-investing/investing-basics/glossary/*"

@@ -1,0 +1,20 @@
+uuid: 1be0d352-a8df-41aa-885d-c51663ee8734
+langcode: en
+status: false
+dependencies:
+  theme:
+    - investor
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: investor_local_actions
+theme: investor
+region: header
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

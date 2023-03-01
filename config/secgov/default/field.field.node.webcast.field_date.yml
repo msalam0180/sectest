@@ -1,0 +1,21 @@
+uuid: 291c0ba1-2f00-4556-b1a5-2c3b9d86fe4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.webcast
+  module:
+    - datetime
+id: node.webcast.field_date
+field_name: field_date
+entity_type: node
+bundle: webcast
+label: 'Override Modified Date'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

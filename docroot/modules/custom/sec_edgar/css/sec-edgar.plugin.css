@@ -1,0 +1,34 @@
+.edgar {
+  display: inline;
+}
+.edgar-tipText {
+  float: right;
+  width: 197px;
+  height:98px;
+  background:#d7d7d7;
+  padding:5px;
+}
+.element-description {
+  font-style: italic;
+  font-size: 0.95em;
+  color: #656565;
+}
+.js .tooltip {
+  display:inline;
+  vertical-align: top;
+}
+.js .tip {
+  display:none;
+}
+.tip {
+  width: 179px;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: normal;
+  cursor: default;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  background-color: #d2e9f8;
+  border: 1px solid #000000;
+}

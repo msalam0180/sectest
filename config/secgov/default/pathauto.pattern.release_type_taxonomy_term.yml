@@ -1,0 +1,23 @@
+uuid: 95b646c9-9498-4b52-97b7-bb70e59f507a
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: release_type_taxonomy_term
+label: 'Release Type Taxonomy Term'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:field_release_path]'
+selection_criteria:
+  89fe958a-f2f4-468e-83de-f13d62a4848f:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 89fe958a-f2f4-468e-83de-f13d62a4848f
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      release_type: release_type
+selection_logic: and
+weight: -10
+relationships: {  }

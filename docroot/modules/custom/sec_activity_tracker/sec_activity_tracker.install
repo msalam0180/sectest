@@ -1,0 +1,121 @@
+<?php
+/**
+ * @file
+ * Flag module install/schema/update hooks.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+
+use Drupal\Core\Config\Entity\ConfigEntityStorage;
+
+function sec_activity_tracker_schema() {
+
+  $schema['sec_activity_tracker'] = [
+
+  'description' => 'Stores SEC activity tracker data',
+
+  'fields' => [
+
+    'id' => [
+      'description' => 'main id',
+      'type' => 'serial',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+    ],
+
+    'nid' => [
+      'description' => 'The unique ID of the tracked entity, for example nid.',
+      'type' => 'int',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => 0,
+    ],
+
+    'uid' => [
+      'description' => 'the {users}.uid that changed this node',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'default' => 0,
+    ],
+
+    'title' => [
+      'description' => 'Title.',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+
+    'type' => [
+      'description' => 'Type',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+
+    'name' => [
+      'description' => 'Users first name',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+
+    'role' => [
+      'description' => 'Users role',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+
+    'action' => [
+      'description' => 'Action performed in a content',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => TRUE,
+      'default' => '',
+    ],
+
+    'division_office' => [
+      'description' => 'Division office',
+      'type' => 'varchar_ascii',
+      'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+      'not null' => FALSE,
+      'default' => '',
+    ],
+
+    'created' => [
+      'description' => 'Created timestamp',
+       'type' => 'int',
+       'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+       'not null' => TRUE,
+    ],
+
+    'changed' => [
+      'description' => 'Changed timestamp',
+       'type' => 'int',
+       'length' => ConfigEntityStorage::MAX_ID_LENGTH,
+       'not null' => TRUE,
+    ],
+  ],
+    'primary key' => ['id'],
+    'indexes' => [
+     'node' => ['nid'],
+     'node_user' => ['nid','uid'],
+     ]
+    ];
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function sec_activity_tracker_uninstall() {
+  \Drupal::messenger()->addStatus(t('SEC activity tracker has been uninstalled.'));
+}

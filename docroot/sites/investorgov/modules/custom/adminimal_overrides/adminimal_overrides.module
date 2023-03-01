@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Adds customizations to admin area of Drupal
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Adds the drupal.contextual-links library to the page for any user who has the
+ * 'access contextual links' permission.
+ *
+ * @see contextual_preprocess()
+ */
+function adminimal_overrides_page_attachments(array &$page) {
+	if (!\Drupal::service('router.admin_context')->isAdminRoute()) {
+		return;
+	}
+
+	$page['#attached']['library'][] = 'adminimal_overrides/customizations';
+}
+
+function strpos_arr($haystack, $needle) {
+  if(!is_array($needle)) $needle = array($needle);
+  foreach($needle as $what) {
+      if(($pos = strpos($haystack, $what))!==false) return $pos;
+  }
+  return false;
+}
+
+function adminimal_overrides_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Adding Required help text to forms
+  $forms_needs_required_help = false;
+  $need_help = array("node_", "media_", "taxonomy_term_", "taxonomy_vocabulary_", "block_content_", "block_form", "menu_link_content_", "layout_builder_update_block", "layout_builder_add_block");
+  $forms_needs_required_help = strpos_arr($form_id, $need_help);
+
+  if ($forms_needs_required_help !== false) {
+    $form['required-help'] = [
+      '#type' => 'item',
+      '#markup' => '<span class="required-help">' . t('*Fields marked with an asterisk(*) are required.'). '</span>',
+      '#weight' => -21,
+    ];
+  }
+
+  //Disable HTML5 Validation until solved - https://www.drupal.org/node/1797438
+  $form['#attributes']['novalidate'] = 'novalidate';
+
+}
+
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function adminimal_overrides_preprocess_html(&$variables) {
+
+  // Get currently active user and his roles.
+  $account = \Drupal::currentUser();
+  $roles = $account->getRoles();
+
+  foreach ($roles as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+
+}

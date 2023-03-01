@@ -1,0 +1,579 @@
+//
+// GLOBAL HEADER
+// The site wide header
+//
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+// Blocks could be broken out into new files
+
+.page-header {
+  @include span(12);
+  display:block;
+  height: auto;
+  margin-bottom: 0;
+  padding: 0px;
+
+  @include breakpoint('medium','landscape') {
+    /*height: 175px;*/
+  }
+
+  @include breakpoint('medium','portrait') {
+    /*height: 175px;
+    margin-bottom: 0;
+    min-width: 768px;*/
+  }
+
+  @include breakpoint('medium','portrait','ipad') {
+    /*height: 175px;
+    margin-bottom: 0;
+    min-width: 768px;*/
+  }
+
+  @include breakpoint('small','landscape') {
+    /*height: 125px;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding-bottom: 0;*/
+  }
+
+  @include breakpoint('small','portrait') {
+    /*height: 100px;
+    margin-bottom: 0;
+    min-width: 320px;
+    overflow: hidden;
+    padding-bottom: 0;*/
+  }
+
+  .header-content {
+    @include section;
+    max-width: 940px;
+    /*height: 125px;
+    padding: 0 10px;*/
+
+    @include navBreakpoints('small-to-medium') {
+      padding: 0 1rem;
+      #block-digitalgovsearch {
+        #global-search {
+          display: none;
+        }
+      }
+      #block-secgov-branding {
+        width: 100% !important;
+
+        .banner-org-name {
+          width: 300px !important;
+        }
+      }       
+    }
+    @include navBreakpoints('mobile-header-break') {
+      padding: 0 !important;
+    }
+    
+    @media (min-width: 300px) and (max-width: 767px) and (orientation : landscape) {
+      height: auto !important;
+    }
+  }
+}
+
+#global-header {
+  height: 125px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint('medium','landscape') {
+    height: 125px;
+  }
+
+  @include breakpoint('medium','portrait') {
+    height: 125px;
+  }
+
+  @include breakpoint('small', 'landscape') {
+    height: 120px;
+  }
+
+  @include breakpoint('small', 'portrait') {
+    height: 95px;
+  }
+
+  #block-secgov-branding {
+    @include span(7 at 0.5);
+    background: url(get-base-url() + 'images/sec-header-background.png');
+    background-repeat: no-repeat;
+    background-position: 23% 15%;
+    clear: none;
+    display:block;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    @include breakpoint('medium','landscape') {
+      background: url(get-base-url() + 'images/sec-header-background.png');
+      background-repeat: no-repeat;
+      background-position: 20% 15%;
+      background-size: 240%;
+      display:block;
+      /*height: 125px;*/
+      position: relative;
+    }
+
+    @include breakpoint('medium','portrait') {
+      background: url(get-base-url() + 'images/sec-header-background.png');
+      background-repeat: no-repeat;
+      background-position: 23% -15%;
+      background-size: 230%;
+      display: block;
+      /*height: 125px;*/
+      position: relative;
+    }
+
+    @include breakpoint('small', 'landscape') {
+      @include span(12);
+      background: url(get-base-url()+'images/sec-header-background.png');
+      background-repeat: no-repeat;
+      background-position: 30% 25%;
+      background-size: 230%;
+      /*height: 120px;*/
+    }
+
+    @include breakpoint('small', 'portrait') {
+      @include span(12);
+      background: url(get-base-url()+'images/sec-header-background.png');
+      background-repeat: no-repeat;
+      background-position: 21% 0;
+      background-size: 230%;
+      /*height: 95px;*/
+    }
+
+    @media (max-width: 320px) {
+      background-size: 265%;
+    }
+
+    .banner-seal, .banner-org-name { 
+      border: none; 
+      position: absolute; 
+    }
+
+    .banner-seal {
+      @include span(2.7 of 12);
+      top: 18px;
+
+      @include breakpoint('medium') {
+        top: 18px;
+      }
+
+      @include breakpoint('small','landscape') {
+        top: 10px;
+        width: 95px;
+      }
+
+      @include breakpoint('small','portrait') {
+        top: 10px;
+        width: 70px;
+      }
+
+      @include breakpoint('x-small') {
+        @include span(4);
+        top: 10px;
+        width: 70px;
+      }
+
+      a { 
+        display: block; 
+        margin: 0px; 
+        padding: 0px; 
+        width: 95px;
+
+        @include breakpoint('medium'){
+          width: 95px;
+        }
+
+        @include breakpoint('small','landscape'){
+          width: 95px;
+        }
+
+        @include breakpoint('small','portrait'){
+          width: 70px;
+        }
+      }
+
+      a img {
+        border: none; 
+        height: 95px;
+        margin: 0px; 
+
+        @include breakpoint('medium'){
+          height: 100%;
+          width: 100%;
+        }
+
+        @include breakpoint('small') {
+          height: 100%;
+          width: 100%;
+        }
+        @include breakpoint('x-small') {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .banner-org-name { 
+      @include span(7 of 12);
+      border-left: 1px solid #ddd;
+      color: #626262; 
+      display: inline-block; 
+      @include raleway; 
+      left: 118px; 
+      text-align: left; 
+      top: 25px; 
+
+
+      @include breakpoint('medium','landscape'){
+        margin-right: 0;
+        top: 25px;
+        width: 57%;
+      }
+
+      @include breakpoint('medium','portrait'){
+        margin-right: 0;
+        top: 25px;
+        width: 73%;
+      }
+
+      @include breakpoint('medium','portrait','ipad'){
+        margin-right: 0;
+        top: 25px;
+        width: 73%;
+      }
+
+      @include breakpoint('small','landscape') {
+        left: 112px;
+        top: 22px;
+        margin-right: 0;
+        width: 280px
+      }
+
+      @include breakpoint('small','portrait') {
+        left: 80px;
+        top: 20px;
+        margin-right: 0;
+        width: 280px;
+      }
+
+      @include breakpoint('x-small') {
+        left: 80px;
+        top: 20px;
+        margin-right: 0;
+        width: 280px;
+      }
+
+      a {  
+        color: #626262; 
+        display: block; 
+        @include raleway;
+        font-size: 1.3rem; 
+        font-weight: 500; 
+        line-height: 1.5rem; 
+        padding: 12px 12px 12px 23px; 
+        text-align: left !important;
+        text-decoration: none; 
+        text-transform: uppercase; 
+
+        @include breakpoint('medium') {
+          font-size: 1.3rem;
+        }
+
+        @include breakpoint('small','landscape') {
+          font-size: 1.3rem;
+          line-height: 1.2;
+          padding: 8px 0px 8px 16px;
+          width: 280px;
+        }
+
+        @include breakpoint('small','portrait') {
+          font-size: 0.88rem;
+          line-height: 1.2;
+          padding: 8px 0px 8px 8px;
+          width: 220px;
+        }
+
+        @include breakpoint('x-small') {
+          font-size: 1.0rem;
+          line-height: 1.2;
+          padding: 8px 16px;
+        }
+      }
+
+      a:hover { 
+        text-decoration: none; 
+      }
+      a:focus { 
+        text-decoration: none; 
+      }
+    }
+   } 
+  }
+
+  #block-digitalgovsearch {
+    clear: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 32%;
+
+    @include breakpoint('medium','portrait') {
+      font-weight: normal;
+      font-size: 11px;
+      margin-right: 0px;
+      text-align: right;
+      width: 32%;
+    }
+
+    @include breakpoint('medium','portrait','ipad') {
+      font-weight: normal;
+      font-size: 11px;
+      margin-right: 0px;
+      text-align: right;
+      width: 32%;
+    }
+
+    #global-search {
+      float:right;
+      margin-top: 25px;
+      padding-top: 10px;
+      position: relative;
+      text-align: right;
+      width: 100%;  
+
+      @include breakpoint('medium','portrait') {
+        width: 270px;
+      } 
+      @include breakpoint('medium','portrait','ipad') {
+        width: 270px;
+      } 
+      
+      @include breakpoint('small') {
+        display: none;
+      }
+
+      @include breakpoint('x-small') {
+        display: none;
+      }
+
+      h2 {
+        left: 55px;
+        margin-right: 0;
+        position: absolute;
+        top: 4px;
+        z-index: 1;
+        font-size: 0.65em;
+      }
+
+      label.overlabel {
+        display: inline;
+        margin: 0;
+        color: $cloudy-gray;
+        font-size: 13px;
+        font-weight: 300;
+        margin-right: 0;
+        position: absolute;
+        right: 140px;
+        top: 21px;
+        z-index: 0;
+
+        @include breakpoint('medium','portrait') {
+          left: 35px;
+        }
+
+        @include breakpoint('medium','portrait','ipad') {
+          left: 35px;
+          text-align: left;
+          width: 200px;
+        }
+
+      }
+      
+      #global-search-box { 
+        background: transparent;
+        border: 1px solid #aaa; 
+        float: right; 
+        font-size: 12px; 
+        line-height: 26px; 
+        vertical-align: middle; 
+        line-height: normal !important; 
+        margin: 0; 
+        height: 26px; 
+        width: 245px; 
+        padding-left: 8px;
+        position: absolute;
+        right:0;
+        z-index:0; 
+
+        @include breakpoint('medium') {
+          width: 245px;
+        }
+      }
+
+      span.button-label {
+        display:block;      
+        height: 26px;
+        width: 26px;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+
+        &.fa {
+          background:none;
+          color: $azure;
+        }
+      }
+
+      input.global-search-button {
+        background: transparent;
+        border: none;
+        display: block;
+        height: 26px;
+        width: 26px;
+        position: absolute;
+        right: 0;
+        z-index: 2;
+
+        &:hover, &:focus {
+          background-color: $cloudy-gray;
+          opacity: 0.3;
+        }
+      }
+
+      /*.menu-name-menu-utility-menu {
+        text-align: center;
+
+        p.options {
+          @include rem-fallback('margin-top', 1.5);
+        }
+
+        p.options a.option-link {
+          color: $yellow-orange;
+          border: none;
+          padding: 0;
+          height: auto;
+          @include rem-fallback('font-size', .9);
+
+          &:after {
+            margin: 0 10px;
+            color: $cloudy-gray;
+            top: 0;
+          }
+        }
+
+      }*/
+
+      .menu-name-menu-utility-menu {
+        p.options {
+          margin-bottom: 0;
+          position: absolute;
+          right: 0;
+          text-align: right;
+          top: 42px;
+          width: 100%;
+
+          span {
+            .option-link {
+              color: $cloudy-gray !important;
+              letter-spacing: -.005em;
+              font-size: 11px;
+            }
+
+            &:first-child {
+              a.option-link {
+                &:after {
+                  margin: 0 5px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+  }
+}
+
+.menu-name-menu-utility-menu {
+  span {
+    &:first-child {
+      a.option-link {
+        &:after {
+          content: '|';
+          display: inline-block;
+        }
+      }
+    }
+    &:last-child {
+      a.option-link {
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .option-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    &:hover, &:focus {
+      text-decoration:underline;
+    }
+  }
+}
+
+.ie-view, .ie {
+  background-color: #fff;
+
+  #global-header  {
+    #block-secgov-branding {
+      background-position: 25% 10%;
+
+      .banner-org-name {
+        top: 24px;
+      }
+    }
+
+    .banner-org-name {
+
+      a {
+        @include raleway;
+        font-size: 1.3em;
+        font-weight: 500;
+        line-height: 1.5em;
+      }
+    }
+
+    #global-search {
+      label.overlabel {
+        right: 119px !important;
+        top: 22px !important;
+      }
+      #global-search-box {
+        padding-left: 8px;
+        width: 224px !important;
+      }
+      p.options {
+        margin: 22px 0 0 0 !important;
+        top: 23px;
+        a.option-link {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  input[type=text]::-ms-clear {
+    margin-right: 20px;
+  }
+}

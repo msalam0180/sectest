@@ -1,0 +1,24 @@
+uuid: 8e1cebd1-5aef-48f7-a599-86c89687658d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.secarticle
+_core:
+  default_config_hash: wbB2FiWsmcfHKsaHgwotFQ2rYD2PQGsJ7_cg7qhwBgs
+id: node.secarticle.promote
+field_name: promote
+entity_type: node
+bundle: secarticle
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

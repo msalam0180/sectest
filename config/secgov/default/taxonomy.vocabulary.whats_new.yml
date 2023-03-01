@@ -1,0 +1,8 @@
+uuid: facd3a19-428a-406f-8f20-d3bac9b4b4ae
+langcode: en
+status: true
+dependencies: {  }
+name: 'What''s New'
+vid: whats_new
+description: 'Taxonomy of topics to have What''s New views'
+weight: 0

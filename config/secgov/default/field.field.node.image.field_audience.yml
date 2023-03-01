@@ -1,0 +1,28 @@
+uuid: 1f15ad8d-ef88-4bc6-b068-bb1a32512ed8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.image
+    - taxonomy.vocabulary.audience
+id: node.image.field_audience
+field_name: field_audience
+entity_type: node
+bundle: image
+label: Audience
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      audience: audience
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

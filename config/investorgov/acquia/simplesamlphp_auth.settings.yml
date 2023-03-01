@@ -1,0 +1,35 @@
+_core:
+  default_config_hash: BuLah1nwoT5oUjn6XIuKnXkjcvdt5tDIGQ6gAflOY0s
+langcode: en
+activate: true
+auth_source: default-sp
+login_link_display_name: 'Federated login'
+login_link_show: true
+user_name: 'urn:strippedaccountname'
+unique_id: 'urn:strippedaccountname'
+mail_attr: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+header_no_cache: false
+role:
+  population: ''
+  eval_every_time: false
+register_users: true
+allow:
+  set_drupal_pwd: true
+  default_login: true
+  default_login_roles:
+    content_creator: content_creator
+    content_approver: content_approver
+    qctc_tester: qctc_tester
+    site_builder: site_builder
+    administrator: administrator
+    authenticated: '0'
+  default_login_users: '1'
+logout_goto_url: /
+user_register_original: admin_only
+sync:
+  mail: false
+  user_name: true
+autoenablesaml: false
+debug: true
+secure: true
+httponly: true

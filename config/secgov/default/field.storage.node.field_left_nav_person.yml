@@ -1,0 +1,22 @@
+uuid: d4bb9b38-b87c-4bc2-871a-73795edd9f04
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+_core:
+  default_config_hash: MSV3z0rhFMnQW-MgjBtRDOkAiQnzaO9CbLs3aG5PMSM
+id: node.field_left_nav_person
+field_name: field_left_nav_person
+entity_type: node
+type: entity_reference
+settings:
+  target_type: menu
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

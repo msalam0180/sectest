@@ -1,0 +1,23 @@
+uuid: 39813779-6673-433f-9821-94cc3bdcbbb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cms_notes
+    - node.type.ba
+  module:
+    - text
+_core:
+  default_config_hash: mvBM2GuFPD1FZbcZ6F0maZgbYrErEZCcSjZeL5WxxO8
+id: node.ba.field_cms_notes
+field_name: field_cms_notes
+entity_type: node
+bundle: ba
+label: 'CMS Notes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

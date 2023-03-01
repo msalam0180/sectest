@@ -1,0 +1,21 @@
+uuid: 356d4553-4583-424d-81af-602fc17b2947
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_release_number
+    - node.type.news
+_core:
+  default_config_hash: k1KgVgMTo_oOGvk8IXxS-3nOYitJ4ROMqkmsFd7s8fg
+id: node.news.field_release_number
+field_name: field_release_number
+entity_type: node
+bundle: news
+label: 'Release Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

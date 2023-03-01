@@ -1,0 +1,22 @@
+diff --git a/protected_pages.module b/protected_pages.module
+index 0c98ec6603..6b0db2f5e6 100644
+--- a/protected_pages.module
++++ b/protected_pages.module
+@@ -12,7 +12,7 @@
+ use Drupal\Component\Utility\Html;
+ use Drupal\Core\Url;
+ use Symfony\Component\HttpFoundation\RedirectResponse;
+-use Drupal\Core\StreamWrapper\StreamWrapperManagerInterface;
++use Drupal\Core\StreamWrapper\StreamWrapperManager;
+ 
+ /**
+  * Implements hook_mail().
+@@ -48,7 +48,7 @@ function protected_pages_file_download($uri) {
+     return;
+   }
+ 
+-  $target = StreamWrapperManagerInterface::getTarget($uri);
++  $target = StreamWrapperManager::getTarget($uri);
+   $file_path = '/system/files/' . $target;
+ 
+   $fields = ['pid'];

@@ -1,0 +1,21 @@
+uuid: a3b59f54-2678-4b45-98e5-a6186ebcd7db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position_category
+    - paragraphs.paragraphs_type.position_history
+  module:
+    - options
+id: paragraph.position_history.field_position_category
+field_name: field_position_category
+entity_type: paragraph
+bundle: position_history
+label: 'Position Category'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

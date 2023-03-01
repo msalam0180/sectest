@@ -1,0 +1,258 @@
+uuid: ec145871-5f36-4c83-a8dd-acedc8db5d31
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news.body
+    - field.field.node.news.field_alternate_name
+    - field.field.node.news.field_date
+    - field.field.node.news.field_file_upload_english
+    - field.field.node.news.field_file_upload_spanish
+    - field.field.node.news.field_news_category
+    - field.field.node.news.field_news_photo
+    - field.field.node.news.field_news_type
+    - field.field.node.news.field_origin_link
+    - field.field.node.news.field_related_content
+    - field.field.node.news.field_related_content_label
+    - field.field.node.news.field_show_featured_content
+    - field.field.node.news.layout_builder__layout
+    - node.type.news
+  module:
+    - datetime
+    - file
+    - image
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          efcc54a0-af7d-4337-bc02-0e25754c32bd:
+            uuid: efcc54a0-af7d-4337-bc02-0e25754c32bd
+            region: content
+            configuration:
+              id: 'extra_field_block:node:news:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 0
+            additional: {  }
+          1c19292d-68d7-4e5f-84d2-cc68e7cc0205:
+            uuid: 1c19292d-68d7-4e5f-84d2-cc68e7cc0205
+            region: content
+            configuration:
+              id: 'extra_field_block:node:news:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          cb7ebd0b-b8ec-4e0a-8e28-4e6364ad1c6d:
+            uuid: cb7ebd0b-b8ec-4e0a-8e28-4e6364ad1c6d
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_date'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: hidden
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          eb9315c2-7ee2-412e-a654-8e1bafb93e5c:
+            uuid: eb9315c2-7ee2-412e-a654-8e1bafb93e5c
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_news_photo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          dced0bb7-2973-4af4-ba94-9b28f5538bba:
+            uuid: dced0bb7-2973-4af4-ba94-9b28f5538bba
+            region: content
+            configuration:
+              id: 'field_block:node:news:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          f9f6625b-f710-45d6-92e8-617396ca543b:
+            uuid: f9f6625b-f710-45d6-92e8-617396ca543b
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_file_upload_english'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: file_default
+                label: hidden
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          ad64cf73-335f-4c37-832a-2afd52c50350:
+            uuid: ad64cf73-335f-4c37-832a-2afd52c50350
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_file_upload_spanish'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: file_default
+                label: hidden
+                settings:
+                  use_description_as_link_text: true
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
+          b4871d78-43ec-4b42-bab7-93b880321d1d:
+            uuid: b4871d78-43ec-4b42-bab7-93b880321d1d
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_origin_link'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
+          ada59dde-6a9b-4d1d-b6b5-2a422d54e470:
+            uuid: ada59dde-6a9b-4d1d-b6b5-2a422d54e470
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_news_photo'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: ''
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 8
+            additional: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    allowed_block_categories: {  }
+    entity_view_mode_restriction:
+      allowed_layouts: {  }
+      denylisted_blocks: {  }
+      allowlisted_blocks: {  }
+id: node.news.full
+targetEntityType: node
+bundle: news
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_file_upload_english:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_file_upload_spanish:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_news_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_origin_link:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_alternate_name: true
+  field_news_category: true
+  field_news_type: true
+  field_related_content: true
+  field_related_content_label: true
+  field_show_featured_content: true
+  layout_builder__layout: true
+  search_api_excerpt: true

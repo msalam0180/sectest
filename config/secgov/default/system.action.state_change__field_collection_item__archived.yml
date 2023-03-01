@@ -1,0 +1,11 @@
+uuid: 6bd93788-c682-4885-a04f-b811c74639df
+langcode: en
+status: true
+dependencies:
+  module:
+    - workbench_moderation_actions
+id: state_change__field_collection_item__archived
+label: 'Set Field Collection Item as Unpublished'
+type: field_collection_item
+plugin: 'state_change:field_collection_item__archived'
+configuration: {  }

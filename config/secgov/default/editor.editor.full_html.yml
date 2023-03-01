@@ -1,0 +1,97 @@
+uuid: 4ace656f-c20c-4787-abd0-61c76766f10f
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+_core:
+  default_config_hash: x_xGDXBVcecp9ah9ui9jG0qqzTw15yveGnVD5oRp798
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Strike
+            - Underline
+            - Superscript
+            - Styles
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - SpecialChar
+            - HorizontalRule
+        -
+          name: Linking
+          items:
+            - Link
+            - Unlink
+            - '-'
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - Table
+            - node
+            - media_embed
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - Source
+            - Undo
+            - Redo
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - Outdent
+            - Indent
+        -
+          name: Copy
+          items:
+            - PasteFromWord
+            - PasteText
+            - Paste
+            - Copy
+            - Cut
+        -
+          name: Display
+          items:
+            - Maximize
+  plugins:
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: default_linkit
+    stylescombo:
+      styles: "div.pullquote | Pullquote\r\ndiv.pullquote.offset| Pullquote Offset\r\ndiv.igovBox | iGovBox"
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

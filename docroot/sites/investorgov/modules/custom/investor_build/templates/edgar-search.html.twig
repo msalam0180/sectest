@@ -1,0 +1,38 @@
+<div class="investor-edgar-search clearfix">
+    <div class="inline-block">
+    <p class="edgar-title">
+        <span class="emphasis-1" style="font-size: 18px"><a href="https://www.sec.gov/edgar/searchedgar/webusers.htm" style="color: inherit;">EDGAR</a> |</span>
+        <span class="emphasis-2" style="font-size: 14px;"> Search company and individual filings.</span>
+    </p>
+    </div>
+    <div id="investor-edgar" class="inline-block">
+        <form id="edgar-search" action="https://www.sec.gov/cgi-bin/browse-edgar" method="get" name="companysearch">
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="row collapse search-input-wrapper">
+                        <label for="company-name" class="show-for-sr"><em>Company Name</em></label>
+                        <div class="">
+                              <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                                <input size="40" id="company-name" name="company" title="Search For" type="text" placeholder="Name or Ticker" class="long" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+                                <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Helvetica, sans-serif; font-size: 14.000040054321289px; font-style: normal; font-variant-ligatures: no-common-ligatures; font-variant-numeric: normal; font-variant-caps: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-east-asian: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; width: 292px;">
+                                  <div class="tt-dataset tt-dataset-companies"></div>
+                                </div>
+                              </span>
+                        </div>
+                        <div class="">
+                            <button id="edgar-search-button" type="submit" class="button postfix table-block">
+                                Search
+                            </button>
+                        </div>
+
+                        <div class="edgar-search-hidden">
+                            <input value="contains" name="match" type="hidden">
+                            <input value="getcompany" name="action" type="hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

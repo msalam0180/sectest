@@ -1,0 +1,50 @@
+.layout--legacy__toptwocol-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.layout--legacy__toptwocol-section > .layout__region {
+  flex: 0 1 100%;
+}
+
+/* fix images breaking layout */
+.layout__region img {
+  display: inline;
+  /* Note: if images are not displaying correctly, then this rule may need to be adusted */
+}
+
+@media screen and (min-width: 40em) {
+  .layout--legacy__toptwocol-section > .layout__region--second {
+    flex: 0 1 33%;
+  }
+
+  .layout--legacy__toptwocol-section > .layout__region--first {
+    flex: 0 1 67%;
+  }
+  .layout--legacy__toptwocol-section > .layout__region--first .region__inner {
+    padding-right: 15px;
+  }
+}
+
+/* add space below blocks in layout */
+.layout__region .block {
+  margin-bottom: 10px;
+}
+
+/* Labeling section as Legacy section */
+.legacy__region .layout-builder__region {
+  outline: 2px dashed red;
+  background-color: #fffbfb;
+}
+
+/* New regions */
+.layout:not(.layout--legacy__toptwocol-section) .layout__region--first {
+  padding-right: 15px;
+}
+
+/* OSSS-20234 update to css per Afemath request */
+.legacy__region .region__inner::after {
+  content: "";
+  clear: both;
+  display: table;
+}

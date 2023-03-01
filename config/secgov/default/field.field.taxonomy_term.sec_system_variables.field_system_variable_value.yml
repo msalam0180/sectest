@@ -1,0 +1,19 @@
+uuid: 3ff30b62-4ad0-4f20-a459-775fdced5688
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_system_variable_value
+    - taxonomy.vocabulary.sec_system_variables
+id: taxonomy_term.sec_system_variables.field_system_variable_value
+field_name: field_system_variable_value
+entity_type: taxonomy_term
+bundle: sec_system_variables
+label: 'System Variable Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

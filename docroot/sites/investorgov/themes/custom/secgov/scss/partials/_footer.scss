@@ -1,0 +1,258 @@
+//
+// Global footer
+// The site wide footers
+// --------------------------------------------------
+
+// TODO: Review all code and clean as needed
+// Blocks could me broken out into new files
+
+[role="footer"] {
+	@include span(12);
+	clear: both;
+	color: $white;
+	font-size:13px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	text-align: center;
+
+	.block {
+		margin: 0;
+	}
+
+	#block-secgov-footer, #block-stayconnectedfooter {
+		@include span(12);
+		clear: both;
+		margin-right: 0px;
+		padding: 24px;
+	    text-align: center;
+	}
+
+	ul {
+		@include span(7 of 12);
+		display:block;
+		float: none;
+		line-height: 1.5;
+		list-style: none;
+		margin-top: 6px;
+		margin-right: auto;
+		margin-bottom: 6px;
+		margin-left: auto;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin-left: 5px;
+
+			a {
+				color: $white;
+				padding-right:5px;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+
+	/* Footer Social Icons */
+	div[id*='stayconnectedfooter'] {
+		background-color: $navy;
+		color: $white;
+		padding: 20px 0;
+		text-align: center;
+		p {
+			@include span(10 of 12);
+			margin-bottom: 0;
+			margin-right:auto;
+			margin-left: auto;
+			float: none;
+			text-align: center;
+
+			@include breakpoint('medium'){
+				@include span(12);
+				margin-bottom: 0;
+				margin-right:auto;
+				margin-left: auto;
+				float: none;
+				font-size: 12px;
+			}
+			@include breakpoint('medium','portrait','ipad'){
+				@include span(12);
+				margin-bottom: 0;
+				margin-right:auto;
+				margin-left: auto;
+				float: none;
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+		br.new-line {
+			display: none;
+
+			@include breakpoint('medium','landscape'){
+				display: none;
+			}
+			@include breakpoint('medium','portrait'){
+				display: block;
+			}
+			@include breakpoint('medium','portrait','ipad'){
+				display: block;
+			}
+			@include breakpoint('small'){
+				display: block;
+			}
+			@include breakpoint('x-small'){
+				display: block;
+			}
+		}
+		span {
+			color: $white;
+			display: inline-block;
+			margin-left: 5px;
+			margin-right: 0px;
+			vertical-align: middle;
+		}
+
+		a {
+			display: inline-block;
+			margin: 7px 5px;
+			padding: 0;
+			color: $white;
+			text-decoration: none;
+			@include breakpoint('medium','portrait','ipad'){
+				margin: 7px 3px;
+			}
+		}
+
+		a:hover span,
+		a:focus span {
+			color: $white;
+			text-decoration: underline;
+		}
+
+		a:hover span.fa,
+		a:focus span.fa {
+			background-color: $yellow-orange;
+			color: $navy;
+			text-decoration: none;
+		}
+
+		a:hover i.footer-icon,
+		a:focus i.footer-icon {
+			background-color: $yellow-orange;
+			color: $dark-navy !important;
+			text-decoration: none;
+		}
+
+		.fa {
+			background-color: $azure;
+			border-radius: 3px;
+			color: $white;
+			display: inline-block;
+			height: 28px;
+	        margin-left: 0;
+			padding: 6px 5px 5px;
+			width: 28px;
+
+			@include breakpoint('medium','portrait'){
+		        height: 28px;
+			    padding-top: 8px;
+			    text-align: center;
+			    width: 28px;
+			}
+
+			@include breakpoint('medium','portrait','ipad'){
+		        height: 28px;
+			    padding-top: 8px;
+			    text-align: center;
+			    width: 28px;
+			}
+
+			@include breakpoint('small'){
+		        height: 30px;
+			    padding-top: 9px;
+			    text-align: center;
+			    width: 30px;
+			}
+			@include breakpoint('x-small'){
+		        height: 30px;
+			    padding-top: 9px;
+			    text-align: center;
+			    width: 30px;
+			}
+
+			&:hover {
+		    	background-color: $yellow-orange;
+		    	color:$dark-navy;
+		  	}
+		}
+
+		i.footer-icon + span > span {
+			padding: 0;
+		}
+
+		.svg-icon {
+
+			&.footer-icon {
+				background-color: $deep-sea;
+				border-radius: 4px;
+				color: #fff;
+				line-height: 1.5;
+				padding: 0.23em 0.1em 0;
+    			text-align: center;
+			}
+		}
+
+
+		/* Less than 700px */
+		@media only screen and (max-width: 700px) {
+			#global-footer-social a {
+		  		padding: .5em;
+	  		}
+		}
+	}
+
+	#block-secgov-footer {
+		background-color: $charcoal;
+	    padding: 12px 0px 24px;
+
+		h2 {
+			display:inline;
+		}
+
+		ul {
+			@include span(8 of 12);
+			display:block;
+			float: none;
+			list-style: none;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 0;
+
+			@include breakpoint('small'){
+				width: 83.33%;
+			}
+		}
+
+		li {
+			border-right: 1px solid $white;
+			display: inline;
+
+			&:last-child {
+				border-right: none;
+			}
+
+			a:hover {
+				color: $white;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.media-box-social-buttons a:hover {text-decoration: none;}
+a.pinShare {margin: 0 .5em;}

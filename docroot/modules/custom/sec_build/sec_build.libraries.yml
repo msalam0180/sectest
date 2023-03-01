@@ -1,0 +1,5 @@
+webformRecaptcha:
+  js:
+    js/webform-recaptcha.js: {minified: false, preprocess: false }
+  dependencies:
+    - core/jquery

@@ -1,0 +1,27 @@
+uuid: 8c330c2b-36cc-4abc-b865-22cc177d79cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.webcast_source.field_primary_source
+    - field.field.taxonomy_term.webcast_source.field_secondary_source
+    - taxonomy.vocabulary.webcast_source
+  module:
+    - panelizer
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: taxonomy_term.webcast_source.default
+targetEntityType: taxonomy_term
+bundle: webcast_source
+mode: default
+content: {  }
+hidden:
+  description: true
+  field_primary_source: true
+  field_secondary_source: true
+  langcode: true
+  search_api_excerpt: true

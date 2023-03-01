@@ -1,0 +1,21 @@
+//
+// TOOLBAR (ADMIN)
+// Override the toolbar in the Site Theme
+//
+// NOTE: These styles do not affect the toolbar when using in the admin theme
+//
+// --------------------------------------------------
+
+.user-logged-in {
+
+  &.toolbar-tray-open {
+    #addthis-icons {
+      bottom: 18px;
+    }
+  }
+
+  .toolbar-tab .acquia-active-subscription {
+    display: none;
+  }
+
+}

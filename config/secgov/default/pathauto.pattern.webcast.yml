@@ -1,0 +1,24 @@
+uuid: ab4717c6-cbae-4933-af20-dedeac7ac93a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: g9Pwne59c3kRM-AgOujWal0ZtOmMRsd0AXlcJd4rxLw
+id: webcast
+label: Webcast
+type: 'canonical_entities:node'
+pattern: '/webcast/[node:title]'
+selection_criteria:
+  a0aea1b5-814d-4904-8dfb-6498cf570613:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a0aea1b5-814d-4904-8dfb-6498cf570613
+    context_mapping:
+      node: node
+    bundles:
+      webcast: webcast
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,73 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+    // scss-lint:disable ImportantRule
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+    // scss-lint:disable ImportantRule
+    position: static !important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+    @include element-invisible;
+    &:active,
+    &:focus {
+        @include element-invisible-off;
+    }
+}
+
+//Rem Fallback http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+//Preferred version of clearfix
+@mixin clearfix() {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+//Transitions, http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+//Centers a block level element, requires width
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//Vertical align, all browsers http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

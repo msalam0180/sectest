@@ -1,0 +1,5 @@
+services:
+  sec_activity_tracker.subscriber:
+    class: Drupal\sec_activity_tracker\SecActivitySubscriber
+    tags:
+      - { name: event_subscriber }

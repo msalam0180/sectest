@@ -1,0 +1,24 @@
+uuid: b66da6c5-951e-40ba-a3cf-c394b249baf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: U2MrHDkw60oidAhSlwXED9JowyLfbkJehIlMDqRmi1o
+id: static_file
+label: 'Static File'
+type: 'canonical_entities:node'
+pattern: '/file/[node:title]'
+selection_criteria:
+  8a56030f-17dd-4ec1-8b43-e3a859d206d3:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 8a56030f-17dd-4ec1-8b43-e3a859d206d3
+    context_mapping:
+      node: node
+    bundles:
+      file: file
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,10 @@
+uuid: e236985d-81f0-4977-822b-bc2ae5c2fbdf
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: MHiJ6lHA-CWa_5KVf55tvuRkZMxWaY8vFGl6tDmTde4
+name: Regulation
+vid: regulation
+description: ''
+weight: 0

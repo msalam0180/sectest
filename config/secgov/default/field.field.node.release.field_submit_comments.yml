@@ -1,0 +1,29 @@
+uuid: 31d523f9-16ba-46a2-b5ca-2be4c242e003
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_submit_comments
+    - node.type.customized_comment_form
+    - node.type.release
+id: node.release.field_submit_comments
+field_name: field_submit_comments
+entity_type: node
+bundle: release
+label: 'Submit Comments'
+description: 'Choose a Comments Form to associate with this release. If you need a new Comment Form to be created, you will need the webform role on your account.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      customized_comment_form: customized_comment_form
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

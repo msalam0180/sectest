@@ -1,0 +1,23 @@
+uuid: aa8568de-fdbf-4108-9de9-7db91fd84357
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_delinquent_filings
+    - node.type.release
+id: node.release.field_delinquent_filings
+field_name: field_delinquent_filings
+entity_type: node
+bundle: release
+label: 'Delinquent Filing'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,25 @@
+uuid: c2890990-c33b-4156-a245-d15021926168
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.sec_hero
+  module:
+    - text
+_core:
+  default_config_hash: fw-YqkOI0NKqzhDYHKH6vZ-5xunNMhxxqBKTg5dArVs
+id: node.sec_hero.body
+field_name: body
+entity_type: node
+bundle: sec_hero
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
